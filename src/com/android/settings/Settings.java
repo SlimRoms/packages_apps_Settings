@@ -364,7 +364,8 @@ public class Settings extends PreferenceActivity
         QuietHours.class.getName(),
         QuickSettingsTiles.class.getName(),
         BatteryIconStyle.class.getName(),
-        DisplayRotation.class.getName()
+        DisplayRotation.class.getName(),
+        ApnSettings.class.getName()
     };
 
     @Override
@@ -1162,6 +1163,8 @@ public class Settings extends PreferenceActivity
     public static class PaymentSettingsActivity extends Settings { /* empty */ }
     public static class PrintSettingsActivity extends Settings { /* empty */ }
     public static class PrintJobSettingsActivity extends Settings { /* empty */ }
+    public static class ApnSettingsActivity extends Settings { /* empty */ }
+    public static class ApnEditorActivity extends Settings { /* empty */ }
     public static class BlacklistSettingsActivity extends Settings { /* empty */ }
     public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
     public static class QuickSettingsTilesSettingsActivity extends Settings { /* empty */ }

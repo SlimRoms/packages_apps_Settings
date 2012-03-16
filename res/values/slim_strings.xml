@@ -896,4 +896,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media">Rescan media for the storage volume</string>
     <string name="storage_rescan_media_complete">Scan completed</string>
 
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">The APN will be deleted.</string>
+
 </resources>

@@ -5475,4 +5475,8 @@
     <string name="wifi_setting_priority_summary">Specify the priority of Wi-Fi networks</string>
     <string name="wifi_priority_disabled">Enable Wi-Fi to specify the priority</string>
 
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
 </resources>

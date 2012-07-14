@@ -62,6 +62,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private static final String KEY_USER_DICTIONARY_SETTINGS = "key_user_dictionary_settings";
 
     private static final String KEY_STYLUS_ICON_ENABLED = "stylus_icon_enabled";
+    private static final String KEY_POINTER_SETTINGS = "pointer_settings_category";
+
     // false: on ICS or later
     private static final boolean SHOW_INPUT_METHOD_SWITCHER_SETTINGS = false;
 
@@ -185,6 +187,13 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
         mHandler = new Handler();
         mSettingsObserver = new SettingsObserver(mHandler, getActivity());
+        // remove pointer settings preference category for non stylus devices
+        if (!hasStylus()) {
+            PreferenceCategory pc = (PreferenceCategory) findPreference(KEY_POINTER_SETTINGS);
+            if (pc != null) {
+                getPreferenceScreen().removePreference(pc);
+            }
+        }
     }
 
     private void updateInputMethodSelectorSummary(int value) {
@@ -574,5 +583,10 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         public void pause() {
             mContext.getContentResolver().unregisterContentObserver(this);
         }
+    }
+
+    // returns whether the device has stylus or not
+    private boolean hasStylus() {
+        return getResources().getBoolean(com.android.internal.R.bool.config_stylusGestures);
     }
 }

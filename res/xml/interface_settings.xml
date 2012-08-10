@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/interface_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="power_menu_settings"
+        android:fragment="com.android.settings.cnd.PowerMenuSettings"
+        android:title="@string/power_menu_settings_title" />
+
+    <PreferenceScreen
+        android:key="statusbar_settings"
+        android:fragment="com.android.settings.cnd.StatusBarSettings"
+        android:title="@string/statusbar_settings_title" />
+
+    <PreferenceScreen
+        android:key="notification_drawer"
+        android:fragment="com.android.settings.cnd.PowerWidget"
+        android:title="@string/notification_drawer_title" />
+
+    <PreferenceScreen
+        android:key="notification_drawer_tablet"
+        android:fragment="com.android.settings.cnd.TabletPowerWidget"
+        android:title="@string/notification_drawer_title" />
+
+    <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.cnd.NavbarSettings"
+        android:title="@string/nav_bar" />
+
+    <PreferenceScreen
+        android:key="hardware_keys"
+        android:fragment="com.android.settings.cnd.HardwareKeys"
+        android:title="@string/hardware_keys_title" />
+
+    <PreferenceScreen
+        android:key="lock_screen_settings"
+        android:fragment="com.android.settings.cnd.LockscreenInterface"
+        android:title="@string/lock_screen_title" />
+
+    <PreferenceScreen
+        android:key="sound_settings"
+        android:fragment="com.android.settings.cnd.SoundSettings"
+        android:title="@string/sound_title" />
+
+    <PreferenceScreen
+        android:key="display_settings"
+        android:fragment="com.android.settings.cnd.DisplaySettings"
+        android:title="@string/display_title" />
+
+</PreferenceScreen>

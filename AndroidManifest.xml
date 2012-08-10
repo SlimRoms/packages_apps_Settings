@@ -55,6 +55,8 @@
     <uses-permission android:name="android.permission.MANAGE_USB" />
     <uses-permission android:name="android.permission.SET_POINTER_SPEED" />
     <uses-permission android:name="android.permission.SET_KEYBOARD_LAYOUT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
@@ -241,9 +243,9 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name="ApnSettings" android:label="@string/apn_settings"
+        <activity android:name="Settings$ApnSettingsActivity" android:label="@string/apn_settings"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:launchMode="singleTask"
+                  android:launchMode="singleTask" android:clearTaskOnLaunch="true"
                   android:parentActivityName="Settings$WirelessSettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -251,6 +253,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
             </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.ApnSettings" />
         </activity>
 
         <activity android:name="Settings$BluetoothSettingsActivity"
@@ -1015,9 +1019,9 @@
         <activity android:name=".deviceinfo.MiscFilesHandler"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"/>
 
-        <activity android:name="ApnEditor"
+        <activity android:name="Settings$ApnEditorActivity"
                 android:label="@string/apn_edit"
-                android:theme="@android:style/Theme.Holo.DialogWhenLarge">
+                android:clearTaskOnLaunch="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.EDIT" />
@@ -1030,6 +1034,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="vnd.android.cursor.dir/telephony-carrier" />
             </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.ApnEditor" />
         </activity>
 
         <activity android:name="MediaFormat" android:label="@string/media_format_title">
@@ -1064,6 +1070,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
                 <action android:name="com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
+                <category android:name="com.android.settings.SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -1205,7 +1212,7 @@
 
         <activity android:name="ActivityPicker"
                 android:label="@string/activity_picker_label"
-                android:theme="@*android:style/Theme.Dialog.Alert"
+                android:theme="@*android:style/Theme.Holo.Dialog.Alert"
                 android:finishOnCloseSystemDialogs="true">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
@@ -1432,6 +1439,69 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+        <!-- extra activities start -->
+
+        <activity android:name=".cnd.InterfaceSettings" />
+    
+        <activity android:name=".cnd.LightLevelsActivity" />
+
+        <activity android:name=".cnd.PowerWidget" />
+
+        <activity android:name=".cnd.QuietHours" />
+
+        <activity android:name=".cnd.TabletPowerWidget" />
+
+        <activity android:name=".cnd.ThemesSettings" />
+
+        <activity android:name=".cnd.PerformanceSettings" />
+
+        <activity android:name=".profiles.ProfilesSettings" />
+
+        <activity android:name=".profiles.ProfileConfig" />
+
+        <activity android:name=".profiles.AppGroupList" />
+
+        <activity android:name=".profiles.AppGroupConfig" />
+
+        <activity android:name=".profiles.ProfileGroupConfig" />
+
+        <activity android:name=".profiles.NFCProfileWriter" />
+
+        <activity android:name=".profiles.NFCProfileSelect" />
+
+        <activity android:name=".cnd.LockscreenTargets" />
+
+        <activity android:name=".cnd.LockscreenInterface" />
+
+        <activity android:name=".cnd.Weather" />
+
+        <activity android:name=".cnd.Calendar" />
+
+        <activity android:name=".cnd.MemoryManagement" />
+            
+        <activity android:name=".cnd.Processor" />
+        
+        <activity android:name=".cnd.Navbar" />
+
+        <activity android:name=".profiles.NFCProfile"
+                android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="cm/profile" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".notificationlight.NotificationLightSettings" />
+
+        <activity android:name=".notificationlight.BatteryLightSettings" />
+
+        <activity android:name=".tools.InitD" />
+
+        <activity android:name=".tools.VoltageControl" />
+
+        <!-- extra activities end -->
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -1461,6 +1531,14 @@
                 android:resource="@id/wireless_settings" />
         </activity>
 
+        <activity
+            android:label="@string/developer_tools_settings_title"
+            android:name=".cnd.DeveloperToolsSettings">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"
@@ -1476,6 +1554,12 @@
                 <action android:name="com.android.sync.SYNC_CONN_STATUS_CHANGED" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
+        </receiver>
+
+        <receiver android:name=".cnd.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
         </receiver>
 
     </application>

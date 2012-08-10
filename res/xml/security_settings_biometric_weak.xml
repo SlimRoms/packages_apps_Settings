@@ -27,6 +27,12 @@
             android:persistent="false"/>
 
         <PreferenceScreen
+            android:fragment="com.android.settings.OwnerInfoSettings"
+            android:key="owner_info_settings"
+            android:title="@string/owner_info_settings_title"
+            android:summary="@string/owner_info_settings_summary"/>
+
+        <PreferenceScreen
             android:key="biometric_weak_improve_matching"
             android:title="@string/biometric_weak_improve_matching_title"/>
 
@@ -55,11 +61,9 @@
             android:key="unlock_tactile_feedback"
             android:title="@string/lockpattern_settings_enable_tactile_feedback_title"/>
 
-        <PreferenceScreen
-            android:fragment="com.android.settings.OwnerInfoSettings"
-            android:key="owner_info_settings"
-            android:title="@string/owner_info_settings_title"
-            android:summary="@string/owner_info_settings_summary"/>
+        <CheckBoxPreference
+            android:key="lock_before_unlock"
+            android:title="@string/lockpattern_settings_enable_lock_before_unlock"/>
 
     </PreferenceCategory>
 

@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -46,10 +47,14 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     private SettingsDialogFragment mDialogFragment;
 
     private String mHelpUrl;
+    
+    protected boolean mTablet;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
+        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
 
         // Prepare help url and enable menu if necessary
         int helpResource = getHelpResource();

@@ -30,24 +30,33 @@ import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.os.BatteryManager;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceActivity.Header;
 import android.preference.PreferenceFrameLayout;
 import android.preference.PreferenceGroup;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TabWidget;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
 public class Utils {
+
+    private static final String TAG = "Utils";
 
     /**
      * Set the preference's title to the matching activity's label.
@@ -71,6 +80,14 @@ public class Utils {
      * to specify the summary text that should be displayed for the preference.
      */
     private static final String META_DATA_PREFERENCE_SUMMARY = "com.android.settings.summary";
+
+    // Device types
+    private static final int DEVICE_PHONE = 0;
+    private static final int DEVICE_HYBRID = 1;
+    private static final int DEVICE_TABLET = 2;
+
+    // Device type reference
+    private static int mDeviceType = -1;
 
     /**
      * Finds a matching activity for a preference's intent. If a matching
@@ -441,4 +458,74 @@ public class Utils {
             return R.string.tether_settings_title_bluetooth;
         }
     }
+
+    public static boolean fileExists(String filename) {
+        return new File(filename).exists();
+    }
+
+    public static String fileReadOneLine(String fname) {
+        BufferedReader br;
+        String line = null;
+
+        try {
+            br = new BufferedReader(new FileReader(fname), 512);
+            try {
+                line = br.readLine();
+            } finally {
+                br.close();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "IO Exception when reading /sys/ file", e);
+        }
+        return line;
+    }
+
+    public static boolean fileWriteOneLine(String fname, String value) {
+        try {
+            FileWriter fw = new FileWriter(fname);
+            try {
+                fw.write(value);
+            } finally {
+                fw.close();
+            }
+        } catch (IOException e) {
+            String Error = "Error writing to " + fname + ". Exception: ";
+            Log.e(TAG, Error, e);
+            return false;
+        }
+        return true;
+    }
+
+    private static int getScreenType(Context con) {
+        if (mDeviceType == -1) {
+            WindowManager wm = (WindowManager)con.getSystemService(Context.WINDOW_SERVICE);
+            android.view.Display display = wm.getDefaultDisplay();
+            int shortSize = Math.min(display.getRawHeight(), display.getRawWidth());
+            int shortSizeDp = shortSize * DisplayMetrics.DENSITY_DEFAULT / DisplayMetrics.DENSITY_DEVICE;
+            if (shortSizeDp < 600) {
+                // 0-599dp: "phone" UI with a separate status & navigation bar
+                mDeviceType =  DEVICE_PHONE;
+            } else if (shortSizeDp < 720) {
+                // 600-719dp: "phone" UI with modifications for larger screens
+                mDeviceType = DEVICE_HYBRID;
+            } else {
+                // 720dp: "tablet" UI with a single combined status & navigation bar
+                mDeviceType = DEVICE_TABLET;
+            }
+        }
+        return mDeviceType;
+    }
+
+    public static boolean isPhone(Context con) {
+        return getScreenType(con) == DEVICE_PHONE;
+    }
+
+    public static boolean isHybrid(Context con) {
+        return getScreenType(con) == DEVICE_HYBRID;
+    }
+
+    public static boolean isTablet(Context con) {
+        return getScreenType(con) == DEVICE_TABLET;
+    }
+
 }

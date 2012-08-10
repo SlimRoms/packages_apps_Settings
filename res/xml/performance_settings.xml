@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/performance_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:title="@string/tweaks_and_overclocking_title">
+
+        <PreferenceScreen
+            android:key="init_d"
+            android:fragment="com.android.settings.tools.InitD"
+            android:title="@string/start_up_tweaks"
+            android:summary="@string/ps_init_d" />
+
+        <PreferenceScreen
+            android:key="processor"
+            android:fragment="com.android.settings.cnd.Processor"
+            android:title="@string/processor_title"
+            android:summary="@string/processor_summary" />
+
+        <PreferenceScreen
+            android:key="volt_control"
+            android:title="@string/cpu_voltage"
+            android:summary="@string/cpu_voltage_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.tools.VoltageControl" />            
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="kernel_controls"
+            android:fragment="com.android.settings.cnd.KernelControls"
+            android:title="@string/kernel_controls_title"
+            android:summary="@string/kernel_controls_summary" />
+
+    </PreferenceCategory>
+
+	<PreferenceCategory 
+        android:title="@string/general_performance_title">
+        
+        <CheckBoxPreference
+            android:key="pref_disable_bootanimation"
+            android:title="@string/pref_disable_bootanimation_title"
+            android:summary="@string/pref_disable_bootanimation_summary" />
+        
+	</PreferenceCategory>
+
+	<PreferenceCategory 
+        android:title="@string/performance_settings_warning_header">
+
+        <PreferenceScreen
+            android:title="@string/performance_settings_warning_title"
+            android:summary="@string/performance_settings_warning" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

@@ -101,9 +101,14 @@
 
     <!-- Launcher -->
     <header
-        android:id="@+id/launcher_settings"
+        android:id="@+id/launcher_settings"	
         android:title="@string/launcher_settings_title"
-        android:icon="@drawable/ic_launcher_cna" />
+        android:icon="@drawable/ic_launcher_cna">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.cyanogenmod.trebuchet"
+            android:targetClass="com.cyanogenmod.trebuchet.preference.Preferences" />
+    </header>
 
     <!-- Developer tools -->
     <header

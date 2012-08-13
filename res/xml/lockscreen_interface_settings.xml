@@ -25,11 +25,6 @@
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values"/>
 
-    <CheckBoxPreference
-        android:key="lockscreen_vibrate"
-        android:title="@string/lockscreen_vibrate_enabled_title"	       
-        android:summary="@string/lockscreen_vibrate_enabled_head"/>
-
      <ListPreference
         android:key="lockscreen_battery_status"
         android:persistent="false"
@@ -61,5 +56,16 @@
         android:key="lockscreen_targets"
         android:summary="@string/lockscreen_target_summary"
         android:title="@string/lockscreen_target_title" />
+
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/additional_options_title">
+
+        <CheckBoxPreference
+            android:key="lockscreen_vibrate"
+            android:title="@string/lockscreen_vibrate_enabled_title"	       
+            android:summary="@string/lockscreen_vibrate_enabled_head"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

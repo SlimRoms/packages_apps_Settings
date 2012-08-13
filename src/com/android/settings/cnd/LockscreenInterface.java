@@ -54,9 +54,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
-    private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
 
-    private CheckBoxPreference mLockScreenTimeoutUserOverride;
     private CheckBoxPreference mVibratePref;
     private ListPreference mCustomBackground;
     private Preference mWeatherPref;
@@ -89,10 +87,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
         mVibratePref.setOnPreferenceChangeListener(this);
-
-        mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
-        mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
-                .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
 
         mIsScreenLarge = Utils.isTablet(getActivity());
 
@@ -277,11 +271,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 updateCustomBackgroundSummary();
                 break;
             }
-            return true;
-        } else if (preference == mLockScreenTimeoutUserOverride) {
-            Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mBatteryStatus) {
             int value = Integer.valueOf((String) objValue);

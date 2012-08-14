@@ -4999,6 +4999,10 @@
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
+    
+    <string name="brightness_control_cat">Brightness control</string>
+    <string name="status_bar_toggle_brightness_slider">Brightness slider</string>
+    <string name="status_bar_toggle_brightness_sliding_summary">Allows adjusting of brightness by sliding across the statusbar</string>
 
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

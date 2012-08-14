@@ -3,18 +3,6 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="notifications_cat"
-        android:title="@string/notifications_cat">
-
-         <CheckBoxPreference
-            android:key="status_bar_notif_count"
-            android:title="@string/status_bar_notif_count_title"
-            android:summary="@string/status_bar_notif_count_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="battery_icon_cat"
         android:title="@string/battery_icon_cat">
 
@@ -88,6 +76,24 @@
             android:entries="@array/clock_weekday_entries"
             android:entryValues="@array/clock_weekday_values" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/additional_options_title">
+        
+        <CheckBoxPreference 
+            android:key="status_bar_brightness_control"
+            android:title="@string/status_bar_toggle_brightness_slider"
+            android:summary="@string/status_bar_toggle_brightness_sliding_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            android:defaultValue="false" />
+        
     </PreferenceCategory>
 
 </PreferenceScreen>

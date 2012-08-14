@@ -212,12 +212,6 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
                 mMenuUnlock.setEnabled(false);
         }
 
-        //Disable the MenuUnlock setting if no menu button is available
-        if (getActivity().getApplicationContext().getResources()
-                .getBoolean(com.android.internal.R.bool.config_showNavigationBar)) {
-            mMenuUnlock.setEnabled(false);
-        }
-
         return root;
     }
 

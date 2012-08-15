@@ -110,13 +110,6 @@
             android:targetClass="com.cyanogenmod.trebuchet.preference.Preferences" />
     </header>
 
-    <!-- Developer tools -->
-    <header
-        android:id="@+id/developer_tools_settings"
-        android:fragment="com.android.settings.cnd.DeveloperToolsSettings"
-        android:icon="@drawable/ic_settings_developer_tools"
-        android:title="@string/developer_tools_settings_title" />
-
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 
@@ -166,7 +159,7 @@
     <header
         android:id="@+id/advanced_settings"
         android:title="@string/advanced_settings_title"
-        android:icon="@drawable/ic_settings_advanced">
+        android:icon="@drawable/ic_settings_developer_tools">
         <intent
             android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
             android:targetPackage="com.cyanogenmod.settings.device"

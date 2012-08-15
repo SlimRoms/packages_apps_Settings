@@ -4115,12 +4115,6 @@
     <string name="mod_version">Mod version</string>
     <string name="mod_version_default">Unknown</string>
 
-    <!-- Developer tools -->
-    <string name="developer_tools_settings_title">Info &amp; tools</string>
-    <string name="developments_settings_title">Dev tools</string>
-    <string name="spareparts_settings_title">Spare parts</string>
-    <string name="testing_settings_title">Testing menu</string>
-
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>
     <string name="quiet_hours_summary">Configure the hours the device should be quiet</string>
@@ -4808,7 +4802,7 @@
     <!-- Performance Settings | Warning dialog -->
     <string name="performance_settings_warning_header">Warning</string>
     <string name="performance_settings_warning_title">Proceed with Caution</string>
-    <string name="performance_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request you do not file bug reports if any of these settings have been changed from the defaults.</string>
+    <string name="performance_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_launcher">LAUNCHER</string>
@@ -4816,8 +4810,8 @@
     <!-- PropModder -->
     <string name="propmodder_title">PropModder</string>
     <string name="propmodder_switches">Switches</string>
-    <string name="buildprop_title">build.prop mods (reboot required)</string>
-    <string name="buildprop_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request you do not file bug reports if any of these settings have been changed from the defaults.</string>
+    <string name="buildprop_title">Reboot required</string>
+    <string name="buildprop_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures</string>
     <string name="nonprop_cat_title">Mods involving init.d script</string>
     <string name="pref_wifi_scan_interval_title">Wifi scan interval</string>
     <string name="pref_wifi_scan_interval_summary">The time between wifi scans when no stored access points are available</string>
@@ -4865,7 +4859,7 @@
     <string name="pref_gpu_summary">Enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
 
     <!--  About device screen, Hardware info -->
-    <string name="hardware_info">Hardware info</string>
+    <string name="hardware_info">Hardware information</string>
     <!--  About device Screen, hardware info, rear camera -->
     <string name="device_rear_camera">Rear camera</string>
     <!--  About device Screen, hardware info, front camera -->
@@ -5003,6 +4997,13 @@
     <string name="brightness_control_cat">Brightness control</string>
     <string name="status_bar_toggle_brightness_slider">Brightness slider</string>
     <string name="status_bar_toggle_brightness_sliding_summary">Allows adjusting of brightness by sliding across the statusbar</string>
+
+    <string name="build_properties_title">Build properties</string>
+    <string name="development_tools_title">Developer tools</string>
+
+    <string name="device_info_title">Device information</string>
+
+    <string name="developer_tools_and_info_title">Tools &amp; information</string>
 
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

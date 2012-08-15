@@ -17,33 +17,116 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/development_settings_title">
 
-    <PreferenceScreen
-            android:key="local_backup_password"
-            android:title="@string/local_backup_password_title"
-            android:summary="@string/local_backup_password_summary_none"
-            android:persistent="false" >
-        <intent
-                android:action="android.settings.privacy.SET_FULL_BACKUP_PASSWORD"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.SetFullBackupPassword" />
-    </PreferenceScreen>
+    <PreferenceCategory android:key="developer_tools_and_info"
+            android:title="@string/developer_tools_and_info_title">
 
-    <CheckBoxPreference
-        android:key="keep_screen_on"
-        android:title="@string/keep_screen_on"
-        android:summary="@string/keep_screen_on_summary"/>
+        <PreferenceScreen
+                android:key="development_tools"
+                android:title="@string/development_tools_title"
+                android:persistent="false" >
+            <intent
+                    android:action="android.settings.development.LAUNCH_TOOLS"
+                    android:targetPackage="com.android.development"
+                    android:targetClass="com.android.development.Development" />
+        </PreferenceScreen>
 
-    <ListPreference
-        android:key="hdcp_checking"
-        android:title="@string/hdcp_checking_title"
-        android:dialogTitle="@string/hdcp_checking_dialog_title"
-        android:entries="@array/hdcp_checking_titles"
-        android:entryValues="@array/hdcp_checking_values" />
+        <PreferenceScreen
+                android:key="testing_menu"
+                android:title="@string/device_info_title"
+                android:persistent="false" >
+            <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.spare_parts"
+                    android:targetClass="com.android.spare_parts.SpareParts" />
+        </PreferenceScreen>
 
-    <CheckBoxPreference
-        android:key="enforce_read_external"
-        android:title="@string/enforce_read_external_title"
-        android:summary="@string/enforce_read_external_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="general_category"
+            android:title="@string/buildprop_title">
+        
+        <ListPreference android:key="pref_lcd_density"
+            android:dialogTitle="@string/pref_lcd_density_title"
+            android:title="@string/pref_lcd_density_title"
+            android:summary="@string/pref_lcd_density_summary"
+            android:entries="@array/entries_lcd_density"
+            android:entryValues="@array/entries_lcd_density"
+            android:persistent="true" />
+        
+        <ListPreference android:key="pref_wifi_scan_interval"
+            android:dialogTitle="@string/pref_wifi_scan_interval_title"
+            android:title="@string/pref_wifi_scan_interval_title"
+            android:summary="@string/pref_wifi_scan_interval_summary"
+            android:entries="@array/entries_wifi_scan"
+            android:entryValues="@array/entries_wifi_scan"
+            android:persistent="true" />
+        
+        <ListPreference android:key="pref_sleep"
+            android:dialogTitle="@string/pref_sleep_title"
+            android:title="@string/pref_sleep_title"
+            android:summary="@string/pref_sleep_summary"
+            android:entries="@array/entries_sleep_explain"
+            android:entryValues="@array/entries_sleep"
+            android:persistent="true" />
+        
+        <ListPreference android:key="pref_vm_heapsize"
+            android:dialogTitle="@string/pref_vm_heapsize_title"
+            android:title="@string/pref_vm_heapsize_title"
+            android:summary="@string/pref_vm_heapsize_summary"
+            android:entries="@array/entries_vm_heapsize"
+            android:entryValues="@array/entries_vm_heapsize"
+            android:persistent="true" />
+        
+        <ListPreference android:key="pref_ring_delay"
+            android:dialogTitle="@string/pref_ring_delay_title"
+            android:title="@string/pref_ring_delay_title"
+            android:summary="@string/pref_ring_delay_summary"
+            android:entries="@array/entries_ring_delay"
+            android:entryValues="@array/entries_ring_delay"
+            android:persistent="true" />
+        
+        <ListPreference android:key="pref_fast_up"
+            android:dialogTitle="@string/pref_fast_up_title"
+            android:title="@string/pref_fast_up_title"
+            android:summary="@string/pref_fast_up_summary"
+            android:entries="@array/entries_fast_up_explain"
+            android:entryValues="@array/entries_fast_up"
+            android:persistent="true" />
+        
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="debug_debugging_category"
+            android:title="@string/debug_debugging_category">
+
+        <PreferenceScreen
+                android:key="local_backup_password"
+                android:title="@string/local_backup_password_title"
+                android:summary="@string/local_backup_password_summary_none"
+                android:persistent="false" >
+            <intent
+                    android:action="android.settings.privacy.SET_FULL_BACKUP_PASSWORD"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.SetFullBackupPassword" />
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+            android:key="keep_screen_on"
+            android:title="@string/keep_screen_on"
+            android:summary="@string/keep_screen_on_summary"/>
+
+        <ListPreference
+            android:key="hdcp_checking"
+            android:title="@string/hdcp_checking_title"
+            android:dialogTitle="@string/hdcp_checking_dialog_title"
+            android:entries="@array/hdcp_checking_titles"
+            android:entryValues="@array/hdcp_checking_values" />
+
+        <CheckBoxPreference
+            android:key="enforce_read_external"
+            android:title="@string/enforce_read_external_title"
+            android:summary="@string/enforce_read_external_summary" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">

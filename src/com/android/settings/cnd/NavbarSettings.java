@@ -55,6 +55,7 @@ import android.widget.Toast;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.util.Helpers;
 import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.widgets.NavBarItemPreference;
 import com.android.settings.widgets.SeekBarPreference;
@@ -78,7 +79,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
-    private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
 
     public static final String PREFS_NAV_BAR = "navbar";
@@ -237,8 +237,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-              showDialog(DIALOG_NAVBAR_ENABLE);
-             return true;
+            Helpers.restartSystemUI();
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -358,66 +358,37 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    public void toggleBar() {
-        boolean isBarOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, 1) == 1;
-        Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, isBarOn ? 0 : 1);
-        Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, isBarOn ? 1 : 0);
-    }
-
     @Override
     public Dialog onCreateDialog(int dialogId) {
-        LayoutInflater factory = LayoutInflater.from(getActivity().getApplicationContext());
-
-        switch (dialogId) {
-            case DIALOG_NAVBAR_ENABLE:
-                final View textEntryView = factory.inflate(
-                        R.layout.alert_dialog_text_entry, null);
-                return new AlertDialog.Builder(getActivity())
-                    .setTitle(getResources().getString(R.string.navbar_enable_dialog_title))
-                    .setMessage(getResources().getString(R.string.navbar_enable_dialog_msg))
-                    .setCancelable(false)
-                    .setPositiveButton(
-                            getResources().getString(R.string.navbar_enable_dialog_Positive),
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    PowerManager pm = (PowerManager) getActivity()
-                                            .getSystemService(Context.POWER_SERVICE);
-                                    pm.reboot("New navbar");
-                            }
-                        })
-                    .setNegativeButton(
-                            getResources().getString(R.string.navbar_enable_dialog_negative), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-
-                                dialog.dismiss();
-                            }
-                        }).create();
+         switch (dialogId) {
             case DIALOG_NAVBAR_HEIGHT_REBOOT:
                 return new AlertDialog.Builder(getActivity())
                         .setTitle(getResources().getString(R.string.navbar_height_dialog_title))
                         .setMessage(
                                 getResources().getString(R.string.navbar_height_dialog_summary))
                         .setCancelable(false)
-                        .setNeutralButton(getResources().getString(R.string.navbar_height_dialog_button_later), new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .setPositiveButton(getResources().getString(R.string.navbar_height_dialog_button_reboot), new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                PowerManager pm = (PowerManager) getActivity()
-                                        .getSystemService(Context.POWER_SERVICE);
-                                pm.reboot("Rebooting with new bar height");
-                            }
-                        })
+                        .setNeutralButton(
+                                getResources()
+                                        .getString(R.string.navbar_height_dialog_button_later),
+                                new DialogInterface.OnClickListener() {
+            
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                        .setPositiveButton(
+                            getResources().getString(
+                                        R.string.navbar_height_dialog_button_reboot),
+                                new DialogInterface.OnClickListener() {
+            
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        PowerManager pm = (PowerManager) getActivity()
+                                            .getSystemService(Context.POWER_SERVICE);
+                                        pm.reboot("Rebooting with new bar height");
+                                    }
+                                })
                         .create();
         }
         return null;

@@ -19,15 +19,23 @@
     android:title="@string/display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:key="notification_pulse"
-        android:title="@string/notification_pulse_title"
-        android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
+    <PreferenceCategory
+        android:key="category_rotation_options"
+        android:title="@string/display_category_rotation_options_title"/>
 
     <PreferenceScreen
         android:key="display_rotation"
         android:fragment="com.android.settings.cnd.DisplayRotation"
         android:title="@string/display_rotation_title" />
+
+    <PreferenceCategory
+        android:key="category_light_options"
+        android:title="@string/display_category_light_options_title"/>
+
+    <PreferenceScreen
+        android:key="notification_pulse"
+        android:title="@string/notification_pulse_title"
+        android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
 
     <PreferenceScreen
         android:key="backlight_widget"

@@ -5012,5 +5012,8 @@
 
     <string name="developer_tools_and_info_title">Tools &amp; information</string>
 
+    <string name="display_category_rotation_options_title">Rotation options</string>
+    <string name="display_category_light_options_title">Light options</string>
+
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

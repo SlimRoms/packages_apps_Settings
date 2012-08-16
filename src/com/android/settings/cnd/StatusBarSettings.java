@@ -46,6 +46,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     ListPreference mClockStyle;
     ListPreference mClockAmPmstyle;
     ListPreference mClockWeekday;
+    ColorPickerPreference mColorPicker;
     CheckBoxPreference mStatusBarBrightnessControl;
 
     @Override
@@ -207,7 +208,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
            preference.setSummary(hex);
            
            int intHex = ColorPickerPreference.convertToColorInt(hex);
-           result = Settings.System.putInt(getActivity().getContentResolver(),
+           Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
 
         } else if (preference == mBatteryBarColor) {

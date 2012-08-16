@@ -4723,6 +4723,7 @@
     <string name="title_clock_ampm_entries">AM/PM style</string>
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="clock_color_title">Clock color</string>
 
     <string name="advanced_settings_title">Advanced</string>
     

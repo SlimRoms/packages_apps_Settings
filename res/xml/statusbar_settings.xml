@@ -76,6 +76,11 @@
             android:entries="@array/clock_weekday_entries"
             android:entryValues="@array/clock_weekday_values" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="clock_color"
+            android:title="@string/clock_color_title"
+            android:defaultValue="@android:color/holo_blue_light" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -32,6 +32,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
+    private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
     CheckBoxPreference mStatusBarNotifCount;
@@ -118,6 +119,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
                 0)));
         
+        mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
+        mColorPicker.setOnPreferenceChangeListener(this);
+        
         mStatusBarBrightnessControl = (CheckBoxPreference) findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(
                 getActivity().getContentResolver(),
@@ -196,6 +200,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
+
+       } else if (preference == mColorPicker) {
+           String hex = ColorPickerPreference.convertToARGB(Integer
+                    .valueOf(String.valueOf(newValue)));
+           preference.setSummary(hex);
+           
+           int intHex = ColorPickerPreference.convertToColorInt(hex);
+           result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
 
         } else if (preference == mBatteryBarColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer

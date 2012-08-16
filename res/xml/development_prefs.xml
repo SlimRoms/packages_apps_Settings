@@ -95,8 +95,8 @@
         
     </PreferenceCategory>
 
-    <PreferenceCategory android:key="debug_debugging_category"
-            android:title="@string/debug_debugging_category">
+    <PreferenceCategory android:key="debug_misc_category"
+            android:title="@string/debug_misc_category">
 
         <PreferenceScreen
                 android:key="local_backup_password"

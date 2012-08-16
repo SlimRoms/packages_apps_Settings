@@ -5007,8 +5007,8 @@
 
     <string name="build_properties_title">Build properties</string>
     <string name="development_tools_title">Developer tools</string>
-
     <string name="device_info_title">Device information</string>
+    <string name="debug_misc_category">Misc</string>
 
     <string name="developer_tools_and_info_title">Tools &amp; information</string>
 

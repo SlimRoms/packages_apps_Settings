@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
+
+        <Preference
+            android:key="notification_wallpaper"
+            android:title="@string/notification_wallpaper_title"
+            android:summary="@string/notification_wallpaper_summary" />
+
+        <Preference
+            android:key="notification_wallpaper_alpha"
+            android:title="@string/notif_wallpaper_alpha_title" />
+
+        <Preference
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

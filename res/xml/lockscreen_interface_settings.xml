@@ -17,50 +17,62 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_settings_title" >
 
-     <ListPreference
-        android:key="lockscreen_background"
-        android:persistent="false"
-        android:dialogTitle="@string/lockscreen_custom_background_title"
-        android:title="@string/lockscreen_custom_background_title"
-        android:entries="@array/lockscreen_background_entries"
-        android:entryValues="@array/lockscreen_background_values"/>
+    <PreferenceCategory
+        android:key="lockscreen_style_options"
+        android:title="@string/lockscreen_style_options_title">
+        
+        <ListPreference
+            android:key="lockscreen_background"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_custom_background_title"
+            android:title="@string/lockscreen_custom_background_title"
+            android:entries="@array/lockscreen_background_entries"
+            android:entryValues="@array/lockscreen_background_values"/>
+        
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_text_color"
+            android:title="@string/lockscreen_text_color_title"
+            android:defaultValue="#ffffffff" />
+        
+    </PreferenceCategory>
 
-     <ListPreference
-        android:key="lockscreen_battery_status"
-        android:persistent="false"
-        android:dialogTitle="@string/lockscreen_battery_status_title"
-        android:title="@string/lockscreen_battery_status_title"
-        android:entries="@array/lockscreen_battery_status_entries"
-        android:entryValues="@array/lockscreen_battery_status_values"/>
+    <PreferenceCategory
+        android:key="lockscreen_interface_options"
+        android:title="@string/lockscreen_interface_options_title">
 
-     <Preference
-        android:fragment="com.android.settings.cnd.Weather"
-        android:key="lockscreen_weather"
-        android:summary="@string/lockscreen_weather_summary"
-        android:title="@string/lockscreen_weather_title" />
+        <ListPreference
+            android:key="lockscreen_battery_status"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_battery_status_title"
+            android:title="@string/lockscreen_battery_status_title"
+            android:entries="@array/lockscreen_battery_status_entries"
+            android:entryValues="@array/lockscreen_battery_status_values"/>
 
-     <Preference
-        android:fragment="com.android.settings.cnd.Calendar"
-        android:key="lockscreen_calendar"
-        android:summary="@string/lockscreen_calendar_summary"
-        android:title="@string/lockscreen_calendar_title" />
+        <Preference
+            android:fragment="com.android.settings.cnd.Weather"
+            android:key="lockscreen_weather"
+            android:summary="@string/lockscreen_weather_summary"
+            android:title="@string/lockscreen_weather_title" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="lockscreen_text_color"
-        android:title="@string/lockscreen_text_color_title"
-        android:defaultValue="#ffffffff" />
+        <Preference
+            android:fragment="com.android.settings.cnd.Calendar"
+            android:key="lockscreen_calendar"
+            android:summary="@string/lockscreen_calendar_summary"
+            android:title="@string/lockscreen_calendar_title" />
 
-    <PreferenceScreen
-        android:key="screen_security"
-        android:fragment="com.android.settings.cnd.ScreenSecurity"
-        android:title="@string/screen_security_category"
-        android:summary="@string/screen_security_summary" />
+        <PreferenceScreen
+            android:key="screen_security"
+            android:fragment="com.android.settings.cnd.ScreenSecurity"
+            android:title="@string/screen_security_category"
+            android:summary="@string/screen_security_summary" />
 
-     <Preference
-        android:fragment="com.android.settings.cnd.LockscreenTargets"
-        android:key="lockscreen_targets"
-        android:summary="@string/lockscreen_target_summary"
-        android:title="@string/lockscreen_target_title" />
+        <Preference
+            android:fragment="com.android.settings.cnd.LockscreenTargets"
+            android:key="lockscreen_targets"
+            android:summary="@string/lockscreen_target_summary"
+            android:title="@string/lockscreen_target_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="additional_options"

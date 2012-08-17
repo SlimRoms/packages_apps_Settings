@@ -1485,6 +1485,8 @@
         
         <activity android:name=".cnd.Navbar" />
 
+        <activity android:name=".cnd.About" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>

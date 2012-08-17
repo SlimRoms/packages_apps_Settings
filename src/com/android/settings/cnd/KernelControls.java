@@ -51,19 +51,11 @@ public class KernelControls extends SettingsPreferenceFragment implements
 
     private static final String PREF_USB_FAST_CHARGE = "usb_fast_charge";
 
-    private static final String PREF_E_TOUCH_WAKE_ENABLE = "E_touch_wake_enable";
-
-    private static final String PREF_E_SOUNDCONTROL_HIGHPERF = "E_sound_control_highperf";
-
     private ListPreference mzRAM;
 
     private CheckBoxPreference mKSMPref;
 
     private CheckBoxPreference mUSBFastCharge;
-
-    private CheckBoxPreference mETouchWakeEnable;
-
-    private CheckBoxPreference mESoundControlHighPerf;
 
     private int swapAvailable = -1;
 
@@ -80,8 +72,6 @@ public class KernelControls extends SettingsPreferenceFragment implements
             mzRAM = (ListPreference) prefSet.findPreference(ZRAM_PREF);
             mKSMPref = (CheckBoxPreference) prefSet.findPreference(KSM_PREF);
             mUSBFastCharge = (CheckBoxPreference) findPreference(PREF_USB_FAST_CHARGE);
-            mETouchWakeEnable = (CheckBoxPreference) findPreference(PREF_E_TOUCH_WAKE_ENABLE);
-            mESoundControlHighPerf = (CheckBoxPreference) findPreference(PREF_E_SOUNDCONTROL_HIGHPERF);
 
             if (isSwapAvailable()) {
                 if (SystemProperties.get(ZRAM_PERSIST_PROP) == "1")
@@ -112,32 +102,6 @@ public class KernelControls extends SettingsPreferenceFragment implements
                 break;
 
         }
-
-        boolean esound = false;
-        if (Helpers.isESoundControl() == 1) esound = true;
-        mESoundControlHighPerf.setChecked(esound);
-        int esoundOnOff = Helpers.isESoundControl();
-        switch (esoundOnOff) {
-            case 0:
-                mESoundControlHighPerf.setSummary("High performance audio off");
-                break;
-            case 1:
-                mESoundControlHighPerf.setSummary("High performance audio on");
-                break;
-        }
-
-        boolean etouch = false;
-        if (Helpers.isETouchWake() == 1) etouch = true;
-        mETouchWakeEnable.setChecked(etouch);
-        int etouchOnOff = Helpers.isETouchWake();
-        switch (etouchOnOff) {
-            case 0:
-                mETouchWakeEnable.setSummary("Touch Wake is disabled");
-                break;
-            case 1:
-                mETouchWakeEnable.setSummary("Touch Wake is enabled");
-                break;
-        }
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
@@ -155,28 +119,6 @@ public class KernelControls extends SettingsPreferenceFragment implements
                 new CMDProcessor().su.runWaitFor(String.format(formatter, 0));
                 mUSBFastCharge.setSummary("OFF: USB is in normal MTS mode");
             }
-        } else if (preference == mETouchWakeEnable) {
-            boolean checked = mETouchWakeEnable.isChecked();
-            String formatter = "echo %d > /sys/class/misc/touchwake/enabled";
-            if (checked) {
-                new CMDProcessor().su.runWaitFor(String.format(formatter, 1));
-                mETouchWakeEnable.setSummary("ON: TouchWake is Enabled");
-            } else {
-                new CMDProcessor().su.runWaitFor(String.format(formatter, 0));
-                mETouchWakeEnable.setSummary("OFF: TouchWake is Disabled");
-            }
-        } else if (preference == mESoundControlHighPerf) {
-            boolean checked = mESoundControlHighPerf.isChecked();
-            String formatter = "echo %d > /sys/class/mis/soundcontrol/highpref_enabled";
-            if (checked) {
-                new CMDProcessor().su.runWaitFor(String.format(formatter, 1));
-                mESoundControlHighPerf.setSummary("ON: High Performance audio mode is on ");
-            } else {
-                new CMDProcessor().su.runWaitFor(String.format(formatter, 0));
-                mESoundControlHighPerf.setSummary("OFF:High Performance audio mode is off ");
-            }
-
-        }
         return false;
     }
 

@@ -20,19 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/ezekeel_title" >
-
-        <CheckBoxPreference
-            android:key="E_touch_wake_enable"
-            android:title="@string/E_touch_wake_enable_title" />
-
-        <CheckBoxPreference
-            android:key="E_sound_control_highperf"
-            android:title="@string/E_sound_control_highpref_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/fast_charge_title" >
 
         <CheckBoxPreference

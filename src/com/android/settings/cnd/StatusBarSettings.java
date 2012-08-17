@@ -137,7 +137,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         } catch (SettingNotFoundException e) {
         }
 
-        if (Utils.isTablet(getActivity())) {
+        if (mTablet) {
             getPreferenceScreen().removePreference(mStatusBarBrightnessControl);
         }
     }

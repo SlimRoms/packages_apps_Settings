@@ -50,6 +50,11 @@
         android:title="@string/nav_bar" />
 
     <PreferenceScreen
+        android:key="navring_settings"
+        android:fragment="com.android.settings.eos.NavRingActions"
+        android:title="@string/interface_navring_settings" />
+
+    <PreferenceScreen
         android:key="hardware_keys"
         android:fragment="com.android.settings.cnd.HardwareKeys"
         android:title="@string/hardware_keys_title" />

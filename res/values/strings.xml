@@ -5064,5 +5064,24 @@
     <string name="interface_navbar_color_title">Set Color</string>
     <string name="interface_navbar_restore_stock_color">Restore stock color</string>
 
+    <string name="interface_softkey_settings">Softkey Settings</string>
+    <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
+    <string name="interface_softkeys_pref_default_summary">Tap to select a custom long press activity</string>
+    <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
+    <string name="interface_softkeys_reboot_title">Reboot Menu</string>
+    <string name="interface_softkeys_screenshot_title">Screenshot</string>
+    <string name="interface_softkeys_screenoff_title">Screen Off</string>
+    <string name="interface_softkeys_kill_process_title">Kill App</string>
+    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
+
+    <string name="interface_navring_settings">Navigation bar ring</string>
+    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
+    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
+    <string name="interface_navring_1">Ring Target 1</string>
+    <string name="interface_navring_2">Ring Target 2</string>
+    <string name="interface_navring_3">Ring Target 3</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Ring Targets</string>
+
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

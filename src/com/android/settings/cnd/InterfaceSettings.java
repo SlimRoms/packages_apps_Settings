@@ -39,6 +39,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_DRAWER = "notification_drawer";
     private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
+    private static final String KEY_NAVIGATION_BAR_RING = "navring_settings";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 
     private PreferenceScreen mPhoneDrawer;
@@ -73,8 +74,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         try {
             if (!windowManager.hasNavigationBar()) {
                 Preference naviBar = findPreference(KEY_NAVIGATION_BAR);
+                Preference naviBarRing = findPreference(KEY_NAVIGATION_BAR_RING);
                 if (naviBar != null) {
                     getPreferenceScreen().removePreference(naviBar);
+                    getPreferenceScreen().removePreference(naviBarRing);
                 }
             } else {
                 Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);

@@ -5026,5 +5026,7 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="misc_short">Misc</string>
 
+    <string name="lockscreen_text_color_title">Lockscreen text color</string>
+
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

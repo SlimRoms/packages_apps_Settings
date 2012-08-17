@@ -45,6 +45,11 @@
         android:summary="@string/lockscreen_calendar_summary"
         android:title="@string/lockscreen_calendar_title" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_text_color"
+        android:title="@string/lockscreen_text_color_title"
+        android:defaultValue="#ffffffff" />
+
     <PreferenceScreen
         android:key="screen_security"
         android:fragment="com.android.settings.cnd.ScreenSecurity"

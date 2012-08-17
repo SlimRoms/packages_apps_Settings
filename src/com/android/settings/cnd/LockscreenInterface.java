@@ -36,6 +36,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Display;
 import android.view.Window;
 import android.widget.Toast;
@@ -45,13 +46,17 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.notificationlight.ColorPickerView;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class LockscreenInterface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
+    private static final boolean DEBUG = true;
     private static final int LOCKSCREEN_BACKGROUND = 1024;
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
+    private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
 
@@ -59,6 +64,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private ListPreference mCustomBackground;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
+    private ColorPickerPreference mLockscreenTextColor;
     private ListPreference mBatteryStatus;
     private Activity mActivity;
     ContentResolver mResolver;
@@ -84,6 +90,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
+        
+        mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
+        mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
         mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
         boolean bVibrate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -192,6 +201,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        boolean handled = false;
         if (preference == mCustomBackground) {
             int indexOf = mCustomBackground.findIndexOfValue(objValue.toString());
             switch (indexOf) {
@@ -290,6 +300,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_VIBRATE_ENABLED, value);
+            return true;
+        } else if (preference == mLockscreenTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
+            if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
             return true;
         }
         return false;

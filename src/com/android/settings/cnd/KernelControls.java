@@ -119,6 +119,7 @@ public class KernelControls extends SettingsPreferenceFragment implements
                 new CMDProcessor().su.runWaitFor(String.format(formatter, 0));
                 mUSBFastCharge.setSummary("OFF: USB is in normal MTS mode");
             }
+        }
         return false;
     }
 

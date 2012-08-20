@@ -47,6 +47,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -54,9 +55,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_270 = "270";
     private static final String ROTATION_ANGLE_DELIM = ", ";
     private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
+    private static final String LOCKSCREEN_ROTATION_MODE = "Lock screen";
 
     private CheckBoxPreference mVolumeWake;
     private PreferenceScreen mDisplayRotationPreference;
+    private CheckBoxPreference mLockScreenRotation;
 
     private ContentObserver mAccelerometerRotationObserver = 
             new ContentObserver(new Handler()) {
@@ -76,6 +79,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.display_settings_rom);
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
+        mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
 
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
@@ -93,10 +97,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         PreferenceScreen preference = mDisplayRotationPreference;
         StringBuilder summary = new StringBuilder();
         Boolean rotationEnabled = Settings.System.getInt(getContentResolver(),
-            Settings.System.ACCELEROMETER_ROTATION, 0) != 0;
+                Settings.System.ACCELEROMETER_ROTATION, 0) != 0;
+        Boolean lockScreenRotationEnabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_ROTATION, 0) != 0;
         int mode = Settings.System.getInt(getContentResolver(),
             Settings.System.ACCELEROMETER_ROTATION_ANGLES,
             DisplayRotation.ROTATION_0_MODE|DisplayRotation.ROTATION_90_MODE|DisplayRotation.ROTATION_270_MODE);
+        if (mLockScreenRotation != null) {
+            if (!getResources().getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation)) {
+                getPreferenceScreen().removePreference(mLockScreenRotation);
+            } else {
+                mLockScreenRotation.setChecked(Settings.System.getInt(getContentResolver(),
+                        Settings.System.LOCKSCREEN_ROTATION, 0) != 1);
+            }
+        }
 
         if (!rotationEnabled) {
             summary.append(getString(R.string.display_rotation_disabled));
@@ -104,6 +118,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             ArrayList<String> rotationList = new ArrayList<String>();
             String delim = "";
             summary.append(getString(R.string.display_rotation_enabled) + " ");
+            if (lockScreenRotationEnabled) {
+	                rotationList.add(LOCKSCREEN_ROTATION_MODE);
+            }
             if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
                 rotationList.add(ROTATION_ANGLE_0);
             }
@@ -152,6 +169,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mVolumeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);	
+            return true;
+        } else if (preference == mLockScreenRotation) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_ROTATION,
+                    mLockScreenRotation.isChecked() ? 1 : 0);
+            updateDisplayRotationPreferenceDescription();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

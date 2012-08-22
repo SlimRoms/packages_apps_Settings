@@ -56,12 +56,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
+    public static final String KEY_WIDGETS_PREF = "lockscreen_widgets";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
 
     private CheckBoxPreference mVibratePref;
     private ListPreference mCustomBackground;
+    private ListPreference mWidgetsAlignment;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private ColorPickerPreference mLockscreenTextColor;
@@ -87,6 +89,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mCustomBackground.setOnPreferenceChangeListener(this);
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
+
+        mWidgetsAlignment = (ListPreference) findPreference(KEY_WIDGETS_PREF);
+        mWidgetsAlignment.setOnPreferenceChangeListener(this);
+        mWidgetsAlignment.setValue(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT,
+                0) + "");
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
@@ -308,6 +316,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                                     Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
             if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
+            return true;
+        } else if (preference == mWidgetsAlignment) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                                    Settings.System.LOCKSCREEN_LAYOUT, value);
             return true;
         }
         return false;

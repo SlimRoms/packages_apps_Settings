@@ -28,6 +28,14 @@
             android:title="@string/lockscreen_custom_background_title"
             android:entries="@array/lockscreen_background_entries"
             android:entryValues="@array/lockscreen_background_values"/>
+
+        <ListPreference
+            android:key="lockscreen_widgets"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_widgets_title"
+            android:title="@string/lockscreen_widgets_title"
+            android:entries="@array/lockscreen_widgets_entries"
+            android:entryValues="@array/lockscreen_widgets_values"/>
         
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_text_color"

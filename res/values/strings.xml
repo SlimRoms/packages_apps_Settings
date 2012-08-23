@@ -4420,9 +4420,9 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen widgets -->
-    <string name="lockscreen_widgets_title">Widget alignment</string>
-    <string name="lockscreen_widgets_dialog_title">Widget alignment</string>
-    <string name="lockscreen_widgets_result_successful">Widgets aligned</string>
+    <string name="lockscreen_widgets_title">Targets/Layout</string>
+    <string name="lockscreen_widgets_dialog_title">Targets/Layout</string>
+    <string name="lockscreen_widgets_summary">Veiw or change the number of configurable lockscreen targets and lockscreen widgets alignment</string>
 
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">Battery status</string>

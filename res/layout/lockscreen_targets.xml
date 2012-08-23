@@ -16,11 +16,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/lockscreen_target_info" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.4" />
-
     <com.android.internal.widget.multiwaveview.GlowPadView
         android:id="@+id/lock_target"
         android:layout_width="match_parent"

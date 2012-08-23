@@ -35,7 +35,8 @@
             android:dialogTitle="@string/lockscreen_widgets_title"
             android:title="@string/lockscreen_widgets_title"
             android:entries="@array/lockscreen_widgets_entries"
-            android:entryValues="@array/lockscreen_widgets_values"/>
+            android:entryValues="@array/lockscreen_widgets_values"
+            android:summary="@string/lockscreen_widgets_summary" />
         
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_text_color"

@@ -69,7 +69,6 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     private ShortcutPickHelper mPicker;
     private IconPicker mIconPicker;
     private ArrayList<TargetInfo> mTargetStore = new ArrayList<TargetInfo>();
-    private int mTargetOffset;
     private int mTargetInset;
     private boolean mIsLandscape;
     private boolean mIsScreenLarge;
@@ -109,7 +108,6 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
         mIsScreenLarge = !Utils.isPhone(mActivity);
         mResources = getResources();
         mIsLandscape = mResources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-        mTargetOffset = mIsLandscape && !mIsScreenLarge ? 2 : 0;
         mTargetInset = mResources.getDimensionPixelSize(com.android.internal.R.dimen.lockscreen_target_inset);
         mIconPicker = new IconPicker(mActivity, this);
         mPicker = new ShortcutPickHelper(mActivity, this);
@@ -163,7 +161,6 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
             input = GlowPadView.DEFAULT_TARGETS;
         }
         mTargetStore.clear();
-        final int maxTargets = GlowPadView.MAX_TABLET_TARGETS;
         final PackageManager packMan = mActivity.getPackageManager();
         final Drawable activeBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_target_activated);
         final String[] targetStore = input.split("\\|");
@@ -173,7 +170,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
         Drawable unlockFront = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_normal);
         Drawable unlockBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_activated);
         mTargetStore.add(new TargetInfo(getLayeredDrawable(unlockBack, unlockFront, 0, true)));
-        for (int cc = 0; cc < 8 - mTargetOffset - 1; cc++) {
+        for (int cc = 0; cc < 7; cc++) {
             String uri = GlowPadView.EMPTY_TARGET;
             Drawable front = null;
             Drawable back = activeBack;
@@ -181,7 +178,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
             String iconType = null;
             String iconSource = null;
             int tmpInset = mTargetInset;
-            if (cc < targetStore.length && cc < maxTargets) {
+            if (cc < targetStore.length && cc < 7) {
                 uri = targetStore[cc];
                 if (!uri.equals(GlowPadView.EMPTY_TARGET)) {
                     try {
@@ -233,7 +230,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
                     } catch (Exception e) {
                     }
                 }
-            } else if (cc >= maxTargets) {
+            } else if (cc >= 7) {
                 mTargetStore.add(new TargetInfo(null));
                 continue;
             }
@@ -320,8 +317,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     private void saveAll() {
         StringBuilder targetLayout = new StringBuilder();
         ArrayList<String> existingImages = new ArrayList<String>();
-        final int maxTargets = GlowPadView.MAX_TABLET_TARGETS;
-        for (int i = mTargetOffset + 1; i <= mTargetOffset + maxTargets; i++) {
+        for (int i = 1; i <= 7; i++) {
             String uri = mTargetStore.get(i).uri;
             String type = mTargetStore.get(i).iconType;
             String source = mTargetStore.get(i).iconSource;

@@ -4821,6 +4821,17 @@
     <string name="performance_settings_warning_title">Proceed with Caution</string>
     <string name="performance_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.</string>
 
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">I/O scheduler</string>
+    <!-- Performance Settings : I/O scheduler settings summary. -->
+    <string name="io_scheds_summary">Change I/O scheduler</string>
+    
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">I/O scheduler</string>
+    <string name="io_sched_summary">%S</string>
+    <string name="io_sched_set_on_boot">Set on boot</string>
+    <string name="io_sched_set_on_boot_summary">Restore the I/O scheduler settings on boot</string>
+
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_launcher">LAUNCHER</string>
 

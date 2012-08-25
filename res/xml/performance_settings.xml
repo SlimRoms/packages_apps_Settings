@@ -20,6 +20,12 @@
             android:summary="@string/processor_summary" />
 
         <PreferenceScreen
+            android:key="ioscheduler"
+            android:fragment="com.android.settings.cnd.IOScheduler"
+            android:title="@string/io_scheds_title"
+            android:summary="@string/io_scheds_summary" />
+
+        <PreferenceScreen
             android:key="volt_control"
             android:title="@string/cpu_voltage"
             android:summary="@string/cpu_voltage_summary" >

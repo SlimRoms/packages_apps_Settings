@@ -5054,5 +5054,9 @@
     <string name="about_cna_summary">@null</string>
     <string name="donate_cna">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JN6B9PY4V2388</string>
 
+    <string name="interface_navbar_appearance">Navigation Bar Appearance</string>
+    <string name="interface_navbar_color_title">Set Color</string>
+    <string name="interface_navbar_restore_stock_color">Restore stock color</string>
+
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

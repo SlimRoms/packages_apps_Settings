@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory
+            android:key="navbar_appearance"
+            android:title="@string/interface_navbar_appearance" >
+        <com.android.settings.cnd.ColorPreference
+            android:key="interface_navbar_color"
+            android:title="@string/interface_navbar_color_title" />
+        
+        <Preference
+            android:key="interface_navbar_color_default"
+            android:title="@string/interface_navbar_restore_stock_color" />
+    </PreferenceCategory>
+    
         <CheckBoxPreference
                 android:key="enable_nav_bar"
                 android:title="@string/navbar_enable_bar" />

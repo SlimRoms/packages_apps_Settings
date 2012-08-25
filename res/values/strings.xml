@@ -4425,9 +4425,9 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen widgets -->
-    <string name="lockscreen_widgets_title">Targets/Layout</string>
-    <string name="lockscreen_widgets_dialog_title">Targets/Layout</string>
-    <string name="lockscreen_widgets_summary">Veiw or change the number of configurable lockscreen targets and lockscreen widgets alignment</string>
+    <string name="lockscreen_widgets_title">Targets/Widgets alignment</string>
+    <string name="lockscreen_widgets_dialog_title">Targets/Widgets alignment</string>
+    <string name="lockscreen_widgets_summary">Lock screen targets and widgets alignment</string>
 
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">Battery status</string>
@@ -5027,7 +5027,7 @@
     <string name="display_category_light_options_title">Light options</string>
 
     <!-- General UI -->
-    <string name="title_ui">General user interface</string>
+    <string name="title_ui">General UI</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
@@ -5037,9 +5037,9 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="misc_short">Misc</string>
 
-    <string name="lockscreen_style_options_title">Lockscreen style</string>
-    <string name="lockscreen_text_color_title">Lockscreen text color</string>
-    <string name="lockscreen_interface_options_title">Lockscreen interface</string>
+    <string name="lockscreen_style_options_title">Lock screen style</string>
+    <string name="lockscreen_text_color_title">Lock screen text color</string>
+    <string name="lockscreen_interface_options_title">Lock screen interface</string>
 
     <!-- About -->
     <string name="title_about">About CN(A)</string>

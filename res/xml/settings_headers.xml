@@ -248,11 +248,11 @@
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
 
-    <!-- About Rom -->
+    <!-- About CN(A) -->
     <header
         android:id="@+id/about_rom"
         android:fragment="com.android.settings.cnd.About"
-        android:icon="@drawable/ic_settings_about"
+        android:icon="@drawable/ic_settings_about_cna"
         android:title="@string/title_about" />
 
     <!-- About Device -->

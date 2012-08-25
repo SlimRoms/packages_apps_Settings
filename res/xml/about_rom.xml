@@ -3,26 +3,20 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:cna="http://schemas.android.com/apk/res/com.android.settings">
 
-	<PreferenceCategory
-		android:key="cna"
-		android:title="@string/cna">
+    <Preference
+        android:key="cna_website"
+        android:title="@string/cna_website_title"
+        android:summary="@string/cna_website_summary" />
 
-		<Preference
-			android:key="cna_website"
-			android:title="@string/cna_website_title"
-			android:summary="@string/cna_website_summary" />
+    <Preference
+        android:key="cna_forum"
+        android:title="@string/cna_review_title"
+        android:summary="@string/cna_review_summary" />
 
-		<Preference
-            android:key="cna_forum"
-            android:title="@string/cna_review_title"
-            android:summary="@string/cna_review_summary" />
-
-		<Preference
-			android:key="cna_source"
-			android:title="@string/cna_source_title"
-			android:summary="@string/cna_source_summary" />
-
-	</PreferenceCategory>
+    <Preference
+        android:key="cna_source"
+        android:title="@string/cna_source_title"
+        android:summary="@string/cna_source_summary" />
 
 	<PreferenceCategory
 		android:key="devs"

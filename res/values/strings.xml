@@ -5044,15 +5044,21 @@
     <!-- About -->
     <string name="title_about">About CN(A)</string>
     <string name="devs">Developer</string>
+    <string name="links">Official links</string>
+    <string name="contributors">Contributors</string>
     <string name="cna_website_title">Codename(Android) Website</string>
-    <string name="cna_website_summary">www.codenameandroid.com \n Find all latest Codename Android news here.</string>
     <string name="cna_source_title">Codename(Android) Source</string>
     <string name="cna_review_title">Codename(Android) Forum</string>
-    <string name="cna_review_summary">www.codenameandroid.com/forum \n Find all newest releases here.</string>
+    <string name="cna_youtube_title">Codename(Android) YouTube</string>
+    <string name="cna_website_summary">www.codenameandroid.com\nFind all latest Codename Android news here</string>
+    <string name="cna_review_summary">www.codenameandroid.com/forum\nFind all newest releases here</string>
     <string name="cna_source_summary">Codename(Android) is fully open source. You can always check out the latest source at github.com/CNA</string>
+    <string name="cna_youtube_summary">www.youtube.com/user/codenameanddroid\nSubscribe to our YouTube channel for official Codename Android videos</string>
     <string name="about_cna">About Codename Android</string>
     <string name="about_cna_summary">@null</string>
     <string name="donate_cna">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JN6B9PY4V2388</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_aokp">http://aokp.co/</string>
 
     <string name="interface_navbar_appearance">Navigation Bar Appearance</string>
     <string name="interface_navbar_color_title">Set Color</string>

@@ -22,6 +22,7 @@ public class About extends SettingsPreferenceFragment {
     Preference mSiteUrl;
     Preference mForumUrl;
     Preference mSourceUrl;
+    Preference mYouTubeUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class About extends SettingsPreferenceFragment {
         mSiteUrl = findPreference("cna_website");
         mForumUrl = findPreference("cna_forum");
         mSourceUrl = findPreference("cna_source");
+        mYouTubeUrl = findPreference("cna_youtube");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -56,6 +58,8 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("http://codenameandroid.com/forum/");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/CNA");
+        } else if (preference == mYouTubeUrl) {
+            launchUrl("http://www.youtube.com/user/codenameanddroid");
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

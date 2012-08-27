@@ -4951,11 +4951,11 @@
     <string name="navbar_widgets">Navigation Bar Widgets</string>
     <string name="navbar_enable_bar">Enable bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
+    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
     <string name="navigation_bar_width_title">Navigation bar width.</string>
-    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
+    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>
     <string name="navbar_enable_dialog_msg">Please reboot to enable/disable the navigation bar properly!</string>
     <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
@@ -4964,14 +4964,40 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
-    <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
-    <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
+    <string name="navigation_bar_tint_title">Navigation button color</string>
+    <string name="navigation_bar_tint_summary">Tint behind the navigation bar buttons</string>
+    <string name="navigation_bar_glow_tint_title">Navigation button glow color</string>
+    <string name="navigation_bar_glow_tint_summary">Tint of the navigation bar buttons glow</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
+
+    <string name="navigation_bar_style">Navigation bar style</string>
+    <string name="interface_navbar_color_title">Navigation bar color</string>
+    <string name="interface_navbar_color_summary">Change the color of the navigation bar</string>
+    <string name="interface_navbar_restore_stock_color">Restore stock navigation bar color</string>
+    <string name="interface_navbar_restore_stock_color_summary">Restore stock black color of the navigation bar</string>
+    
+    <string name="interface_softkey_settings">Softkey Settings</string>
+    <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
+    <string name="interface_softkeys_pref_default_summary">Tap to select a custom long press activity</string>
+    <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
+    <string name="interface_softkeys_reboot_title">Reboot Menu</string>
+    <string name="interface_softkeys_screenshot_title">Screenshot</string>
+    <string name="interface_softkeys_screenoff_title">Screen Off</string>
+    <string name="interface_softkeys_kill_process_title">Kill App</string>
+    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
+    
+    <string name="interface_navring_settings">Navigation bar ring</string>
+    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
+    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
+    <string name="interface_navring_1">Ring Target 1</string>
+    <string name="interface_navring_2">Ring Target 2</string>
+    <string name="interface_navring_3">Ring Target 3</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Ring Targets</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -5070,29 +5096,6 @@
     <string name="donate_cna">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JN6B9PY4V2388</string>
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
     <string name="donate_aokp">http://aokp.co/</string>
-
-    <string name="interface_navbar_appearance">Navigation Bar Appearance</string>
-    <string name="interface_navbar_color_title">Set Color</string>
-    <string name="interface_navbar_restore_stock_color">Restore stock color</string>
-
-    <string name="interface_softkey_settings">Softkey Settings</string>
-    <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
-    <string name="interface_softkeys_pref_default_summary">Tap to select a custom long press activity</string>
-    <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
-    <string name="interface_softkeys_reboot_title">Reboot Menu</string>
-    <string name="interface_softkeys_screenshot_title">Screenshot</string>
-    <string name="interface_softkeys_screenoff_title">Screen Off</string>
-    <string name="interface_softkeys_kill_process_title">Kill App</string>
-    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
-
-    <string name="interface_navring_settings">Navigation bar ring</string>
-    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
-    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
-    <string name="interface_navring_1">Ring Target 1</string>
-    <string name="interface_navring_2">Ring Target 2</string>
-    <string name="interface_navring_3">Ring Target 3</string>
-    <string name="interface_navring_assist_title">Google Now</string>
-    <string name="interface_navring">Ring Targets</string>
 
     <!-- **** EXTRA ADDITIONS END **** -->
 </resources>

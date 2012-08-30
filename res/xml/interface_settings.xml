@@ -45,6 +45,7 @@
         android:title="@string/notification_drawer_title" />
 
     <PreferenceScreen
+		android:id="@+id/nav_bar"
         android:key="navigation_bar"
         android:fragment="com.android.settings.cnd.NavbarSettings"
         android:title="@string/nav_bar" />

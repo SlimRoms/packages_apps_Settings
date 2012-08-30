@@ -388,6 +388,23 @@ public class Settings extends PreferenceActivity
             } else if (id == R.id.advanced_settings) {
                 if (!needsAdvancedSettings())
                     target.remove(header);
+            }else if (id == R.id.launcher_settings) {
+                Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
+                launcherIntent.addCategory(Intent.CATEGORY_HOME);
+                launcherIntent.addCategory(Intent.CATEGORY_DEFAULT);
+
+                Intent launcherPreferencesIntent = new Intent(Intent.ACTION_MAIN);
+                launcherPreferencesIntent.addCategory("com.cyanogenmod.category.LAUNCHER_PREFERENCES");
+
+                ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
+                launcherPreferencesIntent.setPackage(defaultLauncher.packageName);
+                ResolveInfo launcherPreferences = getPackageManager().resolveActivity(launcherPreferencesIntent, 0);
+                if (launcherPreferences != null) {
+                    header.intent = new Intent().setClassName(launcherPreferences.activityInfo.packageName,
+                            launcherPreferences.activityInfo.name);
+                } else {
+                    target.remove(header);
+                }
             }else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
                 if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {

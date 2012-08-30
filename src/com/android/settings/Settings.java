@@ -503,6 +503,10 @@ public class Settings extends PreferenceActivity
         return getResources().getBoolean(R.bool.has_dock_settings);
     }
 
+    private boolean needsAdvancedSettings() {
+        return getResources().getBoolean(R.bool.has_advanced_settings);
+    }
+
     private void getMetaData() {
         try {
             ActivityInfo ai = getPackageManager().getActivityInfo(getComponentName(),

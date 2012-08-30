@@ -16,7 +16,6 @@
 
 package com.android.settings.cnd;
 
-import android.app.ActivityManagerNative;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -47,7 +46,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SAFE_HEADSET_RESTORE = "safe_headset_restore";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
 
-    private String[] volumeSubNames;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -64,6 +62,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
         mVolumeOverlay.setOnPreferenceChangeListener(this);
+        int volumeOverlay = Settings.System.getInt(getContentResolver(),
+                Settings.System.MODE_VOLUME_OVERLAY,
+                VolumePanel.VOLUME_OVERLAY_EXPANDABLE);
+        mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
+        mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
         mSafeHeadsetRestore = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_RESTORE);
         mSafeHeadsetRestore.setPersistent(false);
@@ -74,7 +77,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLBTN_MUSIC_CONTROLS, 1) != 0);
 
-        volumeSubNames = getResources().getStringArray(R.array.volume_overlay_entries);
 
     }
     
@@ -88,65 +90,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    private void setVolumeOverlaySettingValue(String value) {
-        // Persist
-        int toPersist = -1;
-        if (value != null) {
-            if (value.equals("single")) {
-                toPersist = Settings.System.VOLUME_OVERLAY_SINGLE;
-            } else if (value.equals("expandable")) {
-                toPersist = Settings.System.VOLUME_OVERLAY_EXPANDABLE;
-            } else if (value.equals("expanded")) {
-                toPersist = Settings.System.VOLUME_OVERLAY_EXPANDED;
-            } else if (value.equals("none")) {
-                toPersist = Settings.System.VOLUME_OVERLAY_NONE;
-            }
-        }
-        if (toPersist != -1) {
-            Settings.System.putInt(getContentResolver(), Settings.System.MODE_VOLUME_OVERLAY, toPersist);
-            if (toPersist < volumeSubNames.length && volumeSubNames[toPersist] != null) {
-                mVolumeOverlay.setSummary(volumeSubNames[toPersist]);
-            }
-            // Fire Intent so that the panel can update
-            Intent i = new Intent();
-            i.setAction(VolumePanel.ACTION_VOLUME_OVERLAY_CHANGED);
-            i.putExtra("state", toPersist);
-            ActivityManagerNative.broadcastStickyIntent(i, null);
-        }
-    }
-            
-    private String getVolumeOverlaySettingValue() {
-        // Load from Settings
-        int settingAsInt = Settings.System.getInt(getContentResolver(),Settings.System.MODE_VOLUME_OVERLAY, Settings.System.VOLUME_OVERLAY_SINGLE);
-        if (settingAsInt != -1 && settingAsInt < volumeSubNames.length && volumeSubNames[settingAsInt] != null) {
-            mVolumeOverlay.setSummary(volumeSubNames[settingAsInt]);
-        }
-                
-        switch (settingAsInt) {
-            case Settings.System.VOLUME_OVERLAY_SINGLE :
-                return "single";
-            case Settings.System.VOLUME_OVERLAY_EXPANDABLE :
-                return "expandable";
-            case Settings.System.VOLUME_OVERLAY_EXPANDED :
-                return "expanded";
-            case Settings.System.VOLUME_OVERLAY_NONE :
-                return "none";
-        }
-        if (! getActivity().getResources().getBoolean(com.android.internal.R.bool.config_voice_capable)) {
-            mVolumeOverlay.setSummary(volumeSubNames[Settings.System.VOLUME_OVERLAY_EXPANDABLE]);
-            return "expandable";
-        }
-        mVolumeOverlay.setSummary(volumeSubNames[Settings.System.VOLUME_OVERLAY_SINGLE]);
-        return "single";
-    }
+    
 
     // updateState in fact updates the UI to reflect the system state
     private void updateState(boolean force) {
         if (getActivity() == null) return;
         ContentResolver resolver = getContentResolver();
                 
-        mVolumeOverlay.setValue(getVolumeOverlaySettingValue());
-        mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
     }
 
     @Override
@@ -173,7 +123,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
         
         if (preference == mVolumeOverlay) {
-            setVolumeOverlaySettingValue(objValue.toString());
+            final int value = Integer.valueOf((String) objValue);
+            final int index = mVolumeOverlay.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MODE_VOLUME_OVERLAY, value);
+            mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
         }
         
         return true;

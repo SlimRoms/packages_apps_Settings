@@ -754,10 +754,10 @@
 
     <!-- Values for Volume Overlay. Do not translate. -->
     <string-array name="volume_overlay_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
+        <item>single</item>
+        <item>expandable</item>
+        <item>expanded</item>
+        <item>none</item>
     </string-array>
 
     <!-- Silent mode options. -->

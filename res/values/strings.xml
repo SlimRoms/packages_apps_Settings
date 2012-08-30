@@ -4129,7 +4129,7 @@
     <!-- EXTRA ADDITIONS START -->
 
     <!-- About phone screen,  setting option name-->
-    <string name="mod_version">Mod version</string>
+    <string name="mod_version">Slim version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Quiet hours -->
@@ -4254,7 +4254,7 @@
 
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">ROM</string>
+    <string name="header_category_rom_settings">ASS</string>
 
     <!-- Launcher settings  -->
     <string name="launcher_settings_title">Launcher</string>
@@ -4742,7 +4742,7 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="clock_color_title">Clock color</string>
 
-    <string name="advanced_settings_title">Advanced</string>
+    <string name="advanced_settings_title">Device Options</string>
     
     <string name="statusbar_settings_title">Statusbar</string>
 

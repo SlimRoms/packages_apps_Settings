@@ -60,6 +60,18 @@
     <!-- ROM -->
     <header android:title="@string/header_category_rom_settings" />
 
+	<!-- DeviceParts Device Specific settings -->
+    <header
+        android:id="@+id/advanced_settings"
+        android:title="@string/advanced_settings_title"
+        android:icon="@drawable/ic_settings_developer_tools">
+        <intent
+            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+    </header>
+
+
     <!-- Interface -->
     <header
         android:id="@+id/interface_settings"
@@ -155,16 +167,6 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
-    <!-- DeviceParts Device Specific settings -->
-    <header
-        android:id="@+id/advanced_settings"
-        android:title="@string/advanced_settings_title"
-        android:icon="@drawable/ic_settings_developer_tools">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
 
     <!-- PERSONAL -->
     <header android:title="@string/header_category_personal" />

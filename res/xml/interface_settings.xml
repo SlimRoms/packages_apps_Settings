@@ -46,9 +46,9 @@
 
     <PreferenceScreen
 		android:id="@+id/nav_bar"
-        android:key="navigation_bar"
         android:fragment="com.android.settings.cnd.NavbarSettings"
-        android:title="@string/nav_bar" />
+        android:title="@string/nav_bar"
+		android:summary="@string/header_summary_navigation_bar" />
 
     <PreferenceScreen
         android:key="navring_settings"

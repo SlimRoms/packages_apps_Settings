@@ -4933,7 +4933,7 @@
     <!-- Navigation Bar -->
     <string name="header_navbar">Navigation bar</string>
     <string name="nav_bar">Navigation bar</string>
-    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
+    <string name="header_summary_navigation_bar">@null</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="navigation_bar">Navigation bar</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>

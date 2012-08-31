@@ -8,10 +8,10 @@
 		android:title="@string/devs">
 
 		<com.android.settings.widgets.DeveloperPreference
-            android:title="Codenamedroid"
-            cna:nameDev="codenamedroid"
-            cna:twitterHandle="codenameandroid"
-            cna:donateLink="@string/donate_cna" />
+            android:title="Slim"
+            cna:nameDev="slim"
+            cna:twitterHandle="arvind78"
+            cna:donateLink="@string/donate_slim" />
 
 	</PreferenceCategory>    
 
@@ -20,24 +20,16 @@
 		android:title="@string/links">
 
         <Preference
-            android:key="cna_website"
-            android:title="@string/cna_website_title"
-            android:summary="@string/cna_website_summary" />
+            android:key="slim_website"
+            android:title="@string/slim_website_title"
+            android:summary="@string/slim_website_summary" />
+
 
         <Preference
-            android:key="cna_forum"
-            android:title="@string/cna_review_title"
-            android:summary="@string/cna_review_summary" />
+            android:key="slim_source"
+            android:title="@string/slim_source_title"
+            android:summary="@string/slim_source_summary" />
 
-        <Preference
-            android:key="cna_source"
-            android:title="@string/cna_source_title"
-            android:summary="@string/cna_source_summary" />
-
-        <Preference
-            android:key="cna_youtube"
-            android:title="@string/cna_youtube_title"
-            android:summary="@string/cna_youtube_summary" />
 
 	</PreferenceCategory>
 
@@ -56,6 +48,12 @@
             cna:nameDev="aokp"
             cna:twitterHandle="aokp_rom"
             cna:donateLink="@string/donate_aokp" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Codenamedroid"
+            cna:nameDev="codenamedroid"
+            cna:twitterHandle="codenameandroid"
+            cna:donateLink="@string/donate_cna" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Team EOS"

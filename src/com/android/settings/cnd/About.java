@@ -20,19 +20,14 @@ public class About extends SettingsPreferenceFragment {
     public static final String TAG = "About";
 
     Preference mSiteUrl;
-    Preference mForumUrl;
     Preference mSourceUrl;
-    Preference mYouTubeUrl;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_about);
         addPreferencesFromResource(R.xml.about_rom);
-        mSiteUrl = findPreference("cna_website");
-        mForumUrl = findPreference("cna_forum");
-        mSourceUrl = findPreference("cna_source");
-        mYouTubeUrl = findPreference("cna_youtube");
+        mSiteUrl = findPreference("slim_website");
+        mSourceUrl = findPreference("slim_source");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -53,13 +48,9 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://codenameandroid.com/");
-        } else if (preference == mForumUrl) {
-            launchUrl("http://codenameandroid.com/forum/");
-        } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/CNA");
-        } else if (preference == mYouTubeUrl) {
-            launchUrl("http://www.youtube.com/user/codenameanddroid");
+            launchUrl("http://slimroms.net/");
+        }else if (preference == mSourceUrl) {
+            launchUrl("http://github.com/SlimRoms");
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

@@ -75,7 +75,7 @@
     <!-- Interface -->
     <header
         android:id="@+id/interface_settings"
-        android:icon="@drawable/ic_settings_cna"
+        android:icon="@drawable/ic_settings_slim"
         android:fragment="com.android.settings.cnd.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
@@ -111,12 +111,19 @@
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
-    <!-- Launcher -->
+    <!-- Launcher 
     <header
         android:id="@+id/launcher_settings"	
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_launcher_cna">
-    </header>
+	</header>-->
+
+    <!-- About Slim -->
+    <header
+        android:id="@+id/about_rom"
+        android:fragment="com.android.settings.cnd.About"
+        android:icon="@drawable/ic_settings_about_slim"
+        android:title="@string/title_about" />    
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
@@ -246,12 +253,6 @@
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
 
-    <!-- About CN(A) -->
-    <header
-        android:id="@+id/about_rom"
-        android:fragment="com.android.settings.cnd.About"
-        android:icon="@drawable/ic_settings_about_cna"
-        android:title="@string/title_about" />
 
     <!-- About Device -->
     <header

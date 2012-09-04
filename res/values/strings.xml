@@ -4139,7 +4139,7 @@
 
     <!-- About phone screen,  setting option name-->
     <string name="mod_version">Slim version</string>
-    <string name="mod_version_default">Unknown</string>
+    <string name="mod_version_default">4.1.x</string>
 
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>
@@ -4264,6 +4264,9 @@
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">ASS</string>
+
+	<!--OTA SHORTCUT -->
+	<string name="ota_app_title">OTA</string>
 
     <!-- Launcher settings  -->
     <string name="launcher_settings_title">Launcher</string>

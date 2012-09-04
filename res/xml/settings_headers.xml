@@ -79,6 +79,15 @@
         android:fragment="com.android.settings.cnd.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
+	!-- OTA App -->
+	<header android:icon="@drawable/ic_ota"
+            android:title="@string/ota_app_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.acquariusoft.UpdateMe.UpdateMeActivity"
+                android:targetPackage="com.acquariusoft.UpdateMe" />
+    </header>
+
     <!-- Performance -->
     <header
         android:id="@+id/performance_settings"

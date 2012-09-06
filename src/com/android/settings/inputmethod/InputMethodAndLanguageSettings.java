@@ -171,7 +171,12 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         mIm = (InputManager)getActivity().getSystemService(Context.INPUT_SERVICE);
         updateInputDevices();
 
-        mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
+        // Enable or disable mStatusBarImeSwitcher based on boolean value: config_show_cmIMESwitcher
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_show_cmIMESwitcher)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_IME_SWITCHER));
+        } else {
+            mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
+        }
 
         // Spell Checker
         final Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -260,10 +265,6 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             }
         }
 
-        if (mStatusBarImeSwitcher != null) {
-            mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
-        }
 
         // Hard keyboard
         if (!mHardKeyboardPreferenceList.isEmpty()) {

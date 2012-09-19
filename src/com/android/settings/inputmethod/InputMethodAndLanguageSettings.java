@@ -265,6 +265,10 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             }
         }
 
+        if (mStatusBarImeSwitcher != null) {
+            mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
+        }
 
         // Hard keyboard
         if (!mHardKeyboardPreferenceList.isEmpty()) {

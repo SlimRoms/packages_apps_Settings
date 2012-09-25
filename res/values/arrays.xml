@@ -1910,6 +1910,19 @@
         <item>3</item>
     </string-array>
 
+    <!-- Brightness slider -->
+    <string-array name="brightness_location_entries">
+        <item>On top</item>
+        <item>On the bottom</item>
+        <item>Don\'t Show</item>
+    </string-array>
+    
+    <string-array name="brightness_location_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- **** EXTRA EDITS END **** -->
 
 </resources>

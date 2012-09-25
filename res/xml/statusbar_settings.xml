@@ -93,6 +93,12 @@
             android:summary="@string/status_bar_toggle_brightness_sliding_summary"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:entries="@array/brightness_location_entries"
+            android:entryValues="@array/brightness_location_values"
+            android:key="brightness_location"
+            android:title="@string/brightness_location_title" />
+
         <CheckBoxPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"

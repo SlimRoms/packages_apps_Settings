@@ -51,8 +51,10 @@ public class UserInterface extends SettingsPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
 
     Preference mCustomLabel;
+  	CheckBoxPreference mRecentKillAll;
 
     String mCustomLabelText = null;
 
@@ -67,6 +69,10 @@ public class UserInterface extends SettingsPreferenceFragment {
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
     }
 
     private void updateCustomLabelTextSummary() {
@@ -82,7 +88,13 @@ public class UserInterface extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mCustomLabel) {
+        if (preference == mRecentKillAll) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
             alert.setTitle(R.string.custom_carrier_label_title);

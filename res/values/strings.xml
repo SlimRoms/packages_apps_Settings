@@ -4367,6 +4367,7 @@
     <string name="status_bar_signal_text_show_bars">Icon (default)</string>
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
+    <string name="brightness_location_title">Brightness location</string>
 
     <string name="lock_screen_title">Lock screen</string>
 

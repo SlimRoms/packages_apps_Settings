@@ -1440,6 +1440,7 @@
         <item>190</item>
         <item>200</item>
         <item>210</item>
+        <item>213</item>
         <item>220</item>
         <item>230</item>
         <item>240</item>
@@ -1896,6 +1897,17 @@
         <item>screenoff</item>
         <item>assist</item>
         <item>app</item>
+    </string-array>
+
+    <!-- Power widget brightness slider -->
+    <string-array name="power_widget_brightness_location_entries">
+        <item>Show</item>
+        <item>Don\'t Show</item>
+    </string-array>
+    
+    <string-array name="power_widget_brightness_location_values" translatable="false">
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- **** EXTRA EDITS END **** -->

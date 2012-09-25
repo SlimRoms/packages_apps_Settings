@@ -42,6 +42,12 @@
             android:fragment="com.android.settings.cnd.PowerWidget$PowerWidgetOrder">
         </PreferenceScreen>
 
+        <ListPreference
+            android:key="brightness_location"
+            android:entries="@array/power_widget_brightness_location_entries"
+            android:entryValues="@array/power_widget_brightness_location_values"
+            android:title="@string/brightness_location_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

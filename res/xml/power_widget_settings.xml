@@ -44,8 +44,8 @@
 
         <ListPreference
             android:key="brightness_location"
-            android:entries="@array/power_widget_brightness_location_entries"
-            android:entryValues="@array/power_widget_brightness_location_values"
+            android:entries="@array/brightness_location_entries"
+            android:entryValues="@array/brightness_location_values"
             android:title="@string/brightness_location_title" />
 
     </PreferenceCategory>

@@ -105,7 +105,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mBrightnessLocation = (ListPreference) findPreference(PREF_BRIGHTNESS_LOC);
             mBrightnessLocation.setOnPreferenceChangeListener(this);
             mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
+                    .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
         }
     }
 

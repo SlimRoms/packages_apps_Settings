@@ -10,7 +10,7 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Slim"
             cna:nameDev="slim"
-            cna:twitterHandle="arvind78"
+            cna:twitterHandle="slimroms"
             cna:donateLink="@string/donate_slim" />
 
 	</PreferenceCategory>    

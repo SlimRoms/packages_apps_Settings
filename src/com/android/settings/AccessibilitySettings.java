@@ -35,6 +35,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Environment;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
@@ -71,6 +72,13 @@ import java.util.Set;
 
 import android.content.ContentResolver;
 import android.provider.Settings.Secure;
+
+import java.io.InputStream;
+import java.io.FileOutputStream;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import android.util.Log;
+
 /**
  * Activity with the accessibility settings.
  */
@@ -247,12 +255,44 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    
     private void handleGenerateQRCodePreferenceClick() {
-        String UNIQUEID = Secure.getString(getContext().getContentResolver(),
+        String UNIQUEID = Secure.getString(getContentResolver(),
                                                         Secure.ANDROID_ID);
-        String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=UNIQUEID"; 
-		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL)); 
-		startActivity(i);
+	String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+UNIQUEID;
+   	try {
+		URL url = new URL(customURL);
+		Log.i("AccessibilitySettings", "*** Will save to file "+Environment.getExternalStorageDirectory().getAbsolutePath()+"/resultFromServer");
+		String state = Environment.getExternalStorageState();
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+		    Log.i("AccessibilitySettings", "sdcard mounted and writable");
+		}
+		else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+			    Log.i("AccessibilitySettings", "sdcard mounted readonly");
+		}
+		else {
+		    Log.i("AccessibilitySettings", "sdcard state: " + state);
+		}
+		FileOutputStream toFile = new FileOutputStream(Environment.getExternalStorageDirectory().getAbsolutePath()+"/resultFromServer");
+   		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();     		
+		InputStream in = urlConnection.getInputStream();
+     		int nextByte = in.read();
+		
+		while (nextByte != -1)
+		{
+			toFile.write(nextByte);
+			nextByte = in.read();
+		}
+		urlConnection.disconnect();
+		toFile.close();
+	}
+	catch(Exception e)
+	{
+		Log.e("AccessibilitySettings", e.getMessage(), e);
+	}	
+	Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL));
+	startActivity(i);
+    
     }
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),
@@ -302,7 +342,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
                 || !Utils.isVoiceCapable(getActivity())) {
             mSystemsCategory.removePreference(mToggleHomeButtonAnswersCallPreference);
         }
-
+	mGenerateQRCodePreference = (CheckBoxPreference) findPreference(TOGGLE_GENERATE_QR_CODE_PREFERENCE);
         // Lock screen rotation.
         mToggleLockScreenRotationPreference =
             (CheckBoxPreference) findPreference(TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE);

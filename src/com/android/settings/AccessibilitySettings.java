@@ -69,6 +69,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import android.content.ContentResolver;
+import android.provider.Settings.Secure;
 /**
  * Activity with the accessibility settings.
  */
@@ -109,6 +111,8 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         "select_long_press_timeout_preference";
     private static final String TOGGLE_SCRIPT_INJECTION_PREFERENCE =
         "toggle_script_injection_preference";
+    private static final String TOGGLE_GENERATE_QR_CODE_PREFERENCE =
+        "toggle_generate_qr_code_preference";
 
     // Extras passed to sub-fragments.
     private static final String EXTRA_PREFERENCE_KEY = "preference_key";
@@ -161,6 +165,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mToggleLargeTextPreference;
     private CheckBoxPreference mTogglePowerButtonEndsCallPreference;
+    private CheckBoxPreference mGenerateQRCodePreference;
     private CheckBoxPreference mToggleHomeButtonAnswersCallPreference;
     private CheckBoxPreference mToggleLockScreenRotationPreference;
     private CheckBoxPreference mToggleSpeakPasswordPreference;
@@ -226,7 +231,10 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             return true;
         } else if (mToggleSpeakPasswordPreference == preference) {
             handleToggleSpeakPasswordPreferenceClick();
-        }
+        }else if (mGenerateQRCodePreference == preference) {
+            handleGenerateQRCodePreferenceClick();
+            return true;
+        } 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -239,6 +247,13 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private void handleGenerateQRCodePreferenceClick() {
+        String UNIQUEID = Secure.getString(getContext().getContentResolver(),
+                                                        Secure.ANDROID_ID);
+        String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=UNIQUEID"; 
+		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL)); 
+		startActivity(i);
+    }
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,

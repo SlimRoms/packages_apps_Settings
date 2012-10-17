@@ -43,6 +43,11 @@
                 android:persistent="false"/>
 
         <CheckBoxPreference
+                android:key="toggle_generate_qr_code_preference"
+                android:title="@string/accessibility_generate_qr_code_title"
+                android:persistent="false"/>
+
+        <CheckBoxPreference
                 android:key="toggle_lock_screen_rotation_preference"
                 android:title="@string/accelerometer_title"
                 android:persistent="false"/>

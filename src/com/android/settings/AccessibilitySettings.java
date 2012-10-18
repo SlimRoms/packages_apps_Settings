@@ -173,7 +173,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mToggleLargeTextPreference;
     private CheckBoxPreference mTogglePowerButtonEndsCallPreference;
-    private CheckBoxPreference mGenerateQRCodePreference;
+    private PreferenceScreen mGenerateQRCodePreference;
     private CheckBoxPreference mToggleHomeButtonAnswersCallPreference;
     private CheckBoxPreference mToggleLockScreenRotationPreference;
     private CheckBoxPreference mToggleSpeakPasswordPreference;
@@ -342,7 +342,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
                 || !Utils.isVoiceCapable(getActivity())) {
             mSystemsCategory.removePreference(mToggleHomeButtonAnswersCallPreference);
         }
-	mGenerateQRCodePreference = (CheckBoxPreference) findPreference(TOGGLE_GENERATE_QR_CODE_PREFERENCE);
+	mGenerateQRCodePreference = (PreferenceScreen) findPreference(TOGGLE_GENERATE_QR_CODE_PREFERENCE);
         // Lock screen rotation.
         mToggleLockScreenRotationPreference =
             (CheckBoxPreference) findPreference(TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE);

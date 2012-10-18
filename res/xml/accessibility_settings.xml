@@ -42,7 +42,7 @@
                 android:title="@string/accessibility_home_button_answers_call_title"
                 android:persistent="false"/>
 
-        <CheckBoxPreference
+        <PreferenceScreen
                 android:key="toggle_generate_qr_code_preference"
                 android:title="@string/accessibility_generate_qr_code_title"
                 android:persistent="false"/>

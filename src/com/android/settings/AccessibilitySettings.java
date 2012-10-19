@@ -35,8 +35,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Environment;
 import android.os.RemoteException;
+import android.os.AsyncTask;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -73,10 +73,18 @@ import java.util.Set;
 import android.content.ContentResolver;
 import android.provider.Settings.Secure;
 
+
+import java.io.OutputStream;
 import java.io.InputStream;
 import java.io.FileOutputStream;
+import java.io.File;
 import java.net.URL;
 import java.net.HttpURLConnection;
+import java.net.URLConnection;
+import android.os.Environment;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.database.Cursor;
 import android.util.Log;
 
 /**
@@ -260,36 +268,35 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         String UNIQUEID = Secure.getString(getContentResolver(),
                                                         Secure.ANDROID_ID);
 	String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+UNIQUEID;
-   	try {
-		URL url = new URL(customURL);
-		Log.i("AccessibilitySettings", "*** Will save to file "+Environment.getExternalStorageDirectory().getAbsolutePath()+"/resultFromServer");
-		String state = Environment.getExternalStorageState();
-		if (Environment.MEDIA_MOUNTED.equals(state)) {
-		    Log.i("AccessibilitySettings", "sdcard mounted and writable");
-		}
-		else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-			    Log.i("AccessibilitySettings", "sdcard mounted readonly");
-		}
-		else {
-		    Log.i("AccessibilitySettings", "sdcard state: " + state);
-		}
-		FileOutputStream toFile = new FileOutputStream(Environment.getExternalStorageDirectory().getAbsolutePath()+"/resultFromServer");
-   		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();     		
-		InputStream in = urlConnection.getInputStream();
-     		int nextByte = in.read();
-		
-		while (nextByte != -1)
-		{
-			toFile.write(nextByte);
-			nextByte = in.read();
-		}
-		urlConnection.disconnect();
-		toFile.close();
-	}
-	catch(Exception e)
-	{
-		Log.e("AccessibilitySettings", e.getMessage(), e);
-	}	
+	final DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(customURL));
+	final long id = downloadManager.enqueue(request);
+	BroadcastReceiver downloadReceiver = new BroadcastReceiver() {
+	  @Override
+  	public void onReceive(Context arg0, Intent arg1) {
+	   // TODO Auto-generated method stub
+	   DownloadManager.Query query = new DownloadManager.Query();
+	   query.setFilterById(id);
+	   Cursor cursor = downloadManager.query(query);
+	   if(cursor.moveToFirst()){
+	    int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+	    int status = cursor.getInt(columnIndex);
+	    if(status == DownloadManager.STATUS_SUCCESSFUL){
+     
+     
+     Uri fileUri;
+     try {
+      fileUri = downloadManager.getUriForDownloadedFile(id);
+      Log.d("--------------------",fileUri.getPath());
+     } catch (Exception e) {
+      // TODO Auto-generated catch block
+      Log.e("--------------------",e.getMessage(), e);
+     }
+     
+    }
+   }
+  } 
+ };
 	Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL));
 	startActivity(i);
     

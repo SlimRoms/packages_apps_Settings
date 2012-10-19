@@ -87,6 +87,11 @@ import android.content.BroadcastReceiver;
 import android.database.Cursor;
 import android.util.Log;
 
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 /**
  * Activity with the accessibility settings.
  */
@@ -265,9 +270,12 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     
     private void handleGenerateQRCodePreferenceClick() {
-        String UNIQUEID = Secure.getString(getContentResolver(),
-                                                        Secure.ANDROID_ID);
-	String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+UNIQUEID;
+	String UNIQUEID = Secure.getString(getContentResolver(),
+		                                            Secure.ANDROID_ID);
+	WifiManager wifiManager = (WifiManager) getSystemService("wifi");
+	WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+	String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
+	String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
 	final DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
 	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(customURL));
 	final long id = downloadManager.enqueue(request);

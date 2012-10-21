@@ -16,6 +16,7 @@
 
 package com.android.settings.cnd;
 
+import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -27,6 +28,7 @@ import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.IWindowManager;
 
@@ -42,9 +44,13 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
             
     private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
 
+    private static final String KEY_HIGH_END_GFX = "high_end_gfx";
+
     private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
             
     private CheckBoxPreference mDisableBootanimPref;
+
+    private CheckBoxPreference mHighEndGfx;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -59,6 +65,12 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP,
                                                            DISABLE_BOOTANIMATION_DEFAULT);
         mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
+
+	boolean isHighEndGfx = ActivityManager.isHighEndGfx(getActivity().getWindowManager().getDefaultDisplay());
+
+	mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
+
+	mHighEndGfx.setChecked((Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, 0) == 1));
     }
     
     @Override
@@ -76,6 +88,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         if (preference == mDisableBootanimPref) {
             SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
                                  mDisableBootanimPref.isChecked() ? "1" : "0");
+        } else if (preference == mHighEndGfx) {
+            Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, mHighEndGfx.isChecked() ? 1 : 0);
+        
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

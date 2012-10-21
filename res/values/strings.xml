@@ -5130,4 +5130,9 @@
     <string name="donate_aokp">http://aokp.co/</string>
 
     <!-- **** EXTRA ADDITIONS END **** -->
+
+    <!-- High End Gfx Effects -->
+    <string name="high_end_gfx_title">High end graphic effects</string>
+    <string name="high_end_gfx_summary">Enable graphic effects disabled on lower end devices</string>
+
 </resources>

@@ -50,6 +50,12 @@
             android:key="pref_disable_bootanimation"
             android:title="@string/pref_disable_bootanimation_title"
             android:summary="@string/pref_disable_bootanimation_summary" />
+
+	<CheckBoxPreference
+	    android:key="high_end_gfx"
+	    android:title="@string/high_end_gfx_title"
+	    android:summary="@string/high_end_gfx_summary"
+	    android:defaultValue="false" />
         
 	</PreferenceCategory>
 

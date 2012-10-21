@@ -13,6 +13,11 @@
         android:defaultValue="false" />
 
     <CheckBoxPreference
+        android:key="power_menu_fullscreen"
+        android:title="@string/power_menu_fullscreen_title"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference	
         android:key="power_menu_screenshot"
         android:title="@string/power_menu_screenshot_title"
         android:defaultValue="false" />

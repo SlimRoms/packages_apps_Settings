@@ -40,12 +40,14 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_REBOOT = "power_menu_reboot";
     private static final String KEY_PROFILES = "power_menu_profiles";
+	private static final String KEY_FULLSCREEN = "power_menu_fullscreen";
     private static final String KEY_SCREENSHOT = "power_menu_screenshot";
     private static final String KEY_AIRPLANEMODE = "power_menu_airplanemode";
     private static final String KEY_SILENTTOGGLE = "power_menu_silenttoggle";
 
     private CheckBoxPreference mRebootPref;
     private CheckBoxPreference mProfilesPref;
+	private CheckBoxPreference mExpandDesktopModeOn;
     private CheckBoxPreference mScreenshotPref;
     private CheckBoxPreference mAirplaneModePref;
     private CheckBoxPreference mSilentTogglePref;
@@ -65,6 +67,10 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
         mProfilesPref = (CheckBoxPreference) findPreference(KEY_PROFILES);
         mProfilesPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.SYSTEM_PROFILES_ENABLED, 0) == 1));
+        
+        mExpandDesktopModeOn = (CheckBoxPreference) findPreference(KEY_FULLSCREEN);
+        mExpandDesktopModeOn.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));				
 
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
@@ -104,6 +110,12 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SYSTEM_PROFILES_ENABLED,
                     value ? 1 : 0);
+					
+        } else if (preference == mExpandDesktopModeOn) {
+            value = mExpandDesktopModeOn.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
+                    value ? 1 : 0);					
 
         } else if (preference == mScreenshotPref) {
             value = mScreenshotPref.isChecked();

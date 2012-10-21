@@ -5045,6 +5045,7 @@
     <string name="power_menu_settings_title">Power menu</string>
     <string name="power_menu_reboot_title">Reboot</string>
     <string name="power_menu_profiles_title">Profiles</string>
+	<string name="power_menu_fullscreen_title">Full Screen</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_airplanemode_title">Airplane mode</string>
     <string name="power_menu_silenttoggle_title">Silent toggle</string>

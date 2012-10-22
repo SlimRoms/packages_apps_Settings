@@ -21,6 +21,12 @@
 			android:summary="@string/multipane_ui_summary"
 			android:defaultValue="false" />
 
+        <CheckBoxPreference
+            android:key="mode_tabletui"
+            android:title="@string/tablet_ui"
+            android:summary="@string/tablet_ui_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

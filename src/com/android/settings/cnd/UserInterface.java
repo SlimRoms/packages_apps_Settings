@@ -23,8 +23,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -53,10 +55,12 @@ public class UserInterface extends SettingsPreferenceFragment {
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
+    private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mDualpane;
+    CheckBoxPreference mTabletui;
 
     String mCustomLabelText = null;
 
@@ -80,6 +84,13 @@ public class UserInterface extends SettingsPreferenceFragment {
 		mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
 		        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
 		        com.android.internal.R.bool.preferences_prefer_dual_pane)));
+
+        mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
+        mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                    Settings.System.MODE_TABLET_UI, false));
+		if (!mTablet) {
+            prefs.removePreference(mTabletui);
+        }
     }
 
     private void updateCustomLabelTextSummary() {
@@ -106,6 +117,11 @@ public class UserInterface extends SettingsPreferenceFragment {
 	                    Settings.System.FORCE_DUAL_PANEL,
 	                    ((CheckBoxPreference) preference).isChecked());
 	            return true;
+        }else if (preference == mTabletui) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.MODE_TABLET_UI,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         }else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 

@@ -1355,8 +1355,9 @@
         <item>Text only</item>
         <item>Icon with text</item>
         <item>Icon with centered text</item>
-        <item>CircleMOD(no %)</item>
-        <item>CircleMod(with %)</item>
+        <item>Circle MOD </item>
+        <item>Circle MOD (with %)</item>
+	<item>Dotted Circle MOD (with %)</item>
         <item>Hide</item>
     </string-array>
 
@@ -1367,6 +1368,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+	<item>7</item>
         <item>6</item>
     </string-array>
 

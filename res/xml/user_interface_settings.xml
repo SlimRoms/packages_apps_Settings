@@ -15,6 +15,12 @@
             android:title="@string/recent_kill_all"
             android:summary="@string/recent_kill_all_summary" />
 
+        <CheckBoxPreference
+			android:key="force_dualpanel"
+			android:title="@string/multipane_ui"
+			android:summary="@string/multipane_ui_summary"
+			android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

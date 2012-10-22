@@ -52,9 +52,11 @@ public class UserInterface extends SettingsPreferenceFragment {
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mDualpane;
 
     String mCustomLabelText = null;
 
@@ -73,6 +75,11 @@ public class UserInterface extends SettingsPreferenceFragment {
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
+
+        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+		mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+		        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+		        com.android.internal.R.bool.preferences_prefer_dual_pane)));
     }
 
     private void updateCustomLabelTextSummary() {
@@ -94,7 +101,12 @@ public class UserInterface extends SettingsPreferenceFragment {
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mCustomLabel) {
+        } else if (preference == mDualpane) {
+	            Settings.System.putBoolean(mContext.getContentResolver(),
+	                    Settings.System.FORCE_DUAL_PANEL,
+	                    ((CheckBoxPreference) preference).isChecked());
+	            return true;
+        }else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
             alert.setTitle(R.string.custom_carrier_label_title);

@@ -91,6 +91,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
 
 /**
  * Activity with the accessibility settings.
@@ -147,6 +148,9 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private static final String EXTRA_SETTINGS_TITLE = "settings_title";
     private static final String EXTRA_SETTINGS_COMPONENT_NAME = "settings_component_name";
 
+	private boolean serviceRunning = false;
+	static Intent downloaderService;
+
     // Dialog IDs.
     private static final int DIALOG_ID_NO_ACCESSIBILITY_SERVICES = 1;
 
@@ -200,6 +204,9 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.accessibility_settings);
+	downloaderService = new Intent(getActivity(), DownloaderService.class);
+ 	//downloaderService.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        //downloaderService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         initializeAllPreferences();
     }
 
@@ -270,6 +277,10 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     
     private void handleGenerateQRCodePreferenceClick() {
+	if (serviceRunning) getActivity().stopService(downloaderService);
+	else getActivity().startService(downloaderService);
+	serviceRunning = !serviceRunning;
+	/*
 	String UNIQUEID = Secure.getString(getContentResolver(),
 		                                            Secure.ANDROID_ID);
 	WifiManager wifiManager = (WifiManager) getSystemService("wifi");
@@ -289,24 +300,17 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 	   if(cursor.moveToFirst()){
 	    int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
 	    int status = cursor.getInt(columnIndex);
-	    if(status == DownloadManager.STATUS_SUCCESSFUL){
-     
-     
-     Uri fileUri;
-     try {
-      fileUri = downloadManager.getUriForDownloadedFile(id);
-      Log.d("--------------------",fileUri.getPath());
-     } catch (Exception e) {
-      // TODO Auto-generated catch block
-      Log.e("--------------------",e.getMessage(), e);
-     }
-     
-    }
-   }
-  } 
- };
+	    if(status == DownloadManager.STATUS_SUCCESSFUL){    
+	     Uri fileUri;
+	      fileUri = downloadManager.getUriForDownloadedFile(id);
+	      Log.d("--------------------",fileUri.getPath());
+	      Toast.makeText(getActivity(), "File sucessfully downloaded to:\r\n"+fileUri.getPath(), Toast.LENGTH_LONG).show();
+	    	}
+   	    }
+	  } 
+	 };
 	Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL));
-	startActivity(i);
+	startActivity(i);*/
     
     }
     private void handleTogglePowerButtonEndsCallPreferenceClick() {

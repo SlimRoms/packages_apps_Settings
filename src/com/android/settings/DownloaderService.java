@@ -27,18 +27,19 @@ import android.net.wifi.WifiManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
-import android.app.DownloadManager;
-import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Context;
 import android.net.Uri;
-import android.database.Cursor;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Environment;
-
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.net.URLConnection;
 /**
  * Activity with the accessibility settings.
  */
@@ -109,7 +110,8 @@ public class DownloaderService extends Service {
 				WifiManager wifiManager = (WifiManager) getSystemService("wifi");
 				WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 				String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
-				String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
+				//String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
+				String customURL = "http://redcad.org/members/tarak.chaari/testurl.txt";
 				URL url = new URL(customURL);
             			/** Creating an http connection to communcate with url */
             			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -121,13 +123,14 @@ public class DownloaderService extends Service {
 					String urlFromServer = fromServer.readLine();
 					fromServer.close();
 					Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
+					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(i);
+				}
 				}
 				catch(Exception e)
 				{
 					Log.e("DownloaderService", e.getMessage(), e);
 				}
-    				
                           }
              }
 }

@@ -280,6 +280,38 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 	if (serviceRunning) getActivity().stopService(downloaderService);
 	else getActivity().startService(downloaderService);
 	serviceRunning = !serviceRunning;
+	/*
+	String UNIQUEID = Secure.getString(getContentResolver(),
+		                                            Secure.ANDROID_ID);
+	WifiManager wifiManager = (WifiManager) getSystemService("wifi");
+	WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+	String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
+	String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
+	final DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(customURL));
+	final long id = downloadManager.enqueue(request);
+	BroadcastReceiver downloadReceiver = new BroadcastReceiver() {
+	  @Override
+  	public void onReceive(Context arg0, Intent arg1) {
+	   // TODO Auto-generated method stub
+	   DownloadManager.Query query = new DownloadManager.Query();
+	   query.setFilterById(id);
+	   Cursor cursor = downloadManager.query(query);
+	   if(cursor.moveToFirst()){
+	    int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+	    int status = cursor.getInt(columnIndex);
+	    if(status == DownloadManager.STATUS_SUCCESSFUL){    
+	     Uri fileUri;
+	      fileUri = downloadManager.getUriForDownloadedFile(id);
+	      Log.d("--------------------",fileUri.getPath());
+	      Toast.makeText(getActivity(), "File sucessfully downloaded to:\r\n"+fileUri.getPath(), Toast.LENGTH_LONG).show();
+	    	}
+   	    }
+	  } 
+	 };
+	Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL));
+	startActivity(i);*/
+    
     }
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),

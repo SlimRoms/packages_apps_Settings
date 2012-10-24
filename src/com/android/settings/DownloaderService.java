@@ -70,7 +70,16 @@ public class DownloaderService extends Service {
 	      stopService();
 	    }
 
-            private void startService()
+            public void changeFrequency(int freq)
+            {        
+		timer.cancel();			
+		timer = new Timer();                    
+		timer.scheduleAtFixedRate(new MainTask(), 0, freq*1000); //60000=1 min &1000=1 sec			
+		Toast.makeText(this, "poll frequency changed to "+freq+" seconds!",Toast.LENGTH_SHORT).show(); 
+			
+             }
+
+	private void startService()
             {        
 			Toast.makeText(this, "Downloader Service Started!",Toast.LENGTH_SHORT).show(); 
 			timer = new Timer();                    
@@ -96,40 +105,29 @@ public class DownloaderService extends Service {
  
 			public void run() 
                          {
-				//Toast.makeText(this, "Now 1 minute finished",Toast.LENGTH_LONG).show();
+				try{
 				WifiManager wifiManager = (WifiManager) getSystemService("wifi");
 				WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 				String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
 				String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
-				final DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
-				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(customURL));
-				//request.setDestinationInExternalPublicDir("download2", "test.png");
-				final long id = downloadManager.enqueue(request);
-				BroadcastReceiver downloadReceiver = new BroadcastReceiver() {
-					@Override
-					public void onReceive(Context arg0, Intent arg1) {
-					   // TODO Auto-generated method stub
-					   DownloadManager.Query query = new DownloadManager.Query();
-					   query.setFilterById(id);
-					   Cursor cursor = downloadManager.query(query);
-					   if(cursor.moveToFirst()){
-					    int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
-					    int status = cursor.getInt(columnIndex);
-					    if(status == DownloadManager.STATUS_SUCCESSFUL){    
-						Uri fileUri = downloadManager.getUriForDownloadedFile(id);
-						filePath = fileUri.getPath();
-						String uriString = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
-						Toast.makeText(mContext, "File sucessfully downloaded to:\r\n"+uriString, Toast.LENGTH_LONG).show();
-						/*try {
-							updateUI.sendEmptyMessage(0);
-						} catch (Exception e) {e.printStackTrace(); }*/
-					    	}
-				   	    }
-					  } 
-	 			};
-				registerReceiver(downloadReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-    				//Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(customURL));
-				//startActivity(i);
+				URL url = new URL(customURL);
+            			/** Creating an http connection to communcate with url */
+            			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+ 	    			/** Connecting to url */
+           			urlConnection.connect();
+				if (urlConnection.getResponseCode()==200)
+				{
+					BufferedReader fromServer = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+					String urlFromServer = fromServer.readLine();
+					fromServer.close();
+					Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
+					mContext.startActivity(i);
+				}
+				catch(Exception e)
+				{
+					Log.e("DownloaderService", e.getMessage(), e);
+				}
+    				
                           }
              }
 }

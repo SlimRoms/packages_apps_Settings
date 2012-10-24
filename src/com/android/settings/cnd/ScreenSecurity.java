@@ -58,6 +58,7 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
     private static final String SLIDE_LOCK_TIMEOUT_DELAY = "slide_lock_timeout_delay";
     private static final String SLIDE_LOCK_SCREENOFF_DELAY = "slide_lock_screenoff_delay";
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
+    private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
 
@@ -74,6 +75,7 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVisiblePattern;
     private CheckBoxPreference mTactileFeedback;
     private CheckBoxPreference mMenuUnlock;
+    private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
 
     boolean mHasNavigationBar = false;
@@ -206,10 +208,23 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
                 .getContentResolver(),
                 Settings.System.MENU_UNLOCK_SCREEN, 0) == 1);
 
+        // Home Unlock
+        mHomeUnlock = (CheckBoxPreference) root.findPreference(HOME_UNLOCK_PREF);
+        mHomeUnlock.setChecked(Settings.System.getInt(getActivity().getApplicationContext()
+                .getContentResolver(),
+                Settings.System.HOME_UNLOCK_SCREEN, 0) == 1);
+
         // disable lock options if lock screen set to NONE
         if (!mLockPatternUtils.isSecure() && mLockPatternUtils.isLockScreenDisabled()) {
                 mQuickUnlockScreen.setEnabled(false);
                 mMenuUnlock.setEnabled(false);
+                mHomeUnlock.setEnabled(false);
+        }
+
+        // Disable the HomeUnlock setting if no home button is available
+        if (getActivity().getApplicationContext().getResources()
+                .getBoolean(com.android.internal.R.bool.config_disableHomeUnlockSetting)) {
+            mHomeUnlock.setEnabled(false);
         }
 
         return root;
@@ -391,6 +406,10 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
             value = mMenuUnlock.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN, value ? 1 : 0);
+        } else if (preference == mHomeUnlock) {
+            value = mHomeUnlock.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.HOME_UNLOCK_SCREEN, value ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

@@ -140,10 +140,6 @@ public class DevelopmentSettings extends PreferenceFragment
     private static final String WIFI_SCAN_PROP = "wifi.supplicant_scan_interval";
     private static final String WIFI_SCAN_PERSIST_PROP = "persist.wifi_scan_interval";
     private static final String WIFI_SCAN_DEFAULT = System.getProperty(WIFI_SCAN_PROP);
-    private static final String LCD_DENSITY_PREF = "pref_lcd_density";
-    private static final String LCD_DENSITY_PROP = "ro.sf.lcd_density";
-    private static final String LCD_DENSITY_PERSIST_PROP = "persist.lcd_density";
-    private static final String LCD_DENSITY_DEFAULT = System.getProperty(LCD_DENSITY_PROP);
     private static final String USB_MODE_PREF = "pref_usb_mode";
     private static final String USB_MODE_PROP = "ro.default_usb_mode";
     private static final String USB_MODE_PERSIST_PROP = "persist.usb_mode";
@@ -217,7 +213,6 @@ public class DevelopmentSettings extends PreferenceFragment
     private PreferenceScreen mTestingMenu;
                     
     private ListPreference mWifiScanPref;
-    private ListPreference mLcdDensityPref;
     private ListPreference mRingDelayPref;
     private ListPreference mVmHeapsizePref;
     private ListPreference mFastUpPref;
@@ -270,9 +265,6 @@ public class DevelopmentSettings extends PreferenceFragment
         mWifiScanPref = (ListPreference) findPreference(WIFI_SCAN_PREF);
         mAllPrefs.add(mWifiScanPref);
         mWifiScanPref.setOnPreferenceChangeListener(this);
-        mLcdDensityPref = (ListPreference) findPreference(LCD_DENSITY_PREF);
-        mAllPrefs.add(mLcdDensityPref);
-        mLcdDensityPref.setOnPreferenceChangeListener(this);
         mRingDelayPref = (ListPreference) findPreference(RING_DELAY_PREF);
         mAllPrefs.add(mRingDelayPref);
         mRingDelayPref.setOnPreferenceChangeListener(this);
@@ -1136,9 +1128,6 @@ public class DevelopmentSettings extends PreferenceFragment
             if (preference == mWifiScanPref) {
                 return doMod(WIFI_SCAN_PERSIST_PROP, WIFI_SCAN_PROP,
                                 newValue.toString());
-            } else if (preference == mLcdDensityPref) {
-                return doMod(LCD_DENSITY_PERSIST_PROP, LCD_DENSITY_PROP,
-                                newValue.toString());
             } else if (preference == mRingDelayPref) {
                 return doMod(RING_DELAY_PERSIST_PROP, RING_DELAY_PROP,
                                 newValue.toString());
@@ -1382,13 +1371,6 @@ public class DevelopmentSettings extends PreferenceFragment
             mWifiScanPref.setSummary(String.format(getString(R.string.pref_wifi_scan_alt_summary), wifi));
         } else {
             mWifiScanPref.setValue(WIFI_SCAN_DEFAULT);
-        }
-        String lcd = Helpers.findBuildPropValueOf(LCD_DENSITY_PROP);
-        if (!lcd.equals(DISABLE)) {
-            mLcdDensityPref.setValue(lcd);
-            mLcdDensityPref.setSummary(String.format(getString(R.string.pref_lcd_density_alt_summary), lcd));
-        } else {
-            mLcdDensityPref.setValue(LCD_DENSITY_DEFAULT);
         }
         String ring = Helpers.findBuildPropValueOf(RING_DELAY_PROP);
         if (!ring.equals(DISABLE)) {

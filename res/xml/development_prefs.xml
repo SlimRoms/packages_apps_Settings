@@ -45,13 +45,6 @@
     <PreferenceCategory android:key="general_category"
             android:title="@string/buildprop_title">
         
-        <ListPreference android:key="pref_lcd_density"
-            android:dialogTitle="@string/pref_lcd_density_title"
-            android:title="@string/pref_lcd_density_title"
-            android:summary="@string/pref_lcd_density_summary"
-            android:entries="@array/entries_lcd_density"
-            android:entryValues="@array/entries_lcd_density"
-            android:persistent="true" />
         
         <ListPreference android:key="pref_wifi_scan_interval"
             android:dialogTitle="@string/pref_wifi_scan_interval_title"

@@ -95,15 +95,7 @@ public class DownloaderService extends Service {
 
             private class MainTask extends TimerTask
             { 
-			public String filePath="";
-			private Handler updateUI = new Handler(){
-				@Override
-				public void dispatchMessage(Message msg) {
-				    super.dispatchMessage(msg);
-				    Toast.makeText(mContext, "File sucessfully downloaded to:\r\n"+filePath, Toast.LENGTH_LONG).show();
-				}
-			};                        
- 
+			
 			public void run() 
                          {
 				try{

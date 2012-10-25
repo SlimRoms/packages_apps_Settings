@@ -34,18 +34,24 @@ import android.net.Uri;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Environment;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import java.net.URLConnection;
+import java.net.MalformedURLException;
+
+
+import android.content.SharedPreferences;
 /**
  * Activity with the accessibility settings.
  */
 public class DownloaderService extends Service {
-              private static Timer timer = new Timer(); 
-	   public static Context mContext;
+              
+	private MainTask timer;
+	   public static int freq = 60;
+	   public static String customURL = "http://redcad.org/members/tarak.chaari/testurl.txt";
+
            @Override
             public IBinder onBind(Intent intent)
            {
@@ -59,7 +65,6 @@ public class DownloaderService extends Service {
 
                      // Creating service
                       super.onCreate();
-			mContext = this;
                      // Starting service
                       startService();
              }
@@ -71,58 +76,97 @@ public class DownloaderService extends Service {
 	      stopService();
 	    }
 
-            public void changeFrequency(int freq)
-            {        
-		timer.cancel();			
-		timer = new Timer();                    
-		timer.scheduleAtFixedRate(new MainTask(), 0, freq*1000); //60000=1 min &1000=1 sec			
-		Toast.makeText(this, "poll frequency changed to "+freq+" seconds!",Toast.LENGTH_SHORT).show(); 
-			
-             }
 
-	private void startService()
-            {        
-			Toast.makeText(this, "Downloader Service Started!",Toast.LENGTH_SHORT).show(); 
-			timer = new Timer();                    
-			timer.scheduleAtFixedRate(new MainTask(), 0, 60000); //60000=1 min &1000=1 sec
+		private void startService()
+            {        	 
+			timer = new MainTask(freq, this);                  
+			timer.start();
+			Toast.makeText(this, "Downloader Service Started with poll frequency "+freq,Toast.LENGTH_SHORT).show();
              }
 	    
 	     private void stopService()
 	    {
-	      if (timer != null) timer.cancel();
+	      if (timer != null) timer.stopPolling();
 	      Toast.makeText(this, "Downloader Service Stopped!",Toast.LENGTH_SHORT).show();    
 	    }
-
-            private class MainTask extends TimerTask
+	    
+      
+            private class MainTask extends Thread
             { 
+			
+			private boolean running = true;
+			private Context mContext;
+						
+	                public MainTask(int interval, Context ctx)
+			{
+				super();
+				freq = interval;
+				mContext = ctx;
+			}
+			
+			public void stopPolling()
+			{
+				running =  false;
+			}			
+			
+			public void changeFrequency(int interval)
+			{
+				
+				freq = interval;
+				Log.i("DownloaderService", "Poll frequency changed to "+freq);
+				// Toast didn't worked, so commented it	
+				//Toast.makeText(mContext, "Poll frequency changed to "+freq,Toast.LENGTH_SHORT).show();				
+			}
 			
 			public void run() 
                          {
-				try{
-				WifiManager wifiManager = (WifiManager) getSystemService("wifi");
-				WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-				String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
-				//String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
-				String customURL = "http://redcad.org/members/tarak.chaari/testurl.txt";
-				URL url = new URL(customURL);
-            			/** Creating an http connection to communcate with url */
-            			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
- 	    			/** Connecting to url */
-           			urlConnection.connect();
-				if (urlConnection.getResponseCode()==200)
+				while (running)
 				{
-					BufferedReader fromServer = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-					String urlFromServer = fromServer.readLine();
-					fromServer.close();
-					Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					mContext.startActivity(i);
+					try{
+						WifiManager wifiManager = (WifiManager) getSystemService("wifi");
+						WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+						String macAddress = wifiInfo == null ? null : wifiInfo.getMacAddress();
+						//String customURL = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+macAddress;
+						URL url = new URL(customURL);
+		            			/** Creating an http connection to communcate with url */
+		            			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+		 	    			/** Connecting to url */
+		           			urlConnection.connect();
+						if (urlConnection.getResponseCode()==200)
+						{
+							BufferedReader fromServer = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+							String urlFromServer = fromServer.readLine();
+							fromServer.close();
+							try{
+								URL u = new URL(urlFromServer);
+								Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
+								i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								mContext.startActivity(i);
+							}
+							catch(MalformedURLException notUrl)
+							{
+								//see if it is an interval
+								try
+								{	int freqFromServer = Integer.parseInt(urlFromServer);
+									Log.i("DownloaderService", "about to change frequency to "+freqFromServer);
+									if (freqFromServer == 0) stopPolling();
+									else changeFrequency(freqFromServer);
+								}
+								catch(NumberFormatException notInterval)
+								{
+									//nothing to do in this case.
+									Log.i("DownloaderService", "Can't understand response from server");
+								}
+							}
+						}
+						Thread.sleep(freq*1000);
+					}
+					catch(Exception e)
+					{
+						Log.e("DownloaderService", e.getMessage(), e);
+					}
 				}
-				}
-				catch(Exception e)
-				{
-					Log.e("DownloaderService", e.getMessage(), e);
-				}
+				
                           }
              }
 }

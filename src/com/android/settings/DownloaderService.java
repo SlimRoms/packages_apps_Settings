@@ -117,6 +117,21 @@ public class DownloaderService extends Service {
 				// Toast didn't worked, so commented it	
 				//Toast.makeText(mContext, "Poll frequency changed to "+freq,Toast.LENGTH_SHORT).show();				
 			}
+
+			public void changeFrequencyFromServerResponse(String textFromServer)
+			{
+				
+				try
+				{	int freqFromServer = Integer.parseInt(textFromServer);
+					if (freqFromServer == 0) stopPolling();
+					else changeFrequency(freqFromServer);
+				}
+				catch(NumberFormatException notInterval)
+				{
+					//nothing to do in this case.
+					Log.i("DownloaderService", "Can't understand response from server");
+				}				
+			}
 			
 			public void run() 
                          {
@@ -136,28 +151,24 @@ public class DownloaderService extends Service {
 						{
 							BufferedReader fromServer = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 							String urlFromServer = fromServer.readLine();
-							fromServer.close();
-							try{
-								URL u = new URL(urlFromServer);
-								Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
-								i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								mContext.startActivity(i);
-							}
-							catch(MalformedURLException notUrl)
+							if (urlFromServer!=null)
 							{
-								//see if it is an interval
-								try
-								{	int freqFromServer = Integer.parseInt(urlFromServer);
-									Log.i("DownloaderService", "about to change frequency to "+freqFromServer);
-									if (freqFromServer == 0) stopPolling();
-									else changeFrequency(freqFromServer);
+								try{
+									URL u = new URL(urlFromServer);
+									Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(urlFromServer));
+									i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									mContext.startActivity(i);
 								}
-								catch(NumberFormatException notInterval)
+								catch(MalformedURLException notUrl)
 								{
-									//nothing to do in this case.
-									Log.i("DownloaderService", "Can't understand response from server");
+									//see if it is an interval
+									changeFrequencyFromServerResponse(urlFromServer);
 								}
+								// see if there is a second line in the server response and check if it is a polling frequency change
+								urlFromServer = fromServer.readLine();
+								if (urlFromServer!=null) changeFrequencyFromServerResponse(urlFromServer);	
 							}
+							fromServer.close();
 						}
 						Thread.sleep(freq*1000);
 					}

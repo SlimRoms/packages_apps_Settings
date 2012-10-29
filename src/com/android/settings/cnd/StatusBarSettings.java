@@ -15,6 +15,7 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.widgets.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -47,6 +48,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     ListPreference mClockAmPmstyle;
     ListPreference mClockWeekday;
     ColorPickerPreference mColorPicker;
+	SeekBarPreference mStatusbarTransparency;
     CheckBoxPreference mStatusBarBrightnessControl;
 
     @Override
@@ -55,6 +57,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.statusbar_settings);
+
+        float statBarTransparency = Settings.System.getFloat(getActivity()
+               .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY, 0.6f);
+        mStatusbarTransparency = (SeekBarPreference) findPreference("stat_bar_transparency");
+        mStatusbarTransparency.setInitValue((int) (statBarTransparency * 100));
+        mStatusbarTransparency.setOnPreferenceChangeListener(this);
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getInt(getActivity()
@@ -237,6 +245,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             return Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
+
+        } else if (preference == mStatusbarTransparency) {
+            float valStat = Float.parseFloat((String) newValue);
+            Log.e("R", "value: " + valStat / 100);
+            result = Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_TRANSPARENCY,
+                    valStat / 100);
+
 
         }
         return result;

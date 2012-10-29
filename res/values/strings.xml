@@ -4954,6 +4954,7 @@
 
     <!-- Navigation Bar -->
     <string name="header_navbar">Navigation bar</string>
+    <string name="nav_bar_transparency_title">Navigation bar transparency</string>
     <string name="nav_bar">Navigation bar</string>
     <string name="header_summary_navigation_bar">@null</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
@@ -4996,7 +4997,7 @@
     <string name="navigation_bar_tint_summary">Tint behind the navigation bar buttons</string>
     <string name="navigation_bar_glow_tint_title">Navigation button glow color</string>
     <string name="navigation_bar_glow_tint_summary">Tint of the navigation bar buttons glow</string>
-    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_title">Navigation button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
@@ -5005,8 +5006,6 @@
     <string name="navigation_bar_style">Navigation bar style</string>
     <string name="interface_navbar_color_title">Navigation bar color</string>
     <string name="interface_navbar_color_summary">Change the color of the navigation bar</string>
-    <string name="interface_navbar_restore_stock_color">Restore stock navigation bar color</string>
-    <string name="interface_navbar_restore_stock_color_summary">Restore stock black color of the navigation bar</string>
     
     <string name="interface_softkey_settings">Softkey Settings</string>
     <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
@@ -5035,6 +5034,7 @@
     
     <string name="display_title">Display</string>
 
+	<string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="battery_icon_cat">Battery icon options</string>
 
     <string name="clock_cat">Clock options</string>
@@ -5050,7 +5050,7 @@
     <string name="power_menu_airplanemode_title">Airplane mode</string>
     <string name="power_menu_silenttoggle_title">Silent toggle</string>
     
-    <string name="button_transparency_title">Nav button transparency</string>
+    <string name="button_transparency_title">Navigation button transparency</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>

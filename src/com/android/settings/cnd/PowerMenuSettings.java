@@ -66,11 +66,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 
         mProfilesPref = (CheckBoxPreference) findPreference(KEY_PROFILES);
         mProfilesPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 0) == 1));
+                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1));
         
         mExpandDesktopModeOn = (CheckBoxPreference) findPreference(KEY_FULLSCREEN);
         mExpandDesktopModeOn.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));				
+                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1) == 1));				
 
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),

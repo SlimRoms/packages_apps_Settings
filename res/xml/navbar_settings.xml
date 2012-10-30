@@ -58,7 +58,6 @@
             android:summary="@string/navigation_bar_width_summary" />
 
     </PreferenceCategory>
-
     <PreferenceCategory
         android:key="navigation_bar_style"
         android:title="@string/navigation_bar_style">
@@ -98,5 +97,21 @@
             android:title="@string/button_transparency_title" />
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:key="navbar_ring"
+        android:title="@string/navbar_ring_cat">
 
+        <ListPreference
+            android:entries="@array/pref_navring_amount_entries"
+            android:entryValues="@array/pref_navring_amount_values"
+            android:key="pref_navring_amount"
+            android:title="@string/title_navring_amount"
+            android:summary="@string/summary_navring_amount" />
+        
+        <Preference
+            android:key="navring_settings"
+            android:title="@string/interface_navring_settings_title"
+            android:summary="@string/interface_navring_settings_summary" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

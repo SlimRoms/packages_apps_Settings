@@ -19,8 +19,25 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/interface_softkey_settings" >
     <PreferenceCategory
-        android:key="interface_navring_3"
-        android:title="@string/interface_navring_3" >
+        android:key="interface_navring_5" >
+        <com.android.settings.eos.NavRingPreference
+            android:key="interface_navring_5_release"
+            android:title="@string/interface_softkeys_pref_default_title"
+            android:summary="@string/interface_softkeys_pref_default_summary"
+            android:layout="@layout/softkey_longpress_preference"
+            android:widgetLayout="@layout/softkey_longpress_preference_widget" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="interface_navring_4" >
+        <com.android.settings.eos.NavRingPreference
+            android:key="interface_navring_4_release"
+            android:title="@string/interface_softkeys_pref_default_title"
+            android:summary="@string/interface_softkeys_pref_default_summary"
+            android:layout="@layout/softkey_longpress_preference"
+            android:widgetLayout="@layout/softkey_longpress_preference_widget" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="interface_navring_3" >
         <com.android.settings.eos.NavRingPreference
             android:key="interface_navring_3_release"
             android:title="@string/interface_softkeys_pref_default_title"
@@ -29,20 +46,17 @@
             android:widgetLayout="@layout/softkey_longpress_preference_widget" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="interface_navring_2"
-        android:title="@string/interface_navring_2" >
+        android:key="interface_navring_2" >
         <com.android.settings.eos.NavRingPreference
             android:key="interface_navring_2_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"
             android:layout="@layout/softkey_longpress_preference"
             android:widgetLayout="@layout/softkey_longpress_preference_widget"
-            android:persistent="false"            
-            android:defaultValue="assist" />
+            android:persistent="false" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="interface_navring_1"
-        android:title="@string/interface_navring_1" >
+        android:key="interface_navring_1" >
         <com.android.settings.eos.NavRingPreference
             android:key="interface_navring_1_release"
             android:title="@string/interface_softkeys_pref_default_title"
@@ -52,3 +66,4 @@
     </PreferenceCategory>
 
 </PreferenceScreen>
+

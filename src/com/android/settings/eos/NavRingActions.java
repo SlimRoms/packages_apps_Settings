@@ -1,4 +1,3 @@
-
 package com.android.settings.eos;
 
 import android.app.AlertDialog;
@@ -16,6 +15,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
+import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.eos.NavRingPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,13 +39,21 @@ public class NavRingActions extends SettingsPreferenceFragment
     Context mContext;
     ContentResolver mResolver;
     LayoutInflater mInflate;
+    Preference mRingGroup1;
+    Preference mRingGroup2;
+    Preference mRingGroup3;
+    Preference mRingGroup4;
+    Preference mRingGroup5;
     NavRingPreference mRing1;
     NavRingPreference mRing2;
     NavRingPreference mRing3;
+    NavRingPreference mRing4;
+    NavRingPreference mRing5;
     Resources mRes;
-    private List<AppPackage> components;
-    private AppArrayAdapter mAdapter;
-    private ListView mListView;
+    public List<AppPackage> components;
+    public AppArrayAdapter mAdapter;
+    public ListView mListView;
+    private int mNavRingAmount;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,7 @@ public class NavRingActions extends SettingsPreferenceFragment
         mRes = mContext.getResources();
         mResolver = mContext.getContentResolver();
         populateActionAdapter();
+        PreferenceScreen prefs = getPreferenceScreen();
 
         addPreferencesFromResource(R.xml.navring_settings);
 
@@ -63,9 +74,39 @@ public class NavRingActions extends SettingsPreferenceFragment
         mRing3 = (NavRingPreference) findPreference("interface_navring_3_release");
         mRing3.setTargetUri(Settings.System.SYSTEMUI_NAVRING_3, new WidgetListener());
 
-        String target2 = Settings.System.getString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_2);
-        if (target2 == null || target2.equals("")) {
-            Settings.System.putString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_2, "assist");
+        mRing4 = (NavRingPreference) findPreference("interface_navring_4_release");
+        mRing4.setTargetUri(Settings.System.SYSTEMUI_NAVRING_4, new WidgetListener());
+
+        mRing5 = (NavRingPreference) findPreference("interface_navring_5_release");
+        mRing5.setTargetUri(Settings.System.SYSTEMUI_NAVRING_5, new WidgetListener());
+
+        mNavRingAmount = Settings.System.getInt(mContext.getContentResolver(),
+                         Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
+        
+        PreferenceGroup RingGroup1 = (PreferenceGroup) findPreference("interface_navring_1");
+        PreferenceGroup RingGroup2 = (PreferenceGroup) findPreference("interface_navring_2");
+        PreferenceGroup RingGroup4 = (PreferenceGroup) findPreference("interface_navring_4");
+        PreferenceGroup RingGroup5 = (PreferenceGroup) findPreference("interface_navring_5");
+
+        if (mNavRingAmount == 1) {
+        RingGroup1.removeAll();
+        RingGroup2.removeAll();
+        RingGroup4.removeAll();
+        RingGroup5.removeAll();
+        } else if (mNavRingAmount == 2) {
+        RingGroup1.removeAll();
+        RingGroup4.removeAll();
+        RingGroup5.removeAll();
+        } else if (mNavRingAmount == 3) {
+        RingGroup1.removeAll();
+        RingGroup5.removeAll();
+        } else if (mNavRingAmount == 4) {
+        RingGroup5.removeAll();
+        }
+
+        String target3 = Settings.System.getString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_3);
+        if (target3 == null || target3.equals("")) {
+            Settings.System.putString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_3, "assist");
         }
     }
 
@@ -88,6 +129,10 @@ public class NavRingActions extends SettingsPreferenceFragment
                     n = mRing2;
                 } else if (tag.equals(mRing3.getTargetUri())) {
                     n = mRing3;
+                } else if (tag.equals(mRing4.getTargetUri())) {
+                    n = mRing4;
+                } else if (tag.equals(mRing5.getTargetUri())) {
+                    n = mRing5;
                 }
                 callInitDialog(n);
             }
@@ -115,7 +160,7 @@ public class NavRingActions extends SettingsPreferenceFragment
                     public void onClick(DialogInterface dialog, int which) {
                         // TODO Auto-generated method stub
                         String pressed = (String) item_values[which];
-                        if (pressed.equals(item_values[5])) {
+                        if (pressed.equals(item_values[item_values.length - 1])) {
                             callActivityDialog(pref);
                         } else {
                             pref.loadCustomApp(pressed);
@@ -126,7 +171,7 @@ public class NavRingActions extends SettingsPreferenceFragment
                 }).create().show();
     }
 
-    private void populateActionAdapter() {
+    public void populateActionAdapter() {
         components = new ArrayList<AppPackage>();
 
         PackageManager pm = mContext.getPackageManager();
@@ -168,9 +213,9 @@ public class NavRingActions extends SettingsPreferenceFragment
     }
 
     public class AppPackage {
-        private ComponentName component;
-        private String appName;
-        private Drawable icon;
+        public ComponentName component;
+        public String appName;
+        public Drawable icon;
 
         AppPackage(ResolveInfo ri, PackageManager pm) {
             component = new ComponentName(ri.activityInfo.packageName,
@@ -179,22 +224,22 @@ public class NavRingActions extends SettingsPreferenceFragment
             icon = ri.activityInfo.loadIcon(pm);
         }
 
-        String getComponentName() {
+        public String getComponentName() {
             return component.flattenToString();
         }
 
-        Drawable getIcon() {
+        public Drawable getIcon() {
             return icon;
         }
 
-        String getName() {
+        public String getName() {
             return appName;
         }
     }
 
-    private class AppArrayAdapter extends ArrayAdapter {
-        private final List<AppPackage> apps;
-        private final Context mContext;
+    public class AppArrayAdapter extends ArrayAdapter {
+        public final List<AppPackage> apps;
+        public final Context mContext;
 
         public AppArrayAdapter(Context context, List<AppPackage> objects) {
             super(context, R.layout.activity_item, objects);

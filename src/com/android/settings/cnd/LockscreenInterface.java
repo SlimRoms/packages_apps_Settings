@@ -59,6 +59,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_WIDGETS_PREF = "lockscreen_widgets";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+	private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
     public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
 
     private CheckBoxPreference mVibratePref;
@@ -67,6 +68,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private ColorPickerPreference mLockscreenTextColor;
+	private ListPreference mClockAlign;
     private ListPreference mBatteryStatus;
     private Activity mActivity;
     ContentResolver mResolver;
@@ -101,6 +103,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
+
+		mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
 
         mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
         boolean bVibrate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -177,6 +182,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
             mBatteryStatus.setSummary(mBatteryStatus.getEntry());
             //mCustomBackground.setSummary(getResources().getString(resId));
+        }
+        // Set the clock align value
+        if (mClockAlign != null) {
+            int clockAlign = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2);
+            mClockAlign.setValue(String.valueOf(clockAlign));
+            mClockAlign.setSummary(mClockAlign.getEntries()[clockAlign]);
         }
     }
 
@@ -321,6 +333,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             int value = Integer.valueOf((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                                     Settings.System.LOCKSCREEN_LAYOUT, value);
+            return true;
+         } else if (preference == mClockAlign) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
             return true;
         }
         return false;

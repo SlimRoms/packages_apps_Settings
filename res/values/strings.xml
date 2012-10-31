@@ -4454,9 +4454,13 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen widgets -->
-    <string name="lockscreen_widgets_title">Targets/Widgets alignment</string>
-    <string name="lockscreen_widgets_dialog_title">Targets/Widgets alignment</string>
-    <string name="lockscreen_widgets_summary">Lock screen targets and widgets alignment</string>
+    <string name="lockscreen_widgets_title">Number of lockscreen targets</string>
+    <string name="lockscreen_widgets_dialog_title">Number of lockscreen targets</string>
+    <string name="lockscreen_widgets_summary">Choose number of lockscreen targets</string>
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
 
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">Battery status</string>

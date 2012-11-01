@@ -12,6 +12,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,8 +26,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -61,8 +64,13 @@ public class UserInterface extends SettingsPreferenceFragment {
   	CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mTabletui;
+    Preference mLcdDensity;
 
     String mCustomLabelText = null;
+
+    int newDensityValue;
+
+    DensityChanger densityFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +80,17 @@ public class UserInterface extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.user_interface_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mLcdDensity = findPreference("lcd_density_setup");
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -151,6 +170,10 @@ public class UserInterface extends SettingsPreferenceFragment {
             });
 
             alert.show();
+        } else if (preference == mLcdDensity) {
+            ((PreferenceActivity) getActivity())
+            .startPreferenceFragment(new DensityChanger(), true);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

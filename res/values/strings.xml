@@ -5152,20 +5152,20 @@
     <string name="stock_density_changed_summary">"Density set to: "</string>
     <string name="reboot_title">2. Reboot!</string>
     <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="clear_market_data_title">3. Clear market data</string>
-    <string name="clear_market_data_cleared">Market data cleared</string>
-    <string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
-    <string name="open_market_title">4. Open Market and hit accept</string>
+    <string name="clear_market_data_title">3. Clear Play Store data</string>
+    <string name="clear_market_data_cleared">Play Store data cleared</string>
+    <string name="clear_market_data_donot_cleared">"Play Store data couldn't be cleared, please clear it yourself!"</string>
+    <string name="open_market_title">4. Open Play Store and hit accept</string>
     <string name="open_market_summary">Press back when done to return here.</string>
-    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
+    <string name="open_market_summary_could_not_open">"Couldn't open the Play Store! If you're sure it's installed, open it yourself from the launcher."</string>
     <string name="custom_density_title">5. Change density to whatever you like!</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the Play Store, be sure to return here and repeat the process.</string>
     <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
     <string name="custom_density">custom</string>
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter Play Store app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
     

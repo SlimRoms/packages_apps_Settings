@@ -1839,10 +1839,6 @@
     <string name="system_settings_title">System</string>
     <string name="system_interface_title">System interface</string>
 
-    <!-- Notification Drawer -->
-    <string name="notification_drawer_title">Benachrichtigungsanzeige</string>
-    <string name="brightness_location_title">Position des Helligkeitsreglers</string>
-
     <!-- Combined Bar -->
     <string name="combined_bar_title">Kombinierte Leiste</string>
     <string name="combined_bar_auto_hide_title">Automatisch verstecken</string>
@@ -1871,6 +1867,7 @@
     <string name="hardware_keys_action_in_app_search">In-App Suche</string>
 
     <!-- Power Widget -->
+    <string name="notification_drawer_title">Benachrichtungsanzeige</string>
     <string name="power_widget_title">Energie-Widget</string>
     <string name="title_expanded_widget">Benachr.-Energiesteuerung</string>
     <string name="title_expanded_hide_onchange">Nach Änd. verbergen</string>
@@ -1916,6 +1913,10 @@
     <string name="pref_flash_mode_title">Taschenlampe</string>
     <string name="expanded_haptic_feedback_title">Haptisches Feedback</string>
     <string name="lock_screen_title">Bildschirmsperre</string>
+    <string name="title_toggle_reboot">Neustarten (Drücke lang für Recovery)</string>
+    <string name="title_toggle_fcharge">Scnellladen</string>
+
+
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Ziehe den Schieber zur gewünschten Position, um dort eine Anwendung zu plazieren</string>
@@ -2413,27 +2414,90 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="lockscreen_style_options_title">Bildschirmsperren Stil</string>
     <string name="lockscreen_text_color_title">Bildschirmsperren Textfarbe</string>
     <string name="lockscreen_interface_options_title">Bildschirmsperren Oberfläche</string>
+    <string name="multipane_ui">Aktiviere Dual-Panel</string>
+    <string name="multipane_ui_summary">Dies de-/aktiviert die Dual-Panel Ansicht (benötigt Neustart)</string>
+    <string name="tablet_ui">Erzwinge Tabletoberfläche</string>
+    <string name="tablet_ui_summary">Wechselt zur Tabletoberfläche (Benötigt Neustart)</string>
+
+<!-- LCD Density -->
+    <string name="lcd_density_title">Pixeldichte</string>
+    <string name="lcd_density_summary">Dies ändert die Pixeldichte welches ein höherauflösendes Interface ermöglicht</string>
+    <string name="current_lcd_density">"Aktuelle Pixeldichte: "</string>
+    <string name="lcd_density_wizard">Pixeldichte Assistent</string>
+    <string name="follow_through_title">Folge der Reihenfolge!</string>
+    <string name="follow_through_summary">Stell sicher das du den Schritten folgst und beendest bevor du zum Nächsten weiter gehst.</string>
+    <string name="stock_density_title">1. Wechsle die Pixeldichte zum Stockwert</string>
+    <string name="stock_density_summary">Tablets und ältere Telefone nutzen 160. Die Meisten Telefone nutzen 240. Galaxy Nexus nutzt standardmässig 320.</string>
+    <string name="stock_density_changed_summary">"Dichte gesetzt zu: "</string>
+    <string name="reboot_title">2. Neustarten!</string>
+    <string name="reboot_summary">Kehr nach dem Neustart hierher zurück und beende den Rest der Schritte!</string>
+    <string name="clear_market_data_title">3. Lösche die Play Store Daten</string>
+    <string name="clear_market_data_cleared">Play Store Daten gelöscht</string>
+    <string name="clear_market_data_donot_cleared">"Play Store Daten konnten nicht gelöscht werden, bitte lösche sie von Hand!"</string>
+    <string name="open_market_title">4. Öffne den Play Store und drücke Aktzeptieren</string>
+    <string name="open_market_summary">Drücke zurück when du fertig bist um hierher zurückzukehren.</string>
+    <string name="open_market_summary_could_not_open">"Play Store konnte nicht geöffnet werden! Wenn du sicher bist das er installiert ist, öffne ihn von Hand aus dem Launcher."</string>
+    <string name="custom_density_title">5. Ändere die Dichte du deinem gewünschten Wert.</string>
+    <string name="custom_density_summary">Falls du Kompatibilitätsprobleme im Play Store hast, komm hierher zurück und wiederhole den den Prozess.</string>
+    <string name="custom_density_summary_invalid">"Ungültiger Wert!"</string>
+    <string name="custom_density">Benutzerdefiniert</string>
+    <string name="set_custom_density_title">Setze benutzerdefinierten Wert</string>
+    <string name="set_custom_density_set">Setze</string>
+    <string name="custom_density_dialog_title">"WARNUNG!"</string>
+    <string name="custom_density_dialog_summary">"Das ändern der Pixeldichte kann Probleme mit Apps verursachen. Falls du Kompatibilitätsprobleme im Play Store hast kehre hierher zurück und beginne noch einmal bei Schritt 1."</string>
+    <string name="custom_density_dialog_button_got">Verstanden!</string>
+    <string name="custom_density_dialog_button_reboot">Jetzt neustarten</string>
 
     <!-- Status bar  -->
-    <string name="combined_status_bar_title">@string/status_bar_title</string>
-    <string name="status_bar_title">Statusleiste</string>
-    <string name="status_bar_clock_title">Uhr</string>
-    <string name="status_bar_general_title">Allgemein</string>
-    <string name="status_bar_show_clock_title">Zeige Uhr</string>
-    <string name="status_bar_show_clock_summary">Zeige die Uhr in der Statusleiste</string>
-    <string name="status_bar_am_pm_title">AM/PM Stil</string>
-    <string name="status_bar_am_pm_summary">Zeige AM/PM neben der Uhr</string>
-    <string name="status_bar_am_pm_info">24-Stunden Uhr ist aktiviert</string>
-    <string name="status_bar_battery_title">Akkustatus Stil</string>
-    <string name="status_bar_battery_summary">Display style of battery status</string>
-    <string name="status_bar_toggle_brightness">Helligkeitslider</string>
-    <string name="status_bar_toggle_brightness_summary">Ermöglicht das Einstellen der Helligkeit mit streichen über die Statusbar</string>
+    <string name="statusbar_settings_title">Statusleiste</string>
+    <string name="status_bar_transparency_title">Statusleisten Transparenz</string>
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon_cat">Akkustatus Icon Optionen</string>
+    <string name="battery">Akkustatus</string>
+    <string name="header_summary_general_ui">Startanimation, Bug Mailer, Rotation, IME Wechsler, etc</string>
+    <string name="header_summary_battery">Akkuleiste, 1% Akkustatusmod,etc</string>
+    <string name="battery_icon">Akkustatus</string>
+    <string name="battery_not_title">Akkustatus Icon in den Benachrichtigungen</string>
+    <string name="battery_not_summary">Akkustatus Icon wird beim "Schliesse Alle" Knopf angezeigt</string>
+    <string name="battery_bar">Position der Akkustatusleiste</string>
+    <string name="battery_bar_color">Farbe der Akkustatusleiste</string>
+    <string name="battery_bar_cat">Akkustatusleiste Optionen</string>
+    <string name="battery_bar_style_title">Akkustatusleisten Stil</string>
+    <string name="battery_bar_thickness_title">Akkustatusleiste Dicke</string>
+    <string name="battery_bar_animate_title">Ladeanimation</string>
+    <string name="battery_bar_animate_summary">Die Ladeanimation kann zu Problemen führen. Aktivieren auf eigene Verantwortung.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Farbauswahl</string>
+    <string name="press_color_to_apply">Drücke auf die Farbe um sie auszuwählen</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Setze</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_cat">Uhr Optionen</string>
+    <string name="clock">Uhr</string>
+    <string name="header_summary_clock">Uhrenposition, AM/PM Stil, Farbe</string>
+    <string name="clock_title_enable">Uhrenstil</string>
+    <string name="title_clock_ampm_entries">AM/PM Stil</string>
+    <string name="enable_clock_weekday">Wochentage</string>
+    <string name="enable_clock_weekday_summary">Zeige Wochentag vor der Uhr</string>
+    <string name="clock_color_title">Uhrenfarbe</string>
+
+    <!-- Statusbar | Additional Options -->
+    <string name="brightness_control_cat">Helligkeitsslider</string>
+    <string name="status_bar_toggle_brightness_slider">Helligkeitsslider</string>
+    <string name="status_bar_toggle_brightness_sliding_summary">Ermöglicht das Einstellen der Helligkeit mit streichen über die Statusbar</string>
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
     <string name="status_bar_signal_text_title">Signalstatus Stil</string>
     <string name="status_bar_signal_text_summary">Zeige Signalstatus Stil</string>
     <string name="status_bar_signal_text_show_bars">Icon (Standard)</string>
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Versteckt</string>
+    <string name="brightness_location_title">Position des Heligkeitssliders</string>
     <string name="status_bar_style_icon">Icon (Standard)</string> <!-- TODO: dedup -->
     <string name="status_bar_battery_status_percentage">Prozent</string>
     <string name="status_bar_battery_status_circle">Kreis</string>
@@ -2441,6 +2505,8 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="status_bar_style_hidden">Versteckt</string> <!-- TODO: dedup -->
 
     <!-- Navigation Bar -->
+    <string name="nav_bar">Navigationsleiste</string>
+    <string name="header_navbar">Navigationsleiste</string>
     <string name="navigation_bar_title">Navigationsleiste</string>
     <string name="navigation_bar_help_text">1 - Schloss-Icon berühren, um zu beginnen\n\n2 - Eine Schaltfläche berühren, um ihr eine Funktion zuzuweisen oder diese zu ändern\n\n3 - Eine Schaltfläche gedrückt halten, um sie zu verschieben\n\n4 - Schloss-Icon erneut berühren, um die Änderungen zu speichern\n\n5 - Reset-Icon berühren, um die Vorgaben wiederherzustellen\n\n</string>
     <string name="navigation_bar_tips">&#8226; Eine Funktion kann nur einer Schaltfläche gleichzeitig zugewiesen werden\n\n&#8226; Die Funktion der Home-Schaltfläche kann nicht verändert werden\n\n&#8226; Die seitlichen Schaltflächen können nicht verschoben werden</string>
@@ -2457,14 +2523,14 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="navigation_bar_height_title">Höhe der Navigationsleiste</string>
     <string name="navigation_bar_width_title">Breite der Navigationsleiste</string>
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
-    <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
-    <string name="navbar_order_title">Reihenfolge der Navigations-Buttons</string>
-    <string name="navbar_order_summary">Die Reihenfolge der Navigations-Buttons anpassen.</string>
-    <string name="navbar_button_cat">Navigationsleistenknöpfe</string>
+    <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menüknöpfe erscheinen?</string>
+    <string name="navbar_order_title">Reihenfolge der Navigationsknöpfe</string>
+    <string name="navbar_order_summary">Die Reihenfolge der Navigationsknöpfe anpassen.</string>
+    <string name="navbar_button_cat">Navigationsknöpfe</string>
     <string name="navbar_qty_title">Anzahl der Navigationsknöpfe</string>
     <string name="navbar_qty_summary">Wähle die Anzahl der Navigationsknöpfe</string>
-    <string name="enabled_navbar_buttons_title">Aktivierte Navigations-</string>
-    <string name="enabled_navbar_buttons_summary">Auswählen, welche Navigations-Buttons sichtbar sein sollen.</string>
+    <string name="enabled_navbar_buttons_title">Aktivierte Navigationsknöpfe</string>
+    <string name="enabled_navbar_buttons_summary">Auswählen, welche Navigationsknöpfe sichtbar sein sollen.</string>
     <string name="navbar_action_title">Knopf %1$s Aktion &amp; Icon</string>
     <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem Drücken</string>
     <string name="navbar_action_home">Home</string>
@@ -2475,13 +2541,31 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="navbar_action_kill">Task beenden</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Leer</string>
-    <string name="button_transparency_title">Transparenz der Navigations-Buttons</string>
+    <string name="button_transparency_title">Transparenz der Navigationsknöpfe</string>
     <string name="long_press_home_title">Langes Drücken der Home-Taste</string>
     <string name="long_press_home_summary">Aktion, die bei langem Drücken der Home-Taste ausgeführt werden soll. (Neustart erforderlich)</string>
-    <string name="glow_times_title">Button Animation (leuchten)</string>
-    <string name="glow_times_summary">Animationsgeschwindigkeit der Buttons anpassen. Verringern der Geschwindigkeit kann die Leistung verbessern.</string>
+    <string name="glow_times_title"> Animation der Navigationsknöpfe (leuchten)</string>
+    <string name="glow_times_off">Aus</string>
+    <string name="glow_times_superquick">Sehr schnell</string>
+    <string name="glow_times_quick">Schnell</string>
+    <string name="glow_times_normal">Normal</string>
+    <string name="navigation_bar_height_summary">Navigationsleisten Höhe in der vertikalen Ansicht</string>
+    <string name="navigation_bar_height_landscape_title">Navigationsleisten Höhe Horizontal</string>
+    <string name="navigation_bar_height_landscape_summary">Navigationsleisten Höhe in der horizontalen Ansicht</string>
+    <string name="navigation_bar_width_summary">Navigationsleisten Breite wenn die Leiste paralell zu einer Seite ist</string>
+
+    <string name="navigation_bar_style">Navivationsleisten Stil</string>
+    <string name="interface_navbar_color_title">Navigationsleistenfarbe</string>
+    <string name="interface_navbar_color_summary">Ändere die Farbe der Navigationsleiste</string>
+    <string name="nav_bar_transparency_title">Navigationsleisten Transparenz</string>
+
 
     <!-- Navigation bar ring -->
+    <string name="navbar_ring_cat">Navigationsleistenring Ziele</string>
+    <string name="title_navring_amount">Anzahl der Navationsleistenring Ziele</string>
+    <string name="summary_navring_amount">Wähle die Anzahl Ring Ziele</string>
+    <string name="interface_navring_settings_title">Navigationsleistenring</string>
+    <string name="interface_navring_settings_summary">Editiere deine benutzerdefinierten Nav Ring Apps</string>
     <string name="interface_softkey_settings">Softtasten Einstellungen</string>
     <string name="interface_softkeys_pref_default_title">Keine Aktivität gewählt</string>
     <string name="interface_softkeys_pref_default_summary">Tippe um eine Aktivität für langes Drücken zu wählen</string>
@@ -2504,6 +2588,10 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="lockscreen_widgets_title">Ziel/Widgets Ausrichtung</string>
     <string name="lockscreen_widgets_dialog_title">Ziel/Widgets Ausrichtung</string>
     <string name="lockscreen_widgets_summary">Bildschirmsperren Ziele und Widgets Ausrichtung</string>
+    <string name="lockscreen_clock_align_title">Uhr Ausrichtung</string>
+    <string name="lockscreen_clock_align_left">Links</string>
+    <string name="lockscreen_clock_align_center">Mittig</string>
+    <string name="lockscreen_clock_align_right">Rechts</string>
 
  <!-- Performance Settings | Start up tweaks -->
     <string name="start_up_tweaks">Start-Up Tweaks</string>
@@ -2576,6 +2664,7 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="donate_aokp">http://aokp.co/</string>
 	
     <!-- Misc -->
+    <string name="sound_title">Töne</string>
     <string name="volume_adjust_sounds_enable_title">Lautstärkeregelungston</string>
     <string name="volume_adjust_sounds_enable_summary">Spielt eine Ton wenn die Lautstärke mit den Tasten reguliert wird</string>
 	

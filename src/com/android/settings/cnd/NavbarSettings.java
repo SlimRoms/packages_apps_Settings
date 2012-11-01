@@ -171,7 +171,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
         float defaultAlpha = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.6f);
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
@@ -183,7 +183,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
 
         float navBarTransparency = Settings.System.getFloat(getActivity()
-               .getContentResolver(), Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.6f);
+               .getContentResolver(), Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
         mNavigationBarTransparency = (SeekBarPreference) findPreference("nav_bar_transparency");
         mNavigationBarTransparency.setInitValue((int) (navBarTransparency * 100));
         mNavigationBarTransparency.setOnPreferenceChangeListener(this);

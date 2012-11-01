@@ -59,7 +59,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.statusbar_settings);
 
         float statBarTransparency = Settings.System.getFloat(getActivity()
-               .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY, 0.6f);
+               .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY, 0.3f);
         mStatusbarTransparency = (SeekBarPreference) findPreference("stat_bar_transparency");
         mStatusbarTransparency.setInitValue((int) (statBarTransparency * 100));
         mStatusbarTransparency.setOnPreferenceChangeListener(this);

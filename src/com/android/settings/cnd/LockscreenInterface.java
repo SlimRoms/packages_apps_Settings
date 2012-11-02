@@ -113,6 +113,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mVibratePref.setChecked(bVibrate);
         mVibratePref.setOnPreferenceChangeListener(this);
 
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            getPreferenceScreen().removePreference(mLockscreenButtons);
+        }
+
         mIsScreenLarge = Utils.isTablet(getActivity());
 
         updateCustomBackgroundSummary();

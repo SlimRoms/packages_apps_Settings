@@ -1471,6 +1471,8 @@
 
         <activity android:name=".profiles.NFCProfileSelect" />
 
+        <activity android:name=".cnd.LockscreenButtons" />
+
         <activity android:name=".cnd.LockscreenTargets" />
 
         <activity android:name=".cnd.LockscreenInterface" />

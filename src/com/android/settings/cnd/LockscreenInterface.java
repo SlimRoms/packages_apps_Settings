@@ -61,6 +61,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
 	private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
     public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private CheckBoxPreference mVibratePref;
     private ListPreference mCustomBackground;
@@ -70,12 +71,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private ColorPickerPreference mLockscreenTextColor;
 	private ListPreference mClockAlign;
     private ListPreference mBatteryStatus;
+    private PreferenceScreen mLockscreenButtons;
     private Activity mActivity;
     ContentResolver mResolver;
 
     private File wallpaperImage;
     private File wallpaperTemporary;
     private boolean mIsScreenLarge;
+
+    public boolean hasButtons() {
+        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

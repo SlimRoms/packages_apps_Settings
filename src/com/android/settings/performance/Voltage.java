@@ -1,4 +1,4 @@
-package com.android.settings.tools;
+package com.android.settings.performance;
 
 public class Voltage {
 

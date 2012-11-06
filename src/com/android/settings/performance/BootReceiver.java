@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cnd;
+package com.android.settings.performance;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -39,6 +39,7 @@ public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context ctx, Intent intent) {
+		ctx.startService(new Intent(ctx, BootService.class));
         if (SystemProperties.getBoolean(CPU_SETTINGS_PROP, false) == false
                 && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             SystemProperties.set(CPU_SETTINGS_PROP, "true");

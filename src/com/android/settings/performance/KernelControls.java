@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cnd;
+package com.android.settings.performance;
 
 import java.io.File;
 

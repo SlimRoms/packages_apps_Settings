@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cnd;
+package com.android.settings.performance;
 
 import android.os.Bundle;
 import android.os.Handler;

@@ -1455,7 +1455,7 @@
 
         <activity android:name=".cnd.ThemesSettings" />
 
-        <activity android:name=".cnd.PerformanceSettings" />
+        <activity android:name=".performance.PerformanceSettings" />
 
         <activity android:name=".profiles.ProfilesSettings" />
 
@@ -1483,7 +1483,7 @@
 
         <activity android:name=".cnd.MemoryManagement" />
             
-        <activity android:name=".cnd.Processor" />
+        <activity android:name=".performance.Processor" />
         
         <activity android:name=".cnd.Navbar" />
 
@@ -1502,9 +1502,9 @@
 
         <activity android:name=".notificationlight.BatteryLightSettings" />
 
-        <activity android:name=".tools.InitD" />
+        <activity android:name=".performance.InitD" />
 
-        <activity android:name=".tools.VoltageControl" />
+        <activity android:name=".performance.VoltageControl" />
 
         <!-- extra activities end -->
 
@@ -1554,11 +1554,13 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
 
-        <receiver android:name=".cnd.BootReceiver" android:enabled="true">
+        <receiver android:name=".performance.BootReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+		<service android:name=".performance.BootService" />
 
     </application>
 </manifest>

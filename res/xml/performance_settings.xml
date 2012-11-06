@@ -9,19 +9,19 @@
 
         <PreferenceScreen
             android:key="init_d"
-            android:fragment="com.android.settings.tools.InitD"
+            android:fragment="com.android.settings.performance.InitD"
             android:title="@string/start_up_tweaks"
             android:summary="@string/ps_init_d" />
 
         <PreferenceScreen
             android:key="processor"
-            android:fragment="com.android.settings.cnd.Processor"
+            android:fragment="com.android.settings.performance.Processor"
             android:title="@string/processor_title"
             android:summary="@string/processor_summary" />
 
         <PreferenceScreen
             android:key="ioscheduler"
-            android:fragment="com.android.settings.cnd.IOScheduler"
+            android:fragment="com.android.settings.performance.IOScheduler"
             android:title="@string/io_scheds_title"
             android:summary="@string/io_scheds_summary" />
 
@@ -32,12 +32,12 @@
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.tools.VoltageControl" />            
+                android:targetClass="com.android.settings.performance.VoltageControl" />            
         </PreferenceScreen>
 
         <PreferenceScreen
             android:key="kernel_controls"
-            android:fragment="com.android.settings.cnd.KernelControls"
+            android:fragment="com.android.settings.performance.KernelControls"
             android:title="@string/kernel_controls_title"
             android:summary="@string/kernel_controls_summary" />
 

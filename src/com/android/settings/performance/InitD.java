@@ -1,4 +1,4 @@
-package com.android.settings.tools;
+package com.android.settings.performance;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -20,7 +20,7 @@
     android:title="@string/interface_softkey_settings" >
     <PreferenceCategory
         android:key="interface_navring_5" >
-        <com.android.settings.eos.NavRingPreference
+        <com.android.settings.cnd.NavRingPreference
             android:key="interface_navring_5_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"
@@ -29,7 +29,7 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:key="interface_navring_4" >
-        <com.android.settings.eos.NavRingPreference
+        <com.android.settings.cnd.NavRingPreference
             android:key="interface_navring_4_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"
@@ -38,7 +38,7 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:key="interface_navring_3" >
-        <com.android.settings.eos.NavRingPreference
+        <com.android.settings.cnd.NavRingPreference
             android:key="interface_navring_3_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"
@@ -47,7 +47,7 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:key="interface_navring_2" >
-        <com.android.settings.eos.NavRingPreference
+        <com.android.settings.cnd.NavRingPreference
             android:key="interface_navring_2_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"
@@ -57,7 +57,7 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:key="interface_navring_1" >
-        <com.android.settings.eos.NavRingPreference
+        <com.android.settings.cnd.NavRingPreference
             android:key="interface_navring_1_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:summary="@string/interface_softkeys_pref_default_summary"

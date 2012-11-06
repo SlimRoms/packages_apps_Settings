@@ -1,4 +1,4 @@
-package com.android.settings.eos;
+package com.android.settings.cnd;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -29,7 +29,7 @@ import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.eos.NavRingPreference;
+import com.android.settings.cnd.NavRingPreference;
 
 import java.util.ArrayList;
 import java.util.List;

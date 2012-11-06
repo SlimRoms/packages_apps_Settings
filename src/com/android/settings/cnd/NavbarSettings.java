@@ -62,7 +62,7 @@ import com.android.settings.util.Helpers;
 import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.widgets.NavBarItemPreference;
 import com.android.settings.widgets.SeekBarPreference;
-import com.android.settings.eos.NavRingActions;
+import com.android.settings.cnd.NavRingActions;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

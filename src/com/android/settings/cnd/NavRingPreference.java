@@ -1,5 +1,5 @@
 
-package com.android.settings.eos;
+package com.android.settings.cnd;
 
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.settings.R;
-import com.android.settings.eos.NavRingActions.AppPackage;
+import com.android.settings.cnd.NavRingActions.AppPackage;
 
 public class NavRingPreference extends Preference {
     private Context mContext;

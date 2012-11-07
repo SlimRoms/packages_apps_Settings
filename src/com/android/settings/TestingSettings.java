@@ -17,15 +17,12 @@
 package com.android.settings;
 
 import android.os.Bundle;
-import android.preference.Preference;
+import android.preference.PreferenceActivity;
 
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-
-public class TestingSettings extends SettingsPreferenceFragment {
+public class TestingSettings extends PreferenceActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
         addPreferencesFromResource(R.xml.testing_settings);

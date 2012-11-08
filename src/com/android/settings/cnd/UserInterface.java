@@ -59,11 +59,13 @@ public class UserInterface extends SettingsPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mTabletui;
+    CheckBoxPreference mDisableFullscreenKeyboard;
     Preference mLcdDensity;
 
     String mCustomLabelText = null;
@@ -110,6 +112,11 @@ public class UserInterface extends SettingsPreferenceFragment {
 		if (!mTablet) {
             prefs.removePreference(mTabletui);
         }
+
+        mDisableFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
+        mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
+
     }
 
     private void updateCustomLabelTextSummary() {
@@ -173,6 +180,11 @@ public class UserInterface extends SettingsPreferenceFragment {
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
             .startPreferenceFragment(new DensityChanger(), true);
+            return true;
+        } else if (preference == mDisableFullscreenKeyboard) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD, checked ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

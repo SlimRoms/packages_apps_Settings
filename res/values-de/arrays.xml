@@ -276,6 +276,7 @@
     <item msgid="4039737283841672166">"Verbunden"</item>
     <item msgid="4042143101664725090">"Timeout"</item>
     <item msgid="7664124146786465092">"Nicht erfolgreich"</item>
+  </string-array>
 
     <!-- **** EXTRA EDITS START **** -->
 
@@ -591,5 +592,4 @@
 
     <!-- **** EXTRA EDITS END **** -->	
 	
-  </string-array>
 </resources>

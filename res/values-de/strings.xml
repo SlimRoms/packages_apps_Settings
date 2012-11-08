@@ -1813,7 +1813,6 @@
     <string name="ll_num_levels">Anzahl der Stufen setzen</string>
 
     <!-- Display settings screen, notification light settings -->
-    <string name="notification_pulse_title">Benachrichtungslicht</string>
     <string name="notification_light_general_title">Allgemein</string>
     <string name="notification_light_applist_title">Apps</string>
     <string name="notification_light_phonelist_title">Telefon</string>
@@ -2060,7 +2059,7 @@
     <string name="lockscreen_long_press_menu_title">Menü-Taste gedrückt halten</string>
     <string name="lockscreen_buttons_no_action">Keine Aktion</string>
     <string name="lockscreen_buttons_flashlight">Taschenlampe</string>
-    <string name="lockscreen_buttons_next">Nächster Titel/string>
+    <string name="lockscreen_buttons_next">Nächster Titel</string>
     <string name="lockscreen_buttons_previous">Vorheriger Titel</string>
     <string name="lockscreen_buttons_playpause">Play/Pause Musik</string>
     <string name="lockscreen_buttons_toggle_sound">Sound</string>

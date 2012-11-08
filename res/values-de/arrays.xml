@@ -276,5 +276,320 @@
     <item msgid="4039737283841672166">"Verbunden"</item>
     <item msgid="4042143101664725090">"Timeout"</item>
     <item msgid="7664124146786465092">"Nicht erfolgreich"</item>
+
+    <!-- **** EXTRA EDITS START **** -->
+
+    <!-- Volume Overlay options. -->
+    <string-array name="volume_overlay_entries">
+        <item>Einfach</item>
+        <item>Erweiterbar</item>
+        <item>Erweitert</item>
+        <item>Keine</item>
+    </string-array>
+
+    <!-- Silent mode options. -->
+    <string-array name="silent_mode_entries">
+        <item>Aus</item>
+        <item>Vibration</item>
+        <item>Stumm</item>
+    </string-array>
+
+    <string-array name="entries_light_filter_reset">
+        <item>Deaktiviert</item>
+        <item>400 lux</item>
+        <item>500 lux</item>
+        <item>600 lux</item>
+        <item>700 lux</item>
+        <item>800 lux</item>
+        <item>900 lux</item>
+        <item>1000 lux</item>
+        <item>1500 lux</item>
+        <item>2000 lux</item>
+        <item>2500 lux</item>
+    </string-array>
+
+    <string-array name="entries_light_levels_dim">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20 (Standard)</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+    </string-array>
+
+    <string-array name="entries_network_widget">
+        <item>2G/3G+2G</item>  
+        <item>Nur 2G/3G</item>   
+        <item>2G/3G Nur/3G+2G</item>
+    </string-array>
+
+    <string-array name="entries_flash_widget">
+        <item>Normal</item>
+        <item>Hoch</item>
+    </string-array>
+  
+    <string-array name="haptic_feedback_entries">
+        <item>Allgemeine Einstellungen</item>
+        <item>An</item>
+        <item>Aus</item>
+    </string-array>
+
+    <string-array name="pref_zram_size_entries">
+        <item>Deakiviert</item>
+        <item>10%</item>
+        <item>18% (Standard)</item>
+        <item>26%</item>
+    </string-array>
+
+    <string-array name="entries_status_bar_am_pm">
+        <item>Normal</item>
+        <item>Klein</item>
+        <item>None (Standard)</item>
+    </string-array>
+
+    <string-array name="entries_status_bar_battery">
+        <item>Symbol (Standard)</item>
+        <item>Prozent</item>
+        <item>Versteckt</item>
+    </string-array>
+
+    <!-- Profile mode options. -->
+    <string-array name="profile_entries">
+        <item>An</item>
+        <item>Aus</item>
+        <item>Nicht überschreiben</item>
+    </string-array>
+
+    <!-- Profile mode options. -->
+    <string-array name="profile_connection_entries">
+        <item>Deaktiviert</item>
+        <item>Aktiviert</item>
+    </string-array>
+
+    <string-array name="location_entries_gps_source">
+        <item>Interne GPS verwenden</item>
+    </string-array>
+
+    <!-- Battery styles -->
+    <string-array name="battery_icon_entries">
+        <item>Nur Symbol</item>
+        <item>Nur Text</item>
+        <item>Symbol mit Text</item>
+        <item>Symbol mit zentrierten Text</item>
+        <item>Circle MOD </item>
+        <item>Circle MOD (mit %)</item>
+ <item>Dotted Circle MOD (mit %)</item>
+        <item>Versteckt</item>
+    </string-array>
+
+    <!-- clock stuff -->
+    <string-array name="clock_style_entries">
+        <item>Uhr - Rechts</item>
+        <item>Uhr - Zentriert</item>
+        <item>Keine Uhr</item>
+    </string-array>
+
+    <string-array name="clock_ampm_entries">
+        <item>Nicht anzeigen</item>
+        <item>AM/PM - Klein</item>
+        <item>AM/PM - Standard</item>
+    </string-array>
+
+    <string-array name="clock_weekday_entries">
+        <item>Nicht anzeigen</item>
+        <item>Wochentag - Klein</item>
+        <item>Wochentag - Standard</item>
+    </string-array>
+    
+    <string-array name="entries_fast_up_explain">
+        <item>Entfernen</item>
+        <item>HSUPA deaktiviert (Capped)</item>
+        <item>HSUPA aktiviert</item>
+        <item>HSUPA aktiviert (Uncapped)</item>
+    </string-array>
+    
+    <string-array name="entries_prox_delay_explain">
+        <item>Entfernen</item>
+        <item>0</item>
+        <item>50</item>
+        <item>75</item>
+        <item>125</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>225</item>
+        <item>250</item>
+        <item>275</item>
+        <item>300</item>
+        <item>325</item>
+        <item>350</item>
+        <item>375</item>
+        <item>400</item>
+        <item>425</item>
+        <item>450</item>
+        <item>475</item>
+        <item>500</item>
+    </string-array>
+    
+    <string-array name="entries_prox_delay">
+        <item>Deaktiviert</item>
+        <item>0</item>
+        <item>50</item>
+        <item>75</item>
+        <item>125</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>225</item>
+        <item>250</item>
+        <item>275</item>
+        <item>300</item>
+        <item>325</item>
+        <item>350</item>
+        <item>375</item>
+        <item>400</item>
+        <item>425</item>
+        <item>450</item>
+        <item>475</item>
+        <item>500</item>
+    </string-array>
+    
+    <string-array name="entries_sleep_explain">
+        <item>Deaktiviert</item>
+        <item>Power Collapse Suspend</item>
+        <item>Power Collapse (Best)</item>
+        <item>Apps schlafen</item>
+        <item>Langsame Uhr</item>
+        <item>Warte auf unterbrechen</item>
+    </string-array>
+    
+    <string-array name="entries_sleep">
+        <item>Deaktiviert</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="battery_bar_entries">
+        <item>Versteckt</item>
+        <item>Statusleiste</item>
+        <item>NavBar - Oben</item>
+        <item>NavBar - Unten</item>
+    </string-array>
+    
+    <string-array name="battery_bar_style_entries">
+        <item>Standard</item>
+        <item>Mittig-gespiegelt</item>
+    </string-array>
+
+    <!-- NavBar -->
+    <string-array name="pref_navigation_menu_entries">
+		<item>Rechts</item>
+		<item>Links</item>
+		<item>Beide</item>
+		<item>Entfernen</item>
+	</string-array>
+    
+	<string-array name="pref_navigation_menu_display_entries">
+		<item>Standard JellyBean</item>
+		<item>Immer unsichtbare Symbole anzeigen</item>
+		<item>Immer anzeigen</item>
+		<item>Standard JB mit unsichtbaren Symbolen wenn versteckt</item>
+	</string-array>
+    
+	<string-array name="navbar_button_entries">
+		<item>Home</item>
+		<item>Zurück</item>
+		<item>Kürzlich</item>
+		<item>Suchen</item>
+		<item>Menü</item>
+		<item>Widgets wählen</item>
+		<item>App beenden</item>
+		<item>Power</item>
+        <item>Benachrichtungen</item>
+		<item>Eigenes App</item>
+		<item>Leer</item>
+	</string-array>
+
+    <string-array name="navigation_bar_width_entries">
+        <item>42 dp (Standard)</item>
+        <item>38 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_entries">
+        <item>48 dp (Standard)</item>
+        <item>44 dp</item>
+        <item>40 dp</item>
+        <item>38 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    
+    <string-array name="navigation_bar_height_landscape_entries">
+        <item>48 dp (Standard)</item>
+        <item>42 dp</item>
+        <item>38 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    
+    <string-array name="lockscreen_widgets_entries">
+        <item>Eins-Fünf</item>
+        <item>Sechs-Acht</item>  
+    </string-array>
+
+    <string-array name="navring_dialog_entries">
+        <item>Keine</item>
+        <item>Screenshot</item>
+        <item>Eingabemethoden-Auswahl</item>
+        <item>Klingeln/Vib</item>
+        <item>Klingeln/Stumm</item>
+        <item>Klingeln/Vib/Stumm</item>
+        <item>App beenden</item>
+        <item>Bildschirm aus</item>
+        <item>Google Now</item>
+        <item>App auswählen</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_entries">
+        <item>1 Ziel</item>
+        <item>2 Ziele</item>
+        <item>3 Ziele</item>
+        <item>4 Ziele</item>
+        <item>5 Ziele</item>
+    </string-array>
+
+    <!-- Power widget brightness slider -->
+    <string-array name="power_widget_brightness_location_entries">
+        <item>Zeigen</item>
+        <item>Nicht anzeigen</item>
+    </string-array>
+
+    <!-- Brightness slider -->
+    <string-array name="brightness_location_entries">
+        <item>Oben</item>
+        <item>Unten</item>
+        <item>Nicht anzeigen</item>
+    </string-array>
+
+    <!-- **** EXTRA EDITS END **** -->	
+	
   </string-array>
 </resources>

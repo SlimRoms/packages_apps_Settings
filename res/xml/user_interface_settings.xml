@@ -27,6 +27,12 @@
             android:summary="@string/tablet_ui_summary"
             android:defaultValue="false" />
 
+        <CheckBoxPreference
+            android:key="disable_fullscreen_keyboard"
+            android:title="@string/disable_fullscreen_keyboard_title"
+            android:summary="@string/disable_fullscreen_keyboard_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="lcd_density_setup"
             android:title="@string/lcd_density_title"

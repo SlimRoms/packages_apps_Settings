@@ -62,6 +62,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SET_TIME" />
 
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
@@ -252,9 +253,11 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name="Settings$ApnSettingsActivity" android:label="@string/apn_settings"
+        <activity android:name="ApnSettings"
+                  android:label="@string/apn_settings"
+                  android:uiOptions="none"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:launchMode="singleTask" android:clearTaskOnLaunch="true">
+                  android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APN_SETTINGS" />
@@ -306,6 +309,7 @@
 
         <activity android:name="Settings$TetherSettingsActivity"
                 android:label="@string/tether_settings_title_all"
+                android:uiOptions="none"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
@@ -327,6 +331,7 @@
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name=".TetherSettings"
                   android:label="@string/tether_settings_title_all"
+                  android:uiOptions="none"
                   android:clearTaskOnLaunch="true"
                   android:exported="true"
                   android:targetActivity="Settings$TetherSettingsActivity">
@@ -765,6 +770,7 @@
 
         <activity android:name="Settings$LocationSettingsActivity"
                 android:label="@string/location_settings_title"
+                android:uiOptions="none"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
@@ -959,8 +965,6 @@
 
         <activity android:name="ChooseLockPassword" android:exported="false"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
-
-        <activity android:name="ChooseLockPatternTutorial" android:exported="false"/>
 
         <!-- Runs in the phone process since it needs access to the Phone object -->
         <activity android:name=".deviceinfo.Status"
@@ -1612,6 +1616,22 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="cm/profile" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="Settings$DreamSettingsActivity"
+                android:label="@string/screensaver_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.DREAM_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.DreamSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_settings" />
         </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"

@@ -1699,4 +1699,7 @@
     <string name="help_label" msgid="1107174367904110532">"Ayuda"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Difusiones móviles"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Selecciona los tipos de alertas de emergencia que quieres ver."</string>
+
+    <string name="stylus_icon_enabled_title">Stylus</string>
+    <string name="stylus_icon_enabled_summary">Mostrar el cursor cuando se arrastra o dibuja con Stylus</string>
 </resources>

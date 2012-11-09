@@ -2765,4 +2765,7 @@
     <string name="high_end_gfx_title">Highend Grafikeffekte</string>
     <string name="high_end_gfx_summary">Aktiviere Grafikeffekte, deaktiviert auf schwächeren Geräten</string>
 	
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Stift-Symbol</string>
+    <string name="stylus_icon_enabled_summary">Zeiger einblenden, wenn ein Stift verwendet wird</string>
 </resources>

@@ -1699,4 +1699,7 @@
     <string name="help_label" msgid="1107174367904110532">"Ajuda"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Transmissões por celular"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Selecione os tipos de alertas de emergência a exibir."</string>
+
+	<string name="stylus_icon_enabled_title">Mostrar ícone ao usar caneta stylus</string>
+    <string name="stylus_icon_enabled_summary">Mostrar o ícone do ponteiro quando pairar ou desenhar com uma caneta stylus</string>
 </resources>

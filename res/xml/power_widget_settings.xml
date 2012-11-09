@@ -47,8 +47,16 @@
             android:entries="@array/brightness_location_entries"
             android:entryValues="@array/brightness_location_values"
             android:title="@string/brightness_location_title" 
-	    android:dependency="expanded_widget" 
-       />
+	        android:dependency="expanded_widget" />
+
+         <Preference
+            android:key="notification_wallpaper"
+            android:title="@string/notification_wallpaper_title"
+            android:summary="@string/notification_wallpaper_summary" />
+
+        <com.android.settings.widgets.SeekBarPreference
+             android:key="notification_wallpaper_alpha"
+             android:title="@string/notif_wallpaper_alpha_title" />
 
     </PreferenceCategory>
 

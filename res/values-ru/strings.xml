@@ -1701,4 +1701,8 @@
     <string name="help_label" msgid="1107174367904110532">"Справка"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Широковещательная передача сообщений"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Выберите типы экстренных оповещений на экране."</string>
+
+	<!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Значок стилуса</string>
+    <string name="stylus_icon_enabled_summary">Показывать значок указателя при рисовании или управлении стилусом</string>
 </resources>

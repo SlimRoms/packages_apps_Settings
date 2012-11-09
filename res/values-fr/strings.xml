@@ -1704,4 +1704,8 @@
     <string name="help_label" msgid="1107174367904110532">"Aide"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Diffusions cellulaires"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Sélectionnez les types d\'alertes d\'urgence à afficher."</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Pointeur stylet</string>
+    <string name="stylus_icon_enabled_summary">Afficher l\'icône du pointeur lors de l\'utilisation d\'un stylet</string>
 </resources>

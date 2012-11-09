@@ -1699,4 +1699,8 @@
     <string name="help_label" msgid="1107174367904110532">"Yardım"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Hücre yayınları"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Görüntülenecek acil durum uyarı türünü seçin."</string>
+
+	<!-- Stylus Icon : #CM -->
+    <string name="stylus_icon_enabled_title">Kalem kullanırken simge göster</string>
+    <string name="stylus_icon_enabled_summary">Kalem ile çizim yaparken veya üzerinde gezinirken işaretçi simgesini göster</string>
 </resources>

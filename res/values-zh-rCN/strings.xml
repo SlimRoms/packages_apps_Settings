@@ -1699,4 +1699,8 @@
     <string name="help_label" msgid="1107174367904110532">"帮助"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"小区广播"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"请选择要显示的紧急消息类型。"</string>
+
+	<!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">使用触控笔时显示指针</string>
+    <string name="stylus_icon_enabled_summary">在使用触控笔的时候将会显示指针</string>
 </resources>

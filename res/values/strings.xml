@@ -5227,6 +5227,10 @@
     <string name="gestures_double_spen_title_head">Double tap</string>
     <string name="gestures_double_spen_summary_head">Allows to launch custom action on double tap</string>
 
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
     <!-- Gestures Options -->
     <string name="gestures_action_empty">No Action</string>
     <string name="gestures_action_home">Go To Home</string>

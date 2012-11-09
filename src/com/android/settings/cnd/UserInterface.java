@@ -56,6 +56,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
@@ -67,6 +68,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     CheckBoxPreference mTabletui;
     CheckBoxPreference mDisableFullscreenKeyboard;
     Preference mLcdDensity;
+    CheckBoxPreference mShowWifiName;
 
     String mCustomLabelText = null;
 
@@ -96,6 +98,10 @@ public class UserInterface extends SettingsPreferenceFragment {
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, false));
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -137,6 +143,11 @@ public class UserInterface extends SettingsPreferenceFragment {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mShowWifiName) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mDualpane) {
 	            Settings.System.putBoolean(mContext.getContentResolver(),

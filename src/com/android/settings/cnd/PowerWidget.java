@@ -102,7 +102,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
- 
+
     Preference mNotificationWallpaper;
     SeekBarPreference mWallpaperAlpha;
 
@@ -118,7 +118,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
             PreferenceScreen prefSet = getPreferenceScreen();
 
-			customnavTemp = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp.jpg");
+            customnavTemp = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp.jpg");
 
             mPowerWidget = (CheckBoxPreference) prefSet.findPreference(UI_EXP_WIDGET);
             mPowerWidgetHideOnChange = (CheckBoxPreference) prefSet
@@ -149,15 +149,15 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
 
-			mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
+            mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
-	        float wallpaperTransparency = Settings.System.getFloat(getActivity()
-	               .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
-	        mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-	        mWallpaperAlpha.setInitValue((int) (wallpaperTransparency * 100));
-	        mWallpaperAlpha.setOnPreferenceChangeListener(this);
+            float wallpaperTransparency = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+            mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+            mWallpaperAlpha.setInitValue((int) (wallpaperTransparency * 100));
+            mWallpaperAlpha.setOnPreferenceChangeListener(this);
 
-		    setHasOptionsMenu(true);
+            setHasOptionsMenu(true);
         }
     }
 
@@ -192,21 +192,21 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-	File wallpaperToDelete = new File(getActivity().getFilesDir()+"/notification_wallpaper.jpg");
+    File wallpaperToDelete = new File(getActivity().getFilesDir()+"/notification_wallpaper.jpg");
         switch (item.getItemId()) {
             case R.id.remove_wallpaper:
                 if (wallpaperToDelete.exists()) {
                     wallpaperToDelete.delete();
                 }
-			    Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
-				mWallpaperAlpha.setValue(0);
+                mWallpaperAlpha.setValue(0);
                 return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
- 	
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
           if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
@@ -217,9 +217,9 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 Uri selectedImageUri = Uri.fromFile(customnavTemp);
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
-				wallpaperStream.close();
-				customnavTemp.delete();
-				Settings.System.putFloat(getActivity().getContentResolver(),
+                wallpaperStream.close();
+                customnavTemp.delete();
+                Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
                 mWallpaperAlpha.setValue(0);
                 } catch (Exception e) {
@@ -290,8 +290,8 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(customnavTemp));
                 startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             } catch (Exception e) {
-		Log.e(TAG, e.getMessage(), e);		
-          }
+                Log.e(TAG, e.getMessage(), e);
+            }
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

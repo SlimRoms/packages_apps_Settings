@@ -17,9 +17,21 @@
             android:defaultValue="false" />
 
         <CheckBoxPreference
+            android:key="use_alt_resolver"
+            android:title="@string/alt_resolver"
+            android:summary="@string/alt_resolver_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
             android:key="recent_kill_all"
             android:title="@string/recent_kill_all"
             android:summary="@string/recent_kill_all_summary" />
+
+        <CheckBoxPreference
+            android:key="disable_fullscreen_keyboard"
+            android:title="@string/disable_fullscreen_keyboard_title"
+            android:summary="@string/disable_fullscreen_keyboard_summary"
+            android:defaultValue="false" />
 
         <CheckBoxPreference
 			android:key="force_dualpanel"
@@ -31,12 +43,6 @@
             android:key="mode_tabletui"
             android:title="@string/tablet_ui"
             android:summary="@string/tablet_ui_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="disable_fullscreen_keyboard"
-            android:title="@string/disable_fullscreen_keyboard_title"
-            android:summary="@string/disable_fullscreen_keyboard_summary"
             android:defaultValue="false" />
 
         <Preference

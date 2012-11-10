@@ -61,6 +61,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
     private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
+    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
@@ -69,6 +70,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     CheckBoxPreference mDisableFullscreenKeyboard;
     Preference mLcdDensity;
     CheckBoxPreference mShowWifiName;
+    CheckBoxPreference mUseAltResolver;
 
     String mCustomLabelText = null;
 
@@ -102,6 +104,10 @@ public class UserInterface extends SettingsPreferenceFragment {
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.NOTIFICATION_SHOW_WIFI_SSID, false));
+
+        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+        mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -147,6 +153,11 @@ public class UserInterface extends SettingsPreferenceFragment {
         } else if (preference == mShowWifiName) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mDualpane) {

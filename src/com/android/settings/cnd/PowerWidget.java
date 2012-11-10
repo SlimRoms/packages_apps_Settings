@@ -108,7 +108,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
     Random randomGenerator = new Random();
     private File customnavTemp;
-    private int seekbarProgress;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -199,8 +198,9 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 if (wallpaperToDelete.exists()) {
                     wallpaperToDelete.delete();
                 }
-				Settings.System.putFloat(getActivity().getContentResolver(),
+			    Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+				mWallpaperAlpha.setValue(0);
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -221,6 +221,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 				customnavTemp.delete();
 				Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+                mWallpaperAlpha.setValue(0);
                 } catch (Exception e) {
                     Log.e(TAG, e.getMessage(), e);
                 }

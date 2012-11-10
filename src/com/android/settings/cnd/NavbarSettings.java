@@ -256,6 +256,21 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[1], "");
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
+
+                mButtonAlpha.setValue(0);
+                mNavigationBarTransparency.setValue(30);
+
+				Settings.System.putFloat(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
+				Settings.System.putFloat(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
+                int intHex = ColorPickerPreference.convertToColorInt("#ffffffff");
+                int intHexBl = ColorPickerPreference.convertToColorInt("#ff000000");
+                Settings.System.putInt(getActivity().getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVBAR_COLOR, intHexBl);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_TINT, intHex);
+                
                 refreshSettings();
                 return true;
             default:

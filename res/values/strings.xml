@@ -4779,8 +4779,12 @@
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="clock_date_display">Date</string>
+    <string name="clock_date_display_summary">Display custom date before the clock</string>
+    <string name="clock_date_style">Date style</string>
+    <string name="clock_date_format">Date format</string>
+    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="clock_color_title">Clock color</string>
 
     <string name="advanced_settings_title">Device Options</string>

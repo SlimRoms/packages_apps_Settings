@@ -260,11 +260,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 mButtonAlpha.setValue(0);
                 mNavigationBarTransparency.setValue(30);
 
-				Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
-				Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
-                int intHex = ColorPickerPreference.convertToColorInt("#ffffffff");
+                int intHex = ColorPickerPreference.convertToColorInt("#00ffffff");
                 int intHexBl = ColorPickerPreference.convertToColorInt("#ff000000");
                 Settings.System.putInt(getActivity().getContentResolver(),
                        Settings.System.SYSTEMUI_NAVBAR_COLOR, intHexBl);

@@ -199,7 +199,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                     wallpaperToDelete.delete();
                 }
                 Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0000001f);
                 mWallpaperAlpha.setValue(0);
                 return true;
             default:
@@ -220,7 +220,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 wallpaperStream.close();
                 customnavTemp.delete();
                 Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0000001f);
                 mWallpaperAlpha.setValue(0);
                 } catch (Exception e) {
                     Log.e(TAG, e.getMessage(), e);

@@ -69,11 +69,13 @@ public class SeekBarPreference extends Preference
         changer.onPreferenceChange(this, Integer.toString(progress));
     }
 
-    public void setValue(int progress)
-    {
-     bar.setProgress(progress);
-     monitorBox.setText(progress + "%");
-     changer.onPreferenceChange(this, Integer.toString(progress));
+    public void setValue(int progress){
+        if (bar!=null)
+        {
+            bar.setProgress(progress);
+            monitorBox.setText(progress + "%");
+            changer.onPreferenceChange(this, Integer.toString(progress));
+        }
     }
 
     @Override

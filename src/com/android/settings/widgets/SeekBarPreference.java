@@ -39,7 +39,7 @@ public class SeekBarPreference extends Preference
         bar = (SeekBar) layout.findViewById(R.id.seek_bar);
         bar.setOnSeekBarChangeListener(this);
         bar.setProgress(defaultValue);
-
+        monitorBox.setText(defaultValue + "%");
         return layout;
     }
     

@@ -1,4 +1,3 @@
-
 package com.android.settings.cnd;
 
 import java.io.File;
@@ -170,9 +169,18 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
-        float defaultAlpha = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
+        float defaultAlpha;
+	try{
+	     defaultAlpha = Settings.System.getFloat(getActivity()
+             .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA);
+	}
+	catch (Exception e)
+        {
+	    defaultAlpha = 0.3f;
+	    Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
+	}
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha.setProperty(Settings.System.NAVIGATION_BAR_BUTTON_ALPHA);
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
@@ -182,9 +190,19 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
 
-        float navBarTransparency = Settings.System.getFloat(getActivity()
-               .getContentResolver(), Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
+        float navBarTransparency;
+	    try{
+	        navBarTransparency = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_TRANSPARENCY);
+	    }
+	    catch (Exception e)
+            {
+		navBarTransparency = 0;
+		Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
+		
+	    }
         mNavigationBarTransparency = (SeekBarPreference) findPreference("nav_bar_transparency");
+        mNavigationBarTransparency.setProperty(Settings.System.NAVIGATION_BAR_TRANSPARENCY);
         mNavigationBarTransparency.setInitValue((int) (navBarTransparency * 100));
         mNavigationBarTransparency.setOnPreferenceChangeListener(this);
 

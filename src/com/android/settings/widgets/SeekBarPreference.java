@@ -50,8 +50,8 @@ public class SeekBarPreference extends Preference
 	    progress = defaultValue;
 	}
         bar.setOnSeekBarChangeListener(this);
-        bar.setProgress(defaultValue);
-        monitorBox.setText(defaultValue + "%");
+        bar.setProgress(progress);
+        monitorBox.setText(progress + "%");
         return layout;
     }
     

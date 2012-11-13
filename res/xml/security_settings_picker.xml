@@ -27,6 +27,16 @@
             android:persistent="false"/>
 
     <PreferenceScreen
+            android:key="unlock_set_circles"
+            android:title="@string/unlock_set_unlock_circles_title"
+            android:persistent="false"/>
+
+    <PreferenceScreen
+            android:key="unlock_set_blackberry"
+            android:title="@string/unlock_set_unlock_blackberry_title"
+            android:persistent="false"/>
+
+    <PreferenceScreen
             android:key="unlock_set_biometric_weak"
             android:title="@string/unlock_set_unlock_biometric_weak_title"
             android:persistent="false"/>

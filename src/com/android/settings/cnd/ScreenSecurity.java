@@ -40,6 +40,11 @@ import com.android.settings.ChooseLockSettingsHelper;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.content.ContentResolver;
+
 public class ScreenSecurity extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, DialogInterface.OnClickListener {
 
@@ -77,6 +82,8 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
+    private boolean mCirclesLock;
+    private boolean mBlackBerryLock;
 
     boolean mHasNavigationBar = false;
 
@@ -86,6 +93,15 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
         mLockPatternUtils = new LockPatternUtils(getActivity());
         mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
+
+        mCirclesLock = Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+
+        mBlackBerryLock = Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
+
+    	SettingsObserver observer = new SettingsObserver(new Handler());
+            observer.observe();
     }
 
     private PreferenceScreen createPreferenceHierarchy() {
@@ -100,12 +116,17 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
 
         // Add options for lock/unlock screen
         int resid = 0;
-
         if (!mLockPatternUtils.isSecure()) {
             if (mLockPatternUtils.isLockScreenDisabled()) {
                 resid = R.xml.security_settings_lockscreen;
             } else {
-                resid = R.xml.security_settings_chooser;
+                if (mCirclesLock) {
+                    resid = R.xml.security_settings_chooser_circles;
+                } else if (mBlackBerryLock) {
+                    resid = R.xml.security_settings_chooser_blackberry;
+                }else {
+                    resid = R.xml.security_settings_chooser;
+                }
             }
         } else if (mLockPatternUtils.usingBiometricWeak() &&
                 mLockPatternUtils.isBiometricWeakInstalled()) {
@@ -373,10 +394,7 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
 
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
-        if (KEY_UNLOCK_SET_OR_CHANGE.equals(key)) {
-            startFragment(this, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment",
-                    SET_OR_CHANGE_LOCK_METHOD_REQUEST, null);
-        } else if (KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING.equals(key)) {
+        if (KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING.equals(key)) {
             ChooseLockSettingsHelper helper =
                     new ChooseLockSettingsHelper(this.getActivity(), this);
             if (!helper.launchConfirmationActivity(
@@ -472,5 +490,25 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
     @Override
     public void onClick(DialogInterface dialog, int which) {
 
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+    	    ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_CIRCLES_LOCKSCREEN), false, this);
+    	    resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_BLACKBERRY_LOCKSCREEN), false, this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+    	    mCirclesLock = Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+    	    mBlackBerryLock = Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
+        }
     }
 }

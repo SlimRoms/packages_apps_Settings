@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.provider.Settings;
 
 import com.android.internal.widget.LockPatternUtils;
 
@@ -51,6 +52,8 @@ public class ChooseLockGeneric extends PreferenceActivity {
         private static final String KEY_UNLOCK_SET_OFF = "unlock_set_off";
         private static final String KEY_UNLOCK_SET_NONE = "unlock_set_none";
         private static final String KEY_UNLOCK_SET_BIOMETRIC_WEAK = "unlock_set_biometric_weak";
+        private static final String KEY_UNLOCK_SET_CIRCLES = "unlock_set_circles";
+        private static final String KEY_UNLOCK_SET_BLACKBERRY = "unlock_set_blackberry";
         private static final String KEY_UNLOCK_SET_PIN = "unlock_set_pin";
         private static final String KEY_UNLOCK_SET_PASSWORD = "unlock_set_password";
         private static final String KEY_UNLOCK_SET_PATTERN = "unlock_set_pattern";
@@ -68,6 +71,8 @@ public class ChooseLockGeneric extends PreferenceActivity {
         private KeyStore mKeyStore;
         private boolean mPasswordConfirmed = false;
         private boolean mWaitingForConfirmation = false;
+        private boolean mCirclesLock;
+        private boolean mBlackBerryLock;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -111,25 +116,77 @@ public class ChooseLockGeneric extends PreferenceActivity {
             if (KEY_UNLOCK_SET_OFF.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, true);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             } else if (KEY_UNLOCK_SET_NONE.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
+            } else if (KEY_UNLOCK_SET_CIRCLES.equals(key)) {
+                updateUnlockMethodAndFinish(
+                        DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
+                mBlackBerryLock = false;
+                mCirclesLock = true;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
+            } else if (KEY_UNLOCK_SET_BLACKBERRY.equals(key)) {
+                updateUnlockMethodAndFinish(
+                        DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
+                mBlackBerryLock = true;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             } else if (KEY_UNLOCK_SET_BIOMETRIC_WEAK.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_BIOMETRIC_WEAK, false);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             }else if (KEY_UNLOCK_SET_PATTERN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_SOMETHING, false);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             } else if (KEY_UNLOCK_SET_PIN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_NUMERIC, false);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             } else if (KEY_UNLOCK_SET_PASSWORD.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC, false);
+                mBlackBerryLock = false;
+                mCirclesLock = false;
+                setUnsecureTypeBlackBerry(mBlackBerryLock);
+                setUnsecureTypeCircles(mCirclesLock);
             } else {
                 handled = false;
             }
             return handled;
+        }
+
+        private void setUnsecureTypeCircles(boolean useCircles) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.USE_CIRCLES_LOCKSCREEN, useCircles);
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_BACKGROUND, null);
+        }
+
+        private void setUnsecureTypeBlackBerry(boolean useBlackBerry) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.USE_BLACKBERRY_LOCKSCREEN, useBlackBerry);
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_BACKGROUND, null);
         }
 
         @Override
@@ -187,6 +244,10 @@ public class ChooseLockGeneric extends PreferenceActivity {
                 addPreferencesFromResource(R.xml.security_settings_picker);
                 disableUnusablePreferences(quality, allowBiometric);
             } else {
+                final PreferenceScreen prefScreen = getPreferenceScreen();
+                addPreferencesFromResource(R.xml.security_settings_picker);
+                prefScreen.removeAll();
+                addPreferencesFromResource(R.xml.security_settings_picker);
                 updateUnlockMethodAndFinish(quality, false);
             }
         }
@@ -268,6 +329,10 @@ public class ChooseLockGeneric extends PreferenceActivity {
                     if (KEY_UNLOCK_SET_OFF.equals(key)) {
                         enabled = quality <= DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
                     } else if (KEY_UNLOCK_SET_NONE.equals(key)) {
+                        enabled = quality <= DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
+                    } else if (KEY_UNLOCK_SET_CIRCLES.equals(key)) {
+                        enabled = quality <= DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
+                    } else if (KEY_UNLOCK_SET_BLACKBERRY.equals(key)) {
                         enabled = quality <= DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
                     } else if (KEY_UNLOCK_SET_BIOMETRIC_WEAK.equals(key)) {
                         enabled = quality <= DevicePolicyManager.PASSWORD_QUALITY_BIOMETRIC_WEAK ||

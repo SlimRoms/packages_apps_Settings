@@ -4480,6 +4480,12 @@
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
 
+    <string name="circles_lock_cat_title">Circle lockscreen settings</string>
+    <string name="circles_lock_bg_color_title">Background color</string>
+    <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_wave_color_title">Wave color</string>
+
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>
     <string name="profiles_general_title">General</string>
@@ -5104,6 +5110,9 @@
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
+
+    <string name="lockscreen_transparent_enabled_title">Transparent</string>
+    <string name="lockscreen_transparent_enabled_head">Transparent lockscreen background (requires reboot)</string>
     
     <string name="brightness_control_cat">Brightness control</string>
     <string name="status_bar_toggle_brightness_slider">Brightness slider</string>
@@ -5145,6 +5154,16 @@
     <string name="lockscreen_style_options_title">Lock screen style</string>
     <string name="lockscreen_text_color_title">Lock screen text color</string>
     <string name="lockscreen_interface_options_title">Lock screen interface</string>
+
+    <!-- Title for preference that disables unlock security [CHAR LIMIT=22] -->
+    <string name="unlock_set_unlock_circles_title">Circles</string>
+    <!-- Summary for "Configure lockscreen" when security is disabled [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_mode_circles">Circles style</string>
+
+    <!-- Title for preference that disables unlock security [CHAR LIMIT=22] -->
+    <string name="unlock_set_unlock_blackberry_title">BlackBerry</string>
+    <!-- Summary for "Configure lockscreen" when security is disabled [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_mode_blackberry">BlackBerry style</string>
 
     <!-- About -->
     <string name="title_about">About Slim</string>

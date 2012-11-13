@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserId;
 import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
@@ -43,6 +44,11 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.widget.LockPatternUtils;
 
 import java.util.ArrayList;
+
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.content.ContentResolver;
 
 /**
  * Gesture lock pattern settings.
@@ -89,6 +95,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private DialogInterface mWarnInstallApps;
     private CheckBoxPreference mPowerButtonInstantlyLocks;
 
+    private boolean mCirclesLock;
+    private boolean mBlackBerryLock;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +107,15 @@ public class SecuritySettings extends SettingsPreferenceFragment
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
 
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
+
+        mCirclesLock = Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+
+        mBlackBerryLock = Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
+
+    	SettingsObserver observer = new SettingsObserver(new Handler());
+            observer.observe();
     }
 
     private PreferenceScreen createPreferenceHierarchy() {
@@ -114,7 +132,13 @@ public class SecuritySettings extends SettingsPreferenceFragment
             if (mLockPatternUtils.isLockScreenDisabled()) {
                 resid = R.xml.security_settings_lockscreen;
             } else {
-                resid = R.xml.security_settings_chooser;
+                if (mCirclesLock) {
+                    resid = R.xml.security_settings_chooser_circles;
+                } else if (mBlackBerryLock) {
+                    resid = R.xml.security_settings_chooser_blackberry;
+                }else {
+                    resid = R.xml.security_settings_chooser;
+                }
             }
         } else if (mLockPatternUtils.usingBiometricWeak() &&
                 mLockPatternUtils.isBiometricWeakInstalled()) {
@@ -470,5 +494,25 @@ public class SecuritySettings extends SettingsPreferenceFragment
         Intent intent = new Intent();
         intent.setClassName("com.android.facelock", "com.android.facelock.AddToSetup");
         startActivity(intent);
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+    	    ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_CIRCLES_LOCKSCREEN), false, this);
+    	    resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_BLACKBERRY_LOCKSCREEN), false, this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+    	    mCirclesLock = Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+    	    mBlackBerryLock = Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
+        }
     }
 }

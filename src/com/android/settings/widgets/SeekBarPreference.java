@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.android.settings.R;
 
+import android.provider.Settings;
+
 public class SeekBarPreference extends Preference
         implements OnSeekBarChangeListener {
 

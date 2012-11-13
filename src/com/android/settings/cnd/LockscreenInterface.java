@@ -147,7 +147,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         mTransparentPref = (CheckBoxPreference) findPreference(KEY_TRANSPARENT_PREF);
         boolean bTransparent = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_TRANSPARENT_ENABLED, 1) == 0 ? true : false;
+                    Settings.System.LOCKSCREEN_TRANSPARENT_ENABLED, 0) == 1 ? true : false;
         mTransparentPref.setChecked(bTransparent);
         mTransparentPref.setOnPreferenceChangeListener(this);
 

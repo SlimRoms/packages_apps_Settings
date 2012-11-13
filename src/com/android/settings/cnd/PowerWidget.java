@@ -150,11 +150,19 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
 
             mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
-            float wallpaperTransparency = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0f);
+            float wallpaperTransparency;
+            try{
+	        wallpaperTransparency = Settings.System.getFloat(getActivity().getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA);
+	    }
+	    catch (Exception e)
+            {
+		wallpaperTransparency = 0;
+		Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 0);
+		
+	    }            
             mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
             mWallpaperAlpha.setInitValue((int) (wallpaperTransparency * 100));
+            mWallpaperAlpha.setProperty(Settings.System.NOTIF_WALLPAPER_ALPHA);
             mWallpaperAlpha.setOnPreferenceChangeListener(this);
 
             setHasOptionsMenu(true);

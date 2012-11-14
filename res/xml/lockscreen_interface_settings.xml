@@ -44,35 +44,6 @@
         
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="lockscreen_style_options_blackberry"
-        android:title="@string/lockscreen_style_options_title">
-        
-        <ListPreference
-            android:key="lockscreen_clock_align"
-            android:persistent="false"
-            android:dialogTitle="@string/lockscreen_clock_align_title"
-            android:title="@string/lockscreen_clock_align_title"
-            android:entries="@array/lockscreen_clock_align_entries"
-            android:entryValues="@array/lockscreen_clock_align_values"/>
-        
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="lockscreen_text_color"
-            android:title="@string/lockscreen_text_color_title"
-            android:defaultValue="#ffffffff" />
-     
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="lockscreen_style_options_circles"
-        android:title="@string/lockscreen_style_options_title">
-        
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="lockscreen_text_color"
-            android:title="@string/lockscreen_text_color_title"
-            android:defaultValue="#ffffffff" />
-     
-    </PreferenceCategory>
 
     <PreferenceCategory
             android:key="circles_lockscreen"
@@ -142,38 +113,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="lockscreen_interface_options_alt"
-        android:title="@string/lockscreen_interface_options_title">
-
-        <ListPreference
-            android:key="lockscreen_battery_status"
-            android:persistent="false"
-            android:dialogTitle="@string/lockscreen_battery_status_title"
-            android:title="@string/lockscreen_battery_status_title"
-            android:entries="@array/lockscreen_battery_status_entries"
-            android:entryValues="@array/lockscreen_battery_status_values"/>
-
-        <Preference
-            android:fragment="com.android.settings.cnd.Weather"
-            android:key="lockscreen_weather"
-            android:summary="@string/lockscreen_weather_summary"
-            android:title="@string/lockscreen_weather_title" />
-
-        <Preference
-            android:fragment="com.android.settings.cnd.Calendar"
-            android:key="lockscreen_calendar"
-            android:summary="@string/lockscreen_calendar_summary"
-            android:title="@string/lockscreen_calendar_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="additional_options"
         android:title="@string/additional_options_title">
 
         <PreferenceScreen
             android:key="screen_security"
-            android:fragment="com.android.settings.SecuritySettings"
+            android:fragment="com.android.settings.cnd.ScreenSecurity"
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary" />
 

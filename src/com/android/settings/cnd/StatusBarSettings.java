@@ -73,10 +73,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.statusbar_settings);
+	
+	float statBarTransparency;
+	try{
+	     statBarTransparency = Settings.System.getFloat(getActivity()
+             .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY);
+	}
+	catch (Exception e)
+        {
+	    statBarTransparency = 0.0f;
+	    Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY, 0.0f);
+	}
 
-        float statBarTransparency = Settings.System.getFloat(getActivity()
-               .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY, 0.0f);
         mStatusbarTransparency = (SeekBarPreference) findPreference("stat_bar_transparency");
+	mStatusbarTransparency.setProperty(Settings.System.STATUS_BAR_TRANSPARENCY);
         mStatusbarTransparency.setInitValue((int) (statBarTransparency * 100));
         mStatusbarTransparency.setOnPreferenceChangeListener(this);
 
@@ -342,7 +352,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         } else if (preference == mStatusbarTransparency) {
             float valStat = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + valStat / 100);
+            //Log.e("R", "value: " + valStat / 100);
             result = Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_TRANSPARENCY,
                     valStat / 100);

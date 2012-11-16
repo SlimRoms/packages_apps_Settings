@@ -43,7 +43,8 @@
 
     </PreferenceCategory>
 
-	<PreferenceCategory 
+    <PreferenceCategory
+        android:key="generic_performance_tweaks"
         android:title="@string/general_performance_title">
         
         <CheckBoxPreference
@@ -51,21 +52,21 @@
             android:title="@string/pref_disable_bootanimation_title"
             android:summary="@string/pref_disable_bootanimation_summary" />
 
-	<CheckBoxPreference
-	    android:key="high_end_gfx"
-	    android:title="@string/high_end_gfx_title"
-	    android:summary="@string/high_end_gfx_summary"
-	    android:defaultValue="true" />
-        
-	</PreferenceCategory>
+    <CheckBoxPreference
+        android:key="high_end_gfx"
+        android:title="@string/high_end_gfx_title"
+        android:summary="@string/high_end_gfx_summary"
+        android:defaultValue="true" />
 
-	<PreferenceCategory 
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/performance_settings_warning_header">
 
         <PreferenceScreen
             android:title="@string/performance_settings_warning_title"
             android:summary="@string/performance_settings_warning" />
 
-	</PreferenceCategory>
+    </PreferenceCategory>
 
 </PreferenceScreen>

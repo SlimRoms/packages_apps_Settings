@@ -27,6 +27,7 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -43,6 +44,8 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
     private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
             
     private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+
+    private static final String GENERIC_TWEAKS_CATEGORY = "generic_performance_tweaks";
 
     private static final String KEY_HIGH_END_GFX = "high_end_gfx";
 
@@ -66,23 +69,27 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                                                            DISABLE_BOOTANIMATION_DEFAULT);
         mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
 
-	boolean isHighEndGfx = ActivityManager.isHighEndGfx(getActivity().getWindowManager().getDefaultDisplay());
+        boolean isHighEndGfx = ActivityManager.isHighEndGfx(getActivity().getWindowManager().getDefaultDisplay());
+        PreferenceCategory mGenericTweaks = (PreferenceCategory) findPreference(GENERIC_TWEAKS_CATEGORY);
 
-	mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
+        mHighEndGfx = (CheckBoxPreference) mGenericTweaks.findPreference(KEY_HIGH_END_GFX);
 
-	int highEndGfxDefault;
-
-	try{
-            highEndGfxDefault = Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED);
-	    mHighEndGfx.setChecked(highEndGfxDefault == 1);
-	}
-	catch(Exception e)
-	{
-            highEndGfxDefault = mHighEndGfx.isChecked() ? 1 : 0;
-	    Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, highEndGfxDefault);
-	}
+        if (!isHighEndGfx) {
+            // Only show this if the device does not have HighEndGfx enabled natively
+            int highEndGfxDefault;
+            try {
+                highEndGfxDefault = Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED);
+                mHighEndGfx.setChecked(highEndGfxDefault == 1);
+            }
+            catch (Exception e) {
+                highEndGfxDefault = mHighEndGfx.isChecked() ? 1 : 0;
+                Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, highEndGfxDefault);
+            }
+        } else {
+            mGenericTweaks.removePreference(mHighEndGfx);
+        }
     }
-    
+
     @Override
     public void onResume() {
         super.onResume();

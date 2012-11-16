@@ -5132,7 +5132,8 @@
     <string name="title_ui">General UI</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
+    <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
+    <string name="notif_alpha_title">Notification Rows transparency</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>

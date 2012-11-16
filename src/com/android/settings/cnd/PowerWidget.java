@@ -91,6 +91,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
+    private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
@@ -105,6 +106,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
     Preference mNotificationWallpaper;
     SeekBarPreference mWallpaperAlpha;
+    SeekBarPreference mNotifAlpha;
 
     Random randomGenerator = new Random();
     private File customnavTemp;
@@ -165,6 +167,21 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mWallpaperAlpha.setProperty(Settings.System.NOTIF_WALLPAPER_ALPHA);
             mWallpaperAlpha.setOnPreferenceChangeListener(this);
 
+	    float notifTransparency;
+            try{
+	        notifTransparency = Settings.System.getFloat(getActivity().getContentResolver(), Settings.System.NOTIF_ALPHA);
+	    }
+	    catch (Exception e)
+            {
+		notifTransparency = 0;
+		Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NOTIF_ALPHA, 0);
+		
+	    }            
+            mNotifAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
+            mNotifAlpha.setInitValue((int) (notifTransparency * 100));
+            mNotifAlpha.setProperty(Settings.System.NOTIF_ALPHA);
+            mNotifAlpha.setOnPreferenceChangeListener(this);
+
             setHasOptionsMenu(true);
         }
     }
@@ -184,9 +201,13 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mWallpaperAlpha) {
             float valNav = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + valNav / 100);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NOTIF_WALLPAPER_ALPHA, valNav / 100);
+            return true;
+	} else if (preference == mNotifAlpha) {
+            float valNav = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.NOTIF_ALPHA, valNav / 100);
             return true;
         }
         return false;

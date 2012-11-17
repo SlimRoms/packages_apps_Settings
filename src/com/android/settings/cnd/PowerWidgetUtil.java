@@ -40,6 +40,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_BLUETOOTH = "toggleBluetooth";
     public static final String BUTTON_BRIGHTNESS = "toggleBrightness";
     public static final String BUTTON_SOUND = "toggleSound";
+    public static final String BUTTON_NOTIFICATION_SOUND = "toggleNotificationSound";
     public static final String BUTTON_SYNC = "toggleSync";
     public static final String BUTTON_WIFIAP = "toggleWifiAp";
     public static final String BUTTON_SCREENTIMEOUT = "toggleScreenTimeout";
@@ -95,6 +96,9 @@ public class PowerWidgetUtil {
         BUTTONS.put(BUTTON_SOUND, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_SOUND, R.string.title_toggle_sound,
                 "com.android.systemui:drawable/stat_ring_on"));
+        BUTTONS.put(BUTTON_NOTIFICATION_SOUND, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_NOTIFICATION_SOUND, R.string.title_toggle_notification_sound,
+                "com.android.systemui:drawable/stat_notify_sound_on"));
         BUTTONS.put(BUTTON_SYNC, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_SYNC, R.string.title_toggle_sync,
                 "com.android.systemui:drawable/stat_sync_on"));

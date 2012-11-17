@@ -4529,6 +4529,7 @@
     <string name="title_toggle_bluetooth">Toggle Bluetooth</string>
     <string name="title_toggle_gps">Toggle GPS</string>
     <string name="title_toggle_sound">Toggle Sound</string>
+    <string name="title_toggle_notification_sound">Toggle Notification Sound</string>
     <string name="title_toggle_brightness">Toggle Brightness</string>
     <string name="title_toggle_sync">Toggle Sync</string>
     <string name="title_toggle_wifiap">Toggle Wi-Fi AP</string>
@@ -4674,6 +4675,7 @@
     <string name="toggleSync">Data Sync</string>
     <string name="toggle2g3g">2G/3G</string>
     <string name="toggleSound">Ring Mode</string>
+    <string name="toggleNotificationSound">Notification Sound</string>
     <string name="toggleBrightness">Brightness</string>
     <string name="toggleAutoRotate">Orientation</string>
     <string name="toggleScreenTimeout">Screen Timeout</string>

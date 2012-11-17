@@ -268,17 +268,24 @@ public class RingerVolumePreference extends VolumePreference {
         if (mRingModeChangedReceiver == null) {
             final IntentFilter filter = new IntentFilter();
             filter.addAction(AudioManager.RINGER_MODE_CHANGED_ACTION);
+            filter.addAction(AudioManager.VOLUME_CHANGED_ACTION);
             mRingModeChangedReceiver = new BroadcastReceiver() {
                 public void onReceive(Context context, Intent intent) {
                     final String action = intent.getAction();
                     if (AudioManager.RINGER_MODE_CHANGED_ACTION.equals(action)) {
                         mHandler.sendMessage(mHandler.obtainMessage(MSG_RINGER_MODE_CHANGED, intent
                                 .getIntExtra(AudioManager.EXTRA_RINGER_MODE, -1), 0));
+                    } else if (AudioManager.VOLUME_CHANGED_ACTION.equals(action)) {
+                        int streamType = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_TYPE, -1);
+                        if (streamType == AudioManager.STREAM_NOTIFICATION) {
+                            updateSlidersAndMutedStates();
+                        }
                     }
                 }
             };
             getContext().registerReceiver(mRingModeChangedReceiver, filter);
         }
+
     }
 
     private Uri getMediaVolumeUri(Context context) {

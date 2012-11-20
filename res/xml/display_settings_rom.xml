@@ -38,6 +38,11 @@
         android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
 
     <PreferenceScreen
+        android:key="battery_light_settings"
+        android:fragment="com.android.settings.notificationlight.BatteryLightSettings"
+        android:title="@string/battery_light_title" />
+
+    <PreferenceScreen
         android:key="backlight_widget"
         android:fragment="com.android.settings.cnd.Backlight"
         android:title="@string/backlight_title"

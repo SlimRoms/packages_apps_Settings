@@ -48,6 +48,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
+    private static final String KEY_BATTERY_LED = "battery_light_settings";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -60,6 +61,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private PreferenceScreen mDisplayRotationPreference;
     private CheckBoxPreference mLockScreenRotation;
+    private PreferenceScreen mBatteryLightSettings;
 
     private ContentObserver mAccelerometerRotationObserver = 
             new ContentObserver(new Handler()) {
@@ -80,6 +82,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
         mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
+        mBatteryLightSettings = (PreferenceScreen) findPreference(KEY_BATTERY_LED);
 
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
@@ -90,6 +93,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mVolumeWake.setChecked(Settings.System.getInt(resolver,
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);	
             }	
+        }
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            getPreferenceScreen().removePreference(mBatteryLightSettings);
         }
     }
 

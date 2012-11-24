@@ -4388,6 +4388,16 @@
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
 
+    <!-- Lock Screen Clock -->
+    <string name="lockscreen_clock_title">Show clock</string>
+    <string name="lockscreen_clock_summary">Display clock on the lock screen</string>
+    <string name="lockscreen_clock_enabled">Enabled</string>
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
+    <string name="lockscreen_clock_style_title">Show bold styled clock</string>
+
     <!-- Lock Screen Weather -->
     <string name="lockscreen_weather_title">Weather</string>
     <string name="lockscreen_weather_summary">Display weather information on the lock screen</string>
@@ -4451,16 +4461,14 @@
     <string name="lockscreen_background_result_not_successful">Background not changed</string>
     <string name="lockscreen_background_color_fill">Color fill</string>
     <string name="lockscreen_background_custom_image">Custom image</string>
+    <string name="lockscreen_background_full_transparent">Full transparent</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
+    <string name="lockscreen_alpha_title">Background transparency</string>
 
     <!-- Lock screen widgets -->
     <string name="lockscreen_widgets_title">Number of lockscreen targets</string>
     <string name="lockscreen_widgets_dialog_title">Number of lockscreen targets</string>
     <string name="lockscreen_widgets_summary">Choose number of lockscreen targets</string>
-    <string name="lockscreen_clock_align_title">Clock alignment</string>
-    <string name="lockscreen_clock_align_left">Left</string>
-    <string name="lockscreen_clock_align_center">Center</string>
-    <string name="lockscreen_clock_align_right">Right</string>
 
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">Battery status</string>
@@ -4481,10 +4489,18 @@
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
 
     <string name="circles_lock_cat_title">Circle lockscreen settings</string>
-    <string name="circles_lock_bg_color_title">Background color</string>
     <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_ring_alpha_title">Ring transparency</string>
     <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_halo_alpha_title">Halo transparency</string>
     <string name="circles_lock_wave_color_title">Wave color</string>
+    <string name="circles_lock_wave_alpha_title">Wave transparency</string>
+
+    <string name="blackberry_lock_cat_title">Blackberry lockscreen settings</string>
+    <string name="blackberry_lock_bg_color_title">Blackberry animation color</string>
+    <string name="blackberry_lock_bg_alpha_title">Blackberry animation transparency</string>
+
+    <string name="stock_lock_cat_title">Stock lockscreen settings</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>
@@ -4733,7 +4749,7 @@
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network !\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
 
     <!-- Security & location settings screen, setting check box title. This controls whether the device shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
-    <string name="lockpattern_settings_enable_lock_before_unlock">Show widgets before unlock</string>
+    <string name="lockpattern_settings_enable_lock_before_unlock">Show custom lockscreen before unlock</string>
 
     <!-- Electron Beam -->
     <string name="display_category_animation_options_title">Animation</string>
@@ -5111,9 +5127,6 @@
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
 
-    <string name="lockscreen_transparent_enabled_title">Transparent</string>
-    <string name="lockscreen_transparent_enabled_head">Transparent lockscreen background (requires reboot)</string>
-    
     <string name="brightness_control_cat">Brightness control</string>
     <string name="status_bar_toggle_brightness_slider">Brightness slider</string>
     <string name="status_bar_toggle_brightness_sliding_summary">Allows adjusting of brightness by sliding across the statusbar</string>

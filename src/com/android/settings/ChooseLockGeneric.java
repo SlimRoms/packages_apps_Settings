@@ -71,8 +71,6 @@ public class ChooseLockGeneric extends PreferenceActivity {
         private KeyStore mKeyStore;
         private boolean mPasswordConfirmed = false;
         private boolean mWaitingForConfirmation = false;
-        private boolean mCirclesLock;
-        private boolean mBlackBerryLock;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -116,77 +114,69 @@ public class ChooseLockGeneric extends PreferenceActivity {
             if (KEY_UNLOCK_SET_OFF.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, true);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, false);
             } else if (KEY_UNLOCK_SET_NONE.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, true);
             } else if (KEY_UNLOCK_SET_CIRCLES.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
-                mBlackBerryLock = false;
-                mCirclesLock = true;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(true, false, false);
             } else if (KEY_UNLOCK_SET_BLACKBERRY.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
-                mBlackBerryLock = true;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, true, false);
             } else if (KEY_UNLOCK_SET_BIOMETRIC_WEAK.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_BIOMETRIC_WEAK, false);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, false);
             }else if (KEY_UNLOCK_SET_PATTERN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_SOMETHING, false);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, false);
             } else if (KEY_UNLOCK_SET_PIN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_NUMERIC, false);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, false);
             } else if (KEY_UNLOCK_SET_PASSWORD.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC, false);
-                mBlackBerryLock = false;
-                mCirclesLock = false;
-                setUnsecureTypeBlackBerry(mBlackBerryLock);
-                setUnsecureTypeCircles(mCirclesLock);
+                setUnsecureType(false, false, false);
             } else {
                 handled = false;
             }
             return handled;
         }
 
-        private void setUnsecureTypeCircles(boolean useCircles) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+        private void setUnsecureType(boolean useCircles, boolean useBlackBerry, boolean useStock) {
+            final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
+            Settings.System.putBoolean(getContentResolver(),
                     Settings.System.USE_CIRCLES_LOCKSCREEN, useCircles);
-            Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_BACKGROUND, null);
-        }
-
-        private void setUnsecureTypeBlackBerry(boolean useBlackBerry) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(getContentResolver(),
                     Settings.System.USE_BLACKBERRY_LOCKSCREEN, useBlackBerry);
-            Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_BACKGROUND, null);
+            Settings.System.putBoolean(getContentResolver(),
+                    Settings.System.USE_STOCK_LOCKSCREEN, useStock);
+
+            if (useCircles) {
+                  int customBackground = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                         Settings.System.LOCKSCREEN_BACKGROUND_VALUE, 3);
+                  //if default system background is choosen it sets it to a black alpha one.
+                  if (customBackground == 3) {
+                    Settings.System.putInt(getContentResolver(),
+                          Settings.System.LOCKSCREEN_BACKGROUND, 0xFF000000);
+                    Settings.System.putInt(getContentResolver(),
+                          Settings.System.LOCKSCREEN_BACKGROUND_VALUE, 0);
+                    Settings.System.putFloat(getContentResolver(),
+                          Settings.System.LOCKSCREEN_ALPHA, 0.2f);
+                    Settings.System.putBoolean(getContentResolver(),
+                          Settings.System.LOCKSCREEN_TRANSPARENT_ENABLED, true);
+                  }
+            }
+
+            lockPatternUtils.setLockBeforeUnlock(false);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK_VALUE, 3);
         }
 
         @Override

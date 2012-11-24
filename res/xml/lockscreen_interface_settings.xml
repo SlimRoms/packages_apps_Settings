@@ -29,14 +29,10 @@
             android:entries="@array/lockscreen_background_entries"
             android:entryValues="@array/lockscreen_background_values"/>
 
-        <ListPreference
-            android:key="lockscreen_clock_align"
-            android:persistent="false"
-            android:dialogTitle="@string/lockscreen_clock_align_title"
-            android:title="@string/lockscreen_clock_align_title"
-            android:entries="@array/lockscreen_clock_align_entries"
-            android:entryValues="@array/lockscreen_clock_align_values"/>
-        
+        <com.android.settings.widgets.SeekBarPreference
+            android:key="lockscreen_alpha"
+            android:title="@string/lockscreen_alpha_title" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_text_color"
             android:title="@string/lockscreen_text_color_title"
@@ -44,37 +40,9 @@
         
     </PreferenceCategory>
 
-
     <PreferenceCategory
-            android:key="circles_lockscreen"
-            android:title="@string/circles_lock_cat_title">
-
-            <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="circles_lock_bg_color"
-                android:title="@string/circles_lock_bg_color_title"
-                android:defaultValue="#D2000000" />
-
-            <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="circles_lock_ring_color"
-                android:title="@string/circles_lock_ring_color_title"
-                android:defaultValue="#FFFFFFFF" />
-
-            <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="circles_lock_halo_color"
-                android:title="@string/circles_lock_halo_color_title"
-                android:defaultValue="#FFFFFFFF" />
-
-            <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="circles_lock_wave_color"
-                android:title="@string/circles_lock_wave_color_title"
-                android:defaultValue="#D2FFFFFF" />
-    </PreferenceCategory>
-
-
-
-    <PreferenceCategory
-        android:key="lockscreen_interface_options"
-        android:title="@string/lockscreen_interface_options_title">
+            android:key="stock_lockscreen"
+            android:title="@string/stock_lock_cat_title">
 
         <ListPreference
             android:key="lockscreen_widgets"
@@ -90,6 +58,66 @@
             android:key="lockscreen_targets"
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="blackberry_lockscreen"
+            android:title="@string/blackberry_lock_cat_title">
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="blackberry_lock_bg_color"
+                android:title="@string/blackberry_lock_bg_color_title"
+                android:defaultValue="#D2000000" />
+
+            <com.android.settings.widgets.SeekBarPreference
+                android:key="blackberry_lock_bg_alpha"
+                android:title="@string/blackberry_lock_bg_alpha_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="circles_lockscreen"
+            android:title="@string/circles_lock_cat_title">
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_ring_color"
+                android:title="@string/circles_lock_ring_color_title"
+                android:defaultValue="#FFFFFFFF" />
+
+            <com.android.settings.widgets.SeekBarPreference
+                android:key="circles_lock_ring_alpha"
+                android:title="@string/circles_lock_ring_alpha_title" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_halo_color"
+                android:title="@string/circles_lock_halo_color_title"
+                android:defaultValue="#FFFFFFFF" />
+
+            <com.android.settings.widgets.SeekBarPreference
+                android:key="circles_lock_halo_alpha"
+                android:title="@string/circles_lock_halo_alpha_title" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_wave_color"
+                android:title="@string/circles_lock_wave_color_title"
+                android:defaultValue="#D2FFFFFF" />
+
+            <com.android.settings.widgets.SeekBarPreference
+                android:key="circles_lock_wave_alpha"
+                android:title="@string/circles_lock_wave_alpha_title" />
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory
+        android:key="lockscreen_interface_options"
+        android:title="@string/lockscreen_interface_options_title">
+
+        <Preference
+            android:fragment="com.android.settings.cnd.Clock"
+            android:key="lockscreen_clock"
+            android:summary="@string/lockscreen_clock_summary"
+            android:title="@string/lockscreen_clock_title" />
 
         <ListPreference
             android:key="lockscreen_battery_status"
@@ -127,11 +155,6 @@
             android:key="lockscreen_buttons"
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
-
-        <CheckBoxPreference
-            android:key="lockscreen_transparent"
-            android:title="@string/lockscreen_transparent_enabled_title"	       
-            android:summary="@string/lockscreen_transparent_enabled_head"/>
 
         <CheckBoxPreference
             android:key="lockscreen_vibrate"

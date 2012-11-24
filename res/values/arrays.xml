@@ -1294,9 +1294,10 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="lockscreen_background_entries" translatable="false">
+    <string-array name="lockscreen_background_entries">
         <item>@string/lockscreen_background_color_fill</item>
         <item>@string/lockscreen_background_custom_image</item>
+        <item>@string/lockscreen_background_full_transparent</item>
         <item>@string/lockscreen_background_default_wallpaper</item>
     </string-array>
 
@@ -1304,6 +1305,7 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- DHCP lease times for tethering settings -->
@@ -1920,6 +1922,20 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <string-array name="lockpattern_settings_enable_lock_before_unlock_entries">
+        <item>@string/unlock_set_unlock_mode_none</item>
+        <item>@string/unlock_set_unlock_mode_blackberry</item>
+        <item>@string/unlock_set_unlock_mode_circles</item>
+        <item>@string/disabled</item>
+    </string-array>
+
+    <string-array name="lockpattern_settings_enable_lock_before_unlock_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="navring_dialog_entries">

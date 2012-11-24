@@ -77,6 +77,7 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
 
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
     private ListPreference mLockAfter;
+    private ListPreference mLockBeforeUnlock;
     private CheckBoxPreference mVisiblePattern;
     private CheckBoxPreference mTactileFeedback;
     private CheckBoxPreference mMenuUnlock;
@@ -100,7 +101,7 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
         mBlackBerryLock = Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
 
-    	SettingsObserver observer = new SettingsObserver(new Handler());
+        SettingsObserver observer = new SettingsObserver(new Handler());
             observer.observe();
     }
 
@@ -248,6 +249,16 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
             mHomeUnlock.setEnabled(false);
         }
 
+        // Lock before Unlock
+        mLockBeforeUnlock = (ListPreference) findPreference(KEY_LOCK_BEFORE_UNLOCK);
+        if (mLockBeforeUnlock != null) {
+            mLockBeforeUnlock.setOnPreferenceChangeListener(this);
+            int lockBeforeUnlock = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK_VALUE, 3);
+            mLockBeforeUnlock.setValue(String.valueOf(lockBeforeUnlock));
+            mLockBeforeUnlock.setSummary(mLockBeforeUnlock.getEntries()[lockBeforeUnlock]);
+        }
+
         return root;
     }
 
@@ -386,6 +397,13 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
         if (mPowerButtonInstantlyLocks != null) {
             mPowerButtonInstantlyLocks.setChecked(lockPatternUtils.getPowerButtonInstantlyLocks());
         }
+
+        if (mLockBeforeUnlock != null) {
+            int lockBeforeUnlock = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK_VALUE, 3);
+            mLockBeforeUnlock.setValue(String.valueOf(lockBeforeUnlock));
+            mLockBeforeUnlock.setSummary(mLockBeforeUnlock.getEntries()[lockBeforeUnlock]);
+        }
     }
 
     @Override
@@ -411,8 +429,6 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
             lockPatternUtils.setVisiblePatternEnabled(isToggled(preference));
         } else if (KEY_TACTILE_FEEDBACK_ENABLED.equals(key)) {
             lockPatternUtils.setTactileFeedbackEnabled(isToggled(preference));
-        } else if (KEY_LOCK_BEFORE_UNLOCK.equals(key)) {
-            lockPatternUtils.setLockBeforeUnlock(isToggled(preference));
         } else if (KEY_POWER_INSTANTLY_LOCKS.equals(key)) {
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
         } else if (preference == mSlideLockDelayToggle) {
@@ -479,6 +495,47 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, slideScreenOffDelay);
             updateSlideAfterScreenOffSummary();
+        } else if (preference == mLockBeforeUnlock) {
+            int lbuValue = Integer.valueOf((String) value);
+            final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
+            Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+            Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
+            Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_STOCK_LOCKSCREEN, false);
+            lockPatternUtils.setLockBeforeUnlock(false);
+
+            if (lbuValue == 0) {
+               lockPatternUtils.setLockBeforeUnlock(true);
+               Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_STOCK_LOCKSCREEN, true);
+            }else if (lbuValue == 1) {
+               lockPatternUtils.setLockBeforeUnlock(true);
+               Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_BLACKBERRY_LOCKSCREEN, true);
+            }else if (lbuValue == 2) {
+               lockPatternUtils.setLockBeforeUnlock(true);
+               Settings.System.putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.USE_CIRCLES_LOCKSCREEN, true);
+               int customBackground = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                      Settings.System.LOCKSCREEN_BACKGROUND_VALUE, 3);
+               //if default system background is choosen it sets it to a black alpha one.
+               if (customBackground == 3) {
+                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.LOCKSCREEN_BACKGROUND, 0xFF000000);
+                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.LOCKSCREEN_BACKGROUND_VALUE, 0);
+                 Settings.System.putFloat(getActivity().getApplicationContext().getContentResolver(),
+                       Settings.System.LOCKSCREEN_ALPHA, 0.2f);
+                 Settings.System.putBoolean(getContentResolver(),
+                       Settings.System.LOCKSCREEN_TRANSPARENT_ENABLED, true);
+               }
+            }
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK_VALUE, lbuValue);
+            mLockBeforeUnlock.setSummary(mLockBeforeUnlock.getEntries()[lbuValue]);
+            return true;
         }
 
         return true;
@@ -501,16 +558,16 @@ public class ScreenSecurity extends SettingsPreferenceFragment implements
         }
 
         void observe() {
-    	    ContentResolver resolver = mContext.getContentResolver();
+            ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_CIRCLES_LOCKSCREEN), false, this);
-    	    resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_BLACKBERRY_LOCKSCREEN), false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.USE_BLACKBERRY_LOCKSCREEN), false, this);
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-    	    mCirclesLock = Settings.System.getBoolean(mContext.getContentResolver(),
+            mCirclesLock = Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.USE_CIRCLES_LOCKSCREEN, false);
-    	    mBlackBerryLock = Settings.System.getBoolean(mContext.getContentResolver(),
+            mBlackBerryLock = Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.USE_BLACKBERRY_LOCKSCREEN, false);
         }
     }

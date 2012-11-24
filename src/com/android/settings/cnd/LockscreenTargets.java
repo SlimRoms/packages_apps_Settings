@@ -63,7 +63,6 @@ import com.android.settings.cnd.IconPicker.OnIconPickListener;
 public class LockscreenTargets extends Fragment implements ShortcutPickHelper.OnPickListener,
     GlowPadView.OnTriggerListener, OnIconPickListener {
 
-    private GlowPadView mWaveView;
     private ImageButton mDialogIcon;
     private Button mDialogLabel;
     private ShortcutPickHelper mPicker;
@@ -73,6 +72,8 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     private boolean mIsLandscape;
     private boolean mIsScreenLarge;
     private ViewGroup mContainer;
+    private View mUnlockWidget;
+    private GlowPadView glowPadView;
     private Activity mActivity;
     private Resources mResources;
     private File mImageTmp;
@@ -119,10 +120,20 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mWaveView = ((GlowPadView) mActivity.findViewById(R.id.lock_target));
-        mWaveView.setOnTriggerListener(this);
+        mUnlockWidget = mActivity.findViewById(R.id.lock_target);
+        createUnlockMethods(mUnlockWidget);
         initializeView(Settings.System.getString(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGETS));
     }
+
+    private void createUnlockMethods(View unlockWidget) {
+        if (unlockWidget instanceof GlowPadView) {
+            glowPadView = (GlowPadView) unlockWidget;
+            glowPadView.setOnTriggerListener(this);
+        } else {
+            throw new IllegalStateException("Unrecognized unlock widget: " + unlockWidget);
+        }
+    }
+
 
     /**
      * Create a layered drawable
@@ -249,7 +260,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
                 tDraw.add(new TargetDrawable(mResources, null));
             }
         }
-        mWaveView.setTargetResources(tDraw);
+        glowPadView.setTargetResources(tDraw);
     }
 
     @Override

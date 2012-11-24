@@ -1477,6 +1477,8 @@
 
         <activity android:name=".cnd.LockscreenInterface" />
 
+        <activity android:name=".cnd.Clock" />
+
         <activity android:name=".cnd.Weather" />
 
         <activity android:name=".cnd.Calendar" />

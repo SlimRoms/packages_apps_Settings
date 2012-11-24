@@ -48,9 +48,13 @@
             android:key="unlock_tactile_feedback"
             android:title="@string/lockpattern_settings_enable_tactile_feedback_title"/>
 
-        <CheckBoxPreference
+        <ListPreference
             android:key="lock_before_unlock"
-            android:title="@string/lockpattern_settings_enable_lock_before_unlock"/>
+            android:persistent="false"
+            android:dialogTitle="@string/lockpattern_settings_enable_lock_before_unlock"
+            android:title="@string/lockpattern_settings_enable_lock_before_unlock"
+            android:entries="@array/lockpattern_settings_enable_lock_before_unlock_entries"
+            android:entryValues="@array/lockpattern_settings_enable_lock_before_unlock_values"/>
 
     </PreferenceCategory>
 

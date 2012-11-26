@@ -1449,6 +1449,8 @@
 
         <activity android:name=".cnd.PowerWidget" />
 
+        <activity android:name=".cnd.NotificationDrawerStyle" />
+
         <activity android:name=".cnd.QuietHours" />
 
         <activity android:name=".cnd.TabletPowerWidget" />
@@ -1562,7 +1564,7 @@
             </intent-filter>
         </receiver>
 
-		<service android:name=".performance.BootService" />
+        <service android:name=".performance.BootService" />
 
     </application>
 </manifest>

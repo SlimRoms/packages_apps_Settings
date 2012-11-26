@@ -17,6 +17,16 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory
+       android:title="@string/notification_style_grouptitle">
+
+         <Preference
+            android:fragment="com.android.settings.cnd.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_style_title"
+            android:summary="@string/notification_style_summary" />
+    </PreferenceCategory>
+
     <!-- Notification drawer Power Widget -->
     <PreferenceCategory
        android:title="@string/power_widget_title">
@@ -48,20 +58,6 @@
             android:entryValues="@array/brightness_location_values"
             android:title="@string/brightness_location_title" 
             android:dependency="expanded_widget" />
-
-         <Preference
-            android:key="notification_wallpaper"
-            android:title="@string/notification_wallpaper_title"
-            android:summary="@string/notification_wallpaper_summary" />
-
-        <com.android.settings.widgets.SeekBarPreference
-             android:key="notification_wallpaper_alpha"
-             android:title="@string/notif_wallpaper_alpha_title" />
-	
-	<com.android.settings.widgets.SeekBarPreference
-             android:key="notification_alpha"
-             android:title="@string/notif_alpha_title" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -24,18 +24,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.Random;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
 
 import android.app.ListFragment;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -44,10 +34,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Rect;
-import android.net.Uri;
 import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -57,18 +43,12 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -89,27 +69,12 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
-    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
-    private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
-    private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private ListPreference mPowerWidgetHapticFeedback;
     private ListPreference mBrightnessLocation;
-    private static final int REQUEST_PICK_WALLPAPER = 201;
-    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
-    private static final int SELECT_ACTIVITY = 4;
-    private static final int SELECT_WALLPAPER = 5;
-    private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
-
-    Preference mNotificationWallpaper;
-    SeekBarPreference mWallpaperAlpha;
-    SeekBarPreference mNotifAlpha;
-
-    Random randomGenerator = new Random();
-    private File customnavTemp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -119,8 +84,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             addPreferencesFromResource(R.xml.power_widget_settings);
 
             PreferenceScreen prefSet = getPreferenceScreen();
-
-            customnavTemp = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp.jpg");
 
             mPowerWidget = (CheckBoxPreference) prefSet.findPreference(UI_EXP_WIDGET);
             mPowerWidgetHideOnChange = (CheckBoxPreference) prefSet
@@ -150,39 +113,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mBrightnessLocation.setOnPreferenceChangeListener(this);
             mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
-
-            mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-            float wallpaperTransparency;
-            try{
-	        wallpaperTransparency = Settings.System.getFloat(getActivity().getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA);
-	    }
-	    catch (Exception e)
-            {
-		wallpaperTransparency = 0;
-		Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 0);
-		
-	    }            
-            mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-            mWallpaperAlpha.setInitValue((int) (wallpaperTransparency * 100));
-            mWallpaperAlpha.setProperty(Settings.System.NOTIF_WALLPAPER_ALPHA);
-            mWallpaperAlpha.setOnPreferenceChangeListener(this);
-
-	    float notifTransparency;
-            try{
-	        notifTransparency = Settings.System.getFloat(getActivity().getContentResolver(), Settings.System.NOTIF_ALPHA);
-	    }
-	    catch (Exception e)
-            {
-		notifTransparency = 0;
-		Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NOTIF_ALPHA, 0);
-		
-	    }            
-            mNotifAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
-            mNotifAlpha.setInitValue((int) (notifTransparency * 100));
-            mNotifAlpha.setProperty(Settings.System.NOTIF_ALPHA);
-            mNotifAlpha.setOnPreferenceChangeListener(this);
-
-            setHasOptionsMenu(true);
         }
     }
 
@@ -199,77 +129,10 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
             Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
             return true;
-        } else if (preference == mWallpaperAlpha) {
-            float valNav = Float.parseFloat((String) newValue);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NOTIF_WALLPAPER_ALPHA, valNav / 100);
-            return true;
-	} else if (preference == mNotifAlpha) {
-            float valNav = Float.parseFloat((String) newValue);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NOTIF_ALPHA, valNav / 100);
-            return true;
         }
         return false;
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.user_interface, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-    File wallpaperToDelete = new File(getActivity().getFilesDir()+"/notification_wallpaper.jpg");
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                if (wallpaperToDelete.exists()) {
-                    wallpaperToDelete.delete();
-                }
-                Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0000001f);
-                mWallpaperAlpha.setValue(0);
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-          if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_PICK_WALLPAPER) {
-                FileOutputStream wallpaperStream = null;
-                try {
-                  wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                Uri selectedImageUri = Uri.fromFile(customnavTemp);
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
-                wallpaperStream.close();
-                customnavTemp.delete();
-                Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.NOTIF_WALLPAPER_ALPHA, 0.0000001f);
-                mWallpaperAlpha.setValue(0);
-                } catch (Exception e) {
-                    Log.e(TAG, e.getMessage(), e);
-                }
-            }
-        }
-    }
-
-    public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
-        }
-        in.close();
-        out.close();
-    }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
@@ -289,38 +152,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HIDE_SCROLLBAR,
                     value ? 1 : 0);
-        } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-            Rect rect = new Rect();
-            Window window = getActivity().getWindow();
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
-             Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-
-            intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
-            intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-            try {
-                customnavTemp.createNewFile();
-                customnavTemp.setWritable(true, false);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(customnavTemp));
-                startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-            } catch (Exception e) {
-                Log.e(TAG, e.getMessage(), e);
-            }
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

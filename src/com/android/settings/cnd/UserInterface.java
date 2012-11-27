@@ -62,6 +62,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
     private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
+    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
@@ -71,6 +72,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     Preference mLcdDensity;
     CheckBoxPreference mShowWifiName;
     CheckBoxPreference mUseAltResolver;
+    ListPreference mVolumeKeyCursorControl;
 
     String mCustomLabelText = null;
 
@@ -129,6 +131,11 @@ public class UserInterface extends SettingsPreferenceFragment {
         mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
 
+        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
+        mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
+        mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
+        mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
     }
 
     private void updateCustomLabelTextSummary() {
@@ -210,5 +217,18 @@ public class UserInterface extends SettingsPreferenceFragment {
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object value) {
+        if (preference == mVolumeKeyCursorControl) {
+            String volumeKeyCursorControl = (String) value;
+            int val = Integer.parseInt(volumeKeyCursorControl);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                                   Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
+            int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
+            return true;
+        }
     }
 }

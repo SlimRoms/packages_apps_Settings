@@ -51,7 +51,7 @@ import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
 
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "UserInterface";
 
@@ -230,5 +230,6 @@ public class UserInterface extends SettingsPreferenceFragment {
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
             return true;
         }
+        return false;
     }
 }

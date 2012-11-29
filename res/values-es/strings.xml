@@ -1702,7 +1702,133 @@
     <string name="stylus_icon_enabled_title">Stylus</string>
     <string name="stylus_icon_enabled_summary">Mostrar el cursor cuando se arrastra o dibuja con Stylus</string>
 
- <!-- INTERFACE Settings  -->
+    <!-- EXTRA ADDITIONS START -->
+
+    <!-- About phone screen,  setting option name-->
+    <string name="mod_version">Versión Slim</string>
+    <string name="mod_version_default">4.1.x</string>
+
+    <!-- Quiet hours -->
+    <string name="quiet_hours_title">Horas de tranquilidad</string>
+    <string name="quiet_hours_summary">Configura las horas en las que tu teléfono debería estar "callado"</string>
+    <string name="quiet_hours_note_title">Nota</string>
+    <string name="quiet_hours_note_summary">Llamadas entrantes sonarán durante estas horas de tranquilidad</string>
+    <string name="quiet_hours_enabled">Habilitar las horas de tranquilidad</string>
+    <string name="quiet_hours_enabled_on">Horas de tranquilidad serán forzadas</string>
+    <string name="quiet_hours_enabled_off">Notificaciones funcionarán como normalmente</string>
+    <string name="quiet_hours_start">Comienzo de las horas de tranquilidad</string>
+    <string name="quiet_hours_start_summary">Cuándo empezar a forzar las horas de tranquilidad</string>
+    <string name="quiet_hours_end">Final de las horas de tranquilidad</string>
+    <string name="quiet_hours_end_summary">Cuándo dejar de forzar las horas de tranquilidad</string>
+    <string name="quiet_hours_mute">Silenciar notificaciones</string>
+    <string name="quiet_hours_mute_on">Ningún sonido será reproducido</string>
+    <string name="quiet_hours_mute_off">Sonidos serán reproducidos como normalmente</string>
+    <string name="quiet_hours_still">Deshabilitar vibraciones</string>
+    <string name="quiet_hours_still_on">Teléfono no vibrará</string>
+    <string name="quiet_hours_still_off">Teléfono vibrará como normalmente</string>
+    <string name="quiet_hours_dim">Deshabilitar notificaciones del led</string>
+    <string name="quiet_hours_dim_on">Notificaciones del led serán deshabilitadas</string>
+    <string name="quiet_hours_dim_off">Notificaciones del led funcionarán como normalmente</string>
+    <string name="quiet_hours_haptic">Deshabilitar feedback táctil</string>
+    <string name="quiet_hours_haptic_on">Feedback táctil será deshabilitado</string>
+    <string name="quiet_hours_haptic_off">Feedback táctil funcionará como normalmente</string>
+    <string name="quiet_hours_active_from">Activo desde</string>
+    <string name="quiet_hours_active_to">hasta</string>
+
+    <!-- time range preference -->
+    <string name="start_time_title">Comienzo</string>
+    <string name="end_time_title">Final</string>
+
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_restore_title">Volumen de seguridad para auriculares</string>
+    <string name="safe_headset_restore_summary">Previene que el volumen sea muy alto al conectar los auriculares</string>
+
+    <!-- Battery light settings  -->
+    <string name="battery_light_title">Luz batería</string>
+    <string name="battery_low_pulse_title">Pulse si la batería está baja</string>
+    <string name="battery_light_list_title">Colores</string>
+    <string name="battery_light_low_color_title">Batería baja</string>
+    <string name="battery_light_medium_color_title">Cargando</string>
+    <string name="battery_light_full_color_title">Cargado completamente</string>
+
+    <!-- Backlight  -->
+    <string name="backlight_title">Iluminación automática</string>
+    <string name="backlight_summary">Niveles y filtros del Tweak</string>
+    <string name="light_filter_title">>Filtro del sensor de luz</string>
+    <string name="light_filter_enabled_title">Habilitado</string>
+    <string name="light_filter_enabled_summary">Aplicar el filtro de moviemiento medio del sensor de datos para reducir parpadeo</string>
+    <string name="light_filter_window_title">Longitud de la ventana</string>
+    <string name="light_filter_window_summary">El valor filtrado es el valor medio del sensor durante este periodo</string>
+    <string name="light_filter_reset_title">Cambiar umbral</string>
+    <string name="light_filter_reset_summary">Si las muestras se desvian mucho del valor medio actual, resetean este valor medio de éste</string>
+    <string name="light_filter_interval_title">Intervalo de muestras</string>
+    <string name="light_filter_interval_summary">Valor bajo puede mejorar la exactitud pero usa más CPU</string>
+    <string name="light_levels_title">Niveles de luz</string>
+    <string name="light_levels_enabled_title">Usar personalizado</string>
+    <string name="light_levels_dim_title">Nivel atenuación de la pantalla</string>
+    <string name="light_levels_dim_summary">Brillo usado para la atenuación de la pantalla</string>
+    <string name="light_levels_editor_title">Editar otros niveles\u2026</string>
+    <string name="light_decrease_enabled_title">Permitir que la luz disminuya</string>
+    <string name="light_decrease_enabled_summary">Permite que la luz disminuzca. Usa histeresis para evitar parpadeo</string>
+    <string name="light_decrease_hysteresis_title">Disminuir histeresis</string>
+    <string name="light_decrease_hysteresis_summary">Niveles de sensor se superponen a la baja a partir de este</string>
+
+    <!-- Light sensor levels  -->
+    <string name="ll_title">Niveles sensor de luz</string>
+    <string name="ll_header_upper">Mayúsculas</string>
+    <string name="ll_header_lower">Minúsculas</string>
+    <string name="ll_header_lcd">Pantalla</string>
+    <string name="ll_header_btn">Botones</string>
+    <string name="ll_header_kb">Teclado</string>
+    <string name="ll_lux">Sensor (filtrado / crudo):</string>
+    <string name="ll_lcd">Pantalla:</string>
+    <string name="ll_btn">Butones:</string>
+    <string name="ll_kb">Teclado:</string>
+    <string name="ll_disabled">deshabilitado</string>
+    <string name="ll_default">Cargar los originales</string>
+    <string name="ll_save">Guardar &amp; aplicar</string>
+    <string name="ll_reload">Recargar originales</string>
+    <string name="ll_bad_levels">Niveles deben aumentar</string>
+    <string name="ll_num_levels">Establecer número de niveles</string>
+
+    <!-- Display settings screen, notification light settings -->
+    <string name="notification_light_general_title">General</string>
+    <string name="notification_light_applist_title">Aplicaciones</string>
+    <string name="notification_light_phonelist_title">Teléfono</string>
+    <string name="notification_light_use_custom">Usar valores personalizados</string>
+    <string name="notification_light_enabled">Habilitado</string>
+    <string name="notification_light_disabled">Deshabilitado</string>
+    <string name="notification_light_default_value">Original</string>
+    <string name="notification_light_missed_call_title">Llamada perdida</string>
+    <string name="notification_light_voicemail_title">Mensaje de voz</string>
+
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Editar configuración de la luz</string>
+    <string name="pulse_speed_title">Edite duración y velocidad</string>
+    <string name="picker_arrow">→</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Personalizado</string>
+    <string name="dialog_test">Test</string>
+    <string name="dialog_delete_title">Eliminar</string>
+    <string name="dialog_delete_message">Borrar elementos seleccionados?</string>
+    <string name="dialog_test_message">Apagar la pantalla para ver las notificaciones seleccionadas en acción o descartar este diálogo para parar el test</string>
+    <string name="dialog_test_button">Descartar</string>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Siempre encendido</string>
+    <string name="pulse_length_very_short">Muy corta</string>
+    <string name="pulse_length_short">Corta</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Larga</string>
+    <string name="pulse_length_very_long">Muy alta</string>
+    <string name="pulse_speed_very_fast">Muy rápida</string>
+    <string name="pulse_speed_fast">Rápida</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Lenta</string>
+    <string name="pulse_speed_very_slow">Muy lenta</string>
+
+
+    <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">ASS</string>
 
@@ -2562,6 +2688,8 @@
 
     <!-- General UI -->
     <string name="title_ui">Opciones Generales Interfaz Usuario</string>
+    <string name="notification_style_title">Estilo del panel de notificación</string>
+    <string name="notification_style_summary">Cambia el estilo de tu panel de notificaciones</string>
     <string name="notification_wallpaper_title">Elegir background para las notificaciones</string>
     <string name="notification_wallpaper_summary">Puede eliminar el fondo de pantalla del menú en esta ventana</string>
     <string name="notif_wallpaper_alpha_title">Trasparencia del background en las notificaciones</string>

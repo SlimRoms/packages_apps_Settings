@@ -184,12 +184,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
                         getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
                                 Context.MODE_PRIVATE).edit().putBoolean(
                                         DevelopmentSettings.PREF_SHOW, true).apply();
-                    if (mDevHitToast != null) {
-                        mDevHitToast.cancel();
-                    }
-                    mDevHitToast = Toast.makeText(getActivity(), R.string.show_dev_on,
-                            Toast.LENGTH_LONG);
-                    mDevHitToast.show();
+
+                        if (mDevHitToast != null) {
+                            mDevHitToast.cancel();
+                        }
+                        mDevHitToast = Toast.makeText(getActivity(), R.string.show_dev_on,
+                                Toast.LENGTH_LONG);
+                        mDevHitToast.show();
                     } else if (mDevHitCountdown > 0
                             && mDevHitCountdown < (TAPS_TO_BE_A_DEVELOPER-2)) {
                         if (mDevHitToast != null) {

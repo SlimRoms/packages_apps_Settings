@@ -2352,7 +2352,7 @@
     <string name="clock_date_string_edittext_summary">Introducir entrada</string>
     <string name="clock_color_title">Color del reloj</string>
 
-    <string name="advanced_settings_title">Opciones Unidads</string>
+    <string name="advanced_settings_title">Opciones avanzadas</string>
 
     <string name="statusbar_settings_title">Barra de estado</string>
 
@@ -2360,13 +2360,13 @@
     <string name="start_up_tweaks">Tweaks Inicio</string>
     <string name="startup_settings">Tweaks inicio</string>
     <string name="init_d_title">Tweaks Inicio</string>
-    <string name="pt_enable_init_d">Habilitar tweaks incio</string>
+    <string name="pt_enable_init_d">Habilitar tweaks de inicio</string>
     <string name="ps_enable_init_d">Habilitar/deshabilitar tweaks inicio</string>
     <string name="pc_init_d">Habilitar/Deshabilitar Tweaks</string>
     <string name="ps_init_d">Configurar tweaks que arrancan en el inicio</string>
     <string name="pc_init_d_tweaks">Personalizar Tweaks</string>
-    <string name="pt_zipalign">Zipalign aplicaciones</string>
-    <string name="ps_zipalign">zipalign cuanquier unaligned aplicación en cada arranque</string>
+    <string name="pt_zipalign">Zipalignear aplicaciones</string>
+    <string name="ps_zipalign">Zipalinear toda aplicación unaligneada en cada arranque</string>
     <string name="pt_enable_sd_boost">Habilitar SD boost</string>
     <string name="ps_enable_sd_boost">Habilitar/deshabilitar aumento velocidad tarjeta SD</string>
     <string name="pt_sd_boost">Valores de lectura</string>
@@ -2381,7 +2381,7 @@
     <string name="ps_enable_cron">Habilitar trabajos programados</string>
 
     <!-- Performance Settings | Processor speed -->
-    <string name="processor_title">Velocidad procesor</string>
+    <string name="processor_title">Velocidad del procesador</string>
     <string name="performance_settings_title">Rendimiento</string>
     <string name="processor_summary">Cambiar CPU governor y reloj de velocidad</string>
     <string name="cpu_cur_freq_title">Actual frecuencia CPU</string>
@@ -2420,7 +2420,8 @@
 
     <!-- Memory Management -->
     <string name="memory_management_title">Manejo de la memoria</string>
-    <string name="memory_management_summary">Customizar el uso de la memoria para mejorar el rendimiento del sistema</string>
+    <string name="memory_management_summary">Customizar el uso de la memoria para mejorar el rendimiento del sistema
+    </string>
 
     <!-- Purgeable Assets -->
     <string name="pref_purgeable_assets_title">Permite la purga de assets</string>
@@ -2677,7 +2678,7 @@
     <string name="status_bar_toggle_brightness_sliding_summary">Permite adjustar el brillo al deslizar el dedo por la barra de estado</string>
 
     <string name="build_properties_title">Propiedades de la Build</string>
-    <string name="development_tools_title">Herramients del desarrollador</string>
+    <string name="development_tools_title">Iniciar Herramientas</string>
     <string name="device_info_title">Información del Terminal</string>
     <string name="debug_misc_category">Miscelánea</string>
 
@@ -2752,7 +2753,7 @@
     <string name="stock_density_summary">Tablets y teléfonos antiguos usan 160. La mayoría de los teléfonos usan 240. Galaxy Nexus usa 320.</string>
     <string name="stock_density_changed_summary">"Densidad establecida en: "</string>
     <string name="reboot_title">2. Reiniciar!</string>
-    <string name="reboot_summary">Vuelve tras el reincio y completa el resto de pasos!</string>
+    <string name="reboot_summary">Vuelve tras el reinicio y completa el resto de pasos!</string>
     <string name="clear_market_data_title">3. Borrar datos del Play Store</string>
     <string name="clear_market_data_cleared">Datos Play Store borrados</string>
     <string name="clear_market_data_donot_cleared">"Datos Play Store no pudieron ser borrados, por favor hazlo manualmente!"</string>

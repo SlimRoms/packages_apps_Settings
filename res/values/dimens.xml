@@ -54,6 +54,11 @@
 
     <dimen name="pager_tabs_padding">0dp</dimen>
 
+    <!-- height of a normal list item in edit playlist mode -->
+    <dimen name="normal_height">64dip</dimen>
+    <!-- height of an expanded list item in edit playlist mode -->
+    <dimen name="expanded_height">128dip</dimen>
+
     <!-- Size of AppWidget previews in KeyguardAppWidgetPickActivity -->
     <dimen name="appwidget_preview_width">140dip</dimen>
     <dimen name="appwidget_preview_height">80dip</dimen>

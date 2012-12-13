@@ -46,8 +46,12 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
+import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.VolumePanel;
 
+import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 public class SoundSettings extends SettingsPreferenceFragment implements
@@ -59,8 +63,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_EMERGENCY_TONE_VALUE = 0;
 
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
+    private static final String KEY_SILENT_MODE = "silent_mode";
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
     private static final String KEY_RING_VOLUME = "ring_volume";
+    private static final String KEY_INCREASING_RING = "increasing_ring";
     private static final String KEY_MUSICFX = "musicfx";
     private static final String KEY_DTMF_TONE = "dtmf_tone";
     private static final String KEY_SOUND_EFFECTS = "sound_effects";
@@ -76,9 +83,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOCK_SOUNDS = "dock_sounds";
     private static final String KEY_DOCK_AUDIO_MEDIA_ENABLED = "dock_audio_media_enabled";
 
+    private static final String SILENT_MODE_OFF = "off";
+    private static final String SILENT_MODE_VIBRATE = "vibrate";
+    private static final String SILENT_MODE_MUTE = "mute";
+
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
-            KEY_EMERGENCY_TONE
+            KEY_EMERGENCY_TONE, KEY_INCREASING_RING
     };
 
     private static final int MSG_UPDATE_RINGTONE_SUMMARY = 1;
@@ -139,10 +150,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (TelephonyManager.PHONE_TYPE_CDMA != activePhoneType) {
             // device is not CDMA, do not display CDMA emergency_tone
             getPreferenceScreen().removePreference(findPreference(KEY_EMERGENCY_TONE));
-        }
-
-        if (!getResources().getBoolean(R.bool.has_silent_mode)) {
-            findPreference(KEY_RING_VOLUME).setDependency(null);
         }
 
         mVibrateWhenRinging = (CheckBoxPreference) findPreference(KEY_VIBRATE);
@@ -235,6 +242,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         IntentFilter filter = new IntentFilter(Intent.ACTION_DOCK_EVENT);
         getActivity().registerReceiver(mReceiver, filter);
+
+        filter = new IntentFilter(AudioManager.RINGER_MODE_CHANGED_ACTION);
+        getActivity().registerReceiver(mReceiver, filter);
+
     }
 
     @Override
@@ -242,6 +253,29 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         super.onPause();
 
         getActivity().unregisterReceiver(mReceiver);
+    }
+
+    private void setPhoneSilentSettingValue(String value) {
+        int ringerMode = AudioManager.RINGER_MODE_NORMAL;
+        if (value.equals(SILENT_MODE_MUTE)) {
+            ringerMode = AudioManager.RINGER_MODE_SILENT;
+        } else if (value.equals(SILENT_MODE_VIBRATE)) {
+            ringerMode = AudioManager.RINGER_MODE_VIBRATE;
+        }
+        mAudioManager.setRingerMode(ringerMode);
+    }
+
+    private String getPhoneSilentModeSettingValue() {
+        switch (mAudioManager.getRingerMode()) {
+        case AudioManager.RINGER_MODE_NORMAL:
+            return SILENT_MODE_OFF;
+        case AudioManager.RINGER_MODE_VIBRATE:
+            return SILENT_MODE_VIBRATE;
+        case AudioManager.RINGER_MODE_SILENT:
+            return SILENT_MODE_MUTE;
+        }
+        // Shouldn't happen
+        return SILENT_MODE_OFF;
     }
 
     private void updateRingtoneName(int type, Preference preference, int msg) {
@@ -334,7 +368,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mDockAudioMediaEnabled) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.DOCK_AUDIO_MEDIA_ENABLED,
                     mDockAudioMediaEnabled.isChecked() ? 1 : 0);
+        } else {
+            // If we didn't handle it, let preferences handle it.
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
+
         return true;
     }
 
@@ -351,6 +389,22 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         }
 
         return true;
+    }
+
+    private String returnTime(String t) {
+        if (t == null || t.equals("")) {
+            return "";
+        }
+        int hr = Integer.parseInt(t.trim());
+        int mn = hr;
+
+        hr = hr / 60;
+        mn = mn % 60;
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY, hr);
+        cal.set(Calendar.MINUTE, mn);
+        Date date = cal.getTime();
+        return DateFormat.getTimeFormat(getActivity().getApplicationContext()).format(date);
     }
 
     @Override

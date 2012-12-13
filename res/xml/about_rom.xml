@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slim="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="devs"
+        android:title="@string/devs">
+
+        <com.android.settings.widget.DeveloperPreference
+           android:title="Slimroms"
+           slim:nameDev="slimroms"
+           slim:twitterHandle="arvind78"
+           slim:donateLink="@string/donate_slim" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="links"
+        android:title="@string/links">
+
+       <Preference
+            android:key="slim_website"
+            android:title="@string/slim_website_title"
+            android:summary="@string/slim_website_summary" />
+
+        <Preference
+            android:key="slim_source"
+            android:title="@string/slim_source_title"
+            android:summary="@string/slim_source_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="contributors"
+        android:title="@string/contributors">
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="CyanogenMod"
+            slim:nameDev="cyanogenmod"
+            slim:twitterHandle="cyanogenmod"
+            slim:donateLink="@string/donate_cyanogenmod" />
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="AOKP"
+            slim:nameDev="aokp"
+            slim:twitterHandle="aokp_rom"
+            slim:donateLink="@string/donate_aokp" />
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="Codenamedroid"
+            slim:nameDev="codenamedroid"
+            slim:twitterHandle="codenameandroid"
+            slim:donateLink="@string/donate_cna" />
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="Team EOS"
+            slim:nameDev="teameos"
+            slim:twitterHandle="teameos" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

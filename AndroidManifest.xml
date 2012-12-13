@@ -1439,6 +1439,7 @@
         <activity android:name=".slim.PowerWidget" />
         <activity android:name=".slim.QuietHours" />
         <activity android:name=".slim.PowerMenu" />
+        <activity android:name=".slim.About" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"

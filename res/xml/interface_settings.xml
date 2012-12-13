@@ -19,6 +19,10 @@
     android:title="@string/interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="general_ui_settings"
+        android:fragment="com.android.settings.slim.UserInterface"
+        android:title="@string/title_ui" />
 
     <PreferenceScreen
         android:key="notification_drawer"

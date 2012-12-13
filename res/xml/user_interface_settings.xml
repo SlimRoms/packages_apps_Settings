@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
+
+        <Preference
+            android:key="lcd_density_setup"
+            android:title="@string/lcd_density_title"
+            android:summary="@string/lcd_density_summary" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

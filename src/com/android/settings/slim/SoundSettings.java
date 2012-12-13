@@ -79,7 +79,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
 
     }
-    
+
     @Override
     public void onResume() {
         super.onResume();
@@ -90,13 +90,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    
-
     // updateState in fact updates the UI to reflect the system state
     private void updateState(boolean force) {
         if (getActivity() == null) return;
         ContentResolver resolver = getContentResolver();
-                
     }
 
     @Override
@@ -107,7 +104,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     Settings.System.SAFE_HEADSET_VOLUME_RESTORE,
                     mSafeHeadsetRestore.isChecked() ? 1 : 0);
 
-		} else if (preference == mVolBtnMusicCtrl) {
+        } else if (preference == mVolBtnMusicCtrl) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS,
                     mVolBtnMusicCtrl.isChecked() ? 1 : 0);
 
@@ -121,7 +118,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        
+
         if (preference == mVolumeOverlay) {
             final int value = Integer.valueOf((String) objValue);
             final int index = mVolumeOverlay.findIndexOfValue((String) objValue);
@@ -129,7 +126,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     Settings.System.MODE_VOLUME_OVERLAY, value);
             mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
         }
-        
+
         return true;
     }
 }

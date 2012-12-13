@@ -1441,6 +1441,15 @@
         <activity android:name=".slim.PowerMenu" />
         <activity android:name=".slim.About" />
         <activity android:name=".slim.SoundSettings" />
+        <activity android:name=".slim.UserInterface" />
+
+        <activity
+            android:name=".slim.DensityChanger"
+            android:label="@string/lcd_density_wizard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"

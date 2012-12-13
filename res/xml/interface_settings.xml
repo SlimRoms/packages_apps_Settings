@@ -25,4 +25,9 @@
         android:fragment="com.android.settings.slim.PowerWidget"
         android:title="@string/notification_drawer_title" />
 
+    <PreferenceScreen
+        android:key="power_menu"
+        android:title="@string/power_menu_title"
+        android:fragment="com.android.settings.slim.PowerMenu" />
+
 </PreferenceScreen>

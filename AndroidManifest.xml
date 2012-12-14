@@ -1442,6 +1442,9 @@
         <activity android:name=".slim.About" />
         <activity android:name=".slim.SoundSettings" />
         <activity android:name=".slim.UserInterface" />
+        <activity android:name=".slim.DisplaySettings" />
+        <activity android:name=".slim.notificationlight.NotificationLightSettings" />
+        <activity android:name=".slim.notificationlight.BatteryLightSettings" />
 
         <activity
             android:name=".slim.DensityChanger"

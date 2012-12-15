@@ -81,6 +81,17 @@
         android:fragment="com.android.settings.slim.QuietHours"
         android:title="@string/quiet_hours_title" />
 
+    <!-- Themes -->
+    <header
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
+
     <!-- About Slim -->
     <header
         android:id="@+id/about_rom"

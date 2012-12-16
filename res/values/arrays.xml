@@ -1369,6 +1369,14 @@
         <item>4</item>
     </string-array>
 
+    <!-- Arrays for root access capability -->
+    <string-array name="root_access_entries">
+        <item>@string/root_access_none</item>
+        <item>@string/root_access_apps</item>
+        <item>@string/root_access_adb</item>
+        <item>@string/root_access_all</item>
+    </string-array>
+
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
         <item>@string/volume_key_cursor_control_off</item>

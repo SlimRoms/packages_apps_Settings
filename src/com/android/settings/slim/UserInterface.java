@@ -80,11 +80,6 @@ public class UserInterface extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mLcdDensity) {
-            ((PreferenceActivity) getActivity())
-            .startPreferenceFragment(new DensityChanger(), true);
-            return true;
-        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

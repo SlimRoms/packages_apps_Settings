@@ -4,7 +4,8 @@
 
     <Preference
         android:title="@string/follow_through_title"
-        android:summary="@string/follow_through_summary" />
+        android:summary="@string/follow_through_summary"
+        android:selectable="false" />
 
     <ListPreference
         android:entries="@array/lcd_density_stock_entries"

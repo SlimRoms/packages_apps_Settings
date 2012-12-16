@@ -6,8 +6,9 @@
         android:key="misc"
         android:title="@string/misc_short">
 
-        <Preference
+        <PreferenceScreen
             android:key="lcd_density_setup"
+            android:fragment="com.android.settings.slim.DensityChanger"
             android:title="@string/lcd_density_title"
             android:summary="@string/lcd_density_summary" />
 

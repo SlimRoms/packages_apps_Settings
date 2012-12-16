@@ -4470,12 +4470,11 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">ASS</string>
 
-    <!-- Interface settings  -->
+    <!-- Interface settings  and general strings-->
     <string name="interface_settings_title">Interface</string>
     <string name="interface_title">Interface</string>
+    <string name="additional_options_title">Additional options</string>
 
-    <!-- Notification Drawer  -->
-    <string name="notification_drawer_title">Notification drawer</string>
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
@@ -4882,7 +4881,10 @@
     <string name="themes_settings_title">Themes</string>
 
     <!-- Notification drawer settings  -->
+    <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_widgets">Widgets</string>
+    <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+    <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
 
     <!-- Quick settings panel -->
     <string name="quick_settings_panel_title">Quick Settings panel</string>

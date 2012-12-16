@@ -17,18 +17,22 @@
 package com.android.settings.slim;
 
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.util.Helpers;
 
 public class NotificationDrawerSettings extends SettingsPreferenceFragment {
 
     public static final String TAG = "NotificationDrawerSettings";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
 
     Preference mPowerWidget;
+    CheckBoxPreference mShowWifiName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
         if (mPowerWidget != null) {
               updatePowerWidgetDescription();
         }
+
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
+
     }
 
     private void updatePowerWidgetDescription() {
@@ -57,6 +66,18 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
     public void onResume() {
         super.onResume();
         updatePowerWidgetDescription();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            Preference preference) {
+        if (preference == mShowWifiName) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    mShowWifiName.isChecked() ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
 }

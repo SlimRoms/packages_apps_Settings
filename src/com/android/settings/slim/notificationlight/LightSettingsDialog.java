@@ -28,6 +28,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
@@ -35,6 +37,7 @@ import android.widget.TextView;
 
 import com.android.settings.R;
 import com.android.settings.slim.notificationlight.ColorPickerView.OnColorChangedListener;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LightSettingsDialog extends AlertDialog implements
         ColorPickerView.OnColorChangedListener {
@@ -43,6 +46,8 @@ public class LightSettingsDialog extends AlertDialog implements
 
     private ColorPanelView mOldColor;
     private ColorPanelView mNewColor;
+    private EditText mHex;
+    private Button mSetButton;
     private Spinner mPulseSpeedOn;
     private Spinner mPulseSpeedOff;
     private LayoutInflater mInflater;
@@ -98,6 +103,8 @@ public class LightSettingsDialog extends AlertDialog implements
         mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
         mOldColor = (ColorPanelView) layout.findViewById(R.id.old_color_panel);
         mNewColor = (ColorPanelView) layout.findViewById(R.id.new_color_panel);
+        mHex = (EditText) layout.findViewById(R.id.hex);
+        mSetButton = (Button) layout.findViewById(R.id.enter);
 
         ((LinearLayout) mOldColor.getParent()).setPadding(Math
                 .round(mColorPicker.getDrawingOffset()), 0, Math
@@ -106,6 +113,19 @@ public class LightSettingsDialog extends AlertDialog implements
         mColorPicker.setOnColorChangedListener(this);
         mOldColor.setColor(color);
         mColorPicker.setColor(color, true);
+        mHex.setText(ColorPickerPreference.convertToARGB(color));
+        mSetButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String text = mHex.getText().toString();
+                try {
+                    int newColor = ColorPickerPreference.convertToColorInt(text);
+                    mColorPicker.setColor(newColor, true);
+                } catch (Exception e) {
+                }
+            }
+        });
 
         mPulseSpeedOn = (Spinner) layout.findViewById(R.id.on_spinner);
         PulseSpeedAdapter pulseSpeedAdapter = new PulseSpeedAdapter(
@@ -145,6 +165,10 @@ public class LightSettingsDialog extends AlertDialog implements
     @Override
     public void onColorChanged(int color) {
         mNewColor.setColor(color);
+        try {
+            mHex.setText(ColorPickerPreference.convertToARGB(color));
+        } catch (Exception e) {
+        }
 
         if (mListener != null) {
             mListener.onColorChanged(color);
@@ -157,6 +181,15 @@ public class LightSettingsDialog extends AlertDialog implements
 
     public int getColor() {
         return mColorPicker.getColor();
+    }
+
+    public void onClick(View v) {
+        String text = mHex.getText().toString();
+        try {
+            int newColor = ColorPickerPreference.convertToColorInt(text);
+            mColorPicker.setColor(newColor, true);
+        } catch (Exception e) {
+        }
     }
 
     public int getPulseSpeedOn() {

@@ -4739,6 +4739,7 @@
     <string name="status_bar_battery_status_percentage">Percentage</string>
     <string name="status_bar_battery_status_circle">Circle</string>
     <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
+    <string name="status_bar_battery_status_dotted_circle">Dotted Circle with percentage</string>
 
     <!-- Status bar notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>

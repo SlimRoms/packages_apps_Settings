@@ -1447,6 +1447,7 @@
         <activity android:name=".slim.notificationlight.BatteryLightSettings" />
         <activity android:name=".slim.NotificationDrawerSettings" />
         <activity android:name=".slim.quicksettings.QuickSettings" />
+        <activity android:name=".slim.NotificationDrawerStyle" />
 
         <activity
             android:name=".slim.DensityChanger"

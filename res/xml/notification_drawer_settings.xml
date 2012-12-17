@@ -17,6 +17,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+       android:title="@string/notification_style_grouptitle">
+
+         <Preference
+            android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_style_title"
+            android:summary="@string/notification_style_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="widgets"
         android:title="@string/notification_widgets">
 

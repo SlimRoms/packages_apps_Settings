@@ -55,6 +55,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_MEDIA_NEXT = "toggleMediaNext";
     public static final String BUTTON_LTE = "toggleLte";
     public static final String BUTTON_WIMAX = "toggleWimax";
+    public static final String BUTTON_REBOOT = "toggleReboot";
 
     public static final HashMap<String, ButtonInfo> BUTTONS = new HashMap<String, ButtonInfo>();
     static {
@@ -111,6 +112,9 @@ public class PowerWidgetUtil {
         BUTTONS.put(BUTTON_MEDIA_NEXT, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_MEDIA_NEXT, R.string.title_toggle_media_next,
                 "com.android.systemui:drawable/stat_media_next"));
+        BUTTONS.put(BUTTON_REBOOT, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_REBOOT, R.string.title_toggle_reboot,
+                "com.android.systemui:drawable/stat_reboot"));
         if(PhoneConstants.LTE_ON_CDMA_TRUE == TelephonyManager.getDefault().getLteOnCdmaMode() ||
            TelephonyManager.getDefault().getLteOnGsmMode() != 0) {
             BUTTONS.put(BUTTON_LTE, new PowerWidgetUtil.ButtonInfo(

@@ -61,6 +61,7 @@
     <uses-permission android:name="android.permission.MANAGE_USERS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
@@ -1436,6 +1437,7 @@
 
         <!-- extra activities start -->
         <activity android:name=".slim.InterfaceSettings" />
+        <activity android:name=".slim.PerformanceSettings" />
         <activity android:name=".slim.PowerWidget" />
         <activity android:name=".slim.QuietHours" />
         <activity android:name=".slim.PowerMenu" />
@@ -1534,6 +1536,12 @@
         <receiver android:name=".bluetooth.BluetoothDiscoverableTimeoutReceiver">
             <intent-filter>
                 <action android:name="android.bluetooth.intent.DISCOVERABLE_TIMEOUT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".slim.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 

@@ -4761,8 +4761,11 @@
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
 
     <!-- General UI -->
-    <string name="misc_short">Misc</string>
     <string name="title_ui">General UI</string>
+    <string name="display_short">Display</string>
+    <string name="misc_short">Misc</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>

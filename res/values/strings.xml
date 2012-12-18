@@ -878,6 +878,9 @@
     <!-- Lockscreen Camera widget toggle -->
     <string name="lockscreen_camera_widget_title">Camera widget</string>
 
+    <!-- Lockscreen All widgets toggle -->
+    <string name="keyguard_picker_all_widgets_title">Show all widgets</string>
+
     <!-- Title for option to turn of password/pin/pattern unlock. [CHAR LIMIT=22] -->
     <string name="unlock_disable_lock_title">Turn off screen lock</string>
 

@@ -1450,6 +1450,7 @@
         <activity android:name=".slim.NotificationDrawerStyle" />
         <activity android:name=".slim.StatusBar" />
         <activity android:name=".slim.StatusBarClockStyle" />
+        <activity android:name=".slim.StatusBarBatteryStyle" />
 
         <activity
             android:name=".slim.DensityChanger"

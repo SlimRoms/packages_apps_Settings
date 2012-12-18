@@ -4729,15 +4729,10 @@
     <string name="status_bar_title">Status bar</string>
     <string name="status_bar_general_title">General</string>
     <string name="status_bar_style_title">Style</string>
-    <string name="status_bar_battery_title">Battery status style</string>
     <string name="status_bar_signal_text_title">Signal status style</string>
     <string name="status_bar_style_icon">Icon</string>
     <string name="status_bar_style_hidden">Hidden</string>
     <string name="status_bar_signal_text_show_text">Text</string>
-    <string name="status_bar_battery_status_percentage">Percentage</string>
-    <string name="status_bar_battery_status_circle">Circle</string>
-    <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
-    <string name="status_bar_battery_status_dotted_circle">Dotted Circle with percentage</string>
 
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
@@ -4977,5 +4972,22 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
     <string name="ics_color">Holo</string>
+
+    <!-- Battery Icon and Bar -->
+    <string name="status_bar_battery_icon_bar_title">Battery icon and bar style</string>
+    <string name="battery_icon_cat">Battery icon style</string>
+    <string name="status_bar_battery_title">Battery icon style</string>
+    <string name="status_bar_battery_status_percentage">Percentage</string>
+    <string name="status_bar_battery_status_circle">Circle</string>
+    <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
+    <string name="status_bar_battery_status_dotted_circle">Dotted Circle with percentage</string>
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar style</string>
+    <string name="battery_bar_style_title">Battery bar alignment</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user expe
+rience. Enable at your own discretion.</string>
 
 </resources>

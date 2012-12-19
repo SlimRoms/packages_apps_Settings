@@ -5053,4 +5053,9 @@
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Advanced</string>
 
+    <!-- Keyboard and Input ASS methods  -->
+    <string name="title_keyboard_input">Keyboard and input methods</string>
+    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
+    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
+
 </resources>

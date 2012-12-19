@@ -260,6 +260,8 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_CIRCLE_BATTERY_TEXT_COLOR, defaultColor);
         String hexColor = String.format("#%08x", (0xffffffff & defaultColor));
+        mCircleTextColor.setNewPreviewColor(defaultColor);
+        mCircleColor.setNewPreviewColor(defaultColor);
         mCircleColor.setSummary(hexColor);
         mCircleTextColor.setSummary(hexColor);
     }

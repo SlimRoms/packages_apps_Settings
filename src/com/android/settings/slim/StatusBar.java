@@ -103,7 +103,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private void updateClockStyleDescription() {
         if (Settings.System.getInt(getActivity().getContentResolver(),
-               Settings.System.STATUS_BAR_CLOCK, 0) == 1) {
+               Settings.System.STATUS_BAR_CLOCK, 1) == 1) {
             mClockStyle.setSummary(getString(R.string.clock_enabled));
         } else {
             mClockStyle.setSummary(getString(R.string.clock_disabled));

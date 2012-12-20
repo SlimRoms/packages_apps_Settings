@@ -38,11 +38,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
@@ -56,20 +58,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
+import android.util.Log;
 import com.android.settings.util.Helpers;
 
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     public static final String TAG = "UserInterface";
 
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
+    private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
 
-    Preference mLcdDensity;
-    CheckBoxPreference mUseAltResolver;
+    private Preference mLcdDensity;
+    private CheckBoxPreference mUseAltResolver;
+    private ListPreference mCcodePref;
+
+    private WifiManager mWifiManager;
 
     int newDensityValue;
 
@@ -96,9 +104,39 @@ public class UserInterface extends SettingsPreferenceFragment {
             getPreferenceScreen().removePreference(mLcdDensity);
         }
 
+        mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+
+        mCcodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
+        if (mCcodePref != null) {
+            mCcodePref.setOnPreferenceChangeListener(this);
+            String value = mWifiManager.getCountryCode();
+            if (value != null) {
+                mCcodePref.setValue(value);
+                mCcodePref.setSummary(mCcodePref.getEntry());
+            } else {
+                Log.e(TAG, "Failed to fetch country code");
+            }
+        }
+
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
     }
 
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean result = false;
+        if (preference == mCcodePref) {
+            try {
+                mWifiManager.setCountryCode((String) newValue, true);
+                int index = mCcodePref.findIndexOfValue((String) newValue);
+                mCcodePref.setSummary(mCcodePref.getEntries()[index]);
+                return true;
+            } catch (IllegalArgumentException e) {
+                Toast.makeText(getActivity(), R.string.wifi_setting_countrycode_error,
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return false;
+    }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,

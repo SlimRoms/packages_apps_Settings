@@ -25,9 +25,9 @@
         android:title="@string/display_title" />
 
     <PreferenceScreen
-        android:key="general_ui_settings"
+        android:key="general_settings"
         android:fragment="com.android.settings.slim.UserInterface"
-        android:title="@string/title_ui" />
+        android:title="@string/title_slim_general" />
 
     <PreferenceScreen
         android:key="keyboard_input_settings"

@@ -44,6 +44,13 @@
             android:summary="@string/tile_picker_summary"
             android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
 
+        <ListPreference
+            android:key="pref_network_mode"
+            android:dialogTitle="@string/pref_network_mode_title"
+            android:title="@string/pref_network_mode_title"
+            android:entries="@array/entries_network_widget"
+            android:entryValues="@array/values_network_widget" />
+
         <MultiSelectListPreference
             android:key="pref_ring_mode"
             android:dialogTitle="@string/pref_ring_mode_title"

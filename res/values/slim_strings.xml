@@ -979,4 +979,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_summary">Always show battery status on keyguard</string>
 
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+
 </resources>

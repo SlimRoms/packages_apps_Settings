@@ -23,14 +23,16 @@
         android:title="@string/title_general" >
 
         <CheckBoxPreference
-            android:key="quick_pulldown"
-            android:title="@string/title_quick_pulldown"
-            android:summary="@string/summary_quick_pulldown" />
-
-        <CheckBoxPreference
             android:key="collapse_panel"
             android:title="@string/title_collapse_panel"
             android:summary="@string/summary_collapse_panel" />
+
+        <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/title_quick_pulldown"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
 
     </PreferenceCategory>
 

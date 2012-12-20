@@ -19,18 +19,23 @@ package com.android.settings.slim;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
 
 public class NotificationDrawerSettings extends SettingsPreferenceFragment {
 
     public static final String TAG = "NotificationDrawerSettings";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
+    private static final String PREF_NOTIFICATION_OPTIONS = "options";
+    private static final String PREF_NOTIFICATION_POWER_WIDGET = "power_widget";
 
+    PreferenceCategory mAdditionalOptions;
     Preference mPowerWidget;
     CheckBoxPreference mShowWifiName;
 
@@ -42,14 +47,22 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
 
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mPowerWidget = findPreference("power_widget");
+        mPowerWidget = findPreference(PREF_NOTIFICATION_POWER_WIDGET);
         if (mPowerWidget != null) {
               updatePowerWidgetDescription();
         }
 
-        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
-        mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
+
+        mAdditionalOptions = (PreferenceCategory) prefs.findPreference(PREF_NOTIFICATION_OPTIONS);
+
+        if (Utils.isTablet(getActivity())) {
+            // Nothing for tablets in the additional options section at the moment, remove it
+            prefs.removePreference(mAdditionalOptions);
+        } else {
+            mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+            mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
+        }
 
     }
 

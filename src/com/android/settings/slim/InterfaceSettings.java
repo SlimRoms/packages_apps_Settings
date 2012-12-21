@@ -36,16 +36,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "InterfaceSettings";
 
-    private static final String KEY_NOTIFICATION_DRAWER = "notification_drawer";
-    private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
-    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
-    private static final String KEY_NAVIGATION_BAR_RING = "navring_settings";
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-
-    private PreferenceScreen mPhoneDrawer;
-    private PreferenceScreen mTabletDrawer;
-    private PreferenceScreen mHardwareKeys;
-
     private final Configuration mCurConfig = new Configuration();
 
     @Override
@@ -54,40 +44,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.interface_settings);
 
-        mPhoneDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER);
-        mTabletDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TABLET);
-        mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-
-        if (Utils.isTablet(getActivity())) {
-            if (mPhoneDrawer != null) {
-                getPreferenceScreen().removePreference(mPhoneDrawer);
-                getPreferenceScreen().removePreference(mHardwareKeys);
-            }
-        } else {
-            if (mTabletDrawer != null) {
-                getPreferenceScreen().removePreference(mTabletDrawer);
-            }
-        }
-
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (!windowManager.hasNavigationBar()) {
-                Preference naviBar = findPreference(KEY_NAVIGATION_BAR);
-                Preference naviBarRing = findPreference(KEY_NAVIGATION_BAR_RING);
-                if (naviBar != null) {
-                    getPreferenceScreen().removePreference(naviBar);
-                    getPreferenceScreen().removePreference(naviBarRing);
-                }
-            } else {
-                Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);
-                if (hardKeys != null) {
-                    getPreferenceScreen().removePreference(hardKeys);
-                }
-            }
-        } catch (RemoteException e) {
-        }
-    }
+     }
 
     @Override
     public void onResume() {

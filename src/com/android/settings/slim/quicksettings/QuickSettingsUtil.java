@@ -49,6 +49,7 @@ public class QuickSettingsUtil {
     public static final String TILE_WIFIAP = "toggleWifiAp";
     public static final String TILE_SCREENTIMEOUT = "toggleScreenTimeout";
     public static final String TILE_MOBILEDATA = "toggleMobileData";
+    public static final String TILE_MOBILENETWORK = "toggleMobileNetwork";
     public static final String TILE_LOCKSCREEN = "toggleLockScreen";
     public static final String TILE_NETWORKMODE = "toggleNetworkMode";
     public static final String TILE_AUTOROTATE = "toggleAutoRotate";
@@ -64,7 +65,7 @@ public class QuickSettingsUtil {
             + TILE_DELIMITER + TILE_BRIGHTNESS
             + TILE_DELIMITER + TILE_SETTINGS
             + TILE_DELIMITER + TILE_WIFI
-            + TILE_DELIMITER + TILE_MOBILEDATA
+            + TILE_DELIMITER + TILE_MOBILENETWORK
             + TILE_DELIMITER + TILE_BATTERY
             + TILE_DELIMITER + TILE_AIRPLANE
             + TILE_DELIMITER + TILE_BLUETOOTH;
@@ -101,6 +102,9 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_lock_screen_on"));
         TILES.put(TILE_MOBILEDATA, new QuickSettingsUtil.TileInfo(
                 TILE_MOBILEDATA, R.string.title_tile_mobiledata,
+                "com.android.systemui:drawable/ic_qs_mobildata_off"));
+        TILES.put(TILE_MOBILENETWORK, new QuickSettingsUtil.TileInfo(
+                TILE_MOBILENETWORK, R.string.title_tile_mobilenetwork,
                 "com.android.systemui:drawable/ic_qs_signal_4"));
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,

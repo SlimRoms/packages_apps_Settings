@@ -125,6 +125,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_SOUND, new QuickSettingsUtil.TileInfo(
                 TILE_SOUND, R.string.title_tile_sound,
                 "com.android.systemui:drawable/ic_qs_ring_on"));
+        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
+                TILE_SYNC, R.string.title_tile_sync,
+                "com.android.systemui:drawable/ic_qs_sync_off"));
         TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
                 TILE_USER, R.string.title_tile_user,
                 "com.android.systemui:drawable/ic_qs_default_user"));

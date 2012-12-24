@@ -89,15 +89,15 @@ public class QuickSettingsUtil {
         TILES.put(TILE_BRIGHTNESS, new QuickSettingsUtil.TileInfo(
                 TILE_BRIGHTNESS, R.string.title_tile_brightness,
                 "com.android.systemui:drawable/ic_qs_brightness_auto_off"));
-        TILES.put(TILE_FLASHLIGHT, new QuickSettingsUtil.TileInfo(
-                TILE_FLASHLIGHT, R.string.title_tile_flashlight,
-                "com.android.systemui:drawable/ic_qs_flashlight_off"));
         TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
                 TILE_SLEEP, R.string.title_tile_sleep,
                 "com.android.systemui:drawable/ic_qs_sleep"));
         TILES.put(TILE_GPS, new QuickSettingsUtil.TileInfo(
                 TILE_GPS, R.string.title_tile_gps,
                 "com.android.systemui:drawable/ic_qs_gps_neutral"));
+        TILES.put(TILE_FLASHLIGHT, new QuickSettingsUtil.TileInfo(
+                TILE_FLASHLIGHT, R.string.title_tile_flashlight,
+                "com.android.systemui:drawable/ic_qs_flashlight_off"));
         TILES.put(TILE_LOCKSCREEN, new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
                 "com.android.systemui:drawable/ic_qs_lock_screen_on"));
@@ -113,6 +113,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
+        TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
+                TILE_PROFILE, R.string.title_tile_profile,
+                "com.android.systemui:drawable/ic_qs_profiles"));
         TILES.put(TILE_REBOOT, new QuickSettingsUtil.TileInfo(
                 TILE_REBOOT, R.string.title_tile_reboot,
                 "com.android.systemui:drawable/ic_qs_reboot"));
@@ -122,18 +125,15 @@ public class QuickSettingsUtil {
         TILES.put(TILE_SOUND, new QuickSettingsUtil.TileInfo(
                 TILE_SOUND, R.string.title_tile_sound,
                 "com.android.systemui:drawable/ic_qs_ring_on"));
+        TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
+                TILE_USER, R.string.title_tile_user,
+                "com.android.systemui:drawable/ic_qs_default_user"));
         TILES.put(TILE_WIFI, new QuickSettingsUtil.TileInfo(
                 TILE_WIFI, R.string.title_tile_wifi,
                 "com.android.systemui:drawable/ic_qs_wifi_4"));
         TILES.put(TILE_WIFIAP, new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral"));
-        TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
-                TILE_PROFILE, R.string.title_tile_profile,
-                "com.android.systemui:drawable/ic_qs_profiles"));
-        TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
-                TILE_USER, R.string.title_tile_user,
-                "com.android.systemui:drawable/ic_qs_default_user"));
 
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_SCREENTIMEOUT, new QuickSettingsUtil.TileInfo(

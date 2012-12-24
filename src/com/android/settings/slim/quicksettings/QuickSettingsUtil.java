@@ -61,6 +61,7 @@ public class QuickSettingsUtil {
     public static final String TILE_PROFILE = "toggleProfile";
     public static final String TILE_REBOOT = "toggleReboot";
     public static final String TILE_NFC = "toggleNfc";
+    public static final String TILE_FAVCONTACT = "toggleFavoriteContact";
 
     private static final String TILE_DELIMITER = "|";
     private static final String TILES_DEFAULT = TILE_USER
@@ -70,7 +71,8 @@ public class QuickSettingsUtil {
             + TILE_DELIMITER + TILE_MOBILENETWORK
             + TILE_DELIMITER + TILE_BATTERY
             + TILE_DELIMITER + TILE_AIRPLANE
-            + TILE_DELIMITER + TILE_BLUETOOTH;
+            + TILE_DELIMITER + TILE_BLUETOOTH
+            + TILE_DELIMITER + TILE_FAVCONTACT;
     /**
      * END OF DATA MATCHING BLOCK
      */
@@ -144,6 +146,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_WIFIAP, new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral"));
+        TILES.put(TILE_FAVCONTACT, new QuickSettingsUtil.TileInfo(
+                TILE_FAVCONTACT, R.string.title_tile_favcontact,
+                "com.android.systemui:drawable/ic_qs_default_user"));
 
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(

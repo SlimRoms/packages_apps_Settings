@@ -24,6 +24,11 @@
             android:summary="@string/alt_resolver_summary"
             android:defaultValue="false" />
 
+        <PreferenceScreen
+            android:key="hardware_keys"
+            android:fragment="com.android.settings.slim.HardwareKeys"
+            android:title="@string/hardware_keys_title" />
+
         <ListPreference
             android:key="wifi_countrycode"
             android:title="@string/wifi_setting_countrycode_title"

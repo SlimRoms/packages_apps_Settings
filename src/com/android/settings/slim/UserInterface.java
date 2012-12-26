@@ -40,18 +40,22 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.view.Display;
+import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,12 +74,15 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     public static final String TAG = "UserInterface";
 
+    private static final String MISC_SETTINGS = "misc";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
     private ListPreference mCcodePref;
+    private PreferenceCategory mMisc;
 
     private WifiManager mWifiManager;
 
@@ -90,6 +97,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         addPreferencesFromResource(R.xml.user_interface_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mMisc = (PreferenceCategory) prefs.findPreference(MISC_SETTINGS);
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setChecked(Settings.System.getInt(
@@ -116,6 +125,17 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             } else {
                 Log.e(TAG, "Failed to fetch country code");
             }
+        }
+
+        // Only show the hardware keys config on a device that does not have a navbar
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                mMisc.removePreference(findPreference(KEY_HARDWARE_KEYS));
+            }
+        } catch (RemoteException e) {
+            // Do nothing
         }
 
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);

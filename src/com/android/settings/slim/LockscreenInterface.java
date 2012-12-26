@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.provider.Settings;
 
 import com.android.settings.R;
@@ -27,9 +28,17 @@ import com.android.settings.SettingsPreferenceFragment;
 public class LockscreenInterface extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
 
+    private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private ListPreference mBatteryStatus;
+    private PreferenceScreen mLockscreenButtons;
+    private PreferenceCategory mAdditionalOptions;
+
+    public boolean hasButtons() {
+        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +46,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
 
+        PreferenceScreen prefs = getPreferenceScreen();
+        mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
+
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
         setBatteryStatusSummary();
+
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            mAdditionalOptions.removePreference(mLockscreenButtons);
+        }
     }
 
     @Override

@@ -1460,6 +1460,7 @@
         <activity android:name=".slim.KeyboardInputSettings" />
         <activity android:name=".slim.LockscreenTargets" />
         <activity android:name=".slim.LockscreenInterface" />
+        <activity android:name=".slim.LockscreenButtons" />
         <activity android:name=".ApnEditor" />
 
         <activity

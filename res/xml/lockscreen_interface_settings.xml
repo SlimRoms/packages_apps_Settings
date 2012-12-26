@@ -42,6 +42,12 @@
             android:entryValues="@array/lockscreen_battery_status_values"
             android:defaultValue="0" />
 
+         <PreferenceScreen
+            android:fragment="com.android.settings.slim.LockscreenButtons"
+            android:key="lockscreen_buttons"
+            android:title="@string/lockscreen_buttons_title"
+            android:summary="@string/lockscreen_buttons_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

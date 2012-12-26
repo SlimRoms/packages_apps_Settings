@@ -5110,6 +5110,8 @@
 
     <!-- Lock Screen ASS -->
     <string name="lock_screen_title">Lock screen</string>
+    <string name="lockscreen_additional_options_grouptitle">Additional options</string>
+    <string name="lockscreen_slider_grouptitle">Slider options</string>
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
@@ -5156,5 +5158,10 @@
     <string name="icon_picker_system_icons_title">System icons</string>
     <string name="icon_picker_gallery_title">Gallery</string>
     <string name="icon_picker_pack_title">Icon pack</string>
+
+    <!-- Lock screen misc. settings -->
+    <string name="lockscreen_battery_status_title">Battery status</string>
+    <string name="lockscreen_battery_status_charging">Only when charging</string>
+    <string name="lockscreen_battery_status_alwayson">Always on</string>
 
 </resources>

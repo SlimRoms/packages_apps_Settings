@@ -16,24 +16,30 @@
 package com.android.settings.slim;
 
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class LockscreenInterface extends SettingsPreferenceFragment {
+public class LockscreenInterface extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
 
-    public boolean hasButtons() {
-        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
-    }
+    private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+
+    private ListPreference mBatteryStatus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
+
+        mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
+        mBatteryStatus.setOnPreferenceChangeListener(this);
+        setBatteryStatusSummary();
     }
 
     @Override
@@ -44,10 +50,35 @@ public class LockscreenInterface extends SettingsPreferenceFragment {
     @Override
     public void onPause() {
         super.onPause();
+        setBatteryStatusSummary();
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mBatteryStatus) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mBatteryStatus.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
+            mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
+            return true;
+        }
+        return false;
+    }
+
+    private void setBatteryStatusSummary() {
+        // Set the battery status description text
+        if (mBatteryStatus != null) {
+            int batteryStatus = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0);
+            mBatteryStatus.setValueIndex(batteryStatus);
+            mBatteryStatus.setSummary(mBatteryStatus.getEntries()[batteryStatus]);
+        }
+    }
+
 }

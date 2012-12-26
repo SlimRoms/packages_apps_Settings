@@ -17,10 +17,31 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_settings_title" >
 
-     <Preference
-        android:fragment="com.android.settings.slim.LockscreenTargets"
-        android:key="lockscreen_targets"
-        android:summary="@string/lockscreen_target_summary"
-        android:title="@string/lockscreen_target_title" />
+    <PreferenceCategory
+       android:key="slider_group"
+       android:title="@string/lockscreen_slider_grouptitle">
+
+         <Preference
+            android:fragment="com.android.settings.slim.LockscreenTargets"
+            android:key="lockscreen_targets"
+            android:summary="@string/lockscreen_target_summary"
+            android:title="@string/lockscreen_target_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+       android:key="options_group"
+       android:title="@string/lockscreen_additional_options_grouptitle">
+
+         <ListPreference
+            android:key="lockscreen_battery_status"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_battery_status_title"
+            android:title="@string/lockscreen_battery_status_title"
+            android:entries="@array/lockscreen_battery_status_entries"
+            android:entryValues="@array/lockscreen_battery_status_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

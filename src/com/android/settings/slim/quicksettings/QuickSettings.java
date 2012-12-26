@@ -19,6 +19,7 @@ package com.android.settings.slim.quicksettings;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -27,6 +28,7 @@ import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -56,6 +58,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String DYNAMIC_WIFI = "dynamic_wifi";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String COLLAPSE_PANEL = "collapse_panel";
+    private static final String GENERAL_SETTINGS = "pref_general_settings";
+    private static final String STATIC_TILES = "static_tiles";
 
     MultiSelectListPreference mRingMode;
     ListPreference mNetworkMode;
@@ -66,6 +70,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     CheckBoxPreference mDynamicIme;
     CheckBoxPreference mCollapsePanel;
     ListPreference mQuickPulldown;
+    PreferenceCategory mGeneralSettings;
+    PreferenceCategory mStaticTiles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,16 +85,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
         PreferenceScreen prefSet = getPreferenceScreen();
         PackageManager pm = getPackageManager();
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
-
+        ContentResolver resolver = getActivity().getContentResolver();
+        mGeneralSettings = (PreferenceCategory) prefSet.findPreference(GENERAL_SETTINGS);
+        mStaticTiles = (PreferenceCategory) prefSet.findPreference(STATIC_TILES);
         mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
         if (!Utils.isPhone(getActivity())) {
-            prefSet.removePreference(mQuickPulldown);
+            mGeneralSettings.removePreference(mQuickPulldown);
         } else {
             mQuickPulldown.setOnPreferenceChangeListener(this);
-            int statusQuickPulldown = Settings.System.getInt(resolver, Settings.System.QS_QUICK_PULLDOWN, 0);
-            mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-            updatePulldownSummary();
+            int quickPulldownValue = Settings.System.getInt(resolver, Settings.System.QS_QUICK_PULLDOWN, 0);
+            mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+            updatePulldownSummary(quickPulldownValue);
         }
 
         mCollapsePanel = (CheckBoxPreference) prefSet.findPreference(COLLAPSE_PANEL);
@@ -96,8 +103,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
         // Add the sound mode
         mRingMode = (MultiSelectListPreference) prefSet.findPreference(EXP_RING_MODE);
-        String storedRingMode = Settings.System.getString(getActivity()
-                .getApplicationContext().getContentResolver(),
+        String storedRingMode = Settings.System.getString(resolver,
                 Settings.System.EXPANDED_RING_MODE);
         if (storedRingMode != null) {
             String[] ringModeArray = TextUtils.split(storedRingMode, SEPARATOR);
@@ -130,17 +136,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
         if (!isMobileData) {
             QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_MOBILEDATA);
-            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_MOBILENETWORK);
             QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_WIFIAP);
             QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_NETWORKMODE);
-            prefSet.removePreference(mNetworkMode);
+            mStaticTiles.removePreference(mNetworkMode);
         } else {
             // We have telephony support however, some phones run on networks not supported
             // by the networkmode tile so remove both it and the associated options list
             int network_state = -99;
             try {
-                network_state = Settings.Global.getInt(getActivity()
-                        .getApplicationContext().getContentResolver(),
+                network_state = Settings.Global.getInt(resolver,
                         Settings.Global.PREFERRED_NETWORK_MODE);
             } catch (Settings.SettingNotFoundException e) {
                 Log.e(TAG, "Unable to retrieve PREFERRED_NETWORK_MODE", e);
@@ -155,7 +159,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
                     break;
                 default:
                     QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_NETWORKMODE);
-                    prefSet.removePreference(mNetworkMode);
+                    mStaticTiles.removePreference(mNetworkMode);
                     break;
             }
         }
@@ -178,7 +182,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mDynamicAlarm) {
             Settings.System.putInt(resolver, Settings.System.QS_DYNAMIC_ALARM,
                     mDynamicAlarm.isChecked() ? 1 : 0);
@@ -218,7 +222,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mRingMode) {
             ArrayList<String> arrValue = new ArrayList<String>((Set<String>) newValue);
             Collections.sort(arrValue, new MultiSelectListPreferenceComparator(mRingMode));
@@ -229,15 +233,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         } else if (preference == mNetworkMode) {
             int value = Integer.valueOf((String) newValue);
             int index = mNetworkMode.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.EXPANDED_NETWORK_MODE, value);
             mNetworkMode.setSummary(mNetworkMode.getEntries()[index]);
             return true;
         } else if (preference == mQuickPulldown) {
-            int statusQuickPulldown = Integer.valueOf((String) newValue);
+            int quickPulldownValue = Integer.valueOf((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QS_QUICK_PULLDOWN,
-                    statusQuickPulldown);
-            updatePulldownSummary();
+                    quickPulldownValue);
+            updatePulldownSummary(quickPulldownValue);
             return true;
         } else if (preference == mScreenTimeoutMode) {
             int value = Integer.valueOf((String) newValue);
@@ -273,27 +277,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         }
     }
 
-    private void updatePulldownSummary() {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
-        int summaryId;
-        int directionId;
-        summaryId = R.string.summary_quick_pulldown;
-        String value = Settings.System.getString(resolver, Settings.System.QS_QUICK_PULLDOWN);
-        String[] pulldownArray = getResources().getStringArray(R.array.quick_pulldown_values);
-        if (pulldownArray[0].equals(value)) {
-            directionId = R.string.quick_pulldown_off;
-            mQuickPulldown.setValueIndex(0);
-            mQuickPulldown.setSummary(getResources().getString(directionId));
-        } else if (pulldownArray[1].equals(value)) {
-            directionId = R.string.quick_pulldown_right;
-            mQuickPulldown.setValueIndex(1);
-            mQuickPulldown.setSummary(getResources().getString(directionId)
-                    + " " + getResources().getString(summaryId));
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            /* quick pulldown deactivated */
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
         } else {
-            directionId = R.string.quick_pulldown_left;
-            mQuickPulldown.setValueIndex(2);
-            mQuickPulldown.setSummary(getResources().getString(directionId)
-                    + " " + getResources().getString(summaryId));
+            String direction = res.getString(value == 2
+                    ? R.string.quick_pulldown_summary_left
+                    : R.string.quick_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
 

@@ -29,12 +29,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String TAG = "LockscreenInterface";
 
     private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
+    private static final String KEY_SLIDER_OPTIONS = "slider_group";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private ListPreference mBatteryStatus;
     private PreferenceScreen mLockscreenButtons;
     private PreferenceCategory mAdditionalOptions;
+
+    private int mUnsecureUnlockMethod;
 
     public boolean hasButtons() {
         return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
@@ -44,9 +47,18 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.lockscreen_interface_settings);
+        createCustomLockscreenView();
+    }
 
+    private PreferenceScreen createCustomLockscreenView() {
         PreferenceScreen prefs = getPreferenceScreen();
+        if (prefs != null) {
+            prefs.removeAll();
+        }
+
+        addPreferencesFromResource(R.xml.lockscreen_interface_settings);
+        prefs = getPreferenceScreen();
+
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
@@ -57,11 +69,25 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         if (!hasButtons()) {
             mAdditionalOptions.removePreference(mLockscreenButtons);
         }
+
+        mUnsecureUnlockMethod = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_UNSECURE_USED, 1);
+
+        //setup custom lockscreen customize view
+        if (mUnsecureUnlockMethod != 1) {
+             PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
+             getPreferenceScreen().removePreference(sliderCategory);
+        }
+
+        setBatteryStatusSummary();
+        return prefs;
     }
+
 
     @Override
     public void onResume() {
         super.onResume();
+        createCustomLockscreenView();
     }
 
     @Override

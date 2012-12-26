@@ -18,6 +18,20 @@
     android:title="@string/themes_settings_title" >
 
     <PreferenceCategory
+       android:key="security_group"
+       android:title="@string/lockscreen_security_grouptitle">
+
+         <PreferenceScreen
+            android:key="screen_security"
+             android:fragment="com.android.settings.SecuritySettings"
+             android:title="@string/screen_security_category"
+             android:summary="@string/screen_security_summary">
+             <extra android:name="slim_security" android:value="true" />
+         </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
        android:key="slider_group"
        android:title="@string/lockscreen_slider_grouptitle">
 

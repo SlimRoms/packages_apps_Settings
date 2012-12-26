@@ -27,6 +27,7 @@ import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.security.KeyStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -125,25 +126,39 @@ public class ChooseLockGeneric extends PreferenceActivity {
             if (KEY_UNLOCK_SET_OFF.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, true);
+                setUnsecureType(0);
             } else if (KEY_UNLOCK_SET_NONE.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
+                setUnsecureType(1);
             } else if (KEY_UNLOCK_SET_BIOMETRIC_WEAK.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_BIOMETRIC_WEAK, false);
+                setUnsecureType(0);
             }else if (KEY_UNLOCK_SET_PATTERN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_SOMETHING, false);
+                setUnsecureType(0);
             } else if (KEY_UNLOCK_SET_PIN.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_NUMERIC, false);
+                setUnsecureType(0);
             } else if (KEY_UNLOCK_SET_PASSWORD.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC, false);
+                setUnsecureType(0);
             } else {
                 handled = false;
             }
             return handled;
+        }
+
+        //this function is for future merge of other Lockscreen styles
+        //0 = none, 1 = slider
+        private void setUnsecureType(int usedUnsecureUnlock) {
+
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.LOCKSCREEN_UNSECURE_USED, usedUnsecureUnlock);
         }
 
         @Override

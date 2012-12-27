@@ -5165,6 +5165,18 @@
     <string name="lockscreen_battery_status_charging">Only when charging</string>
     <string name="lockscreen_battery_status_alwayson">Always on</string>
 
+    <!-- Lock screen background -->
+    <string name="lockscreen_style_options_title">Lock screen style</string>
+    <string name="lockscreen_custom_background_title">Background</string>
+    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
+    <string name="lockscreen_background_result_successful">Background changed</string>
+    <string name="lockscreen_background_result_not_successful">Background not changed</string>
+    <string name="lockscreen_background_color_fill">Color fill</string>
+    <string name="lockscreen_background_custom_image">Custom image</string>
+    <string name="lockscreen_background_full_transparent">Full transparent</string>
+    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
+    <string name="lockscreen_alpha_title">Background transparency</string>
+
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>

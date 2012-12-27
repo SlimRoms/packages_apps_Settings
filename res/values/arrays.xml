@@ -1439,6 +1439,20 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="lockscreen_background_entries">
+        <item>@string/lockscreen_background_color_fill</item>
+        <item>@string/lockscreen_background_custom_image</item>
+        <item>@string/lockscreen_background_full_transparent</item>
+        <item>@string/lockscreen_background_default_wallpaper</item>
+    </string-array>
+
+    <string-array name="lockscreen_background_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <string-array name="lockscreen_delay_entries">
         <item>@string/slide_lock_delay_none</item>
         <item>@string/slide_lock_delay_1s</item>

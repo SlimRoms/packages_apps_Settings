@@ -63,7 +63,8 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
 
         if (!Utils.isPhone(getActivity()) || !isMobileData) {
-            // Nothing for tablets, large screen devices and non Wifi devices remove options
+            // Nothing for tablets, large screen devices and non mobile devices which doesn't show
+            // information in notification drawer.....remove options
             prefs.removePreference(mAdditionalOptions);
         }
 

@@ -16,6 +16,7 @@
 
 package com.android.settings.slim;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -52,16 +53,18 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
               updatePowerWidgetDescription();
         }
 
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
 
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(PREF_NOTIFICATION_OPTIONS);
 
-        if (Utils.isTablet(getActivity())) {
-            // Nothing for tablets in the additional options section at the moment, remove it
+        PackageManager pm = getPackageManager();
+        boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+
+        if (!Utils.isPhone(getActivity()) || !isMobileData) {
+            // Nothing for tablets, large screen devices and non Wifi devices remove options
             prefs.removePreference(mAdditionalOptions);
-        } else {
-            mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
-            mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
         }
 
     }

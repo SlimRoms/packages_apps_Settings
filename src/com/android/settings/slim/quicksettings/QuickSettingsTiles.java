@@ -49,6 +49,7 @@ public class QuickSettingsTiles extends Fragment {
     LayoutInflater mInflater;
     Resources mSystemUiResources;
     TileAdapter mTileAdapter;
+    static ArrayList<String> curr;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,7 +64,6 @@ public class QuickSettingsTiles extends Fragment {
                 mSystemUiResources = null;
             }
         }
-        mTileAdapter = new TileAdapter(getActivity(), 0);
         return mDragView;
     }
 
@@ -129,6 +129,9 @@ public class QuickSettingsTiles extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 if (arg2 != mDragView.getChildCount() - 1) return;
+                curr = QuickSettingsUtil.getTileListFromString(QuickSettingsUtil.getCurrentTiles(getActivity()));
+                mTileAdapter = null;
+                mTileAdapter = new TileAdapter(getActivity(), 0);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(R.string.tile_choose_title)
                 .setAdapter(mTileAdapter, new DialogInterface.OnClickListener() {
@@ -136,7 +139,6 @@ public class QuickSettingsTiles extends Fragment {
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                ArrayList<String> curr = QuickSettingsUtil.getTileListFromString(QuickSettingsUtil.getCurrentTiles(getActivity()));
                                 curr.add(mTileAdapter.getTileId(position));
                                 QuickSettingsUtil.saveCurrentTiles(getActivity(), QuickSettingsUtil.getTileStringFromList(curr));
                             }
@@ -198,30 +200,35 @@ public class QuickSettingsTiles extends Fragment {
     @SuppressWarnings("rawtypes")
     static class TileAdapter extends ArrayAdapter {
 
-        String[] mTileKeys;
+        ArrayList<String> mTileKeys;
         Resources mResources;
 
         public TileAdapter(Context context, int textViewResourceId) {
             super(context, android.R.layout.simple_list_item_1);
-            mTileKeys = new String[getCount()];
-            QuickSettingsUtil.TILES.keySet().toArray(mTileKeys);
+            getItemsToDisplay();
             mResources = context.getResources();
+        }
+
+        private void getItemsToDisplay() {
+            mTileKeys = new ArrayList(QuickSettingsUtil.TILES.keySet());
+            for (int i=0; i<curr.size(); i++)
+                if (mTileKeys.contains(curr.get(i)) && QuickSettingsUtil.TILES.get(curr.get(i)).isSingleton()) mTileKeys.remove(curr.get(i));
         }
 
         @Override
         public int getCount() {
-            return QuickSettingsUtil.TILES.size();
+            return mTileKeys.size();
         }
 
         @Override
         public Object getItem(int position) {
-            int resid = QuickSettingsUtil.TILES.get(mTileKeys[position])
+            int resid = QuickSettingsUtil.TILES.get(mTileKeys.get(position))
                     .getTitleResId();
             return mResources.getString(resid);
         }
 
         public String getTileId(int position) {
-            return QuickSettingsUtil.TILES.get(mTileKeys[position])
+            return QuickSettingsUtil.TILES.get(mTileKeys.get(position))
                     .getId();
         }
 

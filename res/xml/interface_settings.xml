@@ -40,6 +40,11 @@
         android:title="@string/lock_screen_title" />
 
     <PreferenceScreen
+        android:key="navbar_settings"
+        android:fragment="com.android.settings.slim.NavbarSettings"
+        android:title="@string/navigation_bar" />
+
+    <PreferenceScreen
         android:key="notification_drawer"
         android:fragment="com.android.settings.slim.NotificationDrawerSettings"
         android:title="@string/notification_drawer_title" />

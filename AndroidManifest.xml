@@ -1462,6 +1462,10 @@
         <activity android:name=".slim.LockscreenInterface" />
         <activity android:name=".slim.LockscreenButtons" />
         <activity android:name=".slim.HardwareKeys" />
+        <activity android:name=".slim.NavbarSettings" />
+        <activity android:name=".slim.NavRingTargets" />
+        <activity android:name=".slim.NavbarButtonSettings" />
+        <activity android:name=".slim.NavbarStyleDimenSettings" />
         <activity android:name=".ApnEditor" />
 
         <activity

@@ -58,6 +58,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String KEY_SLIDER_OPTIONS = "slider_group";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String KEY_LOCKSCREEN_ALL_WIDGETS = "lockscreen_all_widgets";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
 
@@ -69,6 +70,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private PreferenceCategory mAdditionalOptions;
     private ListPreference mCustomBackground;
     private SeekBarPreference mBgAlpha;
+    private CheckBoxPreference mAllWidgets;
     private CheckBoxPreference mCameraWidget;
     private CheckBoxPreference mLockscreenAutoRotate;
 
@@ -128,6 +130,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mBgAlpha.setProperty(Settings.System.LOCKSCREEN_ALPHA);
         mBgAlpha.setOnPreferenceChangeListener(this);
 
+        mAllWidgets = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ALL_WIDGETS);
+        mAllWidgets.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.KG_ALL_WIDGETS, 1) == 1);
+
         mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
         mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.KG_CAMERA_WIDGET, 0) == 1);
@@ -179,7 +185,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mCameraWidget) {
+        if (preference == mAllWidgets) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.KG_ALL_WIDGETS, mAllWidgets.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mCameraWidget) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KG_CAMERA_WIDGET, mCameraWidget.isChecked() ? 1 : 0);
             return true;

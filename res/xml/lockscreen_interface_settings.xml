@@ -36,6 +36,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+       android:key="lockscreen_widgets_group"
+       android:title="@string/lockscreen_widgets_category">
+
+         <CheckBoxPreference
+            android:key="lockscreen_all_widgets"
+            android:title="@string/lockscreen_widgets_title"
+            android:summary="@string/lockscreen_widgets_summary" />
+
+         <CheckBoxPreference
+            android:key="lockscreen_camera_widget"
+            android:title="@string/lockscreen_camera_widget_title"
+            android:summary="@string/lockscreen_camera_widget_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
        android:key="security_group"
        android:title="@string/lockscreen_security_grouptitle">
 
@@ -84,10 +100,6 @@
             android:key="lockscreen_buttons"
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
-
-         <CheckBoxPreference
-            android:key="lockscreen_camera_widget"
-            android:title="@string/lockscreen_camera_widget_title" />
 
     </PreferenceCategory>
 

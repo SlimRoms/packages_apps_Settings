@@ -875,8 +875,12 @@
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
 
-    <!-- Lockscreen Camera widget toggle -->
-    <string name="lockscreen_camera_widget_title">Camera widget</string>
+    <!-- Lockscreen widget toggles Title -->
+    <string name="lockscreen_widgets_category">Lockscreen Widgets</string>
+    <string name="lockscreen_widgets_title">Enable all widgets</string>
+    <string name="lockscreen_widgets_summary">Ability to add widgets on lockscreen</string>
+    <string name="lockscreen_camera_widget_title">Enable camera widget</string>
+    <string name="lockscreen_camera_widget_summary">Shows camera widget on lockscreen</string>
 
     <!-- Lockscreen All widgets toggle -->
     <string name="keyguard_picker_all_widgets_title">Show all widgets</string>

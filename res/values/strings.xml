@@ -5181,6 +5181,9 @@
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_charging">Only when charging</string>
     <string name="lockscreen_battery_status_alwayson">Always on</string>
+    <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
+    <string name="lockscreen_auto_rotate_summary">Lockscreen will have the ability to rotate. This is dependent of Auto-rotation in display</string>
+    <string name="lockscreen_no_rotate_summary">System auto rotate is disabled. Enable it for this option.</string>
 
     <!-- Lock screen background -->
     <string name="lockscreen_style_options_title">Lock screen style</string>

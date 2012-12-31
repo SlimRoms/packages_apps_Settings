@@ -37,6 +37,7 @@ import android.view.Display;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.android.internal.view.RotationPolicy;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -58,10 +59,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
+    private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_BACKGROUND_ALPHA_PREF = "lockscreen_alpha";
-
 
     private ListPreference mBatteryStatus;
     private PreferenceScreen mLockscreenButtons;
@@ -69,6 +70,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private ListPreference mCustomBackground;
     private SeekBarPreference mBgAlpha;
     private CheckBoxPreference mCameraWidget;
+    private CheckBoxPreference mLockscreenAutoRotate;
 
     private int mUnsecureUnlockMethod;
     private boolean mIsScreenLarge;
@@ -134,6 +136,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mBatteryStatus.setOnPreferenceChangeListener(this);
         setBatteryStatusSummary();
 
+        mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
+        mLockscreenAutoRotate.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_AUTO_ROTATE, 0) == 1);
+
+        if (RotationPolicy.isRotationLocked(getActivity())) {
+            mLockscreenAutoRotate.setEnabled(false);
+            mLockscreenAutoRotate.setSummary(getResources().getString(R.string.lockscreen_no_rotate_summary));
+        }
+
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         if (!hasButtons()) {
             mAdditionalOptions.removePreference(mLockscreenButtons);
@@ -171,6 +182,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         if (preference == mCameraWidget) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KG_CAMERA_WIDGET, mCameraWidget.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mLockscreenAutoRotate) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_AUTO_ROTATE, mLockscreenAutoRotate.isChecked() ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

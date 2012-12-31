@@ -65,6 +65,11 @@
        android:key="options_group"
        android:title="@string/lockscreen_additional_options_grouptitle">
 
+        <CheckBoxPreference
+                android:key="lockscreen_auto_rotate"
+                android:title="@string/lockscreen_auto_rotate_title"
+                android:summary="@string/lockscreen_auto_rotate_summary" />
+
          <ListPreference
             android:key="lockscreen_battery_status"
             android:persistent="false"

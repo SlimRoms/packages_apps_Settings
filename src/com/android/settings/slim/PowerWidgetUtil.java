@@ -56,6 +56,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_LTE = "toggleLte";
     public static final String BUTTON_WIMAX = "toggleWimax";
     public static final String BUTTON_REBOOT = "toggleReboot";
+    public static final String BUTTON_FCHARGE = "toggleFCharge";
 
     public static final HashMap<String, ButtonInfo> BUTTONS = new HashMap<String, ButtonInfo>();
     static {
@@ -115,6 +116,9 @@ public class PowerWidgetUtil {
         BUTTONS.put(BUTTON_REBOOT, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_REBOOT, R.string.title_toggle_reboot,
                 "com.android.systemui:drawable/stat_reboot"));
+        BUTTONS.put(BUTTON_FCHARGE, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_FCHARGE, R.string.title_toggle_fcharge,
+                "com.android.systemui:drawable/toggle_fcharge"));
         if(PhoneConstants.LTE_ON_CDMA_TRUE == TelephonyManager.getDefault().getLteOnCdmaMode() ||
            TelephonyManager.getDefault().getLteOnGsmMode() != 0) {
             BUTTONS.put(BUTTON_LTE, new PowerWidgetUtil.ButtonInfo(

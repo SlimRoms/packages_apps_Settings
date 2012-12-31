@@ -80,6 +80,10 @@
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
 
+         <CheckBoxPreference
+            android:key="lockscreen_camera_widget"
+            android:title="@string/lockscreen_camera_widget_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

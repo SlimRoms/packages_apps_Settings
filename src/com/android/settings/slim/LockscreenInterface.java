@@ -26,6 +26,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -56,6 +57,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String KEY_SLIDER_OPTIONS = "slider_group";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_BACKGROUND_ALPHA_PREF = "lockscreen_alpha";
@@ -66,6 +68,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private PreferenceCategory mAdditionalOptions;
     private ListPreference mCustomBackground;
     private SeekBarPreference mBgAlpha;
+    private CheckBoxPreference mCameraWidget;
 
     private int mUnsecureUnlockMethod;
     private boolean mIsScreenLarge;
@@ -123,6 +126,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mBgAlpha.setProperty(Settings.System.LOCKSCREEN_ALPHA);
         mBgAlpha.setOnPreferenceChangeListener(this);
 
+        mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
+        mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.KG_CAMERA_WIDGET, 0) == 1);
+
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
         setBatteryStatusSummary();
@@ -161,6 +168,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mCameraWidget) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.KG_CAMERA_WIDGET, mCameraWidget.isChecked() ? 1 : 0);
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

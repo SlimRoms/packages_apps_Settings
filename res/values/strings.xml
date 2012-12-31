@@ -875,6 +875,9 @@
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
 
+    <!-- Lockscreen Camera widget toggle -->
+    <string name="lockscreen_camera_widget_title">Camera widget</string>
+
     <!-- Title for option to turn of password/pin/pattern unlock. [CHAR LIMIT=22] -->
     <string name="unlock_disable_lock_title">Turn off screen lock</string>
 

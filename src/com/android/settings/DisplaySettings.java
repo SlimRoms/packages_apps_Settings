@@ -58,17 +58,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_FONT_SIZE = "font_size";
-    private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
+    private static final String PULSE_PREF = "pulse_enabled";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private DisplayManager mDisplayManager;
 
     private CheckBoxPreference mAccelerometer;
+    private CheckBoxPreference mNotificationLed;
+
     private WarnedListPreference mFontSizePref;
-    private PreferenceScreen mNotificationPulse;
+
+    private boolean mLightEnabled;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -107,6 +110,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
+
+        mLightEnabled = Settings.System.getInt(resolver, Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1;
+        mNotificationLed = (CheckBoxPreference) findPreference(PULSE_PREF);
+        mNotificationLed.setChecked(mLightEnabled);
+        mNotificationLed.setOnPreferenceChangeListener(this);
+        updateLightDescription();
         
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(resolver, SCREEN_OFF_TIMEOUT,
@@ -119,14 +128,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
-        mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
-        if (mNotificationPulse != null) {
-            if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
-                getPreferenceScreen().removePreference(mNotificationPulse);
-            } else {
-                updateLightPulseDescription();
-            }
-        }
 
         mDisplayManager = (DisplayManager)getActivity().getSystemService(
                 Context.DISPLAY_SERVICE);
@@ -201,12 +202,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         screenTimeoutPreference.setEnabled(revisedEntries.size() > 0);
     }
 
-    private void updateLightPulseDescription() {
+    private void updateLightDescription() {
         if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_enabled));
+            mNotificationLed.setSummary(getString(R.string.notification_light_enabled));
         } else {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_disabled));
+            mNotificationLed.setSummary(getString(R.string.notification_light_disabled));
          }
     }
 
@@ -288,7 +289,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         readFontSizePreference(mFontSizePref);
         updateScreenSaverSummary();
         updateWifiDisplaySummary();
-        updateLightPulseDescription();
+        updateLightDescription();
     }
 
     private void updateScreenSaverSummary() {
@@ -353,7 +354,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
         }
-
+        if (PULSE_PREF.equals(key)) {
+            mLightEnabled = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
+                    mLightEnabled ? 1 : 0);
+            updateLightDescription();
+        }
         return true;
     }
 

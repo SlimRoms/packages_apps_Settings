@@ -69,4 +69,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/power_widget_additional_options_cat">
+
+        <ListPreference
+            android:key="brightness_location"
+            android:entries="@array/brightness_location_entries"
+            android:entryValues="@array/brightness_location_values"
+            android:title="@string/brightness_location_title"
+            android:dependency="expanded_widget" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

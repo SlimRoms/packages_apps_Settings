@@ -4487,6 +4487,7 @@
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">ASS</string>
+    <string name="ok">OK</string>
 
     <!-- Interface settings  and general strings-->
     <string name="interface_settings_title">Interface</string>
@@ -4496,7 +4497,7 @@
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
-    <string name="power_widget_behavior">Widget behavior</string>
+    <string name="power_widget_behavior">Power widget behavior</string>
     <string name="title_expanded_hide_onchange">Close drawer on change</string>
     <string name="title_expanded_hide_scrollbar">Hide scrollbar</string>
     <string name="title_widget_picker">Widget buttons</string>
@@ -4543,11 +4544,11 @@
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
     <string name="power_widget_enabled">Enabled</string>
     <string name="power_widget_disabled">Disabled</string>
-
-    <!-- Status bar  -->
-    <string name="brightness_location_title">Brightness location</string>
-
-    <string name="ok">OK</string>
+    <string name="power_widget_additional_options_cat">Additional options</string>
+    <string name="brightness_location_title">Brightness slider location</string>
+    <string name="brightness_slider_top">On top</string>
+    <string name="brightness_slider_bottom">On the bottom</string>
+    <string name="brightness_slider_none">Don\'t Show</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>

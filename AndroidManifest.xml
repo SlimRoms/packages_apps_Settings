@@ -1478,6 +1478,39 @@
             </intent-filter>
         </activity>
 
+        <!-- Pseudo-activity used to provide an intent-filter entry point to ass display config -->
+        <activity android:name="Settings$ASSDisplayActivity"
+                android:label="@string/display_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.DisplaySettings" />
+        </activity>
+
+        <!-- Pseudo-activity used to provide an intent-filter entry point to ass lockscreen config -->
+        <activity android:name="Settings$ASSLockscreenActivity"
+                android:label="@string/lock_screen_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.LockscreenInterface" />
+        </activity>
+
+        <!-- Pseudo-activity used to provide an intent-filter entry point to quick settings tiles config -->
+        <activity android:name="Settings$QuickSettingsTilesActivity"
+                android:label="@string/tile_picker_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+        </activity>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">

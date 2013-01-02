@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/themes_settings_title" >
+    android:title="@string/lock_screen_title" >
 
     <PreferenceCategory
         android:key="lockscreen_style_options"

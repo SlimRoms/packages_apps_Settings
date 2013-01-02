@@ -838,4 +838,7 @@ public class Settings extends PreferenceActivity
     public static class ApnSettingsActivity extends Settings { /* empty */ }
     public static class ApnEditorActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
+    public static class QuickSettingsTilesActivity extends Settings { /* empty */ }
+    public static class ASSDisplayActivity extends Settings { /* empty */ }
+    public static class ASSLockscreenActivity extends Settings { /* empty */ }
 }

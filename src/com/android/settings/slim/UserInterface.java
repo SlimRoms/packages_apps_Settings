@@ -118,7 +118,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mCcodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
         if (mCcodePref != null) {
             mCcodePref.setOnPreferenceChangeListener(this);
-            String value = mWifiManager.getCountryCode();
+            String value = (mWifiManager.getCountryCode()).toUpperCase();
             if (value != null) {
                 mCcodePref.setValue(value);
                 mCcodePref.setSummary(mCcodePref.getEntry());
@@ -145,6 +145,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         boolean result = false;
         if (preference == mCcodePref) {
             try {
+                Settings.Global.putString(mContext.getContentResolver(),
+                       Settings.Global.WIFI_COUNTRY_CODE_USER,
+                       (String) newValue);
                 mWifiManager.setCountryCode((String) newValue, true);
                 int index = mCcodePref.findIndexOfValue((String) newValue);
                 mCcodePref.setSummary(mCcodePref.getEntries()[index]);

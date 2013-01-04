@@ -19,6 +19,7 @@ package com.android.settings.slim;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.net.wifi.WifiManager;
 import android.preference.CheckBoxPreference;
@@ -30,6 +31,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.view.IWindowManager;
 import android.widget.Toast;
 
 import com.android.settings.R;
@@ -43,6 +45,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String MISC_SETTINGS = "misc";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
@@ -85,6 +88,17 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mCcodePref.setOnPreferenceChangeListener(this);
 
         updateWifiCodeSummary();
+
+        // Only show the hardware keys config on a device that does not have a navbar
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                mMisc.removePreference(findPreference(KEY_HARDWARE_KEYS));
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
 
     }
 

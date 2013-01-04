@@ -19,6 +19,7 @@ package com.android.settings.slim;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.net.wifi.WifiManager;

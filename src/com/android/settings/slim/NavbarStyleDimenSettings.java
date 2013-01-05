@@ -17,11 +17,8 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
@@ -54,8 +51,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
-
-    private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
 
     ColorPickerPreference mNavigationBarColor;
     ColorPickerPreference mNavigationBarButtonColor;
@@ -174,7 +169,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
                 mNavigationBarHeightLandscape.setValue("48");
                 mNavigationBarWidth.setValue("42");
 
-                showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
                 refreshSettings();
                 return true;
              default:
@@ -220,7 +214,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             int width = mapChosenDpToPixels(dp);
             Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH,
                     width);
-            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
             return true;
         } else if (preference == mNavigationBarHeight) {
             String newVal = (String) newValue;
@@ -228,7 +221,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             int height = mapChosenDpToPixels(dp);
             Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT,
                     height);
-            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
             return true;
         } else if (preference == mNavigationBarHeightLandscape) {
             String newVal = (String) newValue;
@@ -237,7 +229,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
                     height);
-            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
             return true;
        } else if (preference == mButtonAlpha) {
             float val = Float.parseFloat((String) newValue);
@@ -248,42 +239,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             return true;
         }
         return false;
-    }
-
-    @Override
-    public Dialog onCreateDialog(int dialogId) {
-        switch (dialogId) {
-            case DIALOG_NAVBAR_HEIGHT_REBOOT:
-                return new AlertDialog.Builder(getActivity())
-                        .setTitle(getResources().getString(R.string.navbar_height_dialog_title))
-                        .setMessage(
-                                getResources().getString(R.string.navbar_height_dialog_summary))
-                        .setCancelable(false)
-                        .setNeutralButton(
-                                getResources()
-                                        .getString(R.string.navbar_height_dialog_button_later),
-                                new DialogInterface.OnClickListener() {
-
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                    }
-                                })
-                        .setPositiveButton(
-                                getResources().getString(
-                                        R.string.navbar_height_dialog_button_reboot),
-                                new DialogInterface.OnClickListener() {
-
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        PowerManager pm = (PowerManager) getActivity()
-                                                .getSystemService(Context.POWER_SERVICE);
-                                        pm.reboot("Rebooting with new bar height");
-                                    }
-                                })
-                        .create();
-        }
-        return null;
     }
 
     public int mapChosenDpToPixels(int dp) {

@@ -5424,4 +5424,7 @@
     <string name="navbar_dimen_cat">Navigation bar dimens</string>
     <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
 
+    <!-- ASS Misc settings -->
+    <string name="chronus_title">Chronus</string>
+
 </resources>

@@ -47,11 +47,13 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
     private ListPreference mCcodePref;
     private PreferenceCategory mMisc;
+    private CheckBoxPreference mRamBar;
 
     private WifiManager mWifiManager;
 
@@ -100,6 +102,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         } catch (RemoteException e) {
             // Do nothing
         }
+
+        mRamBar = (CheckBoxPreference) findPreference(KEY_RECENTS_RAM_BAR);
+        mRamBar.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR, 0) == 1);
 
     }
 
@@ -160,6 +167,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         if (preference == mUseAltResolver) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mRamBar) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_RAM_BAR,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         }

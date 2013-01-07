@@ -5438,4 +5438,8 @@
     <string name="touchkey_timeout_alwayson">Always On</string>
     <string name="touchkey_timeout_alwaysoff">Always Off</string>
 
+    <!-- Recents Ram Bar -->
+    <string name="ram_bar">Recents RAM Bar</string>
+    <string name="ram_bar_summary">Shows RAM usage in the recents menu</string>
+
 </resources>

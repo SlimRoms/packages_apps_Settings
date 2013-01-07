@@ -881,6 +881,8 @@
     <string name="lockscreen_widgets_summary">Ability to add widgets on lockscreen</string>
     <string name="lockscreen_camera_widget_title">Enable camera widget</string>
     <string name="lockscreen_camera_widget_summary">Shows camera widget on lockscreen</string>
+    <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
+    <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the keyguard minimized when screen turned on</string>
 
     <!-- Lockscreen All widgets toggle -->
     <string name="keyguard_picker_all_widgets_title">Show all widgets</string>

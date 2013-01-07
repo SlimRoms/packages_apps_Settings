@@ -60,6 +60,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_ALL_WIDGETS = "lockscreen_all_widgets";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
+    private static final String KEY_LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
@@ -72,6 +73,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private SeekBarPreference mBgAlpha;
     private CheckBoxPreference mAllWidgets;
     private CheckBoxPreference mCameraWidget;
+    private CheckBoxPreference mMaximizeWidgets;
     private CheckBoxPreference mLockscreenAutoRotate;
 
     private int mUnsecureUnlockMethod;
@@ -138,6 +140,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.KG_CAMERA_WIDGET, 0) == 1);
 
+        mMaximizeWidgets = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
+        if (Utils.isTablet(getActivity())) {
+            getPreferenceScreen().removePreference(mMaximizeWidgets);
+            mMaximizeWidgets = null;
+        } else {
+            mMaximizeWidgets.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, 0) == 1);
+        }
+
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
         setBatteryStatusSummary();
@@ -192,6 +203,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         } else if (preference == mCameraWidget) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KG_CAMERA_WIDGET, mCameraWidget.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mMaximizeWidgets) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, mMaximizeWidgets.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenAutoRotate) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),

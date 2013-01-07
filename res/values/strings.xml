@@ -883,6 +883,8 @@
     <string name="lockscreen_camera_widget_summary">Shows camera widget on lockscreen</string>
     <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
     <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the keyguard minimized when screen turned on</string>
+    <string name="lockscreen_disable_hints_title">Disable usability hints</string>
+    <string name="lockscreen_disable_hints_summary">Disables the glow that surrounds the widgets on lockscreen</string>
 
     <!-- Lockscreen All widgets toggle -->
     <string name="keyguard_picker_all_widgets_title">Show all widgets</string>

@@ -77,6 +77,9 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mEnableNavbarLong;
 
     Preference mPendingPreference;
+
+    Resources mSystemUiResources;
+
     private ShortcutPickerHelper mPicker;
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
@@ -440,30 +443,42 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         String uri = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
 
+        int resId = 0;
+        PackageManager pm = mContext.getPackageManager();
+
+        if (pm != null) {
+            try {
+                mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
+            } catch (Exception e) {
+                mSystemUiResources = null;
+                Log.e("Navbar buttons:", "can't access systemui resources",e);
+            }
+        }
+
         if (uri == null)
             return getResources().getDrawable(R.drawable.ic_sysbar_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_home);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_home", null, null);
             } else if (uri.equals("**back**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_back);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_back", null, null);
             } else if (uri.equals("**recents**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_recent);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_recent", null, null);
             } else if (uri.equals("**search**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_search);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_search", null, null);
             } else if (uri.equals("**screenshot**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_screenshot);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_screenshot", null, null);
             } else if (uri.equals("**menu**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_menu_big", null, null);
              } else if (uri.equals("**ime**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_ime_switcher", null, null);
             } else if (uri.equals("**kill**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_killtask", null, null);
             } else if (uri.equals("**power**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_power);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_power", null, null);
             } else if (uri.equals("**notifications**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_notifications);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_notifications", null, null);
             }
         } else {
             try {
@@ -471,6 +486,14 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
             } catch (NameNotFoundException e) {
                 e.printStackTrace();
             } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (resId > 0) {
+            try {
+                return mSystemUiResources.getDrawable(resId);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

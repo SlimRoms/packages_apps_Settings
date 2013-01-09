@@ -88,6 +88,8 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
     CheckBoxPreference mEnableNavringLong;
     ListPreference mNavRingButtonQty;
 
+    Resources mSystemUiResources;
+
     private static class NavRingCustomAction {
         String activitySettingName;
         Preference preference;
@@ -435,35 +437,55 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
         String uri = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.SYSTEMUI_NAVRING[index]);
 
-            if (uri == null)
-                return getResources().getDrawable(R.drawable.ic_sysbar_null);
+        int resId = 0;
+        PackageManager pm = mContext.getPackageManager();
 
-            if (uri.equals("**null**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_null);
-            } else if (uri.equals("**screenshot**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_screenshot);
-            } else if (uri.equals("**ime**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
-            } else if (uri.equals("**ring_vib**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_vib);
-            } else if (uri.equals("**ring_silent**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_silent);
-            } else if (uri.equals("**ring_vib_silent**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_ring_vib_silent);
-            } else if (uri.equals("**kill**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_killtask);
-            } else if (uri.equals("**screenoff**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_power);
-            } else if (uri.equals("**power**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_power);
-            } else if (uri.equals("**assist**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_googlenow);
+        if (pm != null) {
+            try {
+                mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
+            } catch (Exception e) {
+                mSystemUiResources = null;
+                Log.e("NavRing targets", "can't access systemui resources",e);
+            }
+        }
+
+        if (uri == null)
+            return getResources().getDrawable(R.drawable.ic_sysbar_null);
+
+        if (uri.equals("**null**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_null", null, null);
+        } else if (uri.equals("**screenshot**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_screenshot", null, null);
+        } else if (uri.equals("**ime**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_ime_switcher", null, null);
+        } else if (uri.equals("**ring_vib**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_vib", null, null);
+        } else if (uri.equals("**ring_silent**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_silent", null, null);
+        } else if (uri.equals("**ring_vib_silent**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_ring_vib_silent", null, null);
+        } else if (uri.equals("**kill**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_killtask", null, null);
+        } else if (uri.equals("**screenoff**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_power", null, null);
+        } else if (uri.equals("**power**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_power", null, null);
+        } else if (uri.equals("**assist**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_googlenow", null, null);
         } else {
             try {
                 return mContext.getPackageManager().getActivityIcon(Intent.parseUri(uri, 0));
             } catch (NameNotFoundException e) {
                 e.printStackTrace();
             } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (resId > 0) {
+            try {
+                return mSystemUiResources.getDrawable(resId);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

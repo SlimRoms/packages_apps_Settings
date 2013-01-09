@@ -56,6 +56,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
     private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
     private static final String KEY_SLIDER_OPTIONS = "slider_group";
+    private static final String KEY_WIDGET_OPTIONS = "lockscreen_widgets_group";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_ALL_WIDGETS = "lockscreen_all_widgets";
@@ -110,6 +111,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         prefs = getPreferenceScreen();
+        Preference mPref;
 
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
 
@@ -142,9 +144,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.KG_CAMERA_WIDGET, 0) == 1);
 
-        mMaximizeWidgets = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
-        if (Utils.isTablet(getActivity())) {
-            getPreferenceScreen().removePreference(mMaximizeWidgets);
+        mMaximizeWidgets = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
+        if (!Utils.isPhone(getActivity())) {
+            PreferenceCategory widgetCategory = (PreferenceCategory) findPreference(KEY_WIDGET_OPTIONS);
+            mPref = (Preference) findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
+            if (mPref != null)
+                widgetCategory.removePreference(mMaximizeWidgets);
             mMaximizeWidgets = null;
         } else {
             mMaximizeWidgets.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),

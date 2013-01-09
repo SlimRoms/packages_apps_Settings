@@ -1790,4 +1790,23 @@
         <item>3</item>
     </string-array>
 
+    <!-- TouchKey Light Timeout -->
+    <string-array name="entries_touchkey_timeout">
+        <item>@string/touchkey_timeout_1s</item>
+        <item>@string/touchkey_timeout_2s</item>
+        <item>@string/touchkey_timeout_5s</item>
+        <item>@string/touchkey_timeout_10s</item>
+        <item>@string/touchkey_timeout_alwayson</item>
+        <item>@string/touchkey_timeout_alwaysoff</item>
+    </string-array>
+
+    <string-array name="values_touchkey_timeout" translatable="false">
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
 </resources>

@@ -100,8 +100,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mNavigationBarCanMove = (CheckBoxPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
         if (!Utils.isPhone(getActivity())) {
             PreferenceCategory additionalCategory = (PreferenceCategory) findPreference(KEY_ADVANCED_OPTIONS);
-            Preference mPref = (Preference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
-            if (mPref != null)
+            if (mNavigationBarCanMove != null)
                 additionalCategory.removePreference(mNavigationBarCanMove);
         } else {
             mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),

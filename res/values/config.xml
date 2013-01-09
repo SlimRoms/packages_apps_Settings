@@ -40,4 +40,7 @@
          very long strings too. -->
     <integer name="maximum_user_dictionary_word_length" translatable="false">48</integer>
 
+    <!-- TouchKey Duration Pref -->
+    <bool name="config_show_touchKeyDur">false</bool>
+
 </resources>

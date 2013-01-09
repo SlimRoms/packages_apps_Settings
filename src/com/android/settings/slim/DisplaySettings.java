@@ -27,6 +27,7 @@ import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
@@ -47,8 +48,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_LIGHT_OPTIONS = "category_light_options";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String KEY_TOUCHKEY_LIGHT = "touchkey_light_timeout";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -61,6 +64,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mDisplayRotationPreference;
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
+    private ListPreference mTouchKeyLights;
 
     private ContentObserver mAccelerometerRotationObserver = 
             new ContentObserver(new Handler()) {
@@ -78,6 +82,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings_rom);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
@@ -109,6 +115,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 updateBatteryPulseDescription();
             }
+        }
+
+        mTouchKeyLights = (ListPreference) prefSet.findPreference(KEY_TOUCHKEY_LIGHT);
+        if (getResources().getBoolean(R.bool.config_show_touchKeyDur) == false) {
+            if (mTouchKeyLights != null) {
+                getPreferenceScreen().removePreference(mTouchKeyLights);
+            }
+        } else {
+            int touchKeyLights = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.TOUCHKEY_LIGHT_DUR, 5000);
+            mTouchKeyLights.setValue(String.valueOf(touchKeyLights));
+            mTouchKeyLights.setSummary(mTouchKeyLights.getEntry());
+            mTouchKeyLights.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -193,15 +212,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         
         if (preference == mVolumeWake) {
-            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
-                    mVolumeWake.isChecked() ? 1 : 0);	
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
+                    mVolumeWake.isChecked() ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+        if (preference == mTouchKeyLights) {
+            int touchKeyLights = Integer.valueOf((String) objValue);
+            int index = mTouchKeyLights.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.TOUCHKEY_LIGHT_DUR, touchKeyLights);
+            mTouchKeyLights.setSummary(mTouchKeyLights.getEntries()[index]);
+            return true;
+        }
+        return false;
     }
 }

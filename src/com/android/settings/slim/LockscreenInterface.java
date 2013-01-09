@@ -111,7 +111,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         prefs = getPreferenceScreen();
-        Preference mPref;
 
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
 
@@ -147,8 +146,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         mMaximizeWidgets = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
         if (!Utils.isPhone(getActivity())) {
             PreferenceCategory widgetCategory = (PreferenceCategory) findPreference(KEY_WIDGET_OPTIONS);
-            mPref = (Preference) findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS);
-            if (mPref != null)
+            if (mMaximizeWidgets != null)
                 widgetCategory.removePreference(mMaximizeWidgets);
             mMaximizeWidgets = null;
         } else {

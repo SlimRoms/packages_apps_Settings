@@ -5429,4 +5429,13 @@
     <!-- ASS Misc settings -->
     <string name="chronus_title">Chronus</string>
 
+    <!-- Touckey Light Timeout -->
+    <string name="touchkey_timeout_title">TouchKey Light Timeout</string>
+    <string name="touchkey_timeout_1s">1 second</string>
+    <string name="touchkey_timeout_2s">2 seconds</string>
+    <string name="touchkey_timeout_5s">5 seconds</string>
+    <string name="touchkey_timeout_10s">10 seconds</string>
+    <string name="touchkey_timeout_alwayson">Always On</string>
+    <string name="touchkey_timeout_alwaysoff">Always Off</string>
+
 </resources>

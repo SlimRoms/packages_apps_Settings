@@ -42,6 +42,13 @@
         android:title="@string/battery_light_title"
         android:fragment="com.android.settings.slim.notificationlight.BatteryLightSettings" />
 
+    <ListPreference
+        android:key="touchkey_light_timeout"
+        android:dialogTitle="@string/touchkey_timeout_title"
+        android:title="@string/touchkey_timeout_title"
+        android:entries="@array/entries_touchkey_timeout"
+        android:entryValues="@array/values_touchkey_timeout" />
+
 <!-- Remove for now until merged in frameworks_base...needs a lot overwork cause google changed PoerManagerService a lot
     <PreferenceScreen
         android:key="backlight_widget"

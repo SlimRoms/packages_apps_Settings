@@ -128,8 +128,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         mNavigationBarWidth = (ListPreference) findPreference(PREF_NAVIGATION_BAR_WIDTH);
         if (!Utils.isPhone(getActivity())) {
             PreferenceCategory dimenCategory = (PreferenceCategory) findPreference(KEY_DIMEN_OPTIONS);
-            Preference mPref = (Preference) findPreference(PREF_NAVIGATION_BAR_WIDTH);
-            if (mPref != null)
+            if (mNavigationBarWidth != null)
                 dimenCategory.removePreference(mNavigationBarWidth);
         } else {
             mNavigationBarWidth.setOnPreferenceChangeListener(this);

@@ -5176,6 +5176,7 @@
     <string name="title_dynamic_bugreport">Bug report</string>
     <string name="title_dynamic_ime">IME changer</string>
     <string name="title_dynamic_wifi">WiFi display</string>
+    <string name="title_dynamic_usbtether">USB Tether</string>
 
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Quick pulldown</string>

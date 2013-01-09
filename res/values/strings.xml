@@ -5386,6 +5386,8 @@
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
+    <string name="navbar_can_move">Show landscape</string>
+    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>

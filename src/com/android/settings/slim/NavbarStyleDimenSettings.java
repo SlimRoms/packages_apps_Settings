@@ -48,9 +48,11 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     private static final String PREF_NAV_COLOR = "nav_bar_color";
     private static final String PREF_NAV_BUTTON_COLOR = "nav_button_color";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
-    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-    private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
-    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String PREF_BUTTON_TRANSPARENCY = "button_transparency";
+    private static final String PREF_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String PREF_NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
+    private static final String PREF_NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String KEY_DIMEN_OPTIONS = "navbar_dimen";
 
     ColorPickerPreference mNavigationBarColor;
     ColorPickerPreference mNavigationBarButtonColor;
@@ -112,19 +114,26 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             defaultAlpha = 0.3f;
                      Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
         }
-        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha = (SeekBarPreference) findPreference(PREF_BUTTON_TRANSPARENCY);
         mButtonAlpha.setProperty(Settings.System.NAVIGATION_BAR_BUTTON_ALPHA);
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
-        mNavigationBarHeight = (ListPreference) findPreference("navigation_bar_height");
+        mNavigationBarHeight = (ListPreference) findPreference(PREF_NAVIGATION_BAR_HEIGHT);
         mNavigationBarHeight.setOnPreferenceChangeListener(this);
 
-        mNavigationBarHeightLandscape = (ListPreference) findPreference("navigation_bar_height_landscape");
+        mNavigationBarHeightLandscape = (ListPreference) findPreference(PREF_NAVIGATION_BAR_HEIGHT_LANDSCAPE);
         mNavigationBarHeightLandscape.setOnPreferenceChangeListener(this);
 
-        mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
-        mNavigationBarWidth.setOnPreferenceChangeListener(this);
+        mNavigationBarWidth = (ListPreference) findPreference(PREF_NAVIGATION_BAR_WIDTH);
+        if (!Utils.isPhone(getActivity())) {
+            PreferenceCategory dimenCategory = (PreferenceCategory) findPreference(KEY_DIMEN_OPTIONS);
+            Preference mPref = (Preference) findPreference(PREF_NAVIGATION_BAR_WIDTH);
+            if (mPref != null)
+                dimenCategory.removePreference(mNavigationBarWidth);
+        } else {
+            mNavigationBarWidth.setOnPreferenceChangeListener(this);
+        }
 
         setHasOptionsMenu(true);
     }

@@ -68,6 +68,11 @@
                     android:title="@string/title_pref_navigation_menu_display"
                     android:summary="@string/summary_pref_navigation_menu_display" />
 
+            <CheckBoxPreference
+                    android:key="navbar_can_move"
+                    android:title="@string/navbar_can_move"
+                    android:summary="@string/navbar_can_move_summary" />
+
         </PreferenceCategory>
 
 </PreferenceScreen>

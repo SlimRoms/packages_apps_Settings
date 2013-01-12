@@ -10,7 +10,7 @@
         <com.android.settings.widget.DeveloperPreference
            android:title="Slimroms"
            slim:nameDev="slimroms"
-           slim:twitterHandle="arvind78"
+           slim:twitterHandle="slimroms"
            slim:donateLink="@string/donate_slim" />
     </PreferenceCategory>
 
@@ -38,23 +38,6 @@
             slim:nameDev="cyanogenmod"
             slim:twitterHandle="cyanogenmod"
             slim:donateLink="@string/donate_cyanogenmod" />
-
-        <com.android.settings.widget.DeveloperPreference
-            android:title="AOKP"
-            slim:nameDev="aokp"
-            slim:twitterHandle="aokp_rom"
-            slim:donateLink="@string/donate_aokp" />
-
-        <com.android.settings.widget.DeveloperPreference
-            android:title="Codenamedroid"
-            slim:nameDev="codenamedroid"
-            slim:twitterHandle="codenameandroid"
-            slim:donateLink="@string/donate_cna" />
-
-        <com.android.settings.widget.DeveloperPreference
-            android:title="Team EOS"
-            slim:nameDev="teameos"
-            slim:twitterHandle="teameos" />
     </PreferenceCategory>
 
 </PreferenceScreen>

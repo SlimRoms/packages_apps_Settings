@@ -163,8 +163,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         setBatteryStatusSummary();
 
         mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
+        int defaultValue = getResources().getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation) ? 1 : 0;
         mLockscreenAutoRotate.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_AUTO_ROTATE, 0) == 1);
+                Settings.System.LOCKSCREEN_AUTO_ROTATE, defaultValue) == 1);
 
         if (RotationPolicy.isRotationLocked(getActivity())) {
             mLockscreenAutoRotate.setEnabled(false);

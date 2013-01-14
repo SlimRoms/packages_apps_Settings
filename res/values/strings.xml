@@ -4530,7 +4530,7 @@
     <string name="title_toggle_media_previous">Media: Skip to Previous</string>
     <string name="title_toggle_media_next">Media: Skip to Next</string>
     <string name="title_toggle_lte">Toggle LTE</string>
-    <string name="title_toggle_reboot">Toggle Reboot (LongPress to Recovery)</string>
+    <string name="title_toggle_reboot">Toggle Reboot</string>
     <string name="title_toggle_fcharge">Toggle Fast Charge</string>
     <string name="title_toggle_wimax">Toggle WiMax</string>
     <string name="title_button_modes">Button modes</string>

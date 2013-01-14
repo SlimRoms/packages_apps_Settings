@@ -159,9 +159,9 @@ public class QuickSettingsTiles extends Fragment {
             }
             @Override
             public void onDelete(int index) {
-                ArrayList<String> tiles = QuickSettingsUtil.getTileListFromString(QuickSettingsUtil.getCurrentTiles(getActivity()));
-                tiles.remove(index);
-                QuickSettingsUtil.saveCurrentTiles(getActivity(), QuickSettingsUtil.getTileStringFromList(tiles));
+                curr = QuickSettingsUtil.getTileListFromString(QuickSettingsUtil.getCurrentTiles(getActivity()));
+                curr.remove(index);
+                QuickSettingsUtil.saveCurrentTiles(getActivity(), QuickSettingsUtil.getTileStringFromList(curr));
             }
         });
         mDragView.setOnItemClickListener(new OnItemClickListener() {
@@ -175,16 +175,16 @@ public class QuickSettingsTiles extends Fragment {
                 builder.setTitle(R.string.tile_choose_title)
                 .setAdapter(mTileAdapter, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, final int position) {
-                        final TileInfo info = QuickSettingsUtil.TILES.get(mTileAdapter.getTileId(position));
+                        TileInfo info = QuickSettingsUtil.TILES.get(mTileAdapter.getTileId(position));
+                        int tileOccurencesCount=1;
+                        for (int i=0; i<curr.size();i++)
+                            if (curr.get(i).startsWith(info.getId())) tileOccurencesCount++;
+                        info.setOccurences(tileOccurencesCount);
+                        if (!info.isSingleton()) curr.add(info.getId()+"+"+tileOccurencesCount);
+                        else curr.add(info.getId());
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                int tileOccurencesCount=1;
-                                for (int i=0; i<curr.size();i++)
-                                    if (curr.get(i).startsWith(info.getId())) tileOccurencesCount++;
-                                info.setOccurences(tileOccurencesCount);
-                                if (!info.isSingleton()) curr.add(info.getId()+"+"+tileOccurencesCount);
-                                else curr.add(info.getId());
                                 QuickSettingsUtil.saveCurrentTiles(getActivity(), QuickSettingsUtil.getTileStringFromList(curr));
                             }
                         }).start();

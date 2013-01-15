@@ -877,14 +877,16 @@
 
     <!-- Lockscreen widget toggles Title -->
     <string name="lockscreen_widgets_category">Lockscreen Widgets</string>
-    <string name="lockscreen_widgets_title">Enable all widgets</string>
-    <string name="lockscreen_widgets_summary">Ability to add widgets on lockscreen</string>
+    <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_widgets_summary">View or change the lockscreen widget options</string>
+    <string name="lockscreen_widgets_all_title">Enable all widgets</string>
+    <string name="lockscreen_widgets_all_summary">Ability to add widgets on lockscreen</string>
     <string name="lockscreen_camera_widget_title">Enable camera widget</string>
     <string name="lockscreen_camera_widget_summary">Shows camera widget on lockscreen</string>
     <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
     <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the keyguard minimized when screen turned on</string>
     <string name="lockscreen_disable_hints_title">Disable usability hints</string>
-    <string name="lockscreen_disable_hints_summary">Disables the glow that surrounds the widgets on lockscreen</string>
+    <string name="lockscreen_disable_hints_summary">Disables the glow that surrounds the widgets on lockscreen for portrait mode widget pager</string>
     <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel in portrait</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Use carousel animation in portrait like it is in landscape when switching between lockscreen widgets.</string>
 

@@ -45,6 +45,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
     private static final String KEY_SAFE_HEADSET_RESTORE = "safe_headset_restore";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+    private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
 
 
     private final Configuration mCurConfig = new Configuration();
@@ -52,6 +53,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private ListPreference mVolumeOverlay;
     private CheckBoxPreference mSafeHeadsetRestore;
     private CheckBoxPreference mVolBtnMusicCtrl;
+    private CheckBoxPreference mConvertSoundToVibration;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLBTN_MUSIC_CONTROLS, 1) != 0);
+
+        mConvertSoundToVibration = (CheckBoxPreference) findPreference(KEY_CONVERT_SOUND_TO_VIBRATE);
+        mConvertSoundToVibration.setPersistent(false);
+        mConvertSoundToVibration.setChecked(Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION, 1) == 1);
 
 
     }
@@ -107,6 +114,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolBtnMusicCtrl) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS,
                     mVolBtnMusicCtrl.isChecked() ? 1 : 0);
+
+        } else if (preference == mConvertSoundToVibration) {
+            Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION,
+                    mConvertSoundToVibration.isChecked() ? 1 : 0);
 
         } else {
             // If we didn't handle it, let preferences handle it.

@@ -225,6 +225,7 @@ public class QuickSettingsUtil {
             for (int i = 1; i < tiles.size(); i++) {
                 s += TILE_DELIMITER + tiles.get(i);
             }
+            if (s.startsWith("|")) s = s.substring(1);
             return s;
         }
     }

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 OmniKang
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/omnikang_settings"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:title="@string/status_bar_title">
+
+        <PreferenceScreen
+            android:key="battery_style_pref"
+            android:fragment="com.android.settings.omnikang.BatteryIconStyle"
+            android:title="@string/battery_icon_title" />
+
+        <PreferenceScreen
+            android:key="battery_bar_cat"
+            android:fragment="com.android.settings.omnikang.BatteryBar"
+            android:title="@string/battery_bar_cat" />
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.omnikang.StatusBarClockStyle"
+            android:key="clock_style_pref"
+            android:title="@string/status_bar_clock" />
+
+        <PreferenceScreen
+            android:key="status_bar_style"
+            android:fragment="com.android.settings.omnikang.StatusBarStyle"
+            android:title="@string/status_bar_style_title" />
+
+        <PreferenceScreen
+            android:key="status_bar_traffic"
+            android:fragment="com.android.settings.omnikang.StatusBarTraffic"
+            android:title="@string/status_bar_network_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notification_drawer_title">
+
+        <Preference
+            android:fragment="com.android.settings.omnikang.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_style_title"
+            android:summary="@string/notification_style_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_quick_access">
+
+        <CheckBoxPreference
+            android:key="qs_quick_access"
+            android:title="@string/title_quick_access"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="qs_quick_access_linked"
+            android:title="@string/title_quick_access_linked"
+            android:summary="@string/summary_quick_access_linked"
+            android:defaultValue="true"
+            android:dependency="qs_quick_access"
+            android:disableDependentsState="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navigation_bar"
+        android:title="@string/navigation_bar_category">
+
+        <PreferenceScreen
+            android:key="navigation_bar_dimen"
+            android:fragment="com.android.settings.omnikang.NavBarDimen"
+            android:title="@string/navbar_dimen_title" />
+
+        <PreferenceScreen
+            android:key="navigation_bar"
+            android:fragment="com.android.settings.omnikang.NavBar"
+            android:title="@string/navigation_bar_title" />
+
+        <PreferenceScreen
+            android:key="navigation_ring"
+            android:fragment="com.android.settings.omnikang.NavRing"
+            android:title="@string/navigation_ring_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/lockscreen_category">
+
+        <Preference
+            android:fragment="com.android.settings.omnikang.LockscreenTargets"
+            android:key="lockscreen_targets"
+            android:summary="@string/lockscreen_target_summary"
+            android:title="@string/lockscreen_target_title" />
+
+        <Preference
+            android:fragment="com.android.settings.omnikang.LockscreenNotifications"
+            android:key="lockscreen_notifications"
+            android:summary="@string/lockscreen_notifications_summary"
+            android:title="@string/Lockscreen_notifications_header" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/quick_settings_title">
+
+        <PreferenceScreen
+            android:key="quicksettings_tiles_style"
+            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"
+            android:title="@string/quicksettings_tiles_style"
+            android:summary="@string/summary_quicksettings_tiles_style" />
+
+        <PreferenceScreen
+            android:key="tile_picker"
+            android:title="@string/tile_picker_title"
+            android:summary="@string/tile_picker_summary"
+            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="tweaks_category"
+        android:title="@string/tweaks_category" >
+
+        <!-- Ram Bar -->
+        <PreferenceScreen
+            android:key="ram_bar"
+            android:fragment="com.android.settings.omnikang.RamBar"
+            android:title="@string/ram_bar_title"
+            android:summary="@string/ram_bar_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

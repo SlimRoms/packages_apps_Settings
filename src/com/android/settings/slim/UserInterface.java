@@ -18,22 +18,16 @@ package com.android.settings.slim;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
-import android.net.wifi.WifiManager;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.util.Log;
 import android.view.IWindowManager;
-import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -45,17 +39,13 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private static final String MISC_SETTINGS = "misc";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
-    private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
-    private ListPreference mCcodePref;
     private PreferenceCategory mMisc;
     private CheckBoxPreference mRamBar;
-
-    private WifiManager mWifiManager;
 
     int newDensityValue;
 
@@ -85,13 +75,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         }
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
-        mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-
-        mCcodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
-        mCcodePref.setOnPreferenceChangeListener(this);
-
-        updateWifiCodeSummary();
-
         // Only show the hardware keys config on a device that does not have a navbar
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
@@ -113,51 +96,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     @Override
     public void onResume() {
         super.onResume();
-        updateWifiCodeSummary();
     }
 
     @Override
     public void onPause() {
         super.onResume();
-        updateWifiCodeSummary();
-    }
-
-    private void updateWifiCodeSummary() {
-        if (mCcodePref != null) {
-            String value = (mWifiManager.getCountryCode()).toUpperCase();
-            if (value != null) {
-                mCcodePref.setValue(value);
-                mCcodePref.setSummary(mCcodePref.getEntry());
-            } else {
-                Log.e(TAG, "Failed to fetch country code");
-            }
-            if (mWifiManager.isWifiEnabled()) {
-                mCcodePref.setEnabled(true);
-            } else {
-                mCcodePref.setEnabled(false);
-                mCcodePref.setSummary(R.string.wifi_setting_countrycode_diabled);
-            }
-        }
-
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean result = false;
-        if (preference == mCcodePref) {
-            try {
-                Settings.Global.putString(mContext.getContentResolver(),
-                       Settings.Global.WIFI_COUNTRY_CODE_USER,
-                       (String) newValue);
-                mWifiManager.setCountryCode((String) newValue, true);
-                int index = mCcodePref.findIndexOfValue((String) newValue);
-                mCcodePref.setSummary(mCcodePref.getEntries()[index]);
-                return true;
-            } catch (IllegalArgumentException e) {
-                Toast.makeText(getActivity(), R.string.wifi_setting_countrycode_error,
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        }
         return false;
     }
 

@@ -233,20 +233,10 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
                     pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
-            }
-
-            if (customIconUri != null && !customIconUri.equals("")
-                    && customIconUri.startsWith("file")) {
-                // it's an icon the user chose from the gallery here
-                File icon = new File(Uri.parse(customIconUri).getPath());
-                if (icon.exists())
-                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon
-                            .getAbsolutePath())));
-
             } else if (customIconUri != null && !customIconUri.equals("")) {
                 // here they chose another app icon
                 try {
-                    pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
+                    pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(uri, 0))));
                 } catch (NameNotFoundException e) {
                     e.printStackTrace();
                 } catch (URISyntaxException e) {

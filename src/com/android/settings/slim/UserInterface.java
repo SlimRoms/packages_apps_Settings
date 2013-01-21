@@ -41,11 +41,13 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
+    private static final String KEY_DUAL_PANE = "dual_pane";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
     private PreferenceCategory mMisc;
     private CheckBoxPreference mRamBar;
+    private CheckBoxPreference mDualPane;
 
     int newDensityValue;
 
@@ -91,6 +93,12 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                 getActivity().getContentResolver(),
                 Settings.System.RECENTS_RAM_BAR, 0) == 1);
 
+        mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
+        boolean preferDualPane = getResources().getBoolean(
+                com.android.internal.R.bool.preferences_prefer_dual_pane);
+        boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DUAL_PANE_PREFS, (preferDualPane ? 1 : 0)) == 1;
+        mDualPane.setChecked(dualPaneMode);
     }
 
     @Override
@@ -118,6 +126,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         } else if (preference == mRamBar) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_RAM_BAR,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mDualPane) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_PANE_PREFS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         }

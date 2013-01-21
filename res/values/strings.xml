@@ -4551,7 +4551,7 @@
     <string name="cm_sound_mode_silent">Silent</string>
     <string name="cm_sound_mode_vibrate">Vibrate</string>
     <string name="cm_sound_mode_sound">Sound</string>
-    <string name="cm_sound_mode_soundVibrate">Sound + Vibrate</string>
+    <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
     <string name="pref_flash_mode_title">Flash mode</string>
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
     <string name="power_widget_enabled">Enabled</string>

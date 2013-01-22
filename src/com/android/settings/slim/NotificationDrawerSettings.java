@@ -35,9 +35,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_OPTIONS = "options";
     private static final String PREF_NOTIFICATION_POWER_WIDGET = "power_widget";
+    private static final String PREF_NOTIFICATION_QUICK_SETTINGS = "quick_settings_panel";
 
     PreferenceCategory mAdditionalOptions;
     Preference mPowerWidget;
+    Preference mQuickSettings;
     CheckBoxPreference mShowWifiName;
 
     @Override
@@ -51,6 +53,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
         mPowerWidget = findPreference(PREF_NOTIFICATION_POWER_WIDGET);
         if (mPowerWidget != null) {
               updatePowerWidgetDescription();
+        }
+
+        mQuickSettings = findPreference(PREF_NOTIFICATION_QUICK_SETTINGS);
+        if (mQuickSettings != null) {
+              updateQuickSettingsDescription();
         }
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
@@ -79,10 +86,20 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
          }
     }
 
+    private void updateQuickSettingsDescription() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_DISABLE_PANEL, 0) == 0) {
+            mQuickSettings.setSummary(getString(R.string.quick_settings_enabled));
+        } else {
+            mQuickSettings.setSummary(getString(R.string.quick_settings_disabled));
+         }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         updatePowerWidgetDescription();
+        updateQuickSettingsDescription();
     }
 
     @Override

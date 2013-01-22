@@ -4509,6 +4509,7 @@
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
+    <string name="title_expanded_widget_summary">Enable or disable Power widget</string>
     <string name="power_widget_behavior">Power widget behavior</string>
     <string name="title_expanded_hide_onchange">Close drawer on change</string>
     <string name="title_expanded_hide_scrollbar">Hide scrollbar</string>
@@ -5061,6 +5062,10 @@
     <string name="quick_pulldown_right">Right</string>
     <string name="title_collapse_panel">Auto close panel</string>
     <string name="summary_collapse_panel">Close the Quick Settings panel upon toggle</string>
+    <string name="disable_quick_settings_panel">Quick Settings</string>
+    <string name="disable_quick_settings_panel_summary">Enable or disable Quick Settings</string>
+    <string name="quick_settings_enabled">Enabled</string>
+    <string name="quick_settings_disabled">Disabled</string>
 
     <!-- Reset tiles -->
     <string name="tiles_reset_title">Reset</string>

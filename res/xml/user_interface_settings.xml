@@ -34,10 +34,10 @@
             android:fragment="com.android.settings.slim.HardwareKeys"
             android:title="@string/hardware_keys_title" />
 
-        <CheckBoxPreference
+        <PreferenceScreen
             android:key="recents_ram_bar"
-            android:title="@string/ram_bar"
-            android:summary="@string/ram_bar_summary" />
+            android:fragment="com.android.settings.slim.RamBar"
+            android:title="@string/ram_bar" />
 
     </PreferenceCategory>
 

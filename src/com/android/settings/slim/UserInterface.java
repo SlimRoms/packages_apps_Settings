@@ -46,7 +46,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
     private PreferenceCategory mMisc;
-    private CheckBoxPreference mRamBar;
+    private Preference mRamBar;
     private CheckBoxPreference mDualPane;
 
     int newDensityValue;
@@ -88,10 +88,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             // Do nothing
         }
 
-        mRamBar = (CheckBoxPreference) findPreference(KEY_RECENTS_RAM_BAR);
-        mRamBar.setChecked(Settings.System.getInt(
-                getActivity().getContentResolver(),
-                Settings.System.RECENTS_RAM_BAR, 0) == 1);
+        mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
+        updateRamBar();
 
         mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
         boolean preferDualPane = getResources().getBoolean(
@@ -101,14 +99,25 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mDualPane.setChecked(dualPaneMode);
     }
 
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
+    }
+
     @Override
     public void onResume() {
         super.onResume();
+        updateRamBar();
     }
 
     @Override
     public void onPause() {
         super.onResume();
+        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -121,11 +130,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         if (preference == mUseAltResolver) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mRamBar) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_RAM_BAR,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mDualPane) {

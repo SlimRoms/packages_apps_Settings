@@ -1470,6 +1470,7 @@
         <activity android:name=".slim.NavbarButtonSettings" />
         <activity android:name=".slim.NavbarStyleDimenSettings" />
         <activity android:name=".slim.WifiSettings" />
+        <activity android:name=".slim.RamBar" />
         <activity android:name=".ApnEditor" />
 
         <activity
@@ -1478,6 +1479,17 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
+
+        <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
+        <activity android:name="Settings$ASSRamBarActivity"
+                android:label="@string/ram_bar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.RamBar" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->

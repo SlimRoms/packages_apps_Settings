@@ -5443,7 +5443,7 @@
     <!-- Recents Ram Bar -->
     <string name="ram_bar">Recents RAM bar</string>
     <string name="ram_bar_note_title">Note</string>
-    <string name="ram_bar_note_summary">This rambar shows how android is really using your available ram. Please note that having apps open in the background and cached helps for your device to open your apps faster. For further explanations on how android memory (RAM) managment works, please follow the help button in the menu.</string>
+    <string name="ram_bar_note_summary">This RAM bar shows the actual android memory (RAM) utilization. Please note that having cached apps helps your device open apps much faster. For further explanations on how android memory (RAM) management works, check the help menu.</string>
     <string name="ram_bar_mode_title">Recents RAM bar mode</string>
     <string name="ram_bar_mode_dialog_title">Show on recents RAM bar</string>
     <string name="ram_bar_none">None</string>

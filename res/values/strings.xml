@@ -131,6 +131,10 @@
     <!-- Used for diagnostic info screens, precise translation isn't needed. Formats the SD card in the phone, meaning it will be erased and reformatted -->
     <string name="sdcard_format" product="default">Erase SD card</string>
 
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+
     <!-- choice for the font size spinner -->
     <string name="small_font">Small</string>
     <!-- choice for the font size spinner -->

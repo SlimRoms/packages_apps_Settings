@@ -16,6 +16,7 @@
 
 package com.android.settings.slim;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -42,12 +43,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String KEY_DUAL_PANE = "dual_pane";
+    private static final String KEY_HIGH_END_GFX = "high_end_gfx";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
     private PreferenceCategory mMisc;
     private Preference mRamBar;
     private CheckBoxPreference mDualPane;
+    private CheckBoxPreference mHighEndGfx;
 
     int newDensityValue;
 
@@ -97,6 +100,19 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.DUAL_PANE_PREFS, (preferDualPane ? 1 : 0)) == 1;
         mDualPane.setChecked(dualPaneMode);
+
+        mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
+
+        if (!ActivityManager.isHighEndGfx()) {
+            // Only show this if the device does not have HighEndGfx enabled natively
+            try {
+                mHighEndGfx.setChecked(Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED) == 1);
+            } catch (Exception e) {
+                Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, mHighEndGfx.isChecked() ? 1 : 0 );
+            }
+        } else {
+            getPreferenceScreen().removePreference(mHighEndGfx);
+        }
     }
 
     private void updateRamBar() {
@@ -137,6 +153,10 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.DUAL_PANE_PREFS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mHighEndGfx) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HIGH_END_GFX_ENABLED,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

@@ -5509,4 +5509,8 @@
     <string name="gestures_action_search">Invoke Search</string>
     <string name="gestures_action_recent">Recent Applications</string>
 
+    <!-- High End Gfx Effects -->
+    <string name="high_end_gfx_title">High end graphic effects</string>
+    <string name="high_end_gfx_summary">Enable graphic effects disabled on lower end devices</string>
+
 </resources>

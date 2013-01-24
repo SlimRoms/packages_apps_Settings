@@ -39,6 +39,12 @@
             android:fragment="com.android.settings.slim.RamBar"
             android:title="@string/ram_bar" />
 
+        <CheckBoxPreference
+            android:key="high_end_gfx"
+            android:title="@string/high_end_gfx_title"
+            android:summary="@string/high_end_gfx_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

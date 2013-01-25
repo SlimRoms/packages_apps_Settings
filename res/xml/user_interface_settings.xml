@@ -6,16 +6,16 @@
         android:key="display"
         android:title="@string/display_short">
 
-        <CheckBoxPreference
-            android:key="dual_pane"
-            android:title="@string/dual_pane"
-            android:summary="@string/dual_pane_summary" />
-
         <PreferenceScreen
             android:key="lcd_density_setup"
             android:fragment="com.android.settings.slim.DensityChanger"
             android:title="@string/lcd_density_title"
             android:summary="@string/lcd_density_summary" />
+
+        <CheckBoxPreference
+            android:key="dual_pane"
+            android:title="@string/dual_pane"
+            android:summary="@string/dual_pane_summary" />
 
     </PreferenceCategory>
 
@@ -34,16 +34,16 @@
             android:fragment="com.android.settings.slim.HardwareKeys"
             android:title="@string/hardware_keys_title" />
 
-        <PreferenceScreen
-            android:key="recents_ram_bar"
-            android:fragment="com.android.settings.slim.RamBar"
-            android:title="@string/ram_bar" />
-
         <CheckBoxPreference
             android:key="high_end_gfx"
             android:title="@string/high_end_gfx_title"
             android:summary="@string/high_end_gfx_summary"
             android:defaultValue="true" />
+
+        <PreferenceScreen
+            android:key="recents_ram_bar"
+            android:fragment="com.android.settings.slim.RamBar"
+            android:title="@string/ram_bar" />
 
     </PreferenceCategory>
 

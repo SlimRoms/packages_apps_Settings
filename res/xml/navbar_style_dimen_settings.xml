@@ -20,24 +20,24 @@
                 android:key="navbar_style"
                 android:title="@string/navbar_style_cat">
 
-            <net.margaritov.preference.colorpicker.ColorPickerPreference
-                    android:key="nav_bar_color"
-                    android:title="@string/navigation_bar_tint_title"
-                    android:defaultValue="#000000" />
+            <PreferenceScreen
+                    android:fragment="com.android.settings.slim.NavBarStyle"
+                    android:key="nav_bar_background_style"
+                    android:title="@string/nav_bar_background_style" />
 
             <net.margaritov.preference.colorpicker.ColorPickerPreference
                     android:key="nav_button_color"
                     android:title="@string/navigation_bar_icon_tint_title"
                     android:defaultValue="#ffffff" />
 
+            <com.android.settings.widget.SeekBarPreference
+                android:key="button_transparency"
+                android:title="@string/button_transparency_title" />
+
             <net.margaritov.preference.colorpicker.ColorPickerPreference
                     android:key="nav_button_glow_color"
                     android:title="@string/navigation_bar_glow_tint_title"
                     android:defaultValue="#ffffff" />
-
-            <com.android.settings.widget.SeekBarPreference
-                android:key="button_transparency"
-                android:title="@string/button_transparency_title" />
 
         </PreferenceCategory>
 

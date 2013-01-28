@@ -4825,11 +4825,11 @@
     <!-- Status bar background style -->
     <string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Background style</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
+    <string name="status_bar_background_style">Status bar background</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
     <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_bar_alpha_mode_home">on launcher</string>
-    <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
+    <string name="status_bar_alpha_mode_default">on launcher and lockscreen</string>
     <string name="status_bar_alpha_mode_always">always</string>
     <string name="status_bar_style_reset">Reset</string>
 
@@ -5393,7 +5393,6 @@
     <string name="navbar_height_dialog_summary">Please reboot for navigation bar height and width changes to apply properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
     <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
     <string name="navigation_bar_icon_tint_title">Navigation bar button color</string>
     <string name="glow_times_title">Button glow animation</string>
@@ -5403,6 +5402,17 @@
     <string name="glow_times_normal">Normal</string>
     <string name="navbar_can_move">Show landscape</string>
     <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
+
+    <!-- Navigation bar background style -->
+    <string name="nav_bar_transparency_title">Navigation bar transparency</string>
+    <string name="nav_bar_color_title">Navigation bar color</string>
+    <string name="nav_bar_background_style">Navigation bar background</string>
+    <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="nav_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="nav_bar_alpha_mode_home">on launcher</string>
+    <string name="nav_bar_alpha_mode_default">on launcher and lockscreen</string>
+    <string name="nav_bar_alpha_mode_always">always</string>
+    <string name="nav_bar_style_reset">Reset</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>

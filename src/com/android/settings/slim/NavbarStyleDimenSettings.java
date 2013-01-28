@@ -45,7 +45,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         OnPreferenceChangeListener {
 
     private static final String TAG = "NavBarStyleDimen";
-    private static final String PREF_NAV_COLOR = "nav_bar_color";
     private static final String PREF_NAV_BUTTON_COLOR = "nav_button_color";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_BUTTON_TRANSPARENCY = "button_transparency";
@@ -54,7 +53,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     private static final String PREF_NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String KEY_DIMEN_OPTIONS = "navbar_dimen";
 
-    ColorPickerPreference mNavigationBarColor;
     ColorPickerPreference mNavigationBarButtonColor;
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference mNavigationBarHeight;
@@ -79,19 +77,10 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
 
         prefs = getPreferenceScreen();
 
-        mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
-        mNavigationBarColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mNavigationBarColor.setNewPreviewColor(intColor);
-
-
         mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_TINT, 0xffffffff);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNavigationBarGlowColor.setNewPreviewColor(intColor);
 
         mNavigationBarButtonColor = (ColorPickerPreference) findPreference(PREF_NAV_BUTTON_COLOR);
@@ -99,7 +88,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         mNavigationBarButtonColor.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_TINT, 0x00000000);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
         if (intColor == 0x00000000) {
             mNavigationBarButtonColor.setSummary(getResources().getString(R.string.none));
         } else {
@@ -149,8 +137,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
-                Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTON_TINT, 0x00000000);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_GLOW_TINT, 0xffffffff);
@@ -192,15 +178,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavigationBarColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, intHex);
-            return true;
-        } else if (preference == mNavigationBarGlowColor) {
+        if (preference == mNavigationBarGlowColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);

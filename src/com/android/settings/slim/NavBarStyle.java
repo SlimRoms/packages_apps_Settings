@@ -41,16 +41,16 @@ import com.android.settings.widget.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class StatusBarStyle extends SettingsPreferenceFragment implements
+public class NavBarStyle extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String TAG = "StatusBarStyle";
-    private static final String PREF_STATUS_BAR_ALPHA = "status_bar_alpha";
-    private static final String PREF_STATUS_BAR_ALPHA_MODE = "status_bar_alpha_mode";
-    private static final String PREF_STATUS_BAR_COLOR = "status_bar_color";
+    private static final String TAG = "NavBarStyle";
+    private static final String PREF_NAV_BAR_ALPHA = "nav_bar_alpha";
+    private static final String PREF_NAV_BAR_ALPHA_MODE = "nav_bar_alpha_mode";
+    private static final String PREF_NAV_BAR_COLOR = "nav_bar_color";
 
-    private SeekBarPreference mStatusbarTransparency;
-    private ColorPickerPreference mStatusBarColor;
+    private SeekBarPreference mNavBarTransparency;
+    private ColorPickerPreference mNavBarColor;
     private ListPreference mAlphaMode;
 
     @Override
@@ -66,31 +66,30 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         }
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.status_bar_style);
+        addPreferencesFromResource(R.xml.nav_bar_style);
 
         prefs = getPreferenceScreen();
 
-        mStatusBarColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_COLOR);
-        mStatusBarColor.setOnPreferenceChangeListener(this);
+        mNavBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
+        mNavBarColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_COLOR, 0xff000000);
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mStatusBarColor.setNewPreviewColor(intColor);
+                    Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
+        mNavBarColor.setNewPreviewColor(intColor);
 
         float statBarTransparency = 0.0f;
         try{
             statBarTransparency = Settings.System.getFloat(getActivity()
-                 .getContentResolver(), Settings.System.STATUS_BAR_ALPHA);
+                 .getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA);
         } catch (Exception e) {
             statBarTransparency = 0.0f;
-            Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.STATUS_BAR_ALPHA, 0.0f);
+            Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
         }
-        mStatusbarTransparency = (SeekBarPreference) findPreference(PREF_STATUS_BAR_ALPHA);
-        mStatusbarTransparency.setProperty(Settings.System.STATUS_BAR_ALPHA);
-        mStatusbarTransparency.setInitValue((int) (statBarTransparency * 100));
-        mStatusbarTransparency.setOnPreferenceChangeListener(this);
+        mNavBarTransparency = (SeekBarPreference) findPreference(PREF_NAV_BAR_ALPHA);
+        mNavBarTransparency.setProperty(Settings.System.NAVIGATION_BAR_ALPHA);
+        mNavBarTransparency.setInitValue((int) (statBarTransparency * 100));
+        mNavBarTransparency.setOnPreferenceChangeListener(this);
 
-        mAlphaMode = (ListPreference) prefs.findPreference(PREF_STATUS_BAR_ALPHA_MODE);
+        mAlphaMode = (ListPreference) prefs.findPreference(PREF_NAV_BAR_ALPHA_MODE);
         int alphaMode = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
         mAlphaMode.setValue(String.valueOf(alphaMode));
@@ -104,7 +103,7 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.status_bar_style, menu);
+        inflater.inflate(R.menu.nav_bar_style, menu);
     }
 
     @Override
@@ -114,10 +113,10 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_COLOR, 0xff000000);
+                        Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
 
                 Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.STATUS_BAR_ALPHA, 0.0f);
+                       Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
 
                 refreshSettings();
                 return true;
@@ -134,19 +133,19 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mStatusbarTransparency) {
+        if (preference == mNavBarTransparency) {
             float valStat = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_ALPHA,
+                    Settings.System.NAVIGATION_BAR_ALPHA,
                     valStat / 100);
             return true;
-        } else if (preference == mStatusBarColor) {
+        } else if (preference == mNavBarColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_COLOR, intHex);
+                    Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
         } else if (preference == mAlphaMode) {
             int alphaMode = Integer.valueOf((String) newValue);

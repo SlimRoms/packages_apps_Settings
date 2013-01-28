@@ -1765,6 +1765,18 @@
         <item>0</item>
     </string-array>
 
+    <string-array name="nav_button_color_mode_entries">
+        <item>@string/nav_button_color_mode_all_icons</item>
+        <item>@string/nav_button_color_mode_system_icons</item>
+        <item>@string/nav_button_color_mode_system_custom_icons</item>
+    </string-array>
+
+    <string-array name="nav_button_color_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="glow_times_entries">
         <item>@string/glow_times_superquick</item>
         <item>@string/glow_times_quick</item>

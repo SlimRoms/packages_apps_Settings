@@ -4829,7 +4829,7 @@
     <!-- Status bar background style -->
     <string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Status bar background</string>
+    <string name="status_bar_background_style">Status bar background style</string>
     <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
     <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_bar_alpha_mode_home">on launcher</string>
@@ -5354,7 +5354,7 @@
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>
     <string name="size_4_dp">4 dp</string>
-    <string name="menu_nav_bar_style_reset">Reset navbar style</string>
+    <string name="menu_nav_bar_style_reset">Reset navbar glow color</string>
     <string name="menu_nav_bar_dimen_reset">Reset navbar dimens</string>
     <string name="menu_nav_bar_button_reset">Reset navbar buttons</string>
     <string name="menu_nav_ring_targets_reset">Reset navring targets</string>
@@ -5369,7 +5369,6 @@
     <string name="navbar_qty_title">Navigation button quantity</string>
     <string name="navbar_qty_summary">Changing this will reset your current buttons</string>
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
-    <string name="button_transparency_title">Navigation bar button transparency</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>
@@ -5398,7 +5397,6 @@
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
     <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
-    <string name="navigation_bar_icon_tint_title">Navigation bar button color</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
@@ -5407,10 +5405,22 @@
     <string name="navbar_can_move">Show landscape</string>
     <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
 
+    <!-- Navigation bar button style -->
+    <string name="nav_bar_button_style">Navigation bar button style</string>
+    <string name="nav_bar_button_style_reset">Reset</string>
+    <string name="button_transparency_title">Navigation bar button transparency</string>
+    <string name="navigation_bar_icon_tint_title">Navigation bar button color</string>
+    <string name="nav_button_color_mode_title">Color mode</string>
+    <string name="nav_button_color_mode_dialog_title">Colorize</string>
+    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
+    <string name="nav_button_color_mode_all_icons">All icons</string>
+    <string name="nav_button_color_mode_system_icons">System icons</string>
+    <string name="nav_button_color_mode_system_custom_icons">System and custom icons</string>
+
     <!-- Navigation bar background style -->
     <string name="nav_bar_transparency_title">Navigation bar transparency</string>
     <string name="nav_bar_color_title">Navigation bar color</string>
-    <string name="nav_bar_background_style">Navigation bar background</string>
+    <string name="nav_bar_background_style">Navigation bar background style</string>
     <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
     <string name="nav_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="nav_bar_alpha_mode_home">on launcher</string>

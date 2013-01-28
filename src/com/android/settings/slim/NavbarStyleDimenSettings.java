@@ -45,20 +45,16 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         OnPreferenceChangeListener {
 
     private static final String TAG = "NavBarStyleDimen";
-    private static final String PREF_NAV_BUTTON_COLOR = "nav_button_color";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
-    private static final String PREF_BUTTON_TRANSPARENCY = "button_transparency";
     private static final String PREF_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String PREF_NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String PREF_NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String KEY_DIMEN_OPTIONS = "navbar_dimen";
 
-    ColorPickerPreference mNavigationBarButtonColor;
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
-    SeekBarPreference mButtonAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,30 +78,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_TINT, 0xffffffff);
         mNavigationBarGlowColor.setNewPreviewColor(intColor);
-
-        mNavigationBarButtonColor = (ColorPickerPreference) findPreference(PREF_NAV_BUTTON_COLOR);
-        mNavigationBarButtonColor.setNewPreviewColor(0xffffffff);
-        mNavigationBarButtonColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_TINT, 0x00000000);
-        if (intColor == 0x00000000) {
-            mNavigationBarButtonColor.setSummary(getResources().getString(R.string.none));
-        } else {
-            mNavigationBarButtonColor.setNewPreviewColor(intColor);
-        }
-
-        float defaultAlpha;
-        try{
-            defaultAlpha = Settings.System.getFloat(getActivity()
-                     .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA);
-        } catch (Exception e) {
-            defaultAlpha = 0.3f;
-                     Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
-        }
-        mButtonAlpha = (SeekBarPreference) findPreference(PREF_BUTTON_TRANSPARENCY);
-        mButtonAlpha.setProperty(Settings.System.NAVIGATION_BAR_BUTTON_ALPHA);
-        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
-        mButtonAlpha.setOnPreferenceChangeListener(this);
 
         mNavigationBarHeight = (ListPreference) findPreference(PREF_NAVIGATION_BAR_HEIGHT);
         mNavigationBarHeight.setOnPreferenceChangeListener(this);
@@ -137,12 +109,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_BUTTON_TINT, 0x00000000);
-                Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_GLOW_TINT, 0xffffffff);
-
-                Settings.System.putFloat(getActivity().getContentResolver(),
-                       Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
 
                 refreshSettings();
                 return true;
@@ -186,14 +153,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_TINT, intHex);
             return true;
-        } else if (preference == mNavigationBarButtonColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_TINT, intHex);
-            return true;
         } else if (preference == mNavigationBarWidth) {
             String newVal = (String) newValue;
             int dp = Integer.parseInt(newVal);
@@ -215,13 +174,6 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
                     height);
-            return true;
-       } else if (preference == mButtonAlpha) {
-            float val = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + val / 100);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
-                    val / 100);
             return true;
         }
         return false;

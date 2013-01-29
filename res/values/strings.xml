@@ -5085,6 +5085,8 @@
     <string name="disable_quick_settings_panel_summary">Enable or disable Quick Settings</string>
     <string name="quick_settings_enabled">Enabled</string>
     <string name="quick_settings_disabled">Disabled</string>
+    <string name="title_no_notifications_pulldown">Quick pulldown without notifications</string>
+    <string name="summary_no_notifications_pulldown">Pulldown quick settings if no notifications are present</string>
 
     <!-- Reset tiles -->
     <string name="tiles_reset_title">Reset</string>

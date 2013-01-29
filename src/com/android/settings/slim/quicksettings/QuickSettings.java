@@ -61,6 +61,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String DYNAMIC_IME = "dynamic_ime";
     private static final String DYNAMIC_WIFI = "dynamic_wifi";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String NO_NOTIFICATIONS_PULLDOWN = "no_notifications_pulldown";
     private static final String COLLAPSE_PANEL = "collapse_panel";
     private static final String DISABLE_PANEL = "disable_quick_settings";
     private static final String GENERAL_SETTINGS = "pref_general_settings";
@@ -77,6 +78,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     CheckBoxPreference mDynamicBugReport;
     CheckBoxPreference mDynamicWifi;
     CheckBoxPreference mDynamicIme;
+    CheckBoxPreference mNoNotificationsPulldown;
     CheckBoxPreference mCollapsePanel;
     CheckBoxPreference mDisablePanel;
     ListPreference mQuickPulldown;
@@ -101,19 +103,25 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         mStaticTiles = (PreferenceCategory) prefSet.findPreference(STATIC_TILES);
         mDynamicTiles = (PreferenceCategory) prefSet.findPreference(DYNAMIC_TILES);
         mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
+        mNoNotificationsPulldown = (CheckBoxPreference) prefSet.findPreference(NO_NOTIFICATIONS_PULLDOWN);
         mDisablePanel = (CheckBoxPreference) prefSet.findPreference(DISABLE_PANEL);
         if (!Utils.isPhone(getActivity())) {
             if(mQuickPulldown != null)
                 mGeneralSettings.removePreference(mQuickPulldown);
             if(mDisablePanel != null)
                 mGeneralSettings.removePreference(mDisablePanel);
+            if(mNoNotificationsPulldown != null)
+                mGeneralSettings.removePreference(mNoNotificationsPulldown);
         } else {
             mQuickPulldown.setOnPreferenceChangeListener(this);
             int quickPulldownValue = Settings.System.getInt(resolver, Settings.System.QS_QUICK_PULLDOWN, 0);
             mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
             updatePulldownSummary(quickPulldownValue);
 
-            mDisablePanel.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DISABLE_PANEL, 0) == 0);
+            mDisablePanel.setChecked(Settings.System.getInt(resolver,
+                Settings.System.QS_DISABLE_PANEL, 0) == 0);
+            mNoNotificationsPulldown.setChecked(Settings.System.getInt(resolver,
+                Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0) == 1);
         }
 
         mCollapsePanel = (CheckBoxPreference) prefSet.findPreference(COLLAPSE_PANEL);
@@ -241,6 +249,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         } else if (preference == mCollapsePanel) {
             Settings.System.putInt(resolver, Settings.System.QS_COLLAPSE_PANEL,
                     mCollapsePanel.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mNoNotificationsPulldown) {
+            Settings.System.putInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN,
+                    mNoNotificationsPulldown.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mDisablePanel) {
             Settings.System.putInt(resolver, Settings.System.QS_DISABLE_PANEL,

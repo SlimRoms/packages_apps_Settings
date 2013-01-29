@@ -63,6 +63,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
+    private PreferenceCategory mWakeUpOptions;
     private PreferenceScreen mDisplayRotationPreference;
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
@@ -89,11 +90,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
+        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
             if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
-                getPreferenceScreen().removePreference(mVolumeWake);
-                getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_WAKEUP_CATEGORY));
+                mWakeUpOptions.removePreference(mVolumeWake);
             } else {
                 mVolumeWake.setChecked(Settings.System.getInt(resolver,
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
@@ -101,8 +102,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
-        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+        // hide option if device is already set to never wake up
+        if(!getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+            if(mWakeUpWhenPluggedOrUnplugged != null)
+                mWakeUpOptions.removePreference(mWakeUpWhenPluggedOrUnplugged);
+        } else {
+            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                         Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
+        }
+
+        if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake) &&
+            !getResources().getBoolean(com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+                if (mWakeUpOptions != null)
+                    getPreferenceScreen().removePreference(mWakeUpOptions);
+        }
 
         mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
         if (mNotificationPulse != null) {

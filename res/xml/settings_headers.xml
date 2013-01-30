@@ -110,6 +110,17 @@
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings_title" />
 
+    <!-- SlimOTA -->
+    <header
+        android:id="@+id/slim_ota"
+        android:title="@string/slim_ota_title"
+        android:icon="@drawable/ic_slim_ota">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.slim.ota"
+            android:targetClass="com.slim.ota.SlimOTA" />
+    </header>
+
     <!-- About Slim -->
     <header
         android:id="@+id/about_rom"

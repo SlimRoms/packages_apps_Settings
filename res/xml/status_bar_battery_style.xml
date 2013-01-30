@@ -34,21 +34,21 @@
             android:title="@string/circle_battery_color"
             android:defaultValue="#33B5E5" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="circle_battery_text_color"
-            android:title="@string/circle_battery_text_color"
-            android:defaultValue="#33B5E5" />
-
         <ListPreference
             android:key="circle_battery_animation_speed"
             android:title="@string/circle_battery_animation_speed"
             android:entries="@array/circle_battery_animation_speed_entries"
             android:entryValues="@array/circle_battery_animation_speed_values" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_text_color"
+            android:title="@string/battery_text_color"
+            android:defaultValue="#33B5E5" />
+
         <Preference
-            android:key="circle_battery_reset"
-            android:title="@string/circle_battery_reset_title"
-            android:summary="@string/circle_battery_reset_summary" />
+            android:key="battery_color_reset"
+            android:title="@string/battery_color_reset_title"
+            android:summary="@string/battery_color_reset_summary" />
 
     </PreferenceCategory>
 

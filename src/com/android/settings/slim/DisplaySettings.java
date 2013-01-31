@@ -58,8 +58,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_90 = "90";
     private static final String ROTATION_ANGLE_180 = "180";
     private static final String ROTATION_ANGLE_270 = "270";
-    private static final String ROTATION_ANGLE_DELIM = ", ";
-    private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
 
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
@@ -183,7 +181,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             ArrayList<String> rotationList = new ArrayList<String>();
             String delim = "";
-            summary.append(getString(R.string.display_rotation_enabled) + " ");
             if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
                 rotationList.add(ROTATION_ANGLE_0);
             }
@@ -196,12 +193,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             if ((mode & DisplayRotation.ROTATION_270_MODE) != 0) {
                 rotationList.add(ROTATION_ANGLE_270);
             }
-            for(int i=0;i<rotationList.size();i++) {
+            for (int i = 0; i < rotationList.size(); i++) {
                 summary.append(delim).append(rotationList.get(i));
-                if (rotationList.size() >= 2 && (rotationList.size() - 2) == i) {
-                    delim = " " + ROTATION_ANGLE_DELIM_FINAL + " ";
+                if ((rotationList.size() - i) > 2) {
+                    delim = ", ";
                 } else {
-                    delim = ROTATION_ANGLE_DELIM + " ";
+                    delim = " & ";
                 }
             }
             summary.append(" " + getString(R.string.display_rotation_unit));

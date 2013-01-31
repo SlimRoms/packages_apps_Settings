@@ -1099,6 +1099,11 @@ public class DevelopmentSettings extends PreferenceFragment
                             Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
                     mLastEnabledState = isChecked;
                     setPrefsEnabledState(mLastEnabledState);
+
+                    // Hide development settings from the Settings menu (Android 4.2 behaviour)
+                    getActivity().getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE).edit()
+                        .putBoolean(PREF_SHOW, false)
+                        .apply();
                 }
             }
         }

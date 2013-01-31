@@ -5323,6 +5323,7 @@
     <string name="menu">Menu</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
+    <string name="lastapp">Last app</string>
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
@@ -5378,6 +5379,7 @@
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_lastapp">Last app</string>
     <string name="navbar_action_search">Search</string>
     <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_menu">Menu</string>

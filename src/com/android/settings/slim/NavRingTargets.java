@@ -411,6 +411,8 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
                     return getResources().getString(R.string.ring_vib_silent);
             else if (uri.equals("**kill**"))
                     return getResources().getString(R.string.kill_app);
+            else if (uri.equals("**lastapp**"))
+                    return getResources().getString(R.string.lastapp);
             else if (uri.equals("**screenoff**"))
                     return getResources().getString(R.string.screen_off);
             else if (uri.equals("**power**"))
@@ -456,6 +458,8 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_ring_vib_silent", null, null);
         } else if (uri.equals("**kill**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_killtask", null, null);
+        } else if (uri.equals("**lastapp**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_lastapp", null, null);
         } else if (uri.equals("**screenoff**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_power", null, null);
         } else if (uri.equals("**power**")) {

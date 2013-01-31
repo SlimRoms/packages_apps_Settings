@@ -1326,6 +1326,12 @@ public class DevelopmentSettings extends PreferenceFragment
                         Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1);
                 mLastEnabledState = true;
                 setPrefsEnabledState(mLastEnabledState);
+                // Make sure the development settings is visible in the main Settings menu
+                // This is needed since we may have just turned off dev settings and want to
+                // turn it on again
+                getActivity().getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE).edit()
+                    .putBoolean(PREF_SHOW, true)
+                    .apply();
             }
 
         } else if (dialog == mRootDialog) {

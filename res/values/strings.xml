@@ -5472,8 +5472,8 @@
     <string name="navbar_dimen_cat">Navigation bar dimens</string>
     <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
 
-    <!-- Chronus settings -->
-    <string name="chronus_title">Chronus</string>
+    <!-- cLock settings -->
+    <string name="chronus_title">cLock</string>
 
     <!-- Touckey Light Timeout -->
     <string name="touchkey_timeout_title">TouchKey Light Timeout</string>

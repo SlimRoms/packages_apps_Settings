@@ -163,15 +163,15 @@ public class UsbSettings extends SettingsPreferenceFragment {
             }
         }
         if (preference == mMtp) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.USB_MASS_STORAGE_ENABLED, 0 );
+            Settings.Global.putInt(getContentResolver(), Settings.Global.USB_MASS_STORAGE_ENABLED, 0 );
             mUsbManager.setCurrentFunction(UsbManager.USB_FUNCTION_MTP, true);
             updateToggles(UsbManager.USB_FUNCTION_MTP);
         } else if (preference == mPtp) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.USB_MASS_STORAGE_ENABLED, 0 );
+            Settings.Global.putInt(getContentResolver(), Settings.Global.USB_MASS_STORAGE_ENABLED, 0 );
             mUsbManager.setCurrentFunction(UsbManager.USB_FUNCTION_PTP, true);
             updateToggles(UsbManager.USB_FUNCTION_PTP);
         } else if (preference == mUms) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.USB_MASS_STORAGE_ENABLED, 1 );
+            Settings.Global.putInt(getContentResolver(), Settings.Global.USB_MASS_STORAGE_ENABLED, 1 );
             mUsbManager.setCurrentFunction(UsbManager.USB_FUNCTION_MASS_STORAGE, true);
             updateToggles(UsbManager.USB_FUNCTION_MASS_STORAGE);
         }

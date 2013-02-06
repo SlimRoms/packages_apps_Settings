@@ -1465,6 +1465,7 @@
         <activity android:name=".slim.LockscreenInterface" />
         <activity android:name=".slim.LockscreenWidgets" />
         <activity android:name=".slim.LockscreenButtons" />
+        <activity android:name=".slim.LockscreenShortcuts" />
         <activity android:name=".slim.HardwareKeys" />
         <activity android:name=".slim.NavbarSettings" />
         <activity android:name=".slim.NavRingTargets" />

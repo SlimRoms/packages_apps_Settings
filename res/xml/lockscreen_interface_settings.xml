@@ -65,6 +65,22 @@
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />
 
+        <CheckBoxPreference
+            android:key="lockscreen_eight_targets"
+            android:title="@string/lockscreen_eight_targets_title"
+            android:summary="@string/lockscreen_eight_targets_summary" />
+
+         <Preference
+            android:fragment="com.android.settings.slim.LockscreenShortcuts"
+            android:key="lockscreen_shortcuts"
+            android:summary="@string/lockscreen_shortcuts_summary"
+            android:title="@string/lockscreen_shortcuts_title" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_shortcuts_longpress"
+            android:title="@string/lockscreen_shorcuts_longpress_title"
+            android:summary="@string/lockscreen_shorcuts_longpress_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -72,9 +88,9 @@
        android:title="@string/lockscreen_additional_options_grouptitle">
 
         <CheckBoxPreference
-                android:key="lockscreen_auto_rotate"
-                android:title="@string/lockscreen_auto_rotate_title"
-                android:summary="@string/lockscreen_auto_rotate_summary" />
+            android:key="lockscreen_auto_rotate"
+            android:title="@string/lockscreen_auto_rotate_title"
+            android:summary="@string/lockscreen_auto_rotate_summary" />
 
          <ListPreference
             android:key="lockscreen_battery_status"

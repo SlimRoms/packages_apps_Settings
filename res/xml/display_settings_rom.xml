@@ -49,14 +49,6 @@
         android:entries="@array/entries_touchkey_timeout"
         android:entryValues="@array/values_touchkey_timeout" />
 
-<!-- Remove for now until merged in frameworks_base...needs a lot overwork cause google changed PoerManagerService a lot
-    <PreferenceScreen
-        android:key="backlight_widget"
-        android:fragment="com.android.settings.slim.Backlight"
-        android:title="@string/backlight_title"
-        android:summary="@string/backlight_summary" />
--->
-
     <PreferenceCategory
         android:key="category_wakeup_options"
         android:title="@string/display_category_wakeup_options_title"/>

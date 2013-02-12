@@ -62,6 +62,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
+    private PreferenceCategory mLightOptions;
     private PreferenceScreen mDisplayRotationPreference;
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
@@ -116,10 +117,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     getPreferenceScreen().removePreference(mWakeUpOptions);
         }
 
+        mLightOptions = (PreferenceCategory) prefSet.findPreference(KEY_LIGHT_OPTIONS);
         mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
         if (mNotificationPulse != null) {
             if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
-                getPreferenceScreen().removePreference(mNotificationPulse);
+                mLightOptions.removePreference(mNotificationPulse);
             } else {
                 updateLightPulseDescription();
             }
@@ -129,7 +131,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mBatteryPulse != null) {
             if (getResources().getBoolean(
                     com.android.internal.R.bool.config_intrusiveBatteryLed) == false) {
-                getPreferenceScreen().removePreference(mBatteryPulse);
+                mLightOptions.removePreference(mBatteryPulse);
             } else {
                 updateBatteryPulseDescription();
             }
@@ -138,7 +140,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mTouchKeyLights = (ListPreference) prefSet.findPreference(KEY_TOUCHKEY_LIGHT);
         if (getResources().getBoolean(R.bool.config_show_touchKeyDur) == false) {
             if (mTouchKeyLights != null) {
-                getPreferenceScreen().removePreference(mTouchKeyLights);
+                mLightOptions.removePreference(mTouchKeyLights);
             }
         } else {
             int touchKeyLights = Settings.System.getInt(getActivity().getContentResolver(),

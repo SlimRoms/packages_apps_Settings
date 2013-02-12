@@ -20,49 +20,67 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:key="category_rotation_options"
-        android:title="@string/display_category_rotation_options_title"/>
+        android:key="category_brightness_options"
+        android:title="@string/display_category_brightness_options_title" >
 
-    <PreferenceScreen
-        android:key="display_rotation"
-        android:fragment="com.android.settings.slim.DisplayRotation"
-        android:title="@string/display_rotation_title" />
+        <com.android.settings.slim.DisplayBrightness
+            android:key="brightness"
+            android:title="@string/brightness"
+            android:summary="@string/custom_brightness_summary"
+            android:dialogTitle="@string/brightness" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="category_light_options"
-        android:title="@string/display_category_light_options_title"/>
+        android:title="@string/display_category_light_options_title" >
 
-    <PreferenceScreen
-        android:key="notification_pulse"
-        android:title="@string/notification_pulse_title"
-        android:fragment="com.android.settings.slim.notificationlight.NotificationLightSettings" />
+        <PreferenceScreen
+            android:key="battery_light"
+            android:title="@string/battery_light_title"
+            android:fragment="com.android.settings.slim.notificationlight.BatteryLightSettings" />
 
-    <PreferenceScreen
-        android:key="battery_light"
-        android:title="@string/battery_light_title"
-        android:fragment="com.android.settings.slim.notificationlight.BatteryLightSettings" />
+        <PreferenceScreen
+            android:key="notification_pulse"
+            android:title="@string/notification_pulse_title"
+            android:fragment="com.android.settings.slim.notificationlight.NotificationLightSettings" />
 
-    <ListPreference
-        android:key="touchkey_light_timeout"
-        android:dialogTitle="@string/touchkey_timeout_title"
-        android:title="@string/touchkey_timeout_title"
-        android:entries="@array/entries_touchkey_timeout"
-        android:entryValues="@array/values_touchkey_timeout" />
+        <ListPreference
+            android:key="touchkey_light_timeout"
+            android:dialogTitle="@string/touchkey_timeout_title"
+            android:title="@string/touchkey_timeout_title"
+            android:entries="@array/entries_touchkey_timeout"
+            android:entryValues="@array/values_touchkey_timeout" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_rotation_options"
+        android:title="@string/display_category_rotation_options_title" >
+
+        <PreferenceScreen
+            android:key="display_rotation"
+            android:fragment="com.android.settings.slim.DisplayRotation"
+            android:title="@string/display_rotation_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="category_wakeup_options"
-        android:title="@string/display_category_wakeup_options_title"/>
-    
-    <CheckBoxPreference
-        android:key="pref_volume_wake"
-        android:title="@string/pref_volume_wake_title"
-        android:summary="@string/pref_volume_wake_summary"
-        android:defaultValue="false" />
+        android:title="@string/display_category_wakeup_options_title" >
 
-    <CheckBoxPreference
-        android:key="wakeup_when_plugged_unplugged"
-        android:title="@string/wakeup_when_plugged_unplugged_title"
-        android:summary="@string/wakeup_when_plugged_unplugged_summary"
-        android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="pref_volume_wake"
+            android:title="@string/pref_volume_wake_title"
+            android:summary="@string/pref_volume_wake_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="wakeup_when_plugged_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

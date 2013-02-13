@@ -20,6 +20,22 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="category_animation_options"
+        android:title="@string/display_category_animation_options_title" >
+
+        <CheckBoxPreference
+            android:key="system_power_crt_screen_off"
+            android:summary="@string/system_power_crt_screen_off_summary"
+            android:title="@string/system_power_crt_screen_off_title" />
+
+        <CheckBoxPreference
+            android:key="system_power_crt_screen_on"
+            android:summary="@string/system_power_crt_screen_on_summary"
+            android:title="@string/system_power_crt_screen_on_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="category_brightness_options"
         android:title="@string/display_category_brightness_options_title" >
 

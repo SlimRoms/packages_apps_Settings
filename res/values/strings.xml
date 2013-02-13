@@ -4966,6 +4966,13 @@
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 
+    <!-- Display : Animation options -->
+    <string name="display_category_animation_options_title">Animation options</string>
+    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
+    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
+    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Disabled</string>

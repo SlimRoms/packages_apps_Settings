@@ -4892,6 +4892,9 @@
     <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
     <string name="dual_pane">Tablet dual panel mode</string>
     <string name="dual_pane_summary">Restart settings to take effect</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>

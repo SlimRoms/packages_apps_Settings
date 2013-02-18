@@ -5690,4 +5690,8 @@
     <string name="high_end_gfx_title">High end graphic effects</string>
     <string name="high_end_gfx_summary">Enable graphic effects disabled on lower end devices</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery or bootloader</string>
+
 </resources>

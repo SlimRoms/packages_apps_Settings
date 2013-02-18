@@ -4745,10 +4745,6 @@
     <string name="profile_add_nfc_text">This NFC tag refers to an unknown profile. Attaching this NFC tag to an existing profile will allow for selecting the profile in the future.</string>
     <string name="profile_select">Select profile</string>
 
-    <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Kill app back button</string>
-    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
-
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
@@ -5426,7 +5422,10 @@
     <string name="hardware_keys_title">Hardware keys</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_press_title">Home key</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_back_press_title">Back key</string>
+    <string name="hardware_keys_back_long_press_title">Back key (long press)</string>
     <string name="hardware_keys_menu_press_title">Menu key</string>
     <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
     <string name="hardware_keys_assist_press_title">Search key</string>
@@ -5438,13 +5437,18 @@
     <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
     <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
     <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_home">Home button</string>
+    <string name="hardware_keys_action_back">Back button</string>
     <string name="hardware_keys_action_menu">Open/close menu</string>
     <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_power">Power off</string>
+    <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
+    <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
-    <string name="hardware_keys_action_power">Power button</string>
     <string name="hardware_keys_action_custom_app">Custom app</string>
 
     <!--- Sms security limit -->

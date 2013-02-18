@@ -96,12 +96,13 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         // Only show the hardware keys config on a device that does not have a navbar
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (windowManager.hasNavigationBar()) {
-                mMisc.removePreference(findPreference(KEY_HARDWARE_KEYS));
-            }
-        } catch (RemoteException e) {
-            // Do nothing
+
+        final boolean hasNavBarByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        if (hasNavBarByDefault) {
+            // Let's assume they don't have hardware keys
+            mMisc.removePreference(findPreference(KEY_HARDWARE_KEYS));
         }
 
         mRamBar = findPreference(KEY_RECENTS_RAM_BAR);

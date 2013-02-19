@@ -19,12 +19,6 @@
     android:title="@string/sound_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference
-        android:key="volume_overlay"
-        android:title="@string/volume_overlay_title"
-        android:entries="@array/volume_overlay_entries"
-        android:entryValues="@array/volume_overlay_values" />
-
     <com.android.settings.slim.IncreasingRingPreference
         android:key="increasing_ring"
         android:title="@string/increasing_ring_title"
@@ -43,6 +37,18 @@
         android:title="@string/safe_headset_restore_title"
         android:summary="@string/safe_headset_restore_summary"
         android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:key="volume_adjust_sounds"
+        android:title="@string/volume_adjust_sounds_enable_title"
+        android:summary="@string/volume_adjust_sounds_enable_summary"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="volume_overlay"
+        android:title="@string/volume_overlay_title"
+        android:entries="@array/volume_overlay_entries"
+        android:entryValues="@array/volume_overlay_values" />
 
     <CheckBoxPreference
         android:key="volbtn_music_controls"

@@ -4994,6 +4994,10 @@
     <string name="display_category_light_options_title">Light options</string>
     <string name="display_category_brightness_options_title">Brightness options</string>
 
+    <!-- Swap volume buttons when the screen is rotated by 90 or 180 degrees -->
+    <string name="swap_volume_buttons_title">Swap volume buttons</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
+
     <!-- Automatic brightness customization -->
     <string name="custom_brightness_summary">View or change your custom brightness settings</string>
     <string name="light_sensor_current_value">Current light sensor value: <xliff:g id="light_level">%d</xliff:g> lux</string>

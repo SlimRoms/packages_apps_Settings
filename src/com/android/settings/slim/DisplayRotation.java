@@ -37,12 +37,14 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
     private static final String ROTATION_90_PREF = "display_rotation_90";
     private static final String ROTATION_180_PREF = "display_rotation_180";
     private static final String ROTATION_270_PREF = "display_rotation_270";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
     private CheckBoxPreference mAccelerometer;
     private CheckBoxPreference mRotation0Pref;
     private CheckBoxPreference mRotation90Pref;
     private CheckBoxPreference mRotation180Pref;
     private CheckBoxPreference mRotation270Pref;
+    private CheckBoxPreference mSwapVolumeButtons;
 
     public static final int ROTATION_0_MODE = 1;
     public static final int ROTATION_90_MODE = 2;
@@ -86,6 +88,13 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
         mRotation90Pref.setChecked((mode & ROTATION_90_MODE) != 0);
         mRotation180Pref.setChecked((mode & ROTATION_180_MODE) != 0);
         mRotation270Pref.setChecked((mode & ROTATION_270_MODE) != 0);
+
+        mSwapVolumeButtons = (CheckBoxPreference) prefSet.findPreference(KEY_SWAP_VOLUME_BUTTONS);
+
+        int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
+                Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE, 0);
+
+        mSwapVolumeButtons.setChecked(swapVolumeKeys != 0);
     }
 
     @Override
@@ -140,6 +149,10 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, mode);
             return true;
+        } else if (preference == mSwapVolumeButtons) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE,
+                    mSwapVolumeButtons.isChecked() ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

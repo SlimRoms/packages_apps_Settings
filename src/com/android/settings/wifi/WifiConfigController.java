@@ -250,7 +250,13 @@ public class WifiConfigController implements TextWatcher,
                 WifiConfiguration config = mAccessPoint.getConfig();
                 if (mEdit) {
                     showAutoConnectField = false;
-                    ((CheckBox) mView.findViewById(R.id.wifi_auto_connect_togglebox)).setChecked(config.autoConnect);
+                    boolean checkTogglebox;
+                    if (config != null) {
+                        checkTogglebox = config.autoConnect;
+                    } else {
+                        checkTogglebox = true;
+                    }
+                    ((CheckBox) mView.findViewById(R.id.wifi_auto_connect_togglebox)).setChecked(checkTogglebox);
                 } else {
                     mAutoConnect = true;
                     ((CheckBox) mView.findViewById(R.id.wifi_auto_connect_togglebox)).setChecked(true);

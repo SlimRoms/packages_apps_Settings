@@ -168,9 +168,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 
         mUnsecureUnlockMethod = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_UNSECURE_USED, 1);
+        final int lockBeforeUnlock = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCK_BEFORE_UNLOCK, 0);
 
         //setup custom lockscreen customize view
-        if (mUnsecureUnlockMethod != 1) {
+        if ((mUnsecureUnlockMethod != 1 && lockBeforeUnlock == 0)
+                 || mUnsecureUnlockMethod == -1) {
              PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
              getPreferenceScreen().removePreference(sliderCategory);
         }

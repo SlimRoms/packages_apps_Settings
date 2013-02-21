@@ -89,6 +89,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
     private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
+    private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 
@@ -120,6 +121,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
+    private CheckBoxPreference mLockBeforeUnlock;
     private ListPreference mSmsSecurityCheck;
 
     @Override
@@ -261,6 +263,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
 
+            // Lock before Unlock
+            mLockBeforeUnlock = (CheckBoxPreference) root
+                    .findPreference(LOCK_BEFORE_UNLOCK);
+            mLockBeforeUnlock.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.LOCK_BEFORE_UNLOCK, 0) == 1);
+
             // Menu Unlock
             mMenuUnlock = (CheckBoxPreference) root.findPreference(MENU_UNLOCK_PREF);
             mMenuUnlock.setChecked(Settings.System.getInt(resolver,
@@ -285,18 +293,26 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 mMenuUnlock.setEnabled(false);
                 mHomeUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
+                if (mLockPatternUtils.isLockPatternEnabled()) {
+                    mLockBeforeUnlock.setEnabled(true);
+                } else {
+                    mLockBeforeUnlock.setEnabled(false);
+                }
             // disable menu unlock and vibrate on unlock options if
             // using PIN/password as primary lock screen or as
             // backup to biometric
             } else if (mLockPatternUtils.isLockPasswordEnabled()) {
                 mQuickUnlockScreen.setEnabled(true);
+                mLockBeforeUnlock.setEnabled(true);
                 mMenuUnlock.setEnabled(false);
                 mHomeUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
             // Disable the quick unlock if its not using PIN/password
             // as a primary lock screen or as a backup to biometric
             } else {
-                mQuickUnlockScreen.setEnabled(false);            }
+                mQuickUnlockScreen.setEnabled(false);
+                mLockBeforeUnlock.setEnabled(false);
+            }
 
             // Disable the MenuUnlock setting if no menu button is available
             if (getActivity().getApplicationContext().getResources()
@@ -646,16 +662,19 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } else if (preference == mSlideLockDelayToggle) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.SCREEN_LOCK_SLIDE_DELAY_TOGGLE, isToggled(preference) ? 1 : 0);
-        } if (preference == mQuickUnlockScreen) {
+        } else if (preference == mQuickUnlockScreen) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, isToggled(preference) ? 1 : 0);
+        } else if (preference == mLockBeforeUnlock) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCK_BEFORE_UNLOCK, isToggled(preference) ? 1 : 0);
         } else if (preference == mMenuUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
         } else if (preference == mHomeUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.HOME_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
-        }  else if (preference == mVibratePref) {
+        } else if (preference == mVibratePref) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_VIBRATE_ENABLED, isToggled(preference) ? 1 : 0);
         } else if (preference == mShowPassword) {

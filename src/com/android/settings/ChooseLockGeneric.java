@@ -126,7 +126,7 @@ public class ChooseLockGeneric extends PreferenceActivity {
             if (KEY_UNLOCK_SET_OFF.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, true);
-                setUnsecureType(0);
+                setUnsecureType(-1);
             } else if (KEY_UNLOCK_SET_NONE.equals(key)) {
                 updateUnlockMethodAndFinish(
                         DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED, false);
@@ -154,7 +154,7 @@ public class ChooseLockGeneric extends PreferenceActivity {
         }
 
         //this function is for future merge of other Lockscreen styles
-        //0 = none, 1 = slider
+        //-1 = none 0 = other, 1 = slider
         private void setUnsecureType(int usedUnsecureUnlock) {
 
                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),

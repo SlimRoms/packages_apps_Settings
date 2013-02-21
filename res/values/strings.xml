@@ -4496,7 +4496,7 @@
 
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">ASS</string>
+    <string name="header_category_rom_settings">ADVANCED SLIM SETTINGS</string>
     <string name="ok">OK</string>
 
     <!-- Interface settings  and general strings-->

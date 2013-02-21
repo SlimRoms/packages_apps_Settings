@@ -1335,6 +1335,8 @@
     <string name="wifi_menu_connect">Connect to network</string>
     <!-- Menu option to delete a Wi-Fi network -->
     <string name="wifi_menu_forget">Forget network</string>
+    <!-- Menu option to delete all Wi-Fi networks -->
+    <string name="wifi_menu_forget_all">Forget all networks</string>
     <!-- Menu option to modify a Wi-Fi network configuration -->
     <string name="wifi_menu_modify">Modify network</string>
     <!-- Wi-Fi settings. text displayed when Wi-Fi is off and network list is empty [CHAR LIMIT=50]-->

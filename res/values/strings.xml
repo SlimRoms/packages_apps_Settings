@@ -4960,11 +4960,11 @@
     <string name="notification_shortcuts_icon_picker_directdial">Direct Dial</string>
     <string name="notification_shortcuts_icon_picker_directmessage">Direct Message</string>
     <string name="notification_shortcuts_icon_picker_email">Email</string>
-    <string name="notification_shortcuts_icon_picker_email2">Email 2</string>
+    <string name="notification_shortcuts_icon_picker_email2">Email Alternate</string>
     <string name="notification_shortcuts_icon_picker_facebook">Facebook</string>
     <string name="notification_shortcuts_icon_picker_favorite">Favorite</string>
     <string name="notification_shortcuts_icon_picker_file_browser">File Browser</string>
-    <string name="notification_shortcuts_icon_picker_file_browser2">File Browser2</string>
+    <string name="notification_shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
     <string name="notification_shortcuts_icon_picker_gallery">Gallery</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>

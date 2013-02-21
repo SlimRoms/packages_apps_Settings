@@ -818,9 +818,9 @@
         <item>@string/notification_shortcuts_icon_picker_joystick</item>
         <item>@string/notification_shortcuts_icon_picker_key</item>
         <item>@string/notification_shortcuts_icon_picker_laptop</item>
-        <item>@string/notification_shortcuts_icon_picker_luggage</item>
         <item>@string/notification_shortcuts_icon_picker_maps</item>
         <item>@string/notification_shortcuts_icon_picker_market</item>
+        <item>@string/notification_shortcuts_icon_picker_sms</item>
         <item>@string/notification_shortcuts_icon_picker_movie</item>
         <item>@string/notification_shortcuts_icon_picker_music</item>
         <item>@string/notification_shortcuts_icon_picker_nav</item>
@@ -832,8 +832,8 @@
         <item>@string/notification_shortcuts_icon_picker_rss</item>
         <item>@string/notification_shortcuts_icon_picker_sdcard</item>
         <item>@string/notification_shortcuts_icon_picker_search</item>
-        <item>@string/notification_shortcuts_icon_picker_sms</item>
         <item>@string/notification_shortcuts_icon_picker_terminal</item>
+        <item>@string/notification_shortcuts_icon_picker_luggage</item>
         <item>@string/notification_shortcuts_icon_picker_twitter</item>
         <item>@string/notification_shortcuts_icon_picker_unlock</item>
     </string-array>
@@ -863,9 +863,9 @@
         <item>@*android:drawable/ic_shortcut_joystick</item>
         <item>@*android:drawable/ic_shortcut_key</item>
         <item>@*android:drawable/ic_shortcut_laptop</item>
-        <item>@*android:drawable/ic_shortcut_luggage</item>
         <item>@*android:drawable/ic_shortcut_maps</item>
         <item>@*android:drawable/ic_shortcut_market</item>
+        <item>@*android:drawable/ic_shortcut_sms</item>
         <item>@*android:drawable/ic_shortcut_movie</item>
         <item>@*android:drawable/ic_shortcut_music</item>
         <item>@*android:drawable/ic_shortcut_nav</item>
@@ -877,8 +877,8 @@
         <item>@*android:drawable/ic_shortcut_rss</item>
         <item>@*android:drawable/ic_shortcut_sdcard</item>
         <item>@*android:drawable/ic_shortcut_search</item>
-        <item>@*android:drawable/ic_shortcut_sms</item>
         <item>@*android:drawable/ic_shortcut_terminal</item>
+        <item>@*android:drawable/ic_shortcut_luggage</item>
         <item>@*android:drawable/ic_shortcut_twitter</item>
         <item>@*android:drawable/ic_shortcut_unlock</item>
     </string-array>

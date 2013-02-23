@@ -73,7 +73,11 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         mStatusBarColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_COLOR);
         mStatusBarColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_COLOR, 0xff000000);
+                    Settings.System.STATUS_BAR_COLOR, -2);
+        if (intColor == -2) {
+            intColor = getResources().getColor(
+                    com.android.internal.R.color.black);
+        }
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mStatusBarColor.setNewPreviewColor(intColor);
 
@@ -114,7 +118,7 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_COLOR, 0xff000000);
+                        Settings.System.STATUS_BAR_COLOR, -2);
 
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.STATUS_BAR_ALPHA, 0.0f);

@@ -88,9 +88,6 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.holo_blue_dark);
-        } else if (intColor == -1) {
-            intColor = getResources().getColor(
-                    com.android.internal.R.color.white);
         }
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mCircleColor.setSummary(hexColor);
@@ -102,9 +99,6 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.holo_blue_dark);
-        } else if (intColor == -1) {
-            intColor = getResources().getColor(
-                    com.android.internal.R.color.white);
         }
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mBatteryTextColor.setSummary(hexColor);

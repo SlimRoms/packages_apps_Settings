@@ -73,7 +73,11 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         mNavBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavBarColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
+                    Settings.System.NAVIGATION_BAR_TINT, -2);
+        if (intColor == -2) {
+            intColor = getResources().getColor(
+                    com.android.internal.R.color.black);
+        }
         mNavBarColor.setNewPreviewColor(intColor);
 
         float statBarTransparency = 0.0f;
@@ -113,7 +117,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_TINT, 0xff000000);
+                        Settings.System.NAVIGATION_BAR_TINT, -2);
 
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);

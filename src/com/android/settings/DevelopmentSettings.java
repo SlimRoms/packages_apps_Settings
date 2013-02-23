@@ -205,7 +205,7 @@ public class DevelopmentSettings extends PreferenceFragment
     private Object mSelectedRootValue;
     private PreferenceScreen mDevelopmentTools;
 
-    private CheckBoxPreference mAdvancedReboot;
+    private ListPreference mAdvancedReboot;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
@@ -242,7 +242,10 @@ public class DevelopmentSettings extends PreferenceFragment
         mAllowMockLocation = findAndInitCheckboxPref(ALLOW_MOCK_LOCATION);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
-        mAdvancedReboot = findAndInitCheckboxPref(ADVANCED_REBOOT_KEY);
+
+        mAdvancedReboot = (ListPreference) findPreference(ADVANCED_REBOOT_KEY);
+        mAllPrefs.add(mAdvancedReboot);
+        mAdvancedReboot.setOnPreferenceChangeListener(this);
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -502,15 +505,18 @@ public class DevelopmentSettings extends PreferenceFragment
                 Settings.Secure.ADVANCED_REBOOT, 0);
     }
 
-    private void writeAdvancedRebootOptions() {
+    private void writeAdvancedRebootOptions(Object newValue) {
         Settings.Secure.putInt(getActivity().getContentResolver(),
                 Settings.Secure.ADVANCED_REBOOT,
-                mAdvancedReboot.isChecked() ? 1 : 0);
+                Integer.valueOf((String) newValue));
+        updateAdvancedRebootOptions();
     }
 
     private void updateAdvancedRebootOptions() {
-        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.ADVANCED_REBOOT, 0) != 0);
+        int value = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.ADVANCED_REBOOT, 0);
+        mAdvancedReboot.setValue(String.valueOf(value));
+        mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
     }
 
     private void updateAdbOverNetwork() {
@@ -1266,8 +1272,6 @@ public class DevelopmentSettings extends PreferenceFragment
             writeDebugLayoutOptions();
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
-        } else if (preference == mAdvancedReboot) {
-            writeAdvancedRebootOptions();
         }
 
         return false;
@@ -1319,6 +1323,9 @@ public class DevelopmentSettings extends PreferenceFragment
             } else {
                 writeRootAccessOptions(newValue);
             }
+            return true;
+        } else if (preference == mAdvancedReboot) {
+            writeAdvancedRebootOptions(newValue);
             return true;
         }
         return false;

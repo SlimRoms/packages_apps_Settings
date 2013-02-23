@@ -157,8 +157,8 @@ public class ChooseLockGeneric extends PreferenceActivity {
         //-1 = none 0 = other, 1 = slider
         private void setUnsecureType(int usedUnsecureUnlock) {
 
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.LOCKSCREEN_UNSECURE_USED, usedUnsecureUnlock);
+                Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.Secure.LOCKSCREEN_UNSECURE_USED, usedUnsecureUnlock);
         }
 
         @Override

@@ -79,7 +79,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private Preference mShortcuts;
     private CheckBoxPreference mLockscreenShortcutsLongpress;
 
-    private int mUnsecureUnlockMethod;
     private boolean mIsScreenLarge;
 
     private Activity mActivity;
@@ -166,14 +165,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
             mAdditionalOptions.removePreference(mLockscreenButtons);
         }
 
-        mUnsecureUnlockMethod = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_UNSECURE_USED, 1);
-        final int lockBeforeUnlock = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.LOCK_BEFORE_UNLOCK, 0);
+        final int unsecureUnlockMethod = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.LOCKSCREEN_UNSECURE_USED, 1);
+        final int lockBeforeUnlock = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.LOCK_BEFORE_UNLOCK, 0);
 
         //setup custom lockscreen customize view
-        if ((mUnsecureUnlockMethod != 1 && lockBeforeUnlock == 0)
-                 || mUnsecureUnlockMethod == -1) {
+        if ((unsecureUnlockMethod != 1 && lockBeforeUnlock == 0)
+                 || unsecureUnlockMethod == -1) {
              PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
              getPreferenceScreen().removePreference(sliderCategory);
         }

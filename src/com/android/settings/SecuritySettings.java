@@ -266,8 +266,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
             // Lock before Unlock
             mLockBeforeUnlock = (CheckBoxPreference) root
                     .findPreference(LOCK_BEFORE_UNLOCK);
-            mLockBeforeUnlock.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.LOCK_BEFORE_UNLOCK, 0) == 1);
+            mLockBeforeUnlock.setChecked(Settings.Secure.getInt(resolver,
+                    Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 1);
 
             // Menu Unlock
             mMenuUnlock = (CheckBoxPreference) root.findPreference(MENU_UNLOCK_PREF);
@@ -666,8 +666,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, isToggled(preference) ? 1 : 0);
         } else if (preference == mLockBeforeUnlock) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCK_BEFORE_UNLOCK, isToggled(preference) ? 1 : 0);
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK, isToggled(preference) ? 1 : 0);
         } else if (preference == mMenuUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);

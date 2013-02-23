@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"Ismeretlen hiba történt"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"Közömbös"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Felderíthető"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"Az összes közeli Bluetooth eszköz számára látható (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"Az összes közeli Bluetooth eszköz számára látható"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"Nem látható a többi Bluetooth eszköz számára"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"Csak párosított eszközök számára látható"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Az eszköz legyen felderíthető"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"Láthatóság időkerete"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"Állítsa be, milyen hosszan legyen felfedezhető az eszköz"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Hanghívás zárolása"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"A bluetooth tárcsázó használatának megakadályozása, ha a képernyő le van zárva"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Bluetooth eszközök"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"Túl sok helytelen próbálkozás!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Próbálja újra <xliff:g id="NUMBER">%d</xliff:g> másodperc múlva."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"Az alkalmazás már nincs telepítve a telefonján."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"Mégse"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Tovább"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"A táblagép védelme"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"A telefon védelme"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"Védje meg táblagépét a jogosulatlan használattól egy személyes képernyőfeloldási minta létrehozásával. Ujjával tetszőleges sorrendben kösse össze a pontokat a következő képernyőn. Legalább négy pontot össze kell kötnie. "\n\n"Készen áll? Érintse meg a Tovább gombot."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"Védje meg telefonját a jogosulatlan használattól egy személyes képernyőfeloldási minta létrehozásával. Ujjával tetszőleges sorrendben kössön össze legalább négy pontot a következő képernyőn. "\n\n"Készen áll? Érintse meg a Tovább gombot."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"Alkalmazások kezelése"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"Telepített alkalmazások kezelése és eltávolítása"</string>
     <string name="applications_settings" msgid="1721442176406964682">"Alkalmazások"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"Fizikai billentyűzet beállításai"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"A \".\" beillesztéséhez kétszer kell lenyomni a szóköz billentyűt"</string>
     <string name="show_password" msgid="3001113966880559611">"Jelszó láthatóvá tétele"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"Ez a beviteli módszer alkalmas lehet a beírt szövegek -– köztük az olyan személyes adatok, mint a jelszavak és a hitelkártyaszámok –- összegyűjtésére. A(z) <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g> alkalmazás kapcsolta be. Használja ezt a módszert?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"Lehetséges, hogy ez a helyesírás-ellenőrző összegyűjti a beírt szövegeket, beleértve a személyes adatokat, mint amilyenek a jelszavak és bankkártyaszámok. A(z) <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g> alkalmazástól származik. Használja ezt a helyesírás-ellenőrzőt?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"Beállítások"</string>

@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"Unknown error"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"Cold"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Discoverable"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"Visible to all Bluetooth devices nearby (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"Visible to all Bluetooth devices nearby"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"Not visible to other Bluetooth devices"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"Only visible to paired devices"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Make device discoverable"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"Visibility timeout"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"Set how long device will be discoverable"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Lock voice dialling"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"Prevent use of the Bluetooth dialler when the screen is locked"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Bluetooth devices"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"Too many incorrect attempts!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Try again in <xliff:g id="NUMBER">%d</xliff:g> seconds."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"Application is not installed on your phone."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"Cancel"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Next"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"Securing your tablet"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"Securing your phone"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"Protect your tablet from unauthorised use by creating a personal screen unlock pattern. Slide your finger to connect the dots in any order on the next screen. You need to connect at least four dots. "\n\n"Ready to start? Touch Next."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"Protect your phone from unauthorised use by creating a personal screen unlock pattern. Slide your finger to connect at least four dots in any order on the next screen. "\n\n"Ready to start? Touch Next."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"Manage apps"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"Manage and remove installed apps"</string>
     <string name="applications_settings" msgid="1721442176406964682">"Apps"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"Physical keyboard settings"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"Press Space key twice to insert \".\""</string>
     <string name="show_password" msgid="3001113966880559611">"Make passwords visible"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"This input method may be able to collect all the text that you type, including personal data like passwords and credit card numbers. It comes from the app <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>. Use this input method?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"This spell checker may be able to collect all the text that you type, including personal data like passwords and credit card numbers. It comes from the app <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>. Use this spell checker?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"Settings"</string>

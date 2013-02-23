@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"अज्ञात त्रुटि"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"ठंडा"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"खोज योग्‍य"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"आसपास के सब Bluetooth उप. के लि‍ए दृश्‍यमान (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"सभी आस-पास के Bluetooth उपकरणों के लि‍ए दृश्‍यमान"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"अन्‍य Bluetooth उपकरणों के लि‍ए दृश्‍यमान नहीं"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"केवल युग्‍मि‍त उपकरणों के लि‍ए दृश्‍यमान"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"उपकरण को खोज योग्‍य बनाएं"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"दृश्यता समयबाह्य"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"सेट करें कि कितनी देर तक उपकरण खोज योग्‍य रहेगा"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"ध्‍वनि डायलिंग लॉक करें"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"जब स्‍क्रीन लॉक हो, तो bluetooth डायलर के उपयोग को रोकें"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Bluetooth उपकरण"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"बहुत से गलत प्रयास!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"<xliff:g id="NUMBER">%d</xliff:g> सेकंड में पुन: प्रयास करें."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"आपके फ़ोन पर एप्लिकेशन इंस्टॉल नहीं है."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"रद्द करें"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"अगला"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"अपने टेबलेट को सुरक्षित करना"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"आपके फ़ोन को सुरक्षित करना"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"कोई निजी स्‍क्रीन अनलॉक प्रतिमान बनाकर अपने टेबलेट को अनधिकृत उपयोग से बचाएं. बिंदुओं को किसी भी क्रम में जोड़ने के लिए अपनी अंगुली को अगली स्‍क्रीन पर स्लाइड करें. आपको कम से कम चार बिंदुओं को जोड़ना होगा. "\n\n"प्रारंभ करने के लिए तैयार हैं? अगला स्पर्श करें."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"व्यक्तिगत स्‍क्रीन अनलॉक प्रतिमान बनाकर अपने फ़ोन को अनधिकृत उपयोग से बचाएं. कम से कम चार बिंदुओं को किसी भी क्रम में जोड़ने के लिए अपनी अंगुली को अगली स्‍क्रीन पर स्लाइड करें. "\n\n"शुरू करने के लिए तैयार हैं? अगला स्पर्श करें."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"एप्लिकेशन प्रबंधित करें"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"इंस्‍टॉल किए गए एप्‍लिकेशन प्रबंधित करें और निकालें"</string>
     <string name="applications_settings" msgid="1721442176406964682">"एप्लिकेशन"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"भौतिक कीबोर्ड सेटिंग"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"\".\" सम्‍मिलित करने के लिए Space कुंजी दो बार दबाएं"</string>
     <string name="show_password" msgid="3001113966880559611">"पासवर्ड दृश्यमान बनाएं"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"यह इनपुट विधि, पासवर्ड और क्रेडिट कार्ड नंबर जैसे निजी डेटा सहित आपके द्वारा लिखे जाने वाले सभी पाठ को एकत्र कर सकती है. यह <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g> एप्‍लिकेशन से आती है. इस इनपुट विधि का उपयोग करें?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"यह वर्तनी परीक्षण व्‍यक्तिगत डेटा, जैसे पासवर्ड और क्रेडिट कार्ड नंबर सहित आपके द्वारा लिखे जाने वाले सभी पाठ एकत्रित कर सकता है. यह एप्‍लिकेशन <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g> से आता है. इस वर्तनी परीक्षण का उपयोग करें?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"सेटिंग"</string>

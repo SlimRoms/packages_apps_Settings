@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"Невядомая памылка"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"Халодны"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Бачнасць"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"Зрабіць бачнай для ўсіх блізкіх прылад Bluetooth (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"Бачна для ўсіх блізкіх прылад Bluetooth"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"Не бачны для іншых прылад Bluetooth"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"Бачная толькі для падключаных прылад"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Зрабіць прыладу бачнай"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"Тайм-аўт бачнасці"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"Настаўце час, на працягу якога прылада будзе даступная"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Блакаваць галасавы набор"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"Забараніць выкарыстанне набіральніка Bluetooth, калі экран заблакаваны"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Прылады Bluetooth"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"Занадта шмат няўдалых спробаў"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Паўтарыце спробу праз <xliff:g id="NUMBER">%d</xliff:g> секунд."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"Прыкладанне не ўсталявана на вашым тэлефоне."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"Адмяніць"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Далей"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"Абарона планшэта"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"Абарона тэлефона"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"Абараніце свой планшэт ад несанкцыянаванага выкарыстання, стварыўшы персанальную камбінацыю разблакоўкі экрана. Пальцам злучыце кропкі на наступным экране ў любым парадку. Вы павінны злучыць як мінімум чатыры кропкі."\n\n"Гатовы? Нацiснiце \"Далей\"."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"Абараніце свой тэлефон ад несанкцыянаванага выкарыстання, стварыўшы персанальную камбінацыю разблакоўкі экрана. На наступным экране злучыце ў любым парадку не менш за чатыры кропкi. "\n" "\n" Гатовы пачаць? Націсніце \"Далей\"."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"Кіраванне прыкладаннямі"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"Кіраванне ўсталяванымi прыкладаннямi і iх выдаленне"</string>
     <string name="applications_settings" msgid="1721442176406964682">"Прыкладаннi"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"Налады фізічнай клавіятуры"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"Двойчы націсніце прабел, каб уставіць \".\""</string>
     <string name="show_password" msgid="3001113966880559611">"Зрабіць паролі бачнымі"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"Гэты метад уводу можа збіраць увесь тэкст, які ўводзіцца, у тым лiку такiя персанальныя дадзеныя, як паролі і нумары крэдытных карт. Ён выкарыстоўваецца прыкладаннем <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>. Выкарыстоўваць гэты метад уводу?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"Гэты iнструмент праверкi арфаграфіі можа збiраць увесь ўводзімы тэкст, у тым ліку асабістыя дадзеныя, такія як паролі і нумары крэдытных карт. Яно паходзіць ад прыкладання <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>. Выкарыстоўваць гэты iнструмент?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"Налады"</string>

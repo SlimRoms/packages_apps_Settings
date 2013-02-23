@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"未知的錯誤"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"冷"</string>
     <string name="bluetooth" msgid="5549625000628014477">"藍牙"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"可偵測性"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"向附近所有藍牙裝置顯示 (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"向附近所有藍牙裝置顯示"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"不向其他藍牙裝置顯示"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"只向配對的裝置顯示"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"設定裝置為可偵測"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"偵測時限設定"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"設定裝置可供偵測的開放時間"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"鎖定語音撥號"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"螢幕鎖定時不要使用藍牙撥號"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"藍牙裝置"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"錯誤嘗試太多！"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"<xliff:g id="NUMBER">%d</xliff:g> 秒後再試一次。"</string>
     <string name="activity_not_found" msgid="5551664692991605325">"您未在手機上安裝應用程式。"</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"取消"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"下一步"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"保護平板電腦的安全"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"手機安全設定"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"建立個人螢幕解鎖圖形，避免有心人士未經授權即擅自使用您的平板電腦。在下個畫面中，滑動手指任意連結螢幕中至少 4 個點。"\n\n"準備開始了嗎？請輕觸 [下一步]。"</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"建立個人螢幕解鎖圖形，避免他人未經授權擅自使用您的手機。請在下一個畫面中，滑動手指任意連接至少四個點。"\n\n"準備開始了嗎？請輕觸 [下一步]。"</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"管理應用程式"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"管理和移除已安裝的應用程式"</string>
     <string name="applications_settings" msgid="1721442176406964682">"應用程式"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"實體鍵盤設定"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"按空白鍵兩次可插入「.」"</string>
     <string name="show_password" msgid="3001113966880559611">"顯示密碼"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"此輸入法可能會收集您輸入的所有文字，包括密碼和信用卡號等個人資料。此輸入法來自「<xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>」應用程式。是否要使用此輸入法？"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"這個拼字檢查程式可能會收集您輸入的所有文字，包括密碼和信用卡號等個人資料。該程式是由應用程式「<xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>」所提供，要使用這個拼字檢查程式嗎？"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"設定"</string>

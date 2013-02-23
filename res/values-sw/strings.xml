@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"Hitilafu isiyojulikana"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"Baridi"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Inagundulika"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"Inaonekana kwa zote zilizokaribu na vifaa vya Bluetooth (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"Inaonekana kwa zote zilizokaribu na vifaa vya Bluetooth"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"haionekani kwa vifaa vingine vya Bluetooth"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"Inaonekana tu kwa vifaa vilivyolinganishwa"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Fanya kifaa kiweze kutambuliwa"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"Muda wa kuonekana"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"Weka ni kwa muda kiasi gani ambao kifaa kitagundulika"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Funga sauti ya upigaji simu"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"Zuia matumizi yakibonyezi cha bluetooth wakati skrini imefungwa"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Vifaa vya Bluetooth"</string>
@@ -1014,12 +1010,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"Mjarabio mengi yasiyo sahihi"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Jaribu tena baada ya sekunde <xliff:g id="NUMBER">%d</xliff:g>."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"Programu haijasakinishwa kwenye simu yako."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"Ghairi"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Ifuatayo"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"Kulinda kompyuta yako ndogo"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"Kulinda simu yako"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"Linda kompyuta yako kibao dhidi ya matumizi ambayo hayajaidhinishwa kwa kuunda skrini ya kibinafsi ya mchoro wa kufungua. Sogeza kidole chako ili kuunganisha madoa katika mpangilio wowote kwenye skrini ifuatayo. Lazima uunganishe angalau madoa manne. "\n\n"Uko tayari kuanza? Gusa Ifuatayo."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"Linda simu yako na matumizi yasiyoidhinishwa kwa kuunda umbizo la kufungua skrini ya kibinafsi. Tumia kidole chako kuunganisha angalau doti nne kwa mpangilio wowote kwenye skrini ifuatayo "\n\n"Tayari kuanza? Gusa “Ifuatayo”."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"Dhibiti programu"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"Dhibiti na ondoa programu zilizosakinishwa"</string>
     <string name="applications_settings" msgid="1721442176406964682">"Programu"</string>
@@ -1187,7 +1177,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"Mipangilio ya kibodi halisi"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"Bonyeza kibonye cha nafasi mara mbili ili uweke \".\""</string>
     <string name="show_password" msgid="3001113966880559611">"Fanya manenosiri kuonekana"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"Mbinu hii ya ingizo huenda ikaweza kukusanya maandishi yote unayoandika, pamoja na data ya kibinafsi kama vile nenosiri na nambari za kadi ya mkopo. Inatoka kwa programu <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>. Tumia mbinu hii ya ingizo?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"Kisasishaji hiki kinaweza kukusanya maandishi yote wakati unaangika, pamoja na data za kibinafsi kama nenosiri na namari za kadi ya mkopo. Inatoka kwa programu <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>. Tumia kisasishaji hiki?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"Mipangilio"</string>

@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"ያልታወቀ ስህተት"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"ቀዝቃዛ"</string>
     <string name="bluetooth" msgid="5549625000628014477">"ብሉቱዝ"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"መገኘት የሚችል"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"ለሁሉም የብሉቱዝ መሣሪያዎች(<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>) የሚታይ"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"ለሁሉም የብሉቱዝ መሣሪያዎች የሚታይ"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"ለሌሎች የብሉቱዝ መሣሪያዎች አይታይም"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"ለተጣመሩ መሣሪያዎች ብቻ የሚታይ"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"መሳሪያው መገኘት የሚችል አድርግ"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"የታይነትጊዜ አብቅቷል"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"መሣሪያ በምን ያህል ጊዜ እንደሚገኝ አዘጋጅ"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"በድምፅ መደወያ ቆልፍ"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"ማያው ሲቆለፍ የብሉቱዝ ደዋዩ እንዳይጠቀምበት ተከላከል።"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"የብሉቱዝመሣሪያዎች"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"በጣም ብዙ የተሳሳቱ ሙከራዎች!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"በ<xliff:g id="NUMBER">%d</xliff:g>ሰከንዶች ውስጥ እንደገና ሞክር።"</string>
     <string name="activity_not_found" msgid="5551664692991605325">"መተግበሪያ በስልክዎ ላይ አልተጫነም።"</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"ይቅር"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"ቀጥል"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"ጡባዊዎን በማስጠበቅ ላይ"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"ስልክዎን በማስጠበቅ ላይ"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"የግል ማያ መክፈቻ ስርዓተ ጥለት በመፍጠር ጡባዊህን ካልተፈቀደ ጥቅም ትከላከላለህ። በሚቀጥለው ማያ ላይ በማንኛውም ስርዓተ ነጥቦቹን ለማገናኘት ጣትህን ተጠቀም። ቢያንስ አራት ነጥቦች ማገናኘት አለብህ።"\n\n" ለመጀመር ዝግጁ ነህ? \"ቀጥል\" ንካ።"</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"የግል የስርዓተ ጥለት ማያ መክፈቻ በመፍጠር ስልክህን ካልተፈቀደ ጥቅም ጠብቅ። በሚቀጥለው ማያ ላይ በማንኛውም መልኩ ቢያንስ አራት ነጥቦች ጣትህን በመጠቀም አገናኝ። "\n\n" ለመጀመር ዝግጁ ነው? \"ቀጥሎ\" የሚለውን ንካ።"</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"መተግበሪያዎች አስተዳድር"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"የተጫኑ መተግበራያዎች አስተዳድር እና አስወግድ"</string>
     <string name="applications_settings" msgid="1721442176406964682">"መተግበሪያዎች"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"አካላዊ ቁልፍሰሌዳ ቅንብሮች"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"\".\" ለማስገባት የቦታ ቁልፍን ሁለቴ ተጫን"</string>
     <string name="show_password" msgid="3001113966880559611">"ይለፍቃሎችን የሚታዩ አድርግ"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"ይህ ግቤት ስልት የሚትተይበውን ፅሁፍ ሁሉ፣  እንደይለፍ ቃል እና የብድር ካርድ ጨምሮ የግል ውሂብ ምናልባት መሰብሰብ ይችላል። ከትግበራው ይመጣል። <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g> ይህን ግቤት ስልትይጠቀም?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"ይህ ሥርዓተ ሆሄ ፈታሽ ሁሉንም የምትተይበውን ጽሑፍ እንደ ይለፍቃል እና የብድር ካርድ ቁጥሮችን ያሉ የግል መረጃዎችን ጨምሮ በሙሉ ሊሰበስብ ይችል ይሆናል:: ከ <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g> መተግበሪያ ይመጣል:: ይህን ሥርዓተ ሆሄ ፈታሽ ተጠቀም?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"ቅንብሮች"</string>

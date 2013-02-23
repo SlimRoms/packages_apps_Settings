@@ -127,7 +127,6 @@
     <!-- no translation found for battery_info_health_cold (3835692786176707318) -->
     <skip />
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Visibel"</string>
     <!-- no translation found for bluetooth_is_discoverable (8373421452106840526) -->
     <skip />
     <!-- no translation found for bluetooth_is_discoverable_always (2849387702249327748) -->
@@ -135,11 +134,6 @@
     <!-- no translation found for bluetooth_not_visible_to_other_devices (9120274591523391910) -->
     <skip />
     <!-- no translation found for bluetooth_only_visible_to_paired_devices (2049983392373296028) -->
-    <skip />
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Far daventar visibel l\'apparat"</string>
-    <!-- no translation found for bluetooth_visibility_timeout (8002247464357005429) -->
-    <skip />
-    <!-- no translation found for bluetooth_visibility_timeout_summary (6483353842671501585) -->
     <skip />
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Bloccar la cumposiziun vocala"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"Impedir l\'utilisaziun dal dialer bluetooth sch\'il visur è bloccà"</string>
@@ -1546,15 +1540,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Empruvar anc ina giada en <xliff:g id="NUMBER">%d</xliff:g> secundas."</string>
     <!-- no translation found for activity_not_found (5551664692991605325) -->
     <skip />
-    <string name="skip_button_label" msgid="8680422740354436943">"Interrumper"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Vinavant"</string>
-    <!-- no translation found for lock_title (2909697418179419990) -->
-    <skip />
-    <string name="lock_title" product="default" msgid="4059246467204273930">"Segirar Voss telefonin"</string>
-    <!-- no translation found for lock_intro_message (8616353869251700776) -->
-    <skip />
-    <!-- no translation found for lock_intro_message (8393155371327584659) -->
-    <skip />
     <!-- no translation found for manageapplications_settings_title (7041951105633616745) -->
     <skip />
     <!-- no translation found for manageapplications_settings_summary (1794401500935451259) -->
@@ -1820,7 +1805,6 @@
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"Smatgar duas giadas la tasta da vid per inserir «.»."</string>
     <!-- no translation found for show_password (3001113966880559611) -->
     <skip />
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <!-- no translation found for ime_security_warning (4135828934735934248) -->
     <skip />
     <!-- no translation found for spellchecker_security_warning (9060897418527708922) -->

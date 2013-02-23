@@ -105,14 +105,10 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"خطای ناشناس"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"سرد"</string>
     <string name="bluetooth" msgid="5549625000628014477">"بلوتوث"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"قابل شناسایی"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"قابل مشاهده برای تمام دستگاه‌های بلوتوث مجاور (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"قابل مشاهده برای تمام دستگاه‌های بلوتوث مجاور"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"برای دیگر دستگاه‌های بلوتوث قابل مشاهده نیست"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"فقط برای دستگاه‌های مرتبط شده قابل مشاهده است"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"دستگاه قابل شناسایی شود"</string>
-    <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"پایان زمان قابل مشاهده بودن"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"مدت زمان قابل شناسایی بودن دستگاه را تنظیم کنید"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"قفل کردن شماره گیری صوتی"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"ممانعت از استفاده شماره‌گیر بلوتوث هنگام قفل شدن صفحه"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"دستگاه‌های بلوتوث"</string>
@@ -1022,12 +1018,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"تلاش‌های اشتباه زیادی انجام شده است!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"در <xliff:g id="NUMBER">%d</xliff:g> ثانیه دوباره امتحان کنید."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"برنامه کاربردی در گوشی شما نصب نشد."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"لغو"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"بعدی"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"محافظت از رایانهٔ لوحی خود"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"حفظ امنیت تلفن شما"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"با ایجاد یک الگوی شخصی باز کردن قفل صفحه، از رایانهٔ لوحی خود در برابر استفادهٔ غیرمجاز محافظت کنید. با کشیدن انگشت خود، در صفحهٔ بعدی نقاط را با ترتیب دلخواه متصل کنید. حداقل باید چهار نقطه را به هم متصل کنید. "\n\n"آماده هستید؟ \"بعدی\" را لمس کنید."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"با ایجاد یک الگوی باز کردن قفل صفحه شخصی، از گوشی خود در برابر استفادهٔ غیرمجاز محافظت کنید. با استفاده از انگشت خود، در صفحهٔ بعدی حداقل 4 نقطه را با ترتیب دلخواه متصل کنید. "\n\n"آماده شروع هستید؟ \"بعدی\" را لمس کنید."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"مدیریت برنامه‌ها"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"مدیریت و حذف برنامه‌های نصب شده"</string>
     <string name="applications_settings" msgid="1721442176406964682">"برنامه‌ها"</string>
@@ -1195,7 +1185,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"تنظیمات صفحه‌کلید فیزیکی"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"برای وارد کردن \".\"، کلید فاصله را دو بار فشار دهید."</string>
     <string name="show_password" msgid="3001113966880559611">"گذرواژه‌ها را قابل مشاهده کنید"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"این روش ورودی ممکن است بتواند تمام متنی را که تایپ می‌کنید جمع‌آوری کند، از جمله اطلاعات شخصی مانند گذرواژه‌ها و شماره‌های کارت اعتباری. این روش توسط برنامه <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g> ارائه می‌شود. از این روش ورودی استفاده می‌کنید؟"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"این غلط‌‌گیر ممکن است بتواند همه متنی را که شما وارد می‌کنید از جمله، داده‌های شخصی مانند گذرواژه‌ها و شماره‌های کارت اعتباری را جمع‌آوری کند. این ویژگی توسط برنامه <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g> ارائه می‌شود. از این غلط‌گیر استفاده شود؟"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"تنظیمات"</string>

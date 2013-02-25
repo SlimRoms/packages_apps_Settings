@@ -5025,8 +5025,11 @@
     <string name="display_category_animation_options_title">Animation options</string>
     <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
-    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
-    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
+    <string name="system_power_crt_mode_title">CRT animation mode</string>
+    <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
+    <string name="system_power_crt_mode_horizontal">Portrait horizontal</string>
+    <string name="system_power_crt_mode_vertical">Portrait vertical</string>
+    <string name="system_power_crt_mode_both">Orientation dependent</string>
 
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>

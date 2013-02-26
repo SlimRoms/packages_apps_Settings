@@ -26,7 +26,7 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
              android:key="nav_button_color"
              android:title="@string/navigation_bar_icon_tint_title"
-             android:defaultValue="#ffffff" />
+             android:defaultValue="0xffffffff" />
 
         <com.android.settings.widget.SeekBarPreference
              android:key="button_transparency"

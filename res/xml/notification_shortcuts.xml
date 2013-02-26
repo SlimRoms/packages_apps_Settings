@@ -34,7 +34,7 @@
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="pref_notification_shortcuts_color"
-        android:defaultValue="#DFE0E0"
+        android:defaultValue="0xffdfe0e0"
         android:title="@string/notification_shortcuts_color_title"
         android:dependency="pref_notification_shortcuts_toggle"
         android:summary="@string/notification_shortcuts_color_summary" />

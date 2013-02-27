@@ -36,11 +36,11 @@
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">Unknown</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
-    <string name="show_dev_countdown">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from enabling advanced user settings.</string>
-    <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
-    <string name="show_dev_on">You have enabled advanced user settings!</string>
+    <string name="show_dev_countdown">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from enabling developer options.</string>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer options are enabled -->
+    <string name="show_dev_on">You have enabled developer settings!</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_dev_already">No need, you have already enabled advanced user settings.</string>
+    <string name="show_dev_already">No need, you have already enabled the developer options.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -5154,7 +5154,7 @@
     <string name="title_dynamic_alarm">Alarm clock</string>
     <string name="title_dynamic_bugreport">Bug report</string>
     <string name="title_dynamic_ime">IME changer</string>
-    <string name="title_dynamic_wifi">Wi-Fi display</string>
+    <string name="title_dynamic_wifi">WiFi display</string>
 
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Quick pulldown</string>
@@ -5164,7 +5164,7 @@
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
-    <string name="title_collapse_panel">Auto close panel</string>
+    <string name="title_collapse_panel">Auto close panel on change</string>
     <string name="summary_collapse_panel">Close the Quick Settings panel upon toggle</string>
     <string name="disable_quick_settings_panel">Quick Settings</string>
     <string name="disable_quick_settings_panel_summary">Enable or disable Quick Settings</string>
@@ -5709,7 +5709,7 @@
     <string name="gestures_action_recent">Recent Applications</string>
 
     <!-- High End Gfx Effects -->
-    <string name="high_end_gfx_title">High end graphic effects</string>
+    <string name="high_end_gfx_title">High-end graphic effects</string>
     <string name="high_end_gfx_summary">Enable graphic effects disabled on lower end devices</string>
 
     <!-- Advanced reboot options -->

@@ -295,4 +295,157 @@
     <item msgid="5077768429488260031">"Nie zulassen"</item>
     <item msgid="1417929597727989746">"Immer zulassen"</item>
   </string-array>
+
+    <!-- Extra Slim Settings -->
+
+    <!-- Notification Shortcuts -->
+
+    <string-array name="entries_flash_widget">
+        <item>Normal</item>
+        <item>Hoch</item>
+    </string-array>
+
+    <string-array name="haptic_feedback_entries">
+        <item>Standardeinstellung verwenden</item>
+        <item>An</item>
+        <item>Aus</item>
+    </string-array>
+
+    <!-- Power widget brightness slider -->
+    <string-array name="power_widget_brightness_location_entries">
+        <item>Zeigen</item>
+        <item>Nicht anzeigen</item>
+    </string-array>
+
+    <!-- Performance settings -->
+    <string-array name="pref_zram_size_entries">
+        <item>Deaktiviert</item>
+        <item>10%</item>
+        <item>18% (Standard)</item>
+        <item>26%</item>
+    </string-array>
+
+    <!-- Profile mode options. -->
+    <string-array name="profile_entries">
+        <item>An</item>
+        <item>Aus</item>
+        <item>Nicht überschreiben</item>
+    </string-array>
+
+    <!-- Profile mode options. -->
+    <string-array name="profile_connection_entries">
+        <item>Deaktiviert</item>
+        <item>Aktiviert</item>
+    </string-array>
+
+    <!-- Volume Overlay options. -->
+    <string-array name="volume_overlay_entries">
+        <item>Einfach</item>
+        <item>Erweiterbar</item>
+        <item>Erweitert</item>
+        <item>Nichts</item>
+    </string-array>
+
+    <string-array name="entries_status_bar_am_pm">
+        <item>Normal</item>
+        <item>Klein</item>
+        <item>Nicht anzeigen</item>
+    </string-array>
+
+    <string-array name="clock_date_display_entries">
+        <item>Nicht anzeigen</item>
+        <item>Kleines Datum</item>
+        <item>Reguläres Datum</item>
+    </string-array>
+
+    <string-array name="clock_date_style_entries">
+        <item>Normal</item>
+        <item>Kleingeschrieben</item>
+        <item>Großgeschrieben</item>
+    </string-array>
+
+    <string-array name="clock_date_format_entries">
+        <item>dd/MM/yy</item>
+        <item>MM/dd/yy</item>
+        <item>yyyy-MM-dd</item>
+        <item>yyyy-dd-MM</item>
+        <item>dd-MM-yyyy</item>
+        <item>MM-dd-yyyy</item>
+        <item>MMM dd</item>
+        <item>MMM dd, yyyy</item>
+        <item>MMMM dd, yyyy</item>
+        <item>EEE</item>
+        <item>EEE dd</item>
+        <item>EEE dd/MM</item>
+        <item>EEE MM/dd</item>
+        <item>EEE dd MMM</item>
+        <item>EEE MMM dd</item>
+        <item>EEE MMMM dd</item>
+        <item>EEEE dd/MM</item>
+        <item>EEEE MM/dd</item>
+        <item>Eigenes Java Format</item>
+    </string-array>
+
+    <string-array name="clock_date_format_values">
+        <item>dd/MM/yy</item>
+        <item>MM/dd/yy</item>
+        <item>yyyy-MM-dd</item>
+        <item>yyyy-dd-MM</item>
+        <item>dd-MM-yyyy</item>
+        <item>MM-dd-yyyy</item>
+        <item>MMM dd</item>
+        <item>MMM dd, yyyy</item>
+        <item>MMMM dd, yyyy</item>
+        <item>EEE</item>
+        <item>EEE dd</item>
+        <item>EEE dd/MM</item>
+        <item>EEE MM/dd</item>
+        <item>EEE dd MMM</item>
+        <item>EEE MMM dd</item>
+        <item>EEE MMMM dd</item>
+        <item>EEEE dd/MM</item>
+        <item>EEEE MM/dd</item>
+        <item>Eigenes Java Format</item>
+    </string-array>
+
+    <string-array name="battery_bar_entries">
+        <item>Verstecken</item>
+        <item>Statusleiste</item>
+        <item>Über der Navleiste</item>
+        <item>Unter der Navleiste</item>
+    </string-array>
+
+    <string-array name="battery_bar_style_entries">
+        <item>Regulär</item>
+        <item>Center-mirrored</item>
+    </string-array>
+
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi region code. -->
+    <string-array name="wifi_countrycode_entries">
+        <item>Amerika</item>
+        <item>Kanada, Taiwan</item>
+        <item>Deutschland</item>
+        <item>Europa</item>
+        <item>Japan, Russland</item>
+        <item>Australien</item>
+        <item>China</item>
+        <item>Korea</item>
+        <item>Türkei</item>
+        <item>Singapore</item>
+        <item>Brasilien</item>
+    </string-array>
+
+    <string-array name="less_notification_sounds_entries">
+        <item>Standard</item>
+        <item>3s</item>
+        <item>5s</item>
+        <item>10s</item>
+        <item>15s</item>
+        <item>30s</item>
+        <item>45s</item>
+        <item>1m</item>
+        <item>2m</item>
+        <item>5m</item>
+    </string-array>
+
 </resources>

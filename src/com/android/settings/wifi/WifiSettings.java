@@ -125,7 +125,7 @@ public class WifiSettings extends SettingsPreferenceFragment
     private WifiManager.ActionListener mSaveListener;
     private WifiManager.ActionListener mForgetListener;
     private boolean mP2pSupported;
-
+    private boolean mIbssSupported;
 
     private WifiEnabler mWifiEnabler;
     // An access point being editted is stored here.
@@ -639,7 +639,7 @@ public class WifiSettings extends SettingsPreferenceFragment
                 }
                 // If it's still null, fine, it's for Add Network
                 mSelectedAccessPoint = ap;
-                mDialog = new WifiDialog(getActivity(), this, ap, mDlgEdit);
+                mDialog = new WifiDialog(getActivity(), this, ap, mDlgEdit, mIbssSupported);
                 return mDialog;
             case WPS_PBC_DIALOG_ID:
                 return new WpsDialog(getActivity(), WpsInfo.PBC);
@@ -785,6 +785,11 @@ public class WifiSettings extends SettingsPreferenceFragment
                     continue;
                 }
 
+                // Ignore IBSS if chipset does not support them
+                if (!mIbssSupported && result.capabilities.contains("[IBSS]")) {
+                    continue;
+                }
+
                 boolean found = false;
                 for (AccessPoint accessPoint : apMap.getAll(result.SSID)) {
                     if (accessPoint.update(result))
@@ -904,6 +909,9 @@ public class WifiSettings extends SettingsPreferenceFragment
 
         switch (state) {
             case WifiManager.WIFI_STATE_ENABLED:
+                // this function only returns valid results in enabled state
+                mIbssSupported = mWifiManager.isIbssSupported();
+
                 mScanner.resume();
                 return; // not break, to avoid the call to pause() below
 

@@ -19,7 +19,9 @@ package com.android.settings.slim;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -29,18 +31,21 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
 
-public class NotificationDrawerSettings extends SettingsPreferenceFragment {
+public class NotificationDrawerSettings extends SettingsPreferenceFragment
+            implements OnPreferenceChangeListener  {
 
     public static final String TAG = "NotificationDrawerSettings";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_OPTIONS = "options";
     private static final String PREF_NOTIFICATION_POWER_WIDGET = "power_widget";
     private static final String PREF_NOTIFICATION_QUICK_SETTINGS = "quick_settings_panel";
+    private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
 
     PreferenceCategory mAdditionalOptions;
     Preference mPowerWidget;
     Preference mQuickSettings;
     CheckBoxPreference mShowWifiName;
+    ListPreference mNotificationsBehavior;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,12 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
         if (mQuickSettings != null) {
               updateQuickSettingsDescription();
         }
+
+        int CurrentBehavior = Settings.System.getInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
+        mNotificationsBehavior = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
+        mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
+        mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
+        mNotificationsBehavior.setOnPreferenceChangeListener(this);
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -112,6 +123,19 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mNotificationsBehavior) {
+            String val = (String) newValue;
+                     Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBehavior.findIndexOfValue(val);
+            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
+            return true;
+        }
+        return false;
     }
 
 }

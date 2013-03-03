@@ -58,6 +58,12 @@
         android:key="options"
         android:title="@string/additional_options_title">
 
+         <ListPreference
+            android:key="notifications_behaviour"
+            android:title="@string/notification_behaviour_title"
+            android:entries="@array/notifs_beh_entries"
+            android:entryValues="@array/notifs_beh_values" />
+
          <CheckBoxPreference
             android:key="notification_show_wifi_ssid"
             android:title="@string/notification_show_wifi_ssid_title"

@@ -517,6 +517,10 @@
     <string name="android_beam_disabled_summary" msgid="1737782116894793393">"Nicht verfügbar, da NFC deaktiviert ist"</string>
     <string name="android_beam_label" msgid="6257036050366775040">"Android Beam"</string>
     <string name="android_beam_explained" msgid="6981652347448777459">"Wenn diese Funktion aktiviert ist, können Sie App-Inhalte auf ein anderes NFC-fähiges Gerät beamen, indem Sie die Geräte dicht nebeneinander halten. Sie können beispielsweise Browserseiten, YouTube-Videos und Kontakte beamen."\n\n"Halten Sie die Geräte einfach dicht nebeneinander, am besten Rückseite an Rückseite, und berühren Sie den Bildschirm. Die App bestimmt, was übertragen wird."</string>
+    <string name="nfc_polling_mode_title">NFC Polling-Modus</string>
+    <string name="nfc_polling_mode_screen_off">Display aus</string>
+    <string name="nfc_polling_mode_screen_locked">Display an, gesperrt</string>
+    <string name="nfc_polling_mode_screen_unlocked">Display an, entsperrt (Standard)</string>
     <string name="nsd_quick_toggle_title" msgid="3125572815278848258">"Diensterkennung"</string>
     <string name="nsd_quick_toggle_summary" msgid="155692215972781276">"Ermöglicht Apps auf anderen Geräten, Apps auf diesem Gerät zu erkennen"</string>
     <string name="wifi_quick_toggle_title" msgid="874495178395350104">"WLAN"</string>
@@ -661,6 +665,7 @@
     <string name="ring_volume_title" msgid="7938706566797464165">"Klingeltonlautstärke"</string>
     <string name="vibrate_in_silent_title" msgid="3897968069156767036">"Im Lautlos-Modus vibrieren"</string>
     <string name="notification_sound_title" msgid="312032901303146002">"Standardbenachrichtigung"</string>
+    <string name="notification_behaviour_title">Benachrichtungsverhalten</string>
     <string name="notification_pulse_title" msgid="1247988024534030629">"Benachrichtigungslicht"</string>
     <string name="incoming_call_volume_title" msgid="8073714801365904099">"Klingelton"</string>
     <string name="notification_volume_title" msgid="2012640760341080408">"Benachrichtigung"</string>
@@ -1923,11 +1928,11 @@
     <string name="title_toggle_bluetooth">Bluetooth</string>
     <string name="title_toggle_gps">GPS</string>
     <string name="title_toggle_sound">Klingelmodus</string>
-    <string name="title_toggle_notification_sound">Toggle Notification Sound</string>
+    <string name="title_toggle_notification_sound">Benachrichtungston</string>
     <string name="title_toggle_brightness">Helligkeit</string>
     <string name="title_toggle_sync">Synchronisierung</string>
     <string name="title_toggle_wifiap">WLAN-Hotspot</string>
-    <string name="title_toggle_screentimeout">Bildschirm-Timeout</string>
+    <string name="title_toggle_screentimeout">Display-Timeout</string>
     <string name="title_toggle_mobiledata">Mobilfunkdaten</string>
     <string name="title_toggle_lockscreen">Bildschirmsperre</string>
     <string name="title_toggle_networkmode">Netzmodus</string>
@@ -1948,7 +1953,7 @@
     <string name="cm_brightness_mode_auto">Automatisch</string>
     <string name="cm_brightness_mode_dim">Dunkel</string>
     <string name="pref_network_mode_title">Netzmodi</string>
-    <string name="pref_screentimeout_mode_title">Bildschirm-Timeout</string>
+    <string name="pref_screentimeout_mode_title">Display-Timeout</string>
     <string name="pref_ring_mode_title">Klingelmodi</string>
     <string name="pref_ring_mode_summary">Klingelmodi, zwischen denen umgeschaltet wird</string>
     <string name="cm_sound_mode_silent">Lautlos</string>
@@ -1960,7 +1965,7 @@
     <string name="power_widget_enabled">Aktiviert</string>
     <string name="power_widget_disabled">Deaktiviert</string>
     <string name="power_widget_additional_options_cat">Zusätzliche Einstellungen</string>
-    <string name="brightness_location_title">Brightness slider location</string>
+    <string name="brightness_location_title">Helligkeitsregler</string>
     <string name="brightness_slider_top">Oben</string>
     <string name="brightness_slider_bottom">Unten</string>
     <string name="brightness_slider_none">Nicht anzeigen</string>
@@ -2069,10 +2074,10 @@
     <string name="toggleSync">Synchronisierung</string>
     <string name="toggle2g3g">Netzmodus</string>
     <string name="toggleSound">Klingelmodus</string>
-	<string name="toggleNotificationSound">Notification Sound</string>
+	<string name="toggleNotificationSound">Benachrichtungston</string>
     <string name="toggleBrightness">Helligkeit</string>
     <string name="toggleAutoRotate">Bildschirmausrichtung</string>
-    <string name="toggleScreenTimeout">Bildschirm-Timeout</string>
+    <string name="toggleScreenTimeout">Display-Timeout</string>
     <string name="toggleAirplane">Flugmodus</string>
     <string name="toggleFlashlight">Taschenlampe</string>
     <string name="toggleLockScreen">Bildschirmsperre</string>
@@ -2259,7 +2264,7 @@
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">24-Stunden Uhr ist aktiviert</string>
     <string name="enable_clock_weekday">Wochentag</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="enable_clock_weekday_summary">Abgekürzter Wochentag vor der Uhrzeit</string>
     <string name="right_clock">Rechts</string>
     <string name="center_clock">Zentriert</string>
     <string name="dont_show">Nicht anzeigen</string>
@@ -2267,7 +2272,7 @@
     <string name="clock_date_display_summary">Zeige benutzerdefiniertes Datum vor der Uhr</string>
     <string name="clock_date_style">Layout</string>
     <string name="clock_date_format">Format</string>
-    <string name="clock_date_string_edittext_title">Muss im Datums Format wie z.B. MM/dd/yy sein</string>
+    <string name="clock_date_string_edittext_title">Muss in einem Datumsformat wie z.B. MM/dd/yy sein</string>
     <string name="clock_date_string_edittext_summary">String eingeben</string>
     <string name="status_bar_toggle_brightness">Helligkeitssteuerung</string>
     <string name="status_bar_toggle_brightness_summary">Helligkeit durch Wischen über die Statusleiste ändern</string>
@@ -2279,27 +2284,27 @@
 
     <!-- General Settings -->
     <string name="title_slim_general">Allgemein</string>
-    <string name="display_short">Bildschirm</string>
+    <string name="display_short">Display</string>
     <string name="misc_short">Sonstiges</string>
     <string name="alt_resolver">Alt Default App Grid</string>
     <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
-    <string name="dual_pane">Tablet dual panel mode</string>
-    <string name="dual_pane_summary">Restart settings to take effect</string>
+    <string name="dual_pane">Tablet Dual-Panel Modus</string>
+    <string name="dual_pane_summary">Neustarten um die Änderungen wirksam zu machen</string>
     <string name="custom_carrier_label_title">Eigener Netzbetreiber</string>
     <string name="custom_carrier_label_explain">Bitte einen neuen Text eingeben. Leer lassen um den Standardtext wiederherzustellen.</string>
     <string name="custom_carrier_label_notset">Aktuell kein eigener Netzbetreiber festgelegt</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
-    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_title">LCD Pixeldichte</string>
     <string name="lcd_density_summary">unbekannt</string>
-    <string name="current_lcd_density">"Aktuelle LCD Density: "</string>
-    <string name="lcd_density_wizard">LCD Density Assistent</string>
+    <string name="current_lcd_density">"Aktuelle LCD Pixeldichte: "</string>
+    <string name="lcd_density_wizard">Assistent für LCD Pixeldichte</string>
     <string name="follow_through_title">Vollständig durchlaufen!</string>
-    <string name="follow_through_summary">Beachten, dass Du jeden einzeln Schritt durchführst bevor Du zu dem nächsten übergehst.</string>
-    <string name="stock_density_title">1. Ändere die LCD Density zum Standardwert</string>
+    <string name="follow_through_summary">Beachte, dass Du jeden Schritt einzeln durchführst bevor Du zu dem nächsten übergehst.</string>
+    <string name="stock_density_title">1. Die Pixeldichte auf Standard zurücksetzen</string>
     <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
-    <string name="stock_density_changed_summary">"Density festlegen zu: "</string>
+    <string name="stock_density_changed_summary">"Pixeldichte festlegen auf: "</string>
     <string name="reboot_title">2. Neustart!</string>
     <string name="reboot_summary">Kehre nach dem Neustart zurück und vervollständige die übrigen Schritte!</string>
     <string name="clear_market_data_title">3. Lösche alle Daten des Play Stores.</string>
@@ -2311,14 +2316,14 @@
     <string name="open_market_title">5. Öffne den Play Store und klicke Akzeptieren</string>
     <string name="open_market_summary">Klicke Zurück um hier her zurückzukehren.</string>
     <string name="open_market_summary_could_not_open">"Der Play Store konnte nicht geöffnet werden! Wenn Du sicher bist, dass dieser installier ist, öffne ihn selbst vom Launcher aus."</string>
-    <string name="custom_density_title">6. Ändere die Density zum gewünschten Wert!</string>
+    <string name="custom_density_title">6. Ändere die Pixeldichte zum gewünschten Wert!</string>
     <string name="custom_density_summary">Sollten Inkompatibilitäten mit dem Play Store auftreten, kehre hier her zurück und führe alle Schritte erneut aus.</string>
-    <string name="custom_density_summary_invalid">"UNGÜLTIGE DENSITY!"</string>
+    <string name="custom_density_summary_invalid">"UNGÜLTIGE PIXELDICHTE!"</string>
     <string name="custom_density">Eigene</string>
-    <string name="set_custom_density_title">Wähle eigene density</string>
+    <string name="set_custom_density_title">Wähle eigene Pixeldichte</string>
     <string name="set_custom_density_set">Festlegen</string>
     <string name="custom_density_dialog_title">"WARNUNG!"</string>
-    <string name="custom_density_dialog_summary">"Änderungen der LCD Density kann unerwartetes Verhalten von Apps hervorrufen. Sollten Inkompatibilitäten mit dem Play Store auftreten, führe den Assistent von Schritt 1 erneut durch."</string>
+    <string name="custom_density_dialog_summary">"Änderungen der Pixeldichte kann unerwartetes Verhalten von Apps hervorrufen. Sollten Inkompatibilitäten mit dem Play Store auftreten, führe den Assistent von Schritt 1 erneut durch."</string>
     <string name="custom_density_dialog_button_got">Abgeschlossen!</string>
     <string name="custom_density_dialog_button_reboot">Jetzt neustarten</string>
 
@@ -2330,10 +2335,10 @@
     <!-- Notification Shortcuts -->
     <string name="notification_shortcuts_grouptitle">Verknüpfungen</string>
     <string name="notification_shortcuts_settings_title">Benachrichtungs Verknüpfungen</string>
-    <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
+    <string name="notification_shortcuts_settings_summary">Zeige Verknüpfungen in den Benachrichtungen an</string>
     <string name="notification_shortcuts_empty_title">Leer</string>
     <string name="notification_shortcuts_edit_title">Verknüpfung bearbeiten</string>
-    <string name="notification_shortcuts_edit_msg">Select or change the desired application or icon</string>
+    <string name="notification_shortcuts_edit_msg">Wähle oder bearbeite das gewünschte Symbol oder App</string>
     <string name="notification_shortcuts_reset_title">Verknüpfungen löschen</string>
     <string name="notification_shortcuts_category_reset_title">Zurücksetzen</string>
     <string name="notification_shortcuts_title">Verknüpfungen</string>
@@ -2341,12 +2346,12 @@
     <string name="notification_shortcuts_quantity_title">Anzahl der Verknüpfungen</string>
     <string name="notification_shortcuts_quantity_summary">Die Anzahl der Verknüfungen die angezeigt werden sollen</string>
     <string name="notification_shortcuts_move_text">Reihenfolge ändern</string>
-    <string name="notification_shortcuts_move_up">Moved <xliff:g id="app_name">%s</xliff:g> up a slot</string>
-    <string name="notification_shortcuts_move_down">Moved <xliff:g id="app_name">%s</xliff:g> down a slot</string>
+    <string name="notification_shortcuts_move_up">Verschiebe <xliff:g id="app_name">%s</xliff:g> einen Platz nach oben</string>
+    <string name="notification_shortcuts_move_down">Verschiebe <xliff:g id="app_name">%s</xliff:g> einen Platz nach unten</string>
     <string name="notification_shortcuts_color_title">Symbolfarbe der Verknüfungen</string>
-    <string name="notification_shortcuts_color_summary">Colorize the stock and/or application shortcut icons</string>
-    <string name="notification_shortcuts_colorize_toggle_title">Colorize application icons</string>
-    <string name="notification_shortcuts_colorize_toggle_summary">Colorizes any application icons with the chosen icon color</string>
+    <string name="notification_shortcuts_color_summary">Färbe die Standard und/oder App Verknüpfungssymbole</string>
+    <string name="notification_shortcuts_colorize_toggle_title">App Symbole einfärben</string>
+    <string name="notification_shortcuts_colorize_toggle_summary">Färbe jegliche App Symbole mit der ausgewählten Farbe</string>
     <string name="notification_shortcuts_hide_carrier_title">Netzbetreiber verstecken</string>
 
     <!-- Notification Icons -->
@@ -2394,7 +2399,7 @@
     <string name="notification_shortcuts_icon_picker_unlock">Entsperren</string>
 
     <!-- Slim display settings -->
-    <string name="display_title">Bildschirm</string>
+    <string name="display_title">Display</string>
     <string name="display_category_rotation_options_title">Bildschirmausrichtung</string>
     <string name="display_category_light_options_title">Licht</string>
     <string name="display_category_brightness_options_title">Helligkeit</string>
@@ -2430,8 +2435,8 @@
 
     <!-- Display : Animation options -->
     <string name="display_category_animation_options_title">Animationseinstellungen</string>
-    <string name="system_power_crt_screen_off_title">CRT Bildschirm aus</string>
-    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
+    <string name="system_power_crt_screen_off_title">CRT Display aus</string>
+    <string name="system_power_crt_screen_off_summary">Animation (Elektron-Strahl) ausführen wenn der Bildschirm ausgeschaltet wird</string>
     <string name="system_power_crt_mode_title">CRT Animationen</string>
     <string name="system_power_crt_mode_dialog_title">Zeige CRT-Animation</string>
     <string name="system_power_crt_mode_horizontal">Porträt horizontal</string>
@@ -2468,7 +2473,7 @@
     <string name="dialog_test">Test</string>
     <string name="dialog_delete_title">Löschen</string>
     <string name="dialog_delete_message">Anpassung für diese App entfernen?</string>
-    <string name="dialog_test_message">Display abschalten, um diese Einstellung zu testen.</string>
+    <string name="dialog_test_message">Bildschirm abschalten, um diese Einstellung zu testen.</string>
     <string name="dialog_test_button">Abbrechen</string>
 
     <!-- Values for the notification light pulse spinners -->
@@ -2506,7 +2511,7 @@
 
     <!-- Notification drawer background -->
     <string name="notification_wallpaper_title">Hintergrund</string>
-    <string name="notification_wallpaper_landscape_title">Abweichender Hintergrund bei Landscape</string>
+    <string name="notification_wallpaper_landscape_title">Abweichender Hintergrund im Querformat</string>
     <string name="notification_background_color_fill">Farbfüllung</string>
     <string name="notification_background_custom_image">Benutzerdefiniertes Bild</string>
     <string name="notification_background_default_wallpaper">Standardhintergrund</string>
@@ -2536,7 +2541,7 @@
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_autorotate">Autom. Ausrichtung</string>
     <string name="title_tile_settings">Einstellungen</string>
-    <string name="title_tile_screentimeout">Bildschirm-Timeout</string>
+    <string name="title_tile_screentimeout">Display-Timeout</string>
     <string name="title_tile_sound">Klingelmodus</string>
     <string name="title_tile_sync">Synchronisierung</string>
     <string name="title_tile_wifiap">Wi-Fi AP</string>
@@ -2546,7 +2551,7 @@
     <string name="title_tile_networkmode">Netzmodus</string>
     <string name="title_tile_reboot">Neustart</string>
     <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_screen_timeout">Bildschirm-Timeout</string>
+    <string name="title_tile_screen_timeout">Display-Timeout</string>
     <string name="title_tile_favcontact">Favoriten Kontakt</string>
     <string name="title_tile_fcharge">Schnell-Laden</string>
     <string name="title_tile_quiet_hours">Ruhige Stunden</string>
@@ -2730,11 +2735,10 @@
     <string name="lockscreen_shortcuts_title">Verknüpfungen</string>
     <string name="lockscreen_shortcuts_summary">Anzeigen oder ändern der eigenen Verknüpfungen auf dem Sperrbildschirm</string>
     <string name="lock_screen_shortcuts_reset_message">Verknüfungen im Sperrbildschirm zurücksetzen?</string>
-    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
     <string name="lock_screen_shortcuts_reset">Zurücksetzen</string>
     <string name="lock_screen_shortcuts_limit">Es sind nur 6 Verknüpfungen erlaubt</string>
     <string name="lockscreen_shorcuts_longpress_title">Verknüfungen (gedrückt halten)</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Benutzerdefinierte Verknüpfungen des Sperrbildschirm öffnen wenn Taste gedrückt gehalten wird</string>
     <string name="lockscreen_shortcuts_icon_picker_alarm">Wecker</string>
     <string name="lockscreen_shortcuts_icon_picker_andy">Andy</string>
     <string name="lockscreen_shortcuts_icon_picker_battery">Batterie</string>
@@ -2851,7 +2855,7 @@
     <string name="hardware_keys_action_voice_search">Sprachsuche</string>
     <string name="hardware_keys_action_in_app_search">In-App-Suche</string>
     <string name="hardware_keys_action_power">Ausschalten</string>
-    <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_notifications">Benachrichtungen öffnen</string>
     <string name="hardware_keys_action_expanded">Erweiteter Desktop</string>
     <string name="hardware_keys_action_kill_app">App beenden</string>
     <string name="hardware_keys_action_last_app">Zur letzten App wechseln</string>
@@ -2911,7 +2915,7 @@
     <string name="top_of_navbar">Über der Navleiste</string>
     <string name="bottom_of_navbar">Unter der Navleiste</string>
     <string name="regular">Normal</string>
-    <string name="center_mirrored">Center-mirrored</string>
+    <string name="center_mirrored">Zentriert &amp; Gespiegelt</string>
     <string name="size_0_dp">0 dp (Aus)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
@@ -2926,13 +2930,13 @@
     <string name="navigation_bar">Navigationsleiste</string>
     <string name="navbar_button_cat">Tasten</string>
     <string name="title_pref_menu_display">Menü Position</string>
-    <string name="summary_pref_menu_display">Where do you want the menu buttons to appear?</string>
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
-    <string name="navbar_qty_title">Navigation button quantity</string>
+    <string name="summary_pref_menu_display">Wo sollen die Menü Tasten angezeigt werden?</string>
+    <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
+    <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü Tasten erscheinen?</string>
+    <string name="navbar_qty_title">Anzahl der Navigationstasten</string>
     <string name="navbar_qty_summary">Änderungen an dieser Einstellung wird alle Deine aktuellen Tasten zurücksetzen</string>
-    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
-    <string name="navbar_longpress_title">Button %1$s longpress action</string>
+    <string name="navbar_action_title">Taste %1$s Aktion &amp; Symbol</string>
+    <string name="navbar_longpress_title">Taste %1$s Aktion (gedrückt halten)</string>
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Zurück</string>
     <string name="navbar_action_recents">Kürzlich</string>
@@ -2947,11 +2951,11 @@
     <string name="navbar_action_none">Keine</string>
     <string name="navbar_enable_bar">Leiste aktivieren</string>
     <string name="navigation_bar_height_title">Höhe der Navigationsleiste</string>
-    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
-    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
-    <string name="navigation_bar_width_title">Höhe der Navigationsleiste</string>
-    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
+    <string name="navigation_bar_height_summary">Höhe der Navigationsleiste im Hochformat anpassen.</string>
+    <string name="navigation_bar_height_landscape_title">Höhe im Querformat</string>
+    <string name="navigation_bar_height_landscape_summary">Höhe der Navigationsleiste im Querformat anpassen.</string>
+    <string name="navigation_bar_width_title">Breite der Navigationsleiste</string>
+    <string name="navigation_bar_width_summary">Die Breite der Navigationsleiste anpassen, falls sie über eine Seite hinaus geht</string>
     <string name="navbar_enable_dialog_title">Neustart benötigt!</string>
     <string name="navbar_enable_dialog_msg">Du <b>solltest</b> nun neustarten um sicher zu gehen, dass alles einwandfrei funktioniert!</string>
     <string name="navbar_enable_dialog_negative">Später neustarten</string>
@@ -2960,14 +2964,14 @@
     <string name="navbar_height_dialog_summary">Bitte neustarten um die Änderungen der Höhe und Weite der Navigationsleiste festzulegen!</string>
     <string name="navbar_height_dialog_button_later">Später neustarten</string>
     <string name="navbar_height_dialog_button_reboot">Neustarten!</string>
-    <string name="navigation_bar_glow_tint_title">Leuchtefarbe der Navigationsleiste</string>
+    <string name="navigation_bar_glow_tint_title">Leuchtfarbe der Navigationsleiste</string>
     <string name="glow_times_title">Leuchtanimation der Taste</string>
     <string name="glow_times_off">Aus</string>
     <string name="glow_times_superquick">Sehr schnell</string>
     <string name="glow_times_quick">Schnell</string>
     <string name="glow_times_normal">Normal</string>
-    <string name="navbar_can_move">Show landscape</string>
-    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
+    <string name="navbar_can_move">Im Querformat zeigen</string>
+    <string name="navbar_can_move_summary">Zeige die Navigationsleiste im Querformat am unteren Rand</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">Tasten Layout</string>
@@ -2976,7 +2980,7 @@
     <string name="navigation_bar_icon_tint_title">Tasten Farbe</string>
     <string name="nav_button_color_mode_title">Farbe</string>
     <string name="nav_button_color_mode_dialog_title">Farbe</string>
-    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
+    <string name="nav_button_color_mode_summary">Wähle eine Farbe für die Tasten der Navigationsleiste</string>
     <string name="nav_button_color_mode_all_icons">Alle Symbole</string>
     <string name="nav_button_color_mode_system_icons">System Symbole</string>
     <string name="nav_button_color_mode_system_custom_icons">System und eigene Symbole</string>
@@ -2985,7 +2989,7 @@
     <string name="nav_bar_transparency_title">Transparenz</string>
     <string name="nav_bar_color_title">Farbe</string>
     <string name="nav_bar_background_style">Hintergrund Layout</string>
-    <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="nav_bar_alpha_mode_dialog_text_title">Transparenz der Navigations und Statusleiste</string>
     <string name="nav_bar_alpha_mode_text_title">Transparenz</string>
     <string name="nav_bar_alpha_mode_home">in Launcher</string>
     <string name="nav_bar_alpha_mode_default">in Launcher und Sperrbildschirm</string>
@@ -2995,9 +2999,9 @@
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Ring Ziele</string>
     <string name="interface_softkey_settings">Softkey Einstellungen</string>
-    <string name="interface_softkeys_pref_default_title">Target %1$s short press activity</string>
-    <string name="interface_softkeys_pref_long_title">Target %1$s long press activity</string>
-    <string name="interface_softkeys_pref_default_summary">Tap the settings icon to select a custom long press activity</string>
+    <string name="interface_softkeys_pref_default_title">Ziel %1$s Aktion</string>
+    <string name="interface_softkeys_pref_long_title">Ziel %1$s Aktion (gedrückt halten)</string>
+    <string name="interface_softkeys_pref_default_summary">Berühre das Einstellungssymbol um eine benutzerdefinierte Aktion (gedrückt halten) zu wählen</string>
     <string name="interface_softkeys_activity_dialog_title">Wähle Aktivität</string>
     <string name="interface_softkeys_reboot_title">Neustartmenü</string>
     <string name="interface_softkeys_screenshot_title">Bildschirmfoto</string>
@@ -3007,13 +3011,13 @@
     <string name="interface_softkeys_ring_silent_title">Klingeln/Lautlos</string>
     <string name="interface_softkeys_ring_vib_silent_title">Klingeln/Vibrieren/Lautlos</string>
     <string name="interface_softkeys_kill_process_title">App beenden</string>
-    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
+    <string name="interface_softkey_package_removed">Das zuvor gewählte Paket konnte nicht gefunden werden</string>
     <string name="interface_navring_settings_title">Navigationleisten Ring</string>
-    <string name="interface_navring_settings_summary">Edit your custom navring apps</string>
+    <string name="interface_navring_settings_summary">Bearbeite Deine benutzerdefinierten Apps des Navrings</string>
     <string name="title_navring_amount">Anzahl der Navring Ziele</string>
     <string name="summary_navring_amount">Änderungen setzen alle Deine aktuellen Ziele zurück</string>
-    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
-    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
+    <string name="interface_navring_custom_pref_summary">Am Ziel loslassen zum Starten</string>
+    <string name="interface_navring_pref_default_summary">Berühren um eine benutzerdefinierte Aktion für das Ring Ziel zu wählen</string>
     <string name="interface_navring_assist_title">Google Now / Websuche</string>
     <string name="interface_navring">Ring Ziele</string>
     <string name="navbar_ring">Eigene Ring Ziele</string>
@@ -3023,11 +3027,11 @@
     <string name="navbar_button_title">Tasten</string>
     <string name="navbar_targets_title">Ring Ziele</string>
     <string name="navbar_cat">Navigationsleiste</string>
-    <string name="navbar_enable_long">Enable longpress for navbar</string>
+    <string name="navbar_enable_long">Aktiviere Aktion (gedrückt halten) für Navigationsleiste</string>
     <string name="ring_targets_cat_title">Ring Ziele</string>
     <string name="navbar_style_cat">Layout</string>
     <string name="navbar_dimen_cat">Größe</string>
-    <string name="navbar_restart_systemui_summary">Änderungen an dieser Einstellung startet Deine SystemUI neu</string>
+    <string name="navbar_restart_systemui_summary">Änderungen an dieser Einstellung starten Deine SystemUI neu</string>
 
     <!-- cLock settings -->
     <string name="chronus_title">cLock</string>
@@ -3042,19 +3046,19 @@
     <string name="touchkey_timeout_alwaysoff">Immer aus</string>
 
     <!-- Recents Ram Bar -->
-    <string name="ram_bar">Recents RAM bar</string>
-    <string name="ram_bar_note_title">Mitteilung</string>
-    <string name="ram_bar_note_summary">This RAM bar shows the actual android memory (RAM) utilization. Please note that having cached apps helps your device open apps much faster. For further explanations on how android memory (RAM) management works, check the help menu.</string>
-    <string name="ram_bar_mode_title">Recents RAM bar mode</string>
-    <string name="ram_bar_mode_dialog_title">Show on recents RAM bar</string>
+    <string name="ram_bar">RAM Leiste</string>
+    <string name="ram_bar_note_title">Hinweis</string>
+    <string name="ram_bar_note_summary">Diese RAM Leiste zeigt die aktuelle Auslastung Deines Android Speichers (RAM). Beachte, das gecachte Apps sehr zur Ladegeschwindigkeit Deiner Apps beitragen. Für weitere Erklärungen wie die Verwaltung des Android Speichers (RAM) arbeitet, rufe das Hilfe Menü auf.</string>
+    <string name="ram_bar_mode_title">Modus der RAM Leiste</string>
+    <string name="ram_bar_mode_dialog_title">Wähle einen Modus für die RAM Leiste</string>
     <string name="ram_bar_none">Keine</string>
     <string name="ram_bar_apps">Apps</string>
     <string name="ram_bar_cache">Apps und Cache</string>
     <string name="ram_bar_other">Apps, Cache und Sonstiges</string>
-    <string name="ram_bar_style_cat">Recents RAM bar style</string>
-    <string name="ram_bar_color_app_mem_color">Apps RAM Farbe</string>
-    <string name="ram_bar_color_cache_mem_color">Cache RAM Farbe</string>
-    <string name="ram_bar_color_total_mem_color">Sonstiges RAM Farbe</string>
+    <string name="ram_bar_style_cat">Layout der RAM Leiste</string>
+    <string name="ram_bar_color_app_mem_color">Farbe für Apps</string>
+    <string name="ram_bar_color_cache_mem_color">Farbe für Cache</string>
+    <string name="ram_bar_color_total_mem_color">Farbe für Sonstige</string>
     <string name="ram_bar_color_enabled">Aktiviert</string>
     <string name="ram_bar_color_disabled">Deaktiviert</string>
     <string name="ram_bar_button_help">Hilfe</string>
@@ -3085,20 +3089,20 @@
     <string name="category_spen_title">Stift Gesten</string>
     <string name="enable_subcat_title">Stift</string>
     <string name="enable_spen_title_head">Aktiviere Stift Gesten</string>
-    <string name="enable_spen_summary_head">Allows Stift button swipe gestures to launch custom actions. Warning: Applications will not be able to recieve input fired by holding stylus button.</string>
+    <string name="enable_spen_summary_head">Erlaubt die Ausführung eigener Aktionen mit Stift Gesten. Warnung: Apps können nicht das gedrückt Halten des Stifts erfassen.</string>
     <string name="gestures_subcat_title">Gesten</string>
     <string name="gestures_left_spen_title_head">Nach Links wischen</string>
-    <string name="gestures_left_spen_summary_head">Allows to launch custom action on left swipe</string>
+    <string name="gestures_left_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim nach links wischen</string>
     <string name="gestures_right_spen_title_head">Nach Rechts wischen</string>
-    <string name="gestures_right_spen_summary_head">Allows to launch custom action on right swipe</string>
+    <string name="gestures_right_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim nach Rechts wischen</string>
     <string name="gestures_up_spen_title_head">Hoch wischen</string>
-    <string name="gestures_up_spen_summary_head">Allows to launch custom action on up swipe</string>
+    <string name="gestures_up_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim Hochwischen</string>
     <string name="gestures_down_spen_title_head">Runter wischen</string>
-    <string name="gestures_down_spen_summary_head">Allows to launch custom action on down swipe</string>
+    <string name="gestures_down_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim Runterwischen</string>
     <string name="gestures_long_spen_title_head">Gedrückt halten</string>
-    <string name="gestures_long_spen_summary_head">Allows to launch custom action on long press</string>
+    <string name="gestures_long_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim Gedrückt halten</string>
     <string name="gestures_double_spen_title_head">Doppelklick</string>
-    <string name="gestures_double_spen_summary_head">Allows to launch custom action on double tap</string>
+    <string name="gestures_double_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion bei Doppelklick</string>
 
     <!-- Gestures Options -->
     <string name="gestures_action_empty">Keine Aktion</string>

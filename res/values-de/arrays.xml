@@ -415,7 +415,7 @@
 
     <string-array name="battery_bar_style_entries">
         <item>Regulär</item>
-        <item>Center-mirrored</item>
+        <item>Zentriert &amp; Gespiegelt</item>
     </string-array>
 
     <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi region code. -->
@@ -444,6 +444,14 @@
         <item>1m</item>
         <item>2m</item>
         <item>5m</item>
+    </string-array>
+	
+	<!-- Notification behavior preferences -->
+    <string-array name="notifs_beh_entries">
+        <item>Normal</item>
+        <item>Nie aufklappen</item>
+        <item>Immer aufklappen</item>
+        <item>Alter Stil</item>
     </string-array>
 
 </resources>

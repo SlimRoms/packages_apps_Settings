@@ -48,6 +48,13 @@
             android:dependency="disable_quick_settings"
             android:summary="@string/summary_no_notifications_pulldown" />
 
+        <PreferenceScreen
+            android:key="quicksettings_tiles_style"
+            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"
+            android:title="@string/quicksettings_tiles_style"
+            android:dependency="disable_quick_settings"
+            android:summary="@string/summary_quicksettings_tiles_style" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -1460,6 +1460,19 @@
         <item>2</item>
     </string-array>
 
+    <!-- QuickSettings tiles per row -->
+    <string-array name="tiles_per_row_entries" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="tiles_per_row_values" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
     <string-array name="lockscreen_background_entries">
         <item>@string/lockscreen_background_color_fill</item>
         <item>@string/lockscreen_background_custom_image</item>

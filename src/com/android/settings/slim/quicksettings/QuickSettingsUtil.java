@@ -110,6 +110,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_LOCKSCREEN, new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
                 "com.android.systemui:drawable/ic_qs_lock_screen_on", true));
+        TILES.put(TILE_LTE, new QuickSettingsUtil.TileInfo(
+                TILE_LTE, R.string.title_tile_lte,
+                "com.android.systemui:drawable/ic_qs_lte_off", true));
         TILES.put(TILE_MOBILEDATA, new QuickSettingsUtil.TileInfo(
                 TILE_MOBILEDATA, R.string.title_tile_mobiledata,
                 "com.android.systemui:drawable/ic_qs_mobildata_off", true));
@@ -159,15 +162,6 @@ public class QuickSettingsUtil {
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral", true));
 // These toggles are not available yet.  Comment out for now
-//        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
-//                TILE_SYNC, R.string.title_tile_sync,
-//                "com.android.systemui:drawable/stat_sync_on"));
-//        if(PhoneConstants.LTE_ON_CDMA_TRUE == TelephonyManager.getDefault().getLteOnCdmaMode() ||
-//           TelephonyManager.getDefault().getLteOnGsmMode() != 0) {
-//            TILES.put(TILE_LTE, new QuickSettingsUtil.TileInfo(
-//                    TILE_LTE, R.string.title_tile_lte,
-//                    "com.android.systemui:drawable/stat_lte_on"));
-//        }
 //        TILES.put(TILE_WIMAX, new QuickSettingsUtil.TileInfo(
 //                TILE_WIMAX, R.string.title_tile_wimax,
 //                "com.android.systemui:drawable/stat_wimax_on"));

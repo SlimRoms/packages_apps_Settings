@@ -65,6 +65,10 @@ public class BootReceiver extends BroadcastReceiver {
                 SystemProperties.set(KSM_SETTINGS_PROP, "false");
             }
         }
+        if (Utils.fileExists(PerformanceSettings.VIBE_STR_FILE)
+                && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            configureVibe(ctx);
+        }
     }
 
     private void initFreqCapFiles(Context ctx)
@@ -149,5 +153,15 @@ public class BootReceiver extends BroadcastReceiver {
 
         Utils.fileWriteOneLine(MemoryManagement.KSM_RUN_FILE, ksm ? "1" : "0");
         Log.d(TAG, "KSM settings restored.");
+    }
+
+    private void configureVibe(Context ctx) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+
+        String vibeStrength = prefs.getString(PerformanceSettings.VIBE_STR, null);
+        if (vibeStrength != null) {
+            Utils.fileWriteOneLine(PerformanceSettings.VIBE_STR_FILE, vibeStrength);
+            Log.d(TAG, "Vibration strength settings restored.");
+        }
     }
 }

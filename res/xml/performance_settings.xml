@@ -50,4 +50,12 @@
         android:entries="@array/dithering_entries"
         android:entryValues="@array/dithering_values"/>
 
+    <EditTextPreference
+        android:key="pref_vibe_strength"
+        android:title="@string/pref_vibe_strength_title"
+        android:summary="@string/pref_vibe_strength_summary"
+        android:dialogTitle="@string/pref_vibe_strength_dialogtitle"
+        android:digits="0123456789"
+        android:inputType="number" />
+
 </PreferenceScreen>

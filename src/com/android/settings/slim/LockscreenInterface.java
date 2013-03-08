@@ -170,16 +170,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         final int lockBeforeUnlock = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.LOCK_BEFORE_UNLOCK, 0);
 
+        PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
+
         //setup custom lockscreen customize view
         if ((unsecureUnlockMethod != 1 && lockBeforeUnlock == 0)
                  || unsecureUnlockMethod == -1) {
-             PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
              getPreferenceScreen().removePreference(sliderCategory);
-        }
-
-        if (!Utils.isPhone(getActivity())) {
+        } else if (!Utils.isPhone(getActivity())) {
              // Nothing for tablets and large screen devices
-             PreferenceCategory sliderCategory = (PreferenceCategory) findPreference(KEY_SLIDER_OPTIONS);
              sliderCategory.removePreference(mShortcuts);
              sliderCategory.removePreference(mLockscreenShortcutsLongpress);
              sliderCategory.removePreference(mLockscreenEightTargets);

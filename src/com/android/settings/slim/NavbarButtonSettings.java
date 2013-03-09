@@ -87,6 +87,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     private File customnavImage;
     private File customnavTemp;
 
+    private boolean mCheckPreferences;
+
     private static class NavBarCustomAction {
         String activitySettingName;
         Preference preference;
@@ -178,6 +180,9 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mNavBarButtonQty) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -275,7 +280,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void refreshSettings() {
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -417,6 +423,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 pAction.setIcon(resize(getNavbarIconImage(i, false)));
             }
         }
+        mCheckPreferences = true;
+        return prefs;
     }
 
     private Drawable resize(Drawable image) {

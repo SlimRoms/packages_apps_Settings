@@ -51,6 +51,8 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     private static final String PREF_NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String KEY_DIMEN_OPTIONS = "navbar_dimen";
 
+    private boolean mCheckPreferences;
+
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
@@ -62,7 +64,8 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         refreshSettings();
     }
 
-    public void refreshSettings() {
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -95,6 +98,8 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         }
 
         setHasOptionsMenu(true);
+        mCheckPreferences = true;
+        return prefs;
     }
 
 
@@ -145,6 +150,9 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mNavigationBarGlowColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));

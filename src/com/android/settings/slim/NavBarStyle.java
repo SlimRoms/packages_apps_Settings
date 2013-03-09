@@ -49,6 +49,8 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
     private static final String PREF_NAV_BAR_ALPHA_MODE = "nav_bar_alpha_mode";
     private static final String PREF_NAV_BAR_COLOR = "nav_bar_color";
 
+    private boolean mCheckPreferences;
+
     private SeekBarPreference mNavBarTransparency;
     private ColorPickerPreference mNavBarColor;
     private ListPreference mAlphaMode;
@@ -59,7 +61,8 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         refreshSettings();
     }
 
-    public void refreshSettings() {
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -101,6 +104,8 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         mAlphaMode.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
+        mCheckPreferences = true;
+        return prefs;
     }
 
 
@@ -137,6 +142,9 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mNavBarTransparency) {
             float valStat = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),

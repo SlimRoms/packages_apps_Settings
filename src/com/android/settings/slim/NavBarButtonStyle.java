@@ -49,6 +49,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
     private static final String PREF_BUTTON_TRANSPARENCY = "button_transparency";
     private static final String PREF_NAV_BUTTON_COLOR_MODE = "nav_button_color_mode";
 
+    private boolean mCheckPreferences;
+
     ColorPickerPreference mNavigationBarButtonColor;
     ListPreference mNavigationBarButtonColorMode;
     SeekBarPreference mButtonAlpha;
@@ -59,7 +61,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         refreshSettings();
     }
 
-    public void refreshSettings() {
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -102,6 +105,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
+        mCheckPreferences = true;
+        return prefs;
     }
 
 
@@ -137,6 +142,9 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mNavigationBarButtonColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));

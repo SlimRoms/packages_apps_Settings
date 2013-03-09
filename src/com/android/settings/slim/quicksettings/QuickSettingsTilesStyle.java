@@ -60,13 +60,16 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
     private ColorPickerPreference mQuickTilesBgPressedColor;
     private ColorPickerPreference mQuickTilesTextColor;
 
+    private boolean mCheckPreferences;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         refreshSettings();
     }
 
-    public void refreshSettings() {
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -123,6 +126,8 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
                 Settings.System.QUICK_TILES_PER_ROW_DUPLICATE_LANDSCAPE, 1) == 1);
 
         setHasOptionsMenu(true);
+        mCheckPreferences = true;
+        return prefs;
     }
 
 
@@ -164,6 +169,9 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mTilesPerRow) {
             int index = mTilesPerRow.findIndexOfValue((String) newValue);
             int value = Integer.valueOf((String) newValue);

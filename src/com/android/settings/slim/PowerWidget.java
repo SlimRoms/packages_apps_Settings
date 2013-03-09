@@ -63,12 +63,14 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
+    private static final String LONGPRESS_QS_TOGGLE = "longpress_qs_toggle";
     public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
     public static final String FAST_CHARGE_FILE = "force_fast_charge";
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
+    private CheckBoxPreference mLongpressQSToggle;
     private ListPreference mPowerWidgetHapticFeedback;
     private ListPreference mBrightnessLocation;
 
@@ -111,6 +113,11 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
             mBrightnessLocation.setSummary(mBrightnessLocation.getEntry());
 
+            mLongpressQSToggle = (CheckBoxPreference) findPreference(LONGPRESS_QS_TOGGLE);
+            mLongpressQSToggle.setChecked((Settings.System.getInt(getActivity().getApplicationContext()
+                    .getContentResolver(),
+                    Settings.System.QS_LONGPRESS_PW_TOGGLE, 0) == 1));
+
         }
     }
 
@@ -150,6 +157,11 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             value = mPowerWidgetHideScrollBar.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HIDE_SCROLLBAR,
+                    value ? 1 : 0);
+        } else if (preference == mLongpressQSToggle) {
+            value = mLongpressQSToggle.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.QS_LONGPRESS_PW_TOGGLE,
                     value ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.

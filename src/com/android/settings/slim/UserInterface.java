@@ -25,7 +25,6 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -35,7 +34,6 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.Spannable;
-import android.view.IWindowManager;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -48,7 +46,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private static final String MISC_SETTINGS = "misc";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String KEY_DUAL_PANE = "dual_pane";
     private static final String KEY_HIGH_END_GFX = "high_end_gfx";
@@ -95,18 +92,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             getPreferenceScreen().removePreference(mLcdDensity);
         }
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
-
-        // Only show the hardware keys config on a device that does not have a navbar
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-
-        final boolean hasNavBarByDefault = getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
-
-        if (hasNavBarByDefault) {
-            // Let's assume they don't have hardware keys
-            mMisc.removePreference(findPreference(KEY_HARDWARE_KEYS));
-        }
 
         mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
         updateRamBar();

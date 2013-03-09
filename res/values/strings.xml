@@ -4904,6 +4904,9 @@
     <string name="low_battery_warning_policy_sound">Sound only</string>
     <string name="low_battery_warning_policy_disabled">Disabled</string>
 
+    <!-- TRDS Settings -->
+    <string name="trds_settings_title">The Real Dark Slim</string>
+
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
     <string name="lcd_density_title">LCD Density</string>

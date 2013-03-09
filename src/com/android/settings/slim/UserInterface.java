@@ -30,8 +30,10 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.Spannable;
 
@@ -77,14 +79,18 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mMisc = (PreferenceCategory) prefs.findPreference(MISC_SETTINGS);
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+        mUseAltResolver.setOnPreferenceChangeListener(this);
         mUseAltResolver.setChecked(Settings.System.getInt(
                 getActivity().getContentResolver(),
                 Settings.System.ACTIVITY_RESOLVER_USE_ALT, 0) == 1);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
+        mCustomLabel.setOnPreferenceClickListener(mCustomLabelClicked);
+
         updateCustomLabelTextSummary();
 
         mLcdDensity = findPreference("lcd_density_setup");
+        mLcdDensity.setOnPreferenceChangeListener(this);
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
         try {
             newDensityValue = Integer.parseInt(currentProperty);
@@ -94,9 +100,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
         mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
+        mRamBar.setOnPreferenceChangeListener(this);
         updateRamBar();
 
         mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
+        mDualPane.setOnPreferenceChangeListener(this);
         boolean preferDualPane = getResources().getBoolean(
                 com.android.internal.R.bool.preferences_prefer_dual_pane);
         boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
@@ -104,13 +112,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mDualPane.setChecked(dualPaneMode);
 
         mLowBatteryWarning = (ListPreference) findPreference(KEY_LOW_BATTERY_WARNING_POLICY);
+        mLowBatteryWarning.setOnPreferenceChangeListener(this);
         int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-        mLowBatteryWarning.setOnPreferenceChangeListener(this);
 
         mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
+        mHighEndGfx.setOnPreferenceChangeListener(this);
 
         if (!ActivityManager.isHighEndGfx()) {
             // Only show this if the device does not have HighEndGfx enabled natively
@@ -164,19 +173,27 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
             return true;
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mDualPane) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_PANE_PREFS,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mHighEndGfx) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HIGH_END_GFX_ENABLED,
+                    (Boolean) newValue ? 1 : 0);
         }
         return false;
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        if (preference == mUseAltResolver) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mCustomLabel) {
+    public OnPreferenceClickListener mCustomLabelClicked = new OnPreferenceClickListener() {
+        @Override
+        public boolean onPreferenceClick(Preference preference) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
@@ -205,18 +222,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             });
 
             alert.show();
-        } else if (preference == mDualPane) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.DUAL_PANE_PREFS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mHighEndGfx) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.HIGH_END_GFX_ENABLED,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
+    };
 
 }
 

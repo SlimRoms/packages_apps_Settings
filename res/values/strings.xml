@@ -5240,6 +5240,7 @@
     <string name="status_bar_battery_status_dotted_circle">Dotted Circle</string>
     <string name="circle_battery_color">Circle color</string>
     <string name="battery_text_color">Percentage text color</string>
+    <string name="battery_text_charging_color">Percentage text charging color</string>
     <string name="circle_battery_animation_speed">Circle animation speed</string>
     <string name="circle_battery_animation_speed_none">None</string>
     <string name="circle_battery_animation_speed_slow">Slow</string>

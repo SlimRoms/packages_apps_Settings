@@ -44,6 +44,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
 
     private final Configuration mCurConfig = new Configuration();
 
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,18 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
 
         removePreferenceIfPackageNotInstalled(findPreference(KEY_CHRONUS));
 
-     }
+        // Only show the hardware keys config on a device that does not have a navbar
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+
+        final boolean hasNavBarByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        if (hasNavBarByDefault) {
+            // Let's assume they don't have hardware keys
+            getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+        }
+    }
 
     @Override
     public void onResume() {

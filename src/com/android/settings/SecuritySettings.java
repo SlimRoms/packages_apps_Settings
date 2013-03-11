@@ -250,15 +250,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
 
         if (isSlimSecurity) {
-            // visible pattern
-            mVisiblePattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_PATTERN);
-
-            // visible error pattern
-            mVisibleErrorPattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_ERROR_PATTERN);
-
-            // visible dots
-            mVisibleDots = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_DOTS);
-
             // lock instantly on power key press
             mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(
                     KEY_POWER_INSTANTLY_LOCKS);
@@ -342,6 +333,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
         // visible pattern
         mVisiblePattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_PATTERN);
+
+        // visible error pattern
+        mVisibleErrorPattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_ERROR_PATTERN);
+
+        // visible dots
+        mVisibleDots = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_DOTS);
 
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(

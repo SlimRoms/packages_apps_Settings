@@ -1940,7 +1940,7 @@
     <string name="title_toggle_airplane">Flugmodus</string>
     <string name="title_toggle_flashlight">Taschenlampe</string>
     <string name="title_toggle_sleep">Standby</string>
-    <string name="title_toggle_media_play_pause">Medien: Play/Pause</string>
+    <string name="title_toggle_media_play_pause">Medien: Abspielen/Pause</string>
     <string name="title_toggle_media_previous">Medien: Vorheriger Titel</string>
     <string name="title_toggle_media_next">Medien: Nächster Titel</string>
     <string name="title_toggle_lte">LTE</string>
@@ -2163,7 +2163,6 @@
     <string name="power_menu_profiles_title">Profilwechsel</string>
     <string name="power_menu_airplane_title">Flugmodus</string>
     <string name="power_menu_sound_title">Lautlos</string>
-    <string name="summary_expanded_desktop">%1$s</string>
     <string name="expanded_desktop_summary">Zeige oder ändere den erweiterten Desktop</string>
     <string name="expanded_desktop_disabled">Aus</string>
     <string name="expanded_desktop_only_nav_bar">Navigationsleiste verstecken</string>
@@ -2222,8 +2221,8 @@
     <string name="safe_headset_restore_summary">Schützt beim Einstecken eines Kopfhörers vor zu hoher Lautstärke</string>
 
     <!-- Less Notification sounds -->
-    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
-    <string name="less_notification_sounds_summary">Limit the notification sounds of each app to only play once per set time period</string>
+    <string name="less_notification_sounds_title">Benachrichtungstöne limitieren</string>
+    <string name="less_notification_sounds_summary">Limitiere die Benachrichtunstöne von jedem App, um diese nur einmal pro festgelegtem Zeitraum abzuspielen</string>
 
     <!-- Setting checkbox summary for displaying USB debugging notification -->
     <string name="adb_notify">USB-Debugging-Info</string>
@@ -2246,11 +2245,11 @@
     <string name="status_bar_transparency_title">Transparenz</string>
     <string name="status_bar_color_title">Farbe</string>
     <string name="status_bar_background_style">Hintergrund</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Aktiviere Transparenz für die Navigations und Statusleiste</string>
     <string name="status_bar_alpha_mode_text_title">Transparenz</string>
-    <string name="status_bar_alpha_mode_home">in Launcher</string>
-    <string name="status_bar_alpha_mode_default">in Launcher und Sperrbildschirm</string>
-    <string name="status_bar_alpha_mode_always">immer</string>
+    <string name="status_bar_alpha_mode_home">im Launcher</string>
+    <string name="status_bar_alpha_mode_default">im Launcher und Sperrbildschirm</string>
+    <string name="status_bar_alpha_mode_always">Immer</string>
     <string name="status_bar_style_reset">Zurücksetzen</string>
 
     <!-- Status bar | Clock -->
@@ -2272,7 +2271,7 @@
     <string name="clock_date_display_summary">Zeige benutzerdefiniertes Datum vor der Uhr</string>
     <string name="clock_date_style">Layout</string>
     <string name="clock_date_format">Format</string>
-    <string name="clock_date_string_edittext_title">Muss in einem Datumsformat wie z.B. MM/dd/yy sein</string>
+    <string name="clock_date_string_edittext_title">Bitte ein Datumsformat wie z.B. MM/dd/yy wählen</string>
     <string name="clock_date_string_edittext_summary">String eingeben</string>
     <string name="status_bar_toggle_brightness">Helligkeitssteuerung</string>
     <string name="status_bar_toggle_brightness_summary">Helligkeit durch Wischen über die Statusleiste ändern</string>
@@ -2286,8 +2285,8 @@
     <string name="title_slim_general">Allgemein</string>
     <string name="display_short">Display</string>
     <string name="misc_short">Sonstiges</string>
-    <string name="alt_resolver">Alt Default App Grid</string>
-    <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
+    <string name="alt_resolver">Alt. Standard App-Grid</string>
+    <string name="alt_resolver_summary">Wähle einen alternativen Standard App-Picker</string>
     <string name="dual_pane">Tablet Dual-Panel Modus</string>
     <string name="dual_pane_summary">Neustarten um die Änderungen wirksam zu machen</string>
     <string name="custom_carrier_label_title">Eigener Netzbetreiber</string>
@@ -2387,7 +2386,7 @@
     <string name="notification_shortcuts_icon_picker_nav">Navigation</string>
     <string name="notification_shortcuts_icon_picker_phone">Telefon</string>
     <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="notification_shortcuts_icon_picker_play">Play</string>
+    <string name="notification_shortcuts_icon_picker_play">Abspielen</string>
     <string name="notification_shortcuts_icon_picker_podcast">Podcast</string>
     <string name="notification_shortcuts_icon_picker_quicksettings">Schnelleinstellungen</string>
     <string name="notification_shortcuts_icon_picker_rss">RSS</string>
@@ -2561,7 +2560,7 @@
     <string name="title_dynamic_alarm">Wecker</string>
     <string name="title_dynamic_bugreport">Fehlerprotokollierung</string>
     <string name="title_dynamic_ime">Eingabemethode wählen</string>
-    <string name="title_dynamic_wifi">Kabellose Übertragung</string>
+    <string name="title_dynamic_wifi">WiFi Display</string>
 
     <string name="title_general">Allgemein</string>
     <string name="title_quick_pulldown">Schnelles Öffnen</string>
@@ -2586,7 +2585,7 @@
 	
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farbe wählen</string>
-    <string name="press_color_to_apply">Klicke eine Farbe zum Wählen</string>
+    <string name="press_color_to_apply">Klicke eine Farbe zum Übernehmen</string>
     <string name="hex">Hex:</string>
     <string name="set">Festlegen</string>
 
@@ -2623,7 +2622,7 @@
     <!-- Keyboard and Input ASS methods  -->
     <string name="title_keyboard_input">Tastatur und Eingabemethoden</string>
     <string name="disable_fullscreen_keyboard_title">Deaktiviere Vollbild-Tastatur</string>
-    <string name="disable_fullscreen_keyboard_summary">Vollbild-Tastatur verwendet nicht mehr den gesamten Bildschirm</string>
+    <string name="disable_fullscreen_keyboard_summary">Die Tastatur im Querformat verwendet nicht mehr den gesamten Bildschirm</string>
     <string name="volume_key_cursor_control_title">Cursor bewegen mit Lautstärketasten</string>
     <string name="volume_key_cursor_control_off">Deaktiviert</string>
     <string name="volume_key_cursor_control_on">Lautstärke hoch/runter bewegt den Cursor links/rechts</string>
@@ -2687,7 +2686,7 @@
     <string name="icon_picker_facebook">Facebook</string>
     <string name="icon_picker_gallery">Galerie</string>
     <string name="icon_picker_google_small">Google (klein)</string>
-    <string name="icon_picker_googleplus">Google+</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
     <string name="icon_picker_googletalk">Google Talk</string>
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_movie">Film</string>
@@ -2754,14 +2753,14 @@
     <string name="lockscreen_shortcuts_icon_picker_facebook">Facebook</string>
     <string name="lockscreen_shortcuts_icon_picker_favorite">Favoriten</string>
     <string name="lockscreen_shortcuts_icon_picker_file_browser">Dateimanager</string>
-    <string name="lockscreen_shortcuts_icon_picker_file_browser2">Dateimanager (Holo)</string>
+    <string name="lockscreen_shortcuts_icon_picker_file_browser2">Dateimanager 2</string>
     <string name="lockscreen_shortcuts_icon_picker_gallery">Galerie</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
     <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Hilfe</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="lockscreen_shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="lockscreen_shortcuts_icon_picker_key">Schlüssel/Konten</string>
     <string name="lockscreen_shortcuts_icon_picker_laptop">Laptop</string>
     <string name="lockscreen_shortcuts_icon_picker_luggage">Reisen</string>
     <string name="lockscreen_shortcuts_icon_picker_maps">Maps</string>
@@ -2771,7 +2770,7 @@
     <string name="lockscreen_shortcuts_icon_picker_nav">Navigation</string>
     <string name="lockscreen_shortcuts_icon_picker_phone">Telefon</string>
     <string name="lockscreen_shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="lockscreen_shortcuts_icon_picker_play">Play</string>
+    <string name="lockscreen_shortcuts_icon_picker_play">Abspielen</string>
     <string name="lockscreen_shortcuts_icon_picker_podcast">Podcast</string>
     <string name="lockscreen_shortcuts_icon_picker_quicksettings">Schnelle Einstellungen</string>
     <string name="lockscreen_shortcuts_icon_picker_rss">RSS</string>
@@ -2825,7 +2824,7 @@
     <string name="lockscreen_buttons_flashlight">Taschenlampe</string>
     <string name="lockscreen_buttons_next">Medien: Nächster Titel</string>
     <string name="lockscreen_buttons_previous">Medien: Vorheriger Titel</string>
-    <string name="lockscreen_buttons_playpause">Medien: Play/Pause</string>
+    <string name="lockscreen_buttons_playpause">Medien: Abspielen/Pause</string>
     <string name="lockscreen_buttons_toggle_sound">Klingelmodus</string>
 
     <!-- Hardware keys -->
@@ -2885,10 +2884,10 @@
     <string name="open_ime_switcher">Eingabemethoden öffnen</string>
     <string name="kill_app">App beenden</string>
     <string name="lastapp">Letzte App</string>
-    <string name="power">Power</string>
+    <string name="power">Ein/Aus-Taste</string>
     <string name="notifications">Benachrichtungen</string>
     <string name="custom_app">Eigene App</string>
-    <string name="menu_power">Power menu</string>
+    <string name="menu_power">Ein/Aus-Taste</string>
     <string name="blank">Keine</string>
     <string name="none">Keine</string>
     <string name="navbar_action_home_longpress_default">Keine (Leere Aktion für Home (gedrückt halten) zeigt den Navring an)</string>
@@ -3037,7 +3036,7 @@
     <string name="chronus_title">cLock</string>
 
     <!-- Touckey Light Timeout -->
-    <string name="touchkey_timeout_title">Licht Timeout der Touchtasten</string>
+    <string name="touchkey_timeout_title">Licht-Timeout der Touchtasten</string>
     <string name="touchkey_timeout_1s">1 Sekunde</string>
     <string name="touchkey_timeout_2s">2 Sekunden</string>
     <string name="touchkey_timeout_5s">5 Sekunden</string>
@@ -3048,7 +3047,7 @@
     <!-- Recents Ram Bar -->
     <string name="ram_bar">RAM Leiste</string>
     <string name="ram_bar_note_title">Hinweis</string>
-    <string name="ram_bar_note_summary">Diese RAM Leiste zeigt die aktuelle Auslastung Deines Android Speichers (RAM). Beachte, das gecachte Apps sehr zur Ladegeschwindigkeit Deiner Apps beitragen. Für weitere Erklärungen wie die Verwaltung des Android Speichers (RAM) arbeitet, rufe das Hilfe Menü auf.</string>
+    <string name="ram_bar_note_summary">Diese RAM Leiste zeigt die aktuelle Auslastung Deines Android Speichers (RAM). Gecachte Apps können ggf. sehr zur Ladegeschwindigkeit Deiner Apps beitragen. Für weitere Informationen bzgl. der Verwaltung des Android Speichers (RAM), rufe bitte das Hilfe-Menü auf.</string>
     <string name="ram_bar_mode_title">Modus der RAM Leiste</string>
     <string name="ram_bar_mode_dialog_title">Wähle einen Modus für die RAM Leiste</string>
     <string name="ram_bar_none">Keine</string>
@@ -3058,7 +3057,7 @@
     <string name="ram_bar_style_cat">Layout der RAM Leiste</string>
     <string name="ram_bar_color_app_mem_color">Farbe für Apps</string>
     <string name="ram_bar_color_cache_mem_color">Farbe für Cache</string>
-    <string name="ram_bar_color_total_mem_color">Farbe für Sonstige</string>
+    <string name="ram_bar_color_total_mem_color">Farbe für Sonstiges</string>
     <string name="ram_bar_color_enabled">Aktiviert</string>
     <string name="ram_bar_color_disabled">Deaktiviert</string>
     <string name="ram_bar_button_help">Hilfe</string>
@@ -3071,7 +3070,7 @@
     <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_summary">Wähle einen Ländercode für Dein WLAN</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
-    <string name="wifi_setting_countrycode_error">Es ist ein Problem aufgetreten beim Festlegen des Ländercodes.</string>
+    <string name="wifi_setting_countrycode_error">Es ist ein Problem beim Festlegen des Ländercodes aufgetreten.</string>
     <!-- Wi-Fi settings diables message if Wifi is off-->
     <string name="wifi_setting_countrycode_disabled">Aktiviere WLAN um diese Einstellungen zu ändern.</string>
     <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi priority. -->
@@ -3092,7 +3091,7 @@
     <string name="enable_spen_summary_head">Erlaubt die Ausführung eigener Aktionen mit Stift Gesten. Warnung: Apps können nicht das gedrückt Halten des Stifts erfassen.</string>
     <string name="gestures_subcat_title">Gesten</string>
     <string name="gestures_left_spen_title_head">Nach Links wischen</string>
-    <string name="gestures_left_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim nach links wischen</string>
+    <string name="gestures_left_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim nach Links wischen</string>
     <string name="gestures_right_spen_title_head">Nach Rechts wischen</string>
     <string name="gestures_right_spen_summary_head">Erlaubt eine benutzerdefinierte Aktion beim nach Rechts wischen</string>
     <string name="gestures_up_spen_title_head">Hoch wischen</string>

@@ -435,15 +435,15 @@
 
     <string-array name="less_notification_sounds_entries">
         <item>Standard</item>
-        <item>3s</item>
-        <item>5s</item>
-        <item>10s</item>
-        <item>15s</item>
-        <item>30s</item>
-        <item>45s</item>
-        <item>1m</item>
-        <item>2m</item>
-        <item>5m</item>
+        <item>3 Sek.</item>
+        <item>5 Sek.</item>
+        <item>10 Sek.</item>
+        <item>15 Sek.</item>
+        <item>30 Sek.</item>
+        <item>45 Sek.</item>
+        <item>1 Min.</item>
+        <item>2 Min.</item>
+        <item>5 Min.</item>
     </string-array>
 	
 	<!-- Notification behavior preferences -->

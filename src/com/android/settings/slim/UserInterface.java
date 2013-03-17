@@ -187,6 +187,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HIGH_END_GFX_ENABLED,
                     (Boolean) newValue ? 1 : 0);
+            mHighEndGfx.setChecked((Boolean)newValue);
         }
         return false;
     }

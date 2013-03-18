@@ -5488,7 +5488,7 @@
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
     <string name="lockscreen_buttons_camera">Launch camera</string>
-    <string name="lockscreen_buttons_power_off">Power off</string>
+    <string name="lockscreen_buttons_power_off">Screen off</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
@@ -5516,8 +5516,8 @@
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
-    <string name="hardware_keys_action_power">Power off</string>
-    <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_power">Screen off</string>
+    <string name="hardware_keys_action_notifications">Notifications</string>
     <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
     <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
@@ -5547,7 +5547,7 @@
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
     <string name="lastapp">Last app</string>
-    <string name="power">Power</string>
+    <string name="power">Screen off</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>
@@ -5608,7 +5608,7 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_power">Screen Off</string>
     <string name="navbar_action_notifications">Notifications</string>
     <string name="navbar_action_none">None</string>
     <string name="navbar_enable_bar">Enable bar</string>

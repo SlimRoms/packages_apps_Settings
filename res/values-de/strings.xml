@@ -2174,13 +2174,10 @@
     <string name="title_about">Über Slim</string>
     <string name="devs">Entwickler</string>
     <string name="links">Offizielle Links</string>
-    <string name="contributors">Spender</string>
     <string name="slim_website_title">Slim Webseite</string>
     <string name="slim_source_title">Slim Quellcode</string>
     <string name="slim_website_summary">www.slimroms.net\nHier findest Du alle aktuellen Slim Neuigkeiten</string>
     <string name="slim_source_summary">SlimRoms sind vollständig Open Source.\nQuellcode unter github.com/SlimRoms</string>
-    <string name="donate_slim">http://forum.xda-developers.com/donatetome.php?u=4135991</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
 
     <string name="increasing_ring_title">Ansteigender Klingelton</string>
     <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->

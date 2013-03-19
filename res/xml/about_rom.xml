@@ -29,15 +29,4 @@
             android:summary="@string/slim_source_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="contributors"
-        android:title="@string/contributors">
-
-        <com.android.settings.widget.DeveloperPreference
-            android:title="CyanogenMod"
-            slim:nameDev="cyanogenmod"
-            slim:twitterHandle="cyanogenmod"
-            slim:donateLink="@string/donate_cyanogenmod" />
-    </PreferenceCategory>
-
 </PreferenceScreen>

@@ -4776,13 +4776,11 @@
     <string name="title_about">About Slim</string>
     <string name="devs">Developer</string>
     <string name="links">Official links</string>
-    <string name="contributors">Contributors</string>
     <string name="slim_website_title">Slim Website</string>
     <string name="slim_source_title">Slim Source</string>
     <string name="slim_website_summary">www.slimroms.net\nFind all latest Slim news here</string>
     <string name="slim_source_summary">SlimRoms are fully open source.\nSource at github.com/SlimRoms</string>
-    <string name="donate_slim">http://forum.xda-developers.com/donatetome.php?u=4135991</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
 
     <string name="increasing_ring_title">Ascending ringtone</string>
     <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->

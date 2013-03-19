@@ -18,6 +18,7 @@ package com.android.settings.slim.quicksettings;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,10 +27,12 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.drawable.Drawable;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -42,17 +45,25 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneConstants;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.settings.slim.quicksettings.QuickSettingsUtil;
 import com.android.settings.slim.quicksettings.QuickSettingsUtil.TileInfo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.StringTokenizer;
 
 public class QuickSettingsTiles extends Fragment {
+    private static final String TAG = "QuickSettingsTiles";
 
     private static final int MENU_RESET = Menu.FIRST;
+
+    public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
+    public static final String FAST_CHARGE_FILE = "force_fast_charge";
 
     DraggableGridView mDragView;
     private ViewGroup mContainer;
@@ -120,6 +131,7 @@ public class QuickSettingsTiles extends Fragment {
             }
         }
         addTile(res.getString(R.string.profiles_add), null, R.drawable.ic_menu_add, false);
+        removeUnsupportedTiles();
     }
 
     /**
@@ -148,6 +160,76 @@ public class QuickSettingsTiles extends Fragment {
             name.setCompoundDrawablesRelativeWithIntrinsicBounds(0, iconRegId, 0, 0);
         }
         mDragView.addView(v, newTile ? mDragView.getChildCount() - 1 : mDragView.getChildCount());
+    }
+
+    public void removeUnsupportedTiles() {
+        PackageManager pm = getActivity().getPackageManager();
+        ContentResolver resolver = getActivity().getContentResolver();
+        // Don't show mobile data options if not supported
+        boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        if (!isMobileData) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_MOBILEDATA);
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_WIFIAP);
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_NETWORKMODE);
+            QuickSettingsUtil.TILES_DEFAULT.remove(QuickSettingsUtil.TILE_WIFIAP);
+            QuickSettingsUtil.TILES_DEFAULT.remove(QuickSettingsUtil.TILE_MOBILEDATA);
+            QuickSettingsUtil.TILES_DEFAULT.remove(QuickSettingsUtil.TILE_NETWORKMODE);
+        } else {
+            // We have telephony support however, some phones run on networks not supported
+            // by the networkmode tile so remove both it and the associated options list
+            int network_state = -99;
+            try {
+                network_state = Settings.Global.getInt(resolver,
+                        Settings.Global.PREFERRED_NETWORK_MODE);
+            } catch (Settings.SettingNotFoundException e) {
+                Log.e(TAG, "Unable to retrieve PREFERRED_NETWORK_MODE", e);
+            }
+
+            switch (network_state) {
+                // list of supported network modes
+                case Phone.NT_MODE_WCDMA_PREF:
+                case Phone.NT_MODE_WCDMA_ONLY:
+                case Phone.NT_MODE_GSM_UMTS:
+                case Phone.NT_MODE_GSM_ONLY:
+                    break;
+                default:
+                    QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_NETWORKMODE);
+                    break;
+            }
+        }
+
+        // Don't show the bluetooth options if not supported
+        if (BluetoothAdapter.getDefaultAdapter() == null) {
+            QuickSettingsUtil.TILES_DEFAULT.remove(QuickSettingsUtil.TILE_BLUETOOTH);
+        }
+
+        // Dont show the profiles tile if profiles are disabled
+        if (Settings.System.getInt(resolver, Settings.System.SYSTEM_PROFILES_ENABLED, 1) != 1) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_PROFILE);
+        }
+
+        // Dont show the NFC tile if not supported
+        if (NfcAdapter.getDefaultAdapter(getActivity()) == null) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_NFC);
+        }
+
+        // Dont show the LTE tile if not supported
+        if (!deviceSupportsLte()) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_LTE);
+        }
+
+        // Dont show the torch tile if not supported
+        if (!getResources().getBoolean(R.bool.has_led_flash)) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_TORCH);
+        }
+
+        // Dont show fast charge tile if not supported
+        // Dont show fast charge tile if not supported
+        File fastcharge = new File(FAST_CHARGE_DIR, FAST_CHARGE_FILE);
+        if (!fastcharge.exists()) {
+            QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_FCHARGE);
+        }
+
     }
 
     @Override
@@ -329,4 +411,10 @@ public class QuickSettingsTiles extends Fragment {
             genTiles();
         }
     }
+
+    private boolean deviceSupportsLte() {
+        final TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return (tm.getLteOnCdmaMode() == PhoneConstants.LTE_ON_CDMA_TRUE) || tm.getLteOnGsmMode() != 0;
+    }
+
 }

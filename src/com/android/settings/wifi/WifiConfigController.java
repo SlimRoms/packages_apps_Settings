@@ -33,6 +33,7 @@ import android.net.wifi.WifiConfiguration.KeyMgmt;
 import android.net.wifi.WifiConfiguration.ProxySettings;
 import android.net.wifi.WifiConfiguration.Status;
 import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiChannel;
 import android.os.Handler;
 import android.security.Credentials;
 import android.security.KeyStore;
@@ -55,7 +56,9 @@ import com.android.settings.ProxySelector;
 import com.android.settings.R;
 
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * The class for allowing UIs like {@link WifiDialog} and {@link WifiConfigUiBase} to
@@ -73,9 +76,12 @@ public class WifiConfigController implements TextWatcher,
 
     private boolean mEdit;
     private boolean mIbssSupported;
+    private List<WifiChannel> mSupportedIbssChannels;
+    private int mSelectedIbssChannelPos;
 
     private TextView mSsidView;
     private CheckBox mIbssView;
+    private Spinner mIbssFreqSpinner;
 
     // e.g. AccessPoint.SECURITY_NONE
     private int mAccessPointSecurity;
@@ -145,7 +151,7 @@ public class WifiConfigController implements TextWatcher,
 
     public WifiConfigController(
             WifiConfigUiBase parent, View view, AccessPoint accessPoint, boolean edit,
-            boolean ibssSupported) {
+            boolean ibssSupported, List<WifiChannel> chans) {
         mConfigUi = parent;
         mInXlSetupWizard = (parent instanceof WifiConfigUiForSetupWizardXL);
 
@@ -165,6 +171,8 @@ public class WifiConfigController implements TextWatcher,
         mProxySettingsSpinner = (Spinner) mView.findViewById(R.id.proxy_settings);
         mProxySettingsSpinner.setOnItemSelectedListener(this);
         mIbssView = (CheckBox) mView.findViewById(R.id.wifi_ibss_checkbox);
+        mIbssView.setOnClickListener(this);
+        mIbssFreqSpinner = (Spinner) mView.findViewById(R.id.wifi_ibss_freq);
 
         boolean showAutoConnectField = false;
         boolean showAutoConnectFieldValue = false;
@@ -197,8 +205,28 @@ public class WifiConfigController implements TextWatcher,
             mView.findViewById(R.id.wifi_advanced_toggle).setVisibility(View.VISIBLE);
             mView.findViewById(R.id.wifi_advanced_togglebox).setOnClickListener(this);
 
-            if (mIbssSupported)
+            if (mIbssSupported) {
                 mView.findViewById(R.id.wifi_ibss_toggle).setVisibility(View.VISIBLE);
+
+                mSupportedIbssChannels = new ArrayList<WifiChannel>();
+                List<String> freqSpinnerList = new ArrayList<String>();
+
+                for (WifiChannel c : chans) {
+                    if (c.ibssAllowed) {
+                        mSupportedIbssChannels.add(c);
+                        freqSpinnerList.add(context.getString(R.string.wifi_channel) + " " +
+                                            Integer.toString(c.channel) + " (" +
+                                            Integer.toString(c.frequency) + " " +
+                                            context.getString(R.string.wifi_mhz) + ")");
+                    }
+                }
+
+                ArrayAdapter<String> freqAdapter = new ArrayAdapter<String>(context,
+                        android.R.layout.simple_spinner_item, freqSpinnerList);
+                freqAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mIbssFreqSpinner.setAdapter(freqAdapter);
+                mIbssFreqSpinner.setOnItemSelectedListener(this);
+            }
 
             mConfigUi.setSubmitButton(context.getString(R.string.wifi_save));
         } else {
@@ -208,6 +236,9 @@ public class WifiConfigController implements TextWatcher,
 
             if (mAccessPoint.isIBSS) {
                 addRow(group, R.string.wifi_mode, context.getString(R.string.wifi_mode_ibss));
+                addRow(group, R.string.wifi_ibss_freq_title,
+                       Integer.toString(mAccessPoint.frequency) + " " +
+                       context.getString(R.string.wifi_mhz));
             }
 
             DetailedState state = mAccessPoint.getState();
@@ -356,7 +387,7 @@ public class WifiConfigController implements TextWatcher,
 
             if (mIbssView.isChecked()) {
                 config.isIBSS = true;
-                config.frequency = 2412; //TODO: select from UI
+                config.frequency = mSupportedIbssChannels.get(mSelectedIbssChannelPos).frequency;
             } else {
                 // If the user adds a network manually, assume that it is hidden.
                 config.hiddenSSID = true;
@@ -808,6 +839,12 @@ public class WifiConfigController implements TextWatcher,
             }
         } else if (view.getId() == R.id.wifi_auto_connect_togglebox) {
             mAutoConnect = ((CheckBox) view).isChecked();
+        } else if (view.getId() == R.id.wifi_ibss_checkbox) {
+            if (((CheckBox) view).isChecked()) {
+                mView.findViewById(R.id.wifi_ibss_freq_fields).setVisibility(View.VISIBLE);
+            } else {
+                mView.findViewById(R.id.wifi_ibss_freq_fields).setVisibility(View.GONE);
+            }
         }
     }
 
@@ -820,6 +857,8 @@ public class WifiConfigController implements TextWatcher,
             showSecurityFields();
         } else if (parent == mProxySettingsSpinner) {
             showProxyFields();
+        } else if (parent == mIbssFreqSpinner) {
+            mSelectedIbssChannelPos = position;
         } else {
             showIpConfigFields();
         }

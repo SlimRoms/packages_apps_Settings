@@ -5163,6 +5163,7 @@
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Mobile data</string>
     <string name="title_tile_mobilenetwork">Mobile network</string>
+    <string name="title_tile_expanded_desktop">Expanded desktop</string>
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_autorotate">Orientation</string>
     <string name="title_tile_settings">Settings</string>

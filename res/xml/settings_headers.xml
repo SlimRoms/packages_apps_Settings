@@ -116,6 +116,13 @@
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings_title" />
 
+    <!-- Superuser -->
+    <header
+        android:id="@+id/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_action_permission"
+        android:title="@string/superuser" />
+
     <!-- SlimCenter -->
     <header
         android:id="@+id/slim_center"

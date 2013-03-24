@@ -5173,6 +5173,7 @@
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_wimax">WiMAX</string>
     <string name="title_tile_user">User switcher</string>
+    <string name="title_tile_volume">Volume</string>
     <string name="title_tile_networkmode">Network mode</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_nfc">NFC</string>

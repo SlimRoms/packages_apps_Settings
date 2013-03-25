@@ -91,8 +91,8 @@ public class PowerWidgetUtil {
                 BUTTON_SCREENTIMEOUT, R.string.title_toggle_screentimeout,
                 "com.android.systemui:drawable/stat_screen_timeout_on"));
         BUTTONS.put(BUTTON_SLEEP, new PowerWidgetUtil.ButtonInfo(
-                BUTTON_SLEEP, R.string.title_toggle_sleep,
-                "com.android.systemui:drawable/stat_sleep"));
+                BUTTON_SLEEP, R.string.title_toggle_power,
+                "com.android.systemui:drawable/stat_power"));
         BUTTONS.put(BUTTON_SOUND, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_SOUND, R.string.title_toggle_sound,
                 "com.android.systemui:drawable/stat_ring_on"));

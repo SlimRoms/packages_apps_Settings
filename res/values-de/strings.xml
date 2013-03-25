@@ -1939,7 +1939,7 @@
     <string name="title_toggle_autorotate">Autom. Ausrichtung</string>
     <string name="title_toggle_airplane">Flugmodus</string>
     <string name="title_toggle_flashlight">Taschenlampe</string>
-    <string name="title_toggle_sleep">Standby</string>
+    <string name="title_toggle_power">Power Taste</string>
     <string name="title_toggle_media_play_pause">Medien: Play/Pause</string>
     <string name="title_toggle_media_previous">Medien: Vorheriger Titel</string>
     <string name="title_toggle_media_next">Medien: Nächster Titel</string>
@@ -2527,7 +2527,7 @@
     <string name="title_tile_battery">Akkustand</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Helligkeit</string>
-    <string name="title_tile_sleep">Standby</string>
+    <string name="title_tile_power">Power</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Taschenlampe</string>
     <string name="title_tile_lockscreen">Bildschirmsperre</string>

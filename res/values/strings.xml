@@ -4543,7 +4543,7 @@
     <string name="title_toggle_autorotate">Toggle Orientation</string>
     <string name="title_toggle_airplane">Toggle Airplane mode</string>
     <string name="title_toggle_flashlight">Toggle Torch</string>
-    <string name="title_toggle_sleep">Go to sleep</string>
+    <string name="title_toggle_power">Power Button</string>
     <string name="title_toggle_media_play_pause">Media: Toggle Play/Pause</string>
     <string name="title_toggle_media_previous">Media: Skip to Previous</string>
     <string name="title_toggle_media_next">Media: Skip to Next</string>
@@ -5156,7 +5156,7 @@
     <string name="title_tile_battery">Battery stats</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brightness</string>
-    <string name="title_tile_sleep">Go to sleep</string>
+    <string name="title_tile_power">Power</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>

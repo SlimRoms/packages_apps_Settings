@@ -78,6 +78,11 @@
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
+        android:key="status_bar"
+        android:fragment="com.android.settings.slim.WidgetsSettings"
+        android:title="@string/navbar_widgets_title" />
+
+    <PreferenceScreen
         android:key="wifi_settings"
         android:fragment="com.android.settings.slim.WifiSettings"
         android:title="@string/ass_wifi_settings_title" />

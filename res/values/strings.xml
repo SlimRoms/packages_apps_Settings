@@ -5522,6 +5522,7 @@
     <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
     <string name="hardware_keys_action_custom_app">Custom app</string>
+    <string name="hardware_keys_action_widgets">Widgets viewpager</string>
 
     <!--- Sms security limit -->
     <string name="app_security_title">App security</string>
@@ -5546,6 +5547,7 @@
     <string name="menu">Menu</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
+    <string name="widgets">Widgets viewpager</string>
     <string name="lastapp">Last app</string>
     <string name="power">Screen off</string>
     <string name="notifications">Notifications</string>
@@ -5608,6 +5610,7 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_widgets">Widgets viewpager</string>
     <string name="navbar_action_power">Screen Off</string>
     <string name="navbar_action_notifications">Notifications</string>
     <string name="navbar_action_none">None</string>
@@ -5673,6 +5676,7 @@
     <string name="interface_softkeys_ring_silent_title">Toggle Ring/Silent</string>
     <string name="interface_softkeys_ring_vib_silent_title">Toggle Ring/Vib/Silent</string>
     <string name="interface_softkeys_kill_process_title">Kill App</string>
+    <string name="interface_softkeys_widgets">Widgets viewpager</string>
     <string name="interface_softkey_package_removed">The previously selected package was not found</string>
     <string name="interface_navring_settings_title">Navigation bar ring</string>
     <string name="interface_navring_settings_summary">Edit your custom navring apps</string>
@@ -5694,6 +5698,25 @@
     <string name="navbar_style_cat">Navigation bar style</string>
     <string name="navbar_dimen_cat">Navigation bar dimens</string>
     <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
+
+    <string name="navbar_widgets_note_title">Note</string>
+    <string name="navbar_widgets_note_summary">To show up Widgets viewpager enable it in hardware keys, navigation bar buttons or navigation bar ring targets.</string>
+    <string name="navbar_widgets_title">Widgets viewpager</string>
+    <string name="navbar_widgets_style_settings_title">Widgets viewpager style</string>
+    <string name="navbar_widgets_style_settings_summary">Change widgets viewpager background style</string>
+    <string name="navbar_widgets_summary">Add your custom widgets to the viewpager</string>
+    <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
+    <string name="navbar_widgets_reset">Reset widgets</string>
+    <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
+    <string name="navbar_widget_summary_add">Click to add Widget</string>
+    <string name="navbar_widgets_shiftLeft">Shift left</string>
+    <string name="navbar_widgets_shiftRight">Shift right</string>
+    <string name="navbar_widgets_delete">Delete widget</string>
+
+    <string name="navbar_widgets_text_color_title">Widgets viewpager text color</string>
+    <string name="navbar_widgets_bg_color_title">Widgets viewpager background color</string>
+    <string name="navbar_widgets_transparency_title">Widgets viewpager transparency</string>
+    <string name="navbar_widgets_style_reset">Reset style</string>
 
     <!-- cLock settings -->
     <string name="chronus_title">cLock</string>

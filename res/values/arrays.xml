@@ -1744,6 +1744,7 @@
         <item>@string/hardware_keys_action_kill_app</item>
         <item>@string/hardware_keys_action_last_app</item>
         <item>@string/hardware_keys_action_custom_app</item>
+        <item>@string/hardware_keys_action_widgets</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -1761,6 +1762,7 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
+        <item>14</item>
     </string-array>
 
     <!--- Sms security limit -->
@@ -1837,6 +1839,7 @@
         <item>@string/recents</item>
         <item>@string/screenshot</item>
         <item>@string/search</item>
+        <item>@string/widgets</item>
         <item>@string/blank</item>
     </string-array>
 
@@ -1853,6 +1856,7 @@
         <item>**recents**</item>
         <item>**screenshot**</item>
         <item>**search**</item>
+        <item>**widgets**</item>
         <item>**null**</item>
     </string-array>
 
@@ -1867,6 +1871,7 @@
         <item>@string/screen_off</item>
         <item>@string/select_application</item>
         <item>@string/take_screenshot</item>
+        <item>@string/widgets</item>
         <item>@string/none</item>
     </string-array>
 
@@ -1881,6 +1886,7 @@
         <item>**power**</item>
         <item>**app**</item>
         <item>**screenshot**</item>
+        <item>**widgets**</item>
         <item>**null**</item>
     </string-array>
 

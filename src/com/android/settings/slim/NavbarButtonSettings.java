@@ -473,6 +473,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_ime_switcher", null, null);
             } else if (uri.equals("**kill**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_killtask", null, null);
+            } else if (uri.equals("**widgets**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_widget", null, null);
             } else if (uri.equals("**power**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_power", null, null);
             } else if (uri.equals("**notifications**")) {
@@ -529,6 +531,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 return getResources().getString(R.string.navbar_action_ime);
             else if (uri.equals("**kill**"))
                 return getResources().getString(R.string.navbar_action_kill);
+            else if (uri.equals("**widgets**"))
+                return getResources().getString(R.string.navbar_action_widgets);
             else if (uri.equals("**power**"))
                 return getResources().getString(R.string.navbar_action_power);
             else if (uri.equals("**notifications**"))

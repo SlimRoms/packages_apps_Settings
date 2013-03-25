@@ -61,6 +61,7 @@ public class QuickSettingsUtil {
     public static final String TILE_FAVCONTACT = "toggleFavoriteContact";
     public static final String TILE_FCHARGE = "toggleFCharge";
     public static final String TILE_QUIETHOURS = "toggleQuietHours";
+    public static final String TILE_VOLUME = "toggleVolume";
 
     private static final String TILE_DELIMITER = "|";
     protected static ArrayList<String> TILES_DEFAULT = new ArrayList<String>();
@@ -158,6 +159,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_WIFI, new QuickSettingsUtil.TileInfo(
                 TILE_WIFI, R.string.title_tile_wifi,
                 "com.android.systemui:drawable/ic_qs_wifi_4", true));
+        TILES.put(TILE_VOLUME, new QuickSettingsUtil.TileInfo(
+                TILE_VOLUME, R.string.title_tile_volume,
+                "com.android.systemui:drawable/ic_qs_volume", true));
         TILES.put(TILE_WIFIAP, new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral", true));

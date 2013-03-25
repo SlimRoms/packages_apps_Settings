@@ -1558,6 +1558,17 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="Settings$PowerMenuSettingsActivity"
+            android:label="@string/power_menu_title"
+            android:excludeFromRecents="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.PowerMenu" />
+        </activity>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
         <activity android:name="Settings$ASSRamBarActivity"
                 android:label="@string/ram_bar">

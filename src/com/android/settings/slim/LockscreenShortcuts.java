@@ -24,13 +24,17 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.Intent.ShortcutIconResource;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -47,13 +51,16 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.util.Log;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.slim.notificationshortcuts.ShortcutPickHelper;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,7 +68,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LockscreenShortcuts extends ApplicationsDialogPreference {
+public class LockscreenShortcuts extends ApplicationsDialogPreference implements ShortcutPickHelper.OnPickListener{
 
     private static final int SHORTCUT_LIMIT = 6;
     private static final int CUSTOM_USER_ICON = 0;
@@ -69,11 +76,17 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
     private static final int MENU_ADD = Menu.FIRST;
     private static final int MENU_RESET = MENU_ADD + 1;
 
+    public final static String ICON_FILE = "icon_file";
+
+    private static String EMPTY_LABEL;
+
     private PreferenceScreen mPreferenceScreen;
     private Preference mPreference;
     private Context mContext;
     private Resources mResources;
     private File mImageTmp;
+    ShortcutPickHelper mPicker;
+    Activity mActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,6 +108,9 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
 
         mImageTmp = new File(getActivity().getCacheDir()
                 + File.separator + "shortcut.tmp");
+        mActivity = getActivity();
+        mPicker = new ShortcutPickHelper(getActivity(), this);
+        EMPTY_LABEL = mActivity.getResources().getString(R.string.lockscreen_target_empty);
         loadApplications();
         setHasOptionsMenu(true);
     }
@@ -122,7 +138,7 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         mPreference = preference;
-        final String packageName = mPreference.getSummary().toString();
+        final String packageName = mPreference.getKey();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.icon_picker_type)
                 .setItems(R.array.icon_types, new DialogInterface.OnClickListener() {
@@ -190,27 +206,7 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
         switch (item.getItemId()) {
             case MENU_ADD:
                 if (getApplicationsStringArray().size() < SHORTCUT_LIMIT) {
-                    final ListView list = new ListView(mContext);
-                    list.setAdapter(mAppAdapter);
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle(R.string.choose_app);
-                    builder.setView(list);
-                    final Dialog dialog = builder.create();
-
-                    list.setOnItemClickListener(new OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            AppItem info = (AppItem) parent.getItemAtPosition(position);
-                            String packageName = info.packageName;
-                            if(!getApplicationsStringArray().contains(packageName)) {
-                                addPreference(info.title, packageName, info.icon);
-                                addApplication(packageName);
-                            }
-                            dialog.cancel();
-                        }
-                    });
-                    dialog.show();
+                    mPicker.pickShortcut(null, null, getId());
                 } else {
                     Toast.makeText(mContext, R.string.lock_screen_shortcuts_limit, Toast.LENGTH_SHORT).show();
                 }
@@ -238,7 +234,7 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
         switch (requestCode) {
             case CUSTOM_USER_ICON:
                 if (resultCode == Activity.RESULT_OK) {
-                    String packageName = mPreference.getSummary().toString();
+                    String packageName = mPreference.getKey();
                     File image = new File(getActivity().getFilesDir() + File.separator
                             + "lockscreen_" + System.currentTimeMillis() + ".png");
                     String path = image.getAbsolutePath();
@@ -254,6 +250,9 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
                         mImageTmp.delete();
                     }
                 }
+                break;
+            default:
+                mPicker.onActivityResult(requestCode, resultCode, data);
                 break;
         }
     }
@@ -278,7 +277,7 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                removeApplication(tView.getText().toString(), pref);
+                                removeApplication(pref.getKey(), pref);
                             }
                         });
                 builder.setNegativeButton(android.R.string.cancel, null);
@@ -341,7 +340,7 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
         String cluster =  Settings.System.getString(getContentResolver(),
                 Settings.System.LOCKSCREEN_SHORTCUTS);
 
-        if (cluster == null) {
+        if (cluster == null || cluster.equals("")) {
             return new ArrayList<String>();
         }
 
@@ -358,14 +357,21 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
 
     private void loadApplications() {
         ArrayList<String> shortcuts = getApplicationsStringArray();
-        if (shortcuts != null) {
+        if (shortcuts != null && shortcuts.size()>0) {
             for (String shortcut : shortcuts) {
-                String[] item = shortcut.split(":");
-                if(item.length > 1) {
-                    addApplicationPreference(item[0],
-                            getDrawable(item[1]));
-                } else {
-                    addApplicationPreference(item[0]);
+                try {
+                    Intent in = Intent.parseUri(shortcut, 0);
+                    ActivityInfo aInfo = in.resolveActivityInfo(this.mPackageManager, PackageManager.GET_ACTIVITIES);
+                    Drawable icon = null;
+                    if (aInfo != null) {
+                        icon = aInfo.loadIcon(this.mPackageManager);
+                    } else {
+                        icon = mResources.getDrawable(android.R.drawable.sym_def_app_icon).mutate();
+                    }
+                    addPreference(mPicker.getFriendlyNameForUri(shortcut), shortcut, icon);
+                }
+                catch(Exception e){
+                   e.printStackTrace();
                 }
             }
         }
@@ -384,39 +390,40 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
         if (apps.startsWith("|")) {
             apps = apps.substring(1, apps.length());
         }
-
         Settings.System.putString(getContentResolver(),
             Settings.System.LOCKSCREEN_SHORTCUTS, apps);
     }
 
     private void removeApplication(String packageName, Preference pref) {
         ArrayList<String> apps = getApplicationsStringArray();
-
-        for (int i = 0; i < apps.size(); i++) {
-            String app = apps.get(i);
-            if (app.startsWith(packageName)) {
-                apps.remove(app);
-            }
+        int removeIndex = 0;
+        try {
+            removeIndex = Integer.parseInt(pref.getKey());
+        }catch(Exception e){
+            removeIndex = 0;
         }
-
+        apps.remove(removeIndex);
         mPreferenceScreen.removePreference(pref);
         setApplicationsStringArray(apps);
     }
 
     private void modifyApplication(String packageName, String drawable) {
-        ArrayList<String> apps = getApplicationsStringArray();
-
-        for (int i = 0; i < apps.size(); i++) {
-            if (apps.get(i).startsWith(packageName)) {
-                if (drawable != null) {
-                    apps.set(i, packageName + ":" + drawable);
-                } else {
-                    apps.set(i, packageName);
-                }
+        try{
+            ArrayList<String> apps = getApplicationsStringArray();
+            int index = Integer.parseInt(packageName);
+            String uri = apps.get(index);
+            Intent i = Intent.parseUri(uri,0);
+            if (drawable == null || drawable.equals("")){
+                i.removeExtra(ICON_FILE);
             }
+            else {
+                i.putExtra(ICON_FILE, drawable);
+            }
+            apps.set(index, i.toUri(0));
+            setApplicationsStringArray(apps);
+        }catch(Exception e){
+            e.printStackTrace();
         }
-
-        setApplicationsStringArray(apps);
     }
 
     private void resetApplications() {
@@ -434,40 +441,33 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
         alert.create().show();
     }
 
-    private void addApplicationPreference(String packageName) {
-        addApplicationPreference(packageName, null);
-    }
-
-    private void addApplicationPreference(String packageName, Drawable icon) {
-        List<PackageInfo> packages = mPackageManager.getInstalledPackages(0);
-        for (int i=0; packages != null && i<packages.size(); i++) {
-            PackageInfo p = packages.get(i);
-            ApplicationInfo appInfo = p.applicationInfo;
-            if (appInfo != null && appInfo.packageName.equals(packageName)) {
-                CharSequence label = mPackageManager.getApplicationLabel(appInfo);
-                if (icon == null) {
-                    icon = getApplicationIcon(packageName);
-                }
-                addPreference(label, packageName, icon);
-            }
-        }
-    }
-
     private void addPreference(CharSequence title, String summary, Drawable icon) {
         ShorcutPreference pref = new ShorcutPreference(mContext);
-        String packageName = summary;
-        pref.setKey(packageName);
+        String packageName = mPicker.getFriendlyNameForUri(summary);
+        pref.setKey(mPreferenceScreen.getPreferenceCount()+"");
         pref.setTitle(title);
-        pref.setSummary(packageName);
+        if (!title.equals(packageName)) {
+            pref.setSummary(packageName);
+        }
         if (icon != null) pref.setIcon(icon);
         mPreferenceScreen.addPreference(pref);
     }
 
     private Drawable getApplicationIcon(String packageName) {
         try {
-            Drawable icon = mPackageManager.getApplicationIcon(packageName);
+            ArrayList<String> apps = getApplicationsStringArray();
+            int index = Integer.parseInt(packageName);
+            String uri = apps.get(index);
+            Intent i = Intent.parseUri(uri,0);
+            ActivityInfo aInfo = i.resolveActivityInfo(mPackageManager, PackageManager.GET_ACTIVITIES);
+            Drawable icon = null;
+            if (aInfo != null) {
+                icon = aInfo.loadIcon(mPackageManager).mutate();
+            } else {
+                icon = mResources.getDrawable(android.R.drawable.sym_def_app_icon);
+            }
             return icon;
-        } catch(NameNotFoundException e) {
+        } catch(Exception e) {
             return null;
         }
     }
@@ -479,6 +479,25 @@ public class LockscreenShortcuts extends ApplicationsDialogPreference {
             return d;
         } else {
             return Resources.getSystem().getDrawable(resourceId);
+        }
+    }
+
+    @Override
+    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+        try {
+            Intent i = Intent.parseUri(uri, 0);
+            PackageManager pm = getActivity().getPackageManager();
+            ActivityInfo aInfo = i.resolveActivityInfo(pm, PackageManager.GET_ACTIVITIES);
+            Drawable icon = null;
+            if (aInfo != null) {
+                icon = aInfo.loadIcon(pm).mutate();
+            } else {
+                icon = mResources.getDrawable(android.R.drawable.sym_def_app_icon);
+            }
+            addPreference(friendlyName, uri, icon);
+            addApplication(uri);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

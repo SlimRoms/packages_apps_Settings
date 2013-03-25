@@ -24,7 +24,6 @@ import java.util.Collections;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Context;
@@ -34,8 +33,6 @@ import android.content.Intent.ShortcutIconResource;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
@@ -43,7 +40,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -52,13 +48,10 @@ import android.preference.ListPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -70,8 +63,6 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.slim.notificationshortcuts.IconPicker;
 import com.android.settings.slim.notificationshortcuts.ShortcutPickHelper;
-
-import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 public class NotificationShortcuts extends SettingsPreferenceFragment implements ShortcutPickHelper.OnPickListener,
     IconPicker.OnIconPickListener {

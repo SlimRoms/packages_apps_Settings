@@ -5481,7 +5481,7 @@
     <string name="lockscreen_long_press_back_title">Long press Back button</string>
     <string name="lockscreen_long_press_home_title">Long press Home button</string>
     <string name="lockscreen_long_press_menu_title">Long press Menu button</string>
-    <string name="lockscreen_buttons_no_action">No action</string>
+    <string name="lockscreen_buttons_no_action">None</string>
     <string name="lockscreen_buttons_flashlight">Flashlight</string>
     <string name="lockscreen_buttons_next">Next song</string>
     <string name="lockscreen_buttons_previous">Previous song</string>
@@ -5508,19 +5508,19 @@
     <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
     <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
-    <string name="hardware_keys_action_nothing">No action</string>
-    <string name="hardware_keys_action_home">Home button</string>
-    <string name="hardware_keys_action_back">Back button</string>
-    <string name="hardware_keys_action_menu">Open/close menu</string>
-    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_nothing">None</string>
+    <string name="hardware_keys_action_home">Home</string>
+    <string name="hardware_keys_action_back">Back</string>
+    <string name="hardware_keys_action_menu">Menu</string>
+    <string name="hardware_keys_action_app_switch">Recents</string>
+    <string name="hardware_keys_action_search">Search</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_power">Screen off</string>
     <string name="hardware_keys_action_notifications">Notifications</string>
     <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
     <string name="hardware_keys_action_kill_app">Kill app</string>
-    <string name="hardware_keys_action_last_app">Switch to last app</string>
+    <string name="hardware_keys_action_last_app">Last app</string>
     <string name="hardware_keys_action_custom_app">Custom app</string>
     <string name="hardware_keys_action_widgets">Widgets viewpager</string>
 
@@ -5552,16 +5552,14 @@
     <string name="power">Screen off</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
-    <string name="menu_power">Power menu</string>
     <string name="blank">None</string>
     <string name="none">None</string>
-    <string name="navbar_action_home_longpress_default">None (empty home longpress action will show up navring)</string>
-    <string name="take_screenshot">Take Screenshot</string>
+    <string name="take_screenshot">Screenshot</string>
     <string name="ring_vib">Ring/Vib</string>
     <string name="ring_silent">Ring/Silent</string>
     <string name="ring_vib_silent">Ring/Vib/Silent</string>
     <string name="screen_off">Screen Off</string>
-    <string name="google_now">Google Now / Web search</string>
+    <string name="google_now">Search</string>
     <string name="one_target">1 target</string>
     <string name="two_targets">2 targets</string>
     <string name="three_targets">3 targets</string>
@@ -5684,7 +5682,7 @@
     <string name="summary_navring_amount">Changing this will reset your current targets</string>
     <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
     <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
-    <string name="interface_navring_assist_title">Google Now / web search</string>
+    <string name="interface_navring_assist_title">Search</string>
     <string name="interface_navring">Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
     <string name="navring_enable_long">Enable longpress for navring</string>
@@ -5790,7 +5788,7 @@
     <string name="gestures_double_spen_summary_head">Allows to launch custom action on double tap</string>
 
     <!-- Gestures Options -->
-    <string name="gestures_action_empty">No Action</string>
+    <string name="gestures_action_empty">None</string>
     <string name="gestures_action_home">Go To Home</string>
     <string name="gestures_action_back">Emulate Back Key</string>
     <string name="gestures_action_menu">Emulate Menu Key</string>

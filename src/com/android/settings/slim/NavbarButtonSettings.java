@@ -367,11 +367,6 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                } else {
                     mLongPress.setValue("**app**");
                }
-
-               if (uri != null && uriLong!=null) {
-                   if (uriLong.equals("**null**") && uri.equals("**home**"))
-                        mLongPress.setSummary(getResources().getString(R.string.navbar_action_home_longpress_default));
-               }
             }
 
             if (uri != null && !uri.equals("**null**")) {

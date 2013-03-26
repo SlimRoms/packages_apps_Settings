@@ -423,7 +423,7 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
             else if (uri.equals("**screenoff**"))
                     return getResources().getString(R.string.screen_off);
             else if (uri.equals("**power**"))
-                    return getResources().getString(R.string.menu_power);
+                    return getResources().getString(R.string.power);
             else if (uri.equals("**assist**"))
                     return getResources().getString(R.string.google_now);
         } else {

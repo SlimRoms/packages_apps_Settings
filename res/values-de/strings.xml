@@ -1831,7 +1831,6 @@
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Wählen Sie aus, welche Notfallbenachrichtigungen angezeigt werden sollen."</string>
 
     <!-- Slim Extra Settings Start -->
-    <string name="slim_ota_title">SlimOTA</string>
 
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Ruhige Stunden</string>
@@ -1917,7 +1916,6 @@
     <string name="title_expanded_widget">Energiesteuerung</string>
     <string name="power_widget_behavior">Widget-Verhalten</string>
     <string name="title_expanded_hide_onchange">Nach Änd. schließen</string>
-    <string name="title_expanded_hide_indicator">Indikator verbergen</string>
     <string name="title_expanded_hide_scrollbar">Scrollbar verbergen</string>
     <string name="title_widget_picker">Schaltflächen</string>
     <string name="summary_widget_picker">Schaltflächen auswählen</string>
@@ -2884,10 +2882,8 @@
     <string name="power">Power</string>
     <string name="notifications">Benachrichtungen</string>
     <string name="custom_app">Eigene App</string>
-    <string name="menu_power">Power menu</string>
     <string name="blank">Keine</string>
     <string name="none">Keine</string>
-    <string name="navbar_action_home_longpress_default">Keine (Leere Aktion für Home (gedrückt halten) zeigt den Navring an)</string>
     <string name="take_screenshot">Bildschirmfoto</string>
     <string name="ring_vib">Klingeln/Vibrieren</string>
     <string name="ring_silent">Klingeln/Lautlos</string>

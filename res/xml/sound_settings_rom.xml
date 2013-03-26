@@ -34,6 +34,12 @@
         android:entryValues="@array/less_notification_sounds_values" />
 
     <CheckBoxPreference
+        android:key="lock_volume_keys"
+        android:title="@string/sound_lock_volume_keys_title"
+        android:summary="@string/sound_lock_volume_keys_summary"
+        android:persistent="false" />
+
+    <CheckBoxPreference
         android:key="notification_convert_sound_to_vibration"
         android:title="@string/notification_convert_sound_to_vibration_title"
         android:summary="@string/notification_convert_sound_to_vibration_summary"

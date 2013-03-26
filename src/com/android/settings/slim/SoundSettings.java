@@ -47,6 +47,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String KEY_LOCK_VOLUME_KEYS = "lock_volume_keys";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     private final Configuration mCurConfig = new Configuration();
@@ -56,6 +57,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolBtnMusicCtrl;
     private CheckBoxPreference mConvertSoundToVibration;
     private CheckBoxPreference mVolumeAdjustSounds;
+    private CheckBoxPreference mLockVolumeKeys;
     private ListPreference mAnnoyingNotifications;
 
     @Override
@@ -90,6 +92,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeAdjustSounds = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUNDS);
         mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) != 0);
+
+        mLockVolumeKeys = (CheckBoxPreference) findPreference(KEY_LOCK_VOLUME_KEYS);
+        mLockVolumeKeys.setChecked(Settings.System.getInt(resolver,
+                Settings.System.LOCK_VOLUME_KEYS, 0) != 0);
 
         mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
         mAnnoyingNotifications.setOnPreferenceChangeListener(this);
@@ -134,6 +140,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolumeAdjustSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
+
+        } else if (preference == mLockVolumeKeys) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_VOLUME_KEYS,
+                    mLockVolumeKeys.isChecked() ? 1 : 0);
 
         } else {
             // If we didn't handle it, let preferences handle it.

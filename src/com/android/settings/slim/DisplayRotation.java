@@ -16,6 +16,7 @@
 
 package com.android.settings.slim;
 
+import android.content.Context;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,7 @@ import android.provider.Settings;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 public class DisplayRotation extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
     private static final String TAG = "DisplayRotation";
@@ -90,11 +92,11 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
         mRotation270Pref.setChecked((mode & ROTATION_270_MODE) != 0);
 
         mSwapVolumeButtons = (CheckBoxPreference) prefSet.findPreference(KEY_SWAP_VOLUME_BUTTONS);
-
-        int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
-                Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE, 0);
-
-        mSwapVolumeButtons.setChecked(swapVolumeKeys != 0);
+        if (mSwapVolumeButtons != null) {
+            int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE, 0);
+            mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
+        }
     }
 
     @Override
@@ -150,11 +152,13 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, mode);
             return true;
         } else if (preference == mSwapVolumeButtons) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+            Context context = getActivity().getApplicationContext();
+            Settings.System.putInt(context.getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE,
-                    mSwapVolumeButtons.isChecked() ? 1 : 0);
+                    mSwapVolumeButtons.isChecked()
+                    ? (Utils.isTablet(context) ? 2 : 1)
+                    : 0);
         }
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

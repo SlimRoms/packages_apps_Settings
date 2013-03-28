@@ -5185,6 +5185,7 @@
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Screen timeout</string>
+    <string name="title_tile_customshortcut">Custom Shortcut</string>
     <string name="title_tile_fcharge">Fast charge</string>
     <string name="title_tile_quiet_hours">Quiet hours</string>
     <string name="title_dynamic_tiles">Dynamic tiles</string>

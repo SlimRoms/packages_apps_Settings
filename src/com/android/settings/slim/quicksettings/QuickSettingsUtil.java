@@ -62,6 +62,7 @@ public class QuickSettingsUtil {
     public static final String TILE_QUIETHOURS = "toggleQuietHours";
     public static final String TILE_VOLUME = "toggleVolume";
     public static final String TILE_EXPANDED_DESKTOP = "toggleExpandedDesktop";
+    public static final String TILE_CUSTOMSHORTCUT = "toggleCustomShortcut";
 
     private static final String TILE_DELIMITER = "|";
     protected static ArrayList<String> TILES_DEFAULT = new ArrayList<String>();
@@ -96,6 +97,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_BRIGHTNESS, new QuickSettingsUtil.TileInfo(
                 TILE_BRIGHTNESS, R.string.title_tile_brightness,
                 "com.android.systemui:drawable/ic_qs_brightness_auto_off", true));
+        TILES.put(TILE_CUSTOMSHORTCUT, new QuickSettingsUtil.TileInfo(
+                TILE_CUSTOMSHORTCUT, R.string.title_tile_customshortcut,
+                "com.android.systemui:drawable/ic_qs_shortcut_andy", false));
         TILES.put(TILE_EXPANDED_DESKTOP, new QuickSettingsUtil.TileInfo(
                 TILE_EXPANDED_DESKTOP, R.string.title_tile_expanded_desktop,
                 "com.android.systemui:drawable/ic_qs_expanded_desktop_off", true));

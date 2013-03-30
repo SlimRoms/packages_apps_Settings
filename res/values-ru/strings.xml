@@ -2533,7 +2533,7 @@
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Передача данных</string>
     <string name="title_tile_mobilenetwork">Мобильная сеть</string>
-    <string name="title_tile_expanded_desktop">Expanded desktop</string>
+    <string name="title_tile_expanded_desktop">Расширенный рабочий стол</string>
     <string name="title_tile_profile">Профиль</string>
     <string name="title_tile_autorotate">Автоповорот</string>
     <string name="title_tile_settings">Настройки</string>
@@ -3128,7 +3128,7 @@
     <string name="advanced_reboot_title">Расширенная перезагрузка</string>
     <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
     <string name="advanced_reboot_summary">Включить варианты перезагрузки (recovery или bootloader) в меню \"Параметры устройства\"</string>
-    <string name="advanced_reboot_disabled">Включено</string>
+    <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
 	

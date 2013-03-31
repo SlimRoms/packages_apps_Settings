@@ -624,6 +624,11 @@
     <string name="wifi_secured_first_item" msgid="4072076186051083451">"Защита <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g>"</string>
     <string name="wifi_secured_second_item" msgid="1326000076939056265">", защита <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g>"</string>
     <string name="wifi_security_none" msgid="7985461072596594400">"Нет"</string>
+	<string name="wifi_mode">Режим</string>
+	<string name="wifi_mode_ibss">Сеть Ad-Hoc (IBSS)</string>
+	<string name="wifi_ibss_freq_title">Канал / Частота</string>
+	<string name="wifi_channel">Канал</string>
+	<string name="wifi_mhz">МГц</string>
     <string name="wifi_connect" msgid="1076622875777072845">"Подключить"</string>
     <string name="wifi_failed_connect_message" msgid="8491902558970292871">"Не удалось подключиться к сети."</string>
     <string name="wifi_forget" msgid="8168174695608386644">"Удалить"</string>
@@ -703,6 +708,9 @@
     <string name="sound_effects_enable_title" msgid="1171590821131077296">"Звук нажатия на экран"</string>
     <string name="lock_sounds_enable_title" msgid="450098505659399520">"Звук блокировки экрана"</string>
     <string name="haptic_feedback_enable_title" msgid="2438293710530828760">"Виброотклик"</string>
+	<!-- Sound settings screen, setting check box label -->
+	<string name="camera_sounds_title">Звук затвора камеры</string>
+	<string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
     <string name="audio_record_proc_title" msgid="4271091199976457534">"Подавление шума"</string>
     <string name="volume_media_description" msgid="7949355934788807863">"Музыка, видео, игры и другие медиафайлы"</string>
     <string name="volume_ring_description" msgid="5936851631698298989">"Рингтон и уведомления"</string>
@@ -1864,7 +1872,7 @@
     <string name="user_picture_title" msgid="7297782792000291692">"Документ с фото"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Широковещательная передача сообщений"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Выберите типы экстренных оповещений на экране."</string>
-    <string name="slim_center_title">SlimCenter</string>
+    <string name="slim_center_title">Slim-Центр</string>
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Тихие часы</string>
     <string name="quiet_hours_summary">Настройка часов, когда устройство должно быть тихим</string>
@@ -1960,7 +1968,7 @@
     <string name="title_toggle_screentimeout">Задержка выкл. экрана</string>
     <string name="title_toggle_mobiledata">Передача данных</string>
     <string name="title_toggle_lockscreen">Блокировка</string>
-    <string name="title_toggle_networkmode">Режим сети</string>
+    <string name="title_toggle_networkmode">Режим моб. сети</string>
     <string name="title_toggle_autorotate">Автоповорот</string>
     <string name="title_toggle_airplane">Режим полёта</string>
     <string name="title_toggle_flashlight">Фонарик</string>
@@ -2156,7 +2164,7 @@
     <string name="profile_add_nfc_text">Этот NFC тег присвоен неизвестному профилю. Назначение этого NFC тега к существующему профилю позволит использовать его в будущем.</string>
     <string name="profile_select">Выберите профиль</string>
     <!-- Power menu enable disable -->
-    <string name="power_menu_title">Меню \"Параметры устройства\"</string>
+    <string name="power_menu_title">Меню управления питанием</string>
     <string name="power_menu_reboot_title">Перезагрузка</string>
     <string name="power_menu_screenshot_title">Снимок экрана</string>
     <string name="power_menu_expanded_desktop">Расширенный рабочий стол</string>
@@ -2776,7 +2784,7 @@
     <string name="lockscreen_vibrate_enabled_title">Вибрация</string>
     <string name="lockscreen_vibrate_enabled_head">Вибрировать при разблокировке</string>
     <!-- Screen security - Screen security   -->
-    <string name="screen_security_category">Безопасность экрана</string>
+    <string name="screen_security_category">Настройка блокировки</string>
     <string name="screen_security_title">Экран блокировки</string>
     <string name="screen_security_summary">Просмотр и изменение безопасности экрана блокировки, задержки и тайм-аута</string>
     <string name="unlock_menu_unlock_title">Разблок. по кнопке \"Меню\"</string>

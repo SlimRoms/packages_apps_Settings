@@ -58,6 +58,7 @@ public class DisplayBrightness extends SeekBarDialogPreference implements
     private int mOldAutomatic;
 
     private boolean mAutomaticAvailable;
+    private boolean mAutomaticAdjustAvailable;
     private boolean mAutomaticMode;
 
     private int mCurBrightness = -1;
@@ -91,13 +92,17 @@ public class DisplayBrightness extends SeekBarDialogPreference implements
         mAutomaticAvailable = context.getResources().getBoolean(
                 com.android.internal.R.bool.config_automatic_brightness_available);
 
+        mAutomaticAdjustAvailable = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_automatic_adjust_brightness_available)
+                && mAutomaticAvailable;
+
         setDialogLayoutResource(R.layout.preference_dialog_brightness);
         setDialogIcon(R.drawable.ic_settings_display);
     }
 
     @Override
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
-        if (mAutomaticAvailable) {
+        if (mAutomaticAdjustAvailable) {
             builder.setNeutralButton(R.string.auto_brightness_adjust_button,
                     new DialogInterface.OnClickListener() {
                 @Override
@@ -111,7 +116,7 @@ public class DisplayBrightness extends SeekBarDialogPreference implements
     protected void showDialog(Bundle state) {
         super.showDialog(state);
 
-        if (mAutomaticAvailable) {
+        if (mAutomaticAdjustAvailable) {
             // can't use onPrepareDialogBuilder for this as we want the dialog
             // to be kept open on click
             AlertDialog d = (AlertDialog) getDialog();
@@ -184,7 +189,7 @@ public class DisplayBrightness extends SeekBarDialogPreference implements
 
     private void updateAutoBrightnessCustomizeButton() {
         AlertDialog d = (AlertDialog) getDialog();
-        if (d != null && mAutomaticAvailable) {
+        if (d != null && mAutomaticAdjustAvailable) {
             d.getButton(DialogInterface.BUTTON_NEUTRAL).setEnabled(
                     mCheckBox.isChecked());
         }

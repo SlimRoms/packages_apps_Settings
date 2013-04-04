@@ -4831,7 +4831,7 @@
     <string name="safe_headset_restore_summary">Prevent loud volume levels when headset is first plugged in</string>
 
     <!-- Less Notification sounds -->
-    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_title">Less frequent notification sounds</string>
     <string name="less_notification_sounds_summary">Limit the notification sounds of each app to only play once per set time period</string>
 
     <!-- Setting checkbox summary for displaying USB debugging notification -->
@@ -4895,8 +4895,8 @@
     <string name="title_slim_general">General</string>
     <string name="display_short">Display</string>
     <string name="misc_short">Misc</string>
-    <string name="alt_resolver">Alt Default App Grid</string>
-    <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
+    <string name="alt_resolver">Alt default app grid</string>
+    <string name="alt_resolver_summary">Use alternate default app picker</string>
     <string name="dual_pane">Tablet dual panel mode</string>
     <string name="dual_pane_summary">Restart settings to take effect</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
@@ -4916,7 +4916,7 @@
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
-    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_title">LCD density</string>
     <string name="lcd_density_summary">unknown</string>
     <string name="current_lcd_density">"Current LCD Density: "</string>
     <string name="lcd_density_wizard">LCD Density Wizard</string>
@@ -5068,7 +5068,7 @@
 
     <!-- Display : Animation options -->
     <string name="display_category_animation_options_title">Animation options</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_title">CRT screen off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>

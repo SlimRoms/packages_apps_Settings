@@ -68,6 +68,11 @@
         android:fragment="com.android.settings.slim.PowerMenu" />
 
     <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.slim.PieControl"
+        android:title="@string/pie_control_title" />
+
+    <PreferenceScreen
         android:key="sound_settings"
         android:fragment="com.android.settings.slim.SoundSettings"
         android:title="@string/sound_title" />

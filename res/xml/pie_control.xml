@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 SlimRoms
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/pie_control_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <ListPreference
+        android:key="pie_control"
+        android:entries="@array/pie_control_entries"
+        android:entryValues="@array/pie_control_values"
+        android:title="@string/pie_control_title"
+        android:dialogTitle="@string/pie_control_dialog_title" />
+
+    <PreferenceScreen
+        android:key="pie_button"
+        android:fragment="com.android.settings.slim.PieButtonSettings"
+        android:title="@string/pie_button" />
+
+    <PreferenceScreen
+        android:key="pie_button_style"
+        android:fragment="com.android.settings.slim.PieButtonStyleSettings"
+        android:title="@string/pie_button_style" />
+
+    <PreferenceScreen
+        android:key="pie_style"
+        android:fragment="com.android.settings.slim.PieStyleSettings"
+        android:title="@string/pie_style" />
+
+    <PreferenceScreen
+        android:key="pie_trigger"
+        android:fragment="com.android.settings.slim.PieTriggerSettings"
+        android:title="@string/pie_trigger" />
+
+    <PreferenceCategory
+        android:title="@string/pie_additional_options">
+
+        <CheckBoxPreference
+            android:key="pie_show_background"
+            android:title="@string/pie_show_background_title"
+            android:summary="@string/pie_show_background_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pie_show_snap"
+            android:title="@string/pie_show_snap_title"
+            android:summary="@string/pie_show_snap_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pie_show_text"
+            android:title="@string/pie_show_text_title"
+            android:summary="@string/pie_show_text_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pie_disable_statusbar_info"
+            android:title="@string/pie_disable_statusbar_info_title"
+            android:summary="@string/pie_disable_statusbar_info_summary"
+            android:dependency="pie_show_text"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

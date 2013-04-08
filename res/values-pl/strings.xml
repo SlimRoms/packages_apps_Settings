@@ -70,6 +70,7 @@
     <string name="small_font">Mały</string>
     <string name="medium_font">Średni</string>
     <string name="large_font">Duży</string>
+    <string name="font_size_preview_text">Dajcie temu człowiekowi piwo i kiwi.</string>
     <string name="font_size_save">OK</string>
     <string name="sdcard_setting" product="nosdcard">Karta SD</string>
     <string name="sdcard_setting" product="default">Karta SD</string>
@@ -136,6 +137,7 @@
     <string name="bluetooth_disconnected">Rozłączona</string>
     <string name="bluetooth_disconnecting">Rozłączanie...</string>
     <string name="bluetooth_connecting">Łączenie...</string>
+    <string name="bluetooth_unknown">[empty string]</string>
     <string name="bluetooth_pairing">Parowanie...</string>
     <string name="bluetooth_device">Urządzenie Bluetooth bez nazwy</string>
     <string name="progress_scanning">Wyszukiwanie</string>
@@ -307,6 +309,7 @@
     <string name="lock_after_timeout_summary">Po <xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> uśpienia</string>
     <string name="show_owner_info_on_lockscreen_label">Pokaż tę informację na ekranie blokady</string>
     <string name="owner_info_settings_title">Informacje o właścicielu</string>
+    <string name="owner_info_settings_summary">[empty string]</string>
     <string name="owner_info_settings_edit_text_hint">Wpisz tekst do wyświetlenia na ekranie blokady.</string>
     <string name="show_user_info_on_lockscreen_label">Pokaż informacje o użytkowniku na zablokowanym ekranie</string>
     <string name="user_info_settings_title">Użytkownik – informacje</string>
@@ -349,6 +352,7 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Wybierz sposób blokowania ekranu</string>
     <string name="unlock_backup_info_summary">Wybierz sposób odblokowania w przypadku, gdy Rozpoznanie twarzy nie zadziała.</string>
     <string name="unlock_set_unlock_off_title">Brak</string>
+    <string name="unlock_set_unlock_off_summary">[empty string]</string>
     <string name="unlock_set_unlock_none_title">Przesunięcie palcem</string>
     <string name="unlock_set_unlock_none_summary">Bez zabezpieczeń</string>
     <string name="unlock_set_unlock_biometric_weak_title">Rozpoznanie twarzy</string>
@@ -429,6 +433,7 @@
     <string name="bluetooth_display_passkey_pin_msg">Aby sparować z urządzeniem <xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>, wpisz na nim klucz <xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g>, a następnie naciśnij klawisz zatwierdzania.</string>
     <string name="bluetooth_pairing_accept">Powiąż</string>
     <string name="bluetooth_pairing_decline">Anuluj</string>
+    <string name="bluetooth_error_title">[empty string]</string>
     <string name="bluetooth_pairing_error_message">Nie można sparować z urządzeniem <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">Nie można sparować z urządzeniem <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ze względu na błędny kod PIN lub klucz.</string>
     <string name="bluetooth_pairing_device_down_error_message">Nie można skomunikować się z urządzeniem <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
@@ -603,12 +608,14 @@
     <string name="wifi_security_short_wpa">WPA</string>
     <string name="wifi_security_short_wpa2">WPA2</string>
     <string name="wifi_security_short_wpa_wpa2">WPA/WPA2</string>
+    <string name="wifi_security_short_psk_generic">@string/wifi_security_short_wpa_wpa2</string>
     <string name="wifi_security_short_eap">802.1x</string>
     <string name="wifi_security_none">Brak</string>
     <string name="wifi_security_wep">WEP</string>
     <string name="wifi_security_wpa">WPA PSK</string>
     <string name="wifi_security_wpa2">WPA2 PSK</string>
     <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
+    <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
     <string name="wifi_security_eap">802.1x EAP</string>
     <string name="wifi_connect">Połącz</string>
     <string name="wifi_failed_connect_message">Nie można nawiązać połączenia z siecią</string>
@@ -669,6 +676,7 @@
     <string name="display_settings_title">Wyświetlacz</string>
     <string name="sound_settings">Dźwięk</string>
     <string name="ringtone_title">Dzwonek telefonu</string>
+    <string name="ringtone_summary">"[empty string]"</string>
     <string name="all_volume_title">Głośność</string>
     <string name="musicfx_title">Efekty muzyczne</string>
     <string name="ring_volume_title">Głośność dzwonka</string>
@@ -767,6 +775,7 @@
     <string name="device_info_settings" product="tablet">Stan telefonu</string>
     <string name="device_info_settings" product="default">Stan telefonu</string>
     <string name="system_update_settings_list_item_title">Aktualizacje systemowe</string>
+    <string name="system_update_settings_list_item_summary">"[empty string]"</string>
     <string name="firmware_version">Wersja systemu Android</string>
     <string name="model_number">Numer modelu</string>
     <string name="fcc_equipment_id">Identyfikator sprzętu</string>
@@ -827,6 +836,8 @@
     <string name="sd_insert_summary" product="default">Włóż kartę SD w celu zainstalowania</string>
     <string name="sd_mount" product="nosdcard">Zainstaluj kartę SD</string>
     <string name="sd_mount" product="default">Zainstaluj kartę SD</string>
+    <string name="sd_mount_summary" product="nosdcard">[empty string]</string>
+    <string name="sd_mount_summary" product="default">[empty string]</string>
     <string name="sd_format" product="nosdcard">Wyczyść kartę SD</string>
     <string name="sd_format" product="default">Wyczyść kartę SD</string>
     <string name="sd_format_summary" product="nosdcard">Wymazuje z karty SD telefonu wszystkie dane, takie jak muzyka czy zdjęcia</string>
@@ -838,6 +849,8 @@
     <string name="dlg_confirm_unmount_title" product="default">Odłączyć kartę SD?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Jeśli odłączysz kartę SD, niektóre używane aplikacje zostaną zatrzymane i mogą być niedostępne do chwili jej ponownego podłączenia.</string>
     <string name="dlg_confirm_unmount_text" product="default">Jeśli odłączysz kartę SD, niektóre używane aplikacje zostaną zatrzymane i mogą być niedostępne do chwili jej ponownego podłączenia.</string>
+    <string name="dlg_error_unmount_title" product="nosdcard">[empty string]</string>
+    <string name="dlg_error_unmount_title" product="default">[empty string]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">Nie można odłączyć karty SD. Spróbuj ponownie później.</string>
     <string name="dlg_error_unmount_text" product="default">Nie można odłączyć karty SD. Spróbuj ponownie później.</string>
     <string name="unmount_inform_text" product="nosdcard">Karta SD zostanie odłączona.</string>
@@ -888,6 +901,7 @@
     <string name="menu_new">Nowy APN</string>
     <string name="menu_save">Zapisz</string>
     <string name="menu_cancel">Odrzuć</string>
+    <string name="error_title">[empty string]</string>
     <string name="error_name_empty">Nazwa nie może być pusta.</string>
     <string name="error_apn_empty">Nazwa APN nie może być pusta.</string>
     <string name="error_mcc_not3">Pole MMC musi zawierać 3 cyfry.</string>
@@ -1005,7 +1019,9 @@
     <string name="lockpattern_change_lock_pattern_label">Zmień wzór odblokowania</string>
     <string name="lockpattern_change_lock_pin_label">Zmień kod PIN odblokowania</string>
     <string name="lockpattern_need_to_unlock">Potwierdź zapisany wzór</string>
+    <string name="lockpattern_need_to_unlock_footer">[empty string]</string>
     <string name="lockpattern_need_to_unlock_wrong">Spróbuj ponownie:</string>
+    <string name="lockpattern_need_to_unlock_wrong_footer">[empty string]</string>
     <string name="lockpattern_recording_intro_header">Narysuj wzór odblokowania</string>
     <string name="lockpattern_recording_intro_footer">Naciśnij Menu, aby uzyskać pomoc.</string>
     <string name="lockpattern_recording_inprogress">Puść palec, gdy gotowe.</string>
@@ -1103,6 +1119,7 @@
     <string name="clear_data_dlg_text">Wszystkie dane tej aplikacji zostaną trwale usunięte. Dotyczy to wszystkich plików, ustawień, kont, baz danych itd.</string>
     <string name="dlg_ok">OK</string>
     <string name="dlg_cancel">Anuluj</string>
+    <string name="app_not_found_dlg_title">[empty string]</string>
     <string name="app_not_found_dlg_text">Aplikacji nie znaleziono na liście zainstalowanych aplikacji.</string>
     <string name="clear_data_failed">Nie można wyczyścić danych aplikacji.</string>
     <string name="app_factory_reset_dlg_title">Odinstalować aktualizacje?</string>
@@ -1136,6 +1153,7 @@
     <string name="system_package">Aktualizacji systemu nie można instalować na nośniku zewnętrznym.</string>
     <string name="force_stop_dlg_title">Wymusić zatrzymanie?</string>
     <string name="force_stop_dlg_text">Jeśli wymusisz zatrzymanie aplikacji, może ona zadziałać nieprawidłowo.</string>
+    <string name="move_app_failed_dlg_title">[empty string]</string>
     <string name="move_app_failed_dlg_text">Nie można przenieść aplikacji. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">Preferowana lokalizacja instalacji</string>
     <string name="app_install_location_summary">Zmień preferowaną lokalizację instalacji nowych aplikacji.</string>
@@ -1157,6 +1175,7 @@
     <string name="service_background_processes"><xliff:g id="MEMORY">%1$s</xliff:g> wolne</string>
     <string name="service_foreground_processes"><xliff:g id="MEMORY">%1$s</xliff:g> w użyciu</string>
     <string name="memory">Pamięć RAM</string>
+    <string name="service_process_name"><xliff:g id="process">%1$s</xliff:g></string>
     <string name="running_process_item_user_label">Użytkownik: <xliff:g id="USER_NAME">%1$s</xliff:g></string>
     <string name="running_process_item_removed_user_label">Użytkownik usunięty</string>
     <string name="running_processes_item_description_s_s"><xliff:g id="NUMPROCESS">%1$d</xliff:g> proces, <xliff:g id="NUMSERVICES">%2$d</xliff:g> usługa</string>
@@ -1184,6 +1203,7 @@
     <string name="language_settings_category">Ustawienia języka</string>
     <string name="keyboard_settings_category">Klawiatura i wprowadzanie tekstu</string>
     <string name="phone_language">Język</string>
+    <string name="phone_language_summary">"[empty string]"</string>
     <string name="auto_replace">Autokorekta</string>
     <string name="auto_replace_summary">Poprawiaj błędnie wpisane słowa</string>
     <string name="auto_caps">Wstawiaj wielkie litery</string>
@@ -1210,6 +1230,7 @@
     <string name="user_dict_settings_titlebar">Słownik użytkownika</string>
     <string name="user_dict_single_settings_title">Słownik osobisty</string>
     <string name="user_dict_multiple_settings_title">Osobiste słowniki</string>
+    <string name="user_dict_settings_summary">"[empty string]"</string>
     <string name="user_dict_settings_add_menu_title">Dodaj</string>
     <string name="user_dict_settings_add_dialog_title">Dodaj do słownika</string>
     <string name="user_dict_settings_add_screen_title">Wyrażenie</string>
@@ -1348,6 +1369,7 @@
     <string name="battery_stats_wifi_running_label">Wi-Fi</string>
     <string name="battery_stats_wake_lock_label">Aktywność</string>
     <string name="battery_stats_phone_signal_label">Sygnał sieci komórkowej</string>
+    <string name="battery_stats_last_duration">@string/menu_stats_last_unplugged</string>
     <string name="awake">Czas aktywności urządzenia</string>
     <string name="wifi_on_time">Wi-Fi na czas</string>
     <string name="bluetooth_on_time">Wi-Fi na czas</string>
@@ -1482,6 +1504,7 @@
     <string name="trusted_credentials_summary">Wyświetlanie zaufanych certyfikatów CA</string>
     <string name="credentials_install_gesture_prompt">Narysuj wzór odblokowania</string>
     <string name="credentials_install_gesture_explanation">Aby potwierdzić instalację danych logowania, musisz narysować wzór odblokowania.</string>
+    <string name="credentials_unlock">[empty string]</string>
     <string name="credentials_unlock_hint">Podaj hasło do magazynu danych logowania.</string>
     <string name="credentials_old_password">Bieżące hasło:</string>
     <string name="credentials_reset_hint">Usunąć całą zawartość?</string>
@@ -1511,6 +1534,7 @@
     <string name="local_backup_password_toast_success">Nowe hasło kopii zapasowej zostało ustawione</string>
     <string name="local_backup_password_toast_confirmation_mismatch">Nowe hasło i jego potwierdzenie nie zgadzają się</string>
     <string name="local_backup_password_toast_validation_failure">Ustawienie hasła kopii zapasowej nie powiodło się</string>
+    <string name="backup_erase_dialog_title">[empty string]</string>
     <string name="backup_erase_dialog_message">Zatrzymać tworzenie kopii zapasowych haseł sieci Wi-Fi, zakładek, innych ustawień oraz danych aplikacji, a także usunąć wszystkie kopie z serwerów Google?</string>
     <string name="device_admin_settings_title">Ustawienia administracji</string>
     <string name="active_device_admin_msg">Administrator urządzenia</string>
@@ -1596,6 +1620,7 @@
     <string name="remove_account_failed" product="tablet">To konto jest wymagane przez niektóre aplikacje. Możesz je usunąć wyłącznie przez przywrócenie ustawień fabrycznych telefonu (co spowoduje usunięcie wszystkich Twoich danych osobistych) w sekcji Ustawienia &gt; Kopia i kasowanie danych.</string>
     <string name="remove_account_failed" product="default">To konto jest wymagane przez niektóre aplikacje. Możesz je usunąć wyłącznie przez przywrócenie ustawień fabrycznych telefonu (co spowoduje usunięcie wszystkich Twoich danych osobistych) w sekcji Ustawienia &gt; Kopia i kasowanie danych.</string>
     <string name="provider_label">Subskrypcje w trybie push</string>
+    <string name="sync_item_title"><xliff:g id="authority" example="Calendar">%s</xliff:g></string>
     <string name="cant_sync_dialog_title">Nie można zsynchronizować ręcznie</string>
     <string name="cant_sync_dialog_message">Synchronizacja tego elementu jest obecnie wyłączona. Aby zmienić ustawienie, tymczasowo włącz obsługę danych w tle i automatyczną synchronizację.</string>
     <string name="wimax_settings">Ustawienia 4G</string>
@@ -1982,6 +2007,7 @@
     <string name="choose_soundtone">Wybierz dźwięk powiadomień</string>
     <string name="choose_ringtone">Wybierz dzwonek</string>
     <string name="soundtone_title">Dźwięk powiadomień</string>
+    <string name="soundtone_summary">"[empty string]"</string>
     <string name="profile_appgroups_title">Grupy aplikacji</string>
     <string name="profile_applist_title">Aplikacje</string>
     <string name="profile_new_appgroup">Nowa grupa aplikacji</string>
@@ -2234,6 +2260,7 @@
     <string name="notification_shortcuts_colorize_toggle_summary">Koloruje dowolną ikonę aplikacji wybranym kolorem</string>
     <string name="notification_shortcuts_hide_carrier_title">Ukryj nazwę operatora</string>
     <string name="notification_shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="notification_shortcuts_icon_picker_andy">Android</string>
     <string name="notification_shortcuts_icon_picker_battery">Bateria</string>
     <string name="notification_shortcuts_icon_picker_browser">Przeglądarka</string>
     <string name="notification_shortcuts_icon_picker_calendar">Kalendarz</string>
@@ -2253,6 +2280,7 @@
     <string name="notification_shortcuts_icon_picker_file_browser2">Alternatywne przeglądarki plików</string>
     <string name="notification_shortcuts_icon_picker_fitness">Fitness</string>
     <string name="notification_shortcuts_icon_picker_gallery">Galeria</string>
+    <string name="notification_shortcuts_icon_picker_gears">Gears</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google+</string>
     <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
@@ -2269,7 +2297,9 @@
     <string name="notification_shortcuts_icon_picker_nav">Nawigacja</string>
     <string name="notification_shortcuts_icon_picker_phone">Telefon</string>
     <string name="notification_shortcuts_icon_picker_package">Pakiet</string>
+    <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
     <string name="notification_shortcuts_icon_picker_play">Odtwórz</string>
+    <string name="notification_shortcuts_icon_picker_pocket">Pocket</string>
     <string name="notification_shortcuts_icon_picker_podcast">Podcast</string>
     <string name="notification_shortcuts_icon_picker_quicksettings">Szybkie ustawienia</string>
     <string name="notification_shortcuts_icon_picker_rss">Kanał RSS</string>
@@ -2278,6 +2308,7 @@
     <string name="notification_shortcuts_icon_picker_sms">Wiadomości</string>
     <string name="notification_shortcuts_icon_picker_tasks">Zadania</string>
     <string name="notification_shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="notification_shortcuts_icon_picker_transit">Transit</string>
     <string name="notification_shortcuts_icon_picker_tv">TV</string>
     <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
     <string name="notification_shortcuts_icon_picker_unlock">Odblokuj</string>
@@ -2584,6 +2615,7 @@
     <string name="lockscreen_shorcuts_longpress_title">Przytrzymanie skrótu</string>
     <string name="lockscreen_shorcuts_longpress_summary">Otwórz własne skróty blokady ekranu przy przytrzymaniu</string>
     <string name="lockscreen_shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="lockscreen_shortcuts_icon_picker_andy">Android</string>
     <string name="lockscreen_shortcuts_icon_picker_battery">Bateria</string>
     <string name="lockscreen_shortcuts_icon_picker_browser">Przeglądarka</string>
     <string name="lockscreen_shortcuts_icon_picker_calendar">Kalendarz</string>
@@ -2603,6 +2635,7 @@
     <string name="lockscreen_shortcuts_icon_picker_file_browser2">Alternatywne przeglądarki plików</string>
     <string name="lockscreen_shortcuts_icon_picker_fitness">Fitness</string>
     <string name="lockscreen_shortcuts_icon_picker_gallery">Galeria</string>
+    <string name="lockscreen_shortcuts_icon_picker_gears">Gears</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google+</string>
     <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
@@ -2619,7 +2652,9 @@
     <string name="lockscreen_shortcuts_icon_picker_nav">Nawigacja</string>
     <string name="lockscreen_shortcuts_icon_picker_phone">Telefon</string>
     <string name="lockscreen_shortcuts_icon_picker_package">Pakiet</string>
+    <string name="lockscreen_shortcuts_icon_picker_pinterest">Pinterest</string>
     <string name="lockscreen_shortcuts_icon_picker_play">Odtwórz</string>
+    <string name="lockscreen_shortcuts_icon_picker_pocket">Pocket</string>
     <string name="lockscreen_shortcuts_icon_picker_podcast">Podcast</string>
     <string name="lockscreen_shortcuts_icon_picker_quicksettings">Szybkie ustawienia</string>
     <string name="lockscreen_shortcuts_icon_picker_rss">Kanał RSS</string>
@@ -2628,6 +2663,7 @@
     <string name="lockscreen_shortcuts_icon_picker_sms">Wiadomości</string>
     <string name="lockscreen_shortcuts_icon_picker_tasks">Zadania</string>
     <string name="lockscreen_shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="lockscreen_shortcuts_icon_picker_transit">Transit</string>
     <string name="lockscreen_shortcuts_icon_picker_tv">TV</string>
     <string name="lockscreen_shortcuts_icon_picker_twitter">Twitter</string>
     <string name="lockscreen_shortcuts_icon_picker_unlock">Odblokuj</string>
@@ -2873,6 +2909,8 @@
     <string name="navbar_widgets_reset">Resetuj widgety</string>
     <string name="navbar_widget_summary">Widget %1$ s z %2$ s</string>
     <string name="navbar_widget_summary_add">Kliknij, aby dodać Widget</string>
+    <string name="navbar_widgets_shiftLeft">Przesuń w lewo</string>
+    <string name="navbar_widgets_shiftRight">Przesuń w prawo</string>
     <string name="navbar_widgets_delete">Usuń widżet</string>
     <string name="navbar_widgets_text_color_title">Kolor tekstu podglądacza widgetów</string>
     <string name="navbar_widgets_bg_color_title">Kolor tła podglądacza widgetów</string>

@@ -256,6 +256,7 @@
     <string name="next_label">Další</string>
     <string name="language_picker_title">Jazyk</string>
     <string name="activity_picker_label">Vybrat aktivitu</string>
+    <string name="debug_intent_sender_label">Debug intent sender</string>
     <string name="device_info_label">Info o zařízení</string>
     <string name="battery_info_label">Info o baterii</string>
     <string name="display_label">Displej</string>

@@ -83,7 +83,6 @@
     <string name="battery_info_voltage_label">Akupinge:</string>
     <string name="battery_info_voltage_units">mV</string>
     <string name="battery_info_temperature_label">Aku temperatuur:</string>
-    <string name="battery_info_temperature_units">?? C</string>
     <string name="battery_info_uptime">Aeg alates algkäivitusest:</string>
     <string name="battery_info_awake_battery">Sisselülitusaeg akutoitel:</string>
     <string name="battery_info_awake_plugged">Laadimisaegne sisselülitusaeg:</string>

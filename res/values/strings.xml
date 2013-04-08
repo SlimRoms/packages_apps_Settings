@@ -4788,16 +4788,6 @@
     <string name="expanded_desktop_only_status_bar">Hide status bar</string>
     <string name="expanded_desktop_both_hidden">Hide navigation and status bar</string>
 
-    <!-- About -->
-    <string name="title_about">About Slim</string>
-    <string name="devs">Developer</string>
-    <string name="links">Official links</string>
-    <string name="slim_website_title">Slim Website</string>
-    <string name="slim_source_title">Slim Source</string>
-    <string name="slim_website_summary">www.slimroms.net\nFind all latest Slim news here</string>
-    <string name="slim_source_summary">SlimRoms are fully open source.\nSource at github.com/SlimRoms</string>
-    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
-
     <string name="increasing_ring_title">Ascending ringtone</string>
     <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->
     <string name="checkbox_increasing_ring">Enable</string>

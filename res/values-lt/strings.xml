@@ -2105,14 +2105,6 @@
     <string name="expanded_desktop_only_nav_bar">Slėpti naršymo juostą</string>
     <string name="expanded_desktop_only_status_bar">Slėpti būsenos juostą</string>
     <string name="expanded_desktop_both_hidden">Slėpti naršymo ir būsenos juostas</string>
-    <string name="title_about">Apie Slim</string>
-    <string name="devs">Kūrėjas</string>
-    <string name="links">Oficialios nuorodos</string>
-    <string name="slim_website_title">Slim interneto svetainė</string>
-    <string name="slim_source_title">Slim kodas</string>
-    <string name="slim_website_summary">www.slimroms.net\nČia rasite visas Slim naujienas</string>
-    <string name="slim_source_summary">SlimRoms yra visiškai atviro kodo.\nKodas svetainėje github.com/SlimRoms</string>
-    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
     <string name="increasing_ring_title">Garsėjanti skambučio melodija</string>
     <string name="checkbox_increasing_ring">Įgalinti</string>
     <string name="increasing_ring_min_volume_title">Skambėjimo pradžios garsumas</string>

@@ -2094,14 +2094,6 @@
     <string name="expanded_desktop_only_nav_bar">Ocultar la barra de navegación</string>
     <string name="expanded_desktop_only_status_bar">Ocultar barra de estado</string>
     <string name="expanded_desktop_both_hidden">Ocultar la barra de estado y navegación</string>
-    <string name="title_about">Acerca de Slim</string>
-    <string name="devs">Desarrollador</string>
-    <string name="links">Enlaces oficiales</string>
-    <string name="slim_website_title">Sitio web Slim</string>
-    <string name="slim_source_title">Slim Source</string>
-    <string name="slim_website_summary">www.slimroms.net\nEncontra las ultimas noticias de Slim aqui</string>
-    <string name="slim_source_summary">SlimRoms es completamente de codigo abierto.\nSource at github.com/SlimRoms</string>
-    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
     <string name="increasing_ring_title">Tono ascendente</string>
     <string name="checkbox_increasing_ring">Habilitar</string>
     <string name="increasing_ring_min_volume_title">Inicio de volumen del timbre</string>

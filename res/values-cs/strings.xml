@@ -2105,14 +2105,6 @@
     <string name="expanded_desktop_only_nav_bar">Skrýt navigační lištu</string>
     <string name="expanded_desktop_only_status_bar">Skrýt stavový řádek</string>
     <string name="expanded_desktop_both_hidden">Skrýt navigační a stavový řádek</string>
-    <string name="title_about">O Slim</string>
-    <string name="devs">Vývojář</string>
-    <string name="links">Oficiální odkazy</string>
-    <string name="slim_website_title">Slim webstránka</string>
-    <string name="slim_source_title">Zdroj Slim</string>
-    <string name="slim_website_summary">www.slimroms.net\nZde najdete poslední Slim novinky</string>
-    <string name="slim_source_summary">SlimRoms jsou zcela open source.\nZdroje najdete na github.com/SlimRoms</string>
-    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
     <string name="increasing_ring_title">Vzestupná hlasitost vyzvánění</string>
     <string name="checkbox_increasing_ring">Povolit</string>
     <string name="increasing_ring_min_volume_title">Počáteční hlasitost vyzvánění</string>

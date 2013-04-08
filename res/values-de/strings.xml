@@ -2069,13 +2069,6 @@
     <string name="expanded_desktop_only_nav_bar">Navigationsleiste verstecken</string>
     <string name="expanded_desktop_only_status_bar">Statusleiste verstecken</string>
     <string name="expanded_desktop_both_hidden">Statusleiste und Navigation verstecken</string>
-    <string name="title_about">Über Slim</string>
-    <string name="devs">Entwickler</string>
-    <string name="links">Offizielle Links</string>
-    <string name="slim_website_title">Slim Webseite</string>
-    <string name="slim_source_title">Slim Quellcode</string>
-    <string name="slim_website_summary">www.slimroms.net\nHier findest Du alle aktuellen Slim Neuigkeiten</string>
-    <string name="slim_source_summary">SlimRoms sind vollständig Open Source.\nQuellcode unter github.com/SlimRoms</string>
     <string name="increasing_ring_title">Ansteigender Klingelton</string>
     <string name="checkbox_increasing_ring">Aktivieren</string>
     <string name="increasing_ring_min_volume_title">Anfangslautstärke</string>

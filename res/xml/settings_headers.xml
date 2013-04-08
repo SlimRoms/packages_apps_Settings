@@ -98,13 +98,6 @@
         android:icon="@drawable/ic_settings_trds"
         android:title="@string/trds_settings_title" />
 
-    <!-- About Slim -->
-    <header
-        android:id="@+id/about_rom"
-        android:fragment="com.android.settings.slim.About"
-        android:icon="@drawable/ic_settings_about_slim"
-        android:title="@string/title_about" />
-
     <header android:title="@string/header_category_rom_system_settings" />
 
     <!-- DeviceParts Device Specific settings -->

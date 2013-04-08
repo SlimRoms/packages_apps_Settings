@@ -1519,7 +1519,6 @@
         <activity android:name=".slim.PowerWidget" />
         <activity android:name=".slim.QuietHours" />
         <activity android:name=".slim.PowerMenu" />
-        <activity android:name=".slim.About" />
         <activity android:name=".slim.SoundSettings" />
         <activity android:name=".slim.UserInterface" />
         <activity android:name=".slim.DisplaySettings" />

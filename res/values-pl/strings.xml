@@ -2105,14 +2105,6 @@
     <string name="expanded_desktop_only_nav_bar">Ukryj pasek nawigacyjny</string>
     <string name="expanded_desktop_only_status_bar">Ukryj pasek stanu</string>
     <string name="expanded_desktop_both_hidden">Ukryj pasek nawigacyjny i pasek stanu</string>
-    <string name="title_about">O Slim</string>
-    <string name="devs">Twórca</string>
-    <string name="links">Oficjalne linki</string>
-    <string name="slim_website_title">Strona projektu Slim</string>
-    <string name="slim_source_title">Źródła Slim</string>
-    <string name="slim_website_summary">www.slimroms.net\ntu znajdziesz wszystkie najnowsze wiadomości SLIM</string>
-    <string name="slim_source_summary">Romy SLIM są w pełni otwartym źródłem. \nźródło: github.com/SlimRoms</string>
-    <string name="donate_slim">http://www.slimroms.net/index.php/donations</string>
     <string name="increasing_ring_title">Dzwonek narastający</string>
     <string name="checkbox_increasing_ring">Włącz</string>
     <string name="increasing_ring_min_volume_title">Początkowa głośność dzwonka</string>

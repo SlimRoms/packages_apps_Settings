@@ -5593,7 +5593,7 @@
     <string name="size_3_dp">3 dp</string>
     <string name="size_4_dp">4 dp</string>
     <string name="menu_nav_bar_style_reset">Reset navbar glow color</string>
-    <string name="menu_nav_bar_dimen_reset">Reset navbar dimens</string>
+    <string name="menu_nav_bar_dimen_reset">Reset navbar dimensions</string>
     <string name="menu_nav_bar_button_reset">Reset navbar buttons</string>
     <string name="menu_nav_ring_targets_reset">Reset navring targets</string>
 
@@ -5696,14 +5696,14 @@
     <string name="navbar_ring">Custom Ring Targets</string>
     <string name="navring_enable_long">Enable longpress for navring</string>
 
-    <string name="navbar_style_dimen_title">Style and dimens</string>
+    <string name="navbar_style_dimen_title">Style and dimensions</string>
     <string name="navbar_button_title">Buttons</string>
     <string name="navbar_targets_title">Ring targets</string>
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_enable_long">Enable longpress for navbar</string>
     <string name="ring_targets_cat_title">Navigation ring targets</string>
     <string name="navbar_style_cat">Navigation bar style</string>
-    <string name="navbar_dimen_cat">Navigation bar dimens</string>
+    <string name="navbar_dimen_cat">Navigation bar dimensions</string>
     <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
 
     <string name="navbar_widgets_note_title">Note</string>

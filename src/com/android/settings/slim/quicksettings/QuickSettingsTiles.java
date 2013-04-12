@@ -117,17 +117,10 @@ public class QuickSettingsTiles extends Fragment {
             for (String tileindex : tiles) {
                 StringTokenizer st = new StringTokenizer(tileindex,"+");
                 QuickSettingsUtil.TileInfo tile = QuickSettingsUtil.TILES.get(st.nextToken());
-                String tileID;
-                String tileString = res.getString(tile.getTitleResId());
-                if (st.hasMoreTokens()) {
-                    tileID = st.nextToken();
-                    if (tileindex.startsWith(QuickSettingsUtil.TILE_FAVCONTACT)){
-                        String newTileString = prefs.getString(tileindex, null);
-                        if (newTileString != null) tileString = newTileString;
-                        else tileString += " "+tileID;
-                    }
+                if (tile != null) {
+                    String tileString = res.getString(tile.getTitleResId());
+                    addTile(tileString, tile.getIcon(), 0, false);
                 }
-                if (tile != null) addTile(tileString, tile.getIcon(), 0, false);
             }
         }
         addTile(res.getString(R.string.profiles_add), null, R.drawable.ic_menu_add, false);

@@ -2601,7 +2601,7 @@
     <string name="lockscreen_shortcuts_title">Accesos directos</string>
     <string name="lockscreen_shortcuts_summary">Ver o cambiar los accesos directos de la pantalla de bloqueo</string>
     <string name="lock_screen_shortcuts_reset_message">¿Restablecer los accesos directos de la pantalla de bloqueo?</string>
-    <string name="lock_screen_shortcuts_add">@cadena/perfiles_añadir</string>
+    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
     <string name="lock_screen_shortcuts_reset">Restablecer</string>
     <string name="lock_screen_shortcuts_limit">Se admiten sólo 6 accesos directos!</string>
     <string name="lockscreen_shorcuts_longpress_title">Accesos directos con presión larga</string>

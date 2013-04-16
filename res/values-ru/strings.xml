@@ -624,11 +624,11 @@
     <string name="wifi_secured_first_item" msgid="4072076186051083451">"Защита <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g>"</string>
     <string name="wifi_secured_second_item" msgid="1326000076939056265">", защита <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g>"</string>
     <string name="wifi_security_none" msgid="7985461072596594400">"Нет"</string>
-	<string name="wifi_mode">Режим</string>
-	<string name="wifi_mode_ibss">Сеть Ad-Hoc (IBSS)</string>
-	<string name="wifi_ibss_freq_title">Канал / Частота</string>
-	<string name="wifi_channel">Канал</string>
-	<string name="wifi_mhz">МГц</string>
+    <string name="wifi_mode">Режим</string>
+    <string name="wifi_mode_ibss">Сеть Ad-Hoc (IBSS)</string>
+    <string name="wifi_ibss_freq_title">Канал / Частота</string>
+    <string name="wifi_channel">Канал</string>
+    <string name="wifi_mhz">МГц</string>
     <string name="wifi_connect" msgid="1076622875777072845">"Подключить"</string>
     <string name="wifi_failed_connect_message" msgid="8491902558970292871">"Не удалось подключиться к сети."</string>
     <string name="wifi_forget" msgid="8168174695608386644">"Удалить"</string>
@@ -708,9 +708,9 @@
     <string name="sound_effects_enable_title" msgid="1171590821131077296">"Звук нажатия на экран"</string>
     <string name="lock_sounds_enable_title" msgid="450098505659399520">"Звук блокировки экрана"</string>
     <string name="haptic_feedback_enable_title" msgid="2438293710530828760">"Виброотклик"</string>
-	<!-- Sound settings screen, setting check box label -->
-	<string name="camera_sounds_title">Звук затвора камеры</string>
-	<string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
+    <!-- Sound settings screen, setting check box label -->
+    <string name="camera_sounds_title">Звук затвора камеры</string>
+    <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
     <string name="audio_record_proc_title" msgid="4271091199976457534">"Подавление шума"</string>
     <string name="volume_media_description" msgid="7949355934788807863">"Музыка, видео, игры и другие медиафайлы"</string>
     <string name="volume_ring_description" msgid="5936851631698298989">"Рингтон и уведомления"</string>
@@ -1939,7 +1939,7 @@
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">РАСШИРЕННЫЕ НАСТРОЙКИ SLIM</string>
-	<string name="header_category_rom_system_settings">РАСШИРЕННЫЕ СИСТЕМНЫЕ НАСТРОЙКИ</string>
+    <string name="header_category_rom_system_settings">РАСШИРЕННЫЕ СИСТЕМНЫЕ НАСТРОЙКИ</string>
     <string name="ok">OK</string>
     <!-- Interface settings  and general strings-->
     <string name="interface_settings_title">Интерфейс</string>
@@ -2529,7 +2529,7 @@
     <string name="title_tile_autorotate">Автоповорот</string>
     <string name="title_tile_settings">Настройки</string>
     <string name="title_tile_screen_timeout">Задержка выкл. экрана</string>
-	<string name="title_tile_customshortcut">Свой ярлык</string>
+    <string name="title_tile_customshortcut">Свой ярлык</string>
     <string name="title_tile_sound">Звук</string>
     <string name="title_tile_sync">Синхронизация</string>
     <string name="title_tile_wifiap">Точка доступа Wi-Fi</string>
@@ -2588,7 +2588,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
-	<string name="color_default">По умолчанию</string>
+    <string name="color_default">По умолчанию</string>
     <!-- Battery Icon and Bar -->
     <string name="status_bar_battery_icon_bar_title">Стиль значка и полосы батареи</string>
     <string name="battery_icon_cat">Стиль значка батареи</string>
@@ -2857,7 +2857,7 @@
     <string name="hardware_keys_action_kill_app">Закрыть приложение</string>
     <string name="hardware_keys_action_last_app">Предыдущее приложение</string>
     <string name="hardware_keys_action_custom_app">Заданное приложение</string>
-	<string name="hardware_keys_action_widgets">Панель виджетов</string>
+    <string name="hardware_keys_action_widgets">Панель виджетов</string>
     <!--- Sms security limit -->
     <string name="app_security_title">БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ</string>
     <string name="sms_security_check_limit_title">Ограничение SMS-сообщений</string>
@@ -2880,7 +2880,7 @@
     <string name="menu">Меню</string>
     <string name="open_ime_switcher">Открыть переключатель IME</string>
     <string name="kill_app">Завершить приложение</string>
-	<string name="widgets">Панель виджетов</string>
+    <string name="widgets">Панель виджетов</string>
     <string name="lastapp">Предыдущее приложение</string>
     <string name="power">Выключить экран</string>
     <string name="notifications">Уведомления</string>
@@ -2939,7 +2939,7 @@
     <string name="navbar_action_menu">Меню</string>
     <string name="navbar_action_ime">Открыть переключатель IME</string>
     <string name="navbar_action_kill">Завершить приложение</string>
-	<string name="navbar_action_widgets">Панель виджетов</string>
+    <string name="navbar_action_widgets">Панель виджетов</string>
     <string name="navbar_action_power">Выключить экран</string>
     <string name="navbar_action_notifications">Уведомления</string>
     <string name="navbar_action_none">Нет</string>
@@ -3002,7 +3002,7 @@
     <string name="interface_softkeys_ring_silent_title">Переключить Звонок/Тихо</string>
     <string name="interface_softkeys_ring_vib_silent_title">Переключить Звонок/Вибро/Тихо</string>
     <string name="interface_softkeys_kill_process_title">Завершить приложение</string>
-	<string name="interface_softkeys_widgets">Панель виджетов</string>
+    <string name="interface_softkeys_widgets">Панель виджетов</string>
     <string name="interface_softkey_package_removed">Ранее выбранный пакет не найден</string>
     <string name="interface_navring_settings_title">Кольцо строки навигации</string>
     <string name="interface_navring_settings_summary">Изменить свои приложения кольца строки навигации</string>
@@ -3024,25 +3024,25 @@
     <string name="navbar_dimen_cat">Размер строки навигации</string>
     <string name="navbar_restart_systemui_summary">Изменение этих настроек повлечет перезагрузку SystemUI</string>
     
-	<string name="navbar_widgets_note_title">Примечание</string>
-	<string name="navbar_widgets_note_summary">Чтобы активировать панель виджетов, включите ее для аппаратных клавиш, строки навигации или целей кольца строки навигации.</string>
-	<string name="navbar_widgets_title">Панель виджетов</string>
-	<string name="navbar_widgets_style_settings_title">Стиль панели виджетов</string>
-	<string name="navbar_widgets_style_settings_summary">Сменить цвет фона панели виджетов</string>
-	<string name="navbar_widgets_summary">Добавить виджеты в панель</string>
-	<string name="navbar_widgets_instructions">Тяните для просмотра - нажмите для выбора</string>
-	<string name="navbar_widgets_reset">Сбросить виджеты</string>
-	<string name="navbar_widget_summary">Виджет %1$s из %2$s</string>
-	<string name="navbar_widget_summary_add">Нажмите, чтобы добавить виджет</string>
-	<string name="navbar_widgets_shiftLeft">Сдвинуть влево</string>
-	<string name="navbar_widgets_shiftRight">Сдвинуть вправо</string>
-	<string name="navbar_widgets_delete">Удалить виджет</string>
+    <string name="navbar_widgets_note_title">Примечание</string>
+    <string name="navbar_widgets_note_summary">Чтобы активировать панель виджетов, включите ее для аппаратных клавиш, строки навигации или целей кольца строки навигации.</string>
+    <string name="navbar_widgets_title">Панель виджетов</string>
+    <string name="navbar_widgets_style_settings_title">Стиль панели виджетов</string>
+    <string name="navbar_widgets_style_settings_summary">Сменить цвет фона панели виджетов</string>
+    <string name="navbar_widgets_summary">Добавить виджеты в панель</string>
+    <string name="navbar_widgets_instructions">Тяните для просмотра - нажмите для выбора</string>
+    <string name="navbar_widgets_reset">Сбросить виджеты</string>
+    <string name="navbar_widget_summary">Виджет %1$s из %2$s</string>
+    <string name="navbar_widget_summary_add">Нажмите, чтобы добавить виджет</string>
+    <string name="navbar_widgets_shiftLeft">Сдвинуть влево</string>
+    <string name="navbar_widgets_shiftRight">Сдвинуть вправо</string>
+    <string name="navbar_widgets_delete">Удалить виджет</string>
 
-	<string name="navbar_widgets_text_color_title">Цвет текста панели виджетов</string>
-	<string name="navbar_widgets_bg_color_title">Цвет фона панели виджетов</string>
-	<string name="navbar_widgets_transparency_title">Прозрачность панели виджетов</string>
-	<string name="navbar_widgets_style_reset">Сбросить стиль</string>
-	
+    <string name="navbar_widgets_text_color_title">Цвет текста панели виджетов</string>
+    <string name="navbar_widgets_bg_color_title">Цвет фона панели виджетов</string>
+    <string name="navbar_widgets_transparency_title">Прозрачность панели виджетов</string>
+    <string name="navbar_widgets_style_reset">Сбросить стиль</string>
+    
     <!-- cLock settings -->
     <string name="chronus_title">cLock</string>
     <!-- Touckey Light Timeout -->
@@ -3122,89 +3122,93 @@
     <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
-	
-	<!-- Lock volume keys -->
-	<string name="sound_lock_volume_keys_title">Блокировать клавиши громкости</string>
-	<string name="sound_lock_volume_keys_summary">Предотвращать случайное отключение тихого режима кнопками громкости</string>
-	
-	<!-- Auto-Hide Status Bar -->
-	<string name="auto_hide_statusbar">Автоскрытие строки состояния</string>
-	<string name="auto_hide_statusbar_summary">Строка состояния будет автоматически скрываться при отсутствии уведомлений</string>
-	
-	<!-- Quick/Pie Control -->
-	<string name="pie_control_title">SlimPIE</string>
-	<string name="pie_control_dialog_title">SlimPIE</string>
-	<string name="pie_control_always">Всегда отображать</string>
-	<string name="pie_control_expanded">Только при расширенном рабочем столе</string>
-	<string name="pie_control_disabled">Отключен</string>
-	<string name="pie_control_size">Размер pie</string>
-	<string name="pie_control_trigger_positions">Параметры переключения</string>
-	<string name="pie_control_trigger_left">Включать по левой границе экрана</string>
-	<string name="pie_control_trigger_bottom">Включать по нижней границе экрана</string>
-	<string name="pie_control_trigger_right">Включать по правой границе экрана</string>
-	<string name="pie_control_trigger_top">Включать по верхней границе экрана</string>
-	<string name="pie_control_trigger_top_summary">Сверху будет показываться только pie</string>
-	<string name="pie_button_style">Стиль кнопок</string>
-	<string name="pie_button_color_title">Цвет кнопок</string>
-	<string name="pie_button_alpha_title">Прозрачность кнопок</string>
-	<string name="pie_button_outline_color_title">Цвет окантовки кнопок</string>
-	<string name="pie_button_pressed_color_title">Цвет нажатой кнопки</string>
-	<string name="pie_button_long_pressed_color_title">Цвет кнопки при долгом нажатии</string>
-	<string name="pie_button_pressed_alpha_title">Прозрачность нажатой кнопки</string>
-	<string name="pie_icon_style">Стиль значков кнопок</string>
-	<string name="pie_icon_color_title">Цвет значков кнопок</string>
-	<string name="pie_icon_color_mode_title">Цветовой режим значков кнопок</string>
-	<string name="pie_icon_color_mode_dialog_title">Установить цвет</string>
-	<string name="pie_icon_color_mode_summary">Изменить цветовой режим значков кнопок</string>
-	<string name="pie_icon_color_mode_all_icons">Все значки</string>
-	<string name="pie_icon_color_mode_system_icons">Системные значки</string>
-	<string name="pie_icon_color_mode_system_custom_icons">Системные и свои значки</string>
-	<string name="pie_trigger_size_title">Размер области срабатывания</string>
-	<string name="pie_trigger">Настройки области срабатывания</string>
-	<string name="pie_trigger_note_title">Примечание</string>
-	<string name="pie_trigger_note_summary">Во избежание конфликтов со строкой состояния или строкой навигации области срабатывания сверху и снизу выключаются автоматически, если какая-либо из панелей видима</string>
-	<string name="pie_disable_ime_triggers_title">Отклчить срабатывание на клавиатуре</string>
-	<string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
-	<string name="pie_background_color_title">Цвет фона</string>
-	<string name="pie_snap_color_title">Цвет точек привязки</string>
-	<string name="pie_text_color_title">Цвет текста</string>
-	<string name="pie_background_alpha_title">Цвет фона</string>
-	<string name="pie_style">Стиль и размеры</string>
-	<string name="pie_style_title">Стиль</string>
-	<string name="pie_dimens_title">Размеры</string>
-	<string name="pie_additional_options">Дополнительные настройки</string>
-	<string name="pie_additional_options">Дополнительные настройки</string>
-	<string name="pie_show_snap_title">Показывать точки привязки</string>
-	<string name="pie_show_snap_summary">Показывать точки привязки, к которым можно перетащить pie, сделав областью срабатывания</string>
-	<string name="pie_show_text_title">Показывать состояние и часы</string>
-	<string name="pie_show_text_summary">Показывать состояние телефона, дату и время</string>
-	<string name="pie_disable_statusbar_info_title">Скрывать информацию строки состояния</string>
-	<string name="pie_disable_statusbar_info_summary">Скрывать дублирующуюся информацию в строке состояния</string>
-	<string name="pie_show_background_title">Показывать фон</string>
-	<string name="pie_show_background_summary">Включить фон экрана для pie</string>
-	<string name="menu_pie_style_reset">Сбросить стиль</string>
-	<string name="menu_pie_button_style_reset">Сбросить стиль кнопок</string>
-	<string name="menu_pie_button_reset">Сбросить кнопки</string>
-	<string name="pie_qty_title">Количество кнопок</string>
-	<string name="pie_qty_summary">Изменение количества сбросит текущие настройки кнопок</string>
-	<string name="pie_action_title">Кнопка %1$s действие &amp; значок</string>
-	<string name="pie_longpress_title">Кнопка %1$s действие долго нажатия</string>
-	<string name="pie_enable_long">Включить долгое нажатие для кнопок pie</string>
-	<string name="pie_button">Кнопки</string>
-	<string name="pie_button_cat">Кнопки</string>
-	<string name="pie_action_custom_app">Приложение</string>
-	<string name="pie_action_home">Домой</string>
-	<string name="pie_action_back">Назад</string>
-	<string name="pie_action_recents">Недавние</string>
-	<string name="pie_action_lastapp">Предыдущее приложение</string>
-	<string name="pie_action_search">Поиск</string>
-	<string name="pie_action_screenshot">Снимок экрана</string>
-	<string name="pie_action_menu">Меню</string>
-	<string name="pie_action_ime">Открыть переключатель IME</string>
-	<string name="pie_action_kill">Закрыть приложение</string>
-	<string name="pie_action_widgets">Панель виджетов</string>
-	<string name="pie_action_power">Потушить экран</string>
-	<string name="pie_action_notifications">Уведомления</string>
-	<string name="pie_action_none">Нет</string>
+    
+    <!-- Lock volume keys -->
+    <string name="sound_lock_volume_keys_title">Блокировать клавиши громкости</string>
+    <string name="sound_lock_volume_keys_summary">Предотвращать случайное отключение тихого режима кнопками громкости</string>
+    
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">Автоскрытие строки состояния</string>
+    <string name="auto_hide_statusbar_summary">Строка состояния будет автоматически скрываться при отсутствии уведомлений</string>
+    
+    <!-- Quick/Pie Control -->
+    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_dialog_title">SlimPIE</string>
+    <string name="pie_control_always">Всегда отображать</string>
+    <string name="pie_control_expanded">Только при расширенном рабочем столе</string>
+    <string name="pie_control_disabled">Отключен</string>
+    <string name="pie_control_size">Размер pie</string>
+    <string name="pie_control_trigger_positions">Параметры переключения</string>
+    <string name="pie_control_trigger_left">Включать по левой границе экрана</string>
+    <string name="pie_control_trigger_bottom">Включать по нижней границе экрана</string>
+    <string name="pie_control_trigger_right">Включать по правой границе экрана</string>
+    <string name="pie_control_trigger_top">Включать по верхней границе экрана</string>
+    <string name="pie_control_trigger_top_summary">Сверху будет показываться только pie</string>
+    <string name="pie_button_style">Стиль кнопок</string>
+    <string name="pie_button_color_title">Цвет кнопок</string>
+    <string name="pie_button_alpha_title">Прозрачность кнопок</string>
+    <string name="pie_button_outline_color_title">Цвет окантовки кнопок</string>
+    <string name="pie_button_pressed_color_title">Цвет нажатой кнопки</string>
+    <string name="pie_button_long_pressed_color_title">Цвет кнопки при долгом нажатии</string>
+    <string name="pie_button_pressed_alpha_title">Прозрачность нажатой кнопки</string>
+    <string name="pie_icon_style">Стиль значков кнопок</string>
+    <string name="pie_icon_color_title">Цвет значков кнопок</string>
+    <string name="pie_icon_color_mode_title">Цветовой режим значков кнопок</string>
+    <string name="pie_icon_color_mode_dialog_title">Установить цвет</string>
+    <string name="pie_icon_color_mode_summary">Изменить цветовой режим значков кнопок</string>
+    <string name="pie_icon_color_mode_all_icons">Все значки</string>
+    <string name="pie_icon_color_mode_system_icons">Системные значки</string>
+    <string name="pie_icon_color_mode_system_custom_icons">Системные и свои значки</string>
+    <string name="pie_trigger_size_title">Размер области срабатывания</string>
+    <string name="pie_trigger">Настройки области срабатывания</string>
+    <string name="pie_trigger_note_title">Примечание</string>
+    <string name="pie_trigger_note_summary">Во избежание конфликтов со строкой состояния или строкой навигации области срабатывания сверху и снизу выключаются автоматически, если какая-либо из панелей видима</string>
+    <string name="pie_disable_ime_triggers_title">Отклчить срабатывание на клавиатуре</string>
+    <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
+    <string name="pie_background_color_title">Цвет фона</string>
+    <string name="pie_snap_color_title">Цвет точек привязки</string>
+    <string name="pie_text_color_title">Цвет текста</string>
+    <string name="pie_background_alpha_title">Цвет фона</string>
+    <string name="pie_style">Стиль и размеры</string>
+    <string name="pie_style_title">Стиль</string>
+    <string name="pie_dimens_title">Размеры</string>
+    <string name="pie_additional_options">Дополнительные настройки</string>
+    <string name="pie_additional_options">Дополнительные настройки</string>
+    <string name="pie_show_snap_title">Показывать точки привязки</string>
+    <string name="pie_show_snap_summary">Показывать точки привязки, к которым можно перетащить pie, сделав областью срабатывания</string>
+    <string name="pie_show_text_title">Показывать состояние и часы</string>
+    <string name="pie_show_text_summary">Показывать состояние телефона, дату и время</string>
+    <string name="pie_disable_statusbar_info_title">Скрывать информацию строки состояния</string>
+    <string name="pie_disable_statusbar_info_summary">Скрывать дублирующуюся информацию в строке состояния</string>
+    <string name="pie_show_background_title">Показывать фон</string>
+    <string name="pie_show_background_summary">Включить фон экрана для pie</string>
+    <string name="menu_pie_style_reset">Сбросить стиль</string>
+    <string name="menu_pie_button_style_reset">Сбросить стиль кнопок</string>
+    <string name="menu_pie_button_reset">Сбросить кнопки</string>
+    <string name="pie_qty_title">Количество кнопок</string>
+    <string name="pie_qty_summary">Изменение количества сбросит текущие настройки кнопок</string>
+    <string name="pie_action_title">Кнопка %1$s действие &amp; значок</string>
+    <string name="pie_longpress_title">Кнопка %1$s действие долго нажатия</string>
+    <string name="pie_enable_long">Включить долгое нажатие для кнопок pie</string>
+    <string name="pie_button">Кнопки</string>
+    <string name="pie_button_cat">Кнопки</string>
+    <string name="pie_action_custom_app">Приложение</string>
+    <string name="pie_action_home">Домой</string>
+    <string name="pie_action_back">Назад</string>
+    <string name="pie_action_recents">Недавние</string>
+    <string name="pie_action_lastapp">Предыдущее приложение</string>
+    <string name="pie_action_search">Поиск</string>
+    <string name="pie_action_screenshot">Снимок экрана</string>
+    <string name="pie_action_menu">Меню</string>
+    <string name="pie_action_ime">Открыть переключатель IME</string>
+    <string name="pie_action_kill">Закрыть приложение</string>
+    <string name="pie_action_widgets">Панель виджетов</string>
+    <string name="pie_action_power">Потушить экран</string>
+    <string name="pie_action_notifications">Уведомления</string>
+    <string name="pie_action_none">Нет</string>
+
+    <!-- Classic Recent Menu -->
+    <string name="show_classic_recents">Классическое меню \"Недавние\"</string>
+    <string name="show_classic_recents_summary">Показывать меню недавних приложений в стиле Gingerbread</string>
 
 </resources>

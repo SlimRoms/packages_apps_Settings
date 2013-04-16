@@ -79,6 +79,12 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_TINT, 0xffffffff);
+        if (intColor == 0xffffffff) {
+            mNavigationBarGlowColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mNavigationBarGlowColor.setSummary(hexColor);
+        }
         mNavigationBarGlowColor.setNewPreviewColor(intColor);
 
         mNavigationBarHeight = (ListPreference) findPreference(PREF_NAVIGATION_BAR_HEIGHT);

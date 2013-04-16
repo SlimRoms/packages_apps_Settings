@@ -78,8 +78,11 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.black);
+            mStatusBarColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mStatusBarColor.setSummary(hexColor);
         }
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mStatusBarColor.setNewPreviewColor(intColor);
 
         float statBarTransparency = 0.0f;

@@ -72,15 +72,17 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         prefs = getPreferenceScreen();
 
         mNavigationBarButtonColor = (ColorPickerPreference) findPreference(PREF_NAV_BUTTON_COLOR);
-        mNavigationBarButtonColor.setNewPreviewColor(0xffffffff);
         mNavigationBarButtonColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_TINT, 0x00000000);
         if (intColor == 0x00000000) {
-            mNavigationBarButtonColor.setSummary(getResources().getString(R.string.none));
+            intColor = 0xffffffff;
+            mNavigationBarButtonColor.setSummary(getResources().getString(R.string.color_default));
         } else {
-            mNavigationBarButtonColor.setNewPreviewColor(intColor);
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mNavigationBarButtonColor.setSummary(hexColor);
         }
+        mNavigationBarButtonColor.setNewPreviewColor(intColor);
 
         mNavigationBarButtonColorMode = (ListPreference) prefs.findPreference(PREF_NAV_BUTTON_COLOR_MODE);
         int navigationBarButtonColorMode = Settings.System.getInt(getActivity().getContentResolver(),

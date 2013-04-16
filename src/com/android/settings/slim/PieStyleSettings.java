@@ -101,7 +101,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_overlay_color", "color", "com.android.systemui"));
-            mPieBackgroundColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieBackgroundColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieBackgroundColor.setSummary(hexColor);
@@ -115,7 +115,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_snap_color", "color", "com.android.systemui"));
-            mPieSnapColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieSnapColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieSnapColor.setSummary(hexColor);
@@ -129,7 +129,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_text_color", "color", "com.android.systemui"));
-            mPieTextColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieTextColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieTextColor.setSummary(hexColor);

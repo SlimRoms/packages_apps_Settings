@@ -105,7 +105,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_background_color", "color", "com.android.systemui"));
-            mPieButtonColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieButtonColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieButtonColor.setSummary(hexColor);
@@ -119,7 +119,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_selected_color", "color", "com.android.systemui"));
-            mPieButtonPressedColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieButtonPressedColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieButtonPressedColor.setSummary(hexColor);
@@ -133,7 +133,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_long_pressed_color", "color", "com.android.systemui"));
-            mPieButtonLongPressedColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieButtonLongPressedColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieButtonLongPressedColor.setSummary(hexColor);
@@ -147,7 +147,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_outline_color", "color", "com.android.systemui"));
-            mPieButtonOutlineColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieButtonOutlineColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieButtonOutlineColor.setSummary(hexColor);
@@ -161,7 +161,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         if (intColor == -2) {
             intColor = mSystemUiResources.getColor(
                     mSystemUiResources.getIdentifier("pie_foreground_color", "color", "com.android.systemui"));
-            mPieIconColor.setSummary(getResources().getString(R.string.pie_default));
+            mPieIconColor.setSummary(getResources().getString(R.string.color_default));
         } else {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mPieIconColor.setSummary(hexColor);

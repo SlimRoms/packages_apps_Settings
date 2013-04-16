@@ -100,9 +100,11 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.holo_blue_dark);
+            mCircleColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mCircleColor.setSummary(hexColor);
         }
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mCircleColor.setSummary(hexColor);
         mCircleColor.setNewPreviewColor(intColor);
 
         mBatteryTextColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_BATTERY_TEXT_COLOR);
@@ -112,9 +114,11 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.holo_blue_dark);
+            mBatteryTextColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mBatteryTextColor.setSummary(hexColor);
         }
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mBatteryTextColor.setSummary(hexColor);
         mBatteryTextColor.setNewPreviewColor(intColor);
 
         mBatteryTextChargingColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_BATTERY_TEXT_CHARGING_COLOR);
@@ -124,11 +128,14 @@ public class StatusBarBatteryStyle extends SettingsPreferenceFragment implements
         if (intColor == -2 && statusBarBattery > 2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.holo_blue_dark);
+            mBatteryTextChargingColor.setSummary(getResources().getString(R.string.color_default));
         } else if (intColor == -2) {
             intColor = Color.GREEN;
+            mBatteryTextChargingColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mBatteryTextChargingColor.setSummary(hexColor);
         }
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mBatteryTextChargingColor.setSummary(hexColor);
         mBatteryTextChargingColor.setNewPreviewColor(intColor);
 
         mCircleAnimSpeed = (ListPreference) findPreference(PREF_STATUS_BAR_CIRCLE_BATTERY_ANIMATIONSPEED);

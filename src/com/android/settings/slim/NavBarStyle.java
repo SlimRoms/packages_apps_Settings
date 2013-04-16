@@ -78,6 +78,10 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.black);
+            mNavBarColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mNavBarColor.setSummary(hexColor);
         }
         mNavBarColor.setNewPreviewColor(intColor);
 

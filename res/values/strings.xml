@@ -5238,6 +5238,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
+    <string name="color_default">Default</string>
 
     <!-- Battery Icon and Bar -->
     <string name="status_bar_battery_icon_bar_title">Battery icon and bar style</string>
@@ -5865,7 +5866,6 @@
     <string name="pie_style">Style and dimension</string>
     <string name="pie_style_title">Style</string>
     <string name="pie_dimens_title">Dimension</string>
-    <string name="pie_default">Default</string>
     <string name="pie_additional_options">Additional options</string>
     <string name="pie_show_snap_title">Show snap points</string>
     <string name="pie_show_snap_summary">Shows snap points to change the trigger edge dynamically</string>

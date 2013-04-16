@@ -53,6 +53,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_HIGH_END_GFX = "high_end_gfx";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_CLASSIC_RECENTS = "classic_recents";
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
@@ -62,6 +63,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private CheckBoxPreference mHighEndGfx;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
+    private CheckBoxPreference mClassicRecents;
 
     private String mCustomLabelText = null;
     private int newDensityValue;
@@ -131,6 +133,12 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         } else {
             mMisc.removePreference(mHighEndGfx);
         }
+
+        mClassicRecents = (CheckBoxPreference) findPreference(KEY_CLASSIC_RECENTS);
+        boolean classicRecents = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CLASSIC_RECENTS_MENU, 0) == 1;
+        mClassicRecents.setChecked(classicRecents);
+        mClassicRecents.setOnPreferenceChangeListener(this);
     }
 
     private void updateRamBar() {
@@ -188,6 +196,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.HIGH_END_GFX_ENABLED,
                     (Boolean) newValue ? 1 : 0);
             mHighEndGfx.setChecked((Boolean)newValue);
+        } else if (preference == mClassicRecents) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CLASSIC_RECENTS_MENU,
+                    (Boolean) newValue ? 1 : 0);
+            mClassicRecents.setChecked((Boolean)newValue);
         }
         return false;
     }

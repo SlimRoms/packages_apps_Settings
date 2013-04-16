@@ -5820,4 +5820,8 @@
     <string name="auto_hide_statusbar">Auto Hide statusbar</string>
     <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
 
+    <!-- Classic Recent Menu -->
+    <string name="show_classic_recents">Classic Recents</string>
+    <string name="show_classic_recents_summary">Show Gingerbread styled recents menu</string>
+
 </resources>

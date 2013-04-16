@@ -5617,13 +5617,14 @@
     <string name="navbar_action_power">Screen Off</string>
     <string name="navbar_action_notifications">Notifications</string>
     <string name="navbar_action_none">None</string>
-    <string name="navbar_enable_bar">Enable bar</string>
+    <string name="navbar_enable_bar">Enable navigation bar</string>
+    <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
+    <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation bar height while in landscape.</string>
     <string name="navigation_bar_width_title">Navigation bar width</string>
-    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
+    <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>
     <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
     <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
@@ -5700,7 +5701,6 @@
     <string name="ring_targets_cat_title">Navigation ring targets</string>
     <string name="navbar_style_cat">Navigation bar style</string>
     <string name="navbar_dimen_cat">Navigation bar dimensions</string>
-    <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
 
     <string name="navbar_widgets_note_title">Note</string>
     <string name="navbar_widgets_note_summary">To show up Widgets viewpager enable it in hardware keys, navigation bar buttons or navigation bar ring targets.</string>

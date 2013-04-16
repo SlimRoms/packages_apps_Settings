@@ -19,7 +19,7 @@
         <CheckBoxPreference
                 android:key="enable_nav_bar"
                 android:title="@string/navbar_enable_bar"
-                android:summary="@string/navbar_restart_systemui_summary" />
+                android:summary="@string/navbar_enable_bar_summary" />
 
         <PreferenceCategory
                 android:key="navbar_cat"

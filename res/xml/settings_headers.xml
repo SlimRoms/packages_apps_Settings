@@ -98,6 +98,17 @@
         android:icon="@drawable/ic_settings_trds"
         android:title="@string/trds_settings_title" />
 
+    <!-- SlimCenter -->
+    <header
+        android:id="@+id/slim_center"
+        android:title="@string/slim_center_title"
+        android:icon="@drawable/ic_settings_slimcenter">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.slim.ota"
+            android:targetClass="com.slim.center.SlimCenter" />
+    </header>
+
     <header android:title="@string/header_category_rom_system_settings" />
 
     <!-- DeviceParts Device Specific settings -->
@@ -117,17 +128,6 @@
         android:fragment="com.android.settings.slim.PerformanceSettings"
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings_title" />
-
-    <!-- SlimCenter -->
-    <header
-        android:id="@+id/slim_center"
-        android:title="@string/slim_center_title"
-        android:icon="@drawable/ic_slim_ota">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.slim.ota"
-            android:targetClass="com.slim.center.SlimCenter" />
-    </header>
 
     <!-- Superuser -->
     <header

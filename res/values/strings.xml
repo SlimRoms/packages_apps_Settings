@@ -5336,6 +5336,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="root_access_adb">ADB only</string>
     <string name="root_access_all">Apps and ADB</string>
 
+    <!-- MediaScanner behavior on boot -->
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
+
     <!-- Lock Screen ASS -->
     <string name="lock_screen_title">Lock screen</string>
     <string name="lockscreen_additional_options_grouptitle">Additional options</string>

@@ -40,6 +40,14 @@
         android:entryValues="@array/advanced_reboot_values"
         android:summary="@string/advanced_reboot_summary" />
 
+
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:title="@string/media_scanner_on_boot_title"
+        android:persistent="false"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />
+
     <PreferenceScreen
             android:key="local_backup_password"
             android:title="@string/local_backup_password_title"

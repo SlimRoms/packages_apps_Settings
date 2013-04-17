@@ -2518,6 +2518,7 @@
     <string name="title_tile_battery">Батарея</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Подсветка</string>
+    <string name="title_tile_power">Потушить экран</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Фонарь</string>
     <string name="title_tile_lockscreen">Экран блокировки</string>
@@ -3163,7 +3164,7 @@
     <string name="pie_trigger">Настройки области срабатывания</string>
     <string name="pie_trigger_note_title">Примечание</string>
     <string name="pie_trigger_note_summary">Во избежание конфликтов со строкой состояния или строкой навигации области срабатывания сверху и снизу выключаются автоматически, если какая-либо из панелей видима</string>
-    <string name="pie_disable_ime_triggers_title">Отклчить срабатывание на клавиатуре</string>
+    <string name="pie_disable_ime_triggers_title">Отключить срабатывание на клавиатуре</string>
     <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
     <string name="pie_background_color_title">Цвет фона</string>
     <string name="pie_snap_color_title">Цвет точек привязки</string>
@@ -3206,9 +3207,5 @@
     <string name="pie_action_power">Потушить экран</string>
     <string name="pie_action_notifications">Уведомления</string>
     <string name="pie_action_none">Нет</string>
-
-    <!-- Classic Recent Menu -->
-    <string name="show_classic_recents">Классическое меню \"Недавние\"</string>
-    <string name="show_classic_recents_summary">Показывать меню недавних приложений в стиле Gingerbread</string>
 
 </resources>

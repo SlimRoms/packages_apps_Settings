@@ -167,7 +167,7 @@
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s chce uzyskać dostęp do Twoich kontaktów i historii połączeń. Zezwolić %2$s na dostęp?</string>
     <string name="bluetooth_pb_remember_choice">Nie pytaj ponownie</string>
     <string name="bluetooth_mas_request">"Komunikat żądania dostępu"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$ s chciałby uzyskać dostęp do twoich wiadomości. Zezwolić na dostęp do %2$ s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s chciałby uzyskać dostęp do twoich wiadomości. Zezwolić na dostęp do %2$s?</string>
     <string name="bluetooth_mas_remember_choice">Nie pytaj ponownie</string>
     <string name="date_and_time">Ustawienia daty i godziny</string>
     <string name="choose_timezone">Wybierz strefę czasową</string>
@@ -2082,13 +2082,13 @@
     <string name="pref_use_16bpp_alpha_title">16-bitowa przejrzystość</string>
     <string name="pref_use_16bpp_alpha_summary">Lepsza wydajność grafiki, ale niższa jakość i może powodować wizualne niedociągnięcia (wymaga restartu)</string>
     <string name="pref_vibe_strength_title">Siła wibracji</string>
-    <string name="pref_vibe_strength_summary">Siła wibracji jest<xliff:g id="vibe_strength"> %1$ s </xliff:g></string>
+    <string name="pref_vibe_strength_summary">Siła wibracji jest<xliff:g id="vibe_strength"> %1$s </xliff:g></string>
     <string name="pref_vibe_strength_dialogtitle">Wprowadź wartość między 0-120</string>
     <string name="profile_write_nfc_tag">zapisz na znaczniku NFC</string>
     <string name="profile_write_touch_tag">Dotknij znacznika by zapisać</string>
     <string name="profile_write_success">Znacznik zapisany</string>
     <string name="profile_write_failed">Zapis znacznika nie powiódł się!</string>
-    <string name="profile_selected">Wybrano profil: %1$ s</string>
+    <string name="profile_selected">Wybrano profil: %1$s</string>
     <string name="profile_nfc_text">Przypisując profil do tagu NFC pozwala na uruchomienie profilu zbliżając tag do telefonu. Zbliżając go po raz drugi włączy poprzedni profil.</string>
     <string name="profile_unknown_nfc_tag">Profil nieznany</string>
     <string name="profile_add_nfc_text">Ten tag NFC    nie jest przypisany do żadnego profilu. Przypisując go do istniejącego profilu pozwoli na wybranie go w przyszłości.</string>
@@ -2321,7 +2321,7 @@
     <string name="auto_brightness_split_dialog_title">Rozdziel poziom podświetlania</string>
     <string name="auto_brightness_reset_dialog_title">Zresetować poziomy?</string>
     <string name="auto_brightness_reset_confirmation">Wszystkie poziomy jasności podświetlania zostaną zresetowane do ustawień domyślnych.</string>
-    <string name="auto_brightness_split_lux_format">Podziel pozycje (między <xliff:g id="min"> %1$ d </xliff:g> i <xliff:g id="max"> %2$ d </xliff:g> lux)</string>
+    <string name="auto_brightness_split_lux_format">Podziel pozycje (między <xliff:g id="min"> %1$d </xliff:g> i <xliff:g id="max"> %2$d </xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Opcje poziomu podświetlania</string>
     <string name="auto_brightness_menu_edit_lux">Do okólny zakres podświetlania</string>
     <string name="auto_brightness_menu_split">Podziel</string>
@@ -2445,7 +2445,7 @@
     <string name="title_dynamic_usbtether">Modem przez USB</string>
     <string name="title_general">Ogólne</string>
     <string name="title_quick_pulldown">Szybkie rozwijanie w dół</string>
-    <string name="summary_quick_pulldown">%1$ s krawędzi paska stanu, wyświetla szybkie ustawienia</string>
+    <string name="summary_quick_pulldown">%1$s krawędzi paska stanu, wyświetla szybkie ustawienia</string>
     <string name="quick_pulldown_summary_left">Lewy</string>
     <string name="quick_pulldown_summary_right">Prawy</string>
     <string name="quick_pulldown_off">Wył.</string>
@@ -2514,7 +2514,7 @@
     <string name="keyboard_rotation_toggle_title">Auto rotacja klawiatury</string>
     <string name="keyboard_rotation_toggle_summary">Wymuś auto obracanie gdy jest włączona klawiatura</string>
     <string name="keyboard_rotation_timeout_title">Limit czasu auto obracania</string>
-    <string name="keyboard_rotation_timeout_summary">Wyłącza automatyczne czujnik obracania po <xliff:g id="rotate_timeout"> %1$ s </xliff:g>s, po ukryciu klawiatury</string>
+    <string name="keyboard_rotation_timeout_summary">Wyłącza automatyczne czujnik obracania po <xliff:g id="rotate_timeout"> %1$s </xliff:g>s, po ukryciu klawiatury</string>
     <string name="keyboard_rotation_dialog">Uwaga: ta opcja wymusza włączenie autoryzacji gdy pojawi się klawiatura. Nie ma wpływu jeśli autorotacja jest już włączona.</string>
     <string name="mod_version">Wersja Slim</string>
     <string name="mod_version_default">Nieznany</string>
@@ -2897,7 +2897,7 @@
     <string name="navbar_widgets_summary">Dodaj własne widgety do podglądacza</string>
     <string name="navbar_widgets_instructions">Przeciągnij by zobaczyć - kliknij by wybrać</string>
     <string name="navbar_widgets_reset">Resetuj widgety</string>
-    <string name="navbar_widget_summary">Widget %1$ s z %2$ s</string>
+    <string name="navbar_widget_summary">Widget %1$s z %2$s</string>
     <string name="navbar_widget_summary_add">Kliknij, aby dodać Widget</string>
     <string name="navbar_widgets_shiftLeft">Przesuń w lewo</string>
     <string name="navbar_widgets_shiftRight">Przesuń w prawo</string>

@@ -163,7 +163,7 @@
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s želi dostop do vaših stikov in zgodovine klicev. Želite dovoliti dostop osebi %2$s?</string>
     <string name="bluetooth_pb_remember_choice">Ne vprašaj me več</string>
     <string name="bluetooth_mas_request">"Zahteva za dostop do sporočila"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$ s bi rad dostopal do sporočila. Dovoli dostop do %2$ s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s bi rad dostopal do sporočila. Dovoli dostop do %2$s?</string>
     <string name="bluetooth_mas_remember_choice">Ne vprašaj me več</string>
     <string name="date_and_time">Datum in nastavitve</string>
     <string name="choose_timezone">Izberite časovni pas</string>
@@ -1122,11 +1122,11 @@
     <string name="cached">Predpomnjeni procesi v ozadju</string>
     <string name="no_running_services">Nič se ne izvaja.</string>
     <string name="service_started_by_app">Zagnal program.</string>
-    <string name="service_client_name"><xliff:g id="client_name"> %1$ s </xliff:g></string>
+    <string name="service_client_name"><xliff:g id="client_name"> %1$s </xliff:g></string>
     <string name="service_background_processes">Prosto: <xliff:g id="MEMORY">%1$s</xliff:g></string>
     <string name="service_foreground_processes">V uporabi: <xliff:g id="MEMORY">%1$s</xliff:g></string>
     <string name="memory">RAM</string>
-    <string name="service_process_name"><xliff:g id="process"> %1$ s </xliff:g></string>
+    <string name="service_process_name"><xliff:g id="process"> %1$s </xliff:g></string>
     <string name="running_process_item_user_label">Uporabnik: <xliff:g id="USER_NAME">%1$s</xliff:g></string>
     <string name="running_process_item_removed_user_label">Odstranjen uporabnik</string>
     <string name="running_processes_item_description_s_s"><xliff:g id="NUMPROCESS">%1$d</xliff:g> proces, <xliff:g id="NUMSERVICES">%2$d</xliff:g> storitev</string>

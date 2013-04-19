@@ -2070,7 +2070,7 @@
     <string name="pref_use_16bpp_alpha_title">Transparencia de 16 bits</string>
     <string name="pref_use_16bpp_alpha_summary">Mejor rendimiento gráfico, pero de menor calidad y puede causar defectos visuales (requiere reinicio)</string>
     <string name="pref_vibe_strength_title">Fuerza de vibración</string>
-    <string name="pref_vibe_strength_summary">La fuerza de la vibración es <xliff:g id="vibe_strength"> %1$ s </xliff:g></string>
+    <string name="pref_vibe_strength_summary">La fuerza de la vibración es <xliff:g id="vibe_strength"> %1$s </xliff:g></string>
     <string name="pref_vibe_strength_dialogtitle">Introduzca un valor entre 0 y 120</string>
     <string name="profile_write_nfc_tag">Escribir en NFC Tag</string>
     <string name="profile_write_touch_tag">Toque Tag para escribir</string>
@@ -2311,7 +2311,7 @@
     <string name="auto_brightness_split_dialog_title">Separar Nivel de brillo</string>
     <string name="auto_brightness_reset_dialog_title">¿Restablecer niveles?</string>
     <string name="auto_brightness_reset_confirmation">Todos los niveles de brillo se restablecerán a sus valores por defecto.</string>
-    <string name="auto_brightness_split_lux_format">Posición de partida (entre <xliff:g id="min"> %1$ d </xliff:g> y <xliff:g id="max"> %2$ d </xliff:g> lux)</string>
+    <string name="auto_brightness_split_lux_format">Posición de partida (entre <xliff:g id="min"> %1$d </xliff:g> y <xliff:g id="max"> %2$d </xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Opciones de niveles de luz</string>
     <string name="auto_brightness_menu_edit_lux">Gama de luminosidad del entorno</string>
     <string name="auto_brightness_menu_split">Dividir</string>
@@ -2436,7 +2436,7 @@
     <string name="title_dynamic_usbtether">USB Tether</string>
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Desconexión rápida</string>
-    <string name="summary_quick_pulldown"> s %1$ de la barra de estado hace que al deslizar se abra el menú de configuraciones rápidas</string>
+    <string name="summary_quick_pulldown"> s %1$de la barra de estado hace que al deslizar se abra el menú de configuraciones rápidas</string>
     <string name="quick_pulldown_summary_left">Izquierda</string>
     <string name="quick_pulldown_summary_right">Derecha</string>
     <string name="quick_pulldown_off">Desactivada</string>
@@ -2789,8 +2789,8 @@
     <string name="summary_pref_navigation_menu_display">¿Cómo y cuándo quieres que aparezcan los botones del menú?</string>
     <string name="navbar_qty_title">Cantidad de botones de navegación</string>
     <string name="navbar_qty_summary">Cambiando esto restablecerá sus actuales botones</string>
-    <string name="navbar_action_title">botón %1$ s acción &amp; icono</string>
-    <string name="navbar_longpress_title">Acción del botón %1$ s presión larga</string>
+    <string name="navbar_action_title">botón %1$s acción &amp; icono</string>
+    <string name="navbar_longpress_title">Acción del botón %1$s presión larga</string>
     <string name="navbar_action_home">Inicio</string>
     <string name="navbar_action_back">Atrás</string>
     <string name="navbar_action_recents">Recientes</string>
@@ -2848,8 +2848,8 @@
     <string name="nav_bar_style_reset">Restablecer</string>
     <string name="navbar_ring_cat">Accesos del anillo de la barra de navegación</string>
     <string name="interface_softkey_settings">Configuración de los botones de navegación</string>
-    <string name="interface_softkeys_pref_default_title">Objetivo %1$ s Pulse brevemente</string>
-    <string name="interface_softkeys_pref_long_title">Objetivo %1$ Pulsación larga</string>
+    <string name="interface_softkeys_pref_default_title">Objetivo %1$s Pulse brevemente</string>
+    <string name="interface_softkeys_pref_long_title">Objetivo %1$Pulsación larga</string>
     <string name="interface_softkeys_pref_default_summary">Pulse el icono de configuración para seleccionar una actividad personalizada para pulsación larga</string>
     <string name="interface_softkeys_activity_dialog_title">Seleccione actividad</string>
     <string name="interface_softkeys_reboot_title">Menú de reinicio</string>

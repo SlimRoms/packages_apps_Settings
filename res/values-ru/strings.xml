@@ -2943,6 +2943,7 @@
     <string name="navbar_action_notifications">Уведомления</string>
     <string name="navbar_action_none">Нет</string>
     <string name="navbar_enable_bar">Включить панель навигации</string>
+    <string name="navbar_enable_bar_summary">Включает панель навигации</string>
     <string name="navigation_bar_height_title">Высота панели навигации</string>
     <string name="navigation_bar_height_summary">Высота панели навигации в портретном режиме.</string>
     <string name="navigation_bar_height_landscape_title">Высота панели навигации в ландшафте</string>
@@ -3206,4 +3207,7 @@
     <string name="pie_action_notifications">Уведомления</string>
     <string name="pie_action_none">Нет</string>
 
+    <!-- Classic Recent Menu -->
+    <string name="show_classic_recents">Классическое меню \"Недавние\"</string>
+    <string name="show_classic_recents_summary">Показывать меню недавних приложений в стиле Gingerbread</string>
 </resources>

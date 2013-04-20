@@ -2409,12 +2409,16 @@
     <string name="custom_brightness_summary">Просмотреть/изменить настройки яркости</string>
     <string name="light_sensor_current_value">Текущее значение сенсора освещения: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Автоуровни яркости</string>
-    <string name="auto_brightness_level_format"><xliff:g id="level">%1$s</xliff:g> ..</string>
-    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e ..</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
     <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Изменить</string>
+    <string name="auto_brightness_close_button">Закрыть</string>
     <string name="auto_brightness_reset_button">Сбросить</string>
     <string name="auto_brightness_split_dialog_title">Деление диапазона яркости</string>
+    <string name="auto_brightness_level_dialog_title">Установка уровней яркости</string>
+    <string name="auto_brightness_lux">Окружающая яркость (lux)</string>
+    <string name="auto_brightness_backlight">Яркость экрана (%)</string>
     <string name="auto_brightness_reset_dialog_title">Сбросить уровни?</string>
     <string name="auto_brightness_reset_confirmation">Все уровни будут приведены к значениям по умолчанию.</string>
     <string name="auto_brightness_split_lux_format">Точка деления (между <xliff:g id="min">%1$d</xliff:g> и <xliff:g id="max">%2$d</xliff:g> lux)</string>
@@ -2422,6 +2426,33 @@
     <string name="auto_brightness_menu_edit_lux">Диапазон яркости внешнего освещения</string>
     <string name="auto_brightness_menu_split">Разделить</string>
     <string name="auto_brightness_menu_remove">Удалить</string>
+    <string name="auto_brightness_preview">Предпросмотр</string>
+    <string name="auto_brightness_preview_dialog_title">Предпросмотр кривой яркости</string>
+    <string name="auto_brightness_help_dialog_title">Справка</string>
+    <string name="auto_brightness_help_text"><b>Как считается яркость?</b>
+\n\n
+Яркость считается через <i>интерполяцию кубического сплайна</i>
+по выбранному количеству <i>контрольных точек</i>. Это не прямая зависимость, когда
+яркость экрана остается постоянной в определенном диапазоне яркости окружающей среды. Таким образом,
+небольшие изменения в окружающей яркости не приводят к скачкам яркости экрана; однако
+может быть непросто точно предугадать последствия изменения контрольных точек.\n
+Для разрешения этого вопроса можно просмотреть расчетную форму кривой яркости. Стоит отметить,
+что предпросмотр кривой показывается в <i>логарифмической</i> шкале и поэтому все контрольные точки
+видны отчетливо. При использовании линейной шкалы было бы невозможно различить более важные
+с точки зрения общей тенденции контрольные точки для нижних значений окружающей яркости.
+\n\n
+<b>Как редактировать кривую яркости?</b>
+\n\n
+Каждый ползунок в списке соответствует одной <i>контрольной точке</i> на
+кривой яркости. Чтобы изменить уровень яркости точки, можно использовать ползунок.
+Яркость экрана будет меняться в соответствии со значением ползунка, чтобы дать представление
+о заданном уровне.\n
+Дополнительные настройки можно активировать по долгому нажатию на пункт. Нажав \'Изменить\', вы можете
+как изменить уровень окружающей яркости для контрольной точки, так и ввести вручную
+желаемую яркость экрана. Пункт \'Разделить\' позволяет дублировать текущий пункт, чтобы 
+добавить дополнительные контрольные точки. \'Удалить\' удаляет выбранный пункт.
+    </string>
+    
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Настройки пробуждения</string>
     <string name="pref_volume_wake_title">Пробуждение кнопками громкости</string>
@@ -2521,6 +2552,7 @@
     <string name="title_tile_torch">Фонарь</string>
     <string name="title_tile_lockscreen">Экран блокировки</string>
     <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_music">Музыка</string>
     <string name="title_tile_mobiledata">Передача данных</string>
     <string name="title_tile_mobilenetwork">Мобильная сеть</string>
     <string name="title_tile_expanded_desktop">Расширенный рабочий стол</string>
@@ -2645,6 +2677,11 @@
     <string name="root_access_apps">Только приложения</string>
     <string name="root_access_adb">Только ADB</string>
     <string name="root_access_all">Приложения и ADB</string>
+    <!-- MediaScanner behavior on boot -->
+    <string name="media_scanner_on_boot_title">Поведение MediaScanner при загрузке</string>
+    <string name="media_scanner_on_boot_enabled">Сканировать медиа</string>
+    <string name="media_scanner_on_boot_ask">Спрашивать (уведомление)</string>
+    <string name="media_scanner_on_boot_disabled">Не сканировать медиа</string>
     <!-- Lock Screen ASS -->
     <string name="lock_screen_title">Экран блокировки</string>
     <string name="lockscreen_additional_options_grouptitle">Дополнительные настройки</string>

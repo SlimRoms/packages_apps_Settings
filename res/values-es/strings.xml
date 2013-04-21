@@ -2436,7 +2436,7 @@
     <string name="title_dynamic_usbtether">USB Tether</string>
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Desconexión rápida</string>
-    <string name="summary_quick_pulldown"> s %1$de la barra de estado hace que al deslizar se abra el menú de configuraciones rápidas</string>
+    <string name="summary_quick_pulldown"> s %1$s de la barra de estado hace que al deslizar se abra el menú de configuraciones rápidas</string>
     <string name="quick_pulldown_summary_left">Izquierda</string>
     <string name="quick_pulldown_summary_right">Derecha</string>
     <string name="quick_pulldown_off">Desactivada</string>
@@ -2849,7 +2849,7 @@
     <string name="navbar_ring_cat">Accesos del anillo de la barra de navegación</string>
     <string name="interface_softkey_settings">Configuración de los botones de navegación</string>
     <string name="interface_softkeys_pref_default_title">Objetivo %1$s Pulse brevemente</string>
-    <string name="interface_softkeys_pref_long_title">Objetivo %1$Pulsación larga</string>
+    <string name="interface_softkeys_pref_long_title">Objetivo %1$s Pulsación larga</string>
     <string name="interface_softkeys_pref_default_summary">Pulse el icono de configuración para seleccionar una actividad personalizada para pulsación larga</string>
     <string name="interface_softkeys_activity_dialog_title">Seleccione actividad</string>
     <string name="interface_softkeys_reboot_title">Menú de reinicio</string>

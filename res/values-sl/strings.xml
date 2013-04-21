@@ -160,10 +160,10 @@
     <string name="bluetooth_connection_notif_message">"Dotaknite se za povezavo z napravo »<xliff:g id="DEVICE_NAME">%1$s</xliff:g>E«"</string>
     <string name="bluetooth_connection_dialog_text">"Se želite povezati z napravo »<xliff:g id="DEVICE_NAME">%1$s</xliff:g>«?"</string>
     <string name="bluetooth_phonebook_request">"Zahteva za telefonski imenik"</string>
-    <string name="bluetooth_pb_acceptance_dialog_text">%1$s želi dostop do vaših stikov in zgodovine klicev. Želite dovoliti dostop osebi %2$s?</string>
+    <string name="bluetooth_pb_acceptance_dialog_text">%1$s želi dostop do vaših stikov in zgodovine klicev. Želite dovoliti dostop osebi %2$s ?</string>
     <string name="bluetooth_pb_remember_choice">Ne vprašaj me več</string>
     <string name="bluetooth_mas_request">"Zahteva za dostop do sporočila"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s bi rad dostopal do sporočila. Dovoli dostop do %2$s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s bi rad dostopal do sporočila. Dovoli dostop do %2$s ?</string>
     <string name="bluetooth_mas_remember_choice">Ne vprašaj me več</string>
     <string name="date_and_time">Datum in nastavitve</string>
     <string name="choose_timezone">Izberite časovni pas</string>

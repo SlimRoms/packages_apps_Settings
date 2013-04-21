@@ -167,7 +167,7 @@
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s chce uzyskać dostęp do Twoich kontaktów i historii połączeń. Zezwolić %2$s na dostęp?</string>
     <string name="bluetooth_pb_remember_choice">Nie pytaj ponownie</string>
     <string name="bluetooth_mas_request">"Komunikat żądania dostępu"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s chciałby uzyskać dostęp do twoich wiadomości. Zezwolić na dostęp do %2$s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s chciałby uzyskać dostęp do twoich wiadomości. Zezwolić na dostęp do %2$s ?</string>
     <string name="bluetooth_mas_remember_choice">Nie pytaj ponownie</string>
     <string name="date_and_time">Ustawienia daty i godziny</string>
     <string name="choose_timezone">Wybierz strefę czasową</string>

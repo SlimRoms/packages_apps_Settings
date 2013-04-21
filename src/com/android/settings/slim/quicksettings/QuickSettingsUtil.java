@@ -63,6 +63,7 @@ public class QuickSettingsUtil {
     public static final String TILE_VOLUME = "toggleVolume";
     public static final String TILE_EXPANDED_DESKTOP = "toggleExpandedDesktop";
     public static final String TILE_CUSTOMSHORTCUT = "toggleCustomShortcut";
+    public static final String TILE_MUSIC = "toggleMusic";
 
     private static final String TILE_DELIMITER = "|";
     protected static ArrayList<String> TILES_DEFAULT = new ArrayList<String>();
@@ -115,6 +116,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_LTE, new QuickSettingsUtil.TileInfo(
                 TILE_LTE, R.string.title_tile_lte,
                 "com.android.systemui:drawable/ic_qs_lte_off", true));
+        TILES.put(TILE_MUSIC, new QuickSettingsUtil.TileInfo(
+                TILE_MUSIC, R.string.title_tile_music,
+                "@*android:drawable/ic_media_play", true));
         TILES.put(TILE_MOBILEDATA, new QuickSettingsUtil.TileInfo(
                 TILE_MOBILEDATA, R.string.title_tile_mobiledata,
                 "com.android.systemui:drawable/ic_qs_mobildata_off", true));

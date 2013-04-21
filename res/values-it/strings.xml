@@ -1,21 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
- -->
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="yes">"Sì"</string>
     <string name="no">"No"</string>
     <string name="create">Crea</string>
@@ -617,6 +602,12 @@
     <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
     <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
     <string name="wifi_security_eap">802.1 x EAP</string>
+    <string name="wifi_mode">Modalità</string>
+    <string name="wifi_mode_ibss">Ad-Hoc (IBSS) Network</string>
+    <string name="wifi_mode_ibss_short">Ad-Hoc</string>
+    <string name="wifi_ibss_freq_title">Canale/Frequenza</string>
+    <string name="wifi_channel">Canale</string>
+    <string name="wifi_mhz">MHz</string>
     <string name="wifi_connect">Connetti</string>
     <string name="wifi_failed_connect_message">Impossibile connettersi alla rete</string>
     <string name="wifi_forget">Elimina</string>
@@ -695,6 +686,8 @@
     <string name="sound_effects_enable_title">Suoni alla pressione</string>
     <string name="lock_sounds_enable_title">Suono di blocco schermo</string>
     <string name="haptic_feedback_enable_title">Vibra alla pressione</string>
+    <string name="camera_sounds_title">Suono otturatore fotocamera</string>
+    <string name="camera_sounds_summary">ATTENZIONE: Disabilitare il suono dell\'otturatore della fotocamera è illegale in alcuni paesi!</string>
     <string name="audio_record_proc_title">Eliminazione rumori</string>
     <string name="volume_media_description">Musica, video, giochi e altri contenuti multimediali</string>
     <string name="volume_ring_description">Suoneria e notifiche</string>
@@ -1373,7 +1366,7 @@
     <string name="awake">Tempo di attività dispositivo</string>
     <string name="wifi_on_time">Tempo accensione Wi-Fi</string>
     <string name="bluetooth_on_time">Tempo accensione Wi-Fi</string>
-    <string name="usage_name_percent"><xliff:g id="NAME">%1$s</xliff:g> -    <xliff:g id="NUMBER">%2$s</xliff:g><xliff:g id="PERCENT">%%</xliff:g></string>
+    <string name="usage_name_percent"><xliff:g id="NAME">%1$s</xliff:g> -        <xliff:g id="NUMBER">%2$s</xliff:g><xliff:g id="PERCENT">%%</xliff:g></string>
     <string name="history_details_title">Dettagli cronologia</string>
     <string name="details_title">Dettagli di utilizzo</string>
     <string name="details_subtitle">Dettagli di utilizzo</string>
@@ -1760,7 +1753,7 @@
     <string name="vpn_name">Nome</string>
     <string name="vpn_type">Tipo</string>
     <string name="vpn_server">Indirizzo server</string>
-    <string name="vpn_mppe">Crittografia PPP    (MPPE)</string>
+    <string name="vpn_mppe">Crittografia PPP        (MPPE)</string>
     <string name="vpn_l2tp_secret">Segreto L2TP</string>
     <string name="vpn_ipsec_identifier">Identificatore IPSec</string>
     <string name="vpn_ipsec_secret">Chiave pre-condivisa IPSec</string>
@@ -1803,7 +1796,7 @@
     <string name="spellcheckers_settings_title">Controllo ortografico</string>
     <string name="current_backup_pw_prompt">Digita la password corrente di backup completo qui</string>
     <string name="new_backup_pw_prompt">Digita una nuova password per i backup completi qui</string>
-    <string name="confirm_new_backup_pw_prompt">Digita nuovamente    la nuova password di backup completo qui</string>
+    <string name="confirm_new_backup_pw_prompt">Digita nuovamente        la nuova password di backup completo qui</string>
     <string name="backup_pw_set_button_text">Imposta password di backup</string>
     <string name="backup_pw_cancel_button_text">Annulla</string>
     <string name="percentage"><xliff:g id="NUMBER">%d</xliff:g>%%</string>
@@ -1921,7 +1914,7 @@
     <string name="title_toggle_bluetooth">Toggle Bluetooth</string>
     <string name="title_toggle_gps">Toggle GPS</string>
     <string name="title_toggle_sound">Attiva/Disattiva audio</string>
-    <string name="title_toggle_notification_sound">Attivare\disattivare suono di notifica</string>
+    <string name="title_toggle_notification_sound">Attiva/disattiva suono di notifica</string>
     <string name="title_toggle_brightness">Impostazione luminosità</string>
     <string name="title_toggle_sync">Impostazione sincronizzazione</string>
     <string name="title_toggle_wifiap">Attivare\disattivare Wi-Fi AP</string>
@@ -1955,12 +1948,15 @@
     <string name="cm_sound_mode_soundVibrate">Suono e vibrazione</string>
     <string name="pref_flash_mode_title">Modalità flash</string>
     <string name="expanded_haptic_feedback_title">Feedback tattile</string>
+    <string name="power_widget_enabled">Enabled</string>
     <string name="power_widget_disabled">Disattivata</string>
     <string name="power_widget_additional_options_cat">Opzioni aggiuntive</string>
     <string name="brightness_location_title">Posizione della regolazione della Luminosità</string>
     <string name="brightness_slider_top">In alto</string>
     <string name="brightness_slider_bottom">In basso</string>
     <string name="brightness_slider_none">Non mostrare</string>
+    <string name="power_widget_longpress_qs_title">Tenere premuto il toggle della visibilità</string>
+    <string name="power_widget_longpress_qs_summary">Tenere premuto il tasto delle impostazioni rapide per attivare la visibilità</string>
     <string name="profiles_settings_title">Profili</string>
     <string name="profiles_general_title">Generali</string>
     <string name="profiles_add">Aggiungi</string>
@@ -1983,6 +1979,8 @@
     <string name="profile_app_delete_confirm">Rimuovere questa applicazione?</string>
     <string name="profile_cannot_delete">Non è possibile eliminare un profilo attivo</string>
     <string name="profile_connectionoverrides_title">Override di connessione</string>
+    <string name="profile_volumeoverrides_title">Ignora volume</string>
+    <string name="profile_vibratoroverrides_title">Ignora vibrazione</string>
     <string name="connection_state_disabled">Disattiva</string>
     <string name="connection_state_enabled">Attiva</string>
     <string name="volume_override_summary">Impostato su</string>
@@ -2067,7 +2065,11 @@
     <string name="memory_management_summary">Personalizzare l\'utilizzo della memoria per modificare le prestazioni del sistema</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Comprimere la memoria per aumentare la capacità virtuale (richiede riavvio)</string>
+    <string name="pref_ksm_title">Fusione pagine kernel</string>
     <string name="pref_ksm_summary">KSM riduce i requisiti di memoria fisica e migliora le prestazioni</string>
+    <string name="pref_purgeable_assets_title">Pulizia di risorse</string>
+    <string name="pref_purgeable_assets_summary">Ripulire la memoria dedicata alle immagini consente di liberare più RAM quando richiesto (richiede il riavvio)</string>
+    <string name="pref_use_dithering_title">Miglioramento superficie</string>
     <string name="dithering_no_dither">Disabilita il dithering</string>
     <string name="dithering_color_banding">Correggi bande di colore (default)</string>
     <string name="dithering_blur_effect">Correggi bande di colore e sfocatura</string>
@@ -2092,6 +2094,7 @@
     <string name="power_menu_profiles_title">Cambio di profilo</string>
     <string name="power_menu_airplane_title">Modalità aereo</string>
     <string name="power_menu_sound_title">Pannello sonoro</string>
+    <string name="summary_expanded_desktop">%1$s</string>
     <string name="expanded_desktop_summary">Visualizza o modifica la modalità desktop esteso</string>
     <string name="expanded_desktop_disabled">Non attiva</string>
     <string name="expanded_desktop_only_nav_bar">Nascondere la barra di navigazione</string>
@@ -2124,7 +2127,7 @@
     <string name="volume_adjust_sounds_enable_summary">Riproduci suono quando regoli il volume con la tastiera del volume</string>
     <string name="safe_headset_restore_title">Volume dell\'auricolare sicuro</string>
     <string name="safe_headset_restore_summary">Previeni i livelli di volume alto quando l\'auricolare è inserito</string>
-    <string name="less_notification_sounds_title">Suoni di notifica meno frequenti</string>
+    <string name="less_notification_sounds_title">Notifiche audio meno frequenti</string>
     <string name="less_notification_sounds_summary">Limitare i suoni di notifica di ogni app ad una sola volta per ogni lasso di tempo impostato</string>
     <string name="adb_notify">Notifica del debug USB</string>
     <string name="adb_notify_summary">Visualizzare una notifica quando il debug USB è collegato</string>
@@ -2149,6 +2152,7 @@
     <string name="status_bar_clock">Orologio e data</string>
     <string name="status_bar_clock_title">Stile dell\'orologio e data</string>
     <string name="clock_title_enable">Allineamento dell\'orologio</string>
+    <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disattivata</string>
     <string name="clock_color_title">Colore dell\'orologio</string>
     <string name="status_bar_show_clock_title">Mostra orologio</string>
@@ -2173,6 +2177,8 @@
     <string name="title_slim_general">Generali</string>
     <string name="display_short">Schermo</string>
     <string name="misc_short">Varie</string>
+    <string name="alt_resolver">Griglia app di default</string>
+    <string name="alt_resolver_summary">Usa selettore applicazioni alternativo di default</string>
     <string name="dual_pane">Modalità Tablet a doppio pannello</string>
     <string name="dual_pane_summary">Riavviare per rendere effettive le impostazioni</string>
     <string name="custom_carrier_label_title">Personalizza l\'etichetta dell\'operatore</string>
@@ -2237,6 +2243,7 @@
     <string name="notification_shortcuts_move_up">Spostato <xliff:g id="app_name">%s</xliff:g> in alto di uno slot</string>
     <string name="notification_shortcuts_move_down">Spostato <xliff:g id="app_name">%s</xliff:g> in basso di uno slot</string>
     <string name="notification_shortcuts_color_title">Colore dell\'icona di scelta rapida</string>
+    <string name="notification_shortcuts_color_summary">Colorare le icone stock e/o le icone dei collegamenti delle applicazioni</string>
     <string name="notification_shortcuts_colorize_toggle_title">Colorare le icone delle applicazioni</string>
     <string name="notification_shortcuts_colorize_toggle_summary">Colora le icone di ogni applicazione con il colore dell\'icona prescelta</string>
     <string name="notification_shortcuts_hide_carrier_title">Nascondi il nome dell\'operatore</string>
@@ -2306,8 +2313,12 @@
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
     <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Regola</string>
+    <string name="auto_brightness_close_button">Chiudi</string>
     <string name="auto_brightness_reset_button">Reset</string>
     <string name="auto_brightness_split_dialog_title">Dividi il livello di luminosità</string>
+    <string name="auto_brightness_level_dialog_title">Impostazione del livello di luminosità</string>
+    <string name="auto_brightness_lux">Luminosità ambiente (lux)</string>
+    <string name="auto_brightness_backlight">Luminosità schermo (%)</string>
     <string name="auto_brightness_reset_dialog_title">Ripristinare i livelli?</string>
     <string name="auto_brightness_reset_confirmation">Tutti i livelli di luminosità verranno reimpostati alle impostazioni predefinite.</string>
     <string name="auto_brightness_split_lux_format">Indicizza posizione (tra <xliff:g id="min">%1$d</xliff:g> e <xliff:g id="max">%2$d</xliff:g> Lux)</string>
@@ -2315,13 +2326,38 @@
     <string name="auto_brightness_menu_edit_lux">Gamma di luminosità dell\'ambiente</string>
     <string name="auto_brightness_menu_split">Dividere</string>
     <string name="auto_brightness_menu_remove">Rimuovi</string>
+    <string name="auto_brightness_preview">Anteprima</string>
+    <string name="auto_brightness_preview_dialog_title">Anteprima curva Luminosità</string>
+    <string name="auto_brightness_help_dialog_title">Guida</string>
+    <string name="auto_brightness_help_text"><b>Come si calcola la luminosità?</b>
+\n\n
+La curva di luminosità viene calcolata effettuando una <i>interpolazione spline cubica</i>
+su un dato numero di <i>punti di controllo</i>. Non è un calcolo \'bucket-type\' dove la
+luminosità dello schermo rimarrà costante per una specifica gamma di luminosità dell\'ambiente. In questo modo,
+piccole variazioni di luminosità dell\'ambiente non causano un grande salto di luminosità dello schermo, tuttavia,
+può essere un po \'difficile prevedere le conseguenze specifiche del cambiamento dei punti di controllo.\n
+Per aiutare in questo, un\'anteprima della curva calcolata può essere esaminata. Si prega di notare che la
+anteprima mostra la curva in <i>logaritmica</i> scala, in modo che tutti i punti di controllo possono essere visualizzati
+distintamente. Quando si utilizza una scala lineare, non sarebbe possibile distinguere il tendenzialmente
+più importanti punti di controllo nella gamma più bassa di luminosità dell\'ambiente.
+\n\n
+<b>Come modificare la curva di luminosità?</b>
+\n\n
+Ogni riga dell\'elenco luminosità corrisponde ad un <i>punto di controllo</i> della
+curva di luminosità. Per modificare il livello di luminosità, è possibile utilizzare il dispositivo di scorrimento
+presenti in ciascuna riga. La luminosità dello schermo verrà modificato di conseguenza mentre si tocca
+il dispositivo di scorrimento per dare un\'anteprima del livello di luce.\n
+Sono disponibili premendo a lungo una linea di opzioni aggiuntive. Selezionando \'Regola\', si può
+sia per modificare il livello di luminosità dell\'ambiente del punto di controllo, nonché immettere manualmente il
+desiderata luminosità dello schermo. Selezionando \'Split\' consente di duplicare una riga in
+due per inserire ulteriori punti di controllo. \'Rimuovi\' cancella la riga selezionata.</string>
     <string name="display_category_wakeup_options_title">Opzioni di risveglio</string>
     <string name="pref_volume_wake_title">Risveglio con i pulsanti del volume</string>
     <string name="pref_volume_wake_summary">Premendo il bilanciere del volume su/giù il dispositivo si risveglierà</string>
     <string name="wakeup_when_plugged_unplugged_title">Risveglio quando messo in carica</string>
     <string name="wakeup_when_plugged_unplugged_summary">Risveglio del dispositivo quando il caricabatterie viene collegato/scollegato.</string>
     <string name="display_category_animation_options_title">Opzioni di animazione</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_title">Animazione vecchia tv allo spegnimento dello schermo</string>
     <string name="system_power_crt_screen_off_summary">Lo schermo mostrerà un fascio di elettroni quando viene spento</string>
     <string name="system_power_crt_mode_title">Modalità di animazione CRT</string>
     <string name="system_power_crt_mode_dialog_title">Visualizza animazione CRT</string>
@@ -2341,6 +2377,7 @@
     <string name="notification_light_applist_title">Applicazioni</string>
     <string name="notification_light_phonelist_title">Telefono</string>
     <string name="notification_light_use_custom">Utilizzare i valori personalizzati</string>
+    <string name="notification_light_enabled">Enabled</string>
     <string name="notification_light_disabled">Disattivata</string>
     <string name="notification_light_default_value">Predefinita</string>
     <string name="notification_light_missed_call_title">Chiamata senza risposta</string>
@@ -2403,6 +2440,7 @@
     <string name="title_tile_torch">Torcia</string>
     <string name="title_tile_lockscreen">Lock Screen</string>
     <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_music">Musica</string>
     <string name="title_tile_mobiledata">Dati mobili</string>
     <string name="title_tile_mobilenetwork">Rete mobile</string>
     <string name="title_tile_expanded_desktop">Desktop esteso</string>
@@ -2421,7 +2459,7 @@
     <string name="title_tile_reboot">Riavvio</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Timeout dello schermo</string>
-    <string name="title_tile_favcontact">Contatto preferito</string>
+    <string name="title_tile_customshortcut">Collegamento Personalizzato</string>
     <string name="title_tile_fcharge">Carica veloce</string>
     <string name="title_tile_quiet_hours">Ore di silenzio</string>
     <string name="title_dynamic_tiles">Piastrelle dinamiche</string>
@@ -2444,6 +2482,7 @@
     <string name="summary_collapse_panel">Chiudi le impostazioni rapide dopo aver cliccato un toggle</string>
     <string name="disable_quick_settings_panel">Impostazioni rapide</string>
     <string name="disable_quick_settings_panel_summary">Attivare o disattivare le impostazioni rapide</string>
+    <string name="quick_settings_enabled">Enabled</string>
     <string name="quick_settings_disabled">Disattivata</string>
     <string name="title_no_notifications_pulldown">Discesa rapida senza notifiche</string>
     <string name="summary_no_notifications_pulldown">Discesa delle impostazioni rapide se non sono presenti notifiche</string>
@@ -2451,6 +2490,7 @@
     <string name="summary_quicksettings_tiles_style">Visualizzare o modificare le opzioni di stile delle impostazioni rapide</string>
     <string name="quicksettings_tiles_style_additional_options">Opzioni aggiuntive</string>
     <string name="tiles_per_row_title">Piastrelle per riga</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Scala quantità in landscape</string>
     <string name="tiles_per_row_duplicate_landscape_summary">In landscape visualizza il doppio del numero delle piastrelle per riga</string>
     <string name="quick_tiles_bg_color_title">Colore di sfondo delle piastrelle</string>
     <string name="quick_tiles_bg_pressed_color_title">Colore di sfondo delle piastrelle quando premute</string>
@@ -2465,6 +2505,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Imposta</string>
+    <string name="color_default">Predefinita</string>
     <string name="status_bar_battery_icon_bar_title">Stile icona e barra della batteria</string>
     <string name="battery_icon_cat">Stile icona batteria</string>
     <string name="status_bar_battery_title">Stile icona batteria</string>
@@ -2503,7 +2544,7 @@
     <string name="keyboard_rotation_toggle_summary">Forza la rotazione automatica quando viene visualizzata la tastiera</string>
     <string name="keyboard_rotation_timeout_title">Timeout della rotazione automatica</string>
     <string name="keyboard_rotation_timeout_summary">Disabilita il sensore della rotazione automatica <xliff:g id="rotate_timeout">%1$s</xliff:g> secondi dopo che la tastiera è stata nascosta</string>
-    <string name="keyboard_rotation_dialog">Nota: Questa caratteristica forza l\'auto-rotazione per attivare temporaneamente mentre la tastiera è fuori.    Essa non ha effetto quando la rotazione automatica è già abilitato.</string>
+    <string name="keyboard_rotation_dialog">Nota: Questa caratteristica forza l\'auto-rotazione per attivare temporaneamente mentre la tastiera è fuori.        Essa non ha effetto quando la rotazione automatica è già abilitato.</string>
     <string name="mod_version">Versione Slim</string>
     <string name="mod_version_default">Sconosciuto</string>
     <string name="development_tools_title">Avviare gli strumenti di</string>
@@ -2517,6 +2558,10 @@
     <string name="root_access_apps">Solo applicazioni</string>
     <string name="root_access_adb">Solo ADB</string>
     <string name="root_access_all">Applicazioni e ADB</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
     <string name="lock_screen_title">Lock Screen</string>
     <string name="lockscreen_additional_options_grouptitle">Opzioni aggiuntive</string>
     <string name="lockscreen_slider_grouptitle">Opzioni di scorrimento e di collegamento</string>
@@ -2696,6 +2741,12 @@
     <string name="hardware_keys_menu_long_press_title">Tasto menu (pressione prolungata)</string>
     <string name="hardware_keys_assist_press_title">Tasto cerca</string>
     <string name="hardware_keys_assist_long_press_title">Tasto cerca (pressione prolungata)</string>
+    <string name="hardware_keys_app_switch_press_title">Tasto cambia applicazioni</string>
+    <string name="hardware_keys_app_switch_long_press_title">Tasto cambia applicazioni (tenere premuto)</string>
+    <string name="hardware_keys_show_overflow_title">Visualizza azione overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Visualizza il pulsante con tre punti con funzione menù nelle applicazioni</string>
+    <string name="hardware_keys_show_overflow_toast_enable">Il pulsante con funzione menu potrebbe non essere visibile finchè le applicazioni non saranno riavviate</string>
+    <string name="hardware_keys_show_overflow_toast_disable">Il pulsante con funzione menu potrebbe non essere nascosto finchè le applicazioni non saranno riavviate</string>
     <string name="hardware_keys_action_nothing">Nessuno</string>
     <string name="hardware_keys_action_home">Home</string>
     <string name="hardware_keys_action_back">Indietro</string>
@@ -2710,6 +2761,7 @@
     <string name="hardware_keys_action_kill_app">Chiudi applicazione</string>
     <string name="hardware_keys_action_last_app">Ultima applicazione</string>
     <string name="hardware_keys_action_custom_app">Applicazione personalizzata</string>
+    <string name="hardware_keys_action_widgets">Widgets viewpager</string>
     <string name="app_security_title">Sicurezza app</string>
     <string name="sms_security_check_limit_title">Limite di messaggi SMS</string>
     <string name="sms_security_check_limit_summary">Apps può inviare messaggi %d ogni 30 minuti prima di richiedere conferma</string>
@@ -2730,6 +2782,7 @@
     <string name="menu">Menu</string>
     <string name="open_ime_switcher">Apri IME Switcher</string>
     <string name="kill_app">Chiudi applicazione</string>
+    <string name="widgets">Widgets viewpager</string>
     <string name="lastapp">Ultima applicazione</string>
     <string name="power">Schermo spento</string>
     <string name="notifications">Notifiche</string>
@@ -2759,7 +2812,7 @@
     <string name="top_of_navbar">Parte superiore della barra di navigazione</string>
     <string name="bottom_of_navbar">Parte inferiore della barra di navigazione</string>
     <string name="regular">Normale</string>
-    <string name="size_0_dp">0 dp (spento)</string>
+    <string name="center_mirrored">Centro-specchiato</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>
@@ -2787,15 +2840,18 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Apri IME Switcher</string>
     <string name="navbar_action_kill">Chiudi servizi in esecuzione</string>
+    <string name="navbar_action_widgets">Widgets viewpager</string>
     <string name="navbar_action_power">Schermo spento</string>
     <string name="navbar_action_notifications">Notifiche</string>
     <string name="navbar_action_none">Nessuno</string>
     <string name="navbar_enable_bar">Abilita barra</string>
+    <string name="navbar_enable_bar_summary">Abilita la barra di navigazione</string>
     <string name="navigation_bar_height_title">Altezza della barra di navigazione</string>
     <string name="navigation_bar_height_summary">Altezza della barra di navigazione in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Larghezza barra di navigazione in landscape</string>
     <string name="navigation_bar_height_landscape_summary">Altezza della barra di navigazione in landscape.</string>
     <string name="navigation_bar_width_title">Larghezza barra di navigazione</string>
+    <string name="navigation_bar_width_summary">Altezza barra di navigazione se la barra è lungo un lato.</string>
     <string name="navbar_enable_dialog_title">Riavvio necessario!</string>
     <string name="navbar_enable_dialog_msg">Riavviare <b>adesso</b> per essere sicuri che tutto funzioni correttamente!</string>
     <string name="navbar_enable_dialog_negative">Riavvia in seguito</string>
@@ -2835,6 +2891,7 @@
     <string name="interface_softkey_settings">Impostazioni Softkey</string>
     <string name="interface_softkeys_pref_default_title">Selezionare attività %1$s tocco breve</string>
     <string name="interface_softkeys_pref_long_title">Selezionare attività %1$s tocco lungo</string>
+    <string name="interface_softkeys_pref_default_summary">Tocca l\'icona impostazioni per selezionare un\'azione personalizzata per la pressione prolungata</string>
     <string name="interface_softkeys_activity_dialog_title">Selezionare attività</string>
     <string name="interface_softkeys_reboot_title">Menù di riavvio</string>
     <string name="interface_softkeys_screenshot_title">Screenshot</string>
@@ -2844,12 +2901,14 @@
     <string name="interface_softkeys_ring_silent_title">Toggle Suono/Silenzioso</string>
     <string name="interface_softkeys_ring_vib_silent_title">Toggle Suono/Vibrazione/Silenzioso</string>
     <string name="interface_softkeys_kill_process_title">Chiudi applicazione</string>
+    <string name="interface_softkeys_widgets">Widgets viewpager</string>
     <string name="interface_softkey_package_removed">Il pacchetto selezionato in precedenza non è stato trovato</string>
     <string name="interface_navring_settings_title">Anello della barra di navigazione</string>
     <string name="interface_navring_settings_summary">Modifica le tue applicazioni personalizzate della navring</string>
     <string name="title_navring_amount">Numero di destinazioni della navring</string>
     <string name="summary_navring_amount">Cambiando questo resetterà i vostri obiettivi correnti</string>
     <string name="interface_navring_custom_pref_summary">Rilascia sull\'icona per lanciare </string>
+    <string name="interface_navring_pref_default_summary">Toca per selezionare una scorciatoia di sblocco personalizzata</string>
     <string name="interface_navring_assist_title">Ricerca</string>
     <string name="interface_navring">Obiettivi dell\'anello</string>
     <string name="navbar_ring">Obiettivi dell\'anello personalizzati</string>
@@ -2862,8 +2921,9 @@
     <string name="ring_targets_cat_title">Obiettivi dell\'anello di navigazione</string>
     <string name="navbar_style_cat">Stile barra di navigazione</string>
     <string name="navbar_dimen_cat">Dimensioni barra di navigazione</string>
-    <string name="navbar_restart_systemui_summary">Modificare questa opzione riavvierò la UI di sistema</string>
     <string name="navbar_widgets_note_title">Nota</string>
+    <string name="navbar_widgets_note_summary">Per mostrare i viewpager Widgets abilitali nei tasti fisici, nei tasti della barra di navigazione o nella barra delle scorciatoie di sblocco.</string>
+    <string name="navbar_widgets_title">Widgets viewpager</string>
     <string name="navbar_widgets_style_settings_title">Stile Widgets viewpager</string>
     <string name="navbar_widgets_style_settings_summary">Cambia colore di sfondo Widgets viewpager</string>
     <string name="navbar_widgets_summary">Aggiungi i tuoi widget personali al viewpager</string>
@@ -2871,12 +2931,15 @@
     <string name="navbar_widgets_reset">Resettare i widget</string>
     <string name="navbar_widget_summary">Widget %1$s di %2$s</string>
     <string name="navbar_widget_summary_add">Fare clic per aggiungere Widget</string>
+    <string name="navbar_widgets_shiftLeft">Sposta a sinistra</string>
+    <string name="navbar_widgets_shiftRight">Sposta a destra</string>
     <string name="navbar_widgets_delete">Eliminare il widget</string>
     <string name="navbar_widgets_text_color_title">Colore del testo Widgets viewpager</string>
     <string name="navbar_widgets_bg_color_title">Colore di sfondo Widgets viewpager</string>
     <string name="navbar_widgets_transparency_title">Trasparenza Widgets viewpager</string>
     <string name="navbar_widgets_style_reset">Reimpostare lo stile</string>
     <string name="chronus_title">cLock</string>
+    <string name="touchkey_timeout_title">Timeout illuminazione tasti touch</string>
     <string name="touchkey_timeout_1s">1 secondo</string>
     <string name="touchkey_timeout_2s">2 secondi</string>
     <string name="touchkey_timeout_5s">5 secondi</string>
@@ -2896,6 +2959,7 @@
     <string name="ram_bar_color_app_mem_color">Colore applicazioni RAM</string>
     <string name="ram_bar_color_cache_mem_color">Colore cache RAM</string>
     <string name="ram_bar_color_total_mem_color">Colore altra RAM</string>
+    <string name="ram_bar_color_enabled">Enabled</string>
     <string name="ram_bar_color_disabled">Disattivata</string>
     <string name="ram_bar_button_help">Guida</string>
     <string name="ram_bar_button_reset">Reimpostare i colori</string>
@@ -2943,6 +3007,81 @@
     <string name="advanced_reboot_show_always">Visualizza sempre</string>
     <string name="sound_lock_volume_keys_title">Blocco tasti del volume</string>
     <string name="sound_lock_volume_keys_summary">Previene accidentali uscite dalla modalità silenziosa premendo i tasti del volume</string>
+    <string name="auto_hide_statusbar">Nascondi automaticamente la barra di stato</string>
+    <string name="auto_hide_statusbar_summary">La Barra di stato si nasconde quando non ci sono notifiche</string>
+    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_dialog_title">SlimPIE</string>
+    <string name="pie_control_always">Visualizza sempre</string>
+    <string name="pie_control_expanded">Solo in modalità desktop esteso</string>
+    <string name="pie_control_disabled">Disattivata</string>
+    <string name="pie_control_size">Dimensione di navigazione</string>
+    <string name="pie_control_trigger_positions">Opzioni del selettore</string>
+    <string name="pie_control_trigger_left">Selettore bordo sinistro dello schermo</string>
+    <string name="pie_control_trigger_bottom">Selettore bordo inferiore dello schermo</string>
+    <string name="pie_control_trigger_right">Selettore bordo destro dello schermo</string>
+    <string name="pie_control_trigger_top">Selettore bordo superiore dello schermo</string>
+    <string name="pie_control_trigger_top_summary">Solo la barra di navigazione verrà visualizzata in cima</string>
+    <string name="pie_button_style">Stile pulsante</string>
+    <string name="pie_button_color_title">Colore pulsante</string>
+    <string name="pie_button_alpha_title">Trasparenza pulsante</string>
+    <string name="pie_button_outline_color_title">Colore contorno del pulsante</string>
+    <string name="pie_button_pressed_color_title">Colore pulsante premuto</string>
+    <string name="pie_button_long_pressed_color_title">Colore pulsante premuto a lungo</string>
+    <string name="pie_button_pressed_alpha_title">Trasparenza pulsante premuto</string>
+    <string name="pie_icon_style">Stile icona pulsante</string>
+    <string name="pie_icon_color_title">Colore icona pulsante</string>
+    <string name="pie_icon_color_mode_title">Colore dell\'icona del pulsante</string>
+    <string name="pie_icon_color_mode_dialog_title">Colorare</string>
+    <string name="pie_icon_color_mode_summary">Cambiare il colore dell\'icona del pulsante</string>
+    <string name="pie_icon_color_mode_all_icons">Tutte le icone</string>
+    <string name="pie_icon_color_mode_system_icons">Icone di sistema</string>
+    <string name="pie_icon_color_mode_system_custom_icons">Icone di sistema e personalizzate</string>
+    <string name="pie_trigger_size_title">Dimensione del selettore</string>
+    <string name="pie_trigger">Opzioni del selettore</string>
+    <string name="pie_trigger_note_title">Nota</string>
+    <string name="pie_trigger_note_summary">Per evitare conflitti con la barra di stato o la barra di navigazione, il trigger su questi bordi è automaticamente disattivato se uno o entrambi sono visibili</string>
+    <string name="pie_disable_ime_triggers_title">Disattivare il selettore sulla tastiera</string>
+    <string name="pie_disable_ime_triggers_summary">Disabilita e riduce la dimensione del selettore vicino alla tastiera quando attiva</string>
+    <string name="pie_background_color_title">Colore di sfondo</string>
+    <string name="pie_snap_color_title">Punto colore</string>
+    <string name="pie_text_color_title">Colore del testo</string>
+    <string name="pie_background_alpha_title">Trasparenza dello sfondo</string>
+    <string name="pie_style">Stile e dimensione</string>
+    <string name="pie_style_title">Stile</string>
+    <string name="pie_dimens_title">Dimensione</string>
+    <string name="pie_additional_options">Opzioni aggiuntive</string>
+    <string name="pie_show_snap_title">Visualizza punti colore</string>
+    <string name="pie_show_snap_summary">Mostra i punti per cambiare dinamicamente il bordo del selettore</string>
+    <string name="pie_show_text_title">Visualizza stato e orologio</string>
+    <string name="pie_show_text_summary">Mostra informazioni di stato, ora e data</string>
+    <string name="pie_disable_statusbar_info_title">Nascondi informazioni barra di stato</string>
+    <string name="pie_disable_statusbar_info_summary">Nascondere le informazioni della statusbar</string>
+    <string name="pie_show_background_title">Visualizza sfondo</string>
+    <string name="pie_show_background_summary">Abilitare lo sfondo della pie</string>
+    <string name="menu_pie_style_reset">Reimpostare lo stile</string>
+    <string name="menu_pie_button_style_reset">Reset stile pulsante</string>
+    <string name="menu_pie_button_reset">Reset pulsanti</string>
+    <string name="pie_qty_title">Numero dei pulsanti</string>
+    <string name="pie_qty_summary">Cambiare questo reimposterà i pulsanti correnti</string>
+    <string name="pie_action_title">Pulsante %1$s azione &amp; icona</string>
+    <string name="pie_longpress_title">Pulsante %1$s azione alla pressione prolungata</string>
+    <string name="pie_enable_long">Abilita pressione prolungata per pulsanti pie</string>
+    <string name="pie_button">Pulsanti</string>
+    <string name="pie_button_cat">Pulsanti</string>
+    <string name="pie_action_custom_app">Applicazione personalizzata</string>
+    <string name="pie_action_home">Home</string>
+    <string name="pie_action_back">Indietro</string>
+    <string name="pie_action_recents">Recenti</string>
+    <string name="pie_action_lastapp">Ultima applicazione</string>
+    <string name="pie_action_search">Ricerca</string>
+    <string name="pie_action_screenshot">Screenshot</string>
+    <string name="pie_action_menu">Menu</string>
+    <string name="pie_action_ime">Apri IME Switcher</string>
+    <string name="pie_action_kill">Chiudi applicazione</string>
+    <string name="pie_action_widgets">Widgets viewpager</string>
+    <string name="pie_action_power">Schermo spento</string>
+    <string name="pie_action_notifications">Notifiche</string>
+    <string name="pie_action_none">Nessuno</string>
     <plurals name="lockpassword_password_requires_letters">
         <item quantity="one">La password deve contenere almeno una lettera.</item>
         <item quantity="other">La password deve contenere almeno %d lettere.</item>

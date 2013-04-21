@@ -5195,6 +5195,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_music">Music</string>
     <string name="title_tile_mobiledata">Mobile data</string>
     <string name="title_tile_mobilenetwork">Mobile network</string>
     <string name="title_tile_expanded_desktop">Expanded desktop</string>

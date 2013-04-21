@@ -162,10 +162,10 @@
     <string name="bluetooth_connection_notif_message">"Puudutage seadmega „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>” ühendamiseks."</string>
     <string name="bluetooth_connection_dialog_text">"Kas soovite ühendada seadmega <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
     <string name="bluetooth_phonebook_request">"Telefoniraamatu taotlus"</string>
-    <string name="bluetooth_pb_acceptance_dialog_text">%1$s soovib juurdepääsu teie kontaktisikutele ja kõneajaloole. Kas lubate juurdepääsu kasutajale %2$s?</string>
+    <string name="bluetooth_pb_acceptance_dialog_text">%1$s soovib juurdepääsu teie kontaktisikutele ja kõneajaloole. Kas lubate juurdepääsu kasutajale %2$s ?</string>
     <string name="bluetooth_pb_remember_choice">Ära enam küsi</string>
     <string name="bluetooth_mas_request">"Sõnumile juurdepääsu taotlus"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s soovib juurdepääsu teie kontaktisikutele ja kõneajaloole. Kas lubate juurdepääsu kasutajale %2$s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s soovib juurdepääsu teie kontaktisikutele ja kõneajaloole. Kas lubate juurdepääsu kasutajale %2$s ?</string>
     <string name="bluetooth_mas_remember_choice">Ära enam küsi</string>
     <string name="date_and_time">Kuupäeva ja kellaaja seaded</string>
     <string name="choose_timezone">Ajavööndi valimine</string>

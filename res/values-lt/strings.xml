@@ -164,10 +164,10 @@
     <string name="bluetooth_connection_notif_message">"Palieskite, kad prisijungtumėte prie „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“."</string>
     <string name="bluetooth_connection_dialog_text">"Ar norite prisijungti prie „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“?"</string>
     <string name="bluetooth_phonebook_request">"Telefonų knygelės užklausa"</string>
-    <string name="bluetooth_pb_acceptance_dialog_text">%1$s nori pasiekti jūsų kontaktus ir skambučių istoriją. Suteikti prieigą %2$s?</string>
+    <string name="bluetooth_pb_acceptance_dialog_text">%1$s nori pasiekti jūsų kontaktus ir skambučių istoriją. Suteikti prieigą %2$s ?</string>
     <string name="bluetooth_pb_remember_choice">Daugiau neklausti</string>
     <string name="bluetooth_mas_request">"Laiško prieigos prašymas"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s prašo priegos prie jūsų žinučių. Suteikti prieigą %2$s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s prašo priegos prie jūsų žinučių. Suteikti prieigą %2$s ?</string>
     <string name="bluetooth_mas_remember_choice">Daugiau neklausti</string>
     <string name="date_and_time">Datos ir laiko nustatymai</string>
     <string name="choose_timezone">Pasirinkite laiko juostą</string>

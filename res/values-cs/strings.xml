@@ -167,7 +167,7 @@
     <string name="bluetooth_pb_acceptance_dialog_text">Zařízení %1$s žádá o přístup k vašim kontaktům a historii hovorů. Povolit zařízení %2$s přístup?</string>
     <string name="bluetooth_pb_remember_choice">Příště se neptat</string>
     <string name="bluetooth_mas_request">"Požadavek na přijetí zprávy"</string>
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s chce přistoupit k vašim zprávám. Povolit přístup pro %2$s?</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s chce přistoupit k vašim zprávám. Povolit přístup pro %2$s ?</string>
     <string name="bluetooth_mas_remember_choice">Příště se neptat</string>
     <string name="date_and_time">Nastavení data a času</string>
     <string name="choose_timezone">Vybrat časové pásmo</string>
@@ -2797,8 +2797,8 @@
     <string name="summary_pref_navigation_menu_display">Kdy a jak chcete zobrazit tlačítko menu?</string>
     <string name="navbar_qty_title">Počet navigačních tlačítek</string>
     <string name="navbar_qty_summary">Změna vyresetuje vaše aktuální tlačítka</string>
-    <string name="navbar_action_title">%1$s. tlačítko - Funkce a ikona</string>
-    <string name="navbar_longpress_title">%1$s. tlačítko - Funkce při podržení</string>
+    <string name="navbar_action_title">%1$s tlačítko - Funkce a ikona</string>
+    <string name="navbar_longpress_title">%1$s tlačítko - Funkce při podržení</string>
     <string name="navbar_action_home">Domů</string>
     <string name="navbar_action_back">Zpět</string>
     <string name="navbar_action_recents">Nedávné</string>

@@ -905,7 +905,7 @@
     <string name="master_clear_title">Restaurer valeurs d\'usine</string>
     <string name="master_clear_summary" product="tablet">Effacer toutes les données du téléphone</string>
     <string name="master_clear_summary" product="default">Effacer toutes les données du téléphone</string>
-    <string name="master_clear_desc" product="tablet">"\"Cette action effacera toutes les données du \"<b>"stockage interne"</b>\" de votre téléphone, y compris :\"\n\n<li>"Votre compte Google"</li>\n<li>"Les données et paramètres du système et de l'application"</li>\n<li>"Les applications téléchargées"</li>"</string>
+    <string name="master_clear_desc" product="tablet">"\"Cette action effacera toutes les données du \"<b>"stockage interne"</b>\" de votre téléphone, y compris :\"\n\n<li>"Votre compte Google"</li>\n<li>"Les données et paramètres du système et de l\'application"</li>\n<li>"Les applications téléchargées"</li>"</string>
     <string name="master_clear_desc" product="default">\"Cette action effacera toutes les données du \"<b>"stockage interne"</b>\" de votre téléphone, y compris :\"\n\n<li>"Votre compte Google"</li>\n<li>"Les données et paramètres du système et de l\'application"</li>\n<li>"Les applications téléchargées"</li></string>
     <string name="master_clear_accounts" product="default">"\n\n\"Vous êtes actuellement connecté aux comptes suivants :\"\n"</string>
     <string name="master_clear_desc_also_erases_external">"<li>"Musique"</li>\n<li>"Photos"</li>\n<li>"Autres données utilisateur"</li>"</string>
@@ -1412,7 +1412,7 @@
     <string name="battery_sugg_bluetooth_headset">Essayez de vous connecter à un autre appareil Bluetooth.</string>
     <string name="battery_desc_apps">Batterie utilisée par l\'application</string>
     <string name="battery_sugg_apps_info">Arrêter ou désinstaller l\'application</string>
-    <string name="battery_sugg_apps_gps">"Contrôler manuellement le GPS pour éviter que l'application ne l'utilise"</string>
+    <string name="battery_sugg_apps_gps">"Contrôler manuellement le GPS pour éviter que l\'application ne l\'utilise"</string>
     <string name="battery_sugg_apps_settings">L\'application dispose peut-être de paramètres permettant de réduire l\'utilisation de la batterie.</string>
     <string name="battery_desc_users">Batterie utilisée par l\'utilisateur</string>
     <string name="menu_stats_unplugged">Débranché depuis <xliff:g id="UNPLUGGED">%1$s</xliff:g></string>
@@ -1948,7 +1948,7 @@
     <string name="cm_sound_mode_soundVibrate">Son &amp; vibration</string>
     <string name="pref_flash_mode_title">Mode Flash</string>
     <string name="expanded_haptic_feedback_title">Retour haptique</string>
-    <string name="power_widget_enabled">Enabled</string>
+    <string name="power_widget_enabled">Activé</string>
     <string name="power_widget_disabled">Désactivé</string>
     <string name="power_widget_additional_options_cat">Options supplémentaires</string>
     <string name="brightness_location_title">Emplacement de curseur de luminosité</string>
@@ -2152,8 +2152,8 @@
     <string name="status_bar_clock">Horloge et date</string>
     <string name="status_bar_clock_title">Style de l\'horloge et de la date</string>
     <string name="clock_title_enable">Alignement de l\'horloge</string>
-    <string name="clock_enabled">Enabled</string>
-    <string name="clock_disabled">Désactivé</string>
+    <string name="clock_enabled">Activées</string>
+    <string name="clock_disabled">Désactivées</string>
     <string name="clock_color_title">Couleur de l\'horloge</string>
     <string name="status_bar_show_clock_title">Afficher l\'horloge</string>
     <string name="status_bar_am_pm_title">Style AM/PM</string>
@@ -2378,7 +2378,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_light_applist_title">Applications</string>
     <string name="notification_light_phonelist_title">Téléphone</string>
     <string name="notification_light_use_custom">Utiliser des valeurs personnalisées</string>
-    <string name="notification_light_enabled">Enabled</string>
+    <string name="notification_light_enabled">Activé</string>
     <string name="notification_light_disabled">Désactivé</string>
     <string name="notification_light_default_value">Par défaut</string>
     <string name="notification_light_missed_call_title">Appel manqué</string>
@@ -2483,7 +2483,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="summary_collapse_panel">Fermez le panneau de paramètres rapides lors de l\'appui sur les boutons</string>
     <string name="disable_quick_settings_panel">Paramètres rapides</string>
     <string name="disable_quick_settings_panel_summary">Activer ou désactiver les paramètres rapides</string>
-    <string name="quick_settings_enabled">Enabled</string>
+    <string name="quick_settings_enabled">Activé</string>
     <string name="quick_settings_disabled">Désactivé</string>
     <string name="title_no_notifications_pulldown">Glissement vers le bas sans notifications</string>
     <string name="summary_no_notifications_pulldown">Obtenir les paramètres rapides automatiquement quand il n\'y a pas de notifications</string>
@@ -2785,7 +2785,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="kill_app">Tuer l\'application</string>
     <string name="widgets">Widgets viewpager</string>
     <string name="lastapp">Dernière application</string>
-    <string name="power">Écran éteint</string>
+    <string name="power">Éteindre l\'écran</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Application personnalisée</string>
     <string name="blank">Aucun</string>
@@ -2960,7 +2960,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_color_app_mem_color">Couleur des applications</string>
     <string name="ram_bar_color_cache_mem_color">Couleur du cache</string>
     <string name="ram_bar_color_total_mem_color">Couleur des autres choses</string>
-    <string name="ram_bar_color_enabled">Enabled</string>
+    <string name="ram_bar_color_enabled">Activé</string>
     <string name="ram_bar_color_disabled">Désactivé</string>
     <string name="ram_bar_button_help">Aide</string>
     <string name="ram_bar_button_reset">Réinitialiser les couleurs</string>
@@ -2974,8 +2974,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="wifi_priority_disabled">Activez le Wi-Fi pour spécifier la priorité</string>
     <string name="stylus_icon_enabled_title">Afficher l\'icône lorsque vous utilisez le stylet</string>
     <string name="stylus_icon_enabled_summary">Afficher l\'icône de pointeur lors du l\'utilisation du stylet</string>
-    <string name="gestures_settings_title">Mouvements de stylet</string>
-    <string name="category_spen_title">Mouvements de stylet</string>
+    <string name="gestures_settings_title">Mouvements du stylet</string>
+    <string name="category_spen_title">Mouvements du stylet</string>
     <string name="enable_subcat_title">Stylet</string>
     <string name="enable_spen_title_head">Activer les mouvements de stylet</string>
     <string name="enable_spen_summary_head">Permettre de lancer des actions personnalisées en utilisant des gestes de balayage par stylet. AVERTISSEMENT : Les applications ne seront pas capables de recevoir des entrées obtenues en maintenant le bouton du stylet.</string>
@@ -3010,8 +3010,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="sound_lock_volume_keys_summary">Empêcher l\'activation accidentelle du mode silencieux en appuyant sur les touches de volume</string>
     <string name="auto_hide_statusbar">Masquer automatiquement la barre d\'état</string>
     <string name="auto_hide_statusbar_summary">La barre d\'état est cachée automatiquement quand il n\'y a pas de notifications</string>
-    <string name="pie_control_title">SlimPIE</string>
-    <string name="pie_control_dialog_title">SlimPIE</string>
+    <string name="pie_control_title">PIE Slim</string>
+    <string name="pie_control_dialog_title">PIE Slim</string>
     <string name="pie_control_always">Toujours affiché</string>
     <string name="pie_control_expanded">Seulement sur le mode bureau étendu</string>
     <string name="pie_control_disabled">Désactivé</string>
@@ -3022,16 +3022,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_control_trigger_right">Utiliser le bord droit de l\'écran</string>
     <string name="pie_control_trigger_top">Utiliser le bord haut de l\'écran</string>
     <string name="pie_control_trigger_top_summary">Seulement la navigation s\'affiche en haut</string>
-    <string name="pie_button_style">Style de bouton</string>
-    <string name="pie_button_color_title">Bouton couleur</string>
-    <string name="pie_button_alpha_title">Transparence de bouton</string>
-    <string name="pie_button_outline_color_title">Couleur de contour de bouton</string>
-    <string name="pie_button_pressed_color_title">Touche de couleur</string>
-    <string name="pie_button_long_pressed_color_title">Цвет кнопки при долгом нажатии</string>
+    <string name="pie_button_style">Style des boutons</string>
+    <string name="pie_button_color_title">Couleur des boutons</string>
+    <string name="pie_button_alpha_title">Transparence des boutons</string>
+    <string name="pie_button_outline_color_title">Couleur du contour des boutons</string>
+    <string name="pie_button_pressed_color_title">Couleur quand le bouton est appuyé</string>
+    <string name="pie_button_long_pressed_color_title">Couleur à l\'appui long</string>
     <string name="pie_button_pressed_alpha_title">Transparence quand le bouton est appyué</string>
-    <string name="pie_icon_style">Style d\'icône de bouton</string>
-    <string name="pie_icon_color_title">Couleur de l\'icône du bouton</string>
-    <string name="pie_icon_color_mode_title">Couleur de l\'icone du bouton</string>
+    <string name="pie_icon_style">Style des icônes des boutons</string>
+    <string name="pie_icon_color_title">Couleur des icônes</string>
+    <string name="pie_icon_color_mode_title">Type des icônes</string>
     <string name="pie_icon_color_mode_dialog_title">Colorer</string>
     <string name="pie_icon_color_mode_summary">Modifier la couleur de l\'icône du bouton</string>
     <string name="pie_icon_color_mode_all_icons">Toutes les icônes</string>
@@ -3059,11 +3059,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_disable_statusbar_info_summary">Masquer les informations redondantes de la barre d\'état</string>
     <string name="pie_show_background_title">Voir l\'arrière plan</string>
     <string name="pie_show_background_summary">Activer le fond d\'écran du PIE</string>
-    <string name="menu_pie_style_reset">Réinitialiser le style</string>
+    <string name="menu_pie_style_reset">Réinitialiser le style du PIE</string>
     <string name="menu_pie_button_style_reset">Réinitialiser le style des boutons</string>
     <string name="menu_pie_button_reset">Réinitialiser les boutons</string>
     <string name="pie_qty_title">Quantité des boutons</string>
-    <string name="pie_qty_summary">Changer cela réinitialisera vos boutons actuels</string>
+    <string name="pie_qty_summary">Ce changement réinitialisera vos boutons actuels</string>
     <string name="pie_action_title">Icône &amp; action du bouton %1$s</string>
     <string name="pie_longpress_title">Action de l\'appui long sur le bouton %1$s</string>
     <string name="pie_enable_long">Activer l\'appui long des boutons du PIE</string>
@@ -3080,7 +3080,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_action_ime">Ouvrir le sélecteur d\'IME</string>
     <string name="pie_action_kill">Tuer l\'application</string>
     <string name="pie_action_widgets">Widgets viewpager</string>
-    <string name="pie_action_power">Écran éteint</string>
+    <string name="pie_action_power">Éteindre l\'écran</string>
     <string name="pie_action_notifications">Notifications</string>
     <string name="pie_action_none">Aucun</string>
     <plurals name="lockpassword_password_requires_letters">

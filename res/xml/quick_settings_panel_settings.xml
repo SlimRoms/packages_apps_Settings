@@ -31,7 +31,6 @@
         <CheckBoxPreference
             android:key="collapse_panel"
             android:title="@string/title_collapse_panel"
-            android:dependency="disable_quick_settings"
             android:summary="@string/summary_collapse_panel" />
 
         <ListPreference
@@ -39,20 +38,17 @@
             android:title="@string/title_quick_pulldown"
             android:entries="@array/quick_pulldown_entries"
             android:entryValues="@array/quick_pulldown_values"
-            android:dependency="disable_quick_settings"
             android:persistent="false" />
 
         <CheckBoxPreference
             android:key="no_notifications_pulldown"
             android:title="@string/title_no_notifications_pulldown"
-            android:dependency="disable_quick_settings"
             android:summary="@string/summary_no_notifications_pulldown" />
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"
             android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
-            android:dependency="disable_quick_settings"
             android:summary="@string/summary_quicksettings_tiles_style" />
 
     </PreferenceCategory>
@@ -65,7 +61,6 @@
             android:key="tile_picker"
             android:title="@string/tile_picker_title"
             android:summary="@string/tile_picker_summary"
-            android:dependency="disable_quick_settings"
             android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
 
         <ListPreference
@@ -73,7 +68,6 @@
             android:dialogTitle="@string/pref_network_mode_title"
             android:title="@string/pref_network_mode_title"
             android:entries="@array/entries_network_widget"
-            android:dependency="disable_quick_settings"
             android:entryValues="@array/values_network_widget" />
 
         <ListPreference
@@ -81,7 +75,6 @@
             android:dialogTitle="@string/pref_screentimeout_mode_title"
             android:title="@string/pref_screentimeout_mode_title"
             android:entries="@array/entries_screentimeout_widget"
-            android:dependency="disable_quick_settings"
             android:entryValues="@array/values_screentimeout_widget" />
 
         <MultiSelectListPreference
@@ -90,7 +83,6 @@
             android:title="@string/pref_ring_mode_title"
             android:summary="@string/pref_ring_mode_summary"
             android:entries="@array/entries_ring_widget"
-            android:dependency="disable_quick_settings"
             android:entryValues="@array/values_ring_widget" />
 
         </PreferenceCategory>
@@ -103,22 +95,18 @@
             style="?android:preferenceInformationStyle"
             android:title="@string/dynamic_tiles_note_title"
             android:summary="@string/dynamic_tiles_note_summary"
-            android:dependency="disable_quick_settings"
             android:selectable="false" />
 
         <CheckBoxPreference
             android:key="dynamic_alarm"
-            android:dependency="disable_quick_settings"
             android:title="@string/title_dynamic_alarm" />
 
         <CheckBoxPreference
             android:key="dynamic_bugreport"
-            android:dependency="disable_quick_settings"
             android:title="@string/title_dynamic_bugreport" />
 
         <CheckBoxPreference
             android:key="dynamic_ime"
-            android:dependency="disable_quick_settings"
             android:title="@string/title_dynamic_ime" />
 
         <CheckBoxPreference
@@ -127,7 +115,6 @@
 
         <CheckBoxPreference
             android:key="dynamic_wifi"
-            android:dependency="disable_quick_settings"
             android:title="@string/title_dynamic_wifi" />
 
     </PreferenceCategory>

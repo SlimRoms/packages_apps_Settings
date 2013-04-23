@@ -2150,10 +2150,6 @@
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16-битная прозрачность</string>
     <string name="pref_use_16bpp_alpha_summary">Лучшая производительность графической системы, но возможно снижение качества и появление визуальных артефактов (требуется перезагрузка)</string>
-   <!-- Performance Setting : Vibration Strength -->
-    <string name="pref_vibe_strength_title">Сила вибрации</string>
-    <string name="pref_vibe_strength_summary">Текущая сила вибрации <xliff:g id="vibe_strength">%1$s</xliff:g></string>
-    <string name="pref_vibe_strength_dialogtitle">Введите значение 0-120</string>
     <string name="profile_write_nfc_tag">Записать тег NFC</string>
     <string name="profile_write_touch_tag">Нажмите для записи тега</string>
     <string name="profile_write_success">Тег успешно записан</string>

@@ -2329,28 +2329,7 @@
     <string name="auto_brightness_preview">Xem trước</string>
     <string name="auto_brightness_preview_dialog_title">Xem trước độ sáng cong</string>
     <string name="auto_brightness_help_dialog_title">Trợ giúp</string>
-    <string name="auto_brightness_help_text"><b>Độ sáng được tính như thế nào? </ b>
-\ n \ n
-Đường cong độ sáng được tính toán bằng cách thực hiện một <i> khối spline nội suy </ i>
-trên một số lượng nhất định các điểm kiểm soát <i> </ i>. Nó không phải là một \'thùng kiểu \"tính toán nơi
-độ sáng màn hình sẽ giữ cố định cho một phạm vi cụ thể của độ sáng môi trường xung quanh. Bằng cách đó,
-thay đổi nhỏ trong độ sáng môi trường xung quanh không gây ra một bước nhảy lớn trong độ sáng màn hình, tuy nhiên,
-nó có thể là một ít khó khăn để dự đoán chính xác những hậu quả của việc thay đổi các điểm kiểm soát. \ n
-Để giúp đỡ với điều đó, một bản xem trước của đường cong tính toán có thể được kiểm tra. Xin vui lòng lưu ý
-xem trước cho thấy đường cong trong <i> logarit </ i> quy mô, do đó tất cả các điểm kiểm soát có thể được hiển thị
-đặc sắc. Khi sử dụng một quy mô tuyến tính, nó sẽ không thể phân biệt các tendentially
-điểm kiểm soát quan trọng hơn trong phạm vi thấp hơn độ sáng môi trường xung quanh.
-\ n \ n
-<b> Làm thế nào để chỉnh sửa các đường cong độ sáng </ b>
-\ n \ n
-Mỗi dòng trong danh sách độ sáng tương ứng với một điểm kiểm soát <i> </ i> của
-đường cong độ sáng. Để chỉnh sửa độ sáng của điểm, bạn có thể sử dụng thanh trượt
-trình bày trong mỗi dòng. Độ sáng màn hình sẽ được thay đổi phù hợp trong khi chạm vào
-\ n thanh trượt để cung cấp cho một bản xem trước của các mức độ ánh sáng.
-Thêm các tùy chọn có sẵn bằng cách dài cách nhấn một dòng. Bằng cách chọn \"Điều chỉnh, bạn có thể
-cả hai chỉnh sửa độ sáng môi trường xung quanh của các điểm kiểm soát cũng như tự nhập
-mong muốn độ sáng màn hình. Lựa chọn \'Tách\' cho phép bạn nhân bản một dòng vào
-hai để chèn tiêu chí bổ sung. \'Hủy bỏ\' xóa dòng được lựa chọn.</string>
+    <string name="auto_brightness_help_text"><b>Độ sáng được tính như thế nào?</b>\n\nĐường cong độ sáng được tính toán bằng cách thực hiện một<i> khối spline nội suy</i>trên một số lượng nhất định các điểm kiểm soát. Nó không phải là một \'thùng kiểu \"tính toán nơi độ sáng màn hình sẽ giữ cố định cho một phạm vi cụ thể của độ sáng môi trường xung quanh. Bằng cách đó, thay đổi nhỏ trong độ sáng môi trường xung quanh không gây ra một bước nhảy lớn trong độ sáng màn hình, tuy nhiên, nó có thể là một ít khó khăn để dự đoán chính xác những hậu quả của việc thay đổi các điểm kiểm soát.\nĐể giúp đỡ với điều đó, một bản xem trước của đường cong tính toán có thể được kiểm tra. Xin vui lòng lưu ý xem trước cho thấy đường cong trong <i>logarit</i> quy mô, do đó tất cả các điểm kiểm soát có thể được hiển thị đặc sắc. Khi sử dụng một quy mô tuyến tính, nó sẽ không thể phân biệt các tendentially điểm kiểm soát quan trọng hơn trong phạm vi thấp hơn độ sáng môi trường xung quanh.\n\n<b> Làm thế nào để chỉnh sửa các đường cong độ sáng </b>\n\nMỗi dòng trong danh sách độ sáng tương ứng với một điểm kiểm soát của đường cong độ sáng. Để chỉnh sửa độ sáng của điểm, bạn có thể sử dụng thanh trượt trình bày trong mỗi dòng. Độ sáng màn hình sẽ được thay đổi phù hợp trong khi chạm vào\n thanh trượt để cung cấp cho một bản xem trước của các mức độ ánh sáng. Thêm các tùy chọn có sẵn bằng cách dài cách nhấn một dòng. Bằng cách chọn \"Điều chỉnh, bạn có thể cả hai chỉnh sửa độ sáng môi trường xung quanh của các điểm kiểm soát cũng như tự nhập mong muốn độ sáng màn hình. Lựa chọn \'Tách\' cho phép bạn nhân bản một dòng vào hai để chèn tiêu chí bổ sung. \'Hủy bỏ\' xóa dòng được lựa chọn.</string>
     <string name="display_category_wakeup_options_title">Tùy chọn khi thức dậy</string>
     <string name="pref_volume_wake_title">Tăng/giảm âm lượng mở điện thoại</string>
     <string name="pref_volume_wake_summary">Cách nhấn phím âm lượng lên/xuống sẽ đánh thức thiết bị</string>

@@ -37,24 +37,17 @@
         android:layout_marginTop="4dp"
         android:orientation="horizontal" >
 
-        <com.android.settings.slim.notificationlight.ColorPanelView
-            android:id="@+id/old_color_panel"
+        <EditText
+            android:id="@+id/hex_color_input"
             android:layout_width="0px"
+            android:maxLength="6"
+            android:digits="0123456789ABCDEFabcdef"
+            android:inputType="textNoSuggestions"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:text="@string/picker_arrow"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-
         <com.android.settings.slim.notificationlight.ColorPanelView
-            android:id="@+id/new_color_panel"
+            android:id="@+id/color_panel"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
@@ -69,34 +62,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="4dp"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="@string/hex"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <EditText
-                android:id="@+id/hex"
-                android:hint="@string/hex_hint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginBottom="5dp" />
-
-            <Button
-                android:id="@+id/enter"
-                android:text="@string/set"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

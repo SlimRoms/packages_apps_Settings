@@ -8,8 +8,8 @@
     <string name="deny">Refuser</string>
     <string name="device_info_default">Inconnu</string>
     <string name="show_dev_countdown">Plus que <xliff:g id="STEP_COUNT">%1$d</xliff:g> étapes pour devenir un développeur.</string>
-    <string name="show_dev_on">Vous êtes désormais un développeur !</string>
-    <string name="show_dev_already">Inutile, vous êtes déjà un développeur.</string>
+    <string name="show_dev_on">Options de développement activées !</string>
+    <string name="show_dev_already">Inutile, les options de développements sont déjà activées.</string>
     <string name="header_category_wireless_networks">SANS FIL ET RÉSEAUX</string>
     <string name="header_category_device">APPAREIL</string>
     <string name="header_category_personal">PERSONNEL</string>
@@ -2091,7 +2091,7 @@
     <string name="power_menu_reboot_title">Menu de redémarrage</string>
     <string name="power_menu_screenshot_title">Capture d\'écran</string>
     <string name="power_menu_expanded_desktop">Bureau étendu</string>
-    <string name="power_menu_profiles_title">switcheur de profil</string>
+    <string name="power_menu_profiles_title">Switcheur de profils</string>
     <string name="power_menu_airplane_title">Mode Avion</string>
     <string name="power_menu_sound_title">Panneau de volume</string>
     <string name="summary_expanded_desktop">%1$s</string>
@@ -2125,7 +2125,7 @@
     <string name="volbtn_music_controls_summary">Lorsque l\'écran est éteint, les boutons de volume permettent de naviguer dans les morceaux de musique</string>
     <string name="volume_adjust_sounds_enable_title">Son de réglage du volume</string>
     <string name="volume_adjust_sounds_enable_summary">Jouer un son lors du réglage de volume avec les boutons de volume</string>
-    <string name="safe_headset_restore_title">Volume du casque sécurisé</string>
+    <string name="safe_headset_restore_title">Volume sécurisé du casque</string>
     <string name="safe_headset_restore_summary">Empêcher les niveaux de volume élevés lorsque le casque est branché pour la première fois</string>
     <string name="less_notification_sounds_title">Sons de notification moins fréquents</string>
     <string name="less_notification_sounds_summary">Limiter les sons de notification de chaque application pour seulement jouer une fois par période de temps</string>
@@ -2173,17 +2173,17 @@
     <string name="status_bar_toggle_brightness_summary">Ajuster la luminosité en glissant le doigt sur la barre d\'État</string>
     <string name="status_bar_toggle_info">Le mode automatique de luminosité est activée</string>
     <string name="status_bar_notif_count_title">Voir le nombre de notifications</string>
-    <string name="status_bar_notif_count_summary">Afficher le nombre de notifications dans l\'attente</string>
+    <string name="status_bar_notif_count_summary">Afficher le nombre de notifications en attente</string>
     <string name="title_slim_general">Paramètres généraux</string>
     <string name="display_short">Affichage</string>
     <string name="misc_short">Divers</string>
-    <string name="alt_resolver">Grille d\'application alternative par défaut</string>
-    <string name="alt_resolver_summary">Utiliser le sélecteur d\'application alternatif par défaut</string>
+    <string name="alt_resolver">Grille d\'applications alternative par défaut</string>
+    <string name="alt_resolver_summary">Utiliser le sélecteur d\'applications alternatif par défaut</string>
     <string name="dual_pane">Mode tablette</string>
     <string name="dual_pane_summary">Redémarrez les paramètres pour qu\'ils prennent effet</string>
-    <string name="custom_carrier_label_title">Étiquette de support personnalisé</string>
+    <string name="custom_carrier_label_title">Étiquette personnalisée de la carte SD</string>
     <string name="custom_carrier_label_explain">Veuillez saisir un nouveau label. Entrez un vide pour revenir à celui par défaut.</string>
-    <string name="custom_carrier_label_notset">Étiquette personnalisée actuellement non configuré</string>
+    <string name="custom_carrier_label_notset">Étiquette personnalisée actuellement non configurée</string>
     <string name="pref_low_battery_warning_policy_title">Avertissement de batterie faible</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Indiquer l\'avertissement de batterie faible avec</string>
     <string name="low_battery_warning_policy_popup_sound">Pop-up et son</string>
@@ -2306,7 +2306,7 @@
     <string name="display_category_brightness_options_title">Options de luminosité</string>
     <string name="swap_volume_buttons_title">Permuter les boutons de volume</string>
     <string name="swap_volume_buttons_summary">Permuter les boutons de volume lorsque l\'écran est tourné de 90 ou 180 degrés</string>
-    <string name="custom_brightness_summary">Afficher ou modifier vos réglages de luminosité personnalisé</string>
+    <string name="custom_brightness_summary">Afficher ou modifier vos réglages de luminosité</string>
     <string name="light_sensor_current_value">Valeur actuelle de capteur de lumière : <xliff:g id="light_level"> %d </xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Niveaux de luminosité automatique</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
@@ -2356,9 +2356,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_volume_wake_title">Réveiller l\'appareil en utilisant les boutons de volume</string>
     <string name="pref_volume_wake_summary">Appuyer sur les boutons de volume haut/bas reveillera l\'écran de l\'appareil</string>
     <string name="wakeup_when_plugged_unplugged_title">Réveil sur mise en charge</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Réveiller le téléphone si le charger est branché/débranché.</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Réveiller le téléphone si le chargeur est branché/débranché.</string>
     <string name="display_category_animation_options_title">Options d\'animation</string>
-    <string name="system_power_crt_screen_off_title">Écran CRT off</string>
+    <string name="system_power_crt_screen_off_title">CRT à l\'extinction de l\'écran</string>
     <string name="system_power_crt_screen_off_summary">Animation \"Electron Beam\" lors de l\'extinction de l\'écran</string>
     <string name="system_power_crt_mode_title">Mode animation CRT</string>
     <string name="system_power_crt_mode_dialog_title">Voir l\'animation CRT</string>
@@ -2424,8 +2424,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_background_custom_image">Image personnalisée</string>
     <string name="notification_background_default_wallpaper">Arrière-plan par défaut</string>
     <string name="notification_drawer_custom_background_dialog_title">Choisissez la couleur</string>
-    <string name="notif_wallpaper_alpha_title">Transparence d\'arrière-plan de notification</string>
-    <string name="notif_alpha_title">Transparence de lignes de notification</string>
+    <string name="notif_wallpaper_alpha_title">Transparence d\'arrière-plan des notifications</string>
+    <string name="notif_alpha_title">Transparence des lignes de notification</string>
     <string name="quick_settings_panel_title">Panneau de configuration rapide</string>
     <string name="quick_settings_title">Paramètres rapides</string>
     <string name="title_static_tiles">Tuiles statiques</string>
@@ -2436,7 +2436,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_battery">État de la batterie</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Luminosité</string>
-    <string name="title_tile_power">Bouton \"Power\"</string>
+    <string name="title_tile_power">Bouton Power</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Torche</string>
     <string name="title_tile_lockscreen">Écran de verrouillage</string>
@@ -2460,7 +2460,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_reboot">Redémarrer</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">mise en veille de l\'écan</string>
-    <string name="title_tile_customshortcut">raccourci personnalisé</string>
+    <string name="title_tile_customshortcut">raccourci perso</string>
     <string name="title_tile_fcharge">Charge rapide</string>
     <string name="title_tile_quiet_hours">Période silencieuse</string>
     <string name="title_dynamic_tiles">Boutons dynamiques</string>
@@ -2488,17 +2488,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_no_notifications_pulldown">Glissement vers le bas sans notifications</string>
     <string name="summary_no_notifications_pulldown">Obtenir les paramètres rapides automatiquement quand il n\'y a pas de notifications</string>
     <string name="quicksettings_tiles_style">Style des paramètres rapides</string>
-    <string name="summary_quicksettings_tiles_style">Afficher ou modifier les options de style de réglages rapides</string>
+    <string name="summary_quicksettings_tiles_style">Afficher ou modifier les options du style des paramètres rapides</string>
     <string name="quicksettings_tiles_style_additional_options">Options supplémentaires</string>
-    <string name="tiles_per_row_title">Tuiles par rang</string>
+    <string name="tiles_per_row_title">Tuiles par lignes</string>
     <string name="tiles_per_row_duplicate_landscape_title">Adapter la quantité en mode paysage</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">Doubler les boutons par ligne en mode paysage</string>
-    <string name="quick_tiles_bg_color_title">Couleur d\'arrière-plan de tuiles</string>
-    <string name="quick_tiles_bg_pressed_color_title">Couleur d\'arrière-plan des boutons dans les paramètres rapides</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">Doubler les tuiles par ligne en mode paysage</string>
+    <string name="quick_tiles_bg_color_title">Couleur d\'arrière-plan des tuiles</string>
+    <string name="quick_tiles_bg_pressed_color_title">Couleur d\'arrière-plan des tuiles dans les paramètres rapides</string>
     <string name="quick_tiles_text_color_title">Couleur de texte des tuiles</string>
     <string name="quick_settings_style_reset">Réinitialiser les couleurs</string>
     <string name="tiles_reset_title">Réinitialiser</string>
-    <string name="tiles_reset_message">Restaurer les tuiles par défaut affichée et mise en page ?</string>
+    <string name="tiles_reset_message">Restaurer les tuiles par défaut et leur mise en page ?</string>
     <string name="dialog_color_picker">Sélecteur de couleurs</string>
     <string name="press_color_to_apply">Appuyez sur la couleur ci-dessous pour appliquer</string>
     <string name="arrow_right">→</string>
@@ -2544,7 +2544,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="keyboard_rotation_toggle_title">Rotation automatique du clavier</string>
     <string name="keyboard_rotation_toggle_summary">Forcer l\'auto-rotation lorsque le clavier est montré</string>
     <string name="keyboard_rotation_timeout_title">délai de l\'auto-rotation</string>
-    <string name="keyboard_rotation_timeout_summary">Désactive la rotation automatique <xliff:g id="rotate_timeout"> %1$s </xliff:g> secondes après que clavier est caché</string>
+    <string name="keyboard_rotation_timeout_summary">Désactive la rotation automatique <xliff:g id="rotate_timeout"> %1$s </xliff:g> secondes après que le clavier est caché</string>
     <string name="keyboard_rotation_dialog">Remarque : Cette fonctionnalité force l\'auto-rotation temporairement lorsque le clavier est apparent sur l\'écran.        Il n\'a aucun effet lorsque l\'auto-rotation est déjà activée.</string>
     <string name="mod_version">Version Slim</string>
     <string name="mod_version_default">Inconnu</string>
@@ -2631,13 +2631,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="icon_presets">Icônes système</string>
     <string name="icon_custom">Galerie</string>
     <string name="lockscreen_shortcuts_title">Raccourcis</string>
-    <string name="lockscreen_shortcuts_summary">Afficher ou modifier les raccourcis personnalisée de l\'écran de verrouillage</string>
+    <string name="lockscreen_shortcuts_summary">Afficher ou modifier les raccourcis personnalisés de l\'écran de verrouillage</string>
     <string name="lock_screen_shortcuts_reset_message">Réinitialiser les raccourcis de l\'écran de verrouillage ?</string>
     <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
     <string name="lock_screen_shortcuts_reset">Réinitialiser</string>
     <string name="lock_screen_shortcuts_limit">Seulement 6 raccourcis sont autorisés !</string>
     <string name="lockscreen_shorcuts_longpress_title">Raccourcis par long appui</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Ouvrir les raccourcis personnalisées sur un appui long</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Ouvrir les raccourcis personnalisés sur un appui long</string>
     <string name="lockscreen_shortcuts_icon_picker_alarm">Alarme</string>
     <string name="lockscreen_shortcuts_icon_picker_andy">Andy</string>
     <string name="lockscreen_shortcuts_icon_picker_battery">Batterie</string>
@@ -2867,8 +2867,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="glow_times_superquick">Super rapide</string>
     <string name="glow_times_quick">Rapide</string>
     <string name="glow_times_normal">Normal</string>
-    <string name="navbar_can_move">Voir le paysage</string>
-    <string name="navbar_can_move_summary">Montre la barre de navigation en paysage sur le fond</string>
+    <string name="navbar_can_move">Voir en mode paysage</string>
+    <string name="navbar_can_move_summary">Montre la barre de navigation en mode paysage</string>
     <string name="nav_bar_button_style">Style du bouton de la barre de navigation</string>
     <string name="nav_bar_button_style_reset">Réinitialiser</string>
     <string name="button_transparency_title">Transparence des boutons de la barre de navigation</string>
@@ -2914,7 +2914,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="interface_navring">Cibles de l\'anneau</string>
     <string name="navbar_ring">Cibles personnalisées</string>
     <string name="navring_enable_long">Activer l\'appui long pour l\'anneau de la barre de navigation</string>
-    <string name="navbar_style_dimen_title">Style et dimens</string>
+    <string name="navbar_style_dimen_title">Style et dimensions</string>
     <string name="navbar_button_title">Boutons</string>
     <string name="navbar_targets_title">Cibles de l\'anneau</string>
     <string name="navbar_cat">Barre de navigation</string>
@@ -2950,8 +2950,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar">Barre de RAM</string>
     <string name="ram_bar_note_title">Remarque</string>
     <string name="ram_bar_note_summary">Cette barre de RAM montre l\'utilisation réelle de la mémoire (RAM) par Android. Veuillez noter qu\'avoir en cache des applications aide vos applications ouvertes à s\'ouvrir beaucoup plus rapidement. Pour plus d\'explications sur la gestion de la mémoire (RAM) par Android, examinez le menu d\'aide.</string>
-    <string name="ram_bar_mode_title">Mode d\'affichage de la barre RAM</string>
-    <string name="ram_bar_mode_dialog_title">Afficher sur la barre RAM</string>
+    <string name="ram_bar_mode_title">Mode d\'affichage de la barre de RAM</string>
+    <string name="ram_bar_mode_dialog_title">Afficher sur la barre de RAM</string>
     <string name="ram_bar_none">Aucun</string>
     <string name="ram_bar_apps">Applications</string>
     <string name="ram_bar_cache">Applications et cache</string>
@@ -2960,8 +2960,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_color_app_mem_color">Couleur des applications</string>
     <string name="ram_bar_color_cache_mem_color">Couleur du cache</string>
     <string name="ram_bar_color_total_mem_color">Couleur des autres choses</string>
-    <string name="ram_bar_color_enabled">Activé</string>
-    <string name="ram_bar_color_disabled">Désactivé</string>
+    <string name="ram_bar_color_enabled">Activée</string>
+    <string name="ram_bar_color_disabled">Désactivée</string>
     <string name="ram_bar_button_help">Aide</string>
     <string name="ram_bar_button_reset">Réinitialiser les couleurs</string>
     <string name="ass_wifi_settings_title">Wi-Fi</string>
@@ -2999,7 +2999,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="gestures_action_search">Invoquer la recherche</string>
     <string name="gestures_action_recent">Applications récentes</string>
     <string name="high_end_gfx_title">Effets graphiques avancés</string>
-    <string name="high_end_gfx_summary">Effets graphiques automatiquement désactivés sur appareils de gamme inférieures</string>
+    <string name="high_end_gfx_summary">Effets graphiques automatiquement désactivés sur les appareils de gamme inférieure</string>
     <string name="advanced_reboot_title">Redémarrage avancé</string>
     <string name="advanced_reboot_dialog_title">Menu redémarrage avancé</string>
     <string name="advanced_reboot_summary">Inclut des options dans le menu d\'alimentation pour redémarrer dans la récupération ou le chargeur de démarrage</string>

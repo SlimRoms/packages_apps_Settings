@@ -302,7 +302,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         if (getActivity() instanceof PreferenceActivity) {
             PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
             preferenceActivity.startPreferencePanel(fragmentClass, extras,
-                    R.string.lock_settings_picker_title, null, caller, requestCode);
+                    R.string.settings_label, null, caller, requestCode);
             return true;
         } else {
             Log.w(TAG, "Parent isn't PreferenceActivity, thus there's no way to launch the "

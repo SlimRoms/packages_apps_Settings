@@ -24,11 +24,15 @@ import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.SeekBarDialogPreference;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -39,7 +43,9 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
 
     private static final int DEFAULT_POSITION = 1 << 0; // this equals Position.LEFT.FLAG
 
-    private static final String PREF_PIE_TRIGGER_SIZE = "pie_trigger_size";
+    private static final String PREF_PIE_TRIGGER_THICKNESS = "pie_trigger_thickness";
+    private static final String PREF_PIE_TRIGGER_HEIGHT = "pie_trigger_height";
+    private static final String PREF_PIE_TRIGGER_GRAVITY_LET_RIGHT = "pie_trigger_gravity_left_right";
     private static final String PREF_PIE_DISABLE_IME_TRIGGERS = "pie_disable_ime_triggers";
     private static final String[] TRIGGER = {
         "pie_control_trigger_left",
@@ -48,10 +54,14 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
         "pie_control_trigger_top"
     };
 
-    private float mMaxTriggerSize;
-    private float mMinTriggerSize;
+    private float mMaxTriggerThickness;
+    private float mMinTriggerThickness;
+    private final float PIE_TRIGGER_HEIGHT_MAX = 1.0f;
+    private final float PIE_TRIGGER_HEIGHT_MIN = 0.2f;
 
-    private SeekBarPreference mPieTriggerSize;
+    private SeekBarPreference mPieTriggerThickness;
+    private SeekBarPreference mPieTriggerHeight;
+    private ListPreference mPieTriggerGravityLeftRight;
     private CheckBoxPreference mDisableImeTriggers;
     private CheckBoxPreference[] mTrigger = new CheckBoxPreference[4];
 
@@ -83,9 +93,12 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
             }
         }
 
-        mPieTriggerSize = (SeekBarPreference) findPreference(PREF_PIE_TRIGGER_SIZE);
-        mPieTriggerSize.setOnPreferenceChangeListener(this);
-
+        mPieTriggerThickness = (SeekBarPreference) findPreference(PREF_PIE_TRIGGER_THICKNESS);
+        mPieTriggerThickness.setOnPreferenceChangeListener(this);
+        mPieTriggerHeight = (SeekBarPreference) findPreference(PREF_PIE_TRIGGER_HEIGHT);
+        mPieTriggerHeight.setOnPreferenceChangeListener(this);
+        mPieTriggerGravityLeftRight = (ListPreference) prefSet.findPreference(PREF_PIE_TRIGGER_GRAVITY_LET_RIGHT);
+        mPieTriggerGravityLeftRight.setOnPreferenceChangeListener(this);
         mDisableImeTriggers = (CheckBoxPreference) findPreference(PREF_PIE_DISABLE_IME_TRIGGERS);
         mDisableImeTriggers.setOnPreferenceChangeListener(this);
 
@@ -93,23 +106,66 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
             mTrigger[i] = (CheckBoxPreference) prefSet.findPreference(TRIGGER[i]);
             mTrigger[i].setOnPreferenceChangeListener(this);
         }
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.pie_trigger_settings, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.reset:
+                Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER_THICKNESS,
+                    mSystemUiResources.getDimension(
+                    mSystemUiResources.getIdentifier("pie_trigger_thickness",
+                    "dimen", "com.android.systemui")));
+                Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER_HEIGHT, 0.8f);
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER_GRAVITY_LEFT_RIGHT, 16);
+                    updatePieTriggers();
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPieTriggerSize) {
+        if (preference == mPieTriggerThickness) {
             float val = Float.parseFloat((String) newValue);
-            float value = (val * ((mMaxTriggerSize - mMinTriggerSize)
-                    / 100)) + mMinTriggerSize;
+            float value = (val * ((mMaxTriggerThickness - mMinTriggerThickness)
+                    / 100)) + mMinTriggerThickness;
             Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_TRIGGER_SIZE,
+                    Settings.System.PIE_TRIGGER_THICKNESS,
                     value);
             return true;
+        } else if (preference == mPieTriggerHeight) {
+            float val = Float.parseFloat((String) newValue);
+            float value = (val * ((PIE_TRIGGER_HEIGHT_MAX - PIE_TRIGGER_HEIGHT_MIN)
+                    / 100)) + PIE_TRIGGER_HEIGHT_MIN;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER_HEIGHT,
+                    value);
+            return true;
+        } else if (preference == mPieTriggerGravityLeftRight) {
+            int index = mPieTriggerGravityLeftRight.findIndexOfValue((String) newValue);
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PIE_TRIGGER_GRAVITY_LEFT_RIGHT,
+                    value);
+            mPieTriggerGravityLeftRight.setSummary(
+                mPieTriggerGravityLeftRight.getEntries()[index]);
         } else if (preference == mDisableImeTriggers) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_ADJUST_TRIGGER_FOR_IME,
                     (Boolean) newValue ? 1 : 0);
-            updatePieTriggers();
         } else {
             int triggerSlots = 0;
             for (int i = 0; i < mTrigger.length; i++) {
@@ -121,8 +177,8 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
             }
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_GRAVITY, triggerSlots);
-            updatePieTriggers();
         }
+        updatePieTriggers();
         return true;
     }
 
@@ -165,27 +221,49 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
         mDisableImeTriggers.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.PIE_ADJUST_TRIGGER_FOR_IME, 1) == 1);
 
-        float triggerSize;
+        // default value is Gravity.CENTER_VERTICAL = 16
+        // see AOSP docu
+        mPieTriggerGravityLeftRight.setValue(String.valueOf(
+                Settings.System.getInt(getContentResolver(),
+                Settings.System.PIE_TRIGGER_GRAVITY_LEFT_RIGHT, 16)));
+        mPieTriggerGravityLeftRight.setSummary(
+                mPieTriggerGravityLeftRight.getEntry());
+
+        float triggerThickness;
         try{
-            triggerSize = Settings.System.getFloat(getActivity()
-                    .getContentResolver(), Settings.System.PIE_TRIGGER_SIZE);
+            triggerThickness = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.PIE_TRIGGER_THICKNESS);
         } catch (Exception e) {
-            triggerSize = mSystemUiResources.getDimension(
-                    mSystemUiResources.getIdentifier("pie_trigger_height",
+            triggerThickness = mSystemUiResources.getDimension(
+                    mSystemUiResources.getIdentifier("pie_trigger_thickness",
                     "dimen", "com.android.systemui"));
             Settings.System.putFloat(getActivity().getContentResolver(),
-                Settings.System.PIE_TRIGGER_SIZE, triggerSize);
+                Settings.System.PIE_TRIGGER_THICKNESS, triggerThickness);
         }
-        mMaxTriggerSize = mSystemUiResources.getDimension(
-                    mSystemUiResources.getIdentifier("pie_trigger_max_height",
+        mMaxTriggerThickness = mSystemUiResources.getDimension(
+                    mSystemUiResources.getIdentifier("pie_trigger_max_thickness",
                     "dimen", "com.android.systemui"));
-        mMinTriggerSize = mSystemUiResources.getDimension(
-                    mSystemUiResources.getIdentifier("pie_trigger_min_height",
+        mMinTriggerThickness = mSystemUiResources.getDimension(
+                    mSystemUiResources.getIdentifier("pie_trigger_min_thickness",
                     "dimen", "com.android.systemui"));
-        float triggerSizeValue = ((triggerSize - mMinTriggerSize) /
-                ((mMaxTriggerSize - mMinTriggerSize) / 100)) / 100;
-        mPieTriggerSize.setProperty(String.valueOf(triggerSizeValue));
-        mPieTriggerSize.setInitValue((int) (triggerSizeValue * 100));
+        float triggerThicknessValue = ((triggerThickness - mMinTriggerThickness) /
+                ((mMaxTriggerThickness - mMinTriggerThickness) / 100)) / 100;
+        mPieTriggerThickness.setInitValue((int) (triggerThicknessValue * 100));
+        mPieTriggerThickness.disablePercentageValue(true);
+
+        float triggerHeight;
+        try{
+            triggerHeight = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.PIE_TRIGGER_HEIGHT);
+        } catch (Exception e) {
+            triggerHeight = 0.8f;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_TRIGGER_HEIGHT, triggerHeight);
+        }
+        float triggerHeightValue = ((triggerHeight - PIE_TRIGGER_HEIGHT_MIN) /
+                ((PIE_TRIGGER_HEIGHT_MAX - PIE_TRIGGER_HEIGHT_MIN) / 100)) / 100;
+        mPieTriggerHeight.setInitValue((int) (triggerHeightValue * 100));
+        mPieTriggerHeight.disablePercentageValue(true);
     }
 
 }

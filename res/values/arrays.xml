@@ -2278,4 +2278,17 @@
         <item>**null**</item>
     </string-array>
 
+    <string-array name="pie_trigger_gravity_left_right_entries">
+        <item>@string/pie_trigger_gravity_left_right_bottom</item>
+        <item>@string/pie_trigger_gravity_left_right_center</item>
+        <item>@string/pie_trigger_gravity_left_right_top</item>
+    </string-array>
+
+    <!-- Gravity.BOTTOM = 80, Gravity.CENTER_VERTICAL = 16, Gravity_TOP = 48 -->
+    <string-array name="pie_trigger_gravity_left_right_values" translatable="false">
+        <item>80</item>
+        <item>16</item>
+        <item>48</item>
+    </string-array>
+
 </resources>

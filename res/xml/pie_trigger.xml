@@ -48,9 +48,25 @@
             android:summary="@string/pie_control_trigger_top_summary"
             android:defaultValue="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pie_trigger_dimens_options">
+
+        <ListPreference
+            android:key="pie_trigger_gravity_left_right"
+            android:entries="@array/pie_trigger_gravity_left_right_entries"
+            android:entryValues="@array/pie_trigger_gravity_left_right_values"
+            android:title="@string/pie_trigger_gravity_left_right_title"
+            android:dialogTitle="@string/pie_trigger_gravity_left_right_dialog_title" />
+
         <com.android.settings.widget.SeekBarPreference
-             android:key="pie_trigger_size"
-             android:title="@string/pie_trigger_size_title" />
+            android:key="pie_trigger_height"
+            android:title="@string/pie_trigger_height_title" />
+
+        <com.android.settings.widget.SeekBarPreference
+            android:key="pie_trigger_thickness"
+            android:title="@string/pie_trigger_thickness_title" />
 
     </PreferenceCategory>
 

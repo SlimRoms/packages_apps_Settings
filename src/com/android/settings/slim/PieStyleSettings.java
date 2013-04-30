@@ -162,7 +162,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         float controlSizeValue = ((controlSize - PIE_CONTROL_SIZE_MIN) /
                     ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) / 100)) / 100;
         mPieControlSize = (SeekBarPreference) findPreference(PREF_PIE_CONTROL_SIZE);
-        mPieControlSize.setProperty(String.valueOf(controlSizeValue));
+        mPieControlSize.disablePercentageValue(true);
         mPieControlSize.setInitValue((int) (controlSizeValue * 100));
         mPieControlSize.setOnPreferenceChangeListener(this);
 

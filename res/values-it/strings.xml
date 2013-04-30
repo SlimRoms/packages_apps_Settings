@@ -122,7 +122,6 @@
     <string name="bluetooth_disconnected">Disconnesso</string>
     <string name="bluetooth_disconnecting">Disconnessione...</string>
     <string name="bluetooth_connecting">Connessione...</string>
-    <string name="bluetooth_unknown">[stringa vuota]</string>
     <string name="bluetooth_pairing">Accoppiamento...</string>
     <string name="bluetooth_device">Dispositivo Bluetooth senza nome</string>
     <string name="progress_scanning">Ricerca</string>
@@ -294,7 +293,6 @@
     <string name="lock_after_timeout_summary"><xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> dopo sospensione</string>
     <string name="show_owner_info_on_lockscreen_label">Mostra info proprietario su blocco schermo</string>
     <string name="owner_info_settings_title">Info proprietario</string>
-    <string name="owner_info_settings_summary">[stringa vuota]</string>
     <string name="owner_info_settings_edit_text_hint">Digita testo da visualizzare su blocco schermo</string>
     <string name="show_user_info_on_lockscreen_label">Mostra info utente in schermata blocco</string>
     <string name="user_info_settings_title">Dati utente</string>
@@ -337,7 +335,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Scegli un metodo per bloccare lo schermo</string>
     <string name="unlock_backup_info_summary">Quando Sblocco col sorriso non funziona, come vuoi sbloccare il dispositivo?</string>
     <string name="unlock_set_unlock_off_title">Nessuno</string>
-    <string name="unlock_set_unlock_off_summary">[stringa vuota]</string>
     <string name="unlock_set_unlock_none_title">Fai scorrere</string>
     <string name="unlock_set_unlock_none_summary">Nessuna protezione</string>
     <string name="unlock_set_unlock_biometric_weak_title">Sblocco col sorriso</string>
@@ -418,7 +415,6 @@
     <string name="bluetooth_display_passkey_pin_msg">Per eseguire l\'accoppiamento con <xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>, digita sul dispositivo <xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g>, quindi premi A capo o Invio.</string>
     <string name="bluetooth_pairing_accept">Accoppia</string>
     <string name="bluetooth_pairing_decline">Annulla</string>
-    <string name="bluetooth_error_title">[stringa vuota]</string>
     <string name="bluetooth_pairing_error_message">Impossibile eseguire l\'accoppiamento con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">Impossibile eseguire l\'accoppiamento con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>. La passkey o il PIN è errato.</string>
     <string name="bluetooth_pairing_device_down_error_message">Impossibile comunicare con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
@@ -667,7 +663,6 @@
     <string name="display_settings_title">Schermo</string>
     <string name="sound_settings">Audio</string>
     <string name="ringtone_title">Suoneria telefono</string>
-    <string name="ringtone_summary">"[stringa vuota]"</string>
     <string name="all_volume_title">Volumi</string>
     <string name="musicfx_title">Effetti musicali</string>
     <string name="ring_volume_title">Volume suoneria</string>
@@ -768,7 +763,6 @@
     <string name="device_info_settings" product="tablet">Stato telefono</string>
     <string name="device_info_settings" product="default">Stato telefono</string>
     <string name="system_update_settings_list_item_title">Aggiornamenti sistema</string>
-    <string name="system_update_settings_list_item_summary">"[stringa vuota]"</string>
     <string name="firmware_version">Versione di Android</string>
     <string name="model_number">Numero modello</string>
     <string name="fcc_equipment_id">ID attrezzatura</string>
@@ -829,8 +823,6 @@
     <string name="sd_insert_summary" product="default">Inserisci una scheda SD da montare</string>
     <string name="sd_mount" product="nosdcard">Installa scheda SD</string>
     <string name="sd_mount" product="default">Installa scheda SD</string>
-    <string name="sd_mount_summary" product="nosdcard">[stringa vuota]</string>
-    <string name="sd_mount_summary" product="default">[stringa vuota]</string>
     <string name="sd_format" product="nosdcard">Cancella scheda SD</string>
     <string name="sd_format" product="default">Cancella scheda SD</string>
     <string name="sd_format_summary" product="nosdcard">Cancella tutti i dati sulla scheda SD, come musica e foto</string>
@@ -842,8 +834,6 @@
     <string name="dlg_confirm_unmount_title" product="default">Smontare la scheda SD?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Se smonti la scheda SD, alcune applicazioni in uso si bloccheranno e potrebbero risultare non disponibili finché non rimonterai la scheda SD.</string>
     <string name="dlg_confirm_unmount_text" product="default">Se smonti la scheda SD, alcune applicazioni in uso si bloccheranno e potrebbero risultare non disponibili finché non rimonterai la scheda SD.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[stringa vuota]</string>
-    <string name="dlg_error_unmount_title" product="default">[stringa vuota]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">Impossibile smontare la scheda SD. Riprova più tardi.</string>
     <string name="dlg_error_unmount_text" product="default">Impossibile smontare la scheda SD. Riprova più tardi.</string>
     <string name="unmount_inform_text" product="nosdcard">La scheda SD condiviso verrà smontata.</string>
@@ -894,7 +884,6 @@
     <string name="menu_new">Nuovo APN</string>
     <string name="menu_save">Salva</string>
     <string name="menu_cancel">Ignora</string>
-    <string name="error_title">[stringa vuota]</string>
     <string name="error_name_empty">Il campo Nome non può essere vuoto.</string>
     <string name="error_apn_empty">Il campo APN non può essere vuoto.</string>
     <string name="error_mcc_not3">Il campo MCC deve contenere 3 cifre.</string>
@@ -1012,9 +1001,7 @@
     <string name="lockpattern_change_lock_pattern_label">Cambia sequenza sblocco</string>
     <string name="lockpattern_change_lock_pin_label">Cambia PIN di sblocco</string>
     <string name="lockpattern_need_to_unlock">Conferma sequenza salvata</string>
-    <string name="lockpattern_need_to_unlock_footer">[stringa vuota]</string>
     <string name="lockpattern_need_to_unlock_wrong">Riprova:</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[stringa vuota]</string>
     <string name="lockpattern_recording_intro_header">Inserisci una sequenza di sblocco</string>
     <string name="lockpattern_recording_intro_footer">Premi Menu per visualizzare la guida.</string>
     <string name="lockpattern_recording_inprogress">Allontana il dito al termine.</string>
@@ -1112,7 +1099,6 @@
     <string name="clear_data_dlg_text">Tutti i dati dell\'applicazione verranno eliminati definitivamente, inclusi tutti i file, le impostazioni, gli account, i database e così via.</string>
     <string name="dlg_ok">OK</string>
     <string name="dlg_cancel">Annulla</string>
-    <string name="app_not_found_dlg_title">[stringa vuota]</string>
     <string name="app_not_found_dlg_text">Impossibile trovare l\'applicazione nell\'elenco di applicazioni installate.</string>
     <string name="clear_data_failed">Impossibile cancellare i dati dell\'applicazione.</string>
     <string name="app_factory_reset_dlg_title">Disinstallare gli aggiornamenti?</string>
@@ -1146,7 +1132,6 @@
     <string name="system_package">Impossibile installare aggiornamenti di sistema su supporti esterni.</string>
     <string name="force_stop_dlg_title">Forzare l\'interruzione?</string>
     <string name="force_stop_dlg_text">Se forzi l\'interruzione di un\'applicazione, tale applicazione potrebbe funzionare in modo anomalo.</string>
-    <string name="move_app_failed_dlg_title">[stringa vuota]</string>
     <string name="move_app_failed_dlg_text">Impossibile spostare l\'applicazione. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">Percorso di installazione</string>
     <string name="app_install_location_summary">Cambia il percorso preferito per l\'installazione di nuove applicazioni</string>
@@ -1196,7 +1181,6 @@
     <string name="language_settings_category">Impostazioni lingua</string>
     <string name="keyboard_settings_category">Tastiera e metodi di immissione</string>
     <string name="phone_language">Lingua</string>
-    <string name="phone_language_summary">"[stringa vuota]"</string>
     <string name="auto_replace">Sostituzione automatica</string>
     <string name="auto_replace_summary">Corregge le parole con errori di ortografia</string>
     <string name="auto_caps">Maiuscole automatiche</string>
@@ -1223,7 +1207,6 @@
     <string name="user_dict_settings_titlebar">Dizionario utente</string>
     <string name="user_dict_single_settings_title">Dizionario personale</string>
     <string name="user_dict_multiple_settings_title">Dizionari personali</string>
-    <string name="user_dict_settings_summary">"[stringa vuota]"</string>
     <string name="user_dict_settings_add_menu_title">Aggiungi</string>
     <string name="user_dict_settings_add_dialog_title">Aggiungi al dizionario</string>
     <string name="user_dict_settings_add_screen_title">Frase</string>
@@ -1497,7 +1480,6 @@
     <string name="trusted_credentials_summary">Visualizza certificati CA attendibili</string>
     <string name="credentials_install_gesture_prompt">Inserisci la sequenza di sblocco</string>
     <string name="credentials_install_gesture_explanation">Per confermare l\'installazione delle credenziali devi inserire la sequenza di sblocco.</string>
-    <string name="credentials_unlock">[stringa vuota]</string>
     <string name="credentials_unlock_hint">Digita la password per l\'archivio credenziali.</string>
     <string name="credentials_old_password">Password attuale:</string>
     <string name="credentials_reset_hint">Rimuovere tutti i contenuti?</string>
@@ -1527,7 +1509,6 @@
     <string name="local_backup_password_toast_success">Nuova password di backup impostata</string>
     <string name="local_backup_password_toast_confirmation_mismatch">Le password inserite non corrispondono</string>
     <string name="local_backup_password_toast_validation_failure">Impossibile impostare la password di backup</string>
-    <string name="backup_erase_dialog_title">[stringa vuota]</string>
     <string name="backup_erase_dialog_message">Interrompere il backup delle password Wi-Fi, dei segnalibri, di altre impostazioni e dei dati delle applicazioni, oltre a cancellare tutte le copie sui server di Google?</string>
     <string name="device_admin_settings_title">Impostazioni di amministrazione dispositivo</string>
     <string name="active_device_admin_msg">Amministratore dispositivo</string>
@@ -2001,7 +1982,6 @@
     <string name="choose_soundtone">Scegliere il tono di notifica</string>
     <string name="choose_ringtone">Scegli suoneria</string>
     <string name="soundtone_title">Tono di notifica</string>
-    <string name="soundtone_summary">"[stringa vuota]"</string>
     <string name="profile_appgroups_title">Gruppi di applicazioni</string>
     <string name="profile_applist_title">Applicazioni</string>
     <string name="profile_new_appgroup">Nuovo gruppo di applicazione</string>

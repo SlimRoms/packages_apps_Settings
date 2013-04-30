@@ -122,7 +122,6 @@
     <string name="bluetooth_disconnected">Đã ngắt kết nối</string>
     <string name="bluetooth_disconnecting">Đang ngắt kết nối…</string>
     <string name="bluetooth_connecting">Đang kết nối…</string>
-    <string name="bluetooth_unknown">[chuỗi rỗng]</string>
     <string name="bluetooth_pairing">Đang ghép nối…</string>
     <string name="bluetooth_device">Thiết bị Bluetooth chưa được đặt tên</string>
     <string name="progress_scanning">Đang tìm kiếm</string>
@@ -294,7 +293,6 @@
     <string name="lock_after_timeout_summary"><xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> sau khi ngủ</string>
     <string name="show_owner_info_on_lockscreen_label">Hiển thị th.tin chủ sở hữu trên màn hình khóa</string>
     <string name="owner_info_settings_title">Thông tin chủ sở hữu</string>
-    <string name="owner_info_settings_summary">[chuỗi rỗng]</string>
     <string name="owner_info_settings_edit_text_hint">Nhập văn bản để hiển thị trên màn hình khóa</string>
     <string name="show_user_info_on_lockscreen_label">Hiển thị thông tin người dùng trên màn hình khóa</string>
     <string name="user_info_settings_title">Thông tin người dùng</string>
@@ -337,7 +335,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Chọn phương thức khóa màn hình</string>
     <string name="unlock_backup_info_summary">Khi Mở khóa bằng khuôn mặt không thể nhìn thấy bạn, bạn muốn mở khóa bằng cách nào?</string>
     <string name="unlock_set_unlock_off_title">Không</string>
-    <string name="unlock_set_unlock_off_summary">[chuỗi rỗng]</string>
     <string name="unlock_set_unlock_none_title">Trượt</string>
     <string name="unlock_set_unlock_none_summary">Không có bảo mật</string>
     <string name="unlock_set_unlock_biometric_weak_title">Mở khóa bằng khuôn mặt</string>
@@ -418,7 +415,6 @@
     <string name="bluetooth_display_passkey_pin_msg">Để ghép nối với:<xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Hãy nhập trên thiết bị:<xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g> rồi nhấn Quay lại hoặc Enter.</string>
     <string name="bluetooth_pairing_accept">Ghép nối</string>
     <string name="bluetooth_pairing_decline">Hủy</string>
-    <string name="bluetooth_error_title">[chuỗi rỗng]</string>
     <string name="bluetooth_pairing_error_message">Không thể ghép nối với <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">Không thể ghép nối với <xliff:g id="DEVICE_NAME">%1$s</xliff:g> do mã PIN hoặc mã xác nhận không đúng.</string>
     <string name="bluetooth_pairing_device_down_error_message">Không thể kết nối với <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
@@ -667,7 +663,6 @@
     <string name="display_settings_title">Hiển thị</string>
     <string name="sound_settings">Âm thanh</string>
     <string name="ringtone_title">Nhạc chuông điện thoại</string>
-    <string name="ringtone_summary">"[chuỗi rỗng]"</string>
     <string name="all_volume_title">Âm lượng</string>
     <string name="musicfx_title">Hiệu ứng âm nhạc</string>
     <string name="ring_volume_title">Âm lượng chuông</string>
@@ -768,7 +763,6 @@
     <string name="device_info_settings" product="tablet">Trạng thái điện thoại</string>
     <string name="device_info_settings" product="default">Trạng thái điện thoại</string>
     <string name="system_update_settings_list_item_title">Bản cập nhật hệ thống</string>
-    <string name="system_update_settings_list_item_summary">"[chuỗi rỗng]"</string>
     <string name="firmware_version">Phiên bản của Android</string>
     <string name="model_number">Số kiểu</string>
     <string name="fcc_equipment_id">ID thiết bị</string>
@@ -829,8 +823,6 @@
     <string name="sd_insert_summary" product="default">Lắp thẻ SD để gắn</string>
     <string name="sd_mount" product="nosdcard">Lắp thẻ SD</string>
     <string name="sd_mount" product="default">Lắp thẻ SD</string>
-    <string name="sd_mount_summary" product="nosdcard">[chuỗi rỗng]</string>
-    <string name="sd_mount_summary" product="default">[chuỗi rỗng]</string>
     <string name="sd_format" product="nosdcard">Xóa thẻ SD</string>
     <string name="sd_format" product="default">Xóa thẻ SD</string>
     <string name="sd_format_summary" product="nosdcard">Xóa tất cả dữ liệu trên thẻ SD, chẳng hạn như nhạc và ảnh</string>
@@ -842,8 +834,6 @@
     <string name="dlg_confirm_unmount_title" product="default">Tháo thẻ SD?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Nếu bạn tháo thẻ SD, một số ứng dụng bạn đang sử dụng sẽ ngừng và có thể không khả dụng cho tới khi bạn lắp lại thẻ SD.</string>
     <string name="dlg_confirm_unmount_text" product="default">Nếu bạn tháo thẻ SD, một số ứng dụng bạn đang sử dụng sẽ ngừng và có thể không khả dụng cho tới khi bạn lắp lại thẻ SD.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[chuỗi rỗng]</string>
-    <string name="dlg_error_unmount_title" product="default">[chuỗi rỗng]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">Không thể tháo thẻ SD. Vui lòng thử lại sau.</string>
     <string name="dlg_error_unmount_text" product="default">Không thể tháo thẻ SD. Vui lòng thử lại sau.</string>
     <string name="unmount_inform_text" product="nosdcard">Thẻ SD sẽ được ngắt kết nối.</string>
@@ -894,7 +884,6 @@
     <string name="menu_new">APN mới</string>
     <string name="menu_save">Lưu</string>
     <string name="menu_cancel">Hủy</string>
-    <string name="error_title">[chuỗi rỗng]</string>
     <string name="error_name_empty">Không được để trống trường Tên.</string>
     <string name="error_apn_empty">APN không được để trống.</string>
     <string name="error_mcc_not3">Trường MCC phải có 3 chữ số.</string>
@@ -1012,9 +1001,7 @@
     <string name="lockpattern_change_lock_pattern_label">Thay đổi hình mở khóa</string>
     <string name="lockpattern_change_lock_pin_label">Thay đổi mã PIN mở khóa</string>
     <string name="lockpattern_need_to_unlock">Xác nhận hình đã lưu</string>
-    <string name="lockpattern_need_to_unlock_footer">[chuỗi rỗng]</string>
     <string name="lockpattern_need_to_unlock_wrong">Thử lại:</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[chuỗi rỗng]</string>
     <string name="lockpattern_recording_intro_header">Vẽ hình mở khóa</string>
     <string name="lockpattern_recording_intro_footer">Nhấn vào Trình đơn để được trợ giúp.</string>
     <string name="lockpattern_recording_inprogress">Thả ngón tay khi xong.</string>
@@ -1112,7 +1099,6 @@
     <string name="clear_data_dlg_text">Tất cả dữ liệu của ứng dụng này sẽ bị xóa vĩnh viễn, bao gồm tất cả các tệp, cài đặt, tài khoản, cơ sở dữ liệu, v.v.</string>
     <string name="dlg_ok">OK</string>
     <string name="dlg_cancel">Hủy</string>
-    <string name="app_not_found_dlg_title">[chuỗi rỗng]</string>
     <string name="app_not_found_dlg_text">Không tìm thấy ứng dụng trong danh sách các ứng dụng đã cài đặt.</string>
     <string name="clear_data_failed">Không thể xóa dữ liệu ứng dụng.</string>
     <string name="app_factory_reset_dlg_title">Gỡ cài đặt bản cập nhật</string>
@@ -1146,7 +1132,6 @@
     <string name="system_package">Không thể cài đặt bản cập nhật hệ thống trên phương tiện bên ngoài.</string>
     <string name="force_stop_dlg_title">Buộc dừng?</string>
     <string name="force_stop_dlg_text">Nếu bạn buộc dừng một ứng dụng, ứng dụng đó có thể hoạt động sai.</string>
-    <string name="move_app_failed_dlg_title">[chuỗi rỗng]</string>
     <string name="move_app_failed_dlg_text">Không thể di chuyển ứng dụng. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">Vị trí cài đặt ưa thích</string>
     <string name="app_install_location_summary">Thay đổi vị trí cài đặt ưa thích cho ứng dụng mới</string>
@@ -1196,7 +1181,6 @@
     <string name="language_settings_category">Cài đặt ngôn ngữ</string>
     <string name="keyboard_settings_category">Bàn phím &amp; phương thức nhập</string>
     <string name="phone_language">Ngôn ngữ</string>
-    <string name="phone_language_summary">"[chuỗi rỗng]"</string>
     <string name="auto_replace">Tự động thay thế</string>
     <string name="auto_replace_summary">Sửa từ bị đánh sai</string>
     <string name="auto_caps">Tự động viết hoa</string>
@@ -1223,7 +1207,6 @@
     <string name="user_dict_settings_titlebar">Từ điển người dùng</string>
     <string name="user_dict_single_settings_title">Từ điển cá nhân</string>
     <string name="user_dict_multiple_settings_title">Từ điển cá nhân</string>
-    <string name="user_dict_settings_summary">"[chuỗi rỗng]"</string>
     <string name="user_dict_settings_add_menu_title">Thêm</string>
     <string name="user_dict_settings_add_dialog_title">Thêm vào từ điển</string>
     <string name="user_dict_settings_add_screen_title">Cụm từ</string>
@@ -1497,7 +1480,6 @@
     <string name="trusted_credentials_summary">Hiển thị chứng chỉ CA tin cậy</string>
     <string name="credentials_install_gesture_prompt">Vẽ hình mở khóa của bạn</string>
     <string name="credentials_install_gesture_explanation">Bạn cần vẽ hình mở khóa của mình để xác nhận cài đặt thông tin xác thực.</string>
-    <string name="credentials_unlock">[chuỗi rỗng]</string>
     <string name="credentials_unlock_hint">Nhập mật khẩu cho vùng lưu trữ thông tin xác thực.</string>
     <string name="credentials_old_password">Mật khẩu hiện tại:</string>
     <string name="credentials_reset_hint">Xóa tất cả nội dung?</string>
@@ -1527,7 +1509,6 @@
     <string name="local_backup_password_toast_success">Nhóm mật khẩu dự phòng mới</string>
     <string name="local_backup_password_toast_confirmation_mismatch">Mật khẩu mới và xác nhận không khớp</string>
     <string name="local_backup_password_toast_validation_failure">Đặt mật khẩu dự phòng không thành công</string>
-    <string name="backup_erase_dialog_title">[chuỗi rỗng]</string>
     <string name="backup_erase_dialog_message">Dừng sao lưu mật khẩu Wi-Fi, dấu trang, cài đặt khác và dữ liệu ứng dụng của bạn đồng thời xóa tất cả sao chép trên máy chủ của Google?</string>
     <string name="device_admin_settings_title">Quản lý thiết bị</string>
     <string name="active_device_admin_msg">Quản trị viên thiết bị</string>
@@ -2001,7 +1982,6 @@
     <string name="choose_soundtone">Chọn âm thông báo</string>
     <string name="choose_ringtone">Chọn nhạc chuông</string>
     <string name="soundtone_title">Âm thông báo</string>
-    <string name="soundtone_summary">"[chuỗi rỗng]"</string>
     <string name="profile_appgroups_title">Nhóm ứng dụng</string>
     <string name="profile_applist_title">Ứng dụng</string>
     <string name="profile_new_appgroup">Nhóm ứng dụng mới</string>

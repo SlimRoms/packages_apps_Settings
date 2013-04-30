@@ -137,7 +137,6 @@
     <string name="bluetooth_disconnected">Atsijungęs (-usi)</string>
     <string name="bluetooth_disconnecting">Atjungiama...</string>
     <string name="bluetooth_connecting">Jungiama…</string>
-    <string name="bluetooth_unknown">[empty string]</string>
     <string name="bluetooth_pairing">Susiejama...</string>
     <string name="bluetooth_device">„Bluetooth“ įrenginys be pavadinimo</string>
     <string name="progress_scanning">Ieškoma</string>
@@ -309,7 +308,6 @@
     <string name="lock_after_timeout_summary"><xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> po miego režimo</string>
     <string name="show_owner_info_on_lockscreen_label">Rodyti savininko informaciją užrakinimo ekrane</string>
     <string name="owner_info_settings_title">Savininko informac.</string>
-    <string name="owner_info_settings_summary">[empty string]</string>
     <string name="owner_info_settings_edit_text_hint">Įveskite tekstą, pateiktiną užrakinimo ekrane</string>
     <string name="show_user_info_on_lockscreen_label">Rodyti naudotojo informaciją užrakinimo ekrane</string>
     <string name="user_info_settings_title">Naudotojo inform.</string>
@@ -352,7 +350,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Pasirinkite ekrano užrakinimo metodą</string>
     <string name="unlock_backup_info_summary">Kai Atrakinimo pagal veidą programa nemato jūsų, kaip norite atrakinti?</string>
     <string name="unlock_set_unlock_off_title">Nėra</string>
-    <string name="unlock_set_unlock_off_summary">[empty string]</string>
     <string name="unlock_set_unlock_none_title">Slinkti</string>
     <string name="unlock_set_unlock_none_summary">Nesaugoma</string>
     <string name="unlock_set_unlock_biometric_weak_title">Atrakinimas pgl. veidą</string>
@@ -433,7 +430,6 @@
     <string name="bluetooth_display_passkey_pin_msg">Susieti su: <xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g> Įveskite: <xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g>, tada paspauskite „Grįžti“ arba „Enter“.</string>
     <string name="bluetooth_pairing_accept">Susieti</string>
     <string name="bluetooth_pairing_decline">Atšaukti</string>
-    <string name="bluetooth_error_title">[empty string]</string>
     <string name="bluetooth_pairing_error_message">Nepavyko susieti su „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“.</string>
     <string name="bluetooth_pairing_pin_error_message">Nepavyko susieti su „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“ dėl netinkamo PIN kodo ar prieigos rakto.</string>
     <string name="bluetooth_pairing_device_down_error_message">Nepavyksta užmegzti ryšio su „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“.</string>
@@ -676,7 +672,6 @@
     <string name="display_settings_title">Ekranas</string>
     <string name="sound_settings">Garsas</string>
     <string name="ringtone_title">Telefono skambėjimo tonas</string>
-    <string name="ringtone_summary">"[empty string]"</string>
     <string name="all_volume_title">Garsumas</string>
     <string name="musicfx_title">Muzikos efektai</string>
     <string name="ring_volume_title">Skambučio garsumas</string>
@@ -775,7 +770,6 @@
     <string name="device_info_settings" product="tablet">Telefono būsena</string>
     <string name="device_info_settings" product="default">Telefono būsena</string>
     <string name="system_update_settings_list_item_title">Sistemos naujiniai</string>
-    <string name="system_update_settings_list_item_summary">"[empty string]"</string>
     <string name="firmware_version">„Android“ versija</string>
     <string name="model_number">Modelio numeris</string>
     <string name="fcc_equipment_id">Įrangos ID</string>
@@ -836,8 +830,6 @@
     <string name="sd_insert_summary" product="default">Įdėti SD kortelę, kad ji būtų įmontuota</string>
     <string name="sd_mount" product="nosdcard">Įdėti SD kortelę</string>
     <string name="sd_mount" product="default">Įdėti SD kortelę</string>
-    <string name="sd_mount_summary" product="nosdcard">[empty string]</string>
-    <string name="sd_mount_summary" product="default">[empty string]</string>
     <string name="sd_format" product="nosdcard">Ištrinti SD kortelę</string>
     <string name="sd_format" product="default">Ištrinti SD kortelę</string>
     <string name="sd_format_summary" product="nosdcard">Ištrinami visi SD kortelės duomenys, pvz., muzikos failai ir nuotraukos</string>
@@ -849,8 +841,6 @@
     <string name="dlg_confirm_unmount_title" product="default">Išimti SD kortelę?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Jei išimsite SD kortelę, kai kurios naudojamos programos bus sustabdytos ir gali būti nepasiekiamos, kol iš naujo įdėsite SD kortelę.</string>
     <string name="dlg_confirm_unmount_text" product="default">Jei išimsite SD kortelę, kai kurios naudojamos programos bus sustabdytos ir gali būti nepasiekiamos, kol iš naujo įdėsite SD kortelę.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[empty string]</string>
-    <string name="dlg_error_unmount_title" product="default">[empty string]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">Nepavyko išimti SD kortelės. Vėliau bandykite dar kartą.</string>
     <string name="dlg_error_unmount_text" product="default">Nepavyko išimti SD kortelės. Vėliau bandykite dar kartą.</string>
     <string name="unmount_inform_text" product="nosdcard">SD kortelė bus atjungta.</string>
@@ -901,7 +891,6 @@
     <string name="menu_new">Naujas APN</string>
     <string name="menu_save">Išsaugoti</string>
     <string name="menu_cancel">Atmesti</string>
-    <string name="error_title">[empty string]</string>
     <string name="error_name_empty">Pavadinimo laukas negali būti tuščias.</string>
     <string name="error_apn_empty">APN negali būti tuščias.</string>
     <string name="error_mcc_not3">MKC lauke turi būti įvesti 3 skaitmenys.</string>
@@ -1019,9 +1008,7 @@
     <string name="lockpattern_change_lock_pattern_label">Keisti atrakinimo modelį</string>
     <string name="lockpattern_change_lock_pin_label">Pakeisti atrakinimo PIN kodą</string>
     <string name="lockpattern_need_to_unlock">Patvirtinti išsaugotą modelį</string>
-    <string name="lockpattern_need_to_unlock_footer">[empty string]</string>
     <string name="lockpattern_need_to_unlock_wrong">Bandykite dar kartą:</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[empty string]</string>
     <string name="lockpattern_recording_intro_header">Nustatyti atrakinimo modelį</string>
     <string name="lockpattern_recording_intro_footer">Jei norite gauti pagalbos, paspauskite „Meniu“.</string>
     <string name="lockpattern_recording_inprogress">Baigę atleiskite pirštą.</string>
@@ -1119,7 +1106,6 @@
     <string name="clear_data_dlg_text">Visi šios programos duomenys bus visam laikui ištrinti. Tai taikoma visiems failams, nustatymams, paskyroms, duomenims ir kt.</string>
     <string name="dlg_ok">Gerai</string>
     <string name="dlg_cancel">Atšaukti</string>
-    <string name="app_not_found_dlg_title">[empty string]</string>
     <string name="app_not_found_dlg_text">Programa nerasta įdiegtų programų sąraše.</string>
     <string name="clear_data_failed">Nepavyko išvalyti programos duomenų.</string>
     <string name="app_factory_reset_dlg_title">Pašalinti naujinius?</string>
@@ -1153,7 +1139,6 @@
     <string name="system_package">Sistemos naujinių negalima įdiegti išorinėje medijoje.</string>
     <string name="force_stop_dlg_title">Priverstinai sustabdyti?</string>
     <string name="force_stop_dlg_text">Jei priverstinai sustabdysite programą, ji gali neveikti tinkamai.</string>
-    <string name="move_app_failed_dlg_title">[empty string]</string>
     <string name="move_app_failed_dlg_text">Nepavyko perkelti programos. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">Pageidaujama diegimo vieta</string>
     <string name="app_install_location_summary">Pakeisti pageidaujamą naujų programų diegimo vietą</string>
@@ -1203,7 +1188,6 @@
     <string name="language_settings_category">Kalbos nustatymai</string>
     <string name="keyboard_settings_category">Klaviatūra ir įvesties metodai</string>
     <string name="phone_language">Kalba</string>
-    <string name="phone_language_summary">"[empty string]"</string>
     <string name="auto_replace">Automatiškai pakeisti</string>
     <string name="auto_replace_summary">Taisyti blogai įvestus žodžius</string>
     <string name="auto_caps">Automatinis didžiųjų raidžių rašymas</string>
@@ -1230,7 +1214,6 @@
     <string name="user_dict_settings_titlebar">Naudotojo žodynas</string>
     <string name="user_dict_single_settings_title">Asmeninis žodynas</string>
     <string name="user_dict_multiple_settings_title">Asmeniniai žodynai</string>
-    <string name="user_dict_settings_summary">"[empty string]"</string>
     <string name="user_dict_settings_add_menu_title">Pridėti</string>
     <string name="user_dict_settings_add_dialog_title">Pridėti prie žodyno</string>
     <string name="user_dict_settings_add_screen_title">Frazė</string>
@@ -1504,7 +1487,6 @@
     <string name="trusted_credentials_summary">Rodyti patikimus CA sertifikatus</string>
     <string name="credentials_install_gesture_prompt">Nubrėžti atrakinimo piešinį</string>
     <string name="credentials_install_gesture_explanation">Kad patvirtintumėte kredencialų diegimą, turite nubrėžti atrakinimo piešinį.</string>
-    <string name="credentials_unlock">[empty string]</string>
     <string name="credentials_unlock_hint">Įveskite kredencialų atmintinės slaptažodį.</string>
     <string name="credentials_old_password">Dabartinis slaptažodis:</string>
     <string name="credentials_reset_hint">Pašalinti visą turinį?</string>
@@ -1534,7 +1516,6 @@
     <string name="local_backup_password_toast_success">Nustatytas naujas atsarginis slaptažodis</string>
     <string name="local_backup_password_toast_confirmation_mismatch">Naujas slaptažodis ir patvirtinimas neatitinka</string>
     <string name="local_backup_password_toast_validation_failure">Nustatant atsarginį slaptažodį įvyko klaida</string>
-    <string name="backup_erase_dialog_title">[empty string]</string>
     <string name="backup_erase_dialog_message">Nebekurti atsarginių „Wi-Fi“ slaptažodžių, žymių, kitų nustatymų ir programų duomenų kopijų ir ištrinti visas „Google“ serveriuose esančias kopijas?</string>
     <string name="device_admin_settings_title">Įrenginio administravimo nustatymai</string>
     <string name="active_device_admin_msg">Įrenginio administratorius</string>
@@ -2007,7 +1988,6 @@
     <string name="choose_soundtone">Pasirinkite pranešimo toną</string>
     <string name="choose_ringtone">Pasirinkite skambėjimo melodiją</string>
     <string name="soundtone_title">Pranešimo tonas</string>
-    <string name="soundtone_summary">"[empty string]"</string>
     <string name="profile_appgroups_title">Programėlių grupės</string>
     <string name="profile_applist_title">Programėlės</string>
     <string name="profile_new_appgroup">Nauja programėlių grupė</string>

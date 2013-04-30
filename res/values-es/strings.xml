@@ -122,7 +122,6 @@
     <string name="bluetooth_disconnected">Desconectada</string>
     <string name="bluetooth_disconnecting">Desconectando...</string>
     <string name="bluetooth_connecting">Estableciendo conexión...</string>
-    <string name="bluetooth_unknown">[cadena vacía]</string>
     <string name="bluetooth_pairing">Sincronizando...</string>
     <string name="bluetooth_device">Dispositivo Bluetooth sin nombre</string>
     <string name="progress_scanning">Buscando</string>
@@ -294,7 +293,6 @@
     <string name="lock_after_timeout_summary">Tras <xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> después de suspender</string>
     <string name="show_owner_info_on_lockscreen_label">Mostrar datos del propietario en la pantalla de bloqueo</string>
     <string name="owner_info_settings_title">Información del propietario</string>
-    <string name="owner_info_settings_summary">[cadena vacía]</string>
     <string name="owner_info_settings_edit_text_hint">Introduce el texto que se mostrará en la pantalla de bloqueo.</string>
     <string name="show_user_info_on_lockscreen_label">Mostrar información de usuario en la pantalla de bloqueo</string>
     <string name="user_info_settings_title">Información del usuario</string>
@@ -337,7 +335,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Elige un método para bloquear la pantalla.</string>
     <string name="unlock_backup_info_summary">Si el desbloqueo facial no te reconoce, ¿cómo quieres desbloquear la pantalla?</string>
     <string name="unlock_set_unlock_off_title">Sin seguridad</string>
-    <string name="unlock_set_unlock_off_summary">[cadena vacía]</string>
     <string name="unlock_set_unlock_none_title">Deslizar</string>
     <string name="unlock_set_unlock_none_summary">Sin seguridad</string>
     <string name="unlock_set_unlock_biometric_weak_title">Desbloqueo facial</string>
@@ -418,7 +415,6 @@
     <string name="bluetooth_display_passkey_pin_msg">Para sincronizar con:<xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Escribe<xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g> en el dispositivo y, a continuación, pulsa la tecla Intro o de retorno.</string>
     <string name="bluetooth_pairing_accept">Sincronizar</string>
     <string name="bluetooth_pairing_decline">Cancelar</string>
-    <string name="bluetooth_error_title">[cadena vacía]</string>
     <string name="bluetooth_pairing_error_message">No se ha podido sincronizar con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">No se ha podido sincronizar con <xliff:g id="DEVICE_NAME">%1$s</xliff:g> porque la clave de acceso o el PIN son incorrectos.</string>
     <string name="bluetooth_pairing_device_down_error_message">No se puede establecer comunicación con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
@@ -661,7 +657,6 @@
     <string name="display_settings_title">Pantalla</string>
     <string name="sound_settings">Sonido</string>
     <string name="ringtone_title">Tono del teléfono</string>
-    <string name="ringtone_summary">"[cadena vacía]"</string>
     <string name="all_volume_title">Volumen</string>
     <string name="musicfx_title">Efectos de música</string>
     <string name="ring_volume_title">Volumen del timbre</string>
@@ -762,7 +757,6 @@
     <string name="device_info_settings" product="tablet">Estado del teléfono</string>
     <string name="device_info_settings" product="default">Estado del teléfono</string>
     <string name="system_update_settings_list_item_title">Actualizaciones del sistema</string>
-    <string name="system_update_settings_list_item_summary">"[cadena vacía]"</string>
     <string name="firmware_version">Versión de Android</string>
     <string name="model_number">Número de modelo</string>
     <string name="fcc_equipment_id">ID de equipo</string>
@@ -823,8 +817,6 @@
     <string name="sd_insert_summary" product="default">Insertar una tarjeta SD para el montaje</string>
     <string name="sd_mount" product="nosdcard">Activar tarjeta SD</string>
     <string name="sd_mount" product="default">Activar tarjeta SD</string>
-    <string name="sd_mount_summary" product="nosdcard">[cadena vacía]</string>
-    <string name="sd_mount_summary" product="default">[cadena vacía]</string>
     <string name="sd_format" product="nosdcard">Borrar tarjeta SD</string>
     <string name="sd_format" product="default">Borrar tarjeta SD</string>
     <string name="sd_format_summary" product="nosdcard">Borra todos los datos de la tarjeta SD, como la música y las fotos.</string>
@@ -836,8 +828,6 @@
     <string name="dlg_confirm_unmount_title" product="default">¿Desactivar tarjeta SD?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Si desactivas la tarjeta SD, se detendrán algunas aplicaciones en ejecución y no estarán disponibles hasta que la vuelvas a activar.</string>
     <string name="dlg_confirm_unmount_text" product="default">Si desactivas la tarjeta SD, se detendrán algunas aplicaciones en ejecución y no estarán disponibles hasta que la vuelvas a activar.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[cadena vacía]</string>
-    <string name="dlg_error_unmount_title" product="default">[cadena vacía]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">No se ha podido desactivar la tarjeta SD. Inténtalo de nuevo más tarde.</string>
     <string name="dlg_error_unmount_text" product="default">No se ha podido desactivar la tarjeta SD. Inténtalo de nuevo más tarde.</string>
     <string name="unmount_inform_text" product="nosdcard">Se desactivará la tarjeta SD.</string>
@@ -888,7 +878,6 @@
     <string name="menu_new">Nuevo APN</string>
     <string name="menu_save">Guardar</string>
     <string name="menu_cancel">Descartar</string>
-    <string name="error_title">[cadena vacía]</string>
     <string name="error_name_empty">El campo Nombre no puede estar vacío.</string>
     <string name="error_apn_empty">El campo APN no puede estar vacío.</string>
     <string name="error_mcc_not3">El campo MMC debe contener 3 dígitos.</string>
@@ -1006,9 +995,7 @@
     <string name="lockpattern_change_lock_pattern_label">Cambiar patrón desbloqueo</string>
     <string name="lockpattern_change_lock_pin_label">Cambiar PIN de desbloqueo</string>
     <string name="lockpattern_need_to_unlock">Confirma el patrón guardado</string>
-    <string name="lockpattern_need_to_unlock_footer">[cadena vacía]</string>
     <string name="lockpattern_need_to_unlock_wrong">Inténtalo de nuevo</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[cadena vacía]</string>
     <string name="lockpattern_recording_intro_header">Crea un patrón de desbloqueo</string>
     <string name="lockpattern_recording_intro_footer">Pulsa la tecla de menú para obtener ayuda.</string>
     <string name="lockpattern_recording_inprogress">Levanta el dedo cuando termines</string>
@@ -1106,7 +1093,6 @@
     <string name="clear_data_dlg_text">Todos los datos de esta aplicación se eliminarán de forma permanente. Esto incluye todos los archivos, configuración, cuentas, bases de datos, etc.</string>
     <string name="dlg_ok">Aceptar</string>
     <string name="dlg_cancel">Cancelar</string>
-    <string name="app_not_found_dlg_title">[cadena vacía]</string>
     <string name="app_not_found_dlg_text">No se ha encontrado la aplicación en la lista de aplicaciones instaladas.</string>
     <string name="clear_data_failed">No se ha podido borrar los datos de aplicaciones.</string>
     <string name="app_factory_reset_dlg_title">¿Desinstalar aplicaciones?</string>
@@ -1140,7 +1126,6 @@
     <string name="system_package">Las actualizaciones del sistema no se pueden instalar en ubicaciones externas.</string>
     <string name="force_stop_dlg_title">¿Forzar detención?</string>
     <string name="force_stop_dlg_text">Si se detiene una aplicación, es posible que no funcione correctamente.</string>
-    <string name="move_app_failed_dlg_title">[cadena vacía]</string>
     <string name="move_app_failed_dlg_text">No se ha podido mover la aplicación (<xliff:g id="REASON">%1$s</xliff:g>).</string>
     <string name="app_install_location_title">Ubicación de instalación preferida</string>
     <string name="app_install_location_summary">Modificar la ubicación de instalación preferida para nuevas aplicaciones</string>
@@ -1190,7 +1175,6 @@
     <string name="language_settings_category">Ajustes de idioma</string>
     <string name="keyboard_settings_category">Teclado y métodos de entrada</string>
     <string name="phone_language">Idioma</string>
-    <string name="phone_language_summary">"[cadena vacía]"</string>
     <string name="auto_replace">Corrección automática</string>
     <string name="auto_replace_summary">Corregir palabras con errores de escritura</string>
     <string name="auto_caps">Mayúsculas automáticas</string>
@@ -1217,7 +1201,6 @@
     <string name="user_dict_settings_titlebar">Diccionario del usuario</string>
     <string name="user_dict_single_settings_title">Diccionario personal</string>
     <string name="user_dict_multiple_settings_title">Diccionarios personales</string>
-    <string name="user_dict_settings_summary">"[cadena vacía]"</string>
     <string name="user_dict_settings_add_menu_title">Añadir</string>
     <string name="user_dict_settings_add_dialog_title">Añadir al diccionario</string>
     <string name="user_dict_settings_add_screen_title">Frase</string>
@@ -1491,7 +1474,6 @@
     <string name="trusted_credentials_summary">Mostrar certificados de CA de confianza</string>
     <string name="credentials_install_gesture_prompt">Dibuja tu patrón de desbloqueo.</string>
     <string name="credentials_install_gesture_explanation">Debes dibujar tu patrón de desbloqueo para confirmar la instalación de las credenciales.</string>
-    <string name="credentials_unlock">[cadena vacía]</string>
     <string name="credentials_unlock_hint">Escribe la contraseña del almacenamiento de credenciales.</string>
     <string name="credentials_old_password">Contraseña actual:</string>
     <string name="credentials_reset_hint">¿Seguro que quieres eliminar todos los certificados?</string>
@@ -1521,7 +1503,6 @@
     <string name="local_backup_password_toast_success">Nueva contraseña de seguridad establecida</string>
     <string name="local_backup_password_toast_confirmation_mismatch">La nueva contraseña y la de confirmación no coinciden.</string>
     <string name="local_backup_password_toast_validation_failure">Error al establecer contraseña de seguridad</string>
-    <string name="backup_erase_dialog_title">[cadena vacía]</string>
     <string name="backup_erase_dialog_message">¿Quieres dejar de crear copias de seguridad de las contraseñas Wi-Fi, de los marcadores y de otros ajustes y datos de aplicaciones, además de borrar todas las copias de los servidores de Google?</string>
     <string name="device_admin_settings_title">Ajustes de administración de dispositivos</string>
     <string name="active_device_admin_msg">Administrador de dispositivos</string>
@@ -1995,7 +1976,6 @@
     <string name="choose_soundtone">Elegir el tono de notificación</string>
     <string name="choose_ringtone">Elegir el tono de llamada</string>
     <string name="soundtone_title">Tono de notificación</string>
-    <string name="soundtone_summary">"[cadena vacía]"</string>
     <string name="profile_appgroups_title">Grupos de aplicaciones</string>
     <string name="profile_applist_title">Aplicaciones</string>
     <string name="profile_new_appgroup">Nuevo grupo de aplicaciónes</string>

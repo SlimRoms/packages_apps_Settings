@@ -122,7 +122,6 @@
     <string name="bluetooth_disconnected">Odpojeno</string>
     <string name="bluetooth_disconnecting">Odpojování...</string>
     <string name="bluetooth_connecting">Připojování...</string>
-    <string name="bluetooth_unknown">[empty string]</string>
     <string name="bluetooth_pairing">Párování...</string>
     <string name="bluetooth_device">Nepojmenované zařízení Bluetooth</string>
     <string name="progress_scanning">Hledání</string>
@@ -294,7 +293,6 @@
     <string name="lock_after_timeout_summary"><xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> po přechodu do spánku</string>
     <string name="show_owner_info_on_lockscreen_label">Zobrazovat vlastníka na zamčené obrazovce</string>
     <string name="owner_info_settings_title">Info o vlastníkovi</string>
-    <string name="owner_info_settings_summary">[empty string]</string>
     <string name="owner_info_settings_edit_text_hint">Zadejte text, který se zobrazí na zamčené obrazovce</string>
     <string name="show_user_info_on_lockscreen_label">Zobrazovat uživatele na uzamčené obrazovce</string>
     <string name="user_info_settings_title">Info o uživateli</string>
@@ -337,7 +335,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">Vyberte způsob uzamknutí obrazovky</string>
     <string name="unlock_backup_info_summary">Jak chcete zařízení odemknout v případě, že vás funkce Odemknutí obličejem nerozpozná?</string>
     <string name="unlock_set_unlock_off_title">Žádný</string>
-    <string name="unlock_set_unlock_off_summary">[empty string]</string>
     <string name="unlock_set_unlock_none_title">Tažením</string>
     <string name="unlock_set_unlock_none_summary">Žádné zabezpečení</string>
     <string name="unlock_set_unlock_biometric_weak_title">Odemknutí obličejem</string>
@@ -418,7 +415,6 @@
     <string name="bluetooth_display_passkey_pin_msg">Párování se zařízením:<xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Zadejte:<xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g> a poté stiskněte klávesu Return nebo Enter.</string>
     <string name="bluetooth_pairing_accept">Párovat</string>
     <string name="bluetooth_pairing_decline">Zrušit</string>
-    <string name="bluetooth_error_title">[empty string]</string>
     <string name="bluetooth_pairing_error_message">Nelze párovat se zařízením <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">Nelze párovat se zařízením <xliff:g id="DEVICE_NAME">%1$s</xliff:g>. Kód PIN nebo přístupový klíč je nesprávný.</string>
     <string name="bluetooth_pairing_device_down_error_message">Se zařízením <xliff:g id="DEVICE_NAME">%1$s</xliff:g> nelze navázat komunikaci.</string>
@@ -667,7 +663,6 @@
     <string name="display_settings_title">Zobrazení</string>
     <string name="sound_settings">Zvuk</string>
     <string name="ringtone_title">Vyzváněcí tón telefonu</string>
-    <string name="ringtone_summary">"[empty string]"</string>
     <string name="all_volume_title">Hlasitost</string>
     <string name="musicfx_title">Hudební efekty</string>
     <string name="ring_volume_title">Hlasitost vyzvánění</string>
@@ -768,7 +763,6 @@
     <string name="device_info_settings" product="tablet">Stav telefonu</string>
     <string name="device_info_settings" product="default">Stav telefonu</string>
     <string name="system_update_settings_list_item_title">Aktualizace systému</string>
-    <string name="system_update_settings_list_item_summary">"[empty string]"</string>
     <string name="firmware_version">Verze systému Android</string>
     <string name="model_number">Označení modelu</string>
     <string name="fcc_equipment_id">ID zařízení</string>
@@ -829,8 +823,6 @@
     <string name="sd_insert_summary" product="default">Vložte kartu SD, kterou chcete připojit.</string>
     <string name="sd_mount" product="nosdcard">Připojit kartu SD</string>
     <string name="sd_mount" product="default">Připojit kartu SD</string>
-    <string name="sd_mount_summary" product="nosdcard">[empty string]</string>
-    <string name="sd_mount_summary" product="default">[empty string]</string>
     <string name="sd_format" product="nosdcard">Smazat kartu SD</string>
     <string name="sd_format" product="default">Smazat kartu SD</string>
     <string name="sd_format_summary" product="nosdcard">Smaže všechna data na kartě SD, například hudbu nebo fotografie</string>
@@ -842,8 +834,6 @@
     <string name="dlg_confirm_unmount_title" product="default">Odpojit kartu SD?</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">Pokud odpojíte kartu SD, dojde k zastavení některých používaných aplikací. Tyto aplikace pravděpodobně nebudou k dispozici až do opětovného připojení karty SD.</string>
     <string name="dlg_confirm_unmount_text" product="default">Pokud odpojíte kartu SD, dojde k zastavení některých používaných aplikací. Tyto aplikace pravděpodobně nebudou k dispozici až do opětovného připojení karty SD.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[empty string]</string>
-    <string name="dlg_error_unmount_title" product="default">[empty string]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">Kartu SD nelze odpojit. Zkuste to znovu později.</string>
     <string name="dlg_error_unmount_text" product="default">Kartu SD nelze odpojit. Zkuste to znovu později.</string>
     <string name="unmount_inform_text" product="nosdcard">Karta SD bude odpojena.</string>
@@ -894,7 +884,6 @@
     <string name="menu_new">Nový přístupový bod</string>
     <string name="menu_save">Uložit</string>
     <string name="menu_cancel">Zahodit</string>
-    <string name="error_title">[empty string]</string>
     <string name="error_name_empty">Pole Jméno nesmí být prázdné.</string>
     <string name="error_apn_empty">Název přístupového bodu (APN) nesmí být prázdný.</string>
     <string name="error_mcc_not3">Pole MCC musí obsahovat alespoň 3 číslice.</string>
@@ -1012,9 +1001,7 @@
     <string name="lockpattern_change_lock_pattern_label">Změna bezpečnostního gesta</string>
     <string name="lockpattern_change_lock_pin_label">Změna bezpečnostního kódu PIN</string>
     <string name="lockpattern_need_to_unlock">Potvrďte uložené gesto</string>
-    <string name="lockpattern_need_to_unlock_footer">[empty string]</string>
     <string name="lockpattern_need_to_unlock_wrong">Zkuste to znovu:</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[empty string]</string>
     <string name="lockpattern_recording_intro_header">Proveďte gesto odemknutí</string>
     <string name="lockpattern_recording_intro_footer">Nápovědu zobrazíte stisknutím klávesy Menu.</string>
     <string name="lockpattern_recording_inprogress">Na závěr zdvihněte prst z obrazovky.</string>
@@ -1112,7 +1099,6 @@
     <string name="clear_data_dlg_text">Veškerá data (všechny soubory, nastavení, účty, databáze apod.) této aplikace budou trvale vymazána.</string>
     <string name="dlg_ok">OK</string>
     <string name="dlg_cancel">Zrušit</string>
-    <string name="app_not_found_dlg_title">[empty string]</string>
     <string name="app_not_found_dlg_text">Aplikaci se nepodařilo najít na seznamu nainstalovaných aplikací.</string>
     <string name="clear_data_failed">Nelze smazat data aplikace.</string>
     <string name="app_factory_reset_dlg_title">Odinstalovat aktualizace?</string>
@@ -1146,7 +1132,6 @@
     <string name="system_package">Aktualizace systému nelze nainstalovat na externí média.</string>
     <string name="force_stop_dlg_title">Chcete vynutit zastavení?</string>
     <string name="force_stop_dlg_text">Vynucené zastavení může způsobit nepředvídatelné chování aplikace.</string>
-    <string name="move_app_failed_dlg_title">[empty string]</string>
     <string name="move_app_failed_dlg_text">Přesunutí aplikace se nezdařilo. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">Preferované umístění pro instalaci</string>
     <string name="app_install_location_summary">Změna preferovaného umístění pro instalaci nových aplikací</string>
@@ -1196,7 +1181,6 @@
     <string name="language_settings_category">Nastavení jazyka</string>
     <string name="keyboard_settings_category">Klávesnice a metody zadávání</string>
     <string name="phone_language">Jazyk</string>
-    <string name="phone_language_summary">"[empty string]"</string>
     <string name="auto_replace">Automatické nahrazování</string>
     <string name="auto_replace_summary">Opravovat pravopisné chyby</string>
     <string name="auto_caps">Velká písmena automaticky</string>
@@ -1223,7 +1207,6 @@
     <string name="user_dict_settings_titlebar">Uživatelský slovník</string>
     <string name="user_dict_single_settings_title">Osobní slovník</string>
     <string name="user_dict_multiple_settings_title">Osobní slovníky</string>
-    <string name="user_dict_settings_summary">"[empty string]"</string>
     <string name="user_dict_settings_add_menu_title">Přidat</string>
     <string name="user_dict_settings_add_dialog_title">Přidat do slovníku</string>
     <string name="user_dict_settings_add_screen_title">Fráze</string>
@@ -1497,7 +1480,6 @@
     <string name="trusted_credentials_summary">Zobrazit důvěryhodné certifikáty CA</string>
     <string name="credentials_install_gesture_prompt">Proveďte bezpečnostní gesto</string>
     <string name="credentials_install_gesture_explanation">Instalaci pověření je třeba potvrdit provedením bezpečnostního gesta.</string>
-    <string name="credentials_unlock">[empty string]</string>
     <string name="credentials_unlock_hint">Zadejte heslo pro úložiště pověření.</string>
     <string name="credentials_old_password">Aktuální heslo:</string>
     <string name="credentials_reset_hint">Odstranit veškerý obsah?</string>
@@ -1527,7 +1509,6 @@
     <string name="local_backup_password_toast_success">Nové heslo pro zálohy je nastaveno</string>
     <string name="local_backup_password_toast_confirmation_mismatch">Nové heslo se neshoduje s potvrzením hesla.</string>
     <string name="local_backup_password_toast_validation_failure">Nastavení hesla pro zálohy selhalo</string>
-    <string name="backup_erase_dialog_title">[empty string]</string>
     <string name="backup_erase_dialog_message">Chcete přestat zálohovat hesla sítí Wi-Fi, záložky, další nastavení, data aplikací a vymazat všechny kopie ze serverů Google?</string>
     <string name="device_admin_settings_title">Nastavení správce zařízení</string>
     <string name="active_device_admin_msg">Správce zařízení</string>
@@ -2001,7 +1982,6 @@
     <string name="choose_soundtone">Zvolit tón upozornění</string>
     <string name="choose_ringtone">Zvolit vyzvánění</string>
     <string name="soundtone_title">Zvuk upozornění</string>
-    <string name="soundtone_summary">"[empty string]"</string>
     <string name="profile_appgroups_title">Skupiny aplikací</string>
     <string name="profile_applist_title">Aplikace</string>
     <string name="profile_new_appgroup">Nová skupina aplikací</string>

@@ -122,7 +122,6 @@
     <string name="bluetooth_disconnected">غير متصل</string>
     <string name="bluetooth_disconnecting">جارٍ قطع الاتصال...</string>
     <string name="bluetooth_connecting">جارٍ الاتصال…</string>
-    <string name="bluetooth_unknown">[سلسلة فارغة]</string>
     <string name="bluetooth_pairing">جارٍ الاقتران...</string>
     <string name="bluetooth_device">جهاز بلوتوث بدون اسم</string>
     <string name="progress_scanning">البحث</string>
@@ -294,7 +293,6 @@
     <string name="lock_after_timeout_summary"><xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> بعد السكون</string>
     <string name="show_owner_info_on_lockscreen_label">إظهار معلومات المالك في شاشة التأمين</string>
     <string name="owner_info_settings_title">معلومات المالك</string>
-    <string name="owner_info_settings_summary">[سلسلة فارغة]</string>
     <string name="owner_info_settings_edit_text_hint">اكتب النص الذي سيعرض على شاشة التأمين</string>
     <string name="show_user_info_on_lockscreen_label">إظهار معلومات المستخدم في شاشة التأمين</string>
     <string name="user_info_settings_title">معلومات المستخدم</string>
@@ -337,7 +335,6 @@
     <string name="unlock_set_unlock_launch_picker_enable_summary">اختيار طريقة لتأمين الشاشة</string>
     <string name="unlock_backup_info_summary">عندما لا يتمكن تأمين الجهاز بالوجه من التعرف عليك، كيف تريد إلغاء التأمين؟</string>
     <string name="unlock_set_unlock_off_title">لا شيء</string>
-    <string name="unlock_set_unlock_off_summary">[سلسلة فارغة]</string>
     <string name="unlock_set_unlock_none_title">شريحة</string>
     <string name="unlock_set_unlock_none_summary">بدون تأمين</string>
     <string name="unlock_set_unlock_biometric_weak_title">تأمين الجهاز بالوجه</string>
@@ -418,7 +415,6 @@
     <string name="bluetooth_display_passkey_pin_msg">للإقران مع:<xliff:g id="BOLD1_0">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="DEVICE_NAME">%1$s</xliff:g><xliff:g id="END_BOLD1">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>اكتب عليه:<xliff:g id="BOLD2_1">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="PASSKEY">%2$s</xliff:g><xliff:g id="END_BOLD2">&lt;/b&gt;</xliff:g>, ثم اضغط على Return أو Enter.</string>
     <string name="bluetooth_pairing_accept">اقتران</string>
     <string name="bluetooth_pairing_decline">إلغاء</string>
-    <string name="bluetooth_error_title">[سلسلة فارغة]</string>
     <string name="bluetooth_pairing_error_message">تعذر الإقران مع <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
     <string name="bluetooth_pairing_pin_error_message">تعذر الإقران مع <xliff:g id="DEVICE_NAME">%1$s</xliff:g> نظرًا لوجود رقم تعريف شخصي أو مفتاح مرور غير صحيح.</string>
     <string name="bluetooth_pairing_device_down_error_message">لا يمكن الاتصال بـ <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.</string>
@@ -667,7 +663,6 @@
     <string name="display_settings_title">عرض</string>
     <string name="sound_settings">الصوت</string>
     <string name="ringtone_title">نغمة رنين الهاتف</string>
-    <string name="ringtone_summary">"[سلسلة فارغة]"</string>
     <string name="all_volume_title">مستويات الصوت</string>
     <string name="musicfx_title">تأثيرات موسيقية</string>
     <string name="ring_volume_title">مستوى صوت الرنين</string>
@@ -768,7 +763,6 @@
     <string name="device_info_settings" product="tablet">حالة الهاتف</string>
     <string name="device_info_settings" product="default">حالة الهاتف</string>
     <string name="system_update_settings_list_item_title">تحديثات النظام</string>
-    <string name="system_update_settings_list_item_summary">"[سلسلة فارغة]"</string>
     <string name="firmware_version">إصدار Android</string>
     <string name="model_number">رقم الطراز</string>
     <string name="fcc_equipment_id">معرّف الجهاز</string>
@@ -829,8 +823,6 @@
     <string name="sd_insert_summary" product="default">إدراج بطاقة SD للتحميل</string>
     <string name="sd_mount" product="nosdcard">تحميل بطاقة SD</string>
     <string name="sd_mount" product="default">تحميل بطاقة SD</string>
-    <string name="sd_mount_summary" product="nosdcard">[سلسلة فارغة]</string>
-    <string name="sd_mount_summary" product="default">[سلسلة فارغة]</string>
     <string name="sd_format" product="nosdcard">محو بطاقة SD</string>
     <string name="sd_format" product="default">محو بطاقة SD</string>
     <string name="sd_format_summary" product="nosdcard">محو كل البيانات على بطاقة SD، مثل الموسيقى والصور</string>
@@ -842,8 +834,6 @@
     <string name="dlg_confirm_unmount_title" product="default">هل تريد إلغاء تحميل بطاقة SD؟</string>
     <string name="dlg_confirm_unmount_text" product="nosdcard">في حالة إلغاء تحميل بطاقة SD، ستتوقف بعض التطبيقات التي تستخدمها وربما لا تتوفر حتى يتم إعادة تحميل بطاقة SD.</string>
     <string name="dlg_confirm_unmount_text" product="default">في حالة إلغاء تحميل بطاقة SD، ستتوقف بعض التطبيقات التي تستخدمها وربما لا تتوفر حتى يتم إعادة تحميل بطاقة SD.</string>
-    <string name="dlg_error_unmount_title" product="nosdcard">[سلسلة فارغة]</string>
-    <string name="dlg_error_unmount_title" product="default">[سلسلة فارغة]</string>
     <string name="dlg_error_unmount_text" product="nosdcard">تعذر إلغاء تحميل بطاقة SD. أعد المحاولة لاحقًا.</string>
     <string name="dlg_error_unmount_text" product="default">تعذر إلغاء تحميل بطاقة SD. أعد المحاولة لاحقًا.</string>
     <string name="unmount_inform_text" product="nosdcard">سيتم إلغاء تركيب بطاقة SD.</string>
@@ -894,7 +884,6 @@
     <string name="menu_new">APN جديد</string>
     <string name="menu_save">حفظ</string>
     <string name="menu_cancel">إلغاء</string>
-    <string name="error_title">[سلسلة فارغة]</string>
     <string name="error_name_empty">لا يمكن أن يكون حقل الاسم فارغًا.</string>
     <string name="error_apn_empty">لا يمكن أن يكون APN فارغًا.</string>
     <string name="error_mcc_not3">يجب أن يكون حقل MCC من ثلاثة أرقام.</string>
@@ -1012,9 +1001,7 @@
     <string name="lockpattern_change_lock_pattern_label">تغيير نقش إلغاء التأمين</string>
     <string name="lockpattern_change_lock_pin_label">تغيير رقم التعريف الشخصي لإلغاء التأمين</string>
     <string name="lockpattern_need_to_unlock">تأكيد النقش المحفوظ</string>
-    <string name="lockpattern_need_to_unlock_footer">[سلسلة فارغة]</string>
     <string name="lockpattern_need_to_unlock_wrong">أعد المحاولة:</string>
-    <string name="lockpattern_need_to_unlock_wrong_footer">[سلسلة فارغة]</string>
     <string name="lockpattern_recording_intro_header">ارسم نقش إلغاء التأمين</string>
     <string name="lockpattern_recording_intro_footer">اضغط على \"القائمة\" للمساعدة.</string>
     <string name="lockpattern_recording_inprogress">تحرير الإصبع عند الانتهاء.</string>
@@ -1112,7 +1099,6 @@
     <string name="clear_data_dlg_text">سيتم حذف جميع بيانات التطبيق نهائيًا. يتضمن ذلك جميع الملفات والإعدادات والحسابات وقواعد البيانات، إلخ.</string>
     <string name="dlg_ok">موافق</string>
     <string name="dlg_cancel">إلغاء</string>
-    <string name="app_not_found_dlg_title">[سلسلة فارغة]</string>
     <string name="app_not_found_dlg_text">لم يتم العثور على التطبيق في قائمة التطبيقات المثبتة.</string>
     <string name="clear_data_failed">تعذر محو بيانات التطبيق.</string>
     <string name="app_factory_reset_dlg_title">هل تريد إزالة التحديثات؟</string>
@@ -1146,7 +1132,6 @@
     <string name="system_package">لا يمكن تثبيت تحديثات النظام على وسائط خارجية.</string>
     <string name="force_stop_dlg_title">هل تريد فرض الإيقاف؟</string>
     <string name="force_stop_dlg_text">في حالة فرض إيقاف التطبيق، ربما لا يعمل بشكل صحيح.</string>
-    <string name="move_app_failed_dlg_title">[سلسلة فارغة]</string>
     <string name="move_app_failed_dlg_text">تعذر نقل التطبيق. <xliff:g id="REASON">%1$s</xliff:g></string>
     <string name="app_install_location_title">موقع التثبيت المفضل</string>
     <string name="app_install_location_summary">تغيير موقع التثبيت المفضل للتطبيقات الجديدة</string>
@@ -1196,7 +1181,6 @@
     <string name="language_settings_category">إعدادات اللغة</string>
     <string name="keyboard_settings_category">لوحة المفاتيح وأساليب الإدخال</string>
     <string name="phone_language">اللغة</string>
-    <string name="phone_language_summary">"[سلسلة فارغة]"</string>
     <string name="auto_replace">استبدال تلقائي</string>
     <string name="auto_replace_summary">تصحيح الكلمات المكتوبة بشكل غير صحيح</string>
     <string name="auto_caps">أحرف كبيرة تلقائيًا</string>
@@ -1223,7 +1207,6 @@
     <string name="user_dict_settings_titlebar">قاموس المستخدم</string>
     <string name="user_dict_single_settings_title">قاموس شخصي</string>
     <string name="user_dict_multiple_settings_title">القواميس الشخصية</string>
-    <string name="user_dict_settings_summary">"[سلسلة فارغة]"</string>
     <string name="user_dict_settings_add_menu_title">إضافة</string>
     <string name="user_dict_settings_add_dialog_title">إضافة إلى القاموس</string>
     <string name="user_dict_settings_add_screen_title">عبارة</string>
@@ -1497,7 +1480,6 @@
     <string name="trusted_credentials_summary">عرض شهادات CA الموثوقة</string>
     <string name="credentials_install_gesture_prompt">ارسم نقش إلغاء القفل</string>
     <string name="credentials_install_gesture_explanation">يجب عليك رسم نقش إلغاء القفل لتأكيد تثبيت بيانات الاعتماد.</string>
-    <string name="credentials_unlock">[سلسلة فارغة]</string>
     <string name="credentials_unlock_hint">اكتب كلمة المرور لوحدة تخزين بيانات الاعتماد.</string>
     <string name="credentials_old_password">كلمة المرور الحالية:</string>
     <string name="credentials_reset_hint">هل تريد إزالة جميع المحتويات؟</string>
@@ -1527,7 +1509,6 @@
     <string name="local_backup_password_toast_success">تم تعيين كلمة مرور احتياطية جديدة</string>
     <string name="local_backup_password_toast_confirmation_mismatch">كلمة المرور الجديدة وتأكيدها لا يتطابقان</string>
     <string name="local_backup_password_toast_validation_failure">أخفق تعيين كلمة مرور احتياطية</string>
-    <string name="backup_erase_dialog_title">[سلسلة فارغة]</string>
     <string name="backup_erase_dialog_message">هل تريد إيقاف النسخ الاحتياطي لكلمات مرور Wi-Fi، والإشارات المرجعية والإعدادات الأخرى وبيانات التطبيق ومحو كل النسخ على خوادم Google؟</string>
     <string name="device_admin_settings_title">إعدادات إدارة الجهاز</string>
     <string name="active_device_admin_msg">مشرف الجهاز</string>
@@ -2001,7 +1982,6 @@
     <string name="choose_soundtone">اختر نغمة الإشعار</string>
     <string name="choose_ringtone">اختيار نغمة الرنين</string>
     <string name="soundtone_title">نغمة الإشعار</string>
-    <string name="soundtone_summary">"[سلسلة فارغة]"</string>
     <string name="profile_appgroups_title">مجموعات التطبيق</string>
     <string name="profile_applist_title">تطبيقات</string>
     <string name="profile_new_appgroup">مجموعة تطبيقات جديدة</string>

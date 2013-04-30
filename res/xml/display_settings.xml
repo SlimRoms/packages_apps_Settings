@@ -18,7 +18,7 @@
         android:title="@string/display_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.android.settings.BrightnessPreference
+        <com.android.settings.slim.DisplayBrightness
                 android:key="brightness"
                 android:title="@string/brightness"
                 android:dialogTitle="@string/brightness" />

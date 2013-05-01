@@ -5864,7 +5864,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_control_trigger_right">Trigger right screen border</string>
     <string name="pie_control_trigger_top">Trigger top screen border</string>
     <string name="pie_control_trigger_top_summary">Only navigation will be displayed at top</string>
-    <string name="pie_button_style">Button style</string>
+    <string name="pie_button_style">Buttons style</string>
     <string name="pie_button_color_title">Button color</string>
     <string name="pie_button_alpha_title">Button transparency</string>
     <string name="pie_button_outline_color_title">Button outline color</string>

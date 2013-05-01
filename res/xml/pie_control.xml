@@ -26,11 +26,6 @@
         android:dialogTitle="@string/pie_control_dialog_title" />
 
     <PreferenceScreen
-        android:key="pie_button_style"
-        android:fragment="com.android.settings.slim.PieButtonStyleSettings"
-        android:title="@string/pie_button_style" />
-
-    <PreferenceScreen
         android:key="pie_style"
         android:fragment="com.android.settings.slim.PieStyleSettings"
         android:title="@string/pie_style" />
@@ -59,6 +54,11 @@
             android:fragment="com.android.settings.slim.PieButtonSecondLayerSettings"
             android:title="@string/pie_button_second_layer"
             android:dependency="pie_second_layer" />
+
+        <PreferenceScreen
+            android:key="pie_button_style"
+            android:fragment="com.android.settings.slim.PieButtonStyleSettings"
+            android:title="@string/pie_button_style" />
 
     </PreferenceCategory>
 

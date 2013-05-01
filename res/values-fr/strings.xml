@@ -3017,7 +3017,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_icon_color_mode_all_icons">Toutes les icônes</string>
     <string name="pie_icon_color_mode_system_icons">Icônes système</string>
     <string name="pie_icon_color_mode_system_custom_icons">Icônes personnalisées et du système</string>
-    <string name="pie_trigger_size_title">Taille de déclenchement</string>
+    <string name="pie_trigger_dimens_options">Options de déclenchement</string>
+    <string name="pie_trigger_thickness_title">Epaisseur de déclenchement</string>
+    <string name="pie_trigger_height_title">Hauteur gauche et droite de déclenchement</string>
+    <string name="pie_trigger_gravity_left_right_title">Gravité droite et gauche de déclenchement</string>
+    <string name="pie_trigger_gravity_left_right_dialog_title">Changer la gravité droite et gauche de déclenchement</string>
+    <string name="pie_trigger_gravity_left_right_bottom">Décalée vers le bas</string>
+    <string name="pie_trigger_gravity_left_right_center">Centrée</string>
+    <string name="pie_trigger_gravity_left_right_top">Décalée vers le haut</string>
+    <string name="menu_pie_trigger_settings_reset">Réinitialiser les dimensions de déclenchement</string>
     <string name="pie_trigger">Options de déclenchement</string>
     <string name="pie_trigger_note_title">Remarque</string>
     <string name="pie_trigger_note_summary">Pour éviter les conflits avec la barre d\'État ou de la barre de navigation, les déclencheurs sur ces bords sont automatiquement désactivés si l\'un deux (ou les deux) sont visibles</string>
@@ -3052,7 +3060,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_buttons_options">Options des boutons</string>
     <string name="pie_second_layer_title">Deuxième couche de boutons</string>
     <string name="pie_second_layer_summary">Activer ou désactiver la deuxième couche de boutons</string>
-    <string name="pie_button_second_layer">Deuxième couche de boutons</string>
+    <string name="pie_button_second_layer">Boutons de la deuxième couche</string>
     <string name="pie_button_second_layer_cat">Boutons de la deuxième couche</string>
     <string name="pie_action_custom_app">Application personnalisée</string>
     <string name="pie_action_home">Accueil</string>

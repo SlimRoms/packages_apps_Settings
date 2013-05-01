@@ -3049,6 +3049,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_enable_long">Activer l\'appui long des boutons du PIE</string>
     <string name="pie_button">Boutons</string>
     <string name="pie_button_cat">Boutons</string>
+    <string name="pie_buttons_options">Options des boutons</string>
+    <string name="pie_second_layer_title">Deuxième couche de boutons</string>
+    <string name="pie_second_layer_summary">Activer ou désactiver la deuxième couche de boutons</string>
+    <string name="pie_button_second_layer">Deuxième couche de boutons</string>
+    <string name="pie_button_second_layer_cat">Boutons de la deuxième couche</string>
     <string name="pie_action_custom_app">Application personnalisée</string>
     <string name="pie_action_home">Accueil</string>
     <string name="pie_action_back">Retour</string>

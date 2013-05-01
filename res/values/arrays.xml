@@ -2244,6 +2244,26 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="pie_qty_second_layer_entries" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="pie_qty_second_layer_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
     <string-array name="pie_button_entries">
         <item>@string/pie_action_back</item>
         <item>@string/pie_action_custom_app</item>

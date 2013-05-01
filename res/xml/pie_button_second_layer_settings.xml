@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 Slimroms Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListPreference
+                android:key="pie_qty"
+                android:entries="@array/pie_qty_second_layer_entries"
+                android:entryValues="@array/pie_qty_second_layer_values"
+                android:title="@string/pie_qty_title"
+                android:summary="@string/pie_qty_summary" />
+
+        <CheckBoxPreference
+                android:key="pie_enable_long"
+                android:title="@string/pie_enable_long" />
+
+        <PreferenceCategory
+                android:key="pie_buttons_cat"
+                android:title="@string/pie_button_second_layer_cat">
+
+        </PreferenceCategory>
+
+</PreferenceScreen>

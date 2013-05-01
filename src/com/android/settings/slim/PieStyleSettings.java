@@ -155,7 +155,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
             controlSize = Settings.System.getFloat(getActivity()
                     .getContentResolver(), Settings.System.PIE_SIZE);
         } catch (Exception e) {
-            controlSize = 1.1f;
+            controlSize = 1.0f;
             Settings.System.putFloat(getActivity().getContentResolver(),
                 Settings.System.PIE_SIZE, controlSize);
         }

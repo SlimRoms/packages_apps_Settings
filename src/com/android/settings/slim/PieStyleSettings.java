@@ -49,7 +49,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private static final String PREF_PIE_BACKGROUND_ALPHA = "pie_background_alpha";
     private static final String PREF_PIE_CONTROL_SIZE = "pie_control_size";
 
-    private static final float PIE_CONTROL_SIZE_MIN = 0.9f;
+    private static final float PIE_CONTROL_SIZE_MIN = 0.84f;
     private static final float PIE_CONTROL_SIZE_MAX = 1.5f;
 
     private boolean mCheckPreferences;

@@ -52,4 +52,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/pie_additional_options">
+
+        <CheckBoxPreference
+            android:key="pie_mirror_right"
+            android:title="@string/pie_mirror_right_title"
+            android:summary="@string/pie_mirror_right_summary"
+            android:defaultValue="true" />
+
+   </PreferenceCategory>
+
 </PreferenceScreen>

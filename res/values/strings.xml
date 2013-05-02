@@ -5898,6 +5898,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_snap_color_title">Snap point color</string>
     <string name="pie_text_color_title">Text color</string>
     <string name="pie_background_alpha_title">Background transparency</string>
+    <string name="pie_mirror_right_title">Mirror right pie</string>
+    <string name="pie_mirror_right_summary">Mirror right pie on the horizontal axis</string>
     <string name="pie_style">Style and dimension</string>
     <string name="pie_style_title">Style</string>
     <string name="pie_dimens_title">Dimension</string>

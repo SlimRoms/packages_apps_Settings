@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
@@ -48,6 +49,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private static final String PREF_PIE_TEXT_COLOR = "pie_text_color";
     private static final String PREF_PIE_BACKGROUND_ALPHA = "pie_background_alpha";
     private static final String PREF_PIE_CONTROL_SIZE = "pie_control_size";
+    private static final String PREF_PIE_MIRROR_RIGHT = "pie_mirror_right";
 
     private static final float PIE_CONTROL_SIZE_MIN = 0.84f;
     private static final float PIE_CONTROL_SIZE_MAX = 1.5f;
@@ -61,6 +63,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     ColorPickerPreference mPieTextColor;
     SeekBarPreference mPieBackgroundAlpha;
     SeekBarPreference mPieControlSize;
+    CheckBoxPreference mMirrorRightPie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -166,6 +169,11 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         mPieControlSize.setInitValue((int) (controlSizeValue * 100));
         mPieControlSize.setOnPreferenceChangeListener(this);
 
+        mMirrorRightPie = (CheckBoxPreference) findPreference(PREF_PIE_MIRROR_RIGHT);
+        mMirrorRightPie.setOnPreferenceChangeListener(this);
+        mMirrorRightPie.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.PIE_MIRROR_RIGHT, 1) == 1);
+
         setHasOptionsMenu(true);
         mCheckPreferences = true;
         return prefs;
@@ -248,6 +256,11 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.PIE_SIZE,
                     value);
+            return true;
+       } else if (preference == mMirrorRightPie) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PIE_MIRROR_RIGHT,
+                    (Boolean) newValue ? 1 : 0);
             return true;
        }
        return false;

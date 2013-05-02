@@ -2938,6 +2938,7 @@
     <string name="size_44_dp">44 dp</string>
     <string name="size_40_dp">40 dp</string>
     <string name="size_42_dp">42 dp</string>
+    <string name="size_0_dp">0 dp (выкл)</string>
     <string name="statusbar">Строка состояния</string>
     <string name="top_of_navbar">Верх строки навигации</string>
     <string name="bottom_of_navbar">Низ строки навигации</string>

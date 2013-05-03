@@ -3062,6 +3062,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_second_layer_summary">Activer ou désactiver la deuxième couche de boutons</string>
     <string name="pie_button_second_layer">Boutons de la deuxième couche</string>
     <string name="pie_button_second_layer_cat">Boutons de la deuxième couche</string>
+    <string name="pie_mirror_right_title">Inverser le PIE sur la droite</string>
+    <string name="pie_mirror_right_summary">Inverser le sens des boutons du PIE sur le bord droit de l\'écran</string>
     <string name="pie_action_custom_app">Application personnalisée</string>
     <string name="pie_action_home">Accueil</string>
     <string name="pie_action_back">Retour</string>

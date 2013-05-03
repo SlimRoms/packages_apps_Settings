@@ -3211,6 +3211,8 @@
     <string name="pie_snap_color_title">Цвет точек привязки</string>
     <string name="pie_text_color_title">Цвет текста</string>
     <string name="pie_background_alpha_title">Цвет фона</string>
+    <string name="pie_mirror_right_title">Зеркальный pie справа</string>
+    <string name="pie_mirror_right_summary">Зеркально отражать правый pie по горизонтали</string>
     <string name="pie_style">Стиль и размеры</string>
     <string name="pie_style_title">Стиль</string>
     <string name="pie_dimens_title">Размеры</string>

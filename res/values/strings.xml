@@ -5146,9 +5146,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Battery light settings -->
     <string name="battery_light_title">Battery light</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_list_title">Colors</string>
+    <string name="battery_light_list_title">Colors while charging</string>
     <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
+    <string name="battery_light_medium_color_title">Medium charge</string>
     <string name="battery_light_full_color_title">Fully charged</string>
 
     <!-- Themes settings  -->

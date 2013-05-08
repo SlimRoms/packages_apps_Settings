@@ -44,7 +44,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "SoundSettings";
 
     private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
-    private static final String KEY_SAFE_HEADSET_RESTORE = "safe_headset_restore";
+    private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
@@ -56,7 +56,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private final Configuration mCurConfig = new Configuration();
 
     private ListPreference mVolumeOverlay;
-    private CheckBoxPreference mSafeHeadsetRestore;
+    private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mVolBtnMusicCtrl;
     private CheckBoxPreference mConvertSoundToVibration;
     private CheckBoxPreference mVolumeAdjustSounds;
@@ -79,10 +79,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
         mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
-        mSafeHeadsetRestore = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_RESTORE);
-        mSafeHeadsetRestore.setPersistent(false);
-        mSafeHeadsetRestore.setChecked(Settings.System.getInt(resolver,
-                Settings.System.SAFE_HEADSET_VOLUME_RESTORE, 1) != 0);
+        mSafeHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
+        mSafeHeadsetVolume.setPersistent(false);
+        mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SAFE_HEADSET_VOLUME, 1) != 0);
 
         mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
@@ -132,10 +132,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
-        if (preference == mSafeHeadsetRestore) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.SAFE_HEADSET_VOLUME_RESTORE,
-                    mSafeHeadsetRestore.isChecked() ? 1 : 0);
+        if (preference == mSafeHeadsetVolume) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SAFE_HEADSET_VOLUME,
+                    mSafeHeadsetVolume.isChecked() ? 1 : 0);
 
         } else if (preference == mVolBtnMusicCtrl) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS,

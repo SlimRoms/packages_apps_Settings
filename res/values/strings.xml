@@ -4817,8 +4817,8 @@
     <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with volumerocker</string>
 
     <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_restore_title">Safe headset volume</string>
-    <string name="safe_headset_restore_summary">Prevent loud volume levels when headset is first plugged in</string>
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
 
     <!-- Less Notification sounds -->
     <string name="less_notification_sounds_title">Less frequent notification sounds</string>

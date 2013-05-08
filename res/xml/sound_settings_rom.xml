@@ -46,6 +46,12 @@
         android:persistent="false" />
 
     <CheckBoxPreference
+        android:key="volume_keys_control_ring_stream"
+        android:title="@string/volume_keys_control_ring_stream"
+        android:summary="@string/volume_keys_control_ring_stream_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
         android:key="notification_convert_sound_to_vibration"
         android:title="@string/notification_convert_sound_to_vibration_title"
         android:summary="@string/notification_convert_sound_to_vibration_summary"

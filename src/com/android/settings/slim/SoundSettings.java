@@ -50,6 +50,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_LOCK_VOLUME_KEYS = "lock_volume_keys";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String KEY_VOL_RING = "volume_keys_control_ring_stream";
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
 
@@ -61,6 +62,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mConvertSoundToVibration;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mLockVolumeKeys;
+    private CheckBoxPreference mVolumeKeysControlRing;
     private ListPreference mAnnoyingNotifications;
     private CheckBoxPreference mCameraSounds;
 
@@ -100,6 +102,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockVolumeKeys = (CheckBoxPreference) findPreference(KEY_LOCK_VOLUME_KEYS);
         mLockVolumeKeys.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCK_VOLUME_KEYS, 0) != 0);
+
+        mVolumeKeysControlRing = (CheckBoxPreference) findPreference(KEY_VOL_RING);
+        mVolumeKeysControlRing.setChecked(Settings.System.getInt(resolver,
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 0) != 0);
 
         mCameraSounds = (CheckBoxPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setPersistent(false);
@@ -151,6 +157,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mLockVolumeKeys) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCK_VOLUME_KEYS,
                     mLockVolumeKeys.isChecked() ? 1 : 0);
+
+        } else if (preference == mVolumeKeysControlRing) {
+            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
+                    mVolumeKeysControlRing.isChecked() ? 1 : 0);
 
         } else if (preference == mCameraSounds) {
             SystemProperties.set(PROP_CAMERA_SOUND, mCameraSounds.isChecked() ? "1" : "0");

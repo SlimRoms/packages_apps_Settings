@@ -2189,6 +2189,8 @@
     <string name="increasing_ring_interval_10seconds">10 секунд</string>
     <string name="link_volume_ringtones">Связать громкость и звуки уведомления</string>
     <string name="link_volume_mutes">Беззвучный режим влияет на уведомления</string>
+    <string name="volume_keys_control_ring_stream">Контроль мультимедиа</string>
+    <string name="volume_keys_control_ring_stream_summary">Клавиши громкости меняют громкость мультимедиа, а не уведомлений</string>
     <string name="ring_mode_title">Режим звонка</string>
     <string name="ring_mode_normal">Обычный</string>
     <string name="ring_mode_vibrate">Вибро</string>
@@ -2205,8 +2207,8 @@
     <!-- Sound settings screen, setting check box summary -->
     <string name="volume_adjust_sounds_enable_summary">Воспроизводить звук при изменении громкости кнопками \"+\" или \"-\"</string>
     <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_restore_title">Безопасная громкость при подключении гарнитуры</string>
-    <string name="safe_headset_restore_summary">Предотвращать чрезмерную громкость при первом подключении гарнитуры</string>
+    <string name="safe_headset_volume_title">Безопасная громкость при подключении гарнитуры</string>
+    <string name="safe_headset_volume_summary">Предотвращать чрезмерную громкость при первом подключении гарнитуры</string>
     <!-- Less Notification sounds -->
     <string name="less_notification_sounds_title">Снизить частоту звуков уведомлений</string>
     <string name="less_notification_sounds_summary">Ограничить звуки уведомлений: каждое приложение воспроизводит звуки один раз в заданный временной отрезок</string>

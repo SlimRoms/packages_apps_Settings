@@ -68,9 +68,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String QS_TILES_STYLE = "quicksettings_tiles_style";
     private static final String TILE_PICKER = "tile_picker";
 
-    public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
-    public static final String FAST_CHARGE_FILE = "force_fast_charge";
-
     MultiSelectListPreference mRingMode;
     ListPreference mNetworkMode;
     ListPreference mScreenTimeoutMode;

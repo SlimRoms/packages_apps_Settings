@@ -60,9 +60,6 @@ public class QuickSettingsTiles extends Fragment {
 
     private static final int MENU_RESET = Menu.FIRST;
 
-    public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
-    public static final String FAST_CHARGE_FILE = "force_fast_charge";
-
     DraggableGridView mDragView;
     private ViewGroup mContainer;
     LayoutInflater mInflater;
@@ -228,9 +225,16 @@ public class QuickSettingsTiles extends Fragment {
         }
 
         // Dont show fast charge tile if not supported
-        // Dont show fast charge tile if not supported
-        File fastcharge = new File(FAST_CHARGE_DIR, FAST_CHARGE_FILE);
-        if (!fastcharge.exists()) {
+        boolean fchargeIsPossible = false;
+        String fchargePath = mContext.getResources()
+                .getString(com.android.internal.R.string.config_fastChargePath);
+        if (!fchargePath.isEmpty()) {
+            File fastcharge = new File(fchargePath);
+            if (fastcharge.exists()) {
+                fchargeIsPossible = true;
+            }
+        }
+        if (!fchargeIsPossible) {
             QuickSettingsUtil.TILES.remove(QuickSettingsUtil.TILE_FCHARGE);
         }
 

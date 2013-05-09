@@ -484,6 +484,8 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_notifications", null, null);
             } else if (uri.equals("**lastapp**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_lastapp", null, null);
+            } else if (uri.equals("**quicksettings**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_qs", null, null);
             }
         } else {
             try {
@@ -542,6 +544,8 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 return getResources().getString(R.string.pie_action_notifications);
             else if (uri.equals("**lastapp**"))
                 return getResources().getString(R.string.pie_action_lastapp);
+            else if (uri.equals("**quicksettings**"))
+                return getResources().getString(R.string.pie_action_quicksettings);
             else if (uri.equals("**null**"))
                 return getResources().getString(R.string.pie_action_none);
         } else {

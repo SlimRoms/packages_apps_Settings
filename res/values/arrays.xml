@@ -1754,6 +1754,7 @@
         <item>@string/hardware_keys_action_notifications</item>
         <item>@string/hardware_keys_action_app_switch</item>
         <item>@string/hardware_keys_action_power</item>
+        <item>@string/hardware_keys_action_quicksettings</item>
         <item>@string/hardware_keys_action_search</item>
         <item>@string/hardware_keys_action_voice_search</item>
         <item>@string/hardware_keys_action_widgets</item>
@@ -1775,6 +1776,7 @@
         <item>9</item>
         <item>4</item>
         <item>8</item>
+        <item>15</item>
         <item>5</item>
         <item>6</item>
         <item>14</item>
@@ -1853,6 +1855,7 @@
         <item>@string/open_ime_switcher</item>
         <item>@string/recents</item>
         <item>@string/power</item>
+        <item>@string/quicksettings</item>
         <item>@string/screenshot</item>
         <item>@string/search</item>
         <item>@string/widgets</item>
@@ -1870,6 +1873,7 @@
         <item>**ime**</item>
         <item>**recents**</item>
         <item>**power**</item>
+        <item>**quicksettings**</item>
         <item>**screenshot**</item>
         <item>**search**</item>
         <item>**widgets**</item>
@@ -2281,6 +2285,7 @@
         <item>@string/pie_action_ime</item>
         <item>@string/pie_action_recents</item>
         <item>@string/pie_action_power</item>
+        <item>@string/pie_action_quicksettings</item>
         <item>@string/pie_action_screenshot</item>
         <item>@string/pie_action_search</item>
         <item>@string/pie_action_widgets</item>
@@ -2298,6 +2303,7 @@
         <item>**ime**</item>
         <item>**recents**</item>
         <item>**power**</item>
+        <item>**quicksettings**</item>
         <item>**screenshot**</item>
         <item>**search**</item>
         <item>**widgets**</item>

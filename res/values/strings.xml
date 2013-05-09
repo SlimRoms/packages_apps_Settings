@@ -5560,6 +5560,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hardware_keys_action_last_app">Last app</string>
     <string name="hardware_keys_action_custom_app">Custom app</string>
     <string name="hardware_keys_action_widgets">Widgets viewpager</string>
+    <string name="hardware_keys_action_quicksettings">Quicksettings panel</string>
 
     <!--- Sms security limit -->
     <string name="app_security_title">App security</string>
@@ -5587,6 +5588,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="widgets">Widgets viewpager</string>
     <string name="lastapp">Last app</string>
     <string name="power">Screen off</string>
+    <string name="quicksettings">Quicksettings panel</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
     <string name="blank">None</string>
@@ -5648,6 +5650,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_action_widgets">Widgets viewpager</string>
     <string name="navbar_action_power">Screen Off</string>
     <string name="navbar_action_notifications">Notifications</string>
+    <string name="navbar_action_quicksettings">Quicksettings panel</string>
     <string name="navbar_action_none">None</string>
     <string name="navbar_enable_bar">Enable navigation bar</string>
     <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
@@ -5940,6 +5943,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_action_widgets">Widgets viewpager</string>
     <string name="pie_action_power">Screen Off</string>
     <string name="pie_action_notifications">Notifications</string>
+    <string name="pie_action_quicksettings">Quicksettings panel</string>
     <string name="pie_action_none">None</string>
 
 </resources>

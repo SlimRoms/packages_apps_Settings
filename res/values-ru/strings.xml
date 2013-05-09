@@ -2892,6 +2892,7 @@
     <string name="hardware_keys_action_last_app">Предыдущее приложение</string>
     <string name="hardware_keys_action_custom_app">Заданное приложение</string>
     <string name="hardware_keys_action_widgets">Панель виджетов</string>
+    <string name="hardware_keys_action_quicksettings">Панель быстрых настроек</string>
     <!--- Sms security limit -->
     <string name="app_security_title">БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ</string>
     <string name="sms_security_check_limit_title">Ограничение SMS-сообщений</string>
@@ -2917,6 +2918,7 @@
     <string name="widgets">Панель виджетов</string>
     <string name="lastapp">Предыдущее приложение</string>
     <string name="power">Выключить экран</string>
+    <string name="quicksettings">Панель быстрых настроек</string>
     <string name="notifications">Уведомления</string>
     <string name="custom_app">Заданное приложение</string>
     <string name="blank">Нет</string>
@@ -2977,6 +2979,7 @@
     <string name="navbar_action_widgets">Панель виджетов</string>
     <string name="navbar_action_power">Выключить экран</string>
     <string name="navbar_action_notifications">Уведомления</string>
+    <string name="navbar_action_quicksettings">Панель быстрых настроек</string>
     <string name="navbar_action_none">Нет</string>
     <string name="navbar_enable_bar">Включить панель навигации</string>
     <string name="navbar_enable_bar_summary">Включает панель навигации</string>
@@ -3256,6 +3259,7 @@
     <string name="pie_action_widgets">Панель виджетов</string>
     <string name="pie_action_power">Потушить экран</string>
     <string name="pie_action_notifications">Уведомления</string>
+    <string name="pie_action_quicksettings">Панель быстрых настроек</string>
     <string name="pie_action_none">Нет</string>
 
     <!-- Classic Recent Menu -->

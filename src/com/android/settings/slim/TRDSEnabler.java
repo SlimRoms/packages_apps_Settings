@@ -98,6 +98,9 @@ public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
                if(info.processName.equalsIgnoreCase("com.google.android.youtube")) {
                     am.killBackgroundProcesses("com.google.android.youtube");
                }
+               if(info.processName.equalsIgnoreCase("com.google.android.apps.plus")) {
+                    am.killBackgroundProcesses("com.google.android.apps.plus");
+               }
            }
     }
 

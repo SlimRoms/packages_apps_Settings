@@ -51,10 +51,9 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private static final String PREF_PIE_CONTROL_SIZE = "pie_control_size";
     private static final String PREF_PIE_MIRROR_RIGHT = "pie_mirror_right";
 
-    private static final float PIE_CONTROL_SIZE_MIN = 0.84f;
+    private static final float PIE_CONTROL_SIZE_MIN = 0.6f;
     private static final float PIE_CONTROL_SIZE_MAX = 1.5f;
-
-    private boolean mCheckPreferences;
+    private static final float PIE_CONTROL_SIZE_DEFAULT = 0.84f;
 
     Resources mSystemUiResources;
 
@@ -68,23 +67,12 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        refreshSettings();
-    }
-
-    private PreferenceScreen refreshSettings() {
-        mCheckPreferences = false;
-        PreferenceScreen prefs = getPreferenceScreen();
-        if (prefs != null) {
-            prefs.removeAll();
-        }
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.pie_style);
 
-        prefs = getPreferenceScreen();
-
+        PreferenceScreen prefs = getPreferenceScreen();
         PackageManager pm = mContext.getPackageManager();
-
         if (pm != null) {
             try {
                 mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
@@ -94,91 +82,26 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
             }
         }
 
-        String hexColor;
-        int intColor;
-
         mPieBackgroundColor = (ColorPickerPreference) findPreference(PREF_PIE_BACKGROUND_COLOR);
         mPieBackgroundColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BACKGROUND_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_overlay_color", "color", "com.android.systemui"));
-            mPieBackgroundColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieBackgroundColor.setSummary(hexColor);
-        }
-        mPieBackgroundColor.setNewPreviewColor(intColor);
 
         mPieSnapColor = (ColorPickerPreference) findPreference(PREF_PIE_SNAP_COLOR);
         mPieSnapColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_SNAP_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_snap_color", "color", "com.android.systemui"));
-            mPieSnapColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieSnapColor.setSummary(hexColor);
-        }
-        mPieSnapColor.setNewPreviewColor(intColor);
 
         mPieTextColor = (ColorPickerPreference) findPreference(PREF_PIE_TEXT_COLOR);
         mPieTextColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_TEXT_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_text_color", "color", "com.android.systemui"));
-            mPieTextColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieTextColor.setSummary(hexColor);
-        }
-        mPieTextColor.setNewPreviewColor(intColor);
 
-        float defaultAlpha;
-        try{
-            defaultAlpha = Settings.System.getFloat(getActivity()
-                     .getContentResolver(), Settings.System.PIE_BACKGROUND_ALPHA);
-        } catch (Exception e) {
-            defaultAlpha = 0.3f;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                Settings.System.PIE_BACKGROUND_ALPHA, defaultAlpha);
-        }
         mPieBackgroundAlpha = (SeekBarPreference) findPreference(PREF_PIE_BACKGROUND_ALPHA);
-        mPieBackgroundAlpha.setProperty(String.valueOf(defaultAlpha));
-        mPieBackgroundAlpha.setInitValue((int) (defaultAlpha * 100));
         mPieBackgroundAlpha.setOnPreferenceChangeListener(this);
 
-        float controlSize;
-        try{
-            controlSize = Settings.System.getFloat(getActivity()
-                    .getContentResolver(), Settings.System.PIE_SIZE);
-        } catch (Exception e) {
-            controlSize = 1.0f;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                Settings.System.PIE_SIZE, controlSize);
-        }
-        float controlSizeValue = ((controlSize - PIE_CONTROL_SIZE_MIN) /
-                    ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) / 100)) / 100;
         mPieControlSize = (SeekBarPreference) findPreference(PREF_PIE_CONTROL_SIZE);
-        mPieControlSize.disablePercentageValue(true);
-        mPieControlSize.setInitValue((int) (controlSizeValue * 100));
         mPieControlSize.setOnPreferenceChangeListener(this);
 
         mMirrorRightPie = (CheckBoxPreference) findPreference(PREF_PIE_MIRROR_RIGHT);
         mMirrorRightPie.setOnPreferenceChangeListener(this);
-        mMirrorRightPie.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.PIE_MIRROR_RIGHT, 1) == 1);
 
         setHasOptionsMenu(true);
-        mCheckPreferences = true;
-        return prefs;
     }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -200,7 +123,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.PIE_BACKGROUND_ALPHA, 0.3f);
 
-                refreshSettings();
+                updateStyleValues();
                 return true;
              default:
                 return super.onContextItemSelected(item);
@@ -215,10 +138,22 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (!mCheckPreferences) {
-            return false;
-        }
-        if (preference == mPieBackgroundColor) {
+        if (preference == mPieBackgroundAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Log.e("R", "value: " + val / 100);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_BACKGROUND_ALPHA,
+                    val / 100);
+            return true;
+        } else if (preference == mPieControlSize) {
+            float val = Float.parseFloat((String) newValue);
+            float value = (val * ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) /
+                100)) + PIE_CONTROL_SIZE_MIN;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_SIZE,
+                    value);
+            return true;
+        } else if (preference == mPieBackgroundColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
@@ -242,33 +177,89 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_SNAP_COLOR, intHex);
             return true;
-       } else if (preference == mPieBackgroundAlpha) {
-            float val = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + val / 100);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_BACKGROUND_ALPHA,
-                    val / 100);
-            return true;
-       }else if (preference == mPieControlSize) {
-            float val = Float.parseFloat((String) newValue);
-            float value = (val * ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) /
-                100)) + PIE_CONTROL_SIZE_MIN;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_SIZE,
-                    value);
-            return true;
-       } else if (preference == mMirrorRightPie) {
+        } else if (preference == mMirrorRightPie) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_MIRROR_RIGHT,
                     (Boolean) newValue ? 1 : 0);
-            return true;
-       }
-       return false;
+           return true;
+        }
+        updateStyleValues();
+        return false;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        updateStyleValues();
     }
 
+    private void updateStyleValues() {
+        String hexColor;
+        int intColor;
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BACKGROUND_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_overlay_color", "color", "com.android.systemui"));
+            mPieBackgroundColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieBackgroundColor.setSummary(hexColor);
+        }
+        mPieBackgroundColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_SNAP_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_snap_color", "color", "com.android.systemui"));
+            mPieSnapColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieSnapColor.setSummary(hexColor);
+        }
+        mPieSnapColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_TEXT_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_text_color", "color", "com.android.systemui"));
+            mPieTextColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieTextColor.setSummary(hexColor);
+        }
+        mPieTextColor.setNewPreviewColor(intColor);
+
+        mMirrorRightPie.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.PIE_MIRROR_RIGHT, 1) == 1);
+
+        float defaultAlpha;
+        try{
+            defaultAlpha = Settings.System.getFloat(getActivity()
+                     .getContentResolver(), Settings.System.PIE_BACKGROUND_ALPHA);
+        } catch (Exception e) {
+            defaultAlpha = 0.3f;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_BACKGROUND_ALPHA, defaultAlpha);
+        }
+        mPieBackgroundAlpha.setProperty(Settings.System.PIE_BACKGROUND_ALPHA);
+        mPieBackgroundAlpha.setInitValue((int) (defaultAlpha * 100));
+
+        float controlSize;
+        try{
+            controlSize = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.PIE_SIZE);
+        } catch (Exception e) {
+            controlSize = PIE_CONTROL_SIZE_DEFAULT;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_SIZE, controlSize);
+        }
+        float controlSizeValue = ((controlSize - PIE_CONTROL_SIZE_MIN) /
+                    ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) / 100)) / 100;
+        mPieControlSize.setInitValue((int) (controlSizeValue * 100));
+        mPieControlSize.disablePercentageValue(true);
+    }
 }

@@ -53,8 +53,6 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     private static final String PREF_PIE_BUTTON_ALPHA = "pie_button_alpha";
     private static final String PREF_PIE_BUTTON_PRESSED_ALPHA = "pie_button_pressed_alpha";
 
-    private boolean mCheckPreferences;
-
     Resources mSystemUiResources;
 
     ColorPickerPreference mPieButtonColor;
@@ -69,20 +67,10 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        refreshSettings();
-    }
-
-    private PreferenceScreen refreshSettings() {
-        mCheckPreferences = false;
-        PreferenceScreen prefs = getPreferenceScreen();
-        if (prefs != null) {
-            prefs.removeAll();
-        }
-
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.pie_button_style);
 
-        prefs = getPreferenceScreen();
+        PreferenceScreen prefs = getPreferenceScreen();
 
         PackageManager pm = mContext.getPackageManager();
 
@@ -95,118 +83,32 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
             }
         }
 
-        String hexColor;
-        int intColor;
-
         mPieButtonColor = (ColorPickerPreference) findPreference(PREF_PIE_BUTTON_COLOR);
         mPieButtonColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTON_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_background_color", "color", "com.android.systemui"));
-            mPieButtonColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieButtonColor.setSummary(hexColor);
-        }
-        mPieButtonColor.setNewPreviewColor(intColor);
 
         mPieButtonPressedColor = (ColorPickerPreference) findPreference(PREF_PIE_BUTTON_PRESSED_COLOR);
         mPieButtonPressedColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTON_PRESSED_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_selected_color", "color", "com.android.systemui"));
-            mPieButtonPressedColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieButtonPressedColor.setSummary(hexColor);
-        }
-        mPieButtonPressedColor.setNewPreviewColor(intColor);
 
         mPieButtonLongPressedColor = (ColorPickerPreference) findPreference(PREF_PIE_BUTTON_LONG_PRESSED_COLOR);
         mPieButtonLongPressedColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTON_LONG_PRESSED_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_long_pressed_color", "color", "com.android.systemui"));
-            mPieButtonLongPressedColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieButtonLongPressedColor.setSummary(hexColor);
-        }
-        mPieButtonLongPressedColor.setNewPreviewColor(intColor);
 
         mPieButtonOutlineColor = (ColorPickerPreference) findPreference(PREF_PIE_BUTTON_OUTLINE_COLOR);
         mPieButtonOutlineColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTON_OUTLINE_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_outline_color", "color", "com.android.systemui"));
-            mPieButtonOutlineColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieButtonOutlineColor.setSummary(hexColor);
-        }
-        mPieButtonOutlineColor.setNewPreviewColor(intColor);
 
         mPieIconColor = (ColorPickerPreference) findPreference(PREF_PIE_ICON_COLOR);
         mPieIconColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_ICON_COLOR, -2);
-        if (intColor == -2) {
-            intColor = mSystemUiResources.getColor(
-                    mSystemUiResources.getIdentifier("pie_foreground_color", "color", "com.android.systemui"));
-            mPieIconColor.setSummary(getResources().getString(R.string.color_default));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mPieIconColor.setSummary(hexColor);
-        }
-        mPieIconColor.setNewPreviewColor(intColor);
 
-        float defaultAlpha;
-        try{
-            defaultAlpha = Settings.System.getFloat(getActivity()
-                     .getContentResolver(), Settings.System.PIE_BUTTON_ALPHA);
-        } catch (Exception e) {
-            defaultAlpha = 0.3f;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                Settings.System.PIE_BUTTON_ALPHA, defaultAlpha);
-        }
         mPieButtonAlpha = (SeekBarPreference) findPreference(PREF_PIE_BUTTON_ALPHA);
-        mPieButtonAlpha.setProperty(String.valueOf(defaultAlpha));
-        mPieButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mPieButtonAlpha.setOnPreferenceChangeListener(this);
 
-        try{
-            defaultAlpha = Settings.System.getFloat(getActivity()
-                     .getContentResolver(), Settings.System.PIE_BUTTON_PRESSED_ALPHA);
-        } catch (Exception e) {
-            defaultAlpha = 0.0f;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                Settings.System.PIE_BUTTON_PRESSED_ALPHA, defaultAlpha);
-        }
         mPieButtonPressedAlpha = (SeekBarPreference) findPreference(PREF_PIE_BUTTON_PRESSED_ALPHA);
-        mPieButtonPressedAlpha.setProperty(String.valueOf(defaultAlpha));
-        mPieButtonPressedAlpha.setInitValue((int) (defaultAlpha * 100));
         mPieButtonPressedAlpha.setOnPreferenceChangeListener(this);
 
         mPieIconColorMode = (ListPreference) prefs.findPreference(PREF_PIE_ICON_COLOR_MODE);
         mPieIconColorMode.setOnPreferenceChangeListener(this);
-        int pieIconColorMode = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.PIE_ICON_COLOR_MODE, 0);
-        mPieIconColorMode.setValue(String.valueOf(pieIconColorMode));
-        mPieIconColorMode.setSummary(mPieIconColorMode.getEntry());
 
         setHasOptionsMenu(true);
-        mCheckPreferences = true;
-        return prefs;
     }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -237,7 +139,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
                 Settings.System.putInt(getActivity().getContentResolver(),
                        Settings.System.PIE_ICON_COLOR_MODE, 0);
 
-                refreshSettings();
+                updateStyleValues();
                 return true;
              default:
                 return super.onContextItemSelected(item);
@@ -252,9 +154,6 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (!mCheckPreferences) {
-            return false;
-        }
         if (preference == mPieButtonColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -318,12 +217,107 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
             mPieIconColorMode.setSummary(mPieIconColorMode.getEntries()[index]);
             return true;
         }
+        updateStyleValues();
         return false;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        updateStyleValues();
+    }
+
+    private void updateStyleValues() {
+        String hexColor;
+        int intColor;
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTON_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_background_color", "color", "com.android.systemui"));
+            mPieButtonColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieButtonColor.setSummary(hexColor);
+        }
+        mPieButtonColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTON_PRESSED_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_selected_color", "color", "com.android.systemui"));
+            mPieButtonPressedColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieButtonPressedColor.setSummary(hexColor);
+        }
+        mPieButtonPressedColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTON_LONG_PRESSED_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_long_pressed_color", "color", "com.android.systemui"));
+            mPieButtonLongPressedColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieButtonLongPressedColor.setSummary(hexColor);
+        }
+        mPieButtonLongPressedColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTON_OUTLINE_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_outline_color", "color", "com.android.systemui"));
+            mPieButtonOutlineColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieButtonOutlineColor.setSummary(hexColor);
+        }
+        mPieButtonOutlineColor.setNewPreviewColor(intColor);
+
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_ICON_COLOR, -2);
+        if (intColor == -2) {
+            intColor = mSystemUiResources.getColor(
+                    mSystemUiResources.getIdentifier("pie_foreground_color", "color", "com.android.systemui"));
+            mPieIconColor.setSummary(getResources().getString(R.string.color_default));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mPieIconColor.setSummary(hexColor);
+        }
+        mPieIconColor.setNewPreviewColor(intColor);
+
+        float defaultAlpha;
+        try{
+            defaultAlpha = Settings.System.getFloat(getActivity()
+                     .getContentResolver(), Settings.System.PIE_BUTTON_ALPHA);
+        } catch (Exception e) {
+            defaultAlpha = 0.3f;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_BUTTON_ALPHA, defaultAlpha);
+        }
+        mPieButtonAlpha.setProperty(Settings.System.PIE_BUTTON_ALPHA);
+        mPieButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+
+        try{
+            defaultAlpha = Settings.System.getFloat(getActivity()
+                     .getContentResolver(), Settings.System.PIE_BUTTON_PRESSED_ALPHA);
+        } catch (Exception e) {
+            defaultAlpha = 0.0f;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                Settings.System.PIE_BUTTON_PRESSED_ALPHA, defaultAlpha);
+        }
+        mPieButtonPressedAlpha.setProperty(Settings.System.PIE_BUTTON_PRESSED_ALPHA);
+        mPieButtonPressedAlpha.setInitValue((int) (defaultAlpha * 100));
+
+        int pieIconColorMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.PIE_ICON_COLOR_MODE, 0);
+        mPieIconColorMode.setValue(String.valueOf(pieIconColorMode));
+        mPieIconColorMode.setSummary(mPieIconColorMode.getEntry());
     }
 
 }

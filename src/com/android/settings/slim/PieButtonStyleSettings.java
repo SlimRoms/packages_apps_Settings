@@ -54,6 +54,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     private static final String PREF_PIE_BUTTON_PRESSED_ALPHA = "pie_button_pressed_alpha";
 
     Resources mSystemUiResources;
+    private boolean mCheckPreferences;
 
     ColorPickerPreference mPieButtonColor;
     ColorPickerPreference mPieButtonPressedColor;
@@ -154,6 +155,9 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mPieButtonColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -217,7 +221,6 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
             mPieIconColorMode.setSummary(mPieIconColorMode.getEntries()[index]);
             return true;
         }
-        updateStyleValues();
         return false;
     }
 
@@ -228,6 +231,7 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     }
 
     private void updateStyleValues() {
+        mCheckPreferences = false;
         String hexColor;
         int intColor;
 
@@ -318,6 +322,8 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
                 Settings.System.PIE_ICON_COLOR_MODE, 0);
         mPieIconColorMode.setValue(String.valueOf(pieIconColorMode));
         mPieIconColorMode.setSummary(mPieIconColorMode.getEntry());
+
+        mCheckPreferences = true;
     }
 
 }

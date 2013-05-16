@@ -1930,8 +1930,6 @@
     <string name="brightness_slider_top">En la parte superior</string>
     <string name="brightness_slider_bottom">En la parte inferior</string>
     <string name="brightness_slider_none">No Mostrar</string>
-    <string name="power_widget_longpress_qs_title">Pulsación larga cambia visibilidad</string>
-    <string name="power_widget_longpress_qs_summary">Presión larga de las Configuraciones Rápidas voltea el botón para alternar la visibilidad</string>
     <string name="profiles_settings_title">Perfiles</string>
     <string name="profiles_general_title">General</string>
     <string name="profiles_add">Añadir</string>

@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">In alto</string>
     <string name="brightness_slider_bottom">In basso</string>
     <string name="brightness_slider_none">Non mostrare</string>
-    <string name="power_widget_longpress_qs_title">Tenere premuto il toggle della visibilità</string>
-    <string name="power_widget_longpress_qs_summary">Tenere premuto il tasto delle impostazioni rapide per attivare la visibilità</string>
     <string name="profiles_settings_title">Profili</string>
     <string name="profiles_general_title">Generali</string>
     <string name="profiles_add">Aggiungi</string>

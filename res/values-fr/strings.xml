@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">En haut</string>
     <string name="brightness_slider_bottom">En bas</string>
     <string name="brightness_slider_none">Ne pas afficher</string>
-    <string name="power_widget_longpress_qs_title">Appui long sur le bouton de visibilité</string>
-    <string name="power_widget_longpress_qs_summary">Appui long sur la touche flip QuickSettings pour afficher les paramètres de visibilité</string>
     <string name="profiles_settings_title">Profils</string>
     <string name="profiles_general_title">Paramètres généraux</string>
     <string name="profiles_add">Ajouter</string>

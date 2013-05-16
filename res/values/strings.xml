@@ -1713,6 +1713,8 @@
     <string name="notification_sound_title">Default notification sound</string>
     <!-- Notification Behavior Preferences -->
     <string name="notification_behaviour_title">Notification behavior</string>
+    <!-- Always show notification drawer settings button -->
+    <string name="notification_settings_btn_title">Always show settings button</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the incoming call volume -->
     <string name="incoming_call_volume_title">Ringtone</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the notification volume -->
@@ -4582,8 +4584,6 @@
     <string name="brightness_slider_top">On top</string>
     <string name="brightness_slider_bottom">On the bottom</string>
     <string name="brightness_slider_none">Don\'t Show</string>
-    <string name="power_widget_longpress_qs_title">Longpress visibility toggle</string>
-    <string name="power_widget_longpress_qs_summary">Longpress QuickSettings flip button to toggle visibility</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>

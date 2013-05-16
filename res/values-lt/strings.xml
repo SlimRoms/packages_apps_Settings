@@ -1942,8 +1942,6 @@
     <string name="brightness_slider_top">Viršuje</string>
     <string name="brightness_slider_bottom">Apačioje</string>
     <string name="brightness_slider_none">Nerodyti</string>
-    <string name="power_widget_longpress_qs_title">Ilgo paspaudimo matomumo valdymas</string>
-    <string name="power_widget_longpress_qs_summary">Paspauskite ir palaikykite greitųjų nustatymų apvertimo mygtuką norėdami valdyti matomumą</string>
     <string name="profiles_settings_title">Profiliai</string>
     <string name="profiles_general_title">Bendra</string>
     <string name="profiles_add">Pridėti</string>

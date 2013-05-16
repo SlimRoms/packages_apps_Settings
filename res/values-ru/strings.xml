@@ -2001,8 +2001,6 @@
     <string name="brightness_slider_top">Вверху</string>
     <string name="brightness_slider_bottom">Внизу</string>
     <string name="brightness_slider_none">Скрыть</string>
-    <string name="power_widget_longpress_qs_title">Долгое нажатие переключает видимость</string>
-    <string name="power_widget_longpress_qs_summary">Долгое нажатие переключает видимость кнопки</string>
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Профили</string>
     <string name="profiles_general_title">Основные</string>

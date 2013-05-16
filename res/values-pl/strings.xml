@@ -1942,8 +1942,6 @@
     <string name="brightness_slider_top">Na górze</string>
     <string name="brightness_slider_bottom">Na dole</string>
     <string name="brightness_slider_none">Nie pokazuj</string>
-    <string name="power_widget_longpress_qs_title">Przełącznik widgetu przełączników (przytrzymaj)</string>
-    <string name="power_widget_longpress_qs_summary">Przytrzymaj przycisk widoku w obszarze powiadomień by przełączyć widoczność widgetu przełączników</string>
     <string name="profiles_settings_title">Profile</string>
     <string name="profiles_general_title">Ogólne</string>
     <string name="profiles_add">Dodaj</string>

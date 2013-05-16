@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">Oben</string>
     <string name="brightness_slider_bottom">Unten</string>
     <string name="brightness_slider_none">Nicht anzeigen</string>
-    <string name="power_widget_longpress_qs_title">Lang drücken schaltet die Sichbarkeit um</string>
-    <string name="power_widget_longpress_qs_summary">Flip-Button in den Schnelleinstellungen lange gedrückt halten um die Sichtbarkeit umzuschalten</string>
     <string name="profiles_settings_title">Profile</string>
     <string name="profiles_general_title">Allgemein</string>
     <string name="profiles_add">Hinzufügen</string>

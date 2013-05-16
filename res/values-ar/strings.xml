@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">On top</string>
     <string name="brightness_slider_bottom">On the bottom</string>
     <string name="brightness_slider_none">Don\'t Show</string>
-    <string name="power_widget_longpress_qs_title">Longpress visibility toggle</string>
-    <string name="power_widget_longpress_qs_summary">Longpress QuickSettings flip button to toggle visibility</string>
     <string name="profiles_settings_title">ملفات التعريف</string>
     <string name="profiles_general_title">عامة</string>
     <string name="profiles_add">إضافة</string>

@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">Trên cùng</string>
     <string name="brightness_slider_bottom">Dưới cùng</string>
     <string name="brightness_slider_none">Không hiển thị</string>
-    <string name="power_widget_longpress_qs_title">Nhấn giữ hiện tiện ích</string>
-    <string name="power_widget_longpress_qs_summary">Nhấn giữ Cài đặt nhanh lật nút để bật/tắt khả năng hiển thị</string>
     <string name="profiles_settings_title">Tiểu sử</string>
     <string name="profiles_general_title">Chung</string>
     <string name="profiles_add">Thêm</string>

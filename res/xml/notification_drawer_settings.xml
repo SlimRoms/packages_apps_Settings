@@ -58,6 +58,11 @@
         android:key="options"
         android:title="@string/additional_options_title">
 
+         <CheckBoxPreference
+            android:key="notification_settings_btn"
+            android:title="@string/notification_settings_btn_title"
+            android:defaultValue="false" />
+
          <ListPreference
             android:key="notifications_behaviour"
             android:title="@string/notification_behaviour_title"

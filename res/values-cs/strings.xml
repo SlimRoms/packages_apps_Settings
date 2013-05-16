@@ -1936,8 +1936,6 @@
     <string name="brightness_slider_top">Nahoře</string>
     <string name="brightness_slider_bottom">Dole</string>
     <string name="brightness_slider_none">Nezobrazovat</string>
-    <string name="power_widget_longpress_qs_title">Přepínat viditelnost podržením</string>
-    <string name="power_widget_longpress_qs_summary">Skrývat podržením tlačítka rychlých nastavení</string>
     <string name="profiles_settings_title">Profily</string>
     <string name="profiles_general_title">Obecné</string>
     <string name="profiles_add">Přidat</string>

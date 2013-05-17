@@ -2260,9 +2260,6 @@
     <string name="status_bar_toggle_brightness">Управление яркостью</string>
     <string name="status_bar_toggle_brightness_summary">Изменять яркость, проводя по строке состояния</string>
     <string name="status_bar_toggle_info">Включена автоматическая регулировка яркости</string>
-    <!-- Status bar notification count -->
-    <string name="status_bar_notif_count_title">Счётчик уведомлений</string>
-    <string name="status_bar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
     <!-- General Settings -->
     <string name="title_slim_general">Основные</string>
     <string name="display_short">Индикация</string>

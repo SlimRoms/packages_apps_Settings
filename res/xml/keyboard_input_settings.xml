@@ -45,6 +45,12 @@
         android:defaultValue="true"
         android:persistent="false" />
 
+    <CheckBoxPreference
+        android:key="show_enter_key"
+        android:title="@string/show_enter_key_title"
+        android:summary="@string/show_enter_key_summary"
+        android:persistent="false" />
+
     <ListPreference
         android:key="volume_key_cursor_control"
         android:persistent="false"

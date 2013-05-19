@@ -2655,6 +2655,8 @@
     <string name="keyboard_rotation_timeout_title">Задержка при повороте</string>
     <string name="keyboard_rotation_timeout_summary">Отключить сенсор поворота на <xliff:g id="rotate_timeout">%1$s</xliff:g> секунд после скрытия клавиатуры</string>
     <string name="keyboard_rotation_dialog">Примечание: эта функция принудительно временно поворачивает экран при активации клавиатуры. Не дает эффекта при включенном автоповороте.</string>
+    <string name="show_enter_key_title">Показывать клавишу \"Ввод\"</string>
+    <string name="show_enter_key_summary">Принудительно показывать клавишу \"Ввод\" вместо клавиши со смайликами</string>
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Запуск утилиты разработчика</string>
     <!-- Android debugging over WiFi -->

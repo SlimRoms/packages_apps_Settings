@@ -43,16 +43,25 @@ public class LockscreenButtons extends SettingsPreferenceFragment
     private static final String LONG_PRESS_BACK = "lockscreen_long_press_back";
     private static final String LONG_PRESS_HOME = "lockscreen_long_press_home";
     private static final String LONG_PRESS_MENU = "lockscreen_long_press_menu";
+    private static final String LONG_PRESS_ASSIST = "lockscreen_long_press_assist";
+    private static final String LONG_PRESS_APP_SWITCH = "lockscreen_long_press_app_switch";
+    private static final String LONG_PRESS_CAMERA = "lockscreen_long_press_camera";
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
     private static final int KEY_MASK_HOME = 0x01;
     private static final int KEY_MASK_BACK = 0x02;
     private static final int KEY_MASK_MENU = 0x04;
+    private static final int KEY_MASK_ASSIST = 0x08;
+    private static final int KEY_MASK_APP_SWITCH = 0x10;
+    private static final int KEY_MASK_CAMERA = 0x20;
 
     private ListPreference mLongBackAction;
     private ListPreference mLongHomeAction;
     private ListPreference mLongMenuAction;
+    private ListPreference mLongAssistAction;
+    private ListPreference mLongAppSwitchAction;
+    private ListPreference mLongCameraAction;
     private ListPreference[] mActions;
 
     private boolean torchSupported() {
@@ -68,6 +77,9 @@ public class LockscreenButtons extends SettingsPreferenceFragment
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
+        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
 
         addPreferencesFromResource(R.xml.lockscreen_buttons_settings);
 
@@ -94,8 +106,30 @@ public class LockscreenButtons extends SettingsPreferenceFragment
             getPreferenceScreen().removePreference(mLongMenuAction);
         }
 
+        mLongAssistAction = (ListPreference) prefSet.findPreference(LONG_PRESS_ASSIST);
+        if (hasAssistKey) {
+            mLongAssistAction.setKey(Settings.System.LOCKSCREEN_LONG_ASSIST_ACTION);
+        } else {
+            getPreferenceScreen().removePreference(mLongAssistAction);
+        }
+
+        mLongAppSwitchAction = (ListPreference) prefSet.findPreference(LONG_PRESS_APP_SWITCH);
+        if (hasAppSwitchKey) {
+            mLongAppSwitchAction.setKey(Settings.System.LOCKSCREEN_LONG_APP_SWITCH_ACTION);
+        } else {
+            getPreferenceScreen().removePreference(mLongAppSwitchAction);
+        }
+
+        mLongCameraAction = (ListPreference) prefSet.findPreference(LONG_PRESS_CAMERA);
+        if (hasCameraKey) {
+            mLongCameraAction.setKey(Settings.System.LOCKSCREEN_LONG_CAMERA_ACTION);
+        } else {
+            getPreferenceScreen().removePreference(mLongCameraAction);
+        }
+
         mActions = new ListPreference[] {
-            mLongBackAction, mLongHomeAction, mLongMenuAction
+            mLongBackAction, mLongHomeAction, mLongMenuAction,
+            mLongAssistAction, mLongAppSwitchAction, mLongCameraAction
         };
         for (ListPreference pref : mActions) {
             if (torchSupported()) {

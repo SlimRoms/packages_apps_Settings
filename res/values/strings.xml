@@ -5537,6 +5537,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_long_press_back_title">Long press Back button</string>
     <string name="lockscreen_long_press_home_title">Long press Home button</string>
     <string name="lockscreen_long_press_menu_title">Long press Menu button</string>
+    <string name="lockscreen_long_press_assist_title">Long press Search button</string>
+    <string name="lockscreen_long_press_app_switch_title">Long press App Switch button</string>
+    <string name="lockscreen_long_press_camera_title">Long press Camera button</string>
     <string name="lockscreen_buttons_no_action">None</string>
     <string name="lockscreen_buttons_flashlight">Flashlight</string>
     <string name="lockscreen_buttons_next">Next song</string>
@@ -5560,6 +5563,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
     <string name="hardware_keys_app_switch_press_title">App switch key</string>
     <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_camera_press_title">Camera key</string>
+    <string name="hardware_keys_camera_long_press_title">Camera key (long press)</string>
     <string name="hardware_keys_show_overflow_title">Show action overflow</string>
     <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
@@ -5580,6 +5585,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hardware_keys_action_custom_app">Custom app</string>
     <string name="hardware_keys_action_widgets">Widgets viewpager</string>
     <string name="hardware_keys_action_quicksettings">Quicksettings panel</string>
+    <string name="hardware_keys_action_camera">Camera</string>
 
     <!--- Sms security limit -->
     <string name="app_security_title">App security</string>

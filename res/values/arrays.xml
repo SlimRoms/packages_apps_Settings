@@ -1744,6 +1744,7 @@
 
     <string-array name="hardware_keys_action_entries">
         <item>@string/hardware_keys_action_back</item>
+        <item>@string/hardware_keys_action_camera</item>
         <item>@string/hardware_keys_action_custom_app</item>
         <item>@string/hardware_keys_action_expanded</item>
         <item>@string/hardware_keys_action_home</item>
@@ -1766,6 +1767,7 @@
             way to prevend user complains -->
     <string-array name="hardware_keys_action_values" translatable="false">
         <item>2</item>
+        <item>16</item>
         <item>13</item>
         <item>10</item>
         <item>1</item>

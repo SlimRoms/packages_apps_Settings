@@ -35,4 +35,22 @@
         android:entries="@array/lockscreen_long_key_press_entries"
         android:entryValues="@array/lockscreen_long_key_press_values"/>
 
+    <ListPreference android:key="lockscreen_long_press_assist"
+        android:title="@string/lockscreen_long_press_assist_title"
+        android:persistent="false"
+        android:entries="@array/lockscreen_long_key_press_entries"
+        android:entryValues="@array/lockscreen_long_key_press_values"/>
+
+    <ListPreference android:key="lockscreen_long_press_app_switch"
+        android:title="@string/lockscreen_long_press_app_switch_title"
+        android:persistent="false"
+        android:entries="@array/lockscreen_long_key_press_entries"
+        android:entryValues="@array/lockscreen_long_key_press_values"/>
+
+    <ListPreference android:key="lockscreen_long_press_camera"
+        android:title="@string/lockscreen_long_press_camera_title"
+        android:persistent="false"
+        android:entries="@array/lockscreen_long_key_press_entries"
+        android:entryValues="@array/lockscreen_long_key_press_values"/>
+
 </PreferenceScreen>

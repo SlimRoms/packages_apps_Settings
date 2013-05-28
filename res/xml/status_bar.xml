@@ -63,6 +63,12 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
+        <CheckBoxPreference
+            android:key="status_bar_quick_peek"
+            android:title="@string/statusbar_quick_peek_title"
+            android:summary="@string/statusbar_quick_peek_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -2215,6 +2215,7 @@
     <string name="power_notifications_category_title">Уведомление подключения зарядки</string>
     <!-- Sound settings, power notifications enable/disable, setting check box label -->
     <string name="power_notifications_enable_title">Включить</string>
+    <string name="power_notifications_enable_summary">Сигнал при подключении/отключении зарядного кабеля</string>
     <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
     <string name="power_notifications_vibrate_title">Вибрация</string>
     <!-- Sound settings, power notifications ringtone selection, preference label -->
@@ -2456,6 +2457,13 @@
 желаемую яркость экрана. Пункт \'Разделить\' позволяет дублировать текущий пункт, чтобы 
 добавить дополнительные контрольные точки. \'Удалить\' удаляет выбранный пункт.
     </string>
+    
+    <string name="auto_brightness_sensitivity_title">Чувствительность регулировки</string>
+    <string name="auto_brightness_sensitivity_verylow">Очень низкая</string>
+    <string name="auto_brightness_sensitivity_low">Низкая</string>
+    <string name="auto_brightness_sensitivity_medium">Средняя</string>
+    <string name="auto_brightness_sensitivity_high">Высокая</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Очень высокая</string>
     
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Настройки пробуждения</string>

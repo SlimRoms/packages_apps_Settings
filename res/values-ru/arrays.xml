@@ -349,46 +349,45 @@
     <item>Заглавные</item>
   </string-array>
   <string-array name="clock_date_format_entries">
-    <item>дд/MM/гг</item>
-    <item>MM/dd/гг</item>
-    <item>гггг-MM-дд</item>
-    <item>гггг-дд-MM</item>
-    <item>дд-MM-гггг</item>
-    <item>MM-дд-гггг</item>
-    <item>MMM дд</item>
-    <item>MMM дд, гггг</item>
-    <item>MMMM дд, гггг</item>
+    <item>dd/MM/yy</item>
+    <item>MM/dd/yy</item>
+    <item>yyyy-MM-dd</item>
+    <item>yyyy-dd-MM</item>
+    <item>dd-MM-yyyy</item>
+    <item>MM-dd-yyyy</item>
+    <item>MMM dd</item>
+    <item>MMM dd, yyyy</item>
+    <item>MMMM dd, yyyy</item>
     <item>EEE</item>
-    <item>EEE дд</item>
-    <item>EEE дд/MM</item>
-    <item>EEE MM/дд</item>
-    <item>EEE дд MMM</item>
-    <item>EEE MMM дд</item>
-    <item>EEE MMMM дд</item>
-    <item>EEEE дд/MM</item>
-    <item>EEEE MM/дд</item>
+    <item>EEE dd</item>
+    <item>EEE dd/MM</item>
+    <item>EEE MM/dd</item>
+    <item>EEE dd MMM</item>
+    <item>EEE MMM dd</item>
+    <item>EEE MMMM dd</item>
+    <item>EEEE dd/MM</item>
+    <item>EEEE MM/dd</item>
     <item>Произвольный формат Java</item>
   </string-array>
   <string-array name="clock_date_format_values">
-    <item>дд/MM/гг</item>
-    <item>MM/dd/гг</item>
-    <item>гггг-MM-дд</item>
-    <item>гггг-дд-MM</item>
-    <item>дд-MM-гггг</item>
+    <item>dd/MM/yy</item>
+    <item>MM/dd/yy</item>
+    <item>yyyy-MM-dd</item>
+    <item>yyyy-dd-MM</item>
+    <item>dd-MM-yyyy</item>
     <item>MM-dd-yyyy</item>
-    <item>MM-дд-гггг</item>
-    <item>MMM дд</item>
-    <item>MMM дд, гггг</item>
-    <item>MMMM дд, гггг</item>
+    <item>MMM dd</item>
+    <item>MMM dd, yyyy</item>
+    <item>MMMM dd, yyyy</item>
     <item>EEE</item>
-    <item>EEE дд</item>
-    <item>EEE дд/MM</item>
-    <item>EEE MM/дд</item>
-    <item>EEE дд MMM</item>
-    <item>EEE MMM дд</item>
-    <item>EEE MMMM дд</item>
-    <item>EEEE дд/MM</item>
-    <item>EEEE MM/дд</item>
+    <item>EEE dd</item>
+    <item>EEE dd/MM</item>
+    <item>EEE MM/dd</item>
+    <item>EEE dd MMM</item>
+    <item>EEE MMM dd</item>
+    <item>EEE MMMM dd</item>
+    <item>EEEE dd/MM</item>
+    <item>EEEE MM/dd</item>
     <item>Произвольный формат Java</item>
   </string-array>
   <string-array name="battery_bar_entries">

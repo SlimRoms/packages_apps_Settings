@@ -2249,7 +2249,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Engrenages</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Aide</string>
     <string name="notification_shortcuts_icon_picker_joystick">Manette de jeu</string>
     <string name="notification_shortcuts_icon_picker_key">Clés/comptes</string>
@@ -2640,7 +2640,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_shortcuts_icon_picker_gears">Engrenages</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Aide</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Manette de jeu</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Clés/comptes</string>

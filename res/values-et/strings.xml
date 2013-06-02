@@ -2068,7 +2068,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Gears</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Abi</string>
     <string name="notification_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="notification_shortcuts_icon_picker_key">Võtmed/Kontod</string>
@@ -2255,7 +2255,7 @@
     <string name="icon_picker_gallery">Galerii</string>
     <string name="icon_picker_google_small">Google (väike)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_movie">Film</string>
     <string name="icon_picker_music">Muusika</string>
@@ -2297,7 +2297,7 @@
     <string name="lockscreen_shortcuts_icon_picker_gears">Gears</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Abi</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Võtmed/Kontod</string>

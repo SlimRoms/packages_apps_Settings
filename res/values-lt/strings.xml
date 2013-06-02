@@ -2253,7 +2253,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Pavaros</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Pagalba</string>
     <string name="notification_shortcuts_icon_picker_joystick">Vairalazdė</string>
     <string name="notification_shortcuts_icon_picker_key">Raktai/Paskyros</string>
@@ -2606,7 +2606,7 @@
     <string name="lockscreen_shortcuts_icon_picker_gears">Pavaros</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Pagalba</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Vairalazdė</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Raktai/Paskyros</string>

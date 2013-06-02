@@ -2243,7 +2243,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Engranajes</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Ayuda</string>
     <string name="notification_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="notification_shortcuts_icon_picker_key">Contraseñas/Cuentas</string>
@@ -2530,7 +2530,7 @@
     <string name="icon_picker_gallery">Galería</string>
     <string name="icon_picker_google_small">Google (pequeño)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Mapas</string>
     <string name="icon_picker_movie">Película</string>
     <string name="icon_picker_music">Música</string>
@@ -2598,7 +2598,7 @@
     <string name="lockscreen_shortcuts_icon_picker_gears">Engranajes</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Ayuda</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Contraseñas/Cuentas</string>

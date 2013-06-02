@@ -2249,7 +2249,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Nastavení</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google +</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Nápověda</string>
     <string name="notification_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="notification_shortcuts_icon_picker_key">Klíče/Účty</string>
@@ -2550,7 +2550,7 @@
     <string name="icon_picker_gallery">Galerie</string>
     <string name="icon_picker_google_small">Google (malý)</string>
     <string name="icon_picker_googleplus">Google +</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Mapy</string>
     <string name="icon_picker_movie">Film</string>
     <string name="icon_picker_music">Hudba</string>
@@ -2618,7 +2618,7 @@
     <string name="lockscreen_shortcuts_icon_picker_gears">Nastavení</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google +</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Nápověda</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Joystick</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Klíče/Účty</string>

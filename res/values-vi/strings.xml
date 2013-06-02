@@ -2249,7 +2249,7 @@
     <string name="notification_shortcuts_icon_picker_gears">Thiết bị</string>
     <string name="notification_shortcuts_icon_picker_google_small">Google</string>
     <string name="notification_shortcuts_icon_picker_gplus">Google +</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="notification_shortcuts_icon_picker_help">Trợ giúp</string>
     <string name="notification_shortcuts_icon_picker_joystick">Cần điều khiển</string>
     <string name="notification_shortcuts_icon_picker_key">Khóa/tài khoản</string>
@@ -2618,7 +2618,7 @@
     <string name="lockscreen_shortcuts_icon_picker_gears">Thiết bị</string>
     <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
     <string name="lockscreen_shortcuts_icon_picker_gplus">Google +</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="lockscreen_shortcuts_icon_picker_help">Trợ giúp</string>
     <string name="lockscreen_shortcuts_icon_picker_joystick">Cần điều khiển</string>
     <string name="lockscreen_shortcuts_icon_picker_key">Khóa/tài khoản</string>

@@ -2237,10 +2237,10 @@
     <string name="status_bar_style_hidden">Скрытый</string>
     <string name="status_bar_signal_text_show_text">Текст</string>
     <!-- Status bar background style -->
-    <string name="status_bar_transparency_title">Прозрачность панели состояния</string>
-    <string name="status_bar_color_title">Цвет панели состояния</string>
-    <string name="status_bar_background_style">Фон панели состояния</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Показывать прозрачность панелей навигации и состояния</string>
+    <string name="status_bar_transparency_title">Прозрачность строки состояния</string>
+    <string name="status_bar_color_title">Цвет строки состояния</string>
+    <string name="status_bar_background_style">Фон строки состояния</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Показывать прозрачность панели навигации и строки состояния</string>
     <string name="status_bar_alpha_mode_text_title">Режим прозрачности</string>
     <string name="status_bar_alpha_mode_home">на рабочем столе</string>
     <string name="status_bar_alpha_mode_default">на рабочем столе и экране блокировки</string>
@@ -2867,6 +2867,9 @@
     <string name="lockscreen_long_press_back_title">Долгое нажатие кнопки \"Назад\"</string>
     <string name="lockscreen_long_press_home_title">Долгое нажатие кнопки \"Домой\"</string>
     <string name="lockscreen_long_press_menu_title">Долгое нажатие кнопки \"Меню\"</string>
+    <string name="lockscreen_long_press_assist_title">Долгое нажатие кнопки \"Поиск\"</string>
+    <string name="lockscreen_long_press_app_switch_title">Долгое нажатие кнопки \"Переключить приложение\"</string>
+    <string name="lockscreen_long_press_camera_title">Долгое нажатие кнопки \"Камера\"</string>
     <string name="lockscreen_buttons_no_action">Нет</string>
     <string name="lockscreen_buttons_flashlight">Фонарик</string>
     <string name="lockscreen_buttons_next">Следующий трек</string>
@@ -2889,6 +2892,8 @@
     <string name="hardware_keys_assist_long_press_title">Кнопка \"Поиск\" (долгое нажатие)</string>
     <string name="hardware_keys_app_switch_press_title">Переключение приложений</string>
     <string name="hardware_keys_app_switch_long_press_title">Переключение приложений (долгое нажатие)</string>
+    <string name="hardware_keys_camera_press_title">Кнопка \"Камера\"</string>
+    <string name="hardware_keys_camera_long_press_title">Кнопка \"Камера\" (долгое нажатие)</string>
     <string name="hardware_keys_show_overflow_title">Показывать кнопку меню</string>
     <string name="hardware_keys_show_overflow_summary">Показывать кнопку меню (вертикальное троеточие) в приложениях</string>
     <string name="hardware_keys_show_overflow_toast_enable">Кнопка меню может не отображаться до перезапуска приложений</string>
@@ -2909,6 +2914,7 @@
     <string name="hardware_keys_action_custom_app">Заданное приложение</string>
     <string name="hardware_keys_action_widgets">Панель виджетов</string>
     <string name="hardware_keys_action_quicksettings">Панель быстрых настроек</string>
+    <string name="hardware_keys_action_camera">Камера</string>
     <!--- Sms security limit -->
     <string name="app_security_title">БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ</string>
     <string name="sms_security_check_limit_title">Ограничение SMS-сообщений</string>

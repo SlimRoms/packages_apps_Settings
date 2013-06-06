@@ -64,6 +64,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     private static final int MENU_DELETE = Menu.FIRST + 1;
 
+    private static final int MENU_WIFI = Menu.FIRST + 2;
+
     private Profile mProfile;
 
     private NamePreference mNamePreference;
@@ -137,6 +139,10 @@ public class ProfileConfig extends SettingsPreferenceFragment
             nfc.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                     MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         }
+        MenuItem wifi = menu.add(0, MENU_WIFI, 0, R.string.profile_trigger_wifi)
+                .setIcon(R.drawable.ic_location);
+        wifi.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         MenuItem delete = menu.add(0, MENU_DELETE, 1, R.string.profile_menu_delete)
                 .setIcon(R.drawable.ic_menu_trash_holo_dark);
         delete.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
@@ -151,6 +157,9 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 return true;
             case MENU_NFC_WRITE:
                 startNFCProfileWriter();
+                return true;
+            case MENU_WIFI:
+                startWifiTrigger();
                 return true;
             default:
                 return false;
@@ -179,6 +188,16 @@ public class ProfileConfig extends SettingsPreferenceFragment
         i.putExtra(NFCProfileWriter.EXTRA_PROFILE_UUID, mProfile.getUuid().toString());
         i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         pa.startActivity(i);
+    }
+
+    private void startWifiTrigger() {
+        final PreferenceActivity pa = (PreferenceActivity) getActivity();
+        final String title = getResources().getString(R.string.profile_trigger_title_wifi,
+                mProfile.getName());
+        final Bundle args = new Bundle();
+        args.putParcelable("profile", mProfile);
+
+        pa.startPreferencePanel(WifiTriggerFragment.class.getName(), args, 0, title, null, 0);
     }
 
     private void fillList() {

@@ -40,6 +40,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.security.KeyStore;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -94,6 +95,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
+    private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
+    private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
 
     DevicePolicyManager mDPM;
 
@@ -127,6 +130,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mQuickUnlockScreen;
     private CheckBoxPreference mLockBeforeUnlock;
     private ListPreference mSmsSecurityCheck;
+    private CheckBoxPreference mPrivacyGuardDefault;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -409,13 +413,26 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 }
             }
 
-            boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-            if (isTelephony) {
-                addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+            if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
                 mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
                 mSmsSecurityCheck.setOnPreferenceChangeListener(this);
                 int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
                 updateSmsSecuritySummary(smsSecurityCheck);
+            } else {
+                PreferenceGroup appCategory = (PreferenceGroup)
+                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
+                appCategory.removePreference(mSmsSecurityCheck);
+            }
+
+            mPrivacyGuardDefault = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_DEFAULT);
+            try {
+                mPrivacyGuardDefault.setChecked(Settings.Secure.getInt(getContentResolver(),
+                        Settings.Secure.PRIVACY_GUARD_DEFAULT) == 1);
+            } catch (SettingNotFoundException e) {
+                mPrivacyGuardDefault.setChecked(false);
             }
          }
 
@@ -710,6 +727,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
+        } else if (KEY_PRIVACY_GUARD_DEFAULT.equals(key)) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.PRIVACY_GUARD_DEFAULT,
+                    mPrivacyGuardDefault.isChecked() ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

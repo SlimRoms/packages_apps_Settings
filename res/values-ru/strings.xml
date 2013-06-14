@@ -2648,7 +2648,7 @@
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>
     <string name="circle_battery_animation_speed_slow">Медленно</string>
-    <string name="circle_battery_animation_speed_stock">Нормальн</string>
+    <string name="circle_battery_animation_speed_stock">Нормально</string>
     <string name="circle_battery_animation_speed_fast">Быстро</string>
     <string name="battery_color_reset_title">Сбросить цвета батареи</string>
     <string name="battery_color_reset_summary">Сбросить цвета батареи и установить цвета из текущей темы</string>
@@ -3284,7 +3284,7 @@
     <string name="pie_action_quicksettings">Панель быстрых настроек</string>
     <string name="pie_action_none">Нет</string>
 
-    <!-- Classic Recent Menu -->
-    <string name="show_classic_recents">Классическое меню \"Недавние\"</string>
-    <string name="show_classic_recents_summary">Показывать меню недавних приложений в стиле Gingerbread</string>
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">APN будет удалена.</string>
+
 </resources>

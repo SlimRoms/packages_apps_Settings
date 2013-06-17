@@ -4760,9 +4760,11 @@
     <string name="pref_use_16bpp_alpha_title">16bit transparency</string>
     <string name="pref_use_16bpp_alpha_summary">Better graphics performance, but lower quality and may cause visual artifacts (requires reboot)</string>
 
-    <string name="profile_trigger_title_wifi">Wi-Fi triggers for <xliff:g id="profile">%s</xliff:g></string>
     <string name="profile_trigger_configure">Configure trigger</string>
-    <string name="profile_trigger_wifi">Wi-Fi triggers</string>
+    <string name="profile_triggers">Triggers</string>
+    <string name="profile_trigger_filter_all">All triggers</string>
+    <string name="profile_trigger_filter_wifi">Wi-Fi triggers</string>
+    <string name="profile_trigger_filter_bluetooth">Bluetooth triggers</string>
     <string name="profile_write_nfc_tag">Write to NFC tag</string>
     <string name="profile_write_touch_tag">Touch tag to write</string>
     <string name="profile_write_success">Tag successfully written</string>

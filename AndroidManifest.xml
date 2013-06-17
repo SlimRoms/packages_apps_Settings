@@ -1572,6 +1572,24 @@
                 android:value="com.android.settings.slim.PowerMenu" />
         </activity>
 
+        <!-- Pseudo-activity used to provide an intent-filter entry point to ASS UserInterface settings -->
+        <activity android:name="Settings$InterfaceSettingsActivity"
+                android:label="@string/interface_settings_title"
+                android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.settings.slim.InterfaceSettings" />
+                <action android:name="android.settings.slim.InterfaceSettings" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.InterfaceSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/interface_settings" />
+        </activity>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
         <activity android:name="Settings$ASSRamBarActivity"
                 android:label="@string/ram_bar">

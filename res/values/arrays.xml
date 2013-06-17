@@ -2150,6 +2150,19 @@
         <item>2</item>
     </string-array>
 
+    <!-- Profiles -->
+    <string-array name="power_menu_profiles_entries">
+        <item>@string/power_menu_profiles_disabled</item>
+        <item>@string/power_menu_profiles_lock</item>
+        <item>@string/power_menu_profiles_all</item>
+    </string-array>
+
+    <string-array name="power_menu_profiles_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="less_notification_sounds_entries">
         <item>Default Behaviour</item>
         <item>3s</item>

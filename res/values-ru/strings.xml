@@ -2164,6 +2164,9 @@
     <string name="power_menu_screenshot_title">Снимок экрана</string>
     <string name="power_menu_expanded_desktop">Расширенный рабочий стол</string>
     <string name="power_menu_profiles_title">Выбор профиля</string>
+    <string name="power_menu_profiles_disabled">Отключено</string>
+    <string name="power_menu_profiles_lock">Отключено на экране блокировки</string>
+    <string name="power_menu_profiles_all">Всегда показывать</string>
     <string name="power_menu_airplane_title">Режим полёта</string>
     <string name="power_menu_sound_title">Звуковая панель</string>
     <string name="summary_expanded_desktop">%1$s</string>

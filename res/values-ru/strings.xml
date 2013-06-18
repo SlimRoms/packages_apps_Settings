@@ -3289,5 +3289,9 @@
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">APN будет удалена.</string>
+    
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">Свайп строки состояния</string>
+    <string name="statusbar_quick_peek_summary">Открывать строку состояния свайпом от верхнего края, если она скрыта</string>
 
 </resources>

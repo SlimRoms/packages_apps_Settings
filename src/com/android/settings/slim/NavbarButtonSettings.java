@@ -71,18 +71,24 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
 
-    Preference mNavRingTargets;
+    private String[] mClickActions = new String[5];
+    private String[] mLongpressActions = new String[5];
+    private String[] mPortraitIcons = new String[5];
+
+    private final static String mNavBarConfigDefault = "**back**|**null**|empty|"
+                                                        + "**home**|**null**|empty|"
+                                                        + "**recents**|**null**|empty";
 
     ListPreference mNavBarButtonQty;
     CheckBoxPreference mEnableNavbarLong;
 
     Preference mPendingPreference;
-
     Resources mSystemUiResources;
 
     private ShortcutPickerHelper mPicker;
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
+    private int mNavBarQnty;
 
     private File customnavImage;
     private File customnavTemp;
@@ -92,7 +98,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     private static class NavBarCustomAction {
         String activitySettingName;
         Preference preference;
-        int iconIndex = -1;
+        int index;
+        boolean longpress = false;
     }
 
     @Override
@@ -115,7 +122,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.SYSTEMUI_NAVBAR_LONG_ENABLE, 0);
-                resetNavbar (3);
+                resetNavbar(3);
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -123,43 +130,28 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     }
 
     private void resetNavbar (int qnty) {
+       if (qnty != 5) {
+            mClickActions[0] = "**back**";
+            mClickActions[1] = "**home**";
+            mClickActions[2] = "**recents**";
+            mClickActions[3] = "**null**";
+            mClickActions[4] = "**null**";
+        } else {
+            mClickActions[0] = "**null**";
+            mClickActions[1] = "**back**";
+            mClickActions[2] = "**home**";
+            mClickActions[3] = "**recents**";
+            mClickActions[4] = "**null**";
+        }
 
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_BUTTONS_QTY, qnty);
-
-                if (qnty != 5) {
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[0], "**back**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[1], "**home**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[2], "**recents**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[3], "**null**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[4], "**null**");
-                 } else {
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[0], "**null**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[1], "**back**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[2], "**home**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[3], "**recents**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[4], "**null**");
-                 }
-
-                for (int i = 0; i < 5; i++) {
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[i], null);
-
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.NAVIGATION_CUSTOM_APP_ICONS[i], "");
-                }
-                refreshSettings();
-                setHasOptionsMenu(true);
+        for (int i = 0; i < 5; i++) {
+            mLongpressActions[i] = "**null**";
+            mPortraitIcons[i] = "empty";
+        }
+        mNavBarQnty = qnty;
+        setNavigationBarConfig();
+        refreshSettings();
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -185,9 +177,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         }
         if (preference == mNavBarButtonQty) {
             int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTONS_QTY, val);
-            resetNavbar (val);
+            resetNavbar(val);
             refreshSettings();
             return true;
         } else if ((preference.getKey().startsWith("navbar_action"))
@@ -199,26 +189,22 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
             if (newValue.equals("**app**")) {
                 mPendingNavBarCustomAction = new NavBarCustomAction();
                 mPendingNavBarCustomAction.preference = preference;
+                mPendingNavBarCustomAction.index = index;
                 if (longpress) {
-                    mPendingNavBarCustomAction.activitySettingName = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
-                    mPendingNavBarCustomAction.iconIndex = -1;
+                    mPendingNavBarCustomAction.activitySettingName = mLongpressActions[index];
+                    mPendingNavBarCustomAction.longpress = true;
                 } else {
-                    mPendingNavBarCustomAction.activitySettingName = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
-                    mPendingNavBarCustomAction.iconIndex = index;
+                    mPendingNavBarCustomAction.activitySettingName = mClickActions[index];
                 }
                 mPicker.pickShortcut();
             } else {
                 if (longpress) {
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index],
-                            (String) newValue);
+                    mLongpressActions[index] = (String) newValue;
                 } else {
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index],
-                            (String) newValue);
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
+                    mClickActions[index] = (String) newValue;
+                    mPortraitIcons[index] = "empty";
                 }
+                setNavigationBarConfig();
             }
             refreshSettings();
             return true;
@@ -253,14 +239,9 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
 
-                Settings.System.putString(
-                        getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex], "");
-                Settings.System.putString(
-                        getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex],
+                mPortraitIcons[mPendingIconIndex] =
                         Uri.fromFile(
-                                new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath());
+                                new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath();
 
                 File f = new File(selectedImageUri.getPath());
                 if (f.exists())
@@ -272,6 +253,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                                 + getResources().getString(
                                         R.string.custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
+                setNavigationBarConfig();
                 refreshSettings();
             }
         } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
@@ -297,18 +279,16 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         customnavImage = new File(getActivity().getFilesDir()+"navbar_icon_" + mPendingIconIndex + ".png");
         customnavTemp = new File(getActivity().getCacheDir()+"/"+"tmp_icon_" + mPendingIconIndex + ".png");
 
+        getNavigationBarConfig();
+
         mNavBarButtonQty = (ListPreference) findPreference(PREF_NAVBAR_QTY);
         mNavBarButtonQty.setOnPreferenceChangeListener(this);
-        mNavBarButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3) + "");
+        mNavBarButtonQty.setValue(mNavBarQnty + "");
 
         mEnableNavbarLong = (CheckBoxPreference) findPreference("enable_navbar_long");
         mEnableNavbarLong.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SYSTEMUI_NAVBAR_LONG_ENABLE, 0) == 1);
 
-
-        int navbarQuantity = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3);
 
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference("navbar_buttons");
         targetGroup.removeAll();
@@ -316,7 +296,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         PackageManager pm = mContext.getPackageManager();
         Resources res = mContext.getResources();
 
-        for (int i = 0; i < navbarQuantity; i++) {
+        for (int i = 0; i < mNavBarQnty; i++) {
             final int index = i;
             NavBarItemPreference pAction = new NavBarItemPreference(getActivity());
             String dialogTitle = String.format(
@@ -330,8 +310,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
             pAction.setOnPreferenceChangeListener(this);
             targetGroup.addPreference(pAction);
 
-            String uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
+            String uri = mClickActions[index];
 
             if (uri == null) {
                 pAction.setValue("**null**");
@@ -357,8 +336,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 mLongPress.setOnPreferenceChangeListener(this);
                 targetGroup.addPreference(mLongPress);
 
-                String uriLong = Settings.System.getString(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index]);
+                String uriLong = mLongpressActions[index];
 
                if (uriLong == null) {
                     mLongPress.setValue("**null**");
@@ -398,13 +376,12 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 });
             }
 
-            String customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[i]);
-            if (customIconUri != null && customIconUri.length() > 0) {
+            String customIconUri = mPortraitIcons[i];
+            if (customIconUri != null && !customIconUri.equals("empty")) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
                     pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
-            } else if (customIconUri != null && !customIconUri.equals("")) {
+            } else if (customIconUri != null && uri.equals("**app**")) {
                 // here they chose another app icon
                 try {
                     pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(uri, 0))));
@@ -433,8 +410,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     }
 
     private Drawable getNavbarIconImage(int index, boolean landscape) {
-        String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
+        String uri = mClickActions[index];
 
         int resId = 0;
         PackageManager pm = mContext.getPackageManager();
@@ -447,9 +423,6 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 Log.e("Navbar buttons:", "can't access systemui resources",e);
             }
         }
-
-        if (uri == null)
-            return getResources().getDrawable(R.drawable.ic_sysbar_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
@@ -503,11 +476,10 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     private String getProperSummary(int i, boolean longpress) {
         String uri = "";
         if (longpress)
-            uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[i]);
+            uri = mLongpressActions[i];
         else
-            uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[i]);
+            uri = mClickActions[i];
+
         if (uri == null)
             return getResources().getString(R.string.navbar_action_none);
 
@@ -548,37 +520,28 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
-        if (Settings.System.putString(getActivity().getContentResolver(),
-                mPendingNavBarCustomAction.activitySettingName, uri)) {
-            if (mPendingNavBarCustomAction.iconIndex != -1) {
-                if (bmp == null) {
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
-                                    "");
-                } else {
-                    String iconName = getIconFileName(mPendingNavBarCustomAction.iconIndex);
-                    FileOutputStream iconStream = null;
-                    try {
-                        iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
-                    } catch (FileNotFoundException e) {
-                        return; // NOOOOO
-                    }
-                    bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
-                                    Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
+        if (!mPendingNavBarCustomAction.longpress) {
+            if (bmp == null) {
+                mPortraitIcons[mPendingNavBarCustomAction.index] = "empty";
+            } else {
+                String iconName = getIconFileName(mPendingNavBarCustomAction.index);
+                FileOutputStream iconStream = null;
+                try {
+                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
                 }
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                mPortraitIcons[mPendingNavBarCustomAction.index] =
+                                Uri.fromFile(mContext.getFileStreamPath(iconName)).toString();
             }
-            mPendingNavBarCustomAction.preference.setSummary(friendlyName);
+            mClickActions[mPendingNavBarCustomAction.index] = uri;
+        } else {
+            mLongpressActions[mPendingNavBarCustomAction.index] = uri;
         }
+
+        setNavigationBarConfig();
+        mPendingNavBarCustomAction.preference.setSummary(friendlyName);
     }
 
     private String getIconFileName(int index) {
@@ -589,6 +552,53 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
         refreshSettings();
+    }
+
+    private void getNavigationBarConfig() {
+        // init vars to fill with them later the navbar config values
+        int counter = 0;
+        int buttonNumber = 0;
+        String navbarConfig = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.SYSTEMUI_NAVBAR_CONFIG);
+
+        if (navbarConfig == null) {
+            navbarConfig = mNavBarConfigDefault;
+        }
+
+        // Split out the navbar config to work with and add to the list
+        for (String configValue : navbarConfig.split("\\|")) {
+            counter++;
+            if (counter == 1) {
+                mClickActions[buttonNumber] = configValue;
+            }
+            if (counter == 2) {
+                mLongpressActions[buttonNumber] = configValue;
+            }
+            if (counter == 3) {
+                mPortraitIcons[buttonNumber] = configValue;
+                buttonNumber++;
+                //reset counter due that iteration of one button is finished
+                counter = 0;
+            }
+        }
+
+        // set overall counted number off buttons
+        mNavBarQnty = buttonNumber;
+    }
+
+    private void setNavigationBarConfig() {
+        String finalNavbarConfig = "";
+
+        for (int i = 0; i < mNavBarQnty; i++) {
+            if (i != 0) {
+                finalNavbarConfig += "|";
+            }
+            finalNavbarConfig += mClickActions[i] + "|"
+                               + mLongpressActions[i] + "|"
+                               + mPortraitIcons[i];
+        }
+        Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.SYSTEMUI_NAVBAR_CONFIG, finalNavbarConfig);
     }
 
     public static class NavbarLayout extends ListFragment {

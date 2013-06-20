@@ -73,6 +73,17 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
 
+    private String[] mClickActions = new String[7];
+    private String[] mLongpressActions = new String[7];
+    private String[] mPortraitIcons = new String[7];
+
+    private final static String
+            mPieSecondLayerConfigDefault = "**menu**|**null**|empty|"
+                                         + "**notifications**|**null**|empty|"
+                                         + "**search**|**null**|empty|"
+                                         + "**screenshot**|**null**|empty|"
+                                         + "**ime**|**null**|empty";
+
     ListPreference mPieButtonQty;
     CheckBoxPreference mEnablePieLong;
 
@@ -83,6 +94,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     private ShortcutPickerHelper mPicker;
     private int mPendingIconIndex = -1;
     private PieCustomAction mPendingPieCustomAction = null;
+    private int mPieQnty;
 
     private File customPieImage;
     private File customPieTemp;
@@ -92,7 +104,8 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     private static class PieCustomAction {
         String activitySettingName;
         Preference preference;
-        int iconIndex = -1;
+        int index;
+        boolean longpress = false;
     }
 
     @Override
@@ -123,51 +136,32 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     }
 
     private void resetPie (int qnty) {
+       if (qnty != 7) {
+            mClickActions[0] = "**menu**";
+            mClickActions[1] = "**notifications**";
+            mClickActions[2] = "**search**";
+            mClickActions[3] = "**screenshot**";
+            mClickActions[4] = "**ime**";
+            mClickActions[5] = "**null**";
+            mClickActions[6] = "**null**";
+        } else {
+            mClickActions[0] = "**null**";
+            mClickActions[1] = "**menu**";
+            mClickActions[2] = "**notifications**";
+            mClickActions[3] = "**search**";
+            mClickActions[4] = "**screenshot**";
+            mClickActions[5] = "**ime**";
+            mClickActions[6] = "**null**";
+        }
 
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, qnty);
-
-                if (qnty != 7) {
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**menu**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**notifications**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**search**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**screenshot**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**ime**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**null**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
-                 } else {
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[0], "**null**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[1], "**menu**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[2], "**notifications**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[3], "**search**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[4], "**screenshot**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[5], "**ime**");
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[6], "**null**");
-                 }
-
-                for (int i = 0; i < 7; i++) {
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i], null);
-
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[i], "");
-                }
-                refreshSettings();
-                setHasOptionsMenu(true);
+        for (int i = 0; i < 7; i++) {
+            mLongpressActions[i] = "**null**";
+            mPortraitIcons[i] = "empty";
+        }
+        mPieQnty = qnty;
+        setPieConfig();
+        refreshSettings();
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -193,8 +187,6 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         }
         if (preference == mPieButtonQty) {
             int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, val);
             resetPie(val);
             refreshSettings();
             return true;
@@ -207,26 +199,22 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
             if (newValue.equals("**app**")) {
                 mPendingPieCustomAction = new PieCustomAction();
                 mPendingPieCustomAction.preference = preference;
+                mPendingPieCustomAction.index = index;
                 if (longpress) {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index];
-                    mPendingPieCustomAction.iconIndex = -1;
+                    mPendingPieCustomAction.activitySettingName = mLongpressActions[index];
+                    mPendingPieCustomAction.longpress = true;
                 } else {
-                    mPendingPieCustomAction.activitySettingName = Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index];
-                    mPendingPieCustomAction.iconIndex = index;
+                    mPendingPieCustomAction.activitySettingName = mClickActions[index];
                 }
                 mPicker.pickShortcut();
             } else {
                 if (longpress) {
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index],
-                            (String) newValue);
+                    mLongpressActions[index] = (String) newValue;
                 } else {
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index],
-                            (String) newValue);
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[index], "");
+                    mClickActions[index] = (String) newValue;
+                    mPortraitIcons[index] = "empty";
                 }
+                setPieConfig();
             }
             refreshSettings();
             return true;
@@ -261,14 +249,9 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
 
-                Settings.System.putString(
-                        getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex], "");
-                Settings.System.putString(
-                        getContentResolver(),
-                        Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingIconIndex],
+                mPortraitIcons[mPendingIconIndex] =
                         Uri.fromFile(
-                                new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath());
+                                new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath();
 
                 File f = new File(selectedImageUri.getPath());
                 if (f.exists())
@@ -280,6 +263,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                                 + getResources().getString(
                                         R.string.custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
+                setPieConfig();
                 refreshSettings();
             }
         } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
@@ -305,10 +289,11 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         customPieImage = new File(getActivity().getFilesDir()+"pie_icon_second_layer" + mPendingIconIndex + ".png");
         customPieTemp = new File(getActivity().getCacheDir()+"/"+"tmp_pie_icon_second_layer" + mPendingIconIndex + ".png");
 
+        getPieConfig();
+
         mPieButtonQty = (ListPreference) findPreference(PREF_PIE_QTY);
         mPieButtonQty.setOnPreferenceChangeListener(this);
-        mPieButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, 5) + "");
+        mPieButtonQty.setValue(mPieQnty + "");
 
         int pieLong = Settings.System.getInt(mContext.getContentResolver(),
                      Settings.System.PIE_LONG_PRESS_ENABLE_SECOND_LAYER, 0);
@@ -316,17 +301,13 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
         mEnablePieLong = (CheckBoxPreference) findPreference(PREF_PIE_ENABLE_LONG);
         mEnablePieLong.setChecked(pieLong == 1);
 
-
-        int pieQuantity = Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_BUTTONS_QTY_SECOND_LAYER, 5);
-
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference(PREF_PIE_BUTTONS);
         targetGroup.removeAll();
 
         PackageManager pm = mContext.getPackageManager();
         Resources res = mContext.getResources();
 
-        for (int i = 0; i < pieQuantity; i++) {
+        for (int i = 0; i < mPieQnty; i++) {
             final int index = i;
             //we reuse the NavBarItemPreference class here
             NavBarItemPreference pAction = new NavBarItemPreference(getActivity());
@@ -341,8 +322,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
             pAction.setOnPreferenceChangeListener(this);
             targetGroup.addPreference(pAction);
 
-            String uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
+            String uri = mClickActions[index];
 
             if (uri == null) {
                 pAction.setValue("**null**");
@@ -365,8 +345,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 mLongPress.setOnPreferenceChangeListener(this);
                 targetGroup.addPreference(mLongPress);
 
-                String uriLong = Settings.System.getString(getActivity().getContentResolver(),
-                        Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[index]);
+                String uriLong = mLongpressActions[index];
 
                if (uriLong == null) {
                     mLongPress.setValue("**null**");
@@ -406,13 +385,12 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 });
             }
 
-            String customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[i]);
-            if (customIconUri != null && customIconUri.length() > 0) {
+            String customIconUri = mPortraitIcons[i];
+            if (customIconUri != null && !customIconUri.equals("empty")) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
                     pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
-            } else if (customIconUri != null && !customIconUri.equals("")) {
+            } else if (customIconUri != null && uri.equals("**app**")) {
                 // here they chose another app icon
                 try {
                     pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(uri, 0))));
@@ -441,8 +419,7 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     }
 
     private Drawable getPieIconImage(int index, boolean landscape) {
-        String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[index]);
+        String uri =  mClickActions[index];
 
         int resId = 0;
         PackageManager pm = mContext.getPackageManager();
@@ -455,9 +432,6 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
                 Log.e("PieButtons:", "can't access systemui resources",e);
             }
         }
-
-        if (uri == null)
-            return getResources().getDrawable(R.drawable.ic_sysbar_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
@@ -511,11 +485,10 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
     private String getProperSummary(int i, boolean longpress) {
         String uri = "";
         if (longpress)
-            uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_LONGPRESS_ACTIVITIES_SECOND_LAYER[i]);
+            uri = mLongpressActions[i];
         else
-            uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.PIE_CUSTOM_ACTIVITIES_SECOND_LAYER[i]);
+            uri = mClickActions[i];
+
         if (uri == null)
             return getResources().getString(R.string.pie_action_none);
 
@@ -556,41 +529,79 @@ public class PieButtonSecondLayerSettings extends SettingsPreferenceFragment imp
 
     @Override
     public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
-        if (Settings.System.putString(getActivity().getContentResolver(),
-                mPendingPieCustomAction.activitySettingName, uri)) {
-            if (mPendingPieCustomAction.iconIndex != -1) {
-                if (bmp == null) {
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
-                                    "");
-                } else {
-                    String iconName = getIconFileName(mPendingPieCustomAction.iconIndex);
-                    FileOutputStream iconStream = null;
-                    try {
-                        iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
-                    } catch (FileNotFoundException e) {
-                        return; // NOOOOO
-                    }
-                    bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex], "");
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.PIE_CUSTOM_ICONS_SECOND_LAYER[mPendingPieCustomAction.iconIndex],
-                                    Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
+        if (!mPendingPieCustomAction.longpress) {
+            if (bmp == null) {
+                mPortraitIcons[mPendingPieCustomAction.index] = "empty";
+            } else {
+                String iconName = getIconFileName(mPendingPieCustomAction.index);
+                FileOutputStream iconStream = null;
+                try {
+                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
                 }
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                mPortraitIcons[mPendingPieCustomAction.index] =
+                                Uri.fromFile(mContext.getFileStreamPath(iconName)).toString();
             }
-            mPendingPieCustomAction.preference.setSummary(friendlyName);
+            mClickActions[mPendingPieCustomAction.index] = uri;
+        } else {
+            mLongpressActions[mPendingPieCustomAction.index] = uri;
         }
+
+        setPieConfig();
+        mPendingPieCustomAction.preference.setSummary(friendlyName);
     }
 
     private String getIconFileName(int index) {
         return "pie_icon_second_layer" + index + ".png";
+    }
+
+    private void getPieConfig() {
+        // init vars to fill with them later the pie config values
+        int counter = 0;
+        int buttonNumber = 0;
+        String pieConfig = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTONS_CONFIG_SECOND_LAYER);
+
+        if (pieConfig == null) {
+            pieConfig = mPieSecondLayerConfigDefault;
+        }
+
+        // Split out the navbar config to work with and add to the list
+        for (String configValue : pieConfig.split("\\|")) {
+            counter++;
+            if (counter == 1) {
+                mClickActions[buttonNumber] = configValue;
+            }
+            if (counter == 2) {
+                mLongpressActions[buttonNumber] = configValue;
+            }
+            if (counter == 3) {
+                mPortraitIcons[buttonNumber] = configValue;
+                buttonNumber++;
+                //reset counter due that iteration of one button is finished
+                counter = 0;
+            }
+        }
+
+        // set overall counted number off buttons
+        mPieQnty = buttonNumber;
+    }
+
+    private void setPieConfig() {
+        String finalPieConfig = "";
+
+        for (int i = 0; i < mPieQnty; i++) {
+            if (i != 0) {
+                finalPieConfig += "|";
+            }
+            finalPieConfig += mClickActions[i] + "|"
+                               + mLongpressActions[i] + "|"
+                               + mPortraitIcons[i];
+        }
+        Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTONS_CONFIG_SECOND_LAYER, finalPieConfig);
     }
 
     @Override

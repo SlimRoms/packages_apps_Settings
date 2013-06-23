@@ -42,6 +42,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -107,6 +108,10 @@ public class ProfileConfig extends SettingsPreferenceFragment
         if (isMobileData) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+            final TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+            if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
+                mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_2G3G, getString(R.string.toggle2g3g), R.array.profile_networkmode_entries));
+            }
         }
         if (WimaxHelper.isWimaxSupported(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
@@ -303,6 +308,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         if (connectionList != null) {
             connectionList.removeAll();
             for (ConnectionItem connection : mConnections) {
+                String[] connectionstrings = getResources().getStringArray(connection.mChoices);
                 ConnectionSettings settings = mProfile.getSettingsForConnection(connection.mConnectionId);
                 if (settings == null) {
                     settings = new ConnectionSettings(connection.mConnectionId);
@@ -312,8 +318,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 ProfileConnectionPreference pref = new ProfileConnectionPreference(getActivity());
                 pref.setKey("connection_" + connection.mConnectionId);
                 pref.setTitle(connection.mLabel);
-                pref.setSummary(settings.getValue() == 1 ? getString(R.string.connection_state_enabled)
-                        : getString(R.string.connection_state_disabled));
+                pref.setSummary(connectionstrings[settings.getValue()]);
                 pref.setPersistent(false);
                 pref.setConnectionItem(connection);
                 connection.mCheckbox = pref;
@@ -442,10 +447,18 @@ public class ProfileConfig extends SettingsPreferenceFragment
         String mLabel;
         ConnectionSettings mSettings;
         ProfileConnectionPreference mCheckbox;
+        int mChoices;
 
         public ConnectionItem(int connectionId, String label) {
             mConnectionId = connectionId;
+            mChoices = R.array.profile_connection_entries;
             mLabel = label;
+        }
+
+        public ConnectionItem(int connectionId, String label, int choices) {
+            mConnectionId = connectionId;
+            mLabel = label;
+            mChoices = choices;
         }
     }
 

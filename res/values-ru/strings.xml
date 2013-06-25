@@ -2047,6 +2047,9 @@
     <!-- Profile settings screen, section header for settings related to notification profiles -->
     <string name="profile_settings">Настройки профиля</string>
     <string name="profile_name">Имя</string>
+    <string name="profile_trigger_connect">При подключении</string>
+    <string name="profile_trigger_disconnect">При отключении</string>
+    <string name="profile_trigger_notrigger">Нет триггера</string>
     <!-- Profile Settings sound modes labels -->
     <string name="sound_mode">Режим уведомления</string>
     <string name="ringer_mode">Режим звонка</string>
@@ -2149,6 +2152,11 @@
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16-битная прозрачность</string>
     <string name="pref_use_16bpp_alpha_summary">Лучшая производительность графической системы, но возможно снижение качества и появление визуальных артефактов (требуется перезагрузка)</string>
+    <string name="profile_trigger_configure">Изменить триггер</string>
+    <string name="profile_triggers">Триггеры</string>
+    <string name="profile_trigger_filter_all">Все триггеры</string>
+    <string name="profile_trigger_filter_wifi">Триггеры Wi-Fi</string>
+    <string name="profile_trigger_filter_bluetooth">Триггеры Bluetooth</string>
     <string name="profile_write_nfc_tag">Записать тег NFC</string>
     <string name="profile_write_touch_tag">Нажмите для записи тега</string>
     <string name="profile_write_success">Тег успешно записан</string>

@@ -1915,7 +1915,9 @@
         <item>@string/custom_app</item>
         <item>@string/kill_app</item>
         <item>@string/lastapp</item>
+        <item>@string/notifications</item>
         <item>@string/open_ime_switcher</item>
+        <item>@string/quicksettings</item>
         <item>@string/ring_silent</item>
         <item>@string/ring_vib</item>
         <item>@string/ring_vib_silent</item>
@@ -1930,7 +1932,9 @@
         <item>**app**</item>
         <item>**kill**</item>
         <item>**lastapp**</item>
+        <item>**notifications**</item>
         <item>**ime**</item>
+        <item>**quicksettings**</item>
         <item>**ring_silent**</item>
         <item>**ring_vib**</item>
         <item>**ring_vib_silent**</item>

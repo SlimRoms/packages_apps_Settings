@@ -398,6 +398,10 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
                     return getResources().getString(R.string.screen_off);
             else if (uri.equals("**power**"))
                     return getResources().getString(R.string.power);
+            else if (uri.equals("**notifications**"))
+                    return getResources().getString(R.string.notifications);
+            else if (uri.equals("**quicksettings**"))
+                    return getResources().getString(R.string.quicksettings);
             else if (uri.equals("**assist**"))
                     return getResources().getString(R.string.google_now);
         } else {
@@ -446,6 +450,10 @@ public class NavRingTargets extends SettingsPreferenceFragment implements
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_power", null, null);
         } else if (uri.equals("**power**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_power", null, null);
+        } else if (uri.equals("**notifications**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_notifications", null, null);
+        } else if (uri.equals("**quicksettings**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_qs", null, null);
         } else if (uri.equals("**assist**")) {
                 resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_navbar_googlenow", null, null);
         } else {

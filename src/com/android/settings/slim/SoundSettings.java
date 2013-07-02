@@ -52,6 +52,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
+    private static final String KEY_VIBRATE_DURING_CALLS = "notification_vibrate_during_calls";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_LOCK_VOLUME_KEYS = "lock_volume_keys";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
@@ -74,6 +75,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mVolBtnMusicCtrl;
     private CheckBoxPreference mConvertSoundToVibration;
+    private CheckBoxPreference mVibrateDuringCalls;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mLockVolumeKeys;
     private CheckBoxPreference mVolumeKeysControlRing;
@@ -89,8 +91,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getContentResolver();
 
         addPreferencesFromResource(R.xml.sound_settings_rom);
-
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
         mVolumeOverlay.setOnPreferenceChangeListener(this);
@@ -113,6 +113,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mConvertSoundToVibration.setPersistent(false);
         mConvertSoundToVibration.setChecked(Settings.System.getInt(resolver,
                 Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION, 1) == 1);
+
+        mVibrateDuringCalls = (CheckBoxPreference) findPreference(KEY_VIBRATE_DURING_CALLS);
+        mVibrateDuringCalls.setChecked(Settings.System.getInt(resolver,
+            Settings.System.NOTIFICATION_VIBRATE_DURING_ALERTS_DISABLED, 0) != 0);
 
         mVolumeAdjustSounds = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUNDS);
         mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
@@ -144,8 +148,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mPowerSoundsVibrate = (CheckBoxPreference) findPreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
         mPowerSoundsVibrate.setChecked(Settings.Global.getInt(resolver,
                 Settings.Global.POWER_NOTIFICATIONS_VIBRATE, 0) != 0);
+
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator == null || !vibrator.hasVibrator()) {
             removePreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
+            removePreference(KEY_CONVERT_SOUND_TO_VIBRATE);
+            removePreference(KEY_VIBRATE_DURING_CALLS);
         }
 
         mPowerSoundsRingtone = findPreference(KEY_POWER_NOTIFICATIONS_RINGTONE);
@@ -192,27 +200,38 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
         if (preference == mSafeHeadsetVolume) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SAFE_HEADSET_VOLUME,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SAFE_HEADSET_VOLUME,
                     mSafeHeadsetVolume.isChecked() ? 1 : 0);
 
         } else if (preference == mVolBtnMusicCtrl) {
-            Settings.System.putInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLBTN_MUSIC_CONTROLS,
                     mVolBtnMusicCtrl.isChecked() ? 1 : 0);
 
         } else if (preference == mConvertSoundToVibration) {
-            Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION,
                     mConvertSoundToVibration.isChecked() ? 1 : 0);
 
+        } else if (preference == mVibrateDuringCalls) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.NOTIFICATION_VIBRATE_DURING_ALERTS_DISABLED,
+                    mVibrateDuringCalls.isChecked() ? 1 : 0);
+
         } else if (preference == mVolumeAdjustSounds) {
-            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
 
         } else if (preference == mLockVolumeKeys) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_VOLUME_KEYS,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCK_VOLUME_KEYS,
                     mLockVolumeKeys.isChecked() ? 1 : 0);
 
         } else if (preference == mVolumeKeysControlRing) {
-            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
                     mVolumeKeysControlRing.isChecked() ? 1 : 0);
 
         } else if (preference == mCameraSounds) {

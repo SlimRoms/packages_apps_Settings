@@ -3069,4 +3069,20 @@ Zusätzliche Optionen können durch einen langen Druck auf die Zeile angezeigt w
         <item quantity="one">Das Passwort muss mindestens ein Zeichen enthalten, das kein Buchstabe ist.</item>
         <item quantity="other">Das Passwort muss mindestens %d Zeichen enthalten, die keine Buchstaben sind.</item>
     </plurals>
+
+    <!-- less notification sound -->
+    <string name="less_notification_sounds_default">Standard</string>
+    <string name="less_notification_sounds_3s">3 sekunden</string>
+    <string name="less_notification_sounds_5s">5 sekunden</string>
+    <string name="less_notification_sounds_10s">10 sekunden</string>
+    <string name="less_notification_sounds_15s">15 sekunden</string>
+    <string name="less_notification_sounds_30s">30 sekunden</string>
+    <string name="less_notification_sounds_45s">45 sekunden</string>
+    <string name="less_notification_sounds_1m">1 minute</string>
+    <string name="less_notification_sounds_2m">2 minuten</string>
+    <string name="less_notification_sounds_5m">5 minuten</string>
+
+    <!-- vibrate during phone calls -->
+    <string name="notification_vibrate_during_calls_title">Vibrieren während des Telefonats</string>
+    <string name="notification_vibrate_during_calls_summary">Eingehende Benachrichtungen vibrieren während des Telefonats</string>
 </resources>

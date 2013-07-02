@@ -413,18 +413,6 @@
     <item>Сингапур</item>
     <item>Бразилия</item>
   </string-array>
-  <string-array name="less_notification_sounds_entries">
-    <item>По умолчанию</item>
-    <item>3с</item>
-    <item>5с</item>
-    <item>10с</item>
-    <item>15с</item>
-    <item>30с</item>
-    <item>45с</item>
-    <item>1м</item>
-    <item>2м</item>
-    <item>5м</item>
-  </string-array>
   <string-array name="notifs_beh_entries">
     <item>Обычное</item>
     <item>Не раскрывать</item>

@@ -32,13 +32,6 @@
         android:summary="@string/camera_sounds_summary"
         android:defaultValue="true" />
 
-    <ListPreference
-        android:key="less_notification_sounds"
-        android:title="@string/less_notification_sounds_title"
-        android:summary="@string/less_notification_sounds_summary"
-        android:entries="@array/less_notification_sounds_entries"
-        android:entryValues="@array/less_notification_sounds_values" />
-
     <CheckBoxPreference
         android:key="lock_volume_keys"
         android:title="@string/sound_lock_volume_keys_title"
@@ -50,12 +43,6 @@
         android:title="@string/volume_keys_control_ring_stream"
         android:summary="@string/volume_keys_control_ring_stream_summary"
         android:defaultValue="false" />
-
-    <CheckBoxPreference
-        android:key="notification_convert_sound_to_vibration"
-        android:title="@string/notification_convert_sound_to_vibration_title"
-        android:summary="@string/notification_convert_sound_to_vibration_summary"
-        android:defaultValue="true" />
 
     <CheckBoxPreference
         android:key="safe_headset_volume"
@@ -80,6 +67,29 @@
         android:title="@string/volbtn_music_controls_title"
         android:summary="@string/volbtn_music_controls_summary"
         android:persistent="false" />
+
+    <PreferenceCategory
+        android:title="@string/notifications_category_title" />
+
+        <ListPreference
+            android:key="less_notification_sounds"
+            android:title="@string/less_notification_sounds_title"
+            android:summary="@string/less_notification_sounds_summary"
+            android:entries="@array/less_notification_sounds_entries"
+            android:entryValues="@array/less_notification_sounds_values" />
+
+        <CheckBoxPreference
+            android:key="notification_convert_sound_to_vibration"
+            android:title="@string/notification_convert_sound_to_vibration_title"
+            android:summary="@string/notification_convert_sound_to_vibration_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="notification_vibrate_during_calls"
+            android:title="@string/notification_vibrate_during_calls_title"
+            android:summary="@string/notification_vibrate_during_calls_summary"
+            android:persistent="false"
+            android:defaultValue="false" />
 
     <PreferenceCategory
         android:title="@string/power_notifications_category_title" />

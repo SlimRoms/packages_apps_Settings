@@ -433,20 +433,7 @@
         <item>Brasilien</item>
     </string-array>
 
-    <string-array name="less_notification_sounds_entries">
-        <item>Standard</item>
-        <item>3s</item>
-        <item>5s</item>
-        <item>10s</item>
-        <item>15s</item>
-        <item>30s</item>
-        <item>45s</item>
-        <item>1m</item>
-        <item>2m</item>
-        <item>5m</item>
-    </string-array>
-	
-	<!-- Notification behavior preferences -->
+    <!-- Notification behavior preferences -->
     <string-array name="notifs_beh_entries">
         <item>Normal</item>
         <item>Nie aufklappen</item>

@@ -14,36 +14,36 @@
      limitations under the License.
 -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:paddingTop="8dip"
+    android:paddingBottom="8dip" >
     <ImageView
         android:id="@+id/appIcon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="2dip"
-        android:layout_marginBottom="2dip"
-        android:layout_marginLeft="2dip"
-        android:src="@drawable/ic_launcher"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:layout_marginEnd="8dip"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerInside"
+        android:contentDescription="@null" />
     <TextView
         android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toRightOf="@+id/appIcon"
-        android:layout_centerVertical="true" />
+        android:layout_width="0dip"
+        android:layout_gravity="fill_horizontal|center_vertical"
+        android:layout_marginTop="2dip"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAlignment="viewStart" />
     <ImageView
         android:id="@+id/appPrivacyGuardIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="2dip"
-        android:layout_marginBottom="2dip"
-        android:layout_marginLeft="2dip"
-        android:src="@drawable/ic_privacy_guard"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true" />
-</RelativeLayout>
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerInside"
+        android:contentDescription="@null" />
+</GridLayout>

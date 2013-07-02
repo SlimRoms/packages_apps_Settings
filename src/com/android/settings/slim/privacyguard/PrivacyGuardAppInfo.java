@@ -18,35 +18,35 @@ package com.android.settings.slim.privacyguard;
 
 public class PrivacyGuardAppInfo {
 
-   private String mAppTitle;
-   private String mAppPackageName;
-   private boolean mAppPrivacyGuard;
+    private String mAppTitle;
+    private String mAppPackageName;
+    private boolean mAppPrivacyGuard;
 
-   // get and set information off each app object
-   // created holded here
+    // get and set information off each app object
+    // created holded here
 
-   public String getTitle() {
-      return mAppTitle;
-   }
+    public String getTitle() {
+       return mAppTitle;
+    }
 
-   public void setTitle(String title) {
-      this.mAppTitle = title;
-   }
+    public void setTitle(String title) {
+       this.mAppTitle = title;
+    }
 
-   public String getPackageName() {
-      return mAppPackageName;
-   }
+    public String getPackageName() {
+       return mAppPackageName;
+    }
 
-   public void setPackageName(String packageName) {
-      this.mAppPackageName = packageName;
-   }
+    public void setPackageName(String packageName) {
+       this.mAppPackageName = packageName;
+    }
 
-   public boolean getPrivacyGuard() {
-      return mAppPrivacyGuard;
-   }
+    public boolean getPrivacyGuard() {
+       return mAppPrivacyGuard;
+    }
 
-   public void setPrivacyGuard(boolean privacyGuard) {
-      this.mAppPrivacyGuard = privacyGuard;
-   }
+    public void setPrivacyGuard(boolean privacyGuard) {
+       this.mAppPrivacyGuard = privacyGuard;
+    }
 
 }

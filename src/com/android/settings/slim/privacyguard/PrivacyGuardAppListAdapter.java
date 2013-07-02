@@ -130,12 +130,13 @@ public class PrivacyGuardAppListAdapter extends BaseAdapter {
 
         // set the privacy guard icon
         public void setPrivacyGuardIcon(boolean privacyEnabled) {
+            Drawable img = null;
             if (privacyEnabled) {
-                Drawable img = mContext.getResources().getDrawable(R.drawable.ic_privacy_guard);
-                mPrivacyGuardIcon.setImageDrawable(img);
+                img = mContext.getResources().getDrawable(R.drawable.ic_privacy_guard);
             } else {
-                mPrivacyGuardIcon.setImageDrawable(null);
+                img = mContext.getResources().getDrawable(R.drawable.ic_privacy_guard_off);
             }
+            mPrivacyGuardIcon.setImageDrawable(img);
         }
     }
 }

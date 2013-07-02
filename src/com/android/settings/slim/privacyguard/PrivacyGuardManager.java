@@ -26,6 +26,8 @@ import java.util.Map;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -127,6 +129,13 @@ public class PrivacyGuardManager extends Fragment
         if (!mFirstHelpWasShown) {
             showHelp();
         }
+
+        // load preference fragment
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        PrivacyGuardPrefs privacyGuardPrefs = new PrivacyGuardPrefs();
+        fragmentTransaction.replace(R.id.privacyGuardPrefs, privacyGuardPrefs);
+        fragmentTransaction.commit();
 
         // load apps and construct the list
         loadApps();

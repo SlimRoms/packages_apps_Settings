@@ -2502,8 +2502,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="circle_battery_animation_speed_slow">Lent</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
     <string name="circle_battery_animation_speed_fast">Rapide</string>
-    <string name="battery_color_reset_title">Réinitialiser les couleurs de la batterie</string>
-    <string name="battery_color_reset_summary">Réinitialiser les couleurs de batterie pour appliquer les couleurs du thème installé</string>
     <string name="battery_bar">Emplacement de la barre de batterie</string>
     <string name="battery_bar_color">Couleur de la barre de batterie</string>
     <string name="battery_bar_cat">Style de barre de la batterie</string>

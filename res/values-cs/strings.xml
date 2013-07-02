@@ -2480,8 +2480,6 @@
     <string name="circle_battery_animation_speed_slow">Pomalu</string>
     <string name="circle_battery_animation_speed_stock">Normální</string>
     <string name="circle_battery_animation_speed_fast">Rychle</string>
-    <string name="battery_color_reset_title">Obnovit barvy baterie</string>
-    <string name="battery_color_reset_summary">Obnovit barvy baterie pro použití výchozích barev tématu</string>
     <string name="battery_bar">Umístění proužku baterie</string>
     <string name="battery_bar_color">Barva proužku baterie</string>
     <string name="battery_bar_cat">Styl proužku baterie</string>

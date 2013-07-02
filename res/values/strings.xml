@@ -4892,6 +4892,7 @@
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
     <string name="clock_color_title">Clock color</string>
+    <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_show_clock_title">Show clock</string>
     <string name="status_bar_am_pm_title">AM/PM style</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
@@ -5318,8 +5319,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="circle_battery_animation_speed_slow">Slow</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
     <string name="circle_battery_animation_speed_fast">Fast</string>
-    <string name="battery_color_reset_title">Reset battery colors</string>
-    <string name="battery_color_reset_summary">Reset battery colors to apply installed theme engine colors</string>
+    <string name="status_bar_battery_icon_style_reset">Reset icon colors</string>
+    <string name="status_bar_battery_bar_style_reset">Reset battery bar colors</string>
     <string name="battery_bar">Battery bar location</string>
     <string name="battery_bar_color">Battery bar color</string>
     <string name="battery_bar_cat">Battery bar style</string>

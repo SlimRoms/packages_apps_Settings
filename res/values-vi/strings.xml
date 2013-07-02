@@ -2480,8 +2480,6 @@
     <string name="circle_battery_animation_speed_slow">Chậm</string>
     <string name="circle_battery_animation_speed_stock">Bình thường</string>
     <string name="circle_battery_animation_speed_fast">Nhanh</string>
-    <string name="battery_color_reset_title">Khôi phục các màu thông báo pin</string>
-    <string name="battery_color_reset_summary">Đặt lại các giá trị màu sắc về mặc định theo chủ đề giao diện đã được cài đặt</string>
     <string name="battery_bar">Thanh báo pin</string>
     <string name="battery_bar_color">Màu thanh báo pin</string>
     <string name="battery_bar_cat">Kiểu thanh báo pin</string>

@@ -110,7 +110,6 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         return prefs;
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);

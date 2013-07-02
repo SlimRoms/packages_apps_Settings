@@ -2472,8 +2472,6 @@
     <string name="circle_battery_animation_speed_slow">Lėtas</string>
     <string name="circle_battery_animation_speed_stock">Įprastas</string>
     <string name="circle_battery_animation_speed_fast">Greitas</string>
-    <string name="battery_color_reset_title">Atstatyti baterijos spalvas</string>
-    <string name="battery_color_reset_summary">Atstatyti baterijos spalvas norint pritaikyti įdiegtos temos spalvas</string>
     <string name="battery_bar">Baterijos piktogramos vieta</string>
     <string name="battery_bar_color">Baterijos piktogramos spalva</string>
     <string name="battery_bar_cat">Baterijos piktogramos stilius</string>

@@ -2661,8 +2661,6 @@
     <string name="circle_battery_animation_speed_slow">Медленно</string>
     <string name="circle_battery_animation_speed_stock">Нормально</string>
     <string name="circle_battery_animation_speed_fast">Быстро</string>
-    <string name="battery_color_reset_title">Сбросить цвета батареи</string>
-    <string name="battery_color_reset_summary">Сбросить цвета батареи и установить цвета из текущей темы</string>
     <string name="battery_bar">Положение полосы зарядки</string>
     <string name="battery_bar_color">Цвет полосы зарядки</string>
     <string name="battery_bar_cat">Стиль полосы зарядки</string>

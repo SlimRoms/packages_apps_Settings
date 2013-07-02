@@ -2472,8 +2472,6 @@
     <string name="circle_battery_animation_speed_slow">Wolno</string>
     <string name="circle_battery_animation_speed_stock">Normalny</string>
     <string name="circle_battery_animation_speed_fast">Szybko</string>
-    <string name="battery_color_reset_title">Resetuj kolory powiadomienia baterii</string>
-    <string name="battery_color_reset_summary">Resetuj kolory baterii aby przywrócić ustawienia skórki</string>
     <string name="battery_bar">Lokalizacja paska baterii</string>
     <string name="battery_bar_color">Kolor paska baterii</string>
     <string name="battery_bar_cat">Styl paska paterii</string>

@@ -2501,8 +2501,6 @@ due per inserire ulteriori punti di controllo. \'Rimuovi\' cancella la riga sele
     <string name="circle_battery_animation_speed_slow">Lento</string>
     <string name="circle_battery_animation_speed_stock">Normale</string>
     <string name="circle_battery_animation_speed_fast">Veloce</string>
-    <string name="battery_color_reset_title">Resetta i colori della batteria</string>
-    <string name="battery_color_reset_summary">Resetta i colori della batteria per applicare il tema installato</string>
     <string name="battery_bar">Posizione della barra della batteria</string>
     <string name="battery_bar_color">Colore della barra della batteria</string>
     <string name="battery_bar_cat">Stile della barra della batteria</string>

@@ -2464,8 +2464,6 @@
     <string name="circle_battery_animation_speed_slow">Lento</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
     <string name="circle_battery_animation_speed_fast">Rápido</string>
-    <string name="battery_color_reset_title">Resetear colores    batería</string>
-    <string name="battery_color_reset_summary">Resetear colores batería para aplicar colores del motor de colores del tema instalado</string>
     <string name="battery_bar">Ubicación de la barra de batería</string>
     <string name="battery_bar_color">Color de la barra de batería</string>
     <string name="battery_bar_cat">Estilo de barra de batería</string>

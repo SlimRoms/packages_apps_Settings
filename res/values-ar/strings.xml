@@ -2502,8 +2502,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="circle_battery_animation_speed_slow">بطيئة</string>
     <string name="circle_battery_animation_speed_stock">عادي</string>
     <string name="circle_battery_animation_speed_fast">بسرعة</string>
-    <string name="battery_color_reset_title">Reset battery colors</string>
-    <string name="battery_color_reset_summary">Reset battery colors to apply installed theme engine colors</string>
     <string name="battery_bar">Battery bar location</string>
     <string name="battery_bar_color">Battery bar color</string>
     <string name="battery_bar_cat">Battery bar style</string>

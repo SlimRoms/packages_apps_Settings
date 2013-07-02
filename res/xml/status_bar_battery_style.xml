@@ -50,11 +50,6 @@
             android:title="@string/battery_text_charging_color"
             android:defaultValue="0xff0099cc" />
 
-        <Preference
-            android:key="battery_color_reset"
-            android:title="@string/battery_color_reset_title"
-            android:summary="@string/battery_color_reset_summary" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

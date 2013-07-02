@@ -2488,8 +2488,6 @@ Zusätzliche Optionen können durch einen langen Druck auf die Zeile angezeigt w
     <string name="circle_battery_animation_speed_slow">Langsam</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
     <string name="circle_battery_animation_speed_fast">Schnell</string>
-    <string name="battery_color_reset_title">Batteriefarben zurücksetzen</string>
-    <string name="battery_color_reset_summary">Festgelegte Farben der Batterie auf Standard des aktuellen Designs zurücksetzen</string>
     <string name="battery_bar">Position</string>
     <string name="battery_bar_color">Farbe</string>
     <string name="battery_bar_cat">Batterieleiste</string>

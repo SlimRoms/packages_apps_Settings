@@ -16,11 +16,10 @@
 
 package com.android.settings.slim.privacyguard;
 
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,23 +28,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.settings.R;
+import com.android.settings.slim.privacyguard.PrivacyGuardManager.AppInfo;
+
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class PrivacyGuardAppListAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
+    private PackageManager mPm;
 
-    private List<PrivacyGuardManager.AppInfo> mApps;
-    private Map<String, Drawable> mIcons;
+    private List<AppInfo> mApps;
+    private ConcurrentHashMap<String, Drawable> mIcons;
     private Drawable mDefaultImg;
 
     private Context mContext;
 
     //constructor
-    public PrivacyGuardAppListAdapter(Context context) {
+    public PrivacyGuardAppListAdapter(Context context, List<AppInfo> apps) {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
+        mPm = context.getPackageManager();
+        mApps = apps;
+
         // set the default icon till the actual app icon is loaded in async task
-        mDefaultImg = mContext.getResources().getDrawable(R.drawable.ic_launcher);
+        mDefaultImg = mContext.getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
+        mIcons = new ConcurrentHashMap<String, Drawable>();
+
+        new LoadIconsTask().execute(apps.toArray(new PrivacyGuardManager.AppInfo[]{}));
     }
 
     @Override
@@ -83,11 +93,9 @@ public class PrivacyGuardAppListAdapter extends BaseAdapter {
         PrivacyGuardManager.AppInfo app = mApps.get(position);
 
         appHolder.title.setText(app.title);
-        if (mIcons == null || mIcons.get(app.packageName) == null) {
-            appHolder.icon.setImageDrawable(mDefaultImg);
-        } else {
-            appHolder.icon.setImageDrawable(mIcons.get(app.packageName));
-        }
+
+        Drawable icon = mIcons.get(app.packageName);
+        appHolder.icon.setImageDrawable(icon != null ? icon : mDefaultImg);
 
         int privacyGuardDrawableResId = app.privacyGuardEnabled
                 ? R.drawable.ic_privacy_guard : R.drawable.ic_privacy_guard_off;
@@ -96,12 +104,29 @@ public class PrivacyGuardAppListAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void setListItems(List<PrivacyGuardManager.AppInfo> list) {
-        mApps = list;
-    }
+    /**
+     * An asynchronous task to load the icons of the installed applications.
+     */
+    private class LoadIconsTask extends AsyncTask<PrivacyGuardManager.AppInfo, Void, Void> {
+        @Override
+        protected Void doInBackground(PrivacyGuardManager.AppInfo... apps) {
+            for (PrivacyGuardManager.AppInfo app : apps) {
+                try {
+                    Drawable icon = mPm.getApplicationIcon(app.packageName);
+                    mIcons.put(app.packageName, icon);
+                    publishProgress();
+                } catch (PackageManager.NameNotFoundException e) {
+                    // ignored; app will show up with default image
+                }
+            }
 
-    public void setIcons(Map<String, Drawable> icons) {
-        mIcons = icons;
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... progress) {
+            notifyDataSetChanged();
+        }
     }
 
     /**

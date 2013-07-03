@@ -16,13 +16,6 @@
 
 package com.android.settings.slim.privacyguard;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -34,11 +27,8 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -55,6 +45,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrivacyGuardManager extends Fragment
         implements OnItemClickListener, OnItemLongClickListener {
@@ -120,8 +115,6 @@ public class PrivacyGuardManager extends Fragment
         mAppsList.setOnItemClickListener(this);
         mAppsList.setOnItemLongClickListener(this);
 
-        mAdapter = new PrivacyGuardAppListAdapter(mActivity);
-
         // get shared preference
         mPreferences = mActivity.getSharedPreferences("privacy_guard_manager", Activity.MODE_PRIVATE);
         if (!mPreferences.getBoolean("first_help_shown", false)) {
@@ -149,10 +142,8 @@ public class PrivacyGuardManager extends Fragment
         } else {
             mNoUserAppsInstalled.setVisibility(View.GONE);
             mAppsList.setVisibility(View.VISIBLE);
-            mAdapter.setListItems(mApps);
+            mAdapter = new PrivacyGuardAppListAdapter(mActivity, mApps);
             mAppsList.setAdapter(mAdapter);
-
-            new LoadIconsTask().execute(mApps.toArray(new AppInfo[]{}));
         }
     }
 
@@ -258,34 +249,6 @@ public class PrivacyGuardManager extends Fragment
 
     private boolean shouldFilterByPermission() {
         return mPreferences.getBoolean("filter_by_permission", true);
-    }
-
-    /**
-    * An asynchronous task to load the icons of the installed applications.
-    */
-    private class LoadIconsTask extends AsyncTask<AppInfo, Void, Void> {
-        private Map<String, Drawable> mIcons;
-
-        @Override
-        protected Void doInBackground(AppInfo... apps) {
-            mIcons = new HashMap<String, Drawable>();
-
-            for (AppInfo app : apps) {
-                try {
-                    mIcons.put(app.packageName, mPm.getApplicationIcon(app.packageName));
-                } catch (NameNotFoundException e) {
-                    // ignored; app will show up with default image
-                }
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            mAdapter.setIcons(mIcons);
-            mAdapter.notifyDataSetChanged();
-        }
     }
 
     private class HelpDialogFragment extends DialogFragment {

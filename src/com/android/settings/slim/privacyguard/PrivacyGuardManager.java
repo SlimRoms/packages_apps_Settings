@@ -195,15 +195,18 @@ public class PrivacyGuardManager extends Fragment
     */
     private List<AppInfo> loadInstalledApps() {
         List<AppInfo> apps = new ArrayList<AppInfo>();
-        List<PackageInfo> packages = mPm.getInstalledPackages(PackageManager.GET_PERMISSIONS);
+        List<PackageInfo> packages = mPm.getInstalledPackages(
+            PackageManager.GET_PERMISSIONS | PackageManager.GET_SIGNATURES);
         boolean showSystemApps = shouldShowSystemApps();
         boolean filterByPermission = shouldFilterByPermission();
 
         for (PackageInfo info : packages) {
             final ApplicationInfo appInfo = info.applicationInfo;
 
-            // skip system apps if they shall not be included
-            if (!showSystemApps && (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+            // skip all system apps if they shall not be included
+            // exclude built in apps for privacy guard protection
+            if ((!showSystemApps && (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)
+                || isThisASystemPackage(info)) {
                 continue;
             }
 
@@ -241,6 +244,16 @@ public class PrivacyGuardManager extends Fragment
             }
         }
         return false;
+    }
+
+    private boolean isThisASystemPackage(PackageInfo info) {
+        try {
+            PackageInfo sys = mPm.getPackageInfo("android", PackageManager.GET_SIGNATURES);
+            return (info != null && info.signatures != null &&
+                    sys.signatures[0].equals(info.signatures[0]));
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     private boolean shouldShowSystemApps() {

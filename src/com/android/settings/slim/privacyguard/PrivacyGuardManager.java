@@ -166,6 +166,21 @@ public class PrivacyGuardManager extends Fragment
         }
     }
 
+    private void resetPrivacyGuard() {
+        if (mApps == null
+                || mApps.size() == 0) {
+            return;
+        }
+        // turn off privacy guard for all apps shown in the current list
+        for (PrivacyGuardAppInfo app : mApps) {
+            if (app.getPrivacyGuard()) {
+                mPm.setPrivacyGuardSetting(app.getPackageName(), false);
+                app.setPrivacyGuard(false);
+            }
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // on click change the privace guard status for this item
@@ -329,6 +344,9 @@ public class PrivacyGuardManager extends Fragment
         switch (item.getItemId()) {
             case R.id.help:
                 showHelp();
+                return true;
+            case R.id.reset:
+                resetPrivacyGuard();
                 return true;
             case R.id.filterAppPermissions:
                 // set the menu checkbox and save it in

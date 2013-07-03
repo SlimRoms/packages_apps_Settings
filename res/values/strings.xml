@@ -6019,7 +6019,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>
     <string name="privacy_guard_dlg_title">Enable Privacy Guard?</string>
     <string name="privacy_guard_dlg_text">When Privacy Guard is enabled, the app will not be able to access personal data such as contacts, messages or call logs.</string>
-    <string name="privacy_guard_default_title">Privacy Guard by default</string>
+    <string name="privacy_guard_default_title">Enabled by default</string>
     <string name="privacy_guard_default_summary">Enable by default for newly-installed apps</string>
     <string name="privacy_guard_manager_title">Privacy Guard</string>
     <string name="privacy_guard_manager_summary">Manage which apps have access to your personal data</string>

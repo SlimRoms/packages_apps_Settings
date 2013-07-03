@@ -25,9 +25,14 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -46,6 +51,8 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mPrivacyGuardDefault = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_DEFAULT);
+        mPrivacyGuardDefault.setOnPreferenceChangeListener(this);
+
         try {
             mPrivacyGuardDefault.setChecked(Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.PRIVACY_GUARD_DEFAULT) == 1);
@@ -55,28 +62,25 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        final String key = preference.getKey();
-
-        if (KEY_PRIVACY_GUARD_DEFAULT.equals(key)) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.PRIVACY_GUARD_DEFAULT,
-                    mPrivacyGuardDefault.isChecked() ? 1 : 0);
-        } else {
-            // If we didn't handle it, let preferences handle it.
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }
-        return true;
+    public View onCreateView(LayoutInflater inflater,
+            ViewGroup container, Bundle savedInstanceState) {
+        final View view = super.onCreateView(inflater, container, savedInstanceState);
+        final ListView list = (ListView) view.findViewById(android.R.id.list);
+        // our container already takes care of the padding
+        int paddingTop = list.getPaddingTop();
+        int paddingBottom = list.getPaddingBottom();
+        list.setPadding(0, paddingTop, 0, paddingBottom);
+        return view;
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPrivacyGuardDefault) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.PRIVACY_GUARD_DEFAULT, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
 }

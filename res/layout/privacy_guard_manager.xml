@@ -18,34 +18,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/privacyGuardPrefs"
+    <fragment
+        android:id="@+id/privacy_guard_prefs"
+        android:name="com.android.settings.slim.privacyguard.PrivacyGuardPrefs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
+        android:layout_height="wrap_content" />
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
-        <TextView
-            android:id="@+id/error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:textColor="@android:color/white"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:visibility="gone" />
-        <ListView android:id="@+id/appsList"
-            android:drawSelectorOnTop="false"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:scrollbarStyle="@*android:integer/preference_fragment_scrollbarStyle" />
-    </LinearLayout>
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone" />
+    <ListView android:id="@+id/apps_list"
+        android:drawSelectorOnTop="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:scrollbarStyle="@*android:integer/preference_fragment_scrollbarStyle" />
 </LinearLayout>

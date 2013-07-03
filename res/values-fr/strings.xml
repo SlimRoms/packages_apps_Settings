@@ -1854,6 +1854,9 @@
     <string name="end_time_title">Fin</string>
     <string name="notification_convert_sound_to_vibration_title">Conversion de notification</string>
     <string name="notification_convert_sound_to_vibration_summary">Bruits de vibrations pendant mode vibreur</string>
+    <!-- vibrate during phone calls -->
+    <string name="notification_vibrate_during_calls_title">Activer le vibreur lors des appels</string>
+    <string name="notification_vibrate_during_calls_summary">Les notifications vont vibrer légèrement l\'appareil au cours des appels téléphoniques</string>
     <string name="device_hostname">Nom d\'hôte du périphérique</string>
     <string name="build_date">Date du Build</string>
     <string name="build_date_default">2012-01-01-0000</string>
@@ -2092,6 +2095,8 @@
     <string name="increasing_ring_interval_10seconds">10 secondes</string>
     <string name="link_volume_ringtones">Lier le volume de la sonnerie &amp; celui des notifications</string>
     <string name="link_volume_mutes">Le mode silencieux affecte les notifications</string>
+    <string name="volume_keys_control_ring_stream">Contrôle multimédia</string>
+    <string name="volume_keys_control_ring_stream_summary">Les boutons de volumes contrôlent les lectures multimédias à la place des notifications</string>
     <string name="ring_mode_title">Mode de sonnerie</string>
     <string name="ring_mode_normal">Normal</string>
     <string name="ring_mode_vibrate">Vibreur</string>
@@ -2103,10 +2108,25 @@
     <string name="volbtn_music_controls_summary">Lorsque l\'écran est éteint, les boutons de volume permettent de naviguer dans les morceaux de musique</string>
     <string name="volume_adjust_sounds_enable_title">Son de réglage du volume</string>
     <string name="volume_adjust_sounds_enable_summary">Jouer un son lors du réglage de volume avec les boutons de volume</string>
-    <string name="safe_headset_restore_title">Volume sécurisé du casque</string>
-    <string name="safe_headset_restore_summary">Empêcher les niveaux de volume élevés lorsque le casque est branché pour la première fois</string>
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">Volume sécurisé du casque</string>
+    <string name="safe_headset_volume_summary">Empêcher les niveaux de volume élevés lorsque le casque est branché pour la première fois</string>
     <string name="less_notification_sounds_title">Sons de notification moins fréquents</string>
     <string name="less_notification_sounds_summary">Limiter les sons de notification de chaque application pour seulement jouer une fois par période de temps</string>
+    <!-- Category title for power sound notification specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="power_notifications_category_title">Branchement du chargeur</string>
+
+    <!-- Sound settings, power notifications enable/disable, setting check box label -->
+    <string name="power_notifications_enable_title">Activer l\'alerte de branchement</string>
+    <string name="power_notifications_enable_summary">Notification lors du branchement ou débranchement du chargeur</string>
+    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
+    <string name="power_notifications_vibrate_title">Vibreur</string>
+    <!-- Sound settings, power notifications ringtone selection, preference label -->
+    <string name="power_notifications_ringtone_title">Son de notification</string>
+    <!-- Sound settings, power notifications label for ringtone == none -->
+    <string name="power_notifications_ringtone_silent">Silencieux</string>
+
     <string name="adb_notify">Notifications du débogage USB</string>
     <string name="adb_notify_summary">Afficher une notification lorsque le débogage USB est connecté</string>
     <string name="ime_switcher_notify">Notification du sélecteur</string>
@@ -2522,6 +2542,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="keyboard_rotation_timeout_title">délai de l\'auto-rotation</string>
     <string name="keyboard_rotation_timeout_summary">Désactive la rotation automatique <xliff:g id="rotate_timeout"> %1$s </xliff:g> secondes après que le clavier est caché</string>
     <string name="keyboard_rotation_dialog">Remarque : Cette fonctionnalité force l\'auto-rotation temporairement lorsque le clavier est apparent sur l\'écran.        Il n\'a aucun effet lorsque l\'auto-rotation est déjà activée.</string>
+    <string name="show_enter_key_title">Afficher la touche entrée</string>
+    <string name="show_enter_key_summary">Forcer l\'affichage de la touche entrée sur le clavier à la place de la touche du smiley</string>
     <string name="mod_version">Version Slim</string>
     <string name="mod_version_default">Inconnu</string>
     <string name="development_tools_title">Outils de lancement</string>

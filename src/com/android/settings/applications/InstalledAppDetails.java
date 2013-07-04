@@ -45,7 +45,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.content.SharedPreferences;
 import android.hardware.usb.IUsbManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -402,21 +401,18 @@ public class InstalledAppDetails extends Fragment
     }
 
     private void initPrivacyGuardButton() {
-        if (mPrivacyGuardSwitch != null) {
-            SharedPreferences preferences =
-                getActivity().getSharedPreferences("privacy_guard_manager", Activity.MODE_PRIVATE);
-            final boolean disabledForAllSystemApps = !preferences.getBoolean("show_system_apps", false)
-                && (mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
+        if (mPrivacyGuardSwitch == null) {
+            return;
+        }
 
-            mPrivacyGuardSwitch.setChecked(mPm.getPrivacyGuardSetting(mAppEntry.info.packageName));
+        mPrivacyGuardSwitch.setChecked(mPm.getPrivacyGuardSetting(mAppEntry.info.packageName));
 
-            // disable privacy guard switch if disabled for all system apps
-            // or the requested package is a built in app
-            if (disabledForAllSystemApps || isThisASystemPackage()) {
-                mPrivacyGuardSwitch.setEnabled(false);
-            } else {
-                mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
-            }
+        // disable privacy guard switch if the app is signed with the platform certificate
+        // to avoid the user shooting himself in the foot
+        if (isThisASystemPackage()) {
+            mPrivacyGuardSwitch.setEnabled(false);
+        } else {
+            mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
         }
     }
 
@@ -1213,10 +1209,17 @@ public class InstalledAppDetails extends Fragment
                     .setNegativeButton(R.string.dlg_cancel, null)
                     .create();
                 case DLG_PRIVACY_GUARD:
+                    final int messageResId;
+                    if ((getOwner().mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                        messageResId = R.string.privacy_guard_dlg_system_app_text;
+                    } else {
+                        messageResId = R.string.privacy_guard_dlg_text;
+                    }
+
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(getActivity().getText(R.string.privacy_guard_dlg_title))
+                    .setTitle(R.string.privacy_guard_dlg_title)
                     .setIconAttribute(android.R.attr.alertDialogIcon)
-                    .setMessage(getActivity().getText(R.string.privacy_guard_dlg_text))
+                    .setMessage(messageResId)
                     .setPositiveButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {

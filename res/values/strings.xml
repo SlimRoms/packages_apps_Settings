@@ -5921,7 +5921,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Auto-Hide Status Bar -->
     <string name="auto_hide_statusbar">Auto Hide statusbar</string>
-    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
+    <string name="auto_hide_statusbar_summary_nonperm">Auto Hide statusbar if no non-permanent notifications are present</string>
+    <string name="auto_hide_statusbar_summary_all">Auto Hide statusbar if no notifications are present</string>
+    <string name="auto_hide_statusbar_off">Off</string>
+    <string name="auto_hide_statusbar_nonperm">Non-permanent only</string>
+    <string name="auto_hide_statusbar_all">All Notifications</string>
 
     <!-- Quick/Pie Control -->
     <string name="pie_control_title">SlimPIE</string>

@@ -5283,6 +5283,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
+    <string name="no_notifications_pulldown_summary_nonperm">Pulldown quick settings if no non-permanent notifications are present</string>
+    <string name="no_notifications_pulldown_summary_all">Pulldown quick settings if no notifications are present</string>
+    <string name="no_notifications_pulldown_off">Off</string>
+    <string name="no_notifications_pulldown_nonperm">Non-permanent only</string>
+    <string name="no_notifications_pulldown_all">All Notifications</string>
     <string name="title_collapse_panel">Auto close panel on change</string>
     <string name="summary_collapse_panel">Close the Quick Settings panel upon toggle</string>
     <string name="disable_quick_settings_panel">Quick Settings</string>
@@ -5290,7 +5295,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_settings_enabled">Enabled</string>
     <string name="quick_settings_disabled">Disabled</string>
     <string name="title_no_notifications_pulldown">Quick pulldown without notifications</string>
-    <string name="summary_no_notifications_pulldown">Pulldown quick settings if no notifications are present</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Quick Settings style</string>

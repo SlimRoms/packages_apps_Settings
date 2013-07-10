@@ -40,10 +40,12 @@
             android:entryValues="@array/quick_pulldown_values"
             android:persistent="false" />
 
-        <CheckBoxPreference
+        <ListPreference
             android:key="no_notifications_pulldown"
             android:title="@string/title_no_notifications_pulldown"
-            android:summary="@string/summary_no_notifications_pulldown" />
+            android:entries="@array/no_notifications_pulldown_entries"
+            android:entryValues="@array/no_notifications_pulldown_values"
+            android:persistent="false" />
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"

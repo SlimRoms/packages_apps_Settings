@@ -47,7 +47,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
-    private static final String KEY_HOME_WAKE = "pref_home_wake";
+    private static final String KEY_BUTTON_WAKE = "pref_wakeon_button";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
@@ -62,7 +62,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_180 = "180";
     private static final String ROTATION_ANGLE_270 = "270";
 
-    private CheckBoxPreference mHomeWake;
+    private ListPreference mButtonWake;
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
@@ -99,13 +99,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
 
-        mHomeWake = (CheckBoxPreference) findPreference(KEY_HOME_WAKE);
-        if (mHomeWake != null) {
+        mButtonWake = (ListPreference) findPreference(KEY_BUTTON_WAKE);
+        if (mButtonWake != null) {
             if (!getResources().getBoolean(R.bool.config_show_homeWake)) {
-                mWakeUpOptions.removePreference(mHomeWake);
+                //no home button, don't allow user to disable power button either
+                mWakeUpOptions.removePreference(mButtonWake);
             } else {
-                mHomeWake.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.HOME_WAKE_SCREEN, 1) == 1);
+                int buttonWakeValue = Settings.System.getInt(resolver,
+                        Settings.System.BUTTON_WAKE_SCREEN, 2);
+                mButtonWake.setValue(String.valueOf(buttonWakeValue));
+                mButtonWake.setSummary(getResources().getString(R.string.pref_wakeon_button_summary, mButtonWake.getEntry()));
+                mButtonWake.setOnPreferenceChangeListener(this);
             }
         }
 
@@ -247,7 +251,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         preference.setSummary(summary);
     }
-    
+
     @Override
     public void onResume() {
         super.onResume();
@@ -269,12 +273,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mHomeWake) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.HOME_WAKE_SCREEN,
-                    mHomeWake.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mVolumeWake) {
+       if (preference == mVolumeWake) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);
@@ -307,6 +306,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
+            return true;
+        } else if (preference == mButtonWake) {
+            int buttonWakeValue = Integer.valueOf((String) objValue);
+            int index = mButtonWake.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BUTTON_WAKE_SCREEN, buttonWakeValue);
+            mButtonWake.setSummary(getResources().getString(R.string.pref_wakeon_button_summary, mButtonWake.getEntries()[index]));
             return true;
         }
         return false;

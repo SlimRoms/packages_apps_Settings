@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2012 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,52 +14,117 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/display_settings"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/display_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.android.settings.slim.DisplayBrightness
-                android:key="brightness"
-                android:title="@string/brightness"
-                android:dialogTitle="@string/brightness" />
+    <com.android.settings.slim.DisplayBrightness
+        android:key="brightness"
+        android:title="@string/brightness"
+        android:summary="@string/custom_brightness_summary"
+        android:dialogTitle="@string/brightness" />
 
-        <PreferenceScreen
-                android:key="wallpaper"
-                android:title="@string/wallpaper_settings_title"
-                android:fragment="com.android.settings.WallpaperTypeSettings" />
+    <PreferenceScreen
+        android:key="wallpaper"
+        android:title="@string/wallpaper_settings_title"
+        android:fragment="com.android.settings.WallpaperTypeSettings" />
+
+    <PreferenceScreen
+        android:key="display_rotation"
+        android:fragment="com.android.settings.slim.DisplayRotation"
+        android:title="@string/display_rotation_title" />
+
+    <ListPreference
+        android:key="screen_timeout"
+        android:title="@string/screen_timeout"
+        android:summary="@string/screen_timeout_summary"
+        android:persistent="false"
+        android:entries="@array/screen_timeout_entries"
+        android:entryValues="@array/screen_timeout_values" />
+
+    <PreferenceScreen
+        android:key="screensaver"
+        android:title="@string/screensaver_settings_title"
+        android:fragment="com.android.settings.DreamSettings" />
+
+    <com.android.settings.WarnedListPreference
+        android:key="font_size"
+        android:title="@string/title_font_size"
+        android:summary="@string/summary_font_size"
+        android:entries="@array/entries_font_size"
+        android:entryValues="@array/entryvalues_font_size"
+        android:dialogTitle="@string/dialog_title_font_size" />
+
+    <PreferenceScreen
+        android:key="wifi_display"
+        android:title="@string/wifi_display_settings_title"
+        android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+
+    <PreferenceCategory
+        android:key="category_animation_options"
+        android:title="@string/display_category_animation_options_title" >
 
         <CheckBoxPreference
-            android:key="accelerometer"
-            android:title="@string/accelerometer_title"/>
+            android:key="system_power_crt_screen_off"
+            android:summary="@string/system_power_crt_screen_off_summary"
+            android:title="@string/system_power_crt_screen_off_title" />
 
         <ListPreference
-                android:key="screen_timeout"
-                android:title="@string/screen_timeout"
-                android:summary="@string/screen_timeout_summary"
-                android:persistent="false"
-                android:entries="@array/screen_timeout_entries"
-                android:entryValues="@array/screen_timeout_values" />
+            android:key="system_power_crt_mode"
+            android:dialogTitle="@string/system_power_crt_mode_dialog_title"
+            android:title="@string/system_power_crt_mode_title"
+            android:entries="@array/entries_system_power_crt_mode"
+            android:entryValues="@array/values_system_power_crt_mode"
+            android:dependency="system_power_crt_screen_off" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_light_options"
+        android:title="@string/display_category_light_options_title" >
 
         <PreferenceScreen
-                android:key="screensaver"
-                android:title="@string/screensaver_settings_title"
-                android:fragment="com.android.settings.DreamSettings" />
+            android:key="battery_light"
+            android:title="@string/battery_light_title"
+            android:fragment="com.android.settings.slim.notificationlight.BatteryLightSettings" />
 
-        <com.android.settings.WarnedListPreference
-                android:key="font_size"
-                android:title="@string/title_font_size"
-                android:summary="@string/summary_font_size"
-                android:entries="@array/entries_font_size"
-                android:entryValues="@array/entryvalues_font_size"
-                android:dialogTitle="@string/dialog_title_font_size" />
+        <PreferenceScreen
+            android:key="notification_pulse"
+            android:title="@string/notification_pulse_title"
+            android:fragment="com.android.settings.slim.notificationlight.NotificationLightSettings" />
+
+        <ListPreference
+            android:key="touchkey_light_timeout"
+            android:dialogTitle="@string/touchkey_timeout_title"
+            android:title="@string/touchkey_timeout_title"
+            android:entries="@array/entries_touchkey_timeout"
+            android:entryValues="@array/values_touchkey_timeout" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_wakeup_options"
+        android:title="@string/display_category_wakeup_options_title" >
 
         <CheckBoxPreference
-            android:key="pulse_enabled"
-            android:title="@string/notification_pulse_title" />
+            android:key="pref_volume_wake"
+            android:title="@string/pref_volume_wake_title"
+            android:summary="@string/pref_volume_wake_summary"
+            android:defaultValue="false" />
 
-        <PreferenceScreen
-                android:key="wifi_display"
-                android:title="@string/wifi_display_settings_title"
-                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+        <ListPreference
+            android:key="pref_wakeon_button"
+            android:title="@string/pref_wakeon_button_title"
+            android:entries="@array/entries_wakeon_button"
+            android:entryValues="@array/values_wakeon_button" />
+
+        <CheckBoxPreference
+            android:key="wakeup_when_plugged_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

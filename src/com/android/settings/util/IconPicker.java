@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.util;
 
 import java.io.File;
 import java.util.ArrayList;

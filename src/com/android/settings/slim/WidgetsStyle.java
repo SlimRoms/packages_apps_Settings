@@ -17,8 +17,10 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -43,6 +45,8 @@ public class WidgetsStyle extends SettingsPreferenceFragment implements
     private static final String PREF_NAVBAR_WIDGETS_ALPHA = "navbar_widgets_alpha";
     private static final String PREF_NAVBAR_WIDGETS_BG_COLOR = "navbar_widgets_bg_color";
     private static final String PREF_NAVBAR_WIDGETS_TEXT_COLOR = "navbar_widgets_text_color";
+
+    private static final int MENU_RESET = Menu.FIRST;
 
     private boolean mCheckPreferences;
 
@@ -111,17 +115,30 @@ public class WidgetsStyle extends SettingsPreferenceFragment implements
         return prefs;
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.widgets_style, menu);
+        menu.add(0, MENU_RESET, 0, R.string.widgets_reset)
+                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.reset:
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.widgets_reset);
+        alertDialog.setMessage(R.string.widgets_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_WIDGETS_BG_COLOR, -2);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -131,16 +148,10 @@ public class WidgetsStyle extends SettingsPreferenceFragment implements
                        Settings.System.NAVIGATION_BAR_WIDGETS_ALPHA, 0.25f);
 
                 refreshSettings();
-                return true;
-             default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
     }
 
     @Override

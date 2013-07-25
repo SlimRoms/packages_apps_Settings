@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 Slimroms Project
+<!-- Copyright (C) 2013 Slimroms Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,21 +16,10 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <ListPreference
-                android:entries="@array/pref_navring_amount_entries"
-                android:entryValues="@array/pref_navring_amount_values"
-                android:key="pref_navring_amount"
-                android:title="@string/title_navring_amount"
-                android:summary="@string/summary_navring_amount" />
-
-        <CheckBoxPreference
-                android:key="enable_navring_long"
-                android:title="@string/navring_enable_long" />
-
-        <PreferenceCategory
-                android:key="targets_cat"
-                android:title="@string/ring_targets_cat_title">
-
-        </PreferenceCategory>
+    <PreferenceScreen
+        android:fragment="com.android.settings.slim.NavBarButtonStyle"
+        android:key="nav_bar_button_style"
+        android:title="@string/nav_bar_button_style"
+        android:summary="@string/nav_bar_button_style_summary" />
 
 </PreferenceScreen>

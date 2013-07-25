@@ -16,24 +16,24 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <PreferenceCategory
-                android:key="navbar_style"
-                android:title="@string/navbar_style_cat">
-
-            <PreferenceScreen
-                    android:fragment="com.android.settings.slim.NavBarStyle"
-                    android:key="nav_bar_background_style"
-                    android:title="@string/nav_bar_background_style" />
-
-            <PreferenceScreen
-                    android:fragment="com.android.settings.slim.NavBarButtonStyle"
-                    android:key="nav_bar_button_style"
-                    android:title="@string/nav_bar_button_style" />
+    <PreferenceCategory
+        android:title="@string/nav_bar_background_style">
 
             <net.margaritov.preference.colorpicker.ColorPickerPreference
-                    android:key="nav_button_glow_color"
-                    android:title="@string/navigation_bar_glow_tint_title"
-                    android:defaultValue="0xffffffff" />
+                android:key="nav_bar_color"
+                android:title="@string/nav_bar_color_title"
+                android:defaultValue="0xff000000" />
+
+            <com.android.settings.widget.SeekBarPreference
+                android:key="nav_bar_alpha"
+                android:title="@string/nav_bar_transparency_title" />
+
+            <ListPreference
+                android:key="nav_bar_alpha_mode"
+                android:dialogTitle="@string/nav_bar_alpha_mode_dialog_text_title"
+                android:title="@string/nav_bar_alpha_mode_text_title"
+                android:entries="@array/entries_nav_bar_alpha_mode"
+                android:entryValues="@array/values_nav_bar_alpha_mode" />
 
         </PreferenceCategory>
 

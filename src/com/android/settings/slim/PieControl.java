@@ -34,14 +34,11 @@ public class PieControl extends SettingsPreferenceFragment
 
     private static final String PIE_CONTROL = "pie_control";
     private static final String PIE_BUTTON = "pie_button";
-    private static final String PIE_SECOND_LAYER = "pie_second_layer";
-    private static final String PIE_BUTTON_SECOND_LAYER = "pie_button_second_layer";
     private static final String PIE_SHOW_SNAP = "pie_show_snap";
     private static final String PIE_SHOW_TEXT = "pie_show_text";
     private static final String PIE_SHOW_BACKGROUND = "pie_show_background";
     private static final String PIE_DISABLE_STATUSBAR_INFO = "pie_disable_statusbar_info";
     private static final String PIE_STYLE = "pie_style";
-    private static final String PIE_BUTTON_STYLE = "pie_button_style";
     private static final String PIE_TRIGGER = "pie_trigger";
 
     private ListPreference mPieControl;
@@ -49,12 +46,9 @@ public class PieControl extends SettingsPreferenceFragment
     private CheckBoxPreference mShowText;
     private CheckBoxPreference mShowBackground;
     private CheckBoxPreference mDisableStatusBarInfo;
-    private CheckBoxPreference mSecondLayer;
     private PreferenceScreen mStyle;
-    private PreferenceScreen mButtonStyle;
     private PreferenceScreen mTrigger;
     private PreferenceScreen mButton;
-    private PreferenceScreen mButtonSecondLayer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,8 +58,6 @@ public class PieControl extends SettingsPreferenceFragment
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mSecondLayer = (CheckBoxPreference) prefSet.findPreference(PIE_SECOND_LAYER);
-        mSecondLayer.setOnPreferenceChangeListener(this);
         mShowSnap = (CheckBoxPreference) prefSet.findPreference(PIE_SHOW_SNAP);
         mShowSnap.setOnPreferenceChangeListener(this);
         mShowText = (CheckBoxPreference) prefSet.findPreference(PIE_SHOW_TEXT);
@@ -75,10 +67,8 @@ public class PieControl extends SettingsPreferenceFragment
         mDisableStatusBarInfo = (CheckBoxPreference) prefSet.findPreference(PIE_DISABLE_STATUSBAR_INFO);
         mDisableStatusBarInfo.setOnPreferenceChangeListener(this);
         mStyle = (PreferenceScreen) prefSet.findPreference(PIE_STYLE);
-        mButtonStyle = (PreferenceScreen) prefSet.findPreference(PIE_BUTTON_STYLE);
         mTrigger = (PreferenceScreen) prefSet.findPreference(PIE_TRIGGER);
         mButton = (PreferenceScreen) prefSet.findPreference(PIE_BUTTON);
-        mButtonSecondLayer = (PreferenceScreen) prefSet.findPreference(PIE_BUTTON_SECOND_LAYER);
         mPieControl = (ListPreference) prefSet.findPreference(PIE_CONTROL);
         mPieControl.setOnPreferenceChangeListener(this);
     }
@@ -98,9 +88,6 @@ public class PieControl extends SettingsPreferenceFragment
                 mDisableStatusBarInfo.setChecked(false);
             }
             propagatePieControl(value != 0);
-        } else if (preference == mSecondLayer) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PIE_SECOND_LAYER_ACTIVE, (Boolean) newValue ? 1 : 0);
         } else if (preference == mShowSnap) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_SHOW_SNAP, (Boolean) newValue ? 1 : 0);
@@ -132,8 +119,6 @@ public class PieControl extends SettingsPreferenceFragment
         mPieControl.setSummary(mPieControl.getEntry());
         propagatePieControl(pieControl != 0);
 
-        mSecondLayer.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_SECOND_LAYER_ACTIVE, 0) == 1);
         mShowSnap.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.PIE_SHOW_SNAP, 1) == 1);
         mShowText.setChecked(Settings.System.getInt(getContentResolver(),
@@ -150,15 +135,12 @@ public class PieControl extends SettingsPreferenceFragment
     }
 
     private void propagatePieControl(boolean value) {
-        mSecondLayer.setEnabled(value);
         mShowSnap.setEnabled(value);
         mShowText.setEnabled(value);
         mDisableStatusBarInfo.setEnabled(value);
         mShowBackground.setEnabled(value);
         mStyle.setEnabled(value);
         mButton.setEnabled(value);
-        mButtonSecondLayer.setEnabled(value);
-        mButtonStyle.setEnabled(value);
         mTrigger.setEnabled(value);
     }
 

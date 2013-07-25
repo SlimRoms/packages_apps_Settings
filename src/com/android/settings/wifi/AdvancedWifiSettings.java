@@ -46,19 +46,28 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
     private static final String KEY_SLEEP_POLICY = "sleep_policy";
     private static final String KEY_POOR_NETWORK_DETECTION = "wifi_poor_network_detection";
     private static final String KEY_SUSPEND_OPTIMIZATIONS = "suspend_optimizations";
+    private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
+    private static final String KEY_WIFI_PRIORITY = "wifi_priority";
 
     private WifiManager mWifiManager;
+
+    private ListPreference mCcodePref;
+    private Preference mWifiPriority;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.wifi_advanced_settings);
-    }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+
+        mCcodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
+        mCcodePref.setOnPreferenceChangeListener(this);
+
+        mWifiPriority = findPreference(KEY_WIFI_PRIORITY);
+
+        updateWifiCodeSummary();
+        updateWifiPriority();
     }
 
     @Override
@@ -66,6 +75,15 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         super.onResume();
         initPreferences();
         refreshWifiInfo();
+        updateWifiCodeSummary();
+        updateWifiPriority();
+    }
+
+    @Override
+    public void onPause() {
+        super.onResume();
+        updateWifiCodeSummary();
+        updateWifiPriority();
     }
 
     private void initPreferences() {
@@ -171,6 +189,22 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String key = preference.getKey();
 
+        if (KEY_COUNTRY_CODE.equals(key)) {
+            try {
+                Settings.Global.putString(mContext.getContentResolver(),
+                       Settings.Global.WIFI_COUNTRY_CODE_USER,
+                       (String) newValue);
+                mWifiManager.setCountryCode((String) newValue, true);
+                int index = mCcodePref.findIndexOfValue((String) newValue);
+                mCcodePref.setSummary(mCcodePref.getEntries()[index]);
+                return true;
+            } catch (IllegalArgumentException e) {
+                Toast.makeText(getActivity(), R.string.wifi_setting_countrycode_error,
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
         if (KEY_FREQUENCY_BAND.equals(key)) {
             try {
                 mWifiManager.setFrequencyBand(Integer.parseInt((String) newValue), true);
@@ -209,6 +243,36 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         String ipAddress = Utils.getWifiIpAddresses(getActivity());
         wifiIpAddressPref.setSummary(ipAddress == null ?
                 getActivity().getString(R.string.status_unavailable) : ipAddress);
+    }
+
+    private void updateWifiCodeSummary() {
+        if (mCcodePref != null) {
+            String value = (mWifiManager.getCountryCode()).toUpperCase();
+            if (value != null) {
+                mCcodePref.setValue(value);
+                mCcodePref.setSummary(mCcodePref.getEntry());
+            } else {
+                Log.e(TAG, "Failed to fetch country code");
+            }
+            if (mWifiManager.isWifiEnabled()) {
+                mCcodePref.setEnabled(true);
+            } else {
+                mCcodePref.setEnabled(false);
+                mCcodePref.setSummary(R.string.wifi_setting_countrycode_disabled);
+            }
+        }
+
+    }
+
+    private void updateWifiPriority() {
+        if (mWifiManager.isWifiEnabled()) {
+            mWifiPriority.setEnabled(true);
+            mWifiPriority.setSummary(R.string.wifi_setting_priority_summary);
+        } else {
+            mWifiPriority.setEnabled(false);
+            mWifiPriority.setSummary(R.string.wifi_priority_disabled);
+        }
+
     }
 
 }

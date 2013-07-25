@@ -17,6 +17,8 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,6 +50,9 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
     private static final String RAM_BAR_COLOR_APP_MEM = "ram_bar_color_app_mem";
     private static final String RAM_BAR_COLOR_CACHE_MEM = "ram_bar_color_cache_mem";
     private static final String RAM_BAR_COLOR_TOTAL_MEM = "ram_bar_color_total_mem";
+
+    private static final int MENU_RESET = Menu.FIRST;
+    private static final int MENU_HELP = MENU_RESET + 1;
 
     private static final String EXPLANATION_URL = "http://www.slimroms.net/index.php/faq/slimbean/238-why-do-i-have-less-memory-free-on-my-device";
 
@@ -109,24 +114,41 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.ram_bar, menu);
+        menu.add(0, MENU_RESET, 0, R.string.ram_bar_button_reset)
+                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_HELP, 0, R.string.ram_bar_button_help)
+                .setIcon(R.drawable.ic_settings_about)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.help:
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+            case MENU_HELP:
                 final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(EXPLANATION_URL));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
                 return true;
-            case R.id.reset:
-                ramBarColorReset();
-                return true;
-            default:
+             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.navbar_reset);
+        alertDialog.setMessage(R.string.navbar_dimensions_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                ramBarColorReset();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -169,11 +191,6 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
             return true;
          }
         return false;
-    }
-
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        boolean value;
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void ramBarColorReset() {

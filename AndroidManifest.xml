@@ -1516,42 +1516,12 @@
         />
 
         <!-- extra activities start -->
-        <activity android:name=".slim.InterfaceSettings" />
-        <activity android:name=".slim.PerformanceSettings" />
-        <activity android:name=".slim.PowerWidget" />
-        <activity android:name=".slim.QuietHours" />
-        <activity android:name=".slim.PowerMenu" />
-        <activity android:name=".slim.SoundSettings" />
-        <activity android:name=".slim.UserInterface" />
-        <activity android:name=".slim.DisplaySettings" />
         <activity android:name=".slim.notificationlight.NotificationLightSettings" />
         <activity android:name=".slim.notificationlight.BatteryLightSettings" />
         <activity android:name=".slim.NotificationDrawerSettings" />
         <activity android:name=".slim.quicksettings.QuickSettings" />
         <activity android:name=".slim.quicksettings.QuickSettingsTilesStyle" />
         <activity android:name=".slim.NotificationDrawerStyle" />
-        <activity android:name=".slim.StatusBar" />
-        <activity android:name=".slim.StatusBarStyle" />
-        <activity android:name=".slim.StatusBarClockStyle" />
-        <activity android:name=".slim.StatusBarBatteryStyle" />
-        <activity android:name=".slim.KeyboardInputSettings" />
-        <activity android:name=".slim.LockscreenTargets" />
-        <activity android:name=".slim.LockscreenInterface" />
-        <activity android:name=".slim.LockscreenWidgets" />
-        <activity android:name=".slim.LockscreenButtons" />
-        <activity android:name=".slim.LockscreenShortcuts" />
-        <activity android:name=".slim.HardwareKeys" />
-        <activity android:name=".slim.NavbarSettings" />
-        <activity android:name=".slim.NavRingTargets" />
-        <activity android:name=".slim.NavbarButtonSettings" />
-        <activity android:name=".slim.NavbarStyleDimenSettings" />
-        <activity android:name=".slim.NavBarStyle" />
-        <activity android:name=".slim.NavBarButtonStyle" />
-        <activity android:name=".slim.WifiSettings" />
-        <activity android:name=".slim.WidgetsConfiguration" />
-        <activity android:name=".slim.WidgetsSettings" />
-        <activity android:name=".slim.WidgetsStyle" />
-        <activity android:name=".slim.RamBar" />
         <activity android:name=".ApnEditor" />
 
         <activity
@@ -1766,25 +1736,6 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
-
-        <!-- Notification Shortcuts -->
-
-        <activity android:name="Settings$NotificationShortcutsSettingsActivity"
-                android:label="@string/notification_shortcuts_settings_title"
-                android:clearTaskOnLaunch="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.android.settings.slim.notificationshortcuts.NOTIFICATION_SHORTCUTS" />
-                <action android:name="android.settings.slim.notificationshortcuts.NOTIFICATION_SHORTCUTS" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.VOICE_LAUNCH" />
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.notificationshortcuts.NotificationShortcuts" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/slim_notification_shortcuts" />
-        </activity>
 
         <activity android:name="net.margaritov.preference.colorpicker" />
 

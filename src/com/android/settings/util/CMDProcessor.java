@@ -1,8 +1,30 @@
+/*
+ * Copyright (C) 2011 SlimRoms Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.android.settings.util;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.InputStream;
+import java.io.IOException;
 
 import android.util.Log;
 
@@ -131,4 +153,42 @@ public class CMDProcessor {
         }
         return can_su;
     }
+
+    public static boolean getMount(final String mount) {
+        final CMDProcessor cmd = new CMDProcessor();
+        final String mounts[] = getMounts("/system");
+        if (mounts != null
+                && mounts.length >= 3) {
+            final String device = mounts[0];
+            final String path = mounts[1];
+            final String point = mounts[2];
+            if (cmd.su.runWaitFor("mount -o " + mount + ",remount -t "
+                + point + " " + device + " " + path).success()) {
+                return true;
+            }
+        }
+        return ( cmd.su.runWaitFor("busybox mount -o remount," + mount + " /system").success() );
+    }
+
+
+    public static String[] getMounts(final String path) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("/proc/mounts"), 256);
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                if (line.contains(path)) {
+                    return line.split(" ");
+                }
+            }
+            br.close();
+        }
+        catch (FileNotFoundException e) {
+            Log.d(TAG, "/proc/mounts does not exist");
+        }
+        catch (IOException e) {
+            Log.d(TAG, "Error reading /proc/mounts");
+        }
+        return null;
+    }
+
 }

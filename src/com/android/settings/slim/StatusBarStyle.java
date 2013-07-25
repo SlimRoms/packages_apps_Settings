@@ -17,8 +17,10 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
@@ -46,6 +48,8 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_ALPHA = "status_bar_alpha";
     private static final String PREF_STATUS_BAR_ALPHA_MODE = "status_bar_alpha_mode";
     private static final String PREF_STATUS_BAR_COLOR = "status_bar_color";
+
+    private static final int MENU_RESET = Menu.FIRST;
 
     private boolean mCheckPreferences;
 
@@ -112,14 +116,28 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.status_bar_style, menu);
+        menu.add(0, MENU_RESET, 0, R.string.navbar_reset)
+                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.reset:
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.status_bar_reset);
+        alertDialog.setMessage(R.string.status_bar_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -129,16 +147,10 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
                        Settings.System.STATUS_BAR_ALPHA, 0.0f);
 
                 refreshSettings();
-                return true;
-             default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
     }
 
     @Override

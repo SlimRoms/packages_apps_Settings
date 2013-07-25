@@ -17,8 +17,10 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
@@ -26,7 +28,6 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -54,6 +55,8 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private static final float PIE_CONTROL_SIZE_MIN = 0.6f;
     private static final float PIE_CONTROL_SIZE_MAX = 1.5f;
     private static final float PIE_CONTROL_SIZE_DEFAULT = 1.0f;
+
+    private static final int MENU_RESET = Menu.FIRST;
 
     Resources mSystemUiResources;
     private boolean mCheckPreferences;
@@ -106,14 +109,28 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.pie_style, menu);
+        menu.add(0, MENU_RESET, 0, R.string.pie_reset)
+                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.reset:
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.pie_reset);
+        alertDialog.setMessage(R.string.pie_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.PIE_BACKGROUND_COLOR, -2);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -125,16 +142,10 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
                        Settings.System.PIE_BACKGROUND_ALPHA, 0.3f);
 
                 updateStyleValues();
-                return true;
-             default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
     }
 
     @Override

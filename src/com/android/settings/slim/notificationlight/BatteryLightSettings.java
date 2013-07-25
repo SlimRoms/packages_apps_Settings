@@ -161,7 +161,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         mOptionsMenu.add(0, MENU_RESET, 0, R.string.profile_reset_title)
                 .setIcon(R.drawable.ic_settings_backup) // use the backup icon
                 .setAlphabeticShortcut('r')
-                .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+                .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override

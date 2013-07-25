@@ -40,6 +40,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTIFICATION_QUICK_SETTINGS = "quick_settings_panel";
     private static final String PREF_NOTIFICATION_SETTINGS_BTN = "notification_settings_btn";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
+    private static final String PREF_NOTIFICATION_HIDE_CARRIER = "notification_hide_carrier";
 
     PreferenceCategory mAdditionalOptions;
     Preference mPowerWidget;
@@ -47,6 +48,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     CheckBoxPreference mShowWifiName;
     CheckBoxPreference mSettingsBtn;
     ListPreference mNotificationsBehavior;
+    CheckBoxPreference mHideCarrier;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,10 +77,19 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
+        mShowWifiName.setOnPreferenceChangeListener(this);
+
+        mHideCarrier = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_HIDE_CARRIER);
+        boolean hideCarrier = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_HIDE_CARRIER, 0) == 1;
+        mHideCarrier.setChecked(hideCarrier);
+        mShowWifiName.setEnabled(!hideCarrier);
+        mHideCarrier.setOnPreferenceChangeListener(this);
 
         mSettingsBtn = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SETTINGS_BTN);
         mSettingsBtn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_SETTINGS_BUTTON, 0) == 1);
+        mSettingsBtn.setOnPreferenceChangeListener(this);
 
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(PREF_NOTIFICATION_OPTIONS);
 
@@ -88,7 +99,8 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         if (!Utils.isPhone(getActivity()) || !isMobileData) {
             // Nothing for tablets, large screen devices and non mobile devices which doesn't show
             // information in notification drawer.....remove options
-            prefs.removePreference(mAdditionalOptions);
+            mAdditionalOptions.removePreference(mHideCarrier);
+            mAdditionalOptions.removePreference(mShowWifiName);
         }
 
     }
@@ -119,23 +131,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        if (preference == mShowWifiName) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
-                    mShowWifiName.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mSettingsBtn) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_SETTINGS_BUTTON,
-                    mSettingsBtn.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mNotificationsBehavior) {
             String val = (String) newValue;
@@ -143,6 +138,22 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
             Integer.valueOf(val));
             int index = mNotificationsBehavior.findIndexOfValue(val);
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
+            return true;
+        } else if (preference == mShowWifiName) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mHideCarrier) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_HIDE_CARRIER,
+                    (Boolean) newValue ? 1 : 0);
+            mShowWifiName.setEnabled(!((Boolean) newValue));
+            return true;
+        } else if (preference == mSettingsBtn) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_SETTINGS_BUTTON,
+                    (Boolean) newValue ? 1 : 0);
             return true;
         }
         return false;

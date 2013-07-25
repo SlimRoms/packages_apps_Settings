@@ -113,14 +113,12 @@ public class AppGroupConfig extends SettingsPreferenceFragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         MenuItem delete = menu.add(0, MENU_DELETE, 0, R.string.profile_menu_delete)
                 .setIcon(R.drawable.ic_menu_trash_holo_dark);
-        delete.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+        delete.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
         MenuItem addApplication = menu.add(0, MENU_ADD, 0, R.string.profiles_add)
                 .setIcon(R.drawable.ic_menu_add)
                 .setAlphabeticShortcut('a');
-        addApplication.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+        addApplication.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
     }
 
     @Override

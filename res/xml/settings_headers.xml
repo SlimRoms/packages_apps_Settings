@@ -74,13 +74,6 @@
         android:fragment="com.android.settings.profiles.ProfilesSettings"
         android:title="@string/profiles_settings_title" />
 
-    <!-- Quiet hours -->
-    <header
-        android:id="@+id/quiet_hours_settings"
-        android:icon="@drawable/ic_settings_quiet_hours"
-        android:fragment="com.android.settings.slim.QuietHours"
-        android:title="@string/quiet_hours_title" />
-
     <!-- Themes -->
     <header
         android:id="@+id/themes_settings"

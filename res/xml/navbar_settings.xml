@@ -14,7 +14,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
         <CheckBoxPreference
                 android:key="enable_nav_bar"
@@ -26,14 +27,24 @@
                 android:title="@string/navbar_cat" >
 
             <PreferenceScreen
-                android:key="navbar_button_settings"
-                android:fragment="com.android.settings.slim.NavbarButtonSettings"
-                android:title="@string/navbar_button_title" />
+                    android:key="navbar_button_settings"
+                    android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+                    android:title="@string/navbar_button_title">
+                <extra android:name="buttonMode" android:value="0" />
+                <extra android:name="maxAllowedButtons" android:value="5" />
+                <extra android:name="disableDeleteLastEntry" android:value="true" />
+                <extra android:name="fragment" android:value="com.android.settings.slim.fragments.NavbarButtonFragment" />
+            </PreferenceScreen>
 
             <PreferenceScreen
-                android:key="navbar_targets_settings"
-                android:fragment="com.android.settings.slim.NavRingTargets"
-                android:title="@string/navbar_targets_title" />
+                    android:key="navbar_targets_settings"
+                    android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+                    android:title="@string/navbar_targets_title">
+                <extra android:name="buttonMode" android:value="3" />
+                <extra android:name="maxAllowedButtons" android:value="5" />
+                <extra android:name="actionValues" android:value="shortcut_action_navring_values" />
+                <extra android:name="actionEntries" android:value="shortcut_action_navring_entries" />
+            </PreferenceScreen>
 
             <PreferenceScreen
                 android:key="navbar_style_dimen_settings"
@@ -45,14 +56,6 @@
         <PreferenceCategory
                 android:key="advanced_cat"
                 android:title="@string/advanced_settings">
-
-            <ListPreference
-                    android:entries="@array/glow_times_entries"
-                    android:entryValues="@array/glow_times_values"
-                    android:key="glow_times"
-                    android:title="@string/glow_times_title"
-                    android:defaultValue="100|10"
-                    android:persistent="false" />
 
             <ListPreference
                     android:entries="@array/pref_navigation_menu_entries"

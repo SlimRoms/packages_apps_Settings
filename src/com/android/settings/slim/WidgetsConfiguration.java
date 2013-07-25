@@ -17,7 +17,11 @@
 package com.android.settings.slim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
 import android.content.BroadcastReceiver;
@@ -34,12 +38,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.settings.R;
 
@@ -52,6 +60,12 @@ public class WidgetsConfiguration extends DialogFragment {
     public static final String ACTION_DEALLOCATE_ID = "com.android.systemui.ACTION_DEALLOCATE_ID";
     public static final String ACTION_SEND_ID = "com.android.systemui.ACTION_SEND_ID";
     public static final String ACTION_DELETE_WIDGETS = "com.android.systemui.ACTION_DELETE_WIDGETS";
+
+    private static final int MENU_SHIFT_LEFT = Menu.FIRST;
+    private static final int MENU_DELETE = MENU_SHIFT_LEFT + 1;
+    private static final int MENU_RESET = MENU_DELETE + 1;
+    private static final int MENU_SHIFT_RIGHT = MENU_RESET + 1;
+
     private ViewPager mViewPager;
     WidgetPagerAdapter mAdapter;
     Context mContext;
@@ -91,37 +105,74 @@ public class WidgetsConfiguration extends DialogFragment {
         mPrefView = inflater.inflate(R.layout.navbar_widgets, container, false);
         mViewPager = (ViewPager) mPrefView.findViewById(R.id.pager);
         mCurrentPage = 0;
-        ImageButton widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_left);
-        widgetbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
+        mTitle = (TextView) mPrefView.findViewById(R.id.title);
+        mSummary = (TextView) mPrefView.findViewById(R.id.summary);
+
+        setHasOptionsMenu(true);
+
+        return mPrefView;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_SHIFT_LEFT, 0, R.string.widgets_shift_left)
+                .setIcon(R.drawable.widget_left)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_DELETE, 0, R.string.widgets_delete)
+                .setIcon(R.drawable.widget_delete)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_RESET, 0, R.string.widgets_reset)
+                .setIcon(R.drawable.ic_settings_backup)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_SHIFT_RIGHT, 0, R.string.widgets_shift_right)
+                .setIcon(R.drawable.widget_right)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_SHIFT_LEFT:
                 shiftleftWidget(mCurrentPage);
-            }
-        });
-        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_right);
-        widgetbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
+                return true;
+            case MENU_DELETE:
+                removeWidget();
+                return true;
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+            case MENU_SHIFT_RIGHT:
                 shiftrightWidget(mCurrentPage);
-            }
-        });
-        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_delete);
-        widgetbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
-                removeWidget(mCurrentPage);
-            }
-        });
-        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_reset_widgets);
-        widgetbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.widgets_reset);
+        alertDialog.setMessage(R.string.widgets_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
                 resetNavBarWidgets();
             }
         });
-        mTitle = (TextView) mPrefView.findViewById(R.id.title);
-        mSummary = (TextView) mPrefView.findViewById(R.id.summary);
-        return mPrefView;
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
+    }
+
+    private void removeWidget() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.widgets_delete);
+        alertDialog.setMessage(R.string.widgets_delete_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                removeWidget(mCurrentPage);
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
     }
 
     @Override
@@ -161,6 +212,9 @@ public class WidgetsConfiguration extends DialogFragment {
             mCurrentPage = page - 1;
             refreshParams();
             mViewPager.setCurrentItem(mCurrentPage);
+            showToastMessage(getResources().getString(R.string.widgets_shifted_left));
+        } else {
+            showToastMessage(getResources().getString(R.string.widgets_shifted_end));
         }
     }
 
@@ -172,6 +226,9 @@ public class WidgetsConfiguration extends DialogFragment {
             mCurrentPage = page + 1;
             refreshParams();
             mViewPager.setCurrentItem(mCurrentPage);
+            showToastMessage(getResources().getString(R.string.widgets_shifted_right));
+        } else {
+            showToastMessage(getResources().getString(R.string.widgets_shifted_end));
         }
     }
 
@@ -188,6 +245,11 @@ public class WidgetsConfiguration extends DialogFragment {
             mContext.sendBroadcast(delete);
             mViewPager.setCurrentItem(page);
         }
+    }
+
+    private void showToastMessage(String message) {
+         Toast.makeText(mContext, message,
+                Toast.LENGTH_LONG).show();
     }
 
     private ArrayList<NavBarWidget> inflateWidgets() {
@@ -388,6 +450,7 @@ public class WidgetsConfiguration extends DialogFragment {
         public void startUpdate(View arg0) {
         }
     }
+
     public class NavBarWidget {
         int mWidgetId;
         int mHeight;

@@ -64,7 +64,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
-    private static final String PREF_LOCKSCREEN_SHORTCUTS_LONGPRESS = "lockscreen_shortcuts_longpress";
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_BACKGROUND_ALPHA_PREF = "lockscreen_alpha";
@@ -77,7 +76,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private CheckBoxPreference mLockscreenAutoRotate;
     private CheckBoxPreference mLockscreenEightTargets;
     private Preference mShortcuts;
-    private CheckBoxPreference mLockscreenShortcutsLongpress;
 
     private boolean mIsScreenLarge;
 
@@ -145,15 +143,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         int defaultValue = getResources().getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation) ? 1 : 0;
         mLockscreenAutoRotate.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_AUTO_ROTATE, defaultValue) == 1);
+        mLockscreenAutoRotate.setOnPreferenceChangeListener(this);
 
         mLockscreenEightTargets = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_EIGHT_TARGETS);
         mLockscreenEightTargets.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_EIGHT_TARGETS, 0) == 1);
-
-        mLockscreenShortcutsLongpress = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_SHORTCUTS_LONGPRESS);
-        mLockscreenShortcutsLongpress.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, 0) == 1);
-        mLockscreenShortcutsLongpress.setEnabled(!mLockscreenEightTargets.isChecked());
+        mLockscreenEightTargets.setOnPreferenceChangeListener(this);
 
         mShortcuts = (Preference) findPreference(PREF_LOCKSCREEN_SHORTCUTS);
         mShortcuts.setEnabled(!mLockscreenEightTargets.isChecked());
@@ -182,7 +177,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         } else if (!Utils.isPhone(getActivity())) {
              // Nothing for tablets and large screen devices
              sliderCategory.removePreference(mShortcuts);
-             sliderCategory.removePreference(mLockscreenShortcutsLongpress);
              sliderCategory.removePreference(mLockscreenEightTargets);
         }
 
@@ -206,33 +200,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mLockscreenAutoRotate) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_AUTO_ROTATE, mLockscreenAutoRotate.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mLockscreenEightTargets) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_EIGHT_TARGETS, mLockscreenEightTargets.isChecked() ? 1 : 0);
-            mShortcuts.setEnabled(!mLockscreenEightTargets.isChecked());
-            mLockscreenShortcutsLongpress.setEnabled(!mLockscreenEightTargets.isChecked());
-            Settings.System.putString(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_TARGETS, GlowPadView.EMPTY_TARGET);
-            for (File pic : mActivity.getFilesDir().listFiles()) {
-                if (pic.getName().startsWith("lockscreen_")) {
-                    pic.delete();
-                }
-            }
-            return true;
-        } else if (preference == mLockscreenShortcutsLongpress) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, mLockscreenShortcutsLongpress.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (!mCheckPreferences) {
             return false;
@@ -243,6 +210,22 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
+            return true;
+        } else if (preference == mLockscreenAutoRotate) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_AUTO_ROTATE, (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mLockscreenEightTargets) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_EIGHT_TARGETS, (Boolean) objValue ? 1 : 0);
+            mShortcuts.setEnabled(!((Boolean) objValue));
+            Settings.System.putString(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_TARGETS, GlowPadView.EMPTY_TARGET);
+            for (File pic : mActivity.getFilesDir().listFiles()) {
+                if (pic.getName().startsWith("lockscreen_")) {
+                    pic.delete();
+                }
+            }
             return true;
         } else if (preference == mCustomBackground) {
             int indexOf = mCustomBackground.findIndexOfValue(objValue.toString());

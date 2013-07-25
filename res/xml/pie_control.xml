@@ -15,8 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/pie_control_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    android:title="@string/pie_control_title">
 
     <ListPreference
         android:key="pie_control"
@@ -24,6 +23,17 @@
         android:entryValues="@array/pie_control_values"
         android:title="@string/pie_control_title"
         android:dialogTitle="@string/pie_control_dialog_title" />
+
+    <PreferenceScreen
+            android:key="pie_button"
+            android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+            android:title="@string/pie_button">
+        <extra android:name="buttonMode" android:value="1" />
+        <extra android:name="maxAllowedButtons" android:value="5" />
+        <extra android:name="disableDeleteLastEntry" android:value="true" />
+        <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PieButtonFragment" />
+    </PreferenceScreen>
+
 
     <PreferenceScreen
         android:key="pie_style"
@@ -34,33 +44,6 @@
         android:key="pie_trigger"
         android:fragment="com.android.settings.slim.PieTriggerSettings"
         android:title="@string/pie_trigger" />
-
-    <PreferenceCategory
-        android:title="@string/pie_buttons_options">
-
-        <PreferenceScreen
-            android:key="pie_button"
-            android:fragment="com.android.settings.slim.PieButtonSettings"
-            android:title="@string/pie_button" />
-
-        <CheckBoxPreference
-            android:key="pie_second_layer"
-            android:title="@string/pie_second_layer_title"
-            android:summary="@string/pie_second_layer_summary"
-            android:defaultValue="false" />
-
-        <PreferenceScreen
-            android:key="pie_button_second_layer"
-            android:fragment="com.android.settings.slim.PieButtonSecondLayerSettings"
-            android:title="@string/pie_button_second_layer"
-            android:dependency="pie_second_layer" />
-
-        <PreferenceScreen
-            android:key="pie_button_style"
-            android:fragment="com.android.settings.slim.PieButtonStyleSettings"
-            android:title="@string/pie_button_style" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/pie_additional_options">

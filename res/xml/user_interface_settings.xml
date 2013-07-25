@@ -2,57 +2,45 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:key="display"
-        android:title="@string/display_short">
+    <CheckBoxPreference
+        android:key="use_alt_resolver"
+        android:title="@string/alt_resolver"
+        android:summary="@string/alt_resolver_summary"
+        android:defaultValue="false" />
 
-        <PreferenceScreen
-            android:key="lcd_density_setup"
-            android:fragment="com.android.settings.slim.DensityChanger"
-            android:title="@string/lcd_density_title"
-            android:summary="@string/lcd_density_summary" />
+    <PreferenceScreen
+        android:key="custom_carrier_label"
+        android:title="@string/custom_carrier_label_title" />
 
-        <CheckBoxPreference
-            android:key="dual_pane"
-            android:title="@string/dual_pane"
-            android:summary="@string/dual_pane_summary" />
+    <CheckBoxPreference
+        android:key="high_end_gfx"
+        android:title="@string/high_end_gfx_title"
+        android:summary="@string/high_end_gfx_summary"
+        android:defaultValue="true" />
 
-    </PreferenceCategory>
+    <PreferenceScreen
+        android:key="lcd_density_setup"
+        android:fragment="com.android.settings.slim.DensityChanger"
+        android:title="@string/lcd_density_title"
+        android:summary="@string/lcd_density_summary" />
 
-    <PreferenceCategory
-        android:key="misc"
-        android:title="@string/misc_short">
+    <ListPreference
+        android:key="pref_low_battery_warning_policy"
+        android:title="@string/pref_low_battery_warning_policy_title"
+        android:dialogTitle="@string/pref_low_battery_warning_policy_dialog_title"
+        android:entries="@array/pref_low_battery_warning_policy_entries"
+        android:entryValues="@array/pref_low_battery_warning_policy_values"
+        android:defaultValue="0" />
 
-        <CheckBoxPreference
-            android:key="use_alt_resolver"
-            android:title="@string/alt_resolver"
-            android:summary="@string/alt_resolver_summary"
-            android:defaultValue="false" />
+    <PreferenceScreen
+        android:key="recents_ram_bar"
+        android:fragment="com.android.settings.slim.RamBar"
+        android:title="@string/ram_bar" />
 
-        <PreferenceScreen
-            android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
-
-        <CheckBoxPreference
-            android:key="high_end_gfx"
-            android:title="@string/high_end_gfx_title"
-            android:summary="@string/high_end_gfx_summary"
-            android:defaultValue="true" />
-
-        <ListPreference
-            android:key="pref_low_battery_warning_policy"
-            android:title="@string/pref_low_battery_warning_policy_title"
-            android:dialogTitle="@string/pref_low_battery_warning_policy_dialog_title"
-            android:entries="@array/pref_low_battery_warning_policy_entries"
-            android:entryValues="@array/pref_low_battery_warning_policy_values"
-            android:defaultValue="0" />
-
-        <PreferenceScreen
-            android:key="recents_ram_bar"
-            android:fragment="com.android.settings.slim.RamBar"
-            android:title="@string/ram_bar" />
-
-    </PreferenceCategory>
+    <CheckBoxPreference
+        android:key="dual_pane"
+        android:title="@string/dual_pane"
+        android:summary="@string/dual_pane_summary" />
 
 </PreferenceScreen>
 

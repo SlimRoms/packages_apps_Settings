@@ -62,6 +62,7 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
         mDisableFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
         mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
+        mDisableFullscreenKeyboard.setOnPreferenceChangeListener(this);
 
         // Enable or disable mStatusBarImeSwitcher based on boolean value: config_show_cmIMESwitcher
         final Preference keyImeSwitcherPref = findPreference(KEY_IME_SWITCHER);
@@ -70,6 +71,7 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
                 getPreferenceScreen().removePreference(keyImeSwitcherPref);
             } else {
                 mStatusBarImeSwitcher = (CheckBoxPreference) keyImeSwitcherPref;
+                mStatusBarImeSwitcher.setOnPreferenceChangeListener(this);
             }
         }
 
@@ -84,6 +86,7 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
         mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
         mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+        mKeyboardRotationToggle.setOnPreferenceChangeListener(this);
 
         mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
         mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
@@ -93,6 +96,7 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
         mShowEnterKey = (CheckBoxPreference) findPreference(SHOW_ENTER_KEY);
         mShowEnterKey.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
+        mShowEnterKey.setOnPreferenceChangeListener(this);
     }
 
     public void updateRotationTimeout(int timeout) {
@@ -127,35 +131,6 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
         alert.show();
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mDisableFullscreenKeyboard) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD, checked ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarImeSwitcher) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_IME_SWITCHER, mStatusBarImeSwitcher.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mKeyboardRotationToggle) {
-            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
-                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
-            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
-                mKeyboardRotationDialog();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
-                    mKeyboardRotationToggle.isChecked() ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
-            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
-            return true;
-        } else if (preference == mShowEnterKey) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.FORMAL_TEXT_INPUT, mShowEnterKey.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) objValue;
@@ -164,6 +139,28 @@ public class KeyboardInputSettings extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
             int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
+            return true;
+        } else if (preference == mDisableFullscreenKeyboard) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD,  (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarImeSwitcher) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_IME_SWITCHER, (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mKeyboardRotationToggle) {
+            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
+                mKeyboardRotationDialog();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    (Boolean) objValue ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
+            return true;
+        } else if (preference == mShowEnterKey) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, (Boolean) objValue ? 1 : 0);
             return true;
         } else if (preference == mKeyboardRotationTimeout) {
             int timeout = Integer.parseInt((String) objValue);

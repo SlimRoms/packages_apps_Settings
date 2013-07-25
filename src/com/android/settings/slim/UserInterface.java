@@ -46,7 +46,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     public static final String TAG = "UserInterface";
 
-    private static final String MISC_SETTINGS = "misc";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String KEY_DUAL_PANE = "dual_pane";
@@ -56,7 +55,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private Preference mLcdDensity;
     private CheckBoxPreference mUseAltResolver;
-    private PreferenceCategory mMisc;
     private Preference mRamBar;
     private CheckBoxPreference mDualPane;
     private CheckBoxPreference mHighEndGfx;
@@ -75,8 +73,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         addPreferencesFromResource(R.xml.user_interface_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
-
-        mMisc = (PreferenceCategory) prefs.findPreference(MISC_SETTINGS);
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setOnPreferenceChangeListener(this);
@@ -129,7 +125,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                 Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, mHighEndGfx.isChecked() ? 1 : 0 );
             }
         } else {
-            mMisc.removePreference(mHighEndGfx);
+            prefs.removePreference(mHighEndGfx);
         }
     }
 

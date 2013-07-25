@@ -4845,7 +4845,7 @@
     <string name="volume_ring_only_description">Ringtone</string>
 
     <!-- Sound settings screen Slim-->
-    <string name="sound_title">Sound</string>
+    <string name="advanced_sound_title">Advanced options</string>
     <string name="notifications_category_title">Notifications</string>
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
@@ -4932,8 +4932,6 @@
 
     <!-- General Settings -->
     <string name="title_slim_general">General</string>
-    <string name="display_short">Display</string>
-    <string name="misc_short">Misc</string>
     <string name="alt_resolver">Alt default app grid</string>
     <string name="alt_resolver_summary">Use alternate default app picker</string>
     <string name="dual_pane">Tablet dual panel mode</string>
@@ -4992,87 +4990,16 @@
     <string name="group_applications">Applications</string>
 
     <!-- Notification Shortcuts -->
-    <string name="notification_shortcuts_grouptitle">Shortcuts</string>
-    <string name="notification_shortcuts_settings_title">Notification shortcuts</string>
+    <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
-    <string name="notification_shortcuts_empty_title">Empty</string>
-    <string name="notification_shortcuts_edit_title">Edit Shortcut</string>
-    <string name="notification_shortcuts_edit_msg">Select or change the desired application or icon</string>
-    <string name="notification_shortcuts_reset_title">Clear Shortcuts</string>
-    <string name="notification_shortcuts_category_reset_title">Reset</string>
-    <string name="notification_shortcuts_title">Shortcuts</string>
-    <string name="notification_shortcuts_icon_picker_stock_icons_title">Stock icons</string>
-    <string name="notification_shortcuts_quantity_title">Number of shortcuts</string>
-    <string name="notification_shortcuts_quantity_summary">The number of shortcuts to display</string>
-    <string name="notification_shortcuts_move_text">Change order</string>
-    <string name="notification_shortcuts_move_up">Moved <xliff:g id="app_name">%s</xliff:g> up a slot</string>
-    <string name="notification_shortcuts_move_down">Moved <xliff:g id="app_name">%s</xliff:g> down a slot</string>
-    <string name="notification_shortcuts_color_title">Shortcut Icon Color</string>
-    <string name="notification_shortcuts_color_summary">Colorize the stock and/or application shortcut icons</string>
-    <string name="notification_shortcuts_colorize_toggle_title">Colorize application icons</string>
-    <string name="notification_shortcuts_colorize_toggle_summary">Colorizes any application icons with the chosen icon color</string>
-    <string name="notification_shortcuts_hide_carrier_title">Hide carrier label</string>
-
-    <!-- Notification Icons -->
-    <string name="notification_shortcuts_icon_picker_alarm">Alarm</string>
-    <string name="notification_shortcuts_icon_picker_andy">Andy</string>
-    <string name="notification_shortcuts_icon_picker_battery">Battery</string>
-    <string name="notification_shortcuts_icon_picker_browser">Browser</string>
-    <string name="notification_shortcuts_icon_picker_calendar">Calendar</string>
-    <string name="notification_shortcuts_icon_picker_camera">Camera</string>
-    <string name="notification_shortcuts_icon_picker_cloud">Cloud</string>
-    <string name="notification_shortcuts_icon_picker_contact">Contact</string>
-    <string name="notification_shortcuts_icon_picker_directdial">Direct Dial</string>
-    <string name="notification_shortcuts_icon_picker_directmessage">Direct Message</string>
-    <string name="notification_shortcuts_icon_picker_drive">Drive</string>
-    <string name="notification_shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="notification_shortcuts_icon_picker_email">Email</string>
-    <string name="notification_shortcuts_icon_picker_email2">Email Alternate</string>
-    <string name="notification_shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="notification_shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="notification_shortcuts_icon_picker_favorite">Favorite</string>
-    <string name="notification_shortcuts_icon_picker_file_browser">File Browser</string>
-    <string name="notification_shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
-    <string name="notification_shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="notification_shortcuts_icon_picker_gallery">Gallery</string>
-    <string name="notification_shortcuts_icon_picker_gears">Gears</string>
-    <string name="notification_shortcuts_icon_picker_google_small">Google</string>
-    <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="notification_shortcuts_icon_picker_help">Help</string>
-    <string name="notification_shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="notification_shortcuts_icon_picker_key">Keys/Accounts</string>
-    <string name="notification_shortcuts_icon_picker_laptop">Laptop</string>
-    <string name="notification_shortcuts_icon_picker_notes">Notes</string>
-    <string name="notification_shortcuts_icon_picker_luggage">Travel</string>
-    <string name="notification_shortcuts_icon_picker_maps">Maps</string>
-    <string name="notification_shortcuts_icon_picker_market">Market</string>
-    <string name="notification_shortcuts_icon_picker_movie">Movies</string>
-    <string name="notification_shortcuts_icon_picker_music">Music</string>
-    <string name="notification_shortcuts_icon_picker_nav">Navigation</string>
-    <string name="notification_shortcuts_icon_picker_phone">Phone</string>
-    <string name="notification_shortcuts_icon_picker_package">Package</string>
-    <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="notification_shortcuts_icon_picker_play">Play</string>
-    <string name="notification_shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="notification_shortcuts_icon_picker_podcast">Podcast</string>
-    <string name="notification_shortcuts_icon_picker_quicksettings">Quick Settings</string>
-    <string name="notification_shortcuts_icon_picker_rss">RSS Feed</string>
-    <string name="notification_shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="notification_shortcuts_icon_picker_search">Search</string>
-    <string name="notification_shortcuts_icon_picker_sms">Messaging</string>
-    <string name="notification_shortcuts_icon_picker_tasks">Tasks</string>
-    <string name="notification_shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="notification_shortcuts_icon_picker_transit">Transit</string>
-    <string name="notification_shortcuts_icon_picker_tv">TV</string>
-    <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="notification_shortcuts_icon_picker_unlock">Unlock</string>
+    <string name="notification_shortcuts_color_title">Shortcut icon color</string>
+    <string name="notification_shortcuts_color_summary">Colorize the shortcut icons</string>
+    <string name="notification_shortcuts_color_mode_title">Icon color mode</string>
+    <string name="notification_shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
     <!-- Slim display settings -->
     <string name="display_title">Display</string>
-    <string name="display_category_rotation_options_title">Rotation options</string>
     <string name="display_category_light_options_title">Light options</string>
-    <string name="display_category_brightness_options_title">Brightness options</string>
 
     <!-- Swap volume buttons when the screen is rotated by 90 or 180 degrees -->
     <string name="swap_volume_buttons_title">Swap volume buttons</string>
@@ -5219,6 +5146,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_style_title">Notification drawer style</string>
     <string name="notification_style_summary">Change your notification drawer style</string>
     <string name="notification_widgets">Widgets</string>
+    <string name="notification_hide_carrier_title">Hide carrier label</string>
     <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
 
@@ -5311,7 +5239,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_tiles_bg_color_title">Tiles background color</string>
     <string name="quick_tiles_bg_pressed_color_title">Tiles pressed background color</string>
     <string name="quick_tiles_text_color_title">Tiles text color</string>
-    <string name="quick_settings_style_reset">Reset colors</string>
+    <string name="qs_reset">Reset</string>
+    <string name="qs_style_reset_message">Reset all colors to default?</string>
 
     <!-- Reset tiles -->
     <string name="tiles_reset_title">Reset</string>
@@ -5345,8 +5274,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="circle_battery_animation_speed_slow">Slow</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
     <string name="circle_battery_animation_speed_fast">Fast</string>
-    <string name="status_bar_battery_icon_style_reset">Reset icon colors</string>
-    <string name="status_bar_battery_bar_style_reset">Reset battery bar colors</string>
     <string name="battery_bar">Battery bar location</string>
     <string name="battery_bar_color">Battery bar color</string>
     <string name="battery_bar_cat">Battery bar style</string>
@@ -5354,12 +5281,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="status_bar_reset">Reset</string>
+    <string name="status_bar_battery_style_reset_message">Reset all battery colors?</string>
+    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
+    <string name="status_bar_style_reset_message">Reset statusbar style?</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Device</string>
 
     <!-- Keyboard and Input ASS methods  -->
-    <string name="title_keyboard_input">Keyboard and input methods</string>
+    <string name="title_keyboard_input">Advanced options</string>
     <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
     <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
     <string name="volume_key_cursor_control_title">Volume key cursor control</string>
@@ -5404,6 +5335,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lock Screen ASS -->
     <string name="lock_screen_title">Lock screen</string>
+    <string name="lock_screen_summary">View or change the lock screen settings</string>
     <string name="lockscreen_additional_options_grouptitle">Additional options</string>
     <string name="lockscreen_slider_grouptitle">Slider and shortcut options</string>
     <string name="lockscreen_security_grouptitle">Security options</string>
@@ -5478,71 +5410,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="choose_app">Choose application</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="icon_picker_type">Select icon type:</string>
-    <string name="icon_default">Default</string>
-    <string name="icon_presets">System icons</string>
-    <string name="icon_custom">Gallery</string>
     <string name="lockscreen_shortcuts_title">Shortcuts</string>
     <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
-    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
-    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
-    <string name="lockscreen_shortcuts_icon_picker_alarm">Alarm</string>
-    <string name="lockscreen_shortcuts_icon_picker_andy">Andy</string>
-    <string name="lockscreen_shortcuts_icon_picker_battery">Battery</string>
-    <string name="lockscreen_shortcuts_icon_picker_browser">Browser</string>
-    <string name="lockscreen_shortcuts_icon_picker_calendar">Calendar</string>
-    <string name="lockscreen_shortcuts_icon_picker_camera">Camera</string>
-    <string name="lockscreen_shortcuts_icon_picker_cloud">Cloud</string>
-    <string name="lockscreen_shortcuts_icon_picker_contact">Contact</string>
-    <string name="lockscreen_shortcuts_icon_picker_directdial">Direct Dial</string>
-    <string name="lockscreen_shortcuts_icon_picker_directmessage">Direct Message</string>
-    <string name="lockscreen_shortcuts_icon_picker_drive">Drive</string>
-    <string name="lockscreen_shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="lockscreen_shortcuts_icon_picker_email">Email</string>
-    <string name="lockscreen_shortcuts_icon_picker_email2">Email Alternate</string>
-    <string name="lockscreen_shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="lockscreen_shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="lockscreen_shortcuts_icon_picker_favorite">Favorite</string>
-    <string name="lockscreen_shortcuts_icon_picker_file_browser">File Browser</string>
-    <string name="lockscreen_shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
-    <string name="lockscreen_shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="lockscreen_shortcuts_icon_picker_gallery">Gallery</string>
-    <string name="lockscreen_shortcuts_icon_picker_gears">Gears</string>
-    <string name="lockscreen_shortcuts_icon_picker_google_small">Google</string>
-    <string name="lockscreen_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="lockscreen_shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="lockscreen_shortcuts_icon_picker_help">Help</string>
-    <string name="lockscreen_shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="lockscreen_shortcuts_icon_picker_key">Keys/Accounts</string>
-    <string name="lockscreen_shortcuts_icon_picker_laptop">Laptop</string>
-    <string name="lockscreen_shortcuts_icon_picker_notes">Notes</string>
-    <string name="lockscreen_shortcuts_icon_picker_luggage">Travel</string>
-    <string name="lockscreen_shortcuts_icon_picker_maps">Maps</string>
-    <string name="lockscreen_shortcuts_icon_picker_market">Market</string>
-    <string name="lockscreen_shortcuts_icon_picker_movie">Movies</string>
-    <string name="lockscreen_shortcuts_icon_picker_music">Music</string>
-    <string name="lockscreen_shortcuts_icon_picker_nav">Navigation</string>
-    <string name="lockscreen_shortcuts_icon_picker_phone">Phone</string>
-    <string name="lockscreen_shortcuts_icon_picker_package">Package</string>
-    <string name="lockscreen_shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="lockscreen_shortcuts_icon_picker_play">Play</string>
-    <string name="lockscreen_shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="lockscreen_shortcuts_icon_picker_podcast">Podcast</string>
-    <string name="lockscreen_shortcuts_icon_picker_quicksettings">Quick Settings</string>
-    <string name="lockscreen_shortcuts_icon_picker_rss">RSS Feed</string>
-    <string name="lockscreen_shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="lockscreen_shortcuts_icon_picker_search">Search</string>
-    <string name="lockscreen_shortcuts_icon_picker_sms">Messaging</string>
-    <string name="lockscreen_shortcuts_icon_picker_tasks">Tasks</string>
-    <string name="lockscreen_shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="lockscreen_shortcuts_icon_picker_transit">Transit</string>
-    <string name="lockscreen_shortcuts_icon_picker_tv">TV</string>
-    <string name="lockscreen_shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="lockscreen_shortcuts_icon_picker_unlock">Unlock</string>
 
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
@@ -5647,34 +5518,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="always_show_invincible_icons">Always show invisible icons</string>
     <string name="always_show">Always show</string>
     <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
-    <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
-    <string name="home">Home</string>
-    <string name="back">Back</string>
-    <string name="recents">Recents</string>
-    <string name="search">Search</string>
-    <string name="screenshot">Screenshot</string>
-    <string name="menu">Menu</string>
-    <string name="open_ime_switcher">Open IME Switcher</string>
-    <string name="kill_app">Kill app</string>
-    <string name="widgets">Widgets viewpager</string>
-    <string name="lastapp">Last app</string>
-    <string name="power">Screen off</string>
-    <string name="quicksettings">Quicksettings panel</string>
-    <string name="notifications">Notifications</string>
-    <string name="custom_app">Custom app</string>
-    <string name="blank">None</string>
-    <string name="none">None</string>
-    <string name="take_screenshot">Screenshot</string>
-    <string name="ring_vib">Ring/Vib</string>
-    <string name="ring_silent">Ring/Silent</string>
-    <string name="ring_vib_silent">Ring/Vib/Silent</string>
-    <string name="screen_off">Screen Off</string>
-    <string name="google_now">Search</string>
-    <string name="one_target">1 target</string>
-    <string name="two_targets">2 targets</string>
-    <string name="three_targets">3 targets</string>
-    <string name="four_targets">4 targets</string>
-    <string name="five_targets">5 targets</string>
     <string name="size_42_dp_default">42 dp (default)</string>
     <string name="size_36_dp">36 dp</string>
     <string name="size_30_dp">30 dp</string>
@@ -5693,36 +5536,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>
     <string name="size_4_dp">4 dp</string>
-    <string name="menu_nav_bar_style_reset">Reset navbar glow color</string>
-    <string name="menu_nav_bar_dimen_reset">Reset navbar dimensions</string>
-    <string name="menu_nav_bar_button_reset">Reset navbar buttons</string>
-    <string name="menu_nav_ring_targets_reset">Reset navring targets</string>
-
-    <!-- Navigation Bar -->
+    <string name="navbar_reset">Reset</string>
+    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
+    <string name="navbar_dimensions_style_reset_message">Reset all style and dimensions entries to default?</string>
     <string name="navigation_bar">Navigation bar</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Where do you want the menu buttons to appear?</string>
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
-    <string name="navbar_qty_title">Navigation button quantity</string>
-    <string name="navbar_qty_summary">Changing this will reset your current buttons</string>
-    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
-    <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    <string name="navbar_action_home">Home</string>
-    <string name="navbar_action_back">Back</string>
-    <string name="navbar_action_recents">Recents</string>
-    <string name="navbar_action_lastapp">Last app</string>
-    <string name="navbar_action_search">Search</string>
-    <string name="navbar_action_screenshot">Screenshot</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_ime">Open IME Switcher</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_widgets">Widgets viewpager</string>
-    <string name="navbar_action_power">Screen Off</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_quicksettings">Quicksettings panel</string>
-    <string name="navbar_action_none">None</string>
     <string name="navbar_enable_bar">Enable navigation bar</string>
     <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
@@ -5731,34 +5553,23 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar_height_landscape_summary">Navigation bar height while in landscape.</string>
     <string name="navigation_bar_width_title">Navigation bar width</string>
     <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
-    <string name="navbar_enable_dialog_title">Reboot required!</string>
-    <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
-    <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
-    <string name="navbar_enable_dialog_Positive">Reboot now!</string>
-    <string name="navbar_height_dialog_title">Reboot required!</string>
-    <string name="navbar_height_dialog_summary">Please reboot for navigation bar height and width changes to apply properly!</string>
-    <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
-    <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
+    <string name="navbar_can_move">Show landscape</string>
+    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
+
+    <!-- Navigation bar button style -->
+    <string name="nav_bar_button_style">Button style</string>
+    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
+    <string name="button_transparency_title">Button transparency</string>
+    <string name="navigation_bar_icon_tint_title">Button color</string>
+    <string name="nav_button_color_mode_title">Color mode</string>
+    <string name="nav_button_color_mode_dialog_title">Colorize</string>
+    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
+    <string name="navigation_bar_glow_tint_title">Button glow color</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
-    <string name="navbar_can_move">Show landscape</string>
-    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
-
-    <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style">Navigation bar button style</string>
-    <string name="nav_bar_button_style_reset">Reset</string>
-    <string name="button_transparency_title">Navigation bar button transparency</string>
-    <string name="navigation_bar_icon_tint_title">Navigation bar button color</string>
-    <string name="nav_button_color_mode_title">Color mode</string>
-    <string name="nav_button_color_mode_dialog_title">Colorize</string>
-    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
-    <string name="nav_button_color_mode_all_icons">All icons</string>
-    <string name="nav_button_color_mode_system_icons">System icons</string>
-    <string name="nav_button_color_mode_system_custom_icons">System and custom icons</string>
 
     <!-- Navigation bar background style -->
     <string name="nav_bar_transparency_title">Navigation bar transparency</string>
@@ -5769,42 +5580,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="nav_bar_alpha_mode_home">on launcher</string>
     <string name="nav_bar_alpha_mode_default">on launcher and lock screen</string>
     <string name="nav_bar_alpha_mode_always">always</string>
-    <string name="nav_bar_style_reset">Reset</string>
-
-    <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
-    <string name="interface_softkey_settings">Softkey Settings</string>
-    <string name="interface_softkeys_pref_default_title">Target %1$s short press activity</string>
-    <string name="interface_softkeys_pref_long_title">Target %1$s long press activity</string>
-    <string name="interface_softkeys_pref_default_summary">Tap the settings icon to select a custom long press activity</string>
-    <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
-    <string name="interface_softkeys_reboot_title">Reboot Menu</string>
-    <string name="interface_softkeys_screenshot_title">Screenshot</string>
-    <string name="interface_softkeys_screenoff_title">Screen Off</string>
-    <string name="interface_softkeys_ime_switcher_title">Open IME Switcher</string>
-    <string name="interface_softkeys_ring_vib_title">Toggle Ring/Vib</string>
-    <string name="interface_softkeys_ring_silent_title">Toggle Ring/Silent</string>
-    <string name="interface_softkeys_ring_vib_silent_title">Toggle Ring/Vib/Silent</string>
-    <string name="interface_softkeys_kill_process_title">Kill App</string>
-    <string name="interface_softkeys_widgets">Widgets viewpager</string>
-    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
-    <string name="interface_navring_settings_title">Navigation bar ring</string>
-    <string name="interface_navring_settings_summary">Edit your custom navring apps</string>
-    <string name="title_navring_amount">Number of navring targets</string>
-    <string name="summary_navring_amount">Changing this will reset your current targets</string>
-    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
-    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
-    <string name="interface_navring_assist_title">Search</string>
-    <string name="interface_navring">Ring Targets</string>
-    <string name="navbar_ring">Custom Ring Targets</string>
-    <string name="navring_enable_long">Enable longpress for navring</string>
-
     <string name="navbar_style_dimen_title">Style and dimensions</string>
     <string name="navbar_button_title">Buttons</string>
     <string name="navbar_targets_title">Ring targets</string>
     <string name="navbar_cat">Navigation bar</string>
-    <string name="navbar_enable_long">Enable longpress for navbar</string>
-    <string name="ring_targets_cat_title">Navigation ring targets</string>
     <string name="navbar_style_cat">Navigation bar style</string>
     <string name="navbar_dimen_cat">Navigation bar dimensions</string>
 
@@ -5815,17 +5594,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_widgets_style_settings_summary">Change widgets viewpager background style</string>
     <string name="navbar_widgets_summary">Add your custom widgets to the viewpager</string>
     <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
-    <string name="navbar_widgets_reset">Reset widgets</string>
     <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
     <string name="navbar_widget_summary_add">Click to add Widget</string>
-    <string name="navbar_widgets_shiftLeft">Shift left</string>
-    <string name="navbar_widgets_shiftRight">Shift right</string>
-    <string name="navbar_widgets_delete">Delete widget</string>
-
     <string name="navbar_widgets_text_color_title">Widgets viewpager text color</string>
     <string name="navbar_widgets_bg_color_title">Widgets viewpager background color</string>
     <string name="navbar_widgets_transparency_title">Widgets viewpager transparency</string>
-    <string name="navbar_widgets_style_reset">Reset style</string>
+    <string name="widgets_reset">Reset</string>
+    <string name="widgets_delete">Delete</string>
+    <string name="widgets_style_reset_message">Reset all style settings?</string>
+    <string name="widgets_reset_message">Reset all widgets?</string>
+    <string name="widgets_delete_message">Delete current widget?</string>
+    <string name="widgets_shift_left">Shift left</string>
+    <string name="widgets_shift_right">Shift right</string>
+    <string name="widgets_delete">Delete</string>
+    <string name="widgets_shifted_left">Widget shifted one position to the left</string>
+    <string name="widgets_shifted_right">Widget shifted one position to the right</string>
+    <string name="widgets_shifted_end">Widget cannot be shifted into this direction</string>
 
     <!-- cLock settings -->
     <string name="chronus_title">cLock</string>
@@ -5856,7 +5640,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_color_enabled">Enabled</string>
     <string name="ram_bar_color_disabled">Disabled</string>
     <string name="ram_bar_button_help">Help</string>
-    <string name="ram_bar_button_reset">Reset colors</string>
+    <string name="ram_bar_button_reset">Reset</string>
 
     <!-- Wifi settings -->
     <string name="ass_wifi_settings_title">Wi-Fi</string>
@@ -5955,9 +5739,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_icon_color_mode_title">Button icon color mode</string>
     <string name="pie_icon_color_mode_dialog_title">Colorize</string>
     <string name="pie_icon_color_mode_summary">Change the button icon color mode</string>
-    <string name="pie_icon_color_mode_all_icons">All icons</string>
-    <string name="pie_icon_color_mode_system_icons">System icons</string>
-    <string name="pie_icon_color_mode_system_custom_icons">System and custom icons</string>
     <string name="pie_trigger_dimens_options">Trigger dimensions</string>
     <string name="pie_trigger_thickness_title">Trigger thickness</string>
     <string name="pie_trigger_height_title">Trigger height left and right</string>
@@ -5990,36 +5771,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_disable_statusbar_info_summary">Hide redundant statusbar information</string>
     <string name="pie_show_background_title">Show background</string>
     <string name="pie_show_background_summary">Enable pie screen background</string>
-    <string name="menu_pie_style_reset">Reset style</string>
-    <string name="menu_pie_button_style_reset">Reset button style</string>
-    <string name="menu_pie_button_reset">Reset buttons</string>
-    <string name="pie_qty_title">Button quantity</string>
-    <string name="pie_qty_summary">Changing this will reset your current buttons</string>
-    <string name="pie_action_title">Button %1$s action &amp; icon</string>
-    <string name="pie_longpress_title">Button %1$s longpress action</string>
-    <string name="pie_enable_long">Enable longpress for pie buttons</string>
     <string name="pie_button">Buttons</string>
-    <string name="pie_button_cat">Buttons</string>
-    <string name="pie_buttons_options">Button options</string>
     <string name="pie_second_layer_title">Enable second layer</string>
     <string name="pie_second_layer_summary">Enable or disable second button row</string>
     <string name="pie_button_second_layer">Buttons second layer</string>
-    <string name="pie_button_second_layer_cat">Buttons second layer</string>
-    <string name="pie_action_custom_app">Custom app</string>
-    <string name="pie_action_home">Home</string>
-    <string name="pie_action_back">Back</string>
-    <string name="pie_action_recents">Recents</string>
-    <string name="pie_action_lastapp">Last app</string>
-    <string name="pie_action_search">Search</string>
-    <string name="pie_action_screenshot">Screenshot</string>
-    <string name="pie_action_menu">Menu</string>
-    <string name="pie_action_ime">Open IME Switcher</string>
-    <string name="pie_action_kill">Kill app</string>
-    <string name="pie_action_widgets">Widgets viewpager</string>
-    <string name="pie_action_power">Screen Off</string>
-    <string name="pie_action_notifications">Notifications</string>
-    <string name="pie_action_quicksettings">Quicksettings panel</string>
-    <string name="pie_action_none">None</string>
+    <string name="pie_button_second_layer_summary">Change second layer buttons</string>
+    <string name="pie_button_style_summary">Change pie button style</string>
+    <string name="pie_reset">Reset</string>
+    <string name="pie_style_reset_message">Reset style entries to default?</string>
+    <string name="pie_trigger_reset_message">Reset trigger entries to default?</string>
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
@@ -6044,5 +5804,106 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="privacy_guard_help_text">In this screen you can choose for which apps Privacy Guard should be active by simply tapping on them. Selected apps will not be able to access your personal data, such as contacts, messages or call logs. Long pressing on an entry opens the app details screen for that app.\n\nBy default built-in apps are not shown. If you want to show them or filter apps to show only the ones requesting access to personal data by their permissions, select the respective options in the menu.</string>
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
     <string name="privacy_guard_manager_filter_permissions">Permission filter</string>
+
+    <!-- Button shorcut actions -->
+    <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_home">Home</string>
+    <string name="shortcut_action_back">Back</string>
+    <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_lastapp">Last app</string>
+    <string name="shortcut_action_search">Search</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Open IME Switcher</string>
+    <string name="shortcut_action_kill">Kill app</string>
+    <string name="shortcut_action_widget">Widgets viewpager</string>
+    <string name="shortcut_action_power">Screen Off</string>
+    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_ring_vib">Ring/Vib</string>
+    <string name="shortcut_action_ring_silent">Ring/Silent</string>
+    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+
+    <string name="shortcut_action_longpress">Longpress:</string>
+    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
+    <string name="shortcut_action_select_action">Choose action:</string>
+    <string name="shortcut_action_select_action_newbutton">Choose new button:</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="shortcut_action_add">Add</string>
+    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
+    <string name="shortcut_action_max">Maximum entries size has been reached</string>
+    <string name="shortcut_action_warning">Warning</string>
+    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon.  Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right.  Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
+    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
+    <string name="shortcut_action_help">Help</string>
+
+    <string name="icon_picker_type">Select icon type:</string>
+    <string name="icon_default">Default</string>
+    <string name="icon_presets">System icons</string>
+    <string name="icon_custom">Gallery</string>
+    <string name="shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="shortcuts_icon_picker_andy">Andy</string>
+    <string name="shortcuts_icon_picker_battery">Battery</string>
+    <string name="shortcuts_icon_picker_browser">Browser</string>
+    <string name="shortcuts_icon_picker_calendar">Calendar</string>
+    <string name="shortcuts_icon_picker_camera">Camera</string>
+    <string name="shortcuts_icon_picker_cloud">Cloud</string>
+    <string name="shortcuts_icon_picker_contact">Contact</string>
+    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
+    <string name="shortcuts_icon_picker_directmessage">Direct Message</string>
+    <string name="shortcuts_icon_picker_drive">Drive</string>
+    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
+    <string name="shortcuts_icon_picker_email">Email</string>
+    <string name="shortcuts_icon_picker_email2">Email Alternate</string>
+    <string name="shortcuts_icon_picker_evernote">Evernote</string>
+    <string name="shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="shortcuts_icon_picker_favorite">Favorite</string>
+    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
+    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
+    <string name="shortcuts_icon_picker_fitness">Fitness</string>
+    <string name="shortcuts_icon_picker_gallery">Gallery</string>
+    <string name="shortcuts_icon_picker_gears">Gears</string>
+    <string name="shortcuts_icon_picker_google_small">Google</string>
+    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
+    <string name="shortcuts_icon_picker_help">Help</string>
+    <string name="shortcuts_icon_picker_joystick">Joystick</string>
+    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_notes">Notes</string>
+    <string name="shortcuts_icon_picker_luggage">Travel</string>
+    <string name="shortcuts_icon_picker_maps">Maps</string>
+    <string name="shortcuts_icon_picker_market">Market</string>
+    <string name="shortcuts_icon_picker_movie">Movies</string>
+    <string name="shortcuts_icon_picker_music">Music</string>
+    <string name="shortcuts_icon_picker_nav">Navigation</string>
+    <string name="shortcuts_icon_picker_phone">Phone</string>
+    <string name="shortcuts_icon_picker_package">Package</string>
+    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="shortcuts_icon_picker_play">Play</string>
+    <string name="shortcuts_icon_picker_pocket">Pocket</string>
+    <string name="shortcuts_icon_picker_podcast">Podcast</string>
+    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
+    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
+    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_search">Search</string>
+    <string name="shortcuts_icon_picker_sms">Messaging</string>
+    <string name="shortcuts_icon_picker_tasks">Tasks</string>
+    <string name="shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="shortcuts_icon_picker_transit">Transit</string>
+    <string name="shortcuts_icon_picker_tv">TV</string>
+    <string name="shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="shortcuts_icon_picker_unlock">Unlock</string>
+
+    <string name="icon_color_mode_all_icons">All icons</string>
+    <string name="icon_color_mode_system_icons">System icons</string>
+    <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
 
 </resources>

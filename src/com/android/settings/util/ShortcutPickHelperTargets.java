@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.util;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,9 +41,9 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.slim.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.android.settings.util.ShortcutPickHelperTargets.AppExpandableAdapter.GroupInfo;
 
-public class ShortcutPickHelper {
+public class ShortcutPickHelperTargets {
 
     private Activity mParent;
     private AlertDialog mAlertDialog;
@@ -58,7 +58,7 @@ public class ShortcutPickHelper {
         void shortcutPicked(String uri, String friendlyName, boolean isApplication);
     }
 
-    public ShortcutPickHelper(Activity parent, OnPickListener listener) {
+    public ShortcutPickHelperTargets(Activity parent, OnPickListener listener) {
         mParent = parent;
         mPackageManager = mParent.getPackageManager();
         mListener = listener;

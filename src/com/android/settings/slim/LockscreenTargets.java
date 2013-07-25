@@ -66,15 +66,17 @@ import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.slim.IconPicker.OnIconPickListener;
+import com.android.settings.util.IconPicker;
+import com.android.settings.util.IconPicker.OnIconPickListener;
+import com.android.settings.util.ShortcutPickHelperTargets;
 
-public class LockscreenTargets extends Fragment implements ShortcutPickHelper.OnPickListener,
+public class LockscreenTargets extends Fragment implements ShortcutPickHelperTargets.OnPickListener,
     GlowPadView.OnTriggerListener, OnIconPickListener {
 
     private GlowPadView mWaveView;
     private ImageButton mDialogIcon;
     private Button mDialogLabel;
-    private ShortcutPickHelper mPicker;
+    private ShortcutPickHelperTargets mPicker;
     private IconPicker mIconPicker;
     private ArrayList<TargetInfo> mTargetStore = new ArrayList<TargetInfo>();
     private int mTargetOffset;
@@ -122,7 +124,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
         mTargetOffset = mIsLandscape && !mIsScreenLarge ? 2 : 0;
         mTargetInset = mResources.getDimensionPixelSize(com.android.internal.R.dimen.lockscreen_target_inset);
         mIconPicker = new IconPicker(mActivity, this);
-        mPicker = new ShortcutPickHelper(mActivity, this);
+        mPicker = new ShortcutPickHelperTargets(mActivity, this);
         mImageTmp = new File(mActivity.getCacheDir() + "/target.tmp");
         EMPTY_LABEL = mActivity.getResources().getString(R.string.lockscreen_target_empty);
         return inflater.inflate(R.layout.lockscreen_targets, container, false);
@@ -302,13 +304,11 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
         menu.add(0, MENU_RESET, 0, R.string.profile_reset_title)
             .setIcon(R.drawable.ic_settings_backup) // use the backup icon
             .setAlphabeticShortcut('r')
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         menu.add(0, MENU_SAVE, 0, R.string.wifi_save)
             .setIcon(R.drawable.ic_menu_save)
             .setAlphabeticShortcut('s')
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
     }
 
     @Override

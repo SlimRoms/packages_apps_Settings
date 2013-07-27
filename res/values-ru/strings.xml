@@ -2228,8 +2228,6 @@
     <string name="volume_overlay_title">Панель громкости</string>
     <string name="volume_ring_only_description">Рингтон</string>
     <!-- Sound settings screen Slim-->
-    <string name="sound_title">Звук</string>
-    <string name="notifications_category_title">Уведомления</string>
     <string name="volbtn_music_controls_title">Управление музыкой кнопками громкости</string>
     <string name="volbtn_music_controls_summary">Когда экран выключен, долгое нажатие кнопок громкости переключает музыкальные треки</string>
     <!-- Sound settings screen, setting check box label -->
@@ -2304,8 +2302,6 @@
     <string name="status_bar_toggle_info">Включена автоматическая регулировка яркости</string>
     <!-- General Settings -->
     <string name="title_slim_general">Основные</string>
-    <string name="display_short">Индикация</string>
-    <string name="misc_short">Разное</string>
     <string name="alt_resolver">Альтернативная сетка приложений по умолчанию</string>
     <string name="alt_resolver_summary">Использовать альтернативный выбор приложения</string>
     <string name="dual_pane">Планшетный двухпанельный режим</string>
@@ -2360,87 +2356,11 @@
     <string name="use_custom_app_summary">Использовать выбранное приложение вместо показа диалога недавних приложений</string>
     <string name="group_applications">Приложения</string>
     <!-- Notification Shortcuts -->
-    <string name="notification_shortcuts_grouptitle">Ярлыки</string>
-    <string name="notification_shortcuts_settings_title">Ярлыки панели уведомлений</string>
     <string name="notification_shortcuts_settings_summary">Показывать ярлыки в панели уведомлений</string>
-    <string name="notification_shortcuts_empty_title">Пусто</string>
-    <string name="notification_shortcuts_edit_title">Изменить ярлык</string>
-    <string name="notification_shortcuts_edit_msg">Выбрать или изменить назначенное приложение/значок</string>
-    <string name="notification_shortcuts_reset_title">Очистить ярлыки</string>
-    <string name="notification_shortcuts_category_reset_title">Сбросить</string>
-    <string name="notification_shortcuts_title">Ярлыки</string>
-    <string name="notification_shortcuts_icon_picker_stock_icons_title">Базовые значки</string>
-    <string name="notification_shortcuts_quantity_title">Количество ярлыков</string>
-    <string name="notification_shortcuts_quantity_summary">Количество ярлыков для отображения</string>
-    <string name="notification_shortcuts_move_text">Изменить порядок</string>
-    <string name="notification_shortcuts_move_up">Сдвинуть <xliff:g id="app_name">%s</xliff:g> слот вверх</string>
-    <string name="notification_shortcuts_move_down">Сдвинуть <xliff:g id="app_name">%s</xliff:g> слот вниз</string>
     <string name="notification_shortcuts_color_title">Цвет значка ярлыка</string>
     <string name="notification_shortcuts_color_summary">Установить цвет значков (базового и/или приложения)</string>
-    <string name="notification_shortcuts_colorize_toggle_title">Установить цвет значков приложений</string>
-    <string name="notification_shortcuts_colorize_toggle_summary">Устанавливает выбранный цвет значков приложений</string>
-    <string name="notification_shortcuts_hide_carrier_title">Скрыть имя оператора</string>
-    <!-- Notification Icons -->
-    <string name="notification_shortcuts_icon_picker_alarm">Часы</string>
-    <string name="notification_shortcuts_icon_picker_andy">Andy</string>
-    <string name="notification_shortcuts_icon_picker_battery">Батарея</string>
-    <string name="notification_shortcuts_icon_picker_browser">Браузер</string>
-    <string name="notification_shortcuts_icon_picker_calendar">Календарь</string>
-    <string name="notification_shortcuts_icon_picker_camera">Камера</string>
-    <string name="notification_shortcuts_icon_picker_cloud">Cloud</string>
-    <string name="notification_shortcuts_icon_picker_contact">Контакт</string>
-    <string name="notification_shortcuts_icon_picker_directdial">Быстрый набор</string>
-    <string name="notification_shortcuts_icon_picker_directmessage">Быстрое сообщение</string>
-    <string name="notification_shortcuts_icon_picker_drive">Drive</string>
-    <string name="notification_shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="notification_shortcuts_icon_picker_email">Email</string>
-    <string name="notification_shortcuts_icon_picker_email2">Альтернативный Email</string>
-    <string name="notification_shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="notification_shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="notification_shortcuts_icon_picker_favorite">Избранный</string>
-    <string name="notification_shortcuts_icon_picker_file_browser">Файловый менеджер</string>
-    <string name="notification_shortcuts_icon_picker_file_browser2">Альтернативный файловый менеджер</string>
-    <string name="notification_shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="notification_shortcuts_icon_picker_gallery">Gallery</string>
-    <string name="notification_shortcuts_icon_picker_gears">Gears</string>
-    <string name="notification_shortcuts_icon_picker_google_small">Google</string>
-    <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="notification_shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="notification_shortcuts_icon_picker_help">Справка</string>
-    <string name="notification_shortcuts_icon_picker_joystick">Джойстик</string>
-    <string name="notification_shortcuts_icon_picker_key">Ключи/Учетные записи</string>
-    <string name="notification_shortcuts_icon_picker_laptop">Ноутбук</string>
-    <string name="notification_shortcuts_icon_picker_notes">Заметки</string>
-    <string name="notification_shortcuts_icon_picker_luggage">Путешествия</string>
-    <string name="notification_shortcuts_icon_picker_maps">Карты</string>
-    <string name="notification_shortcuts_icon_picker_market">Market</string>
-    <string name="notification_shortcuts_icon_picker_movie">Видео</string>
-    <string name="notification_shortcuts_icon_picker_music">Музыка</string>
-    <string name="notification_shortcuts_icon_picker_nav">Навигация</string>
-    <string name="notification_shortcuts_icon_picker_phone">Телефон</string>
-    <string name="notification_shortcuts_icon_picker_package">Package</string>
-    <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="notification_shortcuts_icon_picker_play">Play</string>
-    <string name="notification_shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="notification_shortcuts_icon_picker_podcast">Подкасты</string>
-    <string name="notification_shortcuts_icon_picker_quicksettings">Быстрые настройки</string>
-    <string name="notification_shortcuts_icon_picker_rss">Подписка RSS</string>
-    <string name="notification_shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="notification_shortcuts_icon_picker_search">Поиск</string>
-    <string name="notification_shortcuts_icon_picker_sms">Сообщения</string>
-    <string name="notification_shortcuts_icon_picker_tasks">Задания</string>
-    <string name="notification_shortcuts_icon_picker_terminal">Терминал</string>
-    <string name="notification_shortcuts_icon_picker_transit">Транзит</string>
-    <string name="notification_shortcuts_icon_picker_tv">TV</string>
-    <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="notification_shortcuts_icon_picker_unlock">Разблокировка</string>
     <!-- Slim display settings -->
     <string name="display_title">Экран</string>
-    <string name="display_category_rotation_options_title">Настройки поворота</string>
-    <string name="display_category_light_options_title">Настройки LED</string>
-    <string name="display_category_brightness_options_title">Настройки яркости</string>
-    <!-- Swap volume buttons when the screen is rotated by 90 or 180 degrees -->
-    <string name="swap_volume_buttons_title">Менять кнопки громкости местами</string>
     <string name="swap_volume_buttons_summary">Менять местами кнопки громкости, когда экран повернут на 90 или 180 градусов</string>
     <!-- Automatic brightness customization -->
     <string name="custom_brightness_summary">Просмотреть/изменить настройки яркости</string>
@@ -2655,9 +2575,6 @@
     <string name="quick_tiles_bg_color_title">Цвет фона плиток</string>
     <string name="quick_tiles_bg_pressed_color_title">Цвет фона нажатых плиток</string>
     <string name="quick_tiles_text_color_title">Цвет текста плиток</string>
-    <string name="quick_settings_style_reset">Сбросить цвета</string>
-    <!-- Reset tiles -->
-    <string name="tiles_reset_title">Сбросить</string>
     <string name="tiles_reset_message">Восстановить отображаемые плитки и их стиль по умолчанию?</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
@@ -2962,17 +2879,10 @@
     <string name="navbar_can_move_summary">Показывать панель навигации внизу в ландшафтном режиме</string>
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">Стиль кнопок панели навигации</string>
-    <string name="nav_bar_button_style_reset">Сбросить</string>
-    <string name="button_transparency_title">Прозрачность кнопок панели навигации</string>
     <string name="navigation_bar_icon_tint_title">Цвет кнопок панели навигации</string>
     <string name="nav_button_color_mode_title">Режим цвета</string>
     <string name="nav_button_color_mode_dialog_title">Раскрасить</string>
     <string name="nav_button_color_mode_summary">Изменить режим цвета кнопок панели навигации</string>
-    <string name="nav_button_color_mode_all_icons">Все значки</string>
-    <string name="nav_button_color_mode_system_icons">Системные значки</string>
-    <string name="nav_button_color_mode_system_custom_icons">Системные и свои значки</string>
-    <!-- Navigation bar background style -->
-    <string name="nav_bar_transparency_title">Прозрачность панели навигации</string>
     <string name="nav_bar_color_title">Цвета панели навигации</string>
     <string name="nav_bar_background_style">Стиль фона панели навигации</string>
     <string name="nav_bar_alpha_mode_dialog_text_title">Показать прозрачность панелей навигации и состояния</string>
@@ -2985,38 +2895,10 @@
     <string name="navbar_cat">Панель навигации</string>
     <string name="navbar_style_dimen_title">Стиль и размеры</string>
     <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">Ярлыки кольца панели навигации</string>
-    <string name="interface_softkey_settings">Настройки кнопки</string>
-    <string name="interface_softkeys_pref_default_title">Действие ярлыка %1$s на короткое нажатие</string>
-    <string name="interface_softkeys_pref_long_title">Действие ярлыка %1$s на долгое нажатие</string>
-    <string name="interface_softkeys_pref_default_summary">Нажмите на значок настроек, чтобы выбрать свое действие на долгое нажатие</string>
-    <string name="interface_softkeys_activity_dialog_title">Выбрать действие</string>
-    <string name="interface_softkeys_reboot_title">Меню перезагрузки</string>
-    <string name="interface_softkeys_screenshot_title">Снимок экрана</string>
-    <string name="interface_softkeys_screenoff_title">Выключить экран</string>
-    <string name="interface_softkeys_ime_switcher_title">Открыть переключатель IME</string>
-    <string name="interface_softkeys_ring_vib_title">Переключить Звонок/Вибро</string>
-    <string name="interface_softkeys_ring_silent_title">Переключить Звонок/Тихо</string>
-    <string name="interface_softkeys_ring_vib_silent_title">Переключить Звонок/Вибро/Тихо</string>
-    <string name="interface_softkeys_kill_process_title">Завершить приложение</string>
-    <string name="interface_softkeys_widgets">Панель виджетов</string>
-    <string name="interface_softkey_package_removed">Ранее выбранный пакет не найден</string>
-    <string name="interface_navring_settings_title">Кольцо строки навигации</string>
-    <string name="interface_navring_settings_summary">Изменить свои приложения кольца строки навигации</string>
-    <string name="title_navring_amount">Количество ярлыков кольца строки навигации</string>
-    <string name="summary_navring_amount">Смена этого параметра сбросит ваши текущие ярлыки</string>
-    <string name="interface_navring_custom_pref_summary">Отпустите палец на нужном ярлыке для запуска </string>
-    <string name="interface_navring_pref_default_summary">Нажмите для выбора своего действия кольца</string>
-    <string name="interface_navring_assist_title">Поиск</string>
-    <string name="interface_navring">Ярлыки кольца</string>
-    <string name="navbar_ring">Свои ярлыки кольца</string>
-    <string name="navring_enable_long">Включить долгое нажатие для кольца панели навигации</string>
     <string name="navbar_style_dimen_title">Стиль и размеры</string>
     <string name="navbar_button_title">Кнопки</string>
     <string name="navbar_targets_title">Ярлыки кольца</string>
     <string name="navbar_cat">Строка навигации</string>
-    <string name="navbar_enable_long">Включить долгое нажатие для строки навигации</string>
-    <string name="ring_targets_cat_title">Ярлыки кольца строки навигации</string>
     <string name="navbar_style_cat">Стиль строки навигации</string>
     <string name="navbar_dimen_cat">Размер строки навигации</string>
     <string name="navbar_restart_systemui_summary">Изменение этих настроек повлечет перезагрузку SystemUI</string>
@@ -3327,8 +3209,3 @@
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Разблокировка</string>
 
-    <string name="pie_icon_color_mode_all_icons">Все значки</string>
-    <string name="pie_icon_color_mode_system_icons">Системные значки</string>
-    <string name="pie_icon_color_mode_system_custom_icons">Системные и свои значки</string>
-
-</resources>

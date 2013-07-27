@@ -21,7 +21,6 @@ import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +30,6 @@ import android.os.Parcelable;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.os.UserHandle;
 import android.preference.SeekBarDialogPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -472,11 +470,5 @@ public class DisplayBrightness extends SeekBarDialogPreference implements
                 return new SavedState[size];
             }
         };
-    }
-
-    @Override
-    protected void onClick() {
-        Intent intent = new Intent(Intent.ACTION_SHOW_BRIGHTNESS_DIALOG);
-        getContext().sendBroadcastAsUser(intent, UserHandle.CURRENT_OR_SELF);
     }
 }

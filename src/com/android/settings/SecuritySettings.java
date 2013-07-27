@@ -400,90 +400,88 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     root.findPreference(KEY_SIM_LOCK).setEnabled(false);
                 }
             }
-        }
 
             // Show password
             mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
 
-        // Credential storage
-        final UserManager um = (UserManager) getActivity().getSystemService(Context.USER_SERVICE);
-        if (!um.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
-            mKeyStore = KeyStore.getInstance();
-            Preference credentialStorageType = root.findPreference(KEY_CREDENTIAL_STORAGE_TYPE);
+            // Credential storage
+            final UserManager um = (UserManager) getActivity().getSystemService(Context.USER_SERVICE);
+            if (!um.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
+                mKeyStore = KeyStore.getInstance();
+                Preference credentialStorageType = root.findPreference(KEY_CREDENTIAL_STORAGE_TYPE);
 
-            final int storageSummaryRes =
-                mKeyStore.isHardwareBacked() ? R.string.credential_storage_type_hardware
-                        : R.string.credential_storage_type_software;
-            credentialStorageType.setSummary(storageSummaryRes);
+                final int storageSummaryRes =
+                    mKeyStore.isHardwareBacked() ? R.string.credential_storage_type_hardware
+                            : R.string.credential_storage_type_software;
+                credentialStorageType.setSummary(storageSummaryRes);
 
-            mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
-        } else {
-            removePreference(KEY_CREDENTIALS_MANAGER);
-        }
+                mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
+            } else {
+                removePreference(KEY_CREDENTIALS_MANAGER);
+            }
 
-        // Application install
-        PreferenceGroup deviceAdminCategory= (PreferenceGroup)
-                root.findPreference(KEY_DEVICE_ADMIN_CATEGORY);
-        mToggleAppInstallation = (CheckBoxPreference) findPreference(
-                KEY_TOGGLE_INSTALL_APPLICATIONS);
-        mToggleAppInstallation.setChecked(isNonMarketAppsAllowed());
+            // Application install
+            PreferenceGroup deviceAdminCategory= (PreferenceGroup)
+                    root.findPreference(KEY_DEVICE_ADMIN_CATEGORY);
+            mToggleAppInstallation = (CheckBoxPreference) findPreference(
+                    KEY_TOGGLE_INSTALL_APPLICATIONS);
+            mToggleAppInstallation.setChecked(isNonMarketAppsAllowed());
 
-        // Side loading of apps.
-        mToggleAppInstallation.setEnabled(mIsPrimary);
+            // Side loading of apps.
+            mToggleAppInstallation.setEnabled(mIsPrimary);
 
-        // Package verification, only visible to primary user and if enabled
-        mToggleVerifyApps = (CheckBoxPreference) findPreference(KEY_TOGGLE_VERIFY_APPLICATIONS);
-        if (mIsPrimary && showVerifierSetting()) {
-            if (isVerifierInstalled()) {
-                mToggleVerifyApps.setChecked(isVerifyAppsEnabled());
+            // Package verification, only visible to primary user and if enabled
+            mToggleVerifyApps = (CheckBoxPreference) findPreference(KEY_TOGGLE_VERIFY_APPLICATIONS);
+            if (mIsPrimary && showVerifierSetting()) {
+                if (isVerifierInstalled()) {
+                    mToggleVerifyApps.setChecked(isVerifyAppsEnabled());
+                } else {
+                    if (deviceAdminCategory != null) {
+                        deviceAdminCategory.removePreference(mToggleVerifyApps);
+                    } else {
+                        mToggleVerifyApps.setEnabled(false);
+                    }
+                }
+
+                // App security settings
+                addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+                mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+                if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                    mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+                    mSmsSecurityCheck.setOnPreferenceChangeListener(this);
+                    int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
+                    updateSmsSecuritySummary(smsSecurityCheck);
+                }
             } else {
                 if (deviceAdminCategory != null) {
                     deviceAdminCategory.removePreference(mToggleVerifyApps);
                 } else {
-                    mToggleVerifyApps.setEnabled(false);
+                    PreferenceGroup appCategory = (PreferenceGroup)
+                            root.findPreference(KEY_APP_SECURITY_CATEGORY);
+                    appCategory.removePreference(mSmsSecurityCheck);
                 }
-            }
+             }
 
-            // App security settings
-            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
-            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
-            if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
-                mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
-                mSmsSecurityCheck.setOnPreferenceChangeListener(this);
-                int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
-                updateSmsSecuritySummary(smsSecurityCheck);
-            }
-        } else {
-            if (deviceAdminCategory != null) {
-                deviceAdminCategory.removePreference(mToggleVerifyApps);
-            } else {
-                PreferenceGroup appCategory = (PreferenceGroup)
-                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
-                appCategory.removePreference(mSmsSecurityCheck);
-            }
-
-         }
-
-        mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);
-        if (mNotificationAccess != null) {
-            final int total = NotificationAccessSettings.getListenersCount(mPM);
-            if (total == 0) {
-                if (deviceAdminCategory != null) {
-                    deviceAdminCategory.removePreference(mNotificationAccess);
-                }
-            } else {
-                final int n = getNumEnabledNotificationListeners();
-                if (n == 0) {
-                    mNotificationAccess.setSummary(getResources().getString(
-                            R.string.manage_notification_access_summary_zero));
+            mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);
+            if (mNotificationAccess != null) {
+                final int total = NotificationAccessSettings.getListenersCount(mPM);
+                if (total == 0) {
+                    if (deviceAdminCategory != null) {
+                        deviceAdminCategory.removePreference(mNotificationAccess);
+                    }
                 } else {
-                    mNotificationAccess.setSummary(String.format(getResources().getQuantityString(
-                            R.plurals.manage_notification_access_summary_nonzero,
-                            n, n)));
+                    final int n = getNumEnabledNotificationListeners();
+                    if (n == 0) {
+                        mNotificationAccess.setSummary(getResources().getString(
+                                R.string.manage_notification_access_summary_zero));
+                    } else {
+                        mNotificationAccess.setSummary(String.format(getResources().getQuantityString(
+                                R.plurals.manage_notification_access_summary_nonzero,
+                                n, n)));
+                    }
                 }
             }
         }
-
         return root;
     }
 

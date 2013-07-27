@@ -4694,13 +4694,20 @@
 
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">ADVANCED SLIM SETTINGS</string>
-    <string name="header_category_rom_system_settings">ADVANCED SYSTEM SETTINGS</string>
+    <string name="header_category_rom_settings">ADVANCED SETTINGS</string>
     <string name="ok">OK</string>
 
-    <!-- Interface settings  and general strings-->
+    <!-- Slim settings screens -->
+    <string name="general_settings_title">General</string>
     <string name="interface_settings_title">Interface</string>
-    <string name="interface_title">Interface</string>
+    <string name="navigation_settings_title">Navigation</string>
+
+    <string name="general_settings_options_title">General options</string>
+    <string name="interface_settings_options_title">Interface options</string>
+    <string name="navigation_settings_options_title">Navigation options</string>
+
+    <string name="advanced_options_settings_title">Advanced options</string>
+
     <string name="additional_options_title">Additional options</string>
 
     <!-- Power Widget  -->
@@ -5446,7 +5453,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_style_reset_message">Reset statusbar style?</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
-    <string name="advanced_settings_title">Device</string>
+    <string name="device_settings_title">Device</string>
 
     <!-- Keyboard and Input ASS methods  -->
     <string name="title_keyboard_input">Advanced options</string>

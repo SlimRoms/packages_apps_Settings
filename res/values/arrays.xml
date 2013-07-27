@@ -1176,6 +1176,9 @@
         <item>300</item>
         <item>320</item>
         <item>340</item>
+        <item>361</item>
+        <item>420</item>
+        <item>480</item>
         <item>@string/custom_density</item>
     </string-array>
 
@@ -1183,12 +1186,14 @@
         <item>213 -- nexus7</item>
         <item>240 -- hdpi</item>
         <item>320 -- xhdpi</item>
+        <item>480 -- xxhdpi</item>
     </string-array>
 
     <string-array name="lcd_density_stock_values" translatable="false">
         <item>213</item>
         <item>240</item>
         <item>320</item>
+        <item>480</item>
     </string-array>
 
     <!-- Values for the notification light pulse spinners -->

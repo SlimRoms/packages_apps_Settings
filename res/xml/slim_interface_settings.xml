@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 Slimroms
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/interface_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="lcd_density_setup"
+        android:fragment="com.android.settings.slim.DensityChanger"
+        android:title="@string/lcd_density_title"
+        android:summary="@string/lcd_density_summary" />
+
+    <PreferenceScreen
+        android:key="status_bar"
+        android:fragment="com.android.settings.slim.StatusBar"
+        android:title="@string/status_bar_title" />
+
+    <PreferenceScreen
+        android:key="notification_drawer"
+        android:fragment="com.android.settings.slim.NotificationDrawerSettings"
+        android:title="@string/notification_drawer_title" />
+
+    <PreferenceScreen
+        android:key="themes_settings"
+        android:title="@string/themes_settings_title">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+
+    </PreferenceScreen>
+
+    <PreferenceCategory
+        android:key="interface_settings_action_prefs"
+        android:title="@string/interface_settings_options_title">
+
+        <CheckBoxPreference
+            android:key="use_alt_resolver"
+            android:title="@string/alt_resolver"
+            android:summary="@string/alt_resolver_summary"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
+
+        <CheckBoxPreference
+            android:key="high_end_gfx"
+            android:title="@string/high_end_gfx_title"
+            android:summary="@string/high_end_gfx_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

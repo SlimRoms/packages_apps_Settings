@@ -123,6 +123,7 @@ public class Settings extends PreferenceActivity
             R.id.system_section,
             R.id.date_time_settings,
             R.id.about_settings,
+            R.id.advanced_options_settings,
             R.id.accessibility_settings
     };
 
@@ -441,7 +442,7 @@ public class Settings extends PreferenceActivity
             // Ids are integers, so downcasting
             int id = (int) header.id;
             if (id == R.id.operator_settings || id == R.id.manufacturer_settings ||
-                    id == R.id.advanced_settings || id == R.id.slim_center) {
+                    id == R.id.slim_center) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
@@ -473,8 +474,7 @@ public class Settings extends PreferenceActivity
                         || Utils.isMonkeyRunning()) {
                     target.remove(i);
                 }
-            } else if (id == R.id.development_settings
-                    || id == R.id.performance_settings) {
+            } else if (id == R.id.development_settings) {
                 if (!showDev) {
                     target.remove(i);
                 }
@@ -619,7 +619,6 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_CATEGORY;
             } else if (header.id == R.id.wifi_settings
                      || header.id == R.id.bluetooth_settings
-                     || header.id == R.id.profiles_settings
                      || header.id == R.id.trds_settings) {
                 return HEADER_TYPE_SWITCH;
             } else {
@@ -724,8 +723,6 @@ public class Settings extends PreferenceActivity
                         mWifiEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.bluetooth_settings) {
                         mBluetoothEnabler.setSwitch(holder.switch_);
-                    } else if (header.id == R.id.profiles_settings) {
-                        mProfileEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.trds_settings) {
                         mTRDSSwitch = (Switch) view.findViewById(R.id.switchWidget);
                         mTRDSEnabler.setSwitch(holder.switch_);

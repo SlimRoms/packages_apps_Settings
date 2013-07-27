@@ -15,6 +15,7 @@
 -keep class com.koushikdutta.**
 -keep class com.android.settings.slim.**
 -keep class com.android.settings.slim.privacyguard.**
+-keep class com.android.settings.NotificationStation
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {

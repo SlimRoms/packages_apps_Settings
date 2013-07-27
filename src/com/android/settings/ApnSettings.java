@@ -35,6 +35,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Telephony;
@@ -162,43 +163,45 @@ public class ApnSettings extends SettingsPreferenceFragment implements
                 "_id", "name", "apn", "type"}, where, null,
                 Telephony.Carriers.DEFAULT_SORT_ORDER);
 
-        PreferenceGroup apnList = (PreferenceGroup) getPreferenceScreen().findPreference("apn_list");
-        apnList.removeAll();
+        if (cursor != null) {
+            PreferenceGroup apnList = (PreferenceGroup) findPreference("apn_list");
+            apnList.removeAll();
 
-        ArrayList<Preference> mmsApnList = new ArrayList<Preference>();
+            ArrayList<Preference> mmsApnList = new ArrayList<Preference>();
 
-        mSelectedKey = getSelectedApnKey();
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            String name = cursor.getString(NAME_INDEX);
-            String apn = cursor.getString(APN_INDEX);
-            String key = cursor.getString(ID_INDEX);
-            String type = cursor.getString(TYPES_INDEX);
+            mSelectedKey = getSelectedApnKey();
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String name = cursor.getString(NAME_INDEX);
+                String apn = cursor.getString(APN_INDEX);
+                String key = cursor.getString(ID_INDEX);
+                String type = cursor.getString(TYPES_INDEX);
 
-            ApnPreference pref = new ApnPreference(getActivity());
+                ApnPreference pref = new ApnPreference(getActivity());
 
-            pref.setKey(key);
-            pref.setTitle(name);
-            pref.setSummary(apn);
-            pref.setPersistent(false);
-            pref.setOnPreferenceChangeListener(this);
+                pref.setKey(key);
+                pref.setTitle(name);
+                pref.setSummary(apn);
+                pref.setPersistent(false);
+                pref.setOnPreferenceChangeListener(this);
 
-            boolean selectable = ((type == null) || !type.equals("mms"));
-            pref.setSelectable(selectable);
-            if (selectable) {
-                if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
-                    pref.setChecked();
+                boolean selectable = ((type == null) || !type.equals("mms"));
+                pref.setSelectable(selectable);
+                if (selectable) {
+                    if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
+                        pref.setChecked();
+                    }
+                    apnList.addPreference(pref);
+                } else {
+                    mmsApnList.add(pref);
                 }
-                apnList.addPreference(pref);
-            } else {
-                mmsApnList.add(pref);
+                cursor.moveToNext();
             }
-            cursor.moveToNext();
-        }
-        cursor.close();
+            cursor.close();
 
-        for (Preference preference : mmsApnList) {
-            apnList.addPreference(preference);
+            for (Preference preference : mmsApnList) {
+                apnList.addPreference(preference);
+            }
         }
     }
 
@@ -232,7 +235,8 @@ public class ApnSettings extends SettingsPreferenceFragment implements
         Bundle editBundle = new Bundle();
         editBundle.putString(ApnEditor.EDIT_ACTION, Intent.ACTION_INSERT);
         editBundle.putString(ApnEditor.EDIT_DATA, Telephony.Carriers.CONTENT_URI.toSafeString());
-        startFragment(null, ApnEditor.class.getName(), 0, editBundle);
+        ((PreferenceActivity) getActivity()).startPreferencePanel(ApnEditor.class.getName(), editBundle,
+                            R.string.apn_edit, null, null, 0);
     }
 
     @Override
@@ -242,7 +246,8 @@ public class ApnSettings extends SettingsPreferenceFragment implements
         Bundle editBundle = new Bundle();
         editBundle.putString(ApnEditor.EDIT_ACTION, Intent.ACTION_EDIT);
         editBundle.putString(ApnEditor.EDIT_DATA, url.toSafeString());
-        startFragment(null, ApnEditor.class.getName(), 0, editBundle);
+        ((PreferenceActivity) getActivity()).startPreferencePanel(ApnEditor.class.getName(), editBundle,
+                R.string.apn_edit, null, null, 0);
         return true;
     }
 

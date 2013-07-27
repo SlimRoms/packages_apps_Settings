@@ -1958,12 +1958,18 @@
     <string name="preview_carrier_title">Оператор</string>
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">РАСШИРЕННЫЕ НАСТРОЙКИ SLIM</string>
-    <string name="header_category_rom_system_settings">РАСШИРЕННЫЕ СИСТЕМНЫЕ НАСТРОЙКИ</string>
+    <string name="header_category_rom_settings">РАСШИРЕННЫЕ НАСТРОЙКИ</string>
     <string name="ok">OK</string>
-    <!-- Interface settings  and general strings-->
+    <!-- Slim settings screens -->
+    <string name="general_settings_title">Общие</string>
     <string name="interface_settings_title">Интерфейс</string>
-    <string name="interface_title">Интерфейс</string>
+    <string name="navigation_settings_title">Навигация</string>
+    <string name="general_settings_options_title">Общие настройки</string>
+    <string name="interface_settings_options_title">Настройки интерфейса</string>
+    <string name="navigation_settings_options_title">Настройки навигации</string>
+
+    <string name="advanced_options_settings_title">Расширенные настройки</string>
+    
     <string name="additional_options_title">Дополнительные настройки</string>
     <!-- Power Widget  -->
     <string name="power_widget_title">Кнопки в панели уведомлений</string>
@@ -2228,7 +2234,7 @@
     <string name="volume_overlay_title">Панель громкости</string>
     <string name="volume_ring_only_description">Рингтон</string>
     <!-- Sound settings screen Slim-->
-    <string name="sound_title">Звук</string>
+    <string name="advanced_sound_title">Дополнительные настройки</string>
     <string name="notifications_category_title">Уведомления</string>
     <string name="volbtn_music_controls_title">Управление музыкой кнопками громкости</string>
     <string name="volbtn_music_controls_summary">Когда экран выключен, долгое нажатие кнопок громкости переключает музыкальные треки</string>
@@ -2379,7 +2385,7 @@
     <string name="notification_shortcuts_color_summary">Установить цвет значков (базового и/или приложения)</string>
     <string name="notification_shortcuts_colorize_toggle_title">Установить цвет значков приложений</string>
     <string name="notification_shortcuts_colorize_toggle_summary">Устанавливает выбранный цвет значков приложений</string>
-    <string name="notification_shortcuts_hide_carrier_title">Скрыть имя оператора</string>
+    <string name="notification_hide_carrier_title">Скрыть имя оператора</string>
     <!-- Notification Icons -->
     <string name="notification_shortcuts_icon_picker_alarm">Часы</string>
     <string name="notification_shortcuts_icon_picker_andy">Andy</string>
@@ -3232,8 +3238,8 @@
 
     <!-- Button shorcut actions -->
     <string name="shortcut_action_app">Заданное приложение</string>
-    <string name="shortcut_keys_action_home">Домой</string>
-    <string name="shortcut_keys_action_back">Назад</string>
+    <string name="shortcut_action_home">Домой</string>
+    <string name="shortcut_action_back">Назад</string>
     <string name="shortcut_action_recent">Недавние</string>
     <string name="shortcut_action_lastapp">Предыдущее приложение</string>
     <string name="shortcut_action_search">Поиск</string>

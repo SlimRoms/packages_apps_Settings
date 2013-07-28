@@ -149,6 +149,8 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
 
+    private static final String RECENTS_RAM_BAR = "recents_ram_bar";
+
     private static final int RESULT_DEBUG_APP = 1000;
 
     private IWindowManager mWindowManager;
@@ -207,6 +209,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private ListPreference mAdvancedReboot;
     private ListPreference mMSOB;
+    private Preference mRamBar;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
@@ -253,6 +256,11 @@ public class DevelopmentSettings extends PreferenceFragment
         mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
         mAllPrefs.add(mMSOB);
         mMSOB.setOnPreferenceChangeListener(this);
+
+        mRamBar = findPreference(RECENTS_RAM_BAR);
+        mAllPrefs.add(mRamBar);
+        mRamBar.setOnPreferenceChangeListener(this);
+        updateRamBar();
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -340,6 +348,15 @@ public class DevelopmentSettings extends PreferenceFragment
         mAllPrefs.add(mDevelopmentTools);
     }
 
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
+    }
+
     private void disableForUser(Preference pref) {
         if (pref != null) {
             pref.setEnabled(false);
@@ -422,8 +439,17 @@ public class DevelopmentSettings extends PreferenceFragment
     }
 
     @Override
+    public void onPause() {
+        super.onResume();
+        updateRamBar();
+    }
+
+
+    @Override
     public void onResume() {
         super.onResume();
+
+        updateRamBar();
 
         if (mDpm.getMaximumTimeToLock(null) > 0) {
             // A DeviceAdmin has specified a maximum time until the device
@@ -1285,6 +1311,8 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowHwOverdrawOptions();
         } else if (preference == mDebugLayout) {
             writeDebugLayoutOptions();
+        } else if (preference == mRamBar) {
+            super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         return false;

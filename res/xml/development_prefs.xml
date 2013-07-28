@@ -49,6 +49,11 @@
         android:entryValues="@array/media_scanner_on_boot_values" />
 
     <PreferenceScreen
+        android:key="recents_ram_bar"
+        android:fragment="com.android.settings.slim.RamBar"
+        android:title="@string/ram_bar" />
+
+    <PreferenceScreen
             android:key="local_backup_password"
             android:title="@string/local_backup_password_title"
             android:summary="@string/local_backup_password_summary_none"

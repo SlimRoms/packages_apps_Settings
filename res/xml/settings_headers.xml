@@ -60,30 +60,26 @@
     <!-- ROM -->
     <header android:title="@string/header_category_rom_settings" />
 
+    <!-- General -->
+    <header
+        android:id="@+id/general_settings"
+        android:icon="@drawable/ic_settings_slim"
+        android:fragment="com.android.settings.slim.GeneralSettings"
+        android:title="@string/general_settings_title" />
+
     <!-- Interface -->
     <header
         android:id="@+id/interface_settings"
-        android:icon="@drawable/ic_settings_slim"
+        android:icon="@drawable/ic_settings_interface"
         android:fragment="com.android.settings.slim.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
-    <!-- Profiles -->
+    <!-- Navigation -->
     <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
-
-    <!-- Themes -->
-    <header
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_navigation"
+        android:fragment="com.android.settings.slim.NavigationSettings"
+        android:title="@string/navigation_settings_title" />
 
     <!-- TRDS -->
     <header
@@ -101,33 +97,6 @@
             android:targetPackage="com.slim.ota"
             android:targetClass="com.slim.center.SlimCenter" />
     </header>
-
-    <header android:title="@string/header_category_rom_system_settings" />
-
-    <!-- DeviceParts Device Specific settings -->
-    <header
-        android:id="@+id/advanced_settings"
-        android:title="@string/advanced_settings_title"
-        android:icon="@drawable/ic_settings_advanced">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
-    <!-- Performance -->
-    <header
-        android:id="@+id/performance_settings"
-        android:fragment="com.android.settings.slim.PerformanceSettings"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings_title" />
-
-    <!-- Superuser -->
-    <header
-        android:id="@+id/superuser"
-        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
-        android:icon="@drawable/ic_action_permission"
-        android:title="@string/superuser" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -251,6 +220,13 @@
         android:fragment="com.android.settings.DevelopmentSettings"
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
+
+    <!-- Advanced options -->
+    <header
+        android:id="@+id/advanced_options_settings"
+        android:fragment="com.android.settings.slim.AdvancedSettings"
+        android:icon="@drawable/ic_settings_advanced"
+        android:title="@string/advanced_options_settings_title" />
 
     <!-- About Device -->
     <header

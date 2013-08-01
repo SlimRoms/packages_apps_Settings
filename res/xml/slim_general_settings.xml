@@ -41,6 +41,11 @@
         android:key="general_settings_options_prefs"
         android:title="@string/general_settings_options_title">
 
+        <CheckBoxPreference
+            android:key="dual_pane"
+            android:title="@string/dual_pane"
+            android:summary="@string/dual_pane_summary" />
+
         <ListPreference
             android:key="pref_low_battery_warning_policy"
             android:title="@string/pref_low_battery_warning_policy_title"

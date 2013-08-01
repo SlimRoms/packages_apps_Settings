@@ -70,7 +70,7 @@ import com.android.settings.AccessibilitySettings.ToggleAccessibilityServicePref
 import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.accounts.AuthenticatorHelper;
 import com.android.settings.accounts.ManageAccountsSettings;
-import com.android.settings.blacklist.BlacklistSettings;
+import com.android.settings.slim.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothEnabler;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.profiles.AppGroupConfig;

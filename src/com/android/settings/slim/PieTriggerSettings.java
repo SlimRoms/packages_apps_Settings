@@ -19,6 +19,7 @@ package com.android.settings.slim;
 import android.content.ContentResolver;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
@@ -70,6 +71,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
     private CheckBoxPreference[] mTrigger = new CheckBoxPreference[4];
 
     Resources mSystemUiResources;
+    PackageManager mPm;
 
     private ContentObserver mPieTriggerObserver = new ContentObserver(new Handler()) {
         @Override
@@ -86,11 +88,11 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        PackageManager pm = mContext.getPackageManager();
+        mPm = mContext.getPackageManager();
 
-        if (pm != null) {
+        if (mPm != null) {
             try {
-                mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
+                mSystemUiResources = mPm.getResourcesForApplication("com.android.systemui");
             } catch (Exception e) {
                 mSystemUiResources = null;
                 Log.e("PIETriggerSettings:", "can't access systemui resources",e);
@@ -128,6 +130,34 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
                 return true;
              default:
                 return super.onContextItemSelected(item);
+        }
+    }
+
+    private void checkFeatureCompatibility() {
+        boolean enabled = false;
+        String[] currentDefaultImePackage = null;
+        try {
+            String defaultImePackage = Settings.Secure.getString(
+                getContentResolver(), Settings.Secure.DEFAULT_INPUT_METHOD);
+            if (defaultImePackage != null) {
+                currentDefaultImePackage = defaultImePackage.split("/", 2);
+            }
+            PackageInfo packageInfo = mPm.getPackageInfo(currentDefaultImePackage[0], PackageManager.GET_PERMISSIONS);
+            String[] requestedPermissions = packageInfo.requestedPermissions;
+            if(requestedPermissions != null) {
+                for (int i = 0; i < requestedPermissions.length; i++) {
+                    if (requestedPermissions[i].equals(android.Manifest.permission.WRITE_SETTINGS)) {
+                        enabled = true;
+                    }
+                }
+            }
+        } catch (NameNotFoundException e) {
+        }
+        if (mDisableImeTriggers != null) {
+            mDisableImeTriggers.setEnabled(enabled);
+            if (enabled) {
+                mDisableImeTriggers.setSummary(getString(R.string.ime_does_not_support_feature));
+            }
         }
     }
 
@@ -213,6 +243,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
                 mPieTriggerObserver);
 
         updatePieTriggers();
+        checkFeatureCompatibility();
     }
 
     @Override

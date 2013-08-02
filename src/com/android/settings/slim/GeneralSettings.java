@@ -20,14 +20,17 @@ import android.app.ActivityManagerNative;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,8 +40,11 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "GeneralSettings";
 
     private static final String KEY_CHRONUS = "chronus";
+    private static final String KEY_DUAL_PANE = "dual_pane";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_GENERAL_OPTIONS = "general_settings_options_prefs";
 
+    private CheckBoxPreference mDualPane;
     private ListPreference mLowBatteryWarning;
 
     @Override
@@ -46,6 +52,17 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.slim_general_settings);
+
+        mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
+        mDualPane.setOnPreferenceChangeListener(this);
+        mDualPane.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DUAL_PANE_PREFS, 0) == 1);
+
+        // remove dual pane preference if not a tablet
+        PreferenceCategory generalCategory = (PreferenceCategory) findPreference(KEY_GENERAL_OPTIONS);
+        if (Utils.isPhone(getActivity())) {
+            generalCategory.removePreference(findPreference(KEY_DUAL_PANE));
+        }
 
         mLowBatteryWarning = (ListPreference) findPreference(KEY_LOW_BATTERY_WARNING_POLICY);
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
@@ -68,7 +85,12 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mLowBatteryWarning) {
+        if (preference == mDualPane) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_PANE_PREFS,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mLowBatteryWarning) {
             int lowBatteryWarning = Integer.valueOf((String) newValue);
             int index = mLowBatteryWarning.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),

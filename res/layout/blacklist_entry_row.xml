@@ -43,7 +43,7 @@
 
     </LinearLayout>
 
-    <com.android.settings.blacklist.ToggleImageView
+    <com.android.settings.slim.blacklist.ToggleImageView
         android:id="@+id/block_calls"
         android:layout_width="@android:dimen/app_icon_size"
         android:layout_height="@android:dimen/app_icon_size"
@@ -52,7 +52,7 @@
         android:clickable="true"
         android:contentDescription="@null" />
 
-    <com.android.settings.blacklist.ToggleImageView
+    <com.android.settings.slim.blacklist.ToggleImageView
         android:id="@+id/block_messages"
         android:layout_width="@android:dimen/app_icon_size"
         android:layout_height="@android:dimen/app_icon_size"

@@ -17,10 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lock_screen_title" >
 
-    <PreferenceCategory
-       android:key="lock_screen"
-       android:title="@string/lock_screen_title">
-
          <PreferenceScreen
              android:key="screen_security"
              android:fragment="com.android.settings.SecuritySettings"
@@ -34,8 +30,6 @@
              android:fragment="com.android.settings.slim.LockscreenWidgets"
              android:title="@string/lockscreen_widgets_title"
              android:summary="@string/lockscreen_widgets_summary" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_style_options"

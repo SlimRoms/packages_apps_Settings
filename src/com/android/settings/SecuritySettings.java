@@ -62,7 +62,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     static final String TAG = "SecuritySettings";
 
     // Lock Settings
-    private static final String PREF_SECURITY_OPTIONS = "security_options";
+    private static final String PREF_LOCK_SCREEN = "lock_screen_settings";
     private static final String KEY_UNLOCK_SET_OR_CHANGE = "unlock_set_or_change";
     private static final String KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING =
             "biometric_weak_improve_matching";
@@ -207,8 +207,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
         if (isSlimSecurity) {
             // remove the security options in slim view due it is redundant
-            PreferenceCategory securityOptions = (PreferenceCategory) root.findPreference(PREF_SECURITY_OPTIONS);
-            root.removePreference(securityOptions);
+            removePreference(PREF_LOCK_SCREEN);
             // Add options for lock/unlock screen
             if (!mLockPatternUtils.isSecure()) {
                 // if there are multiple users, disable "None" setting

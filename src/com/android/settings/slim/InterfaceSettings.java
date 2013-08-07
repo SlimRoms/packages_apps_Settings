@@ -44,10 +44,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_HIGH_END_GFX = "high_end_gfx";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String CATEGORY_INTERFACE = "interface_settings_action_prefs";
 
     private Preference mCustomLabel;
     private Preference mLcdDensity;
+    private Preference mRamBar;
     private CheckBoxPreference mUseAltResolver;
     private CheckBoxPreference mHighEndGfx;
 
@@ -100,6 +102,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
             category.removePreference(mHighEndGfx);
         }
 
+        mRamBar = findPreference(PREF_RECENTS_RAM_BAR);
+        mRamBar.setOnPreferenceChangeListener(this);
+        updateRamBar();
+
     }
 
     private void updateCustomLabelTextSummary() {
@@ -112,14 +118,27 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
+    }
+
     @Override
     public void onResume() {
         super.onResume();
+
+        updateRamBar();
     }
 
     @Override
     public void onPause() {
         super.onPause();
+
+        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

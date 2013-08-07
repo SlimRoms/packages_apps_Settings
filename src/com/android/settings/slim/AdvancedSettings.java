@@ -33,12 +33,16 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.List;
 
-public class AdvancedSettings extends SettingsPreferenceFragment {
+public class AdvancedSettings extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
 
-    private String PREF_DEVICESETTINGS_APP = "devicesettings_app";
+    private static final String PREF_DEVICESETTINGS_APP = "devicesettings_app";
+    private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+
     private Context mContext;
 
     private PreferenceScreen mDeviceSettingsApp;
+    private ListPreference mMSOB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,10 +52,17 @@ public class AdvancedSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.slim_advanced_settings);
 
+        mMSOB = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
+        mMSOB.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0)));
+        mMSOB.setSummary(mMSOB.getEntry());
+        mMSOB.setOnPreferenceChangeListener(this);
+
         mDeviceSettingsApp = (PreferenceScreen) findPreference(PREF_DEVICESETTINGS_APP);
 
-        if (!deviceSettingsAppExists())
+        if (!deviceSettingsAppExists()) {
             getPreferenceScreen().removePreference(mDeviceSettingsApp);
+        }
 
     }
 
@@ -66,6 +77,21 @@ public class AdvancedSettings extends SettingsPreferenceFragment {
         }
         return false;
 
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        String value = (String) newValue;
+        if (preference == mMSOB) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.MEDIA_SCANNER_ON_BOOT,
+                    Integer.valueOf(value));
+
+            mMSOB.setValue(String.valueOf(value));
+            mMSOB.setSummary(mMSOB.getEntry());
+            return true;
+        }
+        return false;
     }
 
 }

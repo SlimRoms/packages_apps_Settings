@@ -150,12 +150,6 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String DEVELOPMENT_TOOLS = "development_tools";
 
-    private static final String ADVANCED_REBOOT_KEY = "advanced_reboot";
-
-    private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
-
-    private static final String RECENTS_RAM_BAR = "recents_ram_bar";
-
     private static final int RESULT_DEBUG_APP = 1000;
 
     private IWindowManager mWindowManager;
@@ -212,10 +206,6 @@ public class DevelopmentSettings extends PreferenceFragment
     private Object mSelectedRootValue;
     private PreferenceScreen mDevelopmentTools;
 
-    private ListPreference mAdvancedReboot;
-    private ListPreference mMSOB;
-    private Preference mRamBar;
-
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
             = new ArrayList<CheckBoxPreference>();
@@ -270,23 +260,9 @@ public class DevelopmentSettings extends PreferenceFragment
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
 
-        mAdvancedReboot = (ListPreference) findPreference(ADVANCED_REBOOT_KEY);
-        mAllPrefs.add(mAdvancedReboot);
-        mAdvancedReboot.setOnPreferenceChangeListener(this);
-
-        mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
-        mAllPrefs.add(mMSOB);
-        mMSOB.setOnPreferenceChangeListener(this);
-
-        mRamBar = findPreference(RECENTS_RAM_BAR);
-        mAllPrefs.add(mRamBar);
-        mRamBar.setOnPreferenceChangeListener(this);
-        updateRamBar();
-
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
             disableForUser(mPassword);
-            disableForUser(mAdvancedReboot);
             disableForUser(mClearAdbKeys);
             disableForUser(mPassword);
         }
@@ -360,15 +336,6 @@ public class DevelopmentSettings extends PreferenceFragment
 
         mDevelopmentTools = (PreferenceScreen) findPreference(DEVELOPMENT_TOOLS);
         mAllPrefs.add(mDevelopmentTools);
-    }
-
-    private void updateRamBar() {
-        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.RECENTS_RAM_BAR_MODE, 0);
-        if (ramBarMode != 0)
-            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
-        else
-            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
     }
 
     private void disableForUser(Preference pref) {
@@ -464,13 +431,6 @@ public class DevelopmentSettings extends PreferenceFragment
     }
 
     @Override
-    public void onPause() {
-        super.onResume();
-        updateRamBar();
-    }
-
-
-    @Override
     public void onResume() {
         super.onResume();
 
@@ -483,8 +443,6 @@ public class DevelopmentSettings extends PreferenceFragment
             }
             return;
         }
-
-        updateRamBar();
 
         if (mDpm.getMaximumTimeToLock(null) > 0) {
             // A DeviceAdmin has specified a maximum time until the device
@@ -560,46 +518,6 @@ public class DevelopmentSettings extends PreferenceFragment
         updateExperimentalWebViewOptions();
         updateVerifyAppsOverUsbOptions();
         updateRootAccessOptions();
-        updateAdvancedRebootOptions();
-        updateMSOBOptions();
-    }
-
-    private void resetAdvancedRebootOptions() {
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.ADVANCED_REBOOT, 0);
-    }
-
-    private void writeAdvancedRebootOptions(Object newValue) {
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.ADVANCED_REBOOT,
-                Integer.valueOf((String) newValue));
-        updateAdvancedRebootOptions();
-    }
-
-    private void updateAdvancedRebootOptions() {
-        int value = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.ADVANCED_REBOOT, mUnofficialBuild ? 1 : 0);
-        mAdvancedReboot.setValue(String.valueOf(value));
-        mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
-    }
-
-    private void resetMSOBOptions() {
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
-    }
-
-    private void writeMSOBOptions(Object newValue) {
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.MEDIA_SCANNER_ON_BOOT,
-                Integer.valueOf((String) newValue));
-        updateMSOBOptions();
-    }
-
-    private void updateMSOBOptions() {
-        int value = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
-        mMSOB.setValue(String.valueOf(value));
-        mMSOB.setSummary(mMSOB.getEntry());
     }
 
     private void updateAdbOverNetwork() {
@@ -641,8 +559,6 @@ public class DevelopmentSettings extends PreferenceFragment
         }
         resetDebuggerOptions();
         resetRootAccessOptions();
-        resetAdvancedRebootOptions();
-        resetMSOBOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1340,8 +1256,6 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowHwOverdrawOptions();
         } else if (preference == mDebugLayout) {
             writeDebugLayoutOptions();
-        } else if (preference == mRamBar) {
-            super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         return false;
@@ -1396,12 +1310,6 @@ public class DevelopmentSettings extends PreferenceFragment
             } else {
                 writeRootAccessOptions(newValue);
             }
-            return true;
-        } else if (preference == mAdvancedReboot) {
-            writeAdvancedRebootOptions(newValue);
-            return true;
-        } else if (preference == mMSOB) {
-            writeMSOBOptions(newValue);
             return true;
         }
         return false;

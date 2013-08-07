@@ -27,26 +27,6 @@
                 android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
 
-    <ListPreference
-        android:key="advanced_reboot"
-        android:title="@string/advanced_reboot_title"
-        android:dialogTitle="@string/advanced_reboot_dialog_title"
-        android:entries="@array/advanced_reboot_entries"
-        android:entryValues="@array/advanced_reboot_values"
-        android:summary="@string/advanced_reboot_summary" />
-
-    <ListPreference
-        android:key="media_scanner_on_boot"
-        android:title="@string/media_scanner_on_boot_title"
-        android:persistent="false"
-        android:entries="@array/media_scanner_on_boot_entries"
-        android:entryValues="@array/media_scanner_on_boot_values" />
-
-    <PreferenceScreen
-        android:key="recents_ram_bar"
-        android:fragment="com.android.settings.slim.RamBar"
-        android:title="@string/ram_bar" />
-
     <PreferenceScreen
             android:key="local_backup_password"
             android:title="@string/local_backup_password_title"

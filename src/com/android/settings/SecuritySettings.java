@@ -103,6 +103,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
     private static final String KEY_BLACKLIST = "blacklist";
+    private static final String PREF_ADVANCED_REBOOT_KEY = "advanced_reboot";
 
     private PackageManager mPM;
     DevicePolicyManager mDPM;
@@ -141,6 +142,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mLockBeforeUnlock;
     private ListPreference mSmsSecurityCheck;
     private PreferenceScreen mBlacklist;
+    private ListPreference mAdvancedReboot;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -432,6 +434,13 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
             // Side loading of apps.
             mToggleAppInstallation.setEnabled(mIsPrimary);
+
+            mAdvancedReboot = (ListPreference) root.findPreference(PREF_ADVANCED_REBOOT_KEY);
+            mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.Secure.ADVANCED_REBOOT, 1)));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+            mAdvancedReboot.setOnPreferenceChangeListener(this);
 
             // Package verification, only visible to primary user and if enabled
             mToggleVerifyApps = (CheckBoxPreference) findPreference(KEY_TOGGLE_VERIFY_APPLICATIONS);
@@ -855,6 +864,13 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.Global.putInt(getContentResolver(), Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT,
                      smsSecurityCheck);
             updateSmsSecuritySummary(smsSecurityCheck);
+        } else if (preference == mAdvancedReboot) {
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.ADVANCED_REBOOT,
+                    Integer.valueOf((String) value));
+            mAdvancedReboot.setValue(String.valueOf(value));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+            return true;
         }
         return true;
     }

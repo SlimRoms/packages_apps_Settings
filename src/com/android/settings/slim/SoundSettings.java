@@ -128,7 +128,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mVolumeKeysControlRing = (CheckBoxPreference) findPreference(KEY_VOL_RING);
         mVolumeKeysControlRing.setChecked(Settings.System.getInt(resolver,
-                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 0) != 0);
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1) == 0);
 
         mCameraSounds = (CheckBoxPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setPersistent(false);
@@ -232,7 +232,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolumeKeysControlRing) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
-                    mVolumeKeysControlRing.isChecked() ? 1 : 0);
+                    mVolumeKeysControlRing.isChecked() ? 0 : 1);
 
         } else if (preference == mCameraSounds) {
             SystemProperties.set(PROP_CAMERA_SOUND, mCameraSounds.isChecked() ? "1" : "0");

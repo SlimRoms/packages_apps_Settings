@@ -533,6 +533,8 @@
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
+    <string name="su_dialog_error_title">Warning</string>
+    <string name="su_dialog_error_message">An error occurred.\n\nPlease check for root access. To activate go into superuser settings and enable root access.</string>
     <string name="lcd_density_title">LCD density</string>
     <string name="lcd_density_summary">unknown</string>
     <string name="current_lcd_density">"Current LCD Density: "</string>
@@ -547,7 +549,6 @@
     <string name="clear_market_data_title">3. Clear all relevant market data.</string>
     <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
     <string name="clear_market_data_cleared">Data successfully cleared</string>
-    <string name="clear_market_data_donot_cleared">"Data couldn't be cleared, please clear it yourself!"</string>
     <string name="reboot_cleardata_title">4. Reboot!</string>
     <string name="reboot_cleardata_summary">Come back here after the reboot and complete the rest of the steps!</string>
     <string name="open_market_title">5. Open Market and hit accept</string>

@@ -168,20 +168,21 @@ public class DensityChanger extends SettingsPreferenceFragment implements
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                setLcdDensity(newDensityValue);
                                 dialog.dismiss();
-                                mCustomDensity.setSummary(newDensityValue + "");
-
+                                if (setLcdDensity(newDensityValue)) {
+                                    mCustomDensity.setSummary(newDensityValue + "");
+                                }
                             }
                         })
                         .setPositiveButton(getResources().getString(R.string.custom_density_dialog_button_reboot), new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                setLcdDensity(newDensityValue);
-                                PowerManager pm = (PowerManager) getActivity()
-                                        .getSystemService(Context.POWER_SERVICE);
-                                pm.reboot("Resetting density");
+                                if (setLcdDensity(newDensityValue)) {
+                                    PowerManager pm = (PowerManager) getActivity()
+                                            .getSystemService(Context.POWER_SERVICE);
+                                    pm.reboot("Resetting density");
+                                }
                             }
                         })
                         .setNegativeButton(getResources().getString(R.string.cancel),
@@ -210,25 +211,42 @@ public class DensityChanger extends SettingsPreferenceFragment implements
             }
         } else if (preference == mStockDensity) {
             newDensityValue = Integer.parseInt((String) newValue);
-            setLcdDensity(newDensityValue);
-            mStockDensity.setSummary(getResources().getString(R.string.stock_density_changed_summary) + newDensityValue);
+            if (setLcdDensity(newDensityValue)) {
+                mStockDensity.setSummary(getResources().getString(
+                    R.string.stock_density_changed_summary) + newDensityValue);
+            }
             return true;
         }
 
         return false;
     }
 
-    private void setLcdDensity(int newDensity) {
+    private boolean setLcdDensity(int newDensity) {
         CMDProcessor.getMount("rw");
-        new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
-                + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop");
+        if (!(new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
+                + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop").success())) {
+            showRootDeniedInfoDialog();
+            return false;
+        }
         CMDProcessor.getMount("ro");
+        return true;
     }
 
     class ClearUserDataObserver extends IPackageDataObserver.Stub {
         public void onRemoveCompleted(final String packageName, final boolean succeeded) {
             mHandler.sendEmptyMessage(MSG_DATA_CLEARED);
         }
+    }
+
+    private void showRootDeniedInfoDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.su_dialog_error_title);
+        alertDialog.setMessage(R.string.su_dialog_error_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+        alertDialog.create().show();
     }
 
     private class ClearMarketDataTask extends AsyncTask<String, Void, Boolean> {
@@ -274,8 +292,11 @@ public class DensityChanger extends SettingsPreferenceFragment implements
         }
 
         protected void onPostExecute(Boolean result) {
-            mClearMarketData.setSummary(result ? getResources().getString(R.string.clear_market_data_cleared)
-                    : getResources().getString(R.string.clear_market_data_donot_cleared));
+            if (!result) {
+                showRootDeniedInfoDialog();
+            } else {
+                mClearMarketData.setSummary(getResources().getString(R.string.clear_market_data_cleared));
+            }
         }
     }
 }

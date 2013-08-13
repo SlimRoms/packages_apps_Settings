@@ -36,6 +36,11 @@
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
+            android:key="app_sidebar"
+            android:fragment="com.android.settings.slim.AppSidebar"
+            android:title="@string/app_sidebar_title" />
+
+    <PreferenceScreen
         android:key="themes_settings"
         android:title="@string/themes_settings_title">
 

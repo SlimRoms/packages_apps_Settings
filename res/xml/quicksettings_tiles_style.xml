@@ -40,7 +40,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/quicksettings_tiles_style_additional_options">
+        android:title="@string/quicksettings_tiles_style_additional_options"
+        android:key="quicksettings_tiles_style_additional_options">
 
         <ListPreference
             android:key="tiles_per_row"

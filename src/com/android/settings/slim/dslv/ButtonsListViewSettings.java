@@ -34,6 +34,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -42,13 +49,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 
 import com.android.internal.util.slim.ButtonConfig;
 import com.android.internal.util.slim.ButtonsConstants;
@@ -319,12 +319,17 @@ public class ButtonsListViewSettings extends ListFragment implements
                 mPicker.onActivityResult(requestCode, resultCode, data);
 
             } else if (requestCode == REQUEST_PICK_CUSTOM_ICON && mPendingIndex != -1) {
+                if (mImageTmp.length() == 0 || !mImageTmp.exists()) {
+                    mPendingIndex = -1;
+                    Toast.makeText(mActivity,
+                            getResources().getString(R.string.shortcut_image_not_valid),
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
                 File image = new File(mActivity.getFilesDir() + File.separator
                         + "shortcut_" + System.currentTimeMillis() + ".png");
                 String path = image.getAbsolutePath();
-                if (mImageTmp.exists()) {
-                    mImageTmp.renameTo(image);
-                }
+                mImageTmp.renameTo(image);
                 image.setReadable(true, false);
                 updateButton(null, null, path, mPendingIndex, false);
                 mPendingIndex = -1;

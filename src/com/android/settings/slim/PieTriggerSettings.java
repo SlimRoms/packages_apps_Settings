@@ -143,7 +143,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
                     mSystemUiResources.getIdentifier("pie_trigger_thickness",
                     "dimen", "com.android.systemui")));
                 Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_TRIGGER_HEIGHT, 0.8f);
+                    Settings.System.PIE_TRIGGER_HEIGHT, 0.7f);
 
                 Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_TRIGGER_GRAVITY_LEFT_RIGHT, 16);
@@ -274,7 +274,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
             triggerHeight = Settings.System.getFloat(getActivity()
                     .getContentResolver(), Settings.System.PIE_TRIGGER_HEIGHT);
         } catch (Exception e) {
-            triggerHeight = 0.8f;
+            triggerHeight = 0.7f;
             Settings.System.putFloat(getActivity().getContentResolver(),
                 Settings.System.PIE_TRIGGER_HEIGHT, triggerHeight);
         }

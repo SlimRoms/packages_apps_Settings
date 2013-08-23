@@ -348,6 +348,10 @@ public class ButtonsListViewSettings extends ListFragment implements
     private void updateButton(String action, String description, String icon,
                 int which, boolean longpress) {
 
+        if (!longpress && checkForDuplicateMainNavButtons(action)) {
+            return;
+        }
+
         ButtonConfig button = mButtonConfigsAdapter.getItem(which);
         mButtonConfigsAdapter.remove(button);
 
@@ -371,6 +375,23 @@ public class ButtonsListViewSettings extends ListFragment implements
         mButtonConfigsAdapter.insert(button, which);
         showDisableMessage(false);
         setConfig(mButtonConfigs, false);
+    }
+
+    private boolean checkForDuplicateMainNavButtons(String action) {
+        ButtonConfig button;
+        for (int i = 0; i < mButtonConfigs.size(); i++) {
+            button = mButtonConfigsAdapter.getItem(i);
+            if (button.getClickAction().equals(action)
+                && (action.equals(ButtonsConstants.ACTION_HOME)
+                || action.equals(ButtonsConstants.ACTION_BACK)
+                || action.equals(ButtonsConstants.ACTION_RECENTS))) {
+                Toast.makeText(mActivity,
+                        getResources().getString(R.string.shortcut_duplicate_entry),
+                        Toast.LENGTH_LONG).show();
+                return true;
+            }
+        }
+        return false;
     }
 
     private void deleteIconFileIfPresent(ButtonConfig button) {
@@ -513,6 +534,9 @@ public class ButtonsListViewSettings extends ListFragment implements
     }
 
     private void addNewButton(String action, String description) {
+        if (checkForDuplicateMainNavButtons(action)) {
+            return;
+        }
         ButtonConfig button = new ButtonConfig(
             action, description,
             ButtonsConstants.ACTION_NULL, getResources().getString(R.string.shortcut_action_none),

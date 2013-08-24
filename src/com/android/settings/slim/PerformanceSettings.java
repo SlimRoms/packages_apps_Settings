@@ -22,7 +22,6 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.ListPreference;
 import android.preference.PreferenceScreen;
 
 import com.android.settings.R;
@@ -31,21 +30,12 @@ import com.android.settings.SettingsPreferenceFragment;
 /**
  * Performance Settings
  */
-public class PerformanceSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+public class PerformanceSettings extends SettingsPreferenceFragment {
     private static final String TAG = "PerformanceSettings";
-
-    private static final String USE_DITHERING_PREF = "pref_use_dithering";
-
-    private static final String USE_DITHERING_PERSIST_PROP = "persist.sys.use_dithering";
-
-    private static final String USE_DITHERING_DEFAULT = "1";
 
     private static final String USE_16BPP_ALPHA_PREF = "pref_use_16bpp_alpha";
 
     private static final String USE_16BPP_ALPHA_PROP = "persist.sys.use_16bpp_alpha";
-
-    private ListPreference mUseDitheringPref;
 
     private CheckBoxPreference mUse16bppAlphaPref;
 
@@ -55,17 +45,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getPreferenceManager() != null) {
-
             addPreferencesFromResource(R.xml.performance_settings);
 
             PreferenceScreen prefSet = getPreferenceScreen();
-
-            String useDithering = SystemProperties.get(USE_DITHERING_PERSIST_PROP, USE_DITHERING_DEFAULT);
-            mUseDitheringPref = (ListPreference) prefSet.findPreference(USE_DITHERING_PREF);
-            mUseDitheringPref.setOnPreferenceChangeListener(this);
-            mUseDitheringPref.setValue(useDithering);
-            mUseDitheringPref.setSummary(mUseDitheringPref.getEntry());
 
             mUse16bppAlphaPref = (CheckBoxPreference) prefSet.findPreference(USE_16BPP_ALPHA_PREF);
             String use16bppAlpha = SystemProperties.get(USE_16BPP_ALPHA_PROP, "0");
@@ -89,8 +71,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             });
             alertDialog.show();
         }
-    }
-
+        
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mUse16bppAlphaPref) {
@@ -103,15 +84,4 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
         return true;
     }
-
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mUseDitheringPref) {
-            String newVal = (String) newValue;
-            int index = mUseDitheringPref.findIndexOfValue(newVal);
-            SystemProperties.set(USE_DITHERING_PERSIST_PROP, newVal);
-            mUseDitheringPref.setSummary(mUseDitheringPref.getEntries()[index]);
-        }
-        return true;
-    }
-
 }

@@ -30,10 +30,10 @@
 
             <ListPreference
                 android:key="nav_bar_alpha_mode"
-                android:dialogTitle="@string/nav_bar_alpha_mode_dialog_text_title"
-                android:title="@string/nav_bar_alpha_mode_text_title"
-                android:entries="@array/entries_nav_bar_alpha_mode"
-                android:entryValues="@array/values_nav_bar_alpha_mode" />
+                android:dialogTitle="@string/status_nav_bar_alpha_mode_dialog_text_title"
+                android:title="@string/status_nav_bar_alpha_mode_text_title"
+                android:entries="@array/entries_status_nav_bar_alpha_mode"
+                android:entryValues="@array/values_status_nav_bar_alpha_mode" />
 
         </PreferenceCategory>
 

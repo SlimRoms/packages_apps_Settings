@@ -28,6 +28,11 @@
                 android:key="nav_bar_alpha"
                 android:title="@string/nav_bar_transparency_title" />
 
+            <CheckBoxPreference
+                android:key="nav_bar_color_mode"
+                android:title="@string/status_nav_bar_colormode_title"
+                android:summary="@string/status_nav_bar_colormode_summary" />
+
             <ListPreference
                 android:key="nav_bar_alpha_mode"
                 android:dialogTitle="@string/status_nav_bar_alpha_mode_dialog_text_title"

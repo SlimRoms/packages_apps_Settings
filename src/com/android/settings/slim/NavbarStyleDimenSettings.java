@@ -53,6 +53,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     private static final String PREF_NAV_BAR_ALPHA = "nav_bar_alpha";
     private static final String PREF_NAV_BAR_ALPHA_MODE = "nav_bar_alpha_mode";
     private static final String PREF_NAV_BAR_COLOR = "nav_bar_color";
+    private static final String PREF_NAV_BAR_COLOR_MODE = "nav_bar_color_mode";
 
     private static final int MENU_RESET = Menu.FIRST;
 
@@ -61,9 +62,10 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
+    ListPreference mAlphaMode;
+    CheckBoxPreference mColorMode;
     SeekBarPreference mNavBarTransparency;
     ColorPickerPreference mNavBarColor;
-    ListPreference mAlphaMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -133,6 +135,12 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             mNavigationBarWidth.setOnPreferenceChangeListener(this);
         }
 
+        mColorMode = (CheckBoxPreference) findPreference(PREF_NAV_BAR_COLOR_MODE);
+        mColorMode.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1) == 1);
+        mColorMode.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
         mCheckPreferences = true;
         return prefs;
@@ -165,6 +173,8 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             public void onClick(DialogInterface dialog, int id) {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_TINT, -2);
 
@@ -239,6 +249,11 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_NAV_BAR_ALPHA_MODE, alphaMode);
             mAlphaMode.setSummary(mAlphaMode.getEntries()[index]);
+            return true;
+        } else if (preference == mColorMode) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_NAV_BAR_COLOR_MODE,
+                    mColorMode.isChecked() ? 0 : 1);
             return true;
         }
         return false;

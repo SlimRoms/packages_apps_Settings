@@ -481,6 +481,8 @@
     <string name="status_nav_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_nav_bar_alpha_mode_home">on launcher</string>
     <string name="status_nav_bar_alpha_mode_default">on launcher and lock screen</string>
+    <string name="status_nav_bar_colormode_title">Color mode</string>
+    <string name="status_nav_bar_colormode_summary">Colorize navigation and status bar background only on launcher and lockscreen</string>
     <string name="status_bar_style_reset">Reset</string>
 
     <!-- Status bar | Clock -->

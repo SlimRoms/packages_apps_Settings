@@ -117,7 +117,7 @@
     <string name="navigation_settings_options_title">Настройки навигации</string>
 
     <string name="advanced_options_settings_title">Расширенные настройки</string>
-    
+
     <string name="additional_options_title">Дополнительные настройки</string>
 
     <!-- Power Widget  -->
@@ -290,7 +290,7 @@
     <string name="toggleLockScreen">Блокировка</string>
     <string name="toggleWimax">WiMAX</string>
     <string name="toggleNfc">NFC</string>
-    
+
     <!-- Performance settings  -->
     <string name="performance_settings_title">Производительность</string>
 
@@ -333,11 +333,6 @@
     <!-- Purgeable Assets -->
     <string name="pref_purgeable_assets_title">Разрешить сброс активов</string>
     <string name="pref_purgeable_assets_summary">Освободить больше памяти, когда это необходимо, если память активов битмапов разрешено освобождать (требуется перезагрузка)</string>
-    <!-- Performance Settings : Dithering -->
-    <string name="pref_use_dithering_title">Поверхностное сглаживание</string>
-    <string name="dithering_no_dither">Сглаживание выключено</string>
-    <string name="dithering_color_banding">Удаление цветных полос (по умолчанию)</string>
-    <string name="dithering_blur_effect">Удаление цветных полос и размытого эффекта</string>
 
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16-битная прозрачность</string>
@@ -595,7 +590,7 @@
 желаемую яркость экрана. Пункт \'Разделить\' позволяет дублировать текущий пункт, чтобы 
 добавить дополнительные контрольные точки. \'Удалить\' удаляет выбранный пункт.
     </string>
-    
+
     <string name="auto_brightness_sensitivity_title">Чувствительность регулировки</string>
     <string name="auto_brightness_sensitivity_verylow">Очень низкая</string>
     <string name="auto_brightness_sensitivity_low">Низкая</string>
@@ -1110,7 +1105,7 @@
     <string name="navbar_cat">Строка навигации</string>
     <string name="navbar_style_cat">Стиль строки навигации</string>
     <string name="navbar_dimen_cat">Размер строки навигации</string>
-    
+
     <string name="navbar_widgets_note_title">Примечание</string>
     <string name="navbar_widgets_note_summary">Чтобы активировать панель виджетов, включите ее для аппаратных клавиш, строки навигации или целей кольца строки навигации.</string>
     <string name="navbar_widgets_title">Панель виджетов</string>
@@ -1135,7 +1130,7 @@
     <string name="widgets_shifted_left">Виджет сдвинут на один пункт влево</string>
     <string name="widgets_shifted_right">Виджет сдвинут на один пункт вправо</string>
     <string name="widgets_shifted_end">Виджет нельзя сдвинуть в эту сторону</string>
-    
+
     <!-- cLock settings -->
     <string name="chronus_title">cLock</string>
     <!-- Touckey Light Timeout -->
@@ -1225,11 +1220,11 @@
     <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
-    
+
     <!-- Lock volume keys -->
     <string name="sound_lock_volume_keys_title">Блокировать клавиши громкости</string>
     <string name="sound_lock_volume_keys_summary">Предотвращать случайное отключение тихого режима кнопками громкости</string>
-    
+
     <!-- Auto-Hide Status Bar -->
     <string name="auto_hide_statusbar">Автоскрытие строки состояния</string>
     <string name="auto_hide_statusbar_summary_nonperm">Строка состояния будет автоматически скрываться при отсутствии временных уведомлений</string>
@@ -1306,7 +1301,7 @@
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">APN будет удалена.</string>
-    
+
     <!-- Statusbar Quick Peek -->
     <string name="statusbar_quick_peek_title">Свайп строки состояния</string>
     <string name="statusbar_quick_peek_summary">Открывать строку состояния свайпом от верхнего края, если она скрыта</string>
@@ -1347,7 +1342,8 @@
     <string name="shortcut_action_ring_vib">Звонок/Вибро</string>
     <string name="shortcut_action_ring_silent">Звонок/Тихо</string>
     <string name="shortcut_action_ring_vib_silent">Звонок/Вибро/Тихо</string>
-    <string name="shortcut_action_expanded_desktop">Expanded desktop</string>
+    <string name="shortcut_action_expanded_desktop">Расширенный рабочий стол</string>
+    <string name="shortcut_action_power_menu">Меню управления питанием</string>
 
     <string name="shortcut_action_longpress">Долгое нажатие:</string>
     <string name="shortcut_action_select_action_longpress">Выберите действие для долгого нажатия:</string>

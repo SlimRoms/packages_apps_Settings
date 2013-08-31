@@ -1344,6 +1344,7 @@
     <string name="shortcut_action_ring_vib_silent">Звонок/Вибро/Тихо</string>
     <string name="shortcut_action_expanded_desktop">Расширенный рабочий стол</string>
     <string name="shortcut_action_power_menu">Меню управления питанием</string>
+    <string name="shortcut_action_torch">Фонарик</string>
 
     <string name="shortcut_action_longpress">Долгое нажатие:</string>
     <string name="shortcut_action_select_action_longpress">Выберите действие для долгого нажатия:</string>

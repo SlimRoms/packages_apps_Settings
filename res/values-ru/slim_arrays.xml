@@ -507,6 +507,7 @@
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
         <item>@string/shortcut_action_search</item>
+        <item>@string/shortcut_action_torch</item>
         <item>@string/shortcut_action_widget</item>
         <item>@string/shortcut_action_none</item>
     </string-array>
@@ -526,6 +527,7 @@
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
         <item>@string/shortcut_action_search</item>
+        <item>@string/shortcut_action_torch</item>
         <item>@string/shortcut_action_widget</item>
         <item>@string/shortcut_action_none</item>
     </string-array>

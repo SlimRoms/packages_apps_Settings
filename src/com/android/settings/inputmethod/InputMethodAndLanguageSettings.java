@@ -206,6 +206,9 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     }
 
     private void updateUserDictionaryPreference(Preference userDictionaryPreference) {
+        if (userDictionaryPreference == null) {
+            return;
+        }
         final Activity activity = getActivity();
         final TreeSet<String> localeList = UserDictionaryList.getUserDictionaryLocalesSet(activity);
         if (null == localeList) {

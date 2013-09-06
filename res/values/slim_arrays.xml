@@ -90,7 +90,7 @@
         <item>@string/app_ops_summaries_write_external_storage</item>
         <item>@string/app_ops_summaries_turn_screen_on</item>
         <item>@string/app_ops_summaries_get_accounts</item>
-        <item>@string/app_ops_summaries_change_wifi</item>
+        <item>@string/app_ops_summaries_toggle_wifi</item>
         <item>@string/app_ops_summaries_toggle_bluetooth</item>
         <item>@string/app_ops_summaries_start_at_boot</item>
         <item>@string/app_ops_summaries_toggle_nfc</item>

@@ -89,7 +89,7 @@
     <string name="app_ops_summaries_write_external_storage">write to external storage</string>
     <string name="app_ops_summaries_turn_screen_on">turn screen on</string>
     <string name="app_ops_summaries_get_accounts">get accounts</string>
-    <string name="app_ops_summaries_change_wifi">toggle Wi-Fi</string>
+    <string name="app_ops_summaries_toggle_wifi">toggle Wi-Fi</string>
     <string name="app_ops_summaries_toggle_bluetooth">toggle bluetooth</string>
     <string name="app_ops_summaries_start_at_boot">start at boot</string>
     <string name="app_ops_summaries_toggle_nfc">toggle NFC</string>

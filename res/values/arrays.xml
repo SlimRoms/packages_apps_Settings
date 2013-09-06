@@ -683,6 +683,7 @@
         <item>monitor high power location</item>
         <item>get usage stats</item>
         <item>mute/unmute microphone</item>
+        <item>toast window</item>
         <item>project media</item>
         <item>activate VPN</item>
         <item>write wallpaper</item>

@@ -47,6 +47,28 @@
     </PreferenceScreen>
 
     <PreferenceCategory
+        android:key="interface_settings_animation_prefs"
+        android:title="@string/interface_settings_animation_title">
+
+        <ListPreference
+            android:key="listview_animation"
+            android:dialogTitle="@string/listview_animation_title"
+            android:title="@string/listview_animation_title"
+            android:entries="@array/listview_animation_entries"
+            android:entryValues="@array/listview_animation_values"
+            android:defaultValue="0" />
+
+        <ListPreference
+            android:key="listview_interpolator"
+            android:dialogTitle="@string/listview_interpolator_title"
+            android:title="@string/listview_interpolator_title"
+            android:entries="@array/listview_interpolator_entries"
+            android:entryValues="@array/listview_interpolator_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="interface_settings_action_prefs"
         android:title="@string/interface_settings_options_title">
 

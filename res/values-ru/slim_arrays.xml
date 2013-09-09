@@ -336,14 +336,12 @@
         <item>@string/right</item>
         <item>@string/left</item>
         <item>@string/both</item>
-        <item>@string/dont_show</item>
     </string-array>
 
-    <string-array name="pref_navigation_menu_display_entries">
-        <item>@string/default_jb_behavior</item>
-        <item>@string/always_show_invincible_icons</item>
+    <string-array name="pref_menu_display_entries">
         <item>@string/always_show</item>
-        <item>@string/default_jb_with_invincible_icons_when_hidden</item>
+        <item>@string/never_show</item>
+        <item>@string/default_jb_behavior</item>
     </string-array>
 
     <string-array name="glow_times_entries">
@@ -498,7 +496,6 @@
         <item>@string/shortcut_action_home</item>
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
-        <item>@string/shortcut_action_menu</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_power_menu</item>
@@ -543,6 +540,58 @@
         <item>@string/icon_color_mode_all_icons</item>
         <item>@string/icon_color_mode_system_icons</item>
         <item>@string/icon_color_mode_system_custom_icons</item>
+    </string-array>
+
+    <!-- Listview animation -->
+    <string-array name="listview_animation_entries">
+        <item>@string/listview_off</item>
+        <item>@string/listview_wave_left</item>
+        <item>@string/listview_wave_right</item>
+        <item>@string/listview_scale</item>
+        <item>@string/listview_alpha</item>
+        <item>@string/listview_stack_top</item>
+        <item>@string/listview_stack_bottom</item>
+        <item>@string/listview_unfold</item>
+        <item>@string/listview_fold</item>
+        <item>@string/listview_translate_left</item>
+        <item>@string/listview_translate_right</item>
+    </string-array>
+
+    <string-array name="listview_animation_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- Listview Interpolator -->
+    <string-array name="listview_interpolator_entries">
+        <item>@string/listview_off</item>
+        <item>@string/listview_accelerate_interpolator</item>
+        <item>@string/listview_decelerate_interpolator</item>
+        <item>@string/listview_accelerate_decelerate_interpolator</item>
+        <item>@string/listview_anticipate_interpolator</item>
+        <item>@string/listview_overshoot_interpolator</item>
+        <item>@string/listview_anticipate_overshoot_interpolator</item>
+        <item>@string/listview_bounce_interpolator</item>
+    </string-array>
+
+    <string-array name="listview_interpolator_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 
 </resources>

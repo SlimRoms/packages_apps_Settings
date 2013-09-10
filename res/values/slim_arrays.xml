@@ -843,7 +843,6 @@
         <item>@string/right</item>
         <item>@string/left</item>
         <item>@string/both</item>
-        <item>@string/dont_show</item>
     </string-array>
 
     <!-- right is the default, easier to keep 0 as first index -->
@@ -851,21 +850,18 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>4</item>
     </string-array>
 
-    <string-array name="pref_navigation_menu_display_entries">
-        <item>@string/default_jb_behavior</item>
-        <item>@string/always_show_invincible_icons</item>
+    <string-array name="pref_menu_display_entries">
         <item>@string/always_show</item>
-        <item>@string/default_jb_with_invincible_icons_when_hidden</item>
+        <item>@string/never_show</item>
+        <item>@string/default_jb_behavior</item>
     </string-array>
 
-    <string-array name="pref_navigation_menu_display_values" translatable="false">
+    <string-array name="pref_menu_display_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
     <string-array name="navigation_bar_width_entries" translatable="false">
@@ -1240,7 +1236,6 @@
         <item>@string/shortcut_action_home</item>
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
-        <item>@string/shortcut_action_menu</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_power_menu</item>
@@ -1261,7 +1256,6 @@
         <item>**home**</item>
         <item>**kill**</item>
         <item>**lastapp**</item>
-        <item>**menu**</item>
         <item>**notifications**</item>
         <item>**ime**</item>
         <item>**power_menu**</item>

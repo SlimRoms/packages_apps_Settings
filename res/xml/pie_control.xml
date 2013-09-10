@@ -48,6 +48,13 @@
     <PreferenceCategory
         android:title="@string/pie_additional_options">
 
+        <ListPreference
+            android:key="pie_menu"
+            android:entries="@array/pref_menu_display_entries"
+            android:entryValues="@array/pref_menu_display_values"
+            android:title="@string/title_pref_menu_display"
+            android:summary="@string/summary_pref_menu_display" />
+
         <CheckBoxPreference
             android:key="pie_show_background"
             android:title="@string/pie_show_background_title"

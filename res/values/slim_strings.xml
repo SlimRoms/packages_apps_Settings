@@ -1199,4 +1199,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
 
+    <!-- App moving -->
+    <string name="app_moving_enable">Enable app moving</string>
+    <string name="app_moving_disable">Disable app moving</string>
+    <string name="app_moving_reboot_title">Reboot now?</string>
+    <string name="app_moving_reboot_enabled_desc">Successfully enabled application moving.\n\nThe device needs to be rebooted for the setting to take effect.</string>
+    <string name="app_moving_reboot_disabled_desc">Successfully disabled application moving.\n\nThe device needs to be rebooted for the setting to take effect.</string>
+    <string name="app_moving_reboot_now_button">Reboot now</string>
+    <string name="app_moving_reboot_later_button">Reboot later</string>
+
 </resources>

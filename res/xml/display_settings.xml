@@ -52,6 +52,11 @@
                 android:title="@string/screensaver_settings_title"
                 android:fragment="com.android.settings.DreamSettings" />
 
+        <ListPreference
+                android:key="lcd_density"
+                android:title="@string/lcd_density"
+                android:persistent="false" />
+
         <SwitchPreference
                 android:key="lift_to_wake"
                 android:title="@string/lift_to_wake_title"

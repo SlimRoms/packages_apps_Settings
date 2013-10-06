@@ -226,6 +226,7 @@ public class PrivacyGuardManager extends Fragment
         List<PackageInfo> packages = mPm.getInstalledPackages(
             PackageManager.GET_PERMISSIONS | PackageManager.GET_SIGNATURES);
         boolean showSystemApps = shouldShowSystemApps();
+        boolean filterByPermission = shouldFilterByPermission();
         Signature platformCert;
 
         try {
@@ -237,6 +238,21 @@ public class PrivacyGuardManager extends Fragment
 
         for (PackageInfo info : packages) {
             final ApplicationInfo appInfo = info.applicationInfo;
+
+            List<AppOpsManager.PackageOps> packageOps = mAppOps.getOpsForPackage(
+                    info.applicationInfo.uid, info.packageName, null);
+
+            // hide apps without permissions
+            if (packageOps == null || packageOps.size() == 0) {
+               continue;
+            } else if (filterByPermission) {
+                // hide apps without privacy guard permissions
+                packageOps = mAppOps.getPrivacyGuardOpsForPackage(
+                    info.applicationInfo.uid, info.packageName);
+                if (packageOps == null || packageOps.size() == 0) {
+                     continue;
+                 }
+            }
 
             // hide apps signed with the platform certificate to avoid the user
             // shooting himself in the foot
@@ -278,6 +294,10 @@ public class PrivacyGuardManager extends Fragment
         return mPreferences.getBoolean("show_system_apps", false);
     }
 
+    private boolean shouldFilterByPermission() {
+        return mPreferences.getBoolean("filter_by_permission", true);
+    }
+
     private class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -309,6 +329,7 @@ public class PrivacyGuardManager extends Fragment
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.privacy_guard_manager, menu);
         menu.findItem(R.id.show_system_apps).setChecked(shouldShowSystemApps());
+        menu.findItem(R.id.filter_app_permissions).setChecked(shouldFilterByPermission());
     }
 
     @Override
@@ -320,18 +341,15 @@ public class PrivacyGuardManager extends Fragment
             case R.id.reset:
                 resetPrivacyGuard();
                 return true;
+            case R.id.filter_app_permissions:
             case R.id.show_system_apps:
-                final String prefName = "show_system_apps";
+                final String prefName = item.getItemId() == R.id.filter_app_permissions
+                        ? "filter_by_permission" : "show_system_apps";
                 // set the menu checkbox and save it in
                 // shared preference and rebuild the list
                 item.setChecked(!item.isChecked());
                 mPreferences.edit().putBoolean(prefName, item.isChecked()).commit();
                 loadApps();
-                return true;
-            case R.id.advanced:
-                Intent i = new Intent(Intent.ACTION_MAIN);
-                i.setClass(mActivity, AppOpsSummaryActivity.class);
-                mActivity.startActivity(i);
                 return true;
              default:
                 return super.onContextItemSelected(item);

@@ -34,8 +34,8 @@
     </string-array>
 
     <string-array name="entries_screentimeout_widget">
-        <item>15с | 1м | 5м</item>
-        <item>30с | 2м | 5м</item>
+        <item>15с | 1м | 5м | Никогда</item>
+        <item>30с | 2м | 5м | Никогда</item>
     </string-array>
 
     <string-array name="entries_flash_widget">

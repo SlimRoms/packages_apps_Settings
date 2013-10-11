@@ -1248,6 +1248,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_button_help">Help</string>
     <string name="ram_bar_button_reset">Reset</string>
 
+    <!-- Recents Clear All On Right -->
+    <string name="clear_all_on_right">Recents Clear All Button</string>
+    <string name="clear_all_on_right_summary">Set to right side of screen</string>
+
     <!-- Wifi settings -->
     <string name="ass_wifi_settings_title">Wi-Fi</string>
     <!-- Wi-Fi region code settings-->

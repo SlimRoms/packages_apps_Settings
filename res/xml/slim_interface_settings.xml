@@ -93,6 +93,12 @@
             android:fragment="com.android.settings.slim.RamBar"
             android:title="@string/ram_bar" />
 
+            <CheckBoxPreference
+            android:key="recents_clear_all_on_right"
+            android:title="@string/clear_all_on_right"
+            android:summary="@string/clear_all_on_right_summary"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -21,6 +21,13 @@
         android:key="additional_options"
         android:title="@string/additional_options_title">
 
+        <ListPreference
+            android:key="lock_numpad_random"
+            android:entries="@array/lock_numpad_random_entries"
+            android:entryValues="@array/lock_numpad_random_values"
+            android:title="@string/lock_numpad_random_title"
+            android:dialogTitle="@string/lock_numpad_random_dialog_title" />
+
         <CheckBoxPreference
             android:key="home_unlock"
             android:title="@string/unlock_home_unlock_title"

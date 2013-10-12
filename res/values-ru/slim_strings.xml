@@ -953,6 +953,11 @@
     <string name="unlock_quick_unlock_control_summary">Не требуется нажимать \"ОК\" после ввода пароля или PIN. Стирание засчитывается как неудачная попытка</string>
     <string name="lock_before_unlock_title">Показывать ползунок перед безопасной разблокировкой</string>
     <string name="lock_before_unlock_summary">Показывать стандартный ползунок разблокировки до безопасной разблокировки</string>
+    <string name="lock_numpad_random_title">Изменять порядок кнопока при вводе PIN</string>
+    <string name="lock_numpad_random_dialog_title">Поризвольный порядок цифр PIN</string>
+    <string name="lock_numpad_random_off">Отключено</string>
+    <string name="lock_numpad_random_always">Всегда</string>
+    <string name="lock_numpad_random_on_request">По запросу</string>
     <!-- Slide lock delay -->
     <string name="delay_and_timeout_title">Задержка при блокировке</string>
     <string name="slide_lock_delay_title">Задержка блокировки экрана</string>

@@ -1476,8 +1476,8 @@
     <string name="listview_wave_right">Волна (справа)</string>
     <string name="listview_alpha">Проявление</string>
     <string name="listview_scale">Увеличение</string>
-    <string name="listview_stack_top">Стек (вверх)</string>
-    <string name="listview_stack_bottom">Стек (вниз)</string>
+    <string name="listview_stack_top">Стек (сверху)</string>
+    <string name="listview_stack_bottom">Стек (снизу)</string>
     <string name="listview_unfold">Развернуть</string>
     <string name="listview_fold">Свернуть</string>
     <string name="listview_translate_left">Сдвиг (слева)</string>

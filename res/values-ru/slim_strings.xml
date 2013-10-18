@@ -1492,4 +1492,10 @@
     <string name="listview_overshoot_interpolator">Проскочить</string>
     <string name="listview_anticipate_overshoot_interpolator">Ускорить и проскочить</string>
     <string name="listview_bounce_interpolator">Отскакивать</string>
+
+    <!-- Lockscreen Lid Settings -->
+    <string name="smart_cover_category_title">\"Умная\" обложка</string>
+    <string name="smart_cover_wake_title">Пробуждение \"умной\" обложкой</string>
+    <string name="smart_cover_wake_summary">Пробуждать устройство, когда открывается \"умная\" обложка</string>
+
 </resources>

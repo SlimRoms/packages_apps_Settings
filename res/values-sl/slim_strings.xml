@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) SlimRoms 2013
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="show_dev_countdown">Št. korakov, ki vas loči od tega, da postanete razvijalec: <xliff:g id="STEP_COUNT">%1$d</xliff:g>.</string>
+    <string name="usb_mass_storage_title">Masovni pomnilnik</string>
+    <string name="usb_mass_storage_summary">Omogoči masovno shranjevanje USB</string>
+    <string name="bluetooth_mas_request">"Zahteva za dostop do sporočila"</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s bi rad dostopal do sporočila. Dovoli dostop do %2$s ?</string>
+    <string name="bluetooth_mas_remember_choice">Ne vprašaj me več</string>
+    <string name="lockscreen_widgets_category">Pripomočki na zaslonu za odklep</string>
+    <string name="lockscreen_widgets_title">Pripomočki</string>
+    <string name="lockscreen_widgets_summary">Ogled ali spreminjanje pripomočkov na zaslonu za odklep</string>
+    <string name="lockscreen_widgets_all_title">Dovoli pripomočke</string>
+    <string name="lockscreen_widgets_all_summary">Dodaj pripomočke na zaslon za odklep</string>
+    <string name="lockscreen_camera_widget_title">Vklopi pripomoček za dostop do fotoaparata</string>
+    <string name="lockscreen_camera_widget_summary">Prikaži zavaravan pripomoček za kamero na zaslonu za odklep</string>
+    <string name="lockscreen_maximize_widgets_title">Začni maksimirano</string>
+    <string name="lockscreen_maximize_widgets_summary">Pokaži pripomočke maksimiranje, ko se zaslon prižge</string>
+    <string name="lockscreen_disable_hints_title">Onemogoči namige</string>
+    <string name="lockscreen_disable_hints_summary">Onesposobi sijaj, ki obdaja stran z pripomočki na zaslonu za odklep</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Vklopi vrtiljak pripomočkov</string>
+    <string name="keyguard_picker_all_widgets_title">Pokaži vse pripomočke</string>
+    <string name="nfc_polling_mode_screen_off">Ekran ugašen</string>
+    <string name="nfc_polling_mode_screen_locked">Ekran prižgan, zaklenjen</string>
+    <string name="nfc_polling_mode_screen_unlocked">Zaslon prižgan, odklenjen (privzeto)</string>
+    <string name="wifi_menu_forget_all">Pozabi vsa omrežja</string>
+    <string name="accessibility_home_button_answers_call_prerefence_title">Gumb za vrnitev na domač zaslon odgovori na klic</string>
+    <string name="quiet_hours_mute">Izklop zvoka obvestil</string>
+    <string name="ok">V redu</string>
+    <string name="cm_sound_mode_sound">Zvok</string>
+    <string name="power_widget_disabled">Onemogočeno</string>
+    <string name="profiles_settings_title">Profili</string>
+    <string name="profiles_general_title">Splošno</string>
+    <string name="profiles_add">Dodaj</string>
+    <string name="profile_menu_delete">Izbriši</string>
+    <string name="profile_name_title">Ime</string>
+    <string name="rename_dialog_title">Preimenuj</string>
+    <string name="connection_state_disabled">Onemogoči</string>
+    <string name="connection_state_enabled">Omogoči</string>
+    <string name="vibrator_state_disabled">Onemogoči</string>
+    <string name="vibrator_state_enabled">Omogoči</string>
+    <string name="profile_profiles_manage">Profili</string>
+    <string name="profile_settings">Nastavitve profila</string>
+    <string name="profile_name">Ime</string>
+    <string name="profile_appgroup_name_title">Ime</string>
+    <string name="profile_settings_header">Nastavitve profila</string>
+    <string name="profile_lockmode_default">Privzeto</string>
+    <string name="profile_lockmode_disabled">Onemogočeno</string>
+    <string name="profile_airplanemode_title">Način za letalo</string>
+    <string name="vibrator_type_notification">Obvestila</string>
+    <string name="toggleWifi">Brezžično</string>
+    <string name="toggleWifiAp">Prenosna brezžična dostopna točka</string>
+    <string name="toggleBluetooth">Bluetooth</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleBrightness">Svetlost</string>
+    <string name="power_menu_airplane_title">Način za letalo</string>
+    <string name="expanded_desktop_disabled">Izklopljeno</string>
+    <string name="checkbox_increasing_ring">Omogoči</string>
+    <string name="volume_ring_only_description">Zvonjenje</string>
+    <string name="sound_title">Zvok</string>
+    <string name="status_bar_general_title">Splošno</string>
+    <string name="clock_disabled">Onemogočeno</string>
+    <string name="clock_date_display">Datum</string>
+    <string name="title_slim_general">Splošno</string>
+    <string name="low_battery_warning_policy_disabled">Onemogočeno</string>
+    <string name="lcd_density_summary">neznano</string>
+    <string name="set_custom_density_set">Nastavi</string>
+    <string name="display_title">Zaslon</string>
+    <string name="auto_brightness_menu_remove">Odstrani</string>
+    <string name="display_rotation_disabled">Onemogočeno</string>
+    <string name="notification_pulse_title">Lučka za obvestila z utripanjem</string>
+    <string name="notification_light_general_title">Splošno</string>
+    <string name="notification_light_phonelist_title">Telefon</string>
+    <string name="notification_light_disabled">Onemogočeno</string>
+    <string name="notification_light_default_value">Privzeto</string>
+    <string name="dialog_delete_title">Izbriši</string>
+    <string name="battery_light_medium_color_title">Polnjenje</string>
+    <string name="notification_widgets">Pripomočki</string>
+    <string name="title_tile_airplane">Način za letalo</string>
+    <string name="title_tile_bluetooth">Bluetooth</string>
+    <string name="title_tile_brightness">Svetlost</string>
+    <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_mobiledata">Mobilni podatki</string>
+    <string name="title_tile_settings">Nastavitve</string>
+    <string name="title_tile_sound">Zvok</string>
+    <string name="title_tile_sync">Sinhronizacija</string>
+    <string name="title_tile_wifi">Brezžično</string>
+    <string name="title_general">Splošno</string>
+    <string name="quick_pulldown_off">Izklopljeno</string>
+    <string name="quick_settings_disabled">Onemogočeno</string>
+    <string name="set">Nastavi</string>
+    <string name="circle_battery_animation_speed_none">Brez</string>
+    <string name="volume_key_cursor_control_off">Onemogočeno</string>
+    <string name="mod_version_default">Neznano</string>
+    <string name="root_access_none">Onemogočeno</string>
+    <string name="lockscreen_target_empty">Brez</string>
+    <string name="icon_picker_calendar">Koledar</string>
+    <string name="icon_picker_phone">Telefon</string>
+    <string name="icon_picker_search">Iskanje</string>
+    <string name="lockscreen_battery_status_title">Stanje baterije</string>
+    <string name="lockscreen_custom_background_title">Ozadje</string>
+    <string name="icon_default">Privzeto</string>
+    <string name="lockscreen_shortcuts_title">Bližnjice</string>
+    <string name="screen_security_category">Varnost zaslona</string>
+    <string name="slide_lock_delay_none">Brez</string>
+    <string name="lockscreen_buttons_no_action">Brez</string>
+    <string name="lockscreen_buttons_power_off">Ekran ugašen</string>
+    <string name="hardware_keys_action_nothing">Brez</string>
+    <string name="hardware_keys_action_back">Nazaj</string>
+    <string name="hardware_keys_action_search">Iskanje</string>
+    <string name="hardware_keys_action_voice_search">Glasovno iskanje</string>
+    <string name="hardware_keys_action_power">Ekran ugašen</string>
+    <string name="hardware_keys_action_notifications">Obvestila</string>
+    <string name="default_jb_behavior">Brez</string>
+    <string name="always_show">Vedno pokaži</string>
+    <string name="glow_times_off">Izklopljeno</string>
+    <string name="ram_bar_none">Brez</string>
+    <string name="ram_bar_color_disabled">Onemogočeno</string>
+    <string name="ram_bar_button_help">Pomoč</string>
+    <string name="ass_wifi_settings_title">Brezžično</string>
+    <string name="gestures_action_empty">Brez</string>
+    <string name="advanced_reboot_disabled">Onemogoči</string>
+</resources>

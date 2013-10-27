@@ -238,7 +238,7 @@
     <!-- Profile Settings sound modes labels -->
     <string name="sound_mode">Режим уведомления</string>
     <string name="ringer_mode">Режим звонка</string>
-    <string name="lights_mode">Облегчённый режим</string>
+    <string name="lights_mode">Режим индикатора</string>
     <string name="vibrate_mode">Режим вибрации</string>
     <string name="choose_soundtone">Звук уведомления</string>
     <string name="choose_ringtone">Мелодия телефона</string>
@@ -745,15 +745,15 @@
     <string name="no_notifications_pulldown_summary_nonperm">Открывать быстрые настройки, если нет временных уведомлений</string>
     <string name="no_notifications_pulldown_summary_all">Открывать быстрые настройки, если нет уведомлений</string>
     <string name="no_notifications_pulldown_off">Отключено</string>
-    <string name="no_notifications_pulldown_nonperm">Только временные</string>
-    <string name="no_notifications_pulldown_all">Все уведомления</string>
+    <string name="no_notifications_pulldown_nonperm">Только при временных уведомлениях</string>
+    <string name="no_notifications_pulldown_all">Всегда</string>
     <string name="title_collapse_panel">Закрывать панель</string>
     <string name="summary_collapse_panel">Закрывать панель быстрых настроек после переключения</string>
     <string name="disable_quick_settings_panel">Быстрые настройки</string>
     <string name="disable_quick_settings_panel_summary">Включить/отключить быстрые настройки</string>
     <string name="quick_settings_enabled">Включено</string>
     <string name="quick_settings_disabled">Выключено</string>
-    <string name="title_no_notifications_pulldown">Открывать панель с настройками</string>
+    <string name="title_no_notifications_pulldown">Сразу открывать Быстрые настройки</string>
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
@@ -1445,7 +1445,7 @@
     <string name="blacklist_button_delete">Удалить</string>
     <string name="blacklist_empty_text">В вашем черном списке нет номеров. Чтобы добавить пункт, нажмите (+)</string>
     <string name="blacklist_disabled_empty_text">Активируйте черный список, чтобы добавлять номера и/или сообщения.</string>
-    <string name="blacklist_summary_disabled">Отключкео</string>
+    <string name="blacklist_summary_disabled">Отключено</string>
     <string name="blacklist_summary">Входящие звонки и сообщения с телефонных номеров в черном списке будут заблокированы</string>
     <string name="blacklist_notify">Показать уведомление</string>
     <string name="blacklist_private_numbers_title">Скрытые номера</string>

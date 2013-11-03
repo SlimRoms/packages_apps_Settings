@@ -22,6 +22,7 @@ import android.app.AppOpsManager;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,8 +33,10 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -75,8 +78,19 @@ public class AppOpsDetails extends Fragment {
     private LinearLayout mOperationsSection;
 
     // Utility method to set application label and icon.
-    private void setAppLabelAndIcon(PackageInfo pkgInfo) {
+    private void setAppLabelAndIcon(final PackageInfo pkgInfo) {
         final View appSnippet = mRootView.findViewById(R.id.app_snippet);
+        appSnippet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            Uri.fromParts("package", pkgInfo.packageName, null)));
+                } catch (ActivityNotFoundException e) {
+                    Log.e(TAG, "Couldn't open app details activity", e);
+                }
+            }
+        });
         appSnippet.setPaddingRelative(0, appSnippet.getPaddingTop(), 0, appSnippet.getPaddingBottom());
 
         ImageView icon = (ImageView) appSnippet.findViewById(R.id.app_icon);
@@ -208,7 +222,7 @@ public class AppOpsDetails extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.app_ops_details, container, false);
-        Utils.prepareCustomPreferencesList(container, view, view, false);
+        Utils.prepareCustomPreferencesList(container, view, view, true);
 
         mRootView = view;
         mOperationsSection = (LinearLayout)view.findViewById(R.id.operations_section);

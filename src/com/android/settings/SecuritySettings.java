@@ -205,12 +205,17 @@ public class SecuritySettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
 
+        // Add options for device encryption
+        mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
+
+        if (mIsPrimary) {
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_slim);
+        }
+
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils);
         addPreferencesFromResource(resid);
-
-        // Add options for device encryption
-        mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
 
         if (!mIsPrimary) {
             // Rename owner info settings
@@ -355,6 +360,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Side loading of apps.
         // Disable for restricted profiles. For others, check if policy disallows it.
         mToggleAppInstallation.setEnabled(!um.getUserInfo(UserHandle.myUserId()).isRestricted());
+
         if (um.hasUserRestriction(UserManager.DISALLOW_INSTALL_UNKNOWN_SOURCES)
                 || um.hasUserRestriction(UserManager.DISALLOW_INSTALL_APPS)) {
             mToggleAppInstallation.setEnabled(false);

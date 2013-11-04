@@ -17,6 +17,10 @@
 
     <string name="ok">OK</string>
 
+    <!-- About phone screen, slim version -->
+    <string name="slim_version_title">Slim version</string>
+    <string name="slim_version_default">Unknown</string>
+
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
     <string name="notification_light_general_title">General</string>

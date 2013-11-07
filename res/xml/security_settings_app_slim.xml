@@ -21,6 +21,11 @@
         android:key="app_security"
         android:title="@string/app_security_title">
 
+        <PreferenceScreen
+            android:key="blacklist"
+            android:title="@string/blacklist_title"
+            android:fragment="com.android.settings.slim.blacklist.BlacklistSettings" />
+
          <Preference
             android:fragment="com.android.settings.slim.privacyguard.PrivacyGuardManager"
             android:key="privacy_guard_manager"

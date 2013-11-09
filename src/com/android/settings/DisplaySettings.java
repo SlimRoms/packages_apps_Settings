@@ -380,18 +380,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private void updateLightPulseDescription() {
         if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_enabled));
+            mNotificationPulse.setSummary(getString(R.string.enabled));
         } else {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_disabled));
+            mNotificationPulse.setSummary(getString(R.string.disabled));
          }
     }
 
     private void updateBatteryPulseDescription() {
         if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1) {
-            mBatteryPulse.setSummary(getString(R.string.notification_light_enabled));
+            mBatteryPulse.setSummary(getString(R.string.enabled));
         } else {
-            mBatteryPulse.setSummary(getString(R.string.notification_light_disabled));
+            mBatteryPulse.setSummary(getString(R.string.disabled));
         }
      }
 

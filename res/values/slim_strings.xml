@@ -19,6 +19,8 @@
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
@@ -34,7 +36,6 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
-    <string name="color_default">Default</string>
 
     <!-- About phone screen, slim version -->
     <string name="slim_version_title">Slim version</string>
@@ -46,9 +47,6 @@
     <string name="notification_light_applist_title">Applications</string>
     <string name="notification_light_phonelist_title">Phone</string>
     <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_enabled">Enabled</string>
-    <string name="notification_light_disabled">Disabled</string>
-    <string name="notification_light_default_value">Default</string>
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
     <string name="notification_light_choose_app">Choose application</string>
@@ -129,8 +127,6 @@
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_title">Clock and date style</string>
     <string name="clock_title_enable">Alignment</string>
-    <string name="clock_enabled">Enabled</string>
-    <string name="clock_disabled">Disabled</string>
     <string name="clock_color_title">Color</string>
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_show_clock_title">Show clock and date</string>

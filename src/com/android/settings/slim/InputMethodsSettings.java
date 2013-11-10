@@ -17,7 +17,11 @@
 package com.android.settings.slim;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -36,6 +40,8 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "KeyboardInputSettings";
+
+    private static final int DLG_KEYBOARD_ROTATION = 0;
 
     private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
     private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
@@ -122,21 +128,6 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
 
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    public void mKeyboardRotationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.keyboard_rotation_dialog);
-        builder.setCancelable(false);
-        builder.setPositiveButton(
-            getResources().getString(com.android.internal.R.string.ok), null);
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) objValue;
@@ -155,10 +146,10 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_IME_SWITCHER, (Boolean) objValue ? 1 : 0);
             return true;
         } else if (preference == mKeyboardRotationToggle) {
-            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
-                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+            boolean isAutoRotate = (Settings.System.getIntForUser(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0, UserHandle.USER_CURRENT) == 1);
             if (isAutoRotate && (Boolean) objValue) {
-                mKeyboardRotationDialog();
+                showDialogInner(DLG_KEYBOARD_ROTATION);
             }
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEYBOARD_ROTATION_TIMEOUT,
@@ -178,4 +169,50 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
         }
         return false;
     }
+
+    private void showDialogInner(int id) {
+        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
+
+    public static class MyAlertDialogFragment extends DialogFragment {
+
+        public static MyAlertDialogFragment newInstance(int id) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        InputMethodsSettings getOwner() {
+            return (InputMethodsSettings) getTargetFragment();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            int id = getArguments().getInt("id");
+            switch (id) {
+                case DLG_KEYBOARD_ROTATION:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(R.string.keyboard_rotation_dialog)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .create();
+            }
+            throw new IllegalArgumentException("unknown id " + id);
+        }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+
+        }
+    }
+
 }

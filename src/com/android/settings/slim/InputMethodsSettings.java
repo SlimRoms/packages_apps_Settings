@@ -102,8 +102,9 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
     }
 
     public void updateRotationTimeout(int timeout) {
-        if (timeout == 0)
+        if (timeout == 0) {
             timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+        }
         mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
         mKeyboardRotationTimeout.setSummary(
             getString(R.string.keyboard_rotation_timeout_summary,
@@ -130,7 +131,8 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(R.string.keyboard_rotation_dialog);
         builder.setCancelable(false);
-        builder.setPositiveButton(getResources().getString(com.android.internal.R.string.ok), null);
+        builder.setPositiveButton(
+            getResources().getString(com.android.internal.R.string.ok), null);
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -155,8 +157,9 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
         } else if (preference == mKeyboardRotationToggle) {
             boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
-            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
+            if (isAutoRotate && (Boolean) objValue) {
                 mKeyboardRotationDialog();
+            }
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEYBOARD_ROTATION_TIMEOUT,
                     (Boolean) objValue ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);

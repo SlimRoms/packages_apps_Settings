@@ -21,7 +21,10 @@ import android.os.Bundle;
 import android.os.ServiceManager;
 import android.provider.Settings;
 import android.preference.Preference;
+<<<<<<< HEAD
 import android.preference.PreferenceScreen;
+=======
+>>>>>>> 498e430... Settings: Slims navbar and navring customizations
 import android.view.IWindowManager;
 
 import com.android.settings.R;
@@ -29,13 +32,19 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class NavigationSettings extends SettingsPreferenceFragment {
 
+<<<<<<< HEAD
     private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+=======
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_PIE_SETTINGS = "pie_settings";
+>>>>>>> 498e430... Settings: Slims navbar and navring customizations
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.slim_navigation_settings);
+<<<<<<< HEAD
 
         // Hide Hardware Keys menu if device doesn't have any
         PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
@@ -44,6 +53,8 @@ public class NavigationSettings extends SettingsPreferenceFragment {
         if (deviceKeys == 0 && hardwareKeys != null) {
             getPreferenceScreen().removePreference(hardwareKeys);
         }
+=======
+>>>>>>> 498e430... Settings: Slims navbar and navring customizations
     }
 
 }

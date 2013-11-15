@@ -36,7 +36,9 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -53,6 +55,7 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.internal.util.slim.ActionChecker;
 import com.android.internal.util.slim.ActionConfig;
 import com.android.internal.util.slim.ActionConstants;
 import com.android.internal.util.slim.ActionHelper;
@@ -153,8 +156,8 @@ public class ActionListViewSettings extends ListFragment implements
                     mActionConfigsAdapter.add(item);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else {
-                    deleteIconFileIfPresent(item, true);
                     setConfig(mActionConfigs, false);
+                    deleteIconFileIfPresent(item, true);
                     if (mActionConfigs.size() == 0) {
                         showDisableMessage(true);
                     }
@@ -519,10 +522,10 @@ public class ActionListViewSettings extends ListFragment implements
         switch (mActionMode) {
             case LOCKSCREEN_SHORTCUT:
                 return ActionHelper.getLockscreenShortcutConfig(mActivity);
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_RING:
                 return ActionHelper.getNavRingConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -547,10 +550,10 @@ public class ActionListViewSettings extends ListFragment implements
             case LOCKSCREEN_SHORTCUT:
                 ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
                 break;
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_RING:
                 ActionHelper.setNavRingConfig(mActivity, actionConfigs, reset);
                 break;
@@ -626,8 +629,9 @@ public class ActionListViewSettings extends ListFragment implements
                         iconUri), 36);
             }
 
-            if (iconUri != null && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
-                d.setTint(getResources().getColor(R.color.dslv_icon_dark));
+            if (iconUri.equals(ActionConstants.ICON_EMPTY) || (iconUri != null
+                    && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER))) {
+                if (d != null) d.setTint(getResources().getColor(R.color.dslv_icon_dark));
             }
             holder.iconView.setImageDrawable(d);
 
@@ -758,9 +762,15 @@ public class ActionListViewSettings extends ListFragment implements
                     })
                     .create();
                 case DLG_DELETION_NOT_ALLOWED:
+                    int message;
+                    if (getOwner().mActionConfigs.size() > 1) {
+                        message = R.string.shortcut_action_required_warning_message;
+                    } else {
+                        message = R.string.shortcut_action_warning_message;
+                    }
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.shortcut_action_warning)
-                    .setMessage(R.string.shortcut_action_warning_message)
+                    .setMessage(message)
                     .setNegativeButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {

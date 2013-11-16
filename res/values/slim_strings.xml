@@ -228,6 +228,10 @@
     <string name="restarting_ui">Restarting UI\u2026</string>
     <string name="lcd_density_prompt_message">Some apps may not function at non-standard dpi.\n\nThis will restart your phone.</string>
 
+    <!-- Font size sample text. This needs to be a very short string, as it is shown in
+         multiple font sizes in a limited amount of space. -->
+    <string name="font_size_sample">Sample</string>
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>

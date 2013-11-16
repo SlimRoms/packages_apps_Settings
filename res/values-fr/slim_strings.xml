@@ -17,7 +17,7 @@
     <string name="lockscreen_widgets_title">Widgets</string>
     <string name="lockscreen_widgets_summary">Afficher ou modifier les options du widget de l\'écran de verrouillage</string>
     <string name="lockscreen_widgets_all_title">Activer les Widgets</string>
-    <string name="lockscreen_widgets_all_summary">Ajouter des Widgets à l\’écran de verouillage</string>
+    <string name="lockscreen_widgets_all_summary">Ajouter des Widgets à l\'écran de verrouillage</string>
     <string name="lockscreen_camera_widget_title">Activez le widget caméra</string>
     <string name="lockscreen_camera_widget_summary">Afficher le widget Caméra sur l\'écran de verrouillage</string>
     <string name="lockscreen_maximize_widgets_title">Démarrer maximisé</string>
@@ -42,7 +42,7 @@
     <!-- Always show notification drawer settings button -->
     <string name="notification_settings_btn_title">Afficher toujours le bouton des paramètres</string>
     <string name="camera_sounds_title">Son de l\'obturateur de l\'appareil photo</string>
-    <string name="camera_sounds_summary">ATTENTION: La désactivation du son de l\'obturateur de l\'appareil photo est illégale dans certaines pays!</string>
+    <string name="camera_sounds_summary">ATTENTION : La désactivation du son de l\'obturateur de l\'appareil photo est illégale dans certains pays !</string>
     <string name="lockpattern_settings_enable_error_path_title">Afficher les erreurs de schéma</string>
     <string name="lockpattern_settings_enable_dots_title">Afficher les points du schéma</string>
     <string name="accessibility_home_button_answers_call_prerefence_title">Bouton \"Home\" pour répondre aux appels</string>
@@ -114,7 +114,7 @@
     <string name="title_toggle_notification_sound">Bouton de Notification du Son</string>
     <string name="title_toggle_brightness">Bouton de Luminosité</string>
     <string name="title_toggle_sync">Bouton activer/désactiver Sync</string>
-    <string name="title_toggle_wifiap">Activer/désactiver WiFi AP</string>
+    <string name="title_toggle_wifiap">Activer/désactiver PA Wi-Fi</string>
     <string name="title_toggle_screentimeout">Activer/désactiver mise en veille de l\'écran</string>
     <string name="title_toggle_mobiledata">Activer/désactiver les données mobiles</string>
     <string name="title_toggle_lockscreen">Activer/Désactiver l\'écran de verrouillage</string>
@@ -169,7 +169,7 @@
     <string name="duplicate_profile_name">Dupliquer le nom du profil !</string>
     <string name="duplicate_appgroup_name">Dupliquer le nom du groupe d\'applications !</string>
     <string name="profile_reset_title">Réinitialiser</string>
-    <string name="profile_reset_message">Supprimer tous les profils et groupes d\'applications créés par l\'utilisateur et de restaurer les valeurs par défaut ?</string>
+    <string name="profile_reset_message">Supprimer tous les profils et groupes d\'applications créées par l\'utilisateur et de restaurer les valeurs par défaut ?</string>
     <string name="profile_delete_confirm">Supprimer ce profil ?</string>
     <string name="profile_app_delete_confirm">Supprimer cette application ?</string>
     <string name="profile_cannot_delete">Impossible de supprimer un profil actif</string>
@@ -280,7 +280,7 @@
     <string name="power_menu_expanded_desktop">Bureau étendu</string>
     <string name="power_menu_profiles_title">Switcheur de profils</string>
     <string name="power_menu_profiles_disabled">Désactivé</string>
-    <string name="power_menu_profiles_lock">Désactivé sur l\'écran de vérouillage</string>
+    <string name="power_menu_profiles_lock">Désactivé sur l\'écran de verrouillage</string>
     <string name="power_menu_profiles_all">Afficher toujours</string>
     <string name="power_menu_airplane_title">Mode Avion</string>
     <string name="power_menu_sound_title">Panneau de volume</string>
@@ -355,9 +355,9 @@
     <string name="status_nav_bar_alpha_mode_dialog_text_title">Activer la transparence de la barre de navigation et la barre d\'état</string>
     <string name="status_nav_bar_alpha_mode_text_title">Mode de transparence</string>
     <string name="status_nav_bar_alpha_mode_home">Sur le lanceur d\'applications</string>
-    <string name="status_nav_bar_alpha_mode_default">Sur le lanceur et l\'écran de vérrouillage</string>
+    <string name="status_nav_bar_alpha_mode_default">Sur le lanceur et l\'écran de verrouillage</string>
     <string name="status_nav_bar_colormode_title">Mode de couleur</string>
-    <string name="status_nav_bar_colormode_summary">Colorer le fond de la barre de navigation et la barre d\'état seulement sur le lanceur d\'applications et l\'écran de vérouillage</string>
+    <string name="status_nav_bar_colormode_summary">Colorer le fond de la barre de navigation et la barre d\'état seulement sur le lanceur d\'applications et l\'écran de verrouillage</string>
     <string name="status_bar_style_reset">Réinitialiser</string>
     <string name="status_bar_clock">Horloge et date</string>
     <string name="status_bar_clock_title">Style de l\'horloge et de la date</string>
@@ -404,18 +404,18 @@
     <string name="lcd_density_summary">inconnu</string>
     <string name="current_lcd_density">"Densité actuelle du LCD : "</string>
     <string name="lcd_density_wizard">Assistant de densité LCD</string>
-    <string name="follow_through_title">Continuer!</string>
+    <string name="follow_through_title">Continuer !</string>
     <string name="follow_through_summary">Assurez-vous que vous suivez les étapes une par une et remplissez chacune avant de passer à la suivante.</string>
     <string name="stock_density_title">1. Changer la densité du LCD à la valeur par défaut</string>
     <string name="stock_density_summary">Les tablettes et les anciens téléphones utilisent 160. La plupart des téléphones utilisent 240. Le Galaxy Nexus utilise 320 par défaut.</string>
-    <string name="stock_density_changed_summary">"Valeur de la densité: "</string>
-    <string name="reboot_title">Redémarrer!</string>
-    <string name="reboot_summary">Revenez ici après le redémarrage et complétez le reste des étapes!</string>
+    <string name="stock_density_changed_summary">"Valeur de la densité : "</string>
+    <string name="reboot_title">Redémarrer !</string>
+    <string name="reboot_summary">Revenez ici après le redémarrage et complétez le reste des étapes !</string>
     <string name="clear_market_data_title">Effacer les données relatives au market.</string>
     <string name="clear_market_data_summary">Cette étape supprime les données du market, des services google play et du framework google services.</string>
     <string name="clear_market_data_cleared">Les données ont été effacées avec succès</string>
     <string name="reboot_cleardata_title">4. Redémarrer !</string>
-    <string name="reboot_cleardata_summary">Revenez ici après le redémarrage et complétez le reste des étapes!</string>
+    <string name="reboot_cleardata_summary">Revenez ici après le redémarrage et complétez le reste des étapes !</string>
     <string name="open_market_title">5. Ouvrer le Market et cliquez sur Accepter</string>
     <string name="open_market_summary">Appuyer sur retour une fois fait afin de revenir ici.</string>
     <string name="open_market_summary_could_not_open">"Impossible d\'ouvrir le marché ! Si vous ne savez pas que c'est installé, ouvrez-le vous-même depuis le lanceur d\'applications."</string>
@@ -427,7 +427,7 @@
     <string name="set_custom_density_set">Définir</string>
     <string name="custom_density_dialog_title">"ATTENTION !"</string>
     <string name="custom_density_dialog_summary">"La modification de la densité de votre LCD peut provoquer un comportement inattendu. Si vous rencontrez une incompatibilité, retournez ici et redémarrez le processus à partir de l\'étape 1 S.V.P."</string>
-    <string name="custom_density_dialog_button_got">J\'ai compris!</string>
+    <string name="custom_density_dialog_button_got">J\'ai compris !</string>
     <string name="custom_density_dialog_button_reboot">Redémarrer maintenant</string>
     <string name="use_custom_app_title">Utilisez une application personnalisée</string>
     <string name="use_custom_app_summary">Utilisez une application personnalisée au lieu de la boîte de dialogue des applications récentes</string>
@@ -435,7 +435,7 @@
     <string name="notification_shortcuts_settings_title">Raccourcis de notification</string>
     <string name="notification_shortcuts_settings_summary">Afficher les raccourcis dans le volet de notifications</string>
     <string name="notification_shortcuts_color_title">Couleur de l\'Icône du Raccourci</string>
-    <string name="notification_shortcuts_color_summary">Colorer les icônes des raccourcis des application</string>
+    <string name="notification_shortcuts_color_summary">Colorer les icônes des raccourcis des applications</string>
     <string name="notification_shortcuts_color_mode_title">Type de l\'icône</string>
     <string name="notification_shortcuts_color_mode_summary">Changer le type de l\'icône</string>
     <string name="display_title">Affichage</string>
@@ -490,7 +490,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
         </string>
     <string name="display_category_wakeup_options_title">Options de réveil</string>
     <string name="pref_volume_wake_title">Réveiller l\'appareil en utilisant les boutons de volume</string>
-    <string name="pref_volume_wake_summary">Appuyer sur les boutons de volume haut/bas reveillera l\'écran de l\'appareil</string>
+    <string name="pref_volume_wake_summary">Appuyer sur les boutons de volume haut/bas réveillera l\'écran de l\'appareil</string>
     <string name="wakeup_when_plugged_unplugged_title">Réveil sur mise en charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Réveiller le téléphone si le chargeur est branché/débranché.</string>
     <string name="display_category_animation_options_title">Options d\'animation</string>
@@ -505,7 +505,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="display_rotation_disabled">Désactivé</string>
     <string name="display_rotation_unit">degrés</string>
     <string name="display_rotation_category_title">Modes de rotation</string>
-    <string name="display_rotation_0_title">0 degrés</string>
+    <string name="display_rotation_0_title">0 degré</string>
     <string name="display_rotation_90_title">90 degrés</string>
     <string name="display_rotation_180_title">180 degrés</string>
     <string name="display_rotation_270_title">270 degrés</string>
@@ -553,8 +553,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_style_summary">Changer le style du volet de notifications</string>
     <string name="notification_widgets">Widgets</string>
     <string name="notification_hide_carrier_title">Masquer le label de l\'opérateur</string>
-    <string name="notification_show_wifi_ssid_title">Afficher le nom du réseau Wifi</string>
-    <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wifi actuellement connecté</string>
+    <string name="notification_show_wifi_ssid_title">Afficher le nom du réseau Wi-Fi</string>
+    <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wi-Fi actuellement connecté</string>
     <string name="notification_wallpaper_title">Fond du volet de notifications</string>
     <string name="notification_wallpaper_landscape_title">Arrière-plan différent</string>
     <string name="notification_background_color_fill">Couleur de remplissage</string>
@@ -585,7 +585,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_profile">Profil</string>
     <string name="title_tile_autorotate">Orientation</string>
     <string name="title_tile_settings">Paramètres</string>
-    <string name="title_tile_screentimeout">mise en veille de l\'écan</string>
+    <string name="title_tile_screentimeout">mise en veille de l\'écran</string>
     <string name="title_tile_sound">Son</string>
     <string name="title_tile_sync">Synchronisation</string>
     <string name="title_tile_wifiap">Point d\'accès Wi-Fi</string>
@@ -596,7 +596,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Mode réseau</string>
     <string name="title_tile_reboot">Redémarrer</string>
     <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_screen_timeout">mise en veille de l\'écan</string>
+    <string name="title_tile_screen_timeout">mise en veille de l\'écran</string>
     <string name="title_tile_customshortcut">raccourci perso</string>
     <string name="title_tile_fcharge">Charge rapide</string>
     <string name="title_tile_quiet_hours">Période silencieuse</string>
@@ -606,7 +606,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_dynamic_alarm">Alarmes</string>
     <string name="title_dynamic_bugreport">Rapport de bug</string>
     <string name="title_dynamic_ime">Changeur de saisie</string>
-    <string name="title_dynamic_wifi">Affichage de WiFi</string>
+    <string name="title_dynamic_wifi">Affichage de Wi-Fi</string>
     <string name="title_dynamic_usbtether">Partage de connexion par USB</string>
     <string name="title_general">Paramètres généraux</string>
     <string name="title_quick_pulldown">Glissement rapide</string>
@@ -638,7 +638,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="press_color_to_apply">Appuyez sur la couleur ci-dessous pour appliquer</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">Appuyez sur la couleur ci-dessous pour appliquer</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">Hex :</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Définir</string>
     <string name="color_default">Par défaut</string>
@@ -667,9 +667,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_bar_animate_title">Animation de charge</string>
     <string name="battery_bar_animate_summary">L\'animation de chargement peut entraîner une expérience utilisateur médiocre sur les anciens appareils.</string>
     <string name="status_bar_reset">Réinitialiser</string>
-    <string name="status_bar_battery_style_reset_message">Réinitialiser tous les choix de couleur?</string>
-    <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge?</string>
-    <string name="status_bar_style_reset_message">Réinitialiser la barre d\'état?</string>
+    <string name="status_bar_battery_style_reset_message">Réinitialiser tous les choix de couleur ?</string>
+    <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge ?</string>
+    <string name="status_bar_style_reset_message">Réinitialiser la barre d\'état ?</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Appareil</string>
@@ -692,8 +692,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="mod_version_default">Inconnu</string>
     <string name="development_tools_title">Outils de lancement</string>
     <string name="adb_over_network">ADB sur TCP/IP</string>
-    <string name="adb_over_network_summary">Activer le débogage sur toutes les interfaces réseau (Wifi, Usb net)</string>
-    <string name="adb_over_network_warning">ATTENTION: Lorsque cette fonction est activée, votre téléphone est ouvert aux intrusions sur toutes les interfaces réseau, y compris via le réseau GSM (data) !\n\nIl est fortement conseillé de désactiver le réseau mobile avant d\'activer cette fonction.\n\nContinuer ?</string>
+    <string name="adb_over_network_summary">Activer le débogage sur toutes les interfaces réseau (Wi-Fi, Usb net)</string>
+    <string name="adb_over_network_warning">ATTENTION : Lorsque cette fonction est activée, votre téléphone est ouvert aux intrusions sur toutes les interfaces réseau, y compris via le réseau GSM (data) !\n\nIl est fortement conseillé de désactiver le réseau mobile avant d\'activer cette fonction.\n\nContinuer ?</string>
     <string name="root_access">Accès root</string>
     <string name="root_access_warning_title">Permettre un accès root ?</string>
     <string name="root_access_warning_message">Permettre aux applications de demander l\'accès root est très dangereux et pourrait compromettre la sécurité de votre système !</string>
@@ -713,7 +713,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_target_title">Cibles de l\'anneau</string>
     <string name="lockscreen_target_summary">Afficher ou modifier les cibles de l\'anneau de déverrouillage de l\'écran</string>
     <string name="lockscreen_eight_targets_title">Activez les huit cibles de l\'anneau de déverrouillage</string>
-    <string name="lockscreen_eight_targets_summary">Activer les huit cible de l\'anneau de l\'écran de déverrouillage. \nNote : changer cette option réinitialise toutes les cibles déjà enregistrées</string>
+    <string name="lockscreen_eight_targets_summary">Activer les huit cibles de l\'anneau de l\'écran de déverrouillage. \nNote : changer cette option réinitialise toutes les cibles déjà enregistrées</string>
     <string name="lockscreen_target_reset">Réinitialiser les cibles de l\'anneau de déverrouillage</string>
     <string name="lockscreen_target_save">Cibles enregistrés</string>
     <string name="lockscreen_target_reset_title">Réinitialiser</string>
@@ -783,11 +783,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="screen_security_summary">Afficher ou modifier la sécurité, les délais et les timeout de l\'écran de verrouillage</string>
     <string name="unlock_menu_unlock_title">Menu de déverrouillage</string>
     <string name="unlock_menu_unlock_summary">Appuyer sur le bouton \"Menu\" déverrouille le téléphone</string>
-    <string name="unlock_home_unlock_title">déverrouiller vers l\'acceuil</string>
+    <string name="unlock_home_unlock_title">déverrouiller vers l\'accueil</string>
     <string name="unlock_home_unlock_summary">Appuyer sur le bouton \"Home\" déverrouille le téléphone</string>
     <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
     <string name="unlock_quick_unlock_control_summary">Déverrouiller automatiquement lorsque le mot de passe correct est entré</string>
-    <string name="lock_before_unlock_title">Voir l\'anneau avant le déverouillage sécurisé</string>
+    <string name="lock_before_unlock_title">Voir l\'anneau avant le déverrouillage sécurisé</string>
     <string name="lock_before_unlock_summary">Afficher l\'écran de verrouillage avant le déverrouillage sécurisé</string>
     <string name="delay_and_timeout_title">Délai de verrouillage</string>
     <string name="slide_lock_delay_title">Délai de verrouillage de l\'écran</string>
@@ -832,7 +832,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hardware_keys_show_overflow_title">Voir le bouton de menu</string>
     <string name="hardware_keys_show_overflow_summary">Afficher les trois points du bouton de menu dans les applications</string>
     <string name="hardware_keys_show_overflow_toast_enable">Le bouton de menu peut ne pas apparaître jusqu\'au redémarrage des applications</string>
-    <string name="hardware_keys_show_overflow_toast_disable">Le bouton de meny peut rester visible jusqu\'au redémarrage des applications</string>
+    <string name="hardware_keys_show_overflow_toast_disable">Le bouton de menu peut rester visible jusqu\'au redémarrage des applications</string>
     <string name="hardware_keys_action_nothing">Aucun</string>
     <string name="hardware_keys_action_home">Accueil</string>
     <string name="hardware_keys_action_back">Retour</string>
@@ -879,11 +879,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar">Barre de navigation</string>
     <string name="navbar_button_cat">Boutons de la barre de navigation</string>
     <string name="title_pref_menu_location">Emplacement du menu</string>
-    <string name="summary_pref_menu_location">Où voulez-vous que les boutons du menu apparaissent?</string>
+    <string name="summary_pref_menu_location">Où voulez-vous que les boutons du menu apparaissent ?</string>
     <string name="title_pref_menu_display">Visibilité du menu</string>
-    <string name="summary_pref_menu_display">Quand et comment voulez-vous que les boutons du menu apparaissent?</string>
+    <string name="summary_pref_menu_display">Quand et comment voulez-vous que les boutons du menu apparaissent ?</string>
     <string name="title_pref_navigation_menu_display">Visibilité du menu</string>
-    <string name="summary_pref_navigation_menu_display">Quand et comment voulez-vous que les boutons du menu apparaissent?</string>
+    <string name="summary_pref_navigation_menu_display">Quand et comment voulez-vous que les boutons du menu apparaissent ?</string>
     <string name="navbar_enable_bar">Activer la barre</string>
     <string name="navbar_enable_bar_summary">Activer la barre de navigation</string>
     <string name="navigation_bar_height_title">Hauteur de barre de navigation</string>
@@ -993,7 +993,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_reboot_disabled">Désactiver</string>
     <string name="advanced_reboot_hide_on_keyguard">Masquer sur l\'écran de déverrouillage</string>
     <string name="advanced_reboot_show_always">Toujours affiché</string>
-    <string name="sound_lock_volume_keys_title">Verouillage des touches de volume</string>
+    <string name="sound_lock_volume_keys_title">Verrouillage des touches de volume</string>
     <string name="sound_lock_volume_keys_summary">Empêcher l\'activation accidentelle du mode silencieux en appuyant sur les touches de volume</string>
     <string name="auto_hide_statusbar">Masquer automatiquement la barre d\'état</string>
     <string name="auto_hide_statusbar_summary_nonperm">Masquer automatiquement la barre d\'état si des notifications non-permanentes ne sont pas présentes</string>
@@ -1020,14 +1020,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_button_outline_color_title">Couleur du contour des boutons</string>
     <string name="pie_button_pressed_color_title">Couleur quand le bouton est appuyé</string>
     <string name="pie_button_long_pressed_color_title">Couleur à l\'appui long</string>
-    <string name="pie_button_pressed_alpha_title">Transparence quand le bouton est appyué</string>
+    <string name="pie_button_pressed_alpha_title">Transparence quand le bouton est appuyé</string>
     <string name="pie_icon_style">Style des icônes des boutons</string>
     <string name="pie_icon_color_title">Couleur des icônes</string>
     <string name="pie_icon_color_mode_title">Type des icônes</string>
     <string name="pie_icon_color_mode_dialog_title">Colorer</string>
     <string name="pie_icon_color_mode_summary">Modifier la couleur de l\'icône du bouton</string>
     <string name="pie_trigger_dimens_options">Options de déclenchement</string>
-    <string name="pie_trigger_thickness_title">Epaisseur de déclenchement</string>
+    <string name="pie_trigger_thickness_title">Épaisseur de déclenchement</string>
     <string name="pie_trigger_height_title">Hauteur gauche et droite de déclenchement</string>
     <string name="pie_trigger_gravity_left_right_title">Gravité droite et gauche de déclenchement</string>
     <string name="pie_trigger_gravity_left_right_dialog_title">Changer la gravité droite et gauche de déclenchement</string>
@@ -1071,7 +1071,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Privacy Guard -->
     <string name="privacy_guard_switch_label">Activer Privacy Guard</string>
-    <string name="privacy_guard_dlg_title">Activer Privacy Guard?</string>
+    <string name="privacy_guard_dlg_title">Activer Privacy Guard ?</string>
     <string name="privacy_guard_dlg_text">Quand Privacy Guard est activé, l\'application ne sera pas en mesure d\'accéder aux données personnelles telles que les contacts, messages, ou des journaux d\'appels.</string>
     <string name="privacy_guard_default_title">Privacy Guard</string>
     <string name="privacy_guard_default_summary">Activer Privacy Guard par défaut pour les applications nouvellement installées</string>
@@ -1098,7 +1098,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Button shorcut actions -->
     <string name="shortcut_action_app">Application personnalisée</string>
-    <string name="shortcut_action_home">Acceuil</string>
+    <string name="shortcut_action_home">Accueil</string>
     <string name="shortcut_action_back">Retour</string>
     <string name="shortcut_action_recent">Récents</string>
     <string name="shortcut_action_lastapp">Dernière application</string>
@@ -1108,7 +1108,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ime">Ouvrir sélecteur de clavier</string>
     <string name="shortcut_action_kill">Tuer l\'application</string>
     <string name="shortcut_action_widget">Widgets viewpager</string>
-    <string name="shortcut_action_power">Eteindre l\'écran</string>
+    <string name="shortcut_action_power">Éteindre l\'écran</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_qs">Panneau dex paramètres rapides</string>
     <string name="shortcut_action_none">Rien</string>
@@ -1125,18 +1125,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_select_action_newbutton">Choisir un nouveau bouton:</string>
     <string name="shortcut_action_reset">Réinitialisez</string>
     <string name="shortcut_action_add">Ajouter</string>
-    <string name="shortcut_action_reset_message">Réinitialiser toutes les entrées?</string>
+    <string name="shortcut_action_reset_message">Réinitialiser toutes les entrées ?</string>
     <string name="shortcut_action_max">La taille maximale des entrées est atteinte</string>
     <string name="shortcut_action_warning">Attention</string>
     <string name="shortcut_action_warning_message">Il est impossible de supprimer la dernière entrée</string>
     <string name="shortcut_action_disable_message">Désactivé\nAjouter une entrée pour activer cette fonction</string>
-    <string name="shortcut_image_not_valid">L\'application choisie n\'a pas retourné une icône valide ou ne supporte pas le redimentionnement d\'images. Veuillez utiliser une autre application</string>
+    <string name="shortcut_image_not_valid">L\'application choisie n\'a pas retourné une icône valide ou ne supporte pas le redimensionnement d\'images. Veuillez utiliser une autre application</string>
     <string name="shortcut_duplicate_entry">L\'action choisie ne peut pas être ajoutée deux fois</string>
 
     <string name="shortcut_action_help_shortcut">Raccourci</string>
-    <string name="shortcut_action_help_button">boutton</string>
+    <string name="shortcut_action_help_button">bouton</string>
     <string name="shortcut_action_help_icon">, quand l\'icône sera sélectionnée, les options de personnalisation seront affichées</string>
-    <string name="shortcut_action_help_main">Pour ajouter un %1$s, sélectionnez l\'icône d\'ajout.  Une fois un %1$s est ajouté, la sélection de la ligne changera la cible%2$s\n\nPour supprimer un %1$s, glissez la ligne horizontalement à gauche ou à droite.  Réordonner un %1$s dans la liste par le glissement vertical de l\'anchre à gauche.\n\nPour réinitialiser les paramètres par défaut, sélectionnez l\'icône de réinitialisation.</string>
+    <string name="shortcut_action_help_main">Pour ajouter un %1$s, sélectionnez l\'icône d\'ajout. Une fois un %1$s est ajouté, la sélection de la ligne changera la cible%2$s\n\nPour supprimer un %1$s, glissez la ligne horizontalement à gauche ou à droite. Réordonner un %1$s dans la liste par le glissement vertical de l\'anchre à gauche.\n\nPour réinitialiser les paramètres par défaut, sélectionnez l\'icône de réinitialisation.</string>
     <string name="shortcut_action_help_delete_last_entry">Supprimer chaque %1$s dans la liste va désactiver la fonctionnalité entièrement.</string>
     <string name="shortcut_action_help">Aide</string>
 
@@ -1160,7 +1160,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_icon_picker_file_browser">Explorateur de fichiers</string>
     <string name="shortcuts_icon_picker_file_browser2">Explorateur de fichiers alternatif</string>
     <string name="shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="shortcuts_icon_picker_gallery">Gallerie</string>
+    <string name="shortcuts_icon_picker_gallery">Galerie</string>
     <string name="shortcuts_icon_picker_gears">Rouages</string>
     <string name="shortcuts_icon_picker_google_small">Google</string>
     <string name="shortcuts_icon_picker_gplus">Google Plus</string>
@@ -1200,20 +1200,20 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Liste noire</string>
-    <string name="blacklist_edit_dialog_title">Editer la liste noire</string>
+    <string name="blacklist_edit_dialog_title">Éditer la liste noire</string>
     <string name="blacklist_prefs">Paramètres</string>
     <string name="blacklist_button_delete">Supprimer</string>
     <string name="blacklist_empty_text">Vous n\'avez aucun numéro dans la liste noire. Ajoutez une entrée en utilisant le bouton (+).</string>
-    <string name="blacklist_disabled_empty_text">Pour bloquer des appels et/ou messages d\'un certain numéro, Activez la liste noire.</string>
+    <string name="blacklist_disabled_empty_text">Pour bloquer des appels et/ou messages d\'un certain numéro, activez la liste noire.</string>
     <string name="blacklist_summary_disabled">Désactivée</string>
     <string name="blacklist_summary">Les appels entrants et les messages venant des numéros de la liste noire seront bloqués</string>
     <string name="blacklist_notify">Afficher la notification</string>
     <string name="blacklist_private_numbers_title">Numéro privés</string>
     <string name="blacklist_private_numbers_summary_disabled">Ne pas bloquer les appels des numéros privés</string>
     <string name="blacklist_private_numbers_summary">Bloquer les <xliff:g id="type">%s</xliff:g> entrants des numéros privés</string>
-    <string name="blacklist_unknown_numbers_title">Numéros iconnus</string>
+    <string name="blacklist_unknown_numbers_title">Numéros inconnus</string>
     <string name="blacklist_unknown_numbers_summary_disabled">Ne pas bloquer les appels et les messages qui ne sont pas dans la liste de contacts</string>
-    <string name="blacklist_unknown_numbers_summary">Bloquer les <xliff:g id="type">%s</xliff:g> entrabts des numéros qui ne sont pas dans la liste de contacts</string>
+    <string name="blacklist_unknown_numbers_summary">Bloquer les <xliff:g id="type">%s</xliff:g> entrants des numéros qui ne sont pas dans la liste de contacts</string>
     <string name="blacklist_summary_type_calls_only">Appels</string>
     <string name="blacklist_summary_type_messages_only">Messages</string>
     <string name="blacklist_summary_type_calls_and_messages">Appels et messages</string>
@@ -1225,7 +1225,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Blacklist management -->
     <string name="add_blacklist_number">Ajouter des numéros</string>
     <string name="remove_blacklist_number_title">Supprimer des numéros</string>
-    <string name="remove_blacklist_entry">Voulez-vous supprimer cette entrée de la liste noire?</string>
+    <string name="remove_blacklist_entry">Voulez-vous supprimer cette entrée de la liste noire ?</string>
     <string name="select_contact">Sélectionnez un contact</string>
 
     <!-- ListView animation -->
@@ -1233,7 +1233,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="listview_animation_title">Animation de défilement des listes</string>
     <string name="listview_off">Par défaut</string>
     <string name="listview_wave_left">Vague gauche</string>
-    <string name="listview_wave_right">Wave droite</string>
+    <string name="listview_wave_right">Vague droite</string>
     <string name="listview_alpha">Alpha</string>
     <string name="listview_scale">Zoom</string>
     <string name="listview_stack_top">Pile (haut)</string>

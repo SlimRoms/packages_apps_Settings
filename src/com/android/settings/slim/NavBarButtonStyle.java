@@ -21,6 +21,8 @@ import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
@@ -74,13 +76,22 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
 
         prefs = getPreferenceScreen();
 
+        PackageManager pm = getPackageManager();
+        Resources systemUiResources;
+        try {
+            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            Log.e(TAG, "can't access systemui resources",e);
+            return null;
+        }
+
         mNavigationBarButtonColor = (ColorPickerPreference) findPreference(PREF_NAV_BUTTON_COLOR);
         mNavigationBarButtonColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_TINT, -2);
         if (intColor == -2) {
-            intColor = getResources().getColor(
-                    com.android.internal.R.color.white);
+            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
+                "com.android.systemui:color/navigationbar_button_default_color", null, null));
             mNavigationBarButtonColor.setSummary(getResources().getString(R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
@@ -93,8 +104,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         intColor = Settings.System.getInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_TINT, -2);
         if (intColor == -2) {
-            intColor = getResources().getColor(
-                    com.android.internal.R.color.white);
+            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
+                "com.android.systemui:color/navigationbar_button_glow_default_color", null, null));
             mNavigationBarGlowColor.setSummary(getResources().getString(R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));

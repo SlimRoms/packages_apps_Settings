@@ -52,6 +52,10 @@
                 android:entryValues="@array/entryvalues_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+        <PreferenceScreen
+                android:key="wifi_display"
+                android:title="@string/wifi_display_settings_title"
+                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
     <PreferenceCategory
         android:key="category_animation_options"
@@ -92,10 +96,5 @@
                 android:summary="@string/pref_volume_wake_summary" />
 
         </PreferenceCategory>
-
-        <PreferenceScreen
-                android:key="wifi_display"
-                android:title="@string/wifi_display_settings_title"
-                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
 </PreferenceScreen>

@@ -22,6 +22,8 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="additional_options_title">Additional options</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="style_title">Style</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
@@ -494,6 +496,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_settings_title">Navigation</string>
     <string name="power_menu_title">Global menu</string>
 
+    <!-- Power menu -->
+    <string name="power_menu_style_summary">Change global menu colors</string>
+
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
     <string name="navigation_bar_size_36_dp">36 dp</string>
@@ -531,17 +536,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_targets_title">Ring targets</string>
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
-    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style">Button style</string>
-    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
+    <string name="nav_bar_button_style_summary">Change navigation bar button colors</string>
     <string name="button_transparency_title">Button transparency</string>
-    <string name="navigation_bar_icon_tint_title">Button color</string>
-    <string name="nav_button_color_mode_title">Color mode</string>
-    <string name="nav_button_color_mode_dialog_title">Colorize</string>
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
-    <string name="navigation_bar_glow_tint_title">Button glow color</string>
+    <string name="navigation_bar_glow_tint_title">Glow color</string>
 
     <!-- Advanced settings -->
     <string name="advanced_options_settings_title">Advanced options</string>

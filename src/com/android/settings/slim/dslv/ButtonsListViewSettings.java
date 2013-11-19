@@ -19,6 +19,8 @@ package com.android.settings.slim.dslv;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ListFragment;
@@ -53,6 +55,7 @@ import android.widget.Toast;
 import com.android.internal.util.slim.ButtonConfig;
 import com.android.internal.util.slim.ButtonsConstants;
 import com.android.internal.util.slim.ButtonsHelper;
+import com.android.internal.util.slim.ColorHelper;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
 import com.android.internal.util.slim.PolicyHelper;
@@ -70,6 +73,12 @@ import java.util.ArrayList;
 
 public class ButtonsListViewSettings extends ListFragment implements
             ShortcutPickerHelper.OnPickListener {
+
+    private static final int DLG_SHOW_ACTION_DIALOG   = 0;
+    private static final int DLG_SHOW_ICON_PICKER     = 1;
+    private static final int DLG_DELETION_NOT_ALLOWED = 2;
+    private static final int DLG_SHOW_HELP_SCREEN     = 3;
+    private static final int DLG_RESET_TO_DEFAULT     = 4;
 
     private static final int MENU_HELP = Menu.FIRST;
     private static final int MENU_ADD = MENU_HELP + 1;
@@ -140,7 +149,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                 mButtonConfigsAdapter.remove(item);
                 if (mDisableDeleteLastEntry && mButtonConfigs.size() == 0) {
                     mButtonConfigsAdapter.add(item);
-                    showDialogDeletionNotAllowed();
+                    showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else {
                     deleteIconFileIfPresent(item);
                     setConfig(mButtonConfigs, false);
@@ -203,7 +212,7 @@ public class ButtonsListViewSettings extends ListFragment implements
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                     long arg3) {
                 if (!mUseAppPickerOnly) {
-                    showActionDialog(arg2, false, false);
+                    showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, false, false);
                 } else {
                     if (mPicker != null) {
                         mPendingIndex = arg2;
@@ -221,7 +230,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                 public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2,
                         long arg3) {
                     if (!mUseAppPickerOnly) {
-                        showActionDialog(arg2, true, false);
+                        showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, true, false);
                     } else {
                         if (mPicker != null) {
                             mPendingIndex = arg2;
@@ -277,39 +286,6 @@ public class ButtonsListViewSettings extends ListFragment implements
                 e.printStackTrace();
             }
         }
-    }
-
-    private void showActionDialog(
-        final int which, final boolean longpress, final boolean newButton) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mActivity);
-        if (longpress) {
-            alertDialog.setTitle(R.string.shortcut_action_select_action_longpress);
-        } else if (newButton) {
-            alertDialog.setTitle(R.string.shortcut_action_select_action_newbutton);
-        } else {
-            alertDialog.setTitle(R.string.shortcut_action_select_action);
-        }
-        alertDialog.setItems(mActionDialogEntries, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int item) {
-                if (mActionDialogValues[item].equals(ButtonsConstants.ACTION_APP)) {
-                    if (mPicker != null) {
-                        mPendingIndex = which;
-                        mPendingLongpress = longpress;
-                        mPendingNewButton = newButton;
-                        mPicker.pickShortcut();
-                    }
-                } else {
-                    if (newButton) {
-                        addNewButton(mActionDialogValues[item], mActionDialogEntries[item]);
-                    } else {
-                        updateButton(mActionDialogValues[item],
-                            mActionDialogEntries[item], null, which, longpress);
-                    }
-                }
-            }
-        });
-        alertDialog.setNegativeButton(R.string.cancel, null);
-        alertDialog.create().show();
     }
 
     @Override
@@ -437,7 +413,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                     break;
                 }
                 if (!mUseAppPickerOnly) {
-                    showActionDialog(0, false, true);
+                    showDialogInner(DLG_SHOW_ACTION_DIALOG, 0, false, true);
                 } else {
                     if (mPicker != null) {
                         mPendingIndex = 0;
@@ -448,10 +424,10 @@ public class ButtonsListViewSettings extends ListFragment implements
                 }
                 break;
             case MENU_RESET:
-                resetToDefault();
+                    showDialogInner(DLG_RESET_TO_DEFAULT, 0, false, true);
                 break;
             case MENU_HELP:
-                showHelpScreen();
+                    showDialogInner(DLG_SHOW_HELP_SCREEN, 0, false, true);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -468,85 +444,6 @@ public class ButtonsListViewSettings extends ListFragment implements
         menu.add(0, MENU_HELP, 0, R.string.shortcut_action_help)
                 .setIcon(R.drawable.ic_settings_about)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-    }
-
-    private void showHelpScreen() {
-        Resources res = getResources();
-        String finalHelpMessage;
-        String buttonMode;
-        String icon = "";
-        switch (mButtonMode) {
-            // case LOCKSCREEN_SHORTCUT:
-            case NOTIFICATION_SHORTCUT:
-            case POWER_MENU_SHORTCUT:
-                buttonMode = res.getString(R.string.shortcut_action_help_shortcut);
-                break;
-            // case NAV_BAR:
-            // case PIE:
-            // case PIE_SECOND:
-            // case NAV_RING:
-            default:
-                buttonMode = res.getString(R.string.shortcut_action_help_button);
-                break;
-        }
-        if (!mDisableIconPicker) {
-            icon = res.getString(R.string.shortcut_action_help_icon);
-        }
-        finalHelpMessage = res.getString(R.string.shortcut_action_help_main, buttonMode, icon);
-        if (!mDisableDeleteLastEntry) {
-            finalHelpMessage += " " + res.getString(
-                R.string.shortcut_action_help_delete_last_entry, buttonMode);
-        }
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mActivity);
-        alertDialog.setTitle(R.string.shortcut_action_help);
-        alertDialog.setMessage(finalHelpMessage);
-        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-            }
-        });
-        alertDialog.create().show();
-    }
-
-    private void resetToDefault() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mActivity);
-        alertDialog.setTitle(R.string.shortcut_action_reset);
-        alertDialog.setMessage(R.string.shortcut_action_reset_message);
-        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                setConfig(null, true);
-                mButtonConfigsAdapter.clear();
-
-                // Add the new default objects fetched from @getConfig()
-                ArrayList<ButtonConfig> buttonConfigs = getConfig();
-                final int newConfigsSize = buttonConfigs.size();
-                for (int i = 0; i < newConfigsSize; i++) {
-                    mButtonConfigsAdapter.add(buttonConfigs.get(i));
-                }
-
-                // dirty helper if buttonConfigs list has no entries
-                // to proper update the content. .notifyDatSetChanged()
-                // does not work in this case.
-                if (newConfigsSize == 0) {
-                    ButtonConfig emptyButton = new ButtonConfig(null, null, null, null, null);
-                    mButtonConfigsAdapter.add(emptyButton);
-                    mButtonConfigsAdapter.remove(emptyButton);
-                }
-                showDisableMessage(newConfigsSize == 0);
-            }
-        });
-        alertDialog.setNegativeButton(R.string.cancel, null);
-        alertDialog.create().show();
-    }
-
-    private void showDialogDeletionNotAllowed() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mActivity);
-        alertDialog.setTitle(R.string.shortcut_action_warning);
-        alertDialog.setMessage(R.string.shortcut_action_warning_message);
-        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-            }
-        });
-        alertDialog.create().show();
     }
 
     private void addNewButton(String action, String description) {
@@ -596,75 +493,8 @@ public class ButtonsListViewSettings extends ListFragment implements
                 break;
             case POWER_MENU_SHORTCUT:
                 PolicyHelper.setPowerMenuConfig(mActivity, buttonConfigs, reset);
-                if (reset) {
-                    loadAdditionalFragment();
-                }
                 break;
         }
-    }
-
-    private void pickIcon() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        builder.setTitle(R.string.icon_picker_type)
-                .setItems(R.array.icon_types, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch(which) {
-                            case 0: // Default
-                                updateButton(null, null,
-                                    ButtonsConstants.ICON_EMPTY, mPendingIndex, false);
-                                mPendingIndex = -1;
-                                break;
-                            case 1: // System defaults
-                                ListView list = new ListView(mActivity);
-                                list.setAdapter(new IconAdapter());
-                                final Dialog holoDialog = new Dialog(mActivity);
-                                holoDialog.setTitle(R.string.icon_picker_choose_icon_title);
-                                holoDialog.setContentView(list);
-                                list.setOnItemClickListener(new OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(AdapterView<?> parent, View view,
-                                            int position, long id) {
-                                        IconAdapter adapter = (IconAdapter) parent.getAdapter();
-                                        updateButton(null, null,
-                                            adapter.getItemReference(position),
-                                            mPendingIndex, false);
-                                        mPendingIndex = -1;
-                                        holoDialog.cancel();
-                                    }
-                                });
-                                holoDialog.show();
-                                break;
-                            case 2: // Custom user icon
-                                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                                intent.setType("image/*");
-                                intent.putExtra("crop", "true");
-                                intent.putExtra("scale", true);
-                                intent.putExtra("outputFormat",
-                                    Bitmap.CompressFormat.PNG.toString());
-                                intent.putExtra("aspectX", 100);
-                                intent.putExtra("aspectY", 100);
-                                intent.putExtra("outputX", 100);
-                                intent.putExtra("outputY", 100);
-                                try {
-                                    mImageTmp.createNewFile();
-                                    mImageTmp.setWritable(true, false);
-                                    intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                                        Uri.fromFile(mImageTmp));
-                                    intent.putExtra("return-data", false);
-                                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                } catch (ActivityNotFoundException e) {
-                                    e.printStackTrace();
-                                }
-                                break;
-                        }
-                    }
-                }
-        );
-        builder.setNegativeButton(R.string.cancel, null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
     }
 
     private class ViewHolder {
@@ -708,11 +538,15 @@ public class ButtonsListViewSettings extends ListFragment implements
                     + " " + getItem(position).getLongpressActionDescription());
             }
             if (mButtonMode == POWER_MENU_SHORTCUT) {
-                holder.iconView.setImageDrawable(PolicyHelper.getPowerMenuIconImage(mActivity,
-                        getItem(position).getClickAction(), getItem(position).getIcon(), false));
+                holder.iconView.setImageDrawable(ColorHelper.resize(
+                        mActivity, PolicyHelper.getPowerMenuIconImage(mActivity,
+                        getItem(position).getClickAction(),
+                        getItem(position).getIcon(), false), 36));
             } else {
-                holder.iconView.setImageDrawable(ButtonsHelper.getButtonIconImage(mActivity,
-                        getItem(position).getClickAction(), getItem(position).getIcon()));
+                holder.iconView.setImageDrawable(ColorHelper.resize(
+                        mActivity, ButtonsHelper.getButtonIconImage(mActivity,
+                        getItem(position).getClickAction(),
+                        getItem(position).getIcon()), 36));
             }
 
             if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
@@ -720,7 +554,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                     @Override
                     public void onClick(View v) {
                         mPendingIndex = position;
-                        pickIcon();
+                        showDialogInner(DLG_SHOW_ICON_PICKER, 0, false, false);
                     }
                 });
             }
@@ -729,52 +563,307 @@ public class ButtonsListViewSettings extends ListFragment implements
         }
     }
 
-    public class IconAdapter extends BaseAdapter {
+    private void showDialogInner(int id, int which, boolean longpress, boolean newButton) {
+        DialogFragment newFragment =
+            MyAlertDialogFragment.newInstance(id, which, longpress, newButton);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
 
-        TypedArray icons;
-        String[] labels;
+    public static class MyAlertDialogFragment extends DialogFragment {
 
-        public IconAdapter() {
-            labels = getResources().getStringArray(R.array.shortcut_icon_picker_labels);
-            icons = getResources().obtainTypedArray(R.array.shortcut_icon_picker_icons);
+        public static MyAlertDialogFragment newInstance(int id,
+                int which, boolean longpress, boolean newButton) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            args.putInt("which", which);
+            args.putBoolean("longpress", longpress);
+            args.putBoolean("newButton", newButton);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        ButtonsListViewSettings getOwner() {
+            return (ButtonsListViewSettings) getTargetFragment();
         }
 
         @Override
-        public Object getItem(int position) {
-            return icons.getDrawable(position);
-        }
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            int id = getArguments().getInt("id");
+            final int which = getArguments().getInt("which");
+            final boolean longpress = getArguments().getBoolean("longpress");
+            final boolean newButton = getArguments().getBoolean("newButton");
+            switch (id) {
+                case DLG_RESET_TO_DEFAULT:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.shortcut_action_reset)
+                    .setMessage(R.string.reset_message)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // first delete custom icons in case they exist
+                            ArrayList<ButtonConfig> buttonConfigs = getOwner().getConfig();
+                            for (int i = 0; i < buttonConfigs.size(); i++) {
+                                getOwner().deleteIconFileIfPresent(buttonConfigs.get(i));
+                            }
 
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
+                            // reset provider values and button adapter to default
+                            getOwner().setConfig(null, true);
+                            getOwner().mButtonConfigsAdapter.clear();
 
-        @Override
-        public int getCount() {
-            return labels.length;
-        }
+                            // Add the new default objects fetched from @getConfig()
+                            buttonConfigs = getOwner().getConfig();
+                            final int newConfigsSize = buttonConfigs.size();
+                            for (int i = 0; i < newConfigsSize; i++) {
+                                getOwner().mButtonConfigsAdapter.add(buttonConfigs.get(i));
+                            }
 
-        public String getItemReference(int position) {
-            String name = icons.getString(position);
-            int separatorIndex = name.lastIndexOf(File.separator);
-            int periodIndex = name.lastIndexOf('.');
-            return ButtonsConstants.SYSTEM_ICON_IDENTIFIER
-                + name.substring(separatorIndex + 1, periodIndex);
-        }
+                            // dirty helper if buttonConfigs list has no entries
+                            // to proper update the content. .notifyDatSetChanged()
+                            // does not work in this case.
+                            if (newConfigsSize == 0) {
+                                ButtonConfig emptyButton =
+                                    new ButtonConfig(null, null, null, null, null);
+                                getOwner().mButtonConfigsAdapter.add(emptyButton);
+                                getOwner().mButtonConfigsAdapter.remove(emptyButton);
+                            }
+                            getOwner().showDisableMessage(newConfigsSize == 0);
+                        }
+                    })
+                    .create();
+                case DLG_SHOW_HELP_SCREEN:
+                    Resources res = getResources();
+                    String finalHelpMessage;
+                    String buttonMode;
+                    String icon = "";
+                    switch (getOwner().mButtonMode) {
+                        // case LOCKSCREEN_SHORTCUT:
+                        case NOTIFICATION_SHORTCUT:
+                        case POWER_MENU_SHORTCUT:
+                            buttonMode = res.getString(R.string.shortcut_action_help_shortcut);
+                            break;
+                        case NAV_BAR:
+                        case NAV_RING:
+                        // case PIE:
+                        // case PIE_SECOND:
+                        default:
+                            buttonMode = res.getString(R.string.shortcut_action_help_button);
+                            break;
+                    }
+                    if (!getOwner().mDisableIconPicker) {
+                        icon = res.getString(R.string.shortcut_action_help_icon);
+                    }
+                    finalHelpMessage = res.getString(
+                        R.string.shortcut_action_help_main, buttonMode, icon);
+                    if (!getOwner().mDisableDeleteLastEntry) {
+                        finalHelpMessage += " " + res.getString(
+                            R.string.shortcut_action_help_delete_last_entry, buttonMode);
+                    }
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.shortcut_action_help)
+                    .setMessage(finalHelpMessage)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View iView = convertView;
-            if (convertView == null) {
-                iView = View.inflate(mActivity, android.R.layout.simple_list_item_1, null);
+                        }
+                    })
+                    .create();
+                case DLG_DELETION_NOT_ALLOWED:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.shortcut_action_warning)
+                    .setMessage(R.string.shortcut_action_warning_message)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .create();
+                case DLG_SHOW_ACTION_DIALOG:
+                    int title;
+                    if (longpress) {
+                        title = R.string.shortcut_action_select_action_longpress;
+                    } else if (newButton) {
+                        title = R.string.shortcut_action_select_action_newbutton;
+                    } else {
+                        title = R.string.shortcut_action_select_action;
+                    }
+
+                    // for normal press action we filter out null value
+                    // due it does not make sense to set a null action
+                    // on normal press action
+                    String[] values = null;
+                    String[] entries = null;
+                    if (!longpress) {
+                        List<String> finalEntriesList = new ArrayList<String>();
+                        List<String> finalValuesList = new ArrayList<String>();
+
+                        for (int i = 0; i < getOwner().mActionDialogValues.length; i++) {
+                            if (!getOwner().mActionDialogValues[i]
+                                    .equals(ButtonsConstants.ACTION_NULL)) {
+                                finalEntriesList.add(getOwner().mActionDialogEntries[i]);
+                                finalValuesList.add(getOwner().mActionDialogValues[i]);
+                            }
+                        }
+
+                        entries = finalEntriesList.toArray(new String[finalEntriesList.size()]);
+                        values = finalValuesList.toArray(new String[finalValuesList.size()]);
+                    }
+
+                    final String[] finalDialogValues =
+                        longpress ? getOwner().mActionDialogValues : values;
+                    final String[] finalDialogEntries =
+                        longpress ? getOwner().mActionDialogEntries : entries;
+
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(title)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setItems(finalDialogEntries,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int item) {
+                            if (finalDialogValues[item].equals(ButtonsConstants.ACTION_APP)) {
+                                if (getOwner().mPicker != null) {
+                                    getOwner().mPendingIndex = which;
+                                    getOwner().mPendingLongpress = longpress;
+                                    getOwner().mPendingNewButton = newButton;
+                                    getOwner().mPicker.pickShortcut();
+                                }
+                            } else {
+                                if (newButton) {
+                                    getOwner().addNewButton(finalDialogValues[item],
+                                            finalDialogEntries[item]);
+                                } else {
+                                    getOwner().updateButton(finalDialogValues[item],
+                                            finalDialogEntries[item],
+                                            null, which, longpress);
+                                }
+                            }
+                        }
+                    })
+                    .create();
+                case DLG_SHOW_ICON_PICKER:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.icon_picker_type)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setItems(R.array.icon_types,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch(which) {
+                                case 0: // Default
+                                    getOwner().updateButton(null, null,
+                                        ButtonsConstants.ICON_EMPTY,
+                                        getOwner().mPendingIndex, false);
+                                    getOwner().mPendingIndex = -1;
+                                    break;
+                                case 1: // System defaults
+                                    ListView list = new ListView(getActivity());
+                                    list.setAdapter(new IconAdapter());
+                                    final Dialog holoDialog = new Dialog(getActivity());
+                                    holoDialog.setTitle(R.string.icon_picker_choose_icon_title);
+                                    holoDialog.setContentView(list);
+                                    list.setOnItemClickListener(new OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view,
+                                                int position, long id) {
+                                            IconAdapter adapter = (IconAdapter) parent.getAdapter();
+                                            getOwner().updateButton(null, null,
+                                                adapter.getItemReference(position),
+                                                getOwner().mPendingIndex, false);
+                                            getOwner().mPendingIndex = -1;
+                                            holoDialog.cancel();
+                                        }
+                                    });
+                                    holoDialog.show();
+                                    break;
+                                case 2: // Custom user icon
+                                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                                    intent.setType("image/*");
+                                    intent.putExtra("crop", "true");
+                                    intent.putExtra("scale", true);
+                                    intent.putExtra("outputFormat",
+                                        Bitmap.CompressFormat.PNG.toString());
+                                    intent.putExtra("aspectX", 100);
+                                    intent.putExtra("aspectY", 100);
+                                    intent.putExtra("outputX", 100);
+                                    intent.putExtra("outputY", 100);
+                                    try {
+                                        getOwner().mImageTmp.createNewFile();
+                                        getOwner().mImageTmp.setWritable(true, false);
+                                        intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                            Uri.fromFile(getOwner().mImageTmp));
+                                        intent.putExtra("return-data", false);
+                                        getOwner().startActivityForResult(
+                                            intent, REQUEST_PICK_CUSTOM_ICON);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    } catch (ActivityNotFoundException e) {
+                                        e.printStackTrace();
+                                    }
+                                    break;
+                            }
+                        }
+                    })
+                    .create();
             }
-            TextView tt = (TextView) iView.findViewById(android.R.id.text1);
-            tt.setText(labels[position]);
-            Drawable ic = ((Drawable) getItem(position)).mutate();
-            tt.setCompoundDrawablePadding(15);
-            tt.setCompoundDrawablesWithIntrinsicBounds(ic, null, null, null);
-            return iView;
+            throw new IllegalArgumentException("unknown id " + id);
         }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+
+        }
+
+        public class IconAdapter extends BaseAdapter {
+
+            TypedArray icons;
+            String[] labels;
+
+            public IconAdapter() {
+                labels = getResources().getStringArray(R.array.shortcut_icon_picker_labels);
+                icons = getResources().obtainTypedArray(R.array.shortcut_icon_picker_icons);
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return icons.getDrawable(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
+
+            @Override
+            public int getCount() {
+                return labels.length;
+            }
+
+            public String getItemReference(int position) {
+                String name = icons.getString(position);
+                int separatorIndex = name.lastIndexOf(File.separator);
+                int periodIndex = name.lastIndexOf('.');
+                return ButtonsConstants.SYSTEM_ICON_IDENTIFIER
+                    + name.substring(separatorIndex + 1, periodIndex);
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View iView = convertView;
+                if (convertView == null) {
+                    iView = View.inflate(getActivity(), android.R.layout.simple_list_item_1, null);
+                }
+                TextView tt = (TextView) iView.findViewById(android.R.id.text1);
+                tt.setText(labels[position]);
+                Drawable ic = ((Drawable) getItem(position)).mutate();
+                tt.setCompoundDrawablePadding(15);
+                tt.setCompoundDrawablesWithIntrinsicBounds(ic, null, null, null);
+                return iView;
+            }
+        }
+
     }
 
 }

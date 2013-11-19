@@ -22,13 +22,12 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -41,23 +40,25 @@ import com.android.settings.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class NavBarButtonStyle extends SettingsPreferenceFragment implements
+public class PowerMenuStyle extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
-
-    private static final String TAG = "NavBarButtonStyle";
-    private static final String PREF_NAV_BUTTON_COLOR = "nav_button_color";
-    private static final String PREF_NAV_BUTTON_COLOR_MODE = "nav_button_color_mode";
-    private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
 
     private static final int MENU_RESET = Menu.FIRST;
 
     private static final int DLG_RESET = 0;
 
-    private boolean mCheckPreferences;
+    private static final String POWER_MENU_TEXT_COLOR =
+        "pref_power_menu_text_color";
+    private static final String POWER_MENU_ICON_COLOR =
+        "pref_power_menu_icon_color";
+    private static final String POWER_MENU_COLOR_MODE =
+        "pref_power_menu_color_mode";
 
-    ColorPickerPreference mNavigationBarButtonColor;
-    ListPreference mNavigationBarButtonColorMode;
-    ColorPickerPreference mNavigationBarGlowColor;
+    private ColorPickerPreference mPowerMenuColor;
+    private ColorPickerPreference mPowerMenuTextColor;
+    private ListPreference mPowerMenuColorMode;
+
+    private boolean mCheckPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,68 +66,64 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         refreshSettings();
     }
 
-    private PreferenceScreen refreshSettings() {
+    public PreferenceScreen refreshSettings() {
         mCheckPreferences = false;
-        PreferenceScreen prefs = getPreferenceScreen();
-        if (prefs != null) {
-            prefs.removeAll();
+        PreferenceScreen prefSet = getPreferenceScreen();
+        if (prefSet != null) {
+            prefSet.removeAll();
         }
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.navbar_button_style);
+        addPreferencesFromResource(R.xml.power_menu_style);
 
-        prefs = getPreferenceScreen();
+        prefSet = getPreferenceScreen();
 
-        PackageManager pm = getPackageManager();
-        Resources systemUiResources;
-        try {
-            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
-        } catch (Exception e) {
-            Log.e(TAG, "can't access systemui resources",e);
-            return null;
-        }
-
-        mNavigationBarButtonColor = (ColorPickerPreference) findPreference(PREF_NAV_BUTTON_COLOR);
-        mNavigationBarButtonColor.setOnPreferenceChangeListener(this);
+        mPowerMenuColor =
+            (ColorPickerPreference) findPreference(POWER_MENU_ICON_COLOR);
         int intColor = Settings.System.getInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_TINT, -2);
+                    Settings.System.POWER_MENU_ICON_COLOR, -2);
         if (intColor == -2) {
-            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
-                "com.android.systemui:color/navigationbar_button_default_color", null, null));
-            mNavigationBarButtonColor.setSummary(getResources().getString(R.string.default_string));
+            intColor = getResources().getColor(
+                com.android.internal.R.color.power_menu_icon_default_color);
+            mPowerMenuColor.setSummary(
+                getResources().getString(R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mNavigationBarButtonColor.setSummary(hexColor);
+            mPowerMenuColor.setSummary(hexColor);
         }
-        mNavigationBarButtonColor.setNewPreviewColor(intColor);
+        mPowerMenuColor.setNewPreviewColor(intColor);
+        mPowerMenuColor.setOnPreferenceChangeListener(this);
 
-        mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
-        mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
+        mPowerMenuTextColor =
+            (ColorPickerPreference) findPreference(POWER_MENU_TEXT_COLOR);
         intColor = Settings.System.getInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_TINT, -2);
+                    Settings.System.POWER_MENU_TEXT_COLOR, -2);
         if (intColor == -2) {
-            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
-                "com.android.systemui:color/navigationbar_button_glow_default_color", null, null));
-            mNavigationBarGlowColor.setSummary(getResources().getString(R.string.default_string));
+            intColor = getResources().getColor(
+                com.android.internal.R.color.power_menu_text_default_color);
+            mPowerMenuTextColor.setSummary(
+                getResources().getString(R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mNavigationBarGlowColor.setSummary(hexColor);
+            mPowerMenuTextColor.setSummary(hexColor);
         }
-        mNavigationBarGlowColor.setNewPreviewColor(intColor);
+        mPowerMenuTextColor.setNewPreviewColor(intColor);
+        mPowerMenuTextColor.setOnPreferenceChangeListener(this);
 
-        mNavigationBarButtonColorMode =
-            (ListPreference) prefs.findPreference(PREF_NAV_BUTTON_COLOR_MODE);
-        int navigationBarButtonColorMode = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
-        mNavigationBarButtonColorMode.setValue(String.valueOf(navigationBarButtonColorMode));
-        mNavigationBarButtonColorMode.setSummary(mNavigationBarButtonColorMode.getEntry());
-        mNavigationBarButtonColorMode.setOnPreferenceChangeListener(this);
+        mPowerMenuColorMode = (ListPreference) prefSet.findPreference(
+                POWER_MENU_COLOR_MODE);
+        mPowerMenuColorMode.setValue(String.valueOf(
+                Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.POWER_MENU_ICON_COLOR_MODE, 0,
+                UserHandle.USER_CURRENT_OR_SELF)));
+        mPowerMenuColorMode.setSummary(mPowerMenuColorMode.getEntry());
+        mPowerMenuColorMode.setOnPreferenceChangeListener(this);
 
         updateColorPreference();
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
-        return prefs;
+        return prefSet;
     }
 
 
@@ -153,31 +150,31 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         if (!mCheckPreferences) {
             return false;
         }
-        if (preference == mNavigationBarButtonColor) {
+        if (preference == mPowerMenuColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_TINT, intHex);
+                    Settings.System.POWER_MENU_ICON_COLOR, intHex);
             return true;
-        } else if (preference == mNavigationBarButtonColorMode) {
-            int index = mNavigationBarButtonColorMode.findIndexOfValue((String) newValue);
-            int value = Integer.valueOf((String) newValue);
+        } else if (preference == mPowerMenuColorMode) {
+            String val = (String) newValue;
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE,
-                    value);
-            mNavigationBarButtonColorMode.setSummary(
-                mNavigationBarButtonColorMode.getEntries()[index]);
+                Settings.System.POWER_MENU_ICON_COLOR_MODE,
+                Integer.valueOf(val));
+            int index = mPowerMenuColorMode.findIndexOfValue(val);
+            mPowerMenuColorMode.setSummary(
+                mPowerMenuColorMode.getEntries()[index]);
             updateColorPreference();
             return true;
-        } if (preference == mNavigationBarGlowColor) {
+        } if (preference == mPowerMenuTextColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_TINT, intHex);
+                    Settings.System.POWER_MENU_TEXT_COLOR, intHex);
             return true;
         }
         return false;
@@ -189,9 +186,9 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
     }
 
     private void updateColorPreference() {
-        int navigationBarButtonColorMode = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
-        mNavigationBarButtonColor.setEnabled(navigationBarButtonColorMode != 3);
+        int colorMode = Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_ICON_COLOR_MODE, 0);
+        mPowerMenuColor.setEnabled(colorMode != 3);
     }
 
     private void showDialogInner(int id) {
@@ -210,8 +207,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        NavBarButtonStyle getOwner() {
-            return (NavBarButtonStyle) getTargetFragment();
+        PowerMenuStyle getOwner() {
+            return (PowerMenuStyle) getTargetFragment();
         }
 
         @Override
@@ -227,11 +224,11 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getActivity().getContentResolver(),
-                                    Settings.System.NAVIGATION_BAR_BUTTON_TINT, -2);
+                                    Settings.System.POWER_MENU_ICON_COLOR, -2);
                             Settings.System.putInt(getActivity().getContentResolver(),
-                                   Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
+                                   Settings.System.POWER_MENU_ICON_COLOR_MODE, 0);
                             Settings.System.putInt(getActivity().getContentResolver(),
-                                    Settings.System.NAVIGATION_BAR_GLOW_TINT, -2);
+                                    Settings.System.POWER_MENU_TEXT_COLOR, -2);
                             getOwner().refreshSettings();
                         }
                     })

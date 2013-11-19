@@ -55,6 +55,7 @@ import com.android.internal.util.slim.ButtonsConstants;
 import com.android.internal.util.slim.ButtonsHelper;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.slim.PolicyHelper;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
@@ -80,6 +81,7 @@ public class ButtonsListViewSettings extends ListFragment implements
     private static final int NAV_RING              = 3;
     private static final int LOCKSCREEN_SHORTCUT   = 4;
     private static final int NOTIFICATION_SHORTCUT = 5;
+    private static final int POWER_MENU_SHORTCUT   = 6;
 
     private static final int DEFAULT_MAX_BUTTON_NUMBER = 5;
 
@@ -393,14 +395,10 @@ public class ButtonsListViewSettings extends ListFragment implements
     }
 
     private boolean checkForDuplicateMainNavButtons(String action) {
-        // disabled for now till navbar navring and pie is back for 4.4
         ButtonConfig button;
         for (int i = 0; i < mButtonConfigs.size(); i++) {
             button = mButtonConfigsAdapter.getItem(i);
-            if (button.getClickAction().equals(action)
-                && (action.equals(ButtonsConstants.ACTION_HOME)
-                || action.equals(ButtonsConstants.ACTION_BACK)
-                || action.equals(ButtonsConstants.ACTION_RECENTS))) {
+            if (button.getClickAction().equals(action)) {
                 Toast.makeText(mActivity,
                         getResources().getString(R.string.shortcut_duplicate_entry),
                         Toast.LENGTH_LONG).show();
@@ -480,6 +478,7 @@ public class ButtonsListViewSettings extends ListFragment implements
         switch (mButtonMode) {
             // case LOCKSCREEN_SHORTCUT:
             case NOTIFICATION_SHORTCUT:
+            case POWER_MENU_SHORTCUT:
                 buttonMode = res.getString(R.string.shortcut_action_help_shortcut);
                 break;
             // case NAV_BAR:
@@ -574,6 +573,9 @@ public class ButtonsListViewSettings extends ListFragment implements
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case NOTIFICATION_SHORTCUT:
                 return ButtonsHelper.getNotificationsShortcutConfig(mActivity);
+            case POWER_MENU_SHORTCUT:
+                return PolicyHelper.getPowerMenuConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
         }
         return null;
     }
@@ -588,6 +590,12 @@ public class ButtonsListViewSettings extends ListFragment implements
                 break;
             case NOTIFICATION_SHORTCUT:
                 ButtonsHelper.setNotificationShortcutConfig(mActivity, buttonConfigs, reset);
+                if (reset) {
+                    loadAdditionalFragment();
+                }
+                break;
+            case POWER_MENU_SHORTCUT:
+                PolicyHelper.setPowerMenuConfig(mActivity, buttonConfigs, reset);
                 if (reset) {
                     loadAdditionalFragment();
                 }
@@ -699,10 +707,15 @@ public class ButtonsListViewSettings extends ListFragment implements
                     getResources().getString(R.string.shortcut_action_longpress)
                     + " " + getItem(position).getLongpressActionDescription());
             }
-            holder.iconView.setImageDrawable(ButtonsHelper.getButtonIconImage(mActivity,
-                    getItem(position).getClickAction(), getItem(position).getIcon()));
+            if (mButtonMode == POWER_MENU_SHORTCUT) {
+                holder.iconView.setImageDrawable(PolicyHelper.getPowerMenuIconImage(mActivity,
+                        getItem(position).getClickAction(), getItem(position).getIcon(), false));
+            } else {
+                holder.iconView.setImageDrawable(ButtonsHelper.getButtonIconImage(mActivity,
+                        getItem(position).getClickAction(), getItem(position).getIcon()));
+            }
 
-            if (!mDisableIconPicker) {
+            if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
                 holder.iconView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {

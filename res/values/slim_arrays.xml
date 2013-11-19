@@ -648,6 +648,24 @@
         <item>**null**</item>
     </string-array>
 
+    <string-array name="shortcut_action_power_menu_entries">
+        <item>@string/shortcut_action_airplane</item>
+        <item>@string/shortcut_action_app</item>
+        <item>@string/shortcut_action_power_off</item>
+        <item>@string/shortcut_action_reboot</item>
+        <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_sound</item>
+    </string-array>
+
+    <string-array name="shortcut_action_power_menu_values" translatable="false">
+        <item>**airplane**</item>
+        <item>**app**</item>
+        <item>**poweroff**</item>
+        <item>**reboot**</item>
+        <item>**screenshot**</item>
+        <item>**sound**</item>
+    </string-array>
+
     <!-- MediaScanner behavior on boot -->
     <string-array name="media_scanner_on_boot_entries">
         <item>@string/media_scanner_on_boot_enabled</item>

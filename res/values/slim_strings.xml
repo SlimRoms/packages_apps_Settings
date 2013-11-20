@@ -454,7 +454,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_title">Notification drawer</string>
-    <string name="notification_hide_carrier_title">Hide carrier label</string>
+    <string name="notification_hide_carrier_title">Hide network label</string>
+    <string name="notification_hide_carrier_summary">Hide carrier and Wi-Fi label on the notification drawer</string>
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
 

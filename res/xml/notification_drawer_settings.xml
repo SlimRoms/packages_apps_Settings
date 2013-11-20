@@ -35,6 +35,7 @@
         <CheckBoxPreference
             android:key="notification_hide_carrier"
             android:title="@string/notification_hide_carrier_title"
+            android:summary="@string/notification_hide_carrier_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>

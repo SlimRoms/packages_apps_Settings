@@ -200,8 +200,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
                             int height = getOwner().mapChosenDpToPixels(48);
                             Settings.System.putInt(getActivity().getContentResolver(),
                                     Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
-                                    48);
-                            height = getOwner().mapChosenDpToPixels(48);
+                                    height);
                             Settings.System.putInt(getActivity().getContentResolver(),
                                     Settings.System.NAVIGATION_BAR_HEIGHT,
                                     height);

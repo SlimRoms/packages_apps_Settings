@@ -342,6 +342,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         updateState();
+        updateLightPulseDescription();
+        updateBatteryPulseDescription();
     }
 
     @Override
@@ -417,6 +419,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateLightPulseDescription() {
+        if (mNotificationLight == null) {
+            return;
+        }
         if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
             mNotificationLight.setSummary(getString(R.string.enabled));
@@ -426,6 +431,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateBatteryPulseDescription() {
+        if (mBatteryPulse == null) {
+            return;
+        }
         if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1) {
             mBatteryPulse.setSummary(getString(R.string.enabled));

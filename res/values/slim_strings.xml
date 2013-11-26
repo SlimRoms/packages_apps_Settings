@@ -648,4 +648,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_twitter">Twitter</string>
 
+    <!--Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
 </resources>

@@ -187,6 +187,9 @@ public class LockscreenTargets extends Fragment implements
                 "com.android.keyguard:drawable/ic_lockscreen_target_activated", null, null));
         final String[] targetStore = input.split("\\|");
 
+        ArrayList<String> description = new ArrayList<String>();
+        ArrayList<String> directionDescription = new ArrayList<String>();
+
         //Add the unlock icon
         Drawable unlockFront = mKeyguardResources.getDrawable(mKeyguardResources.getIdentifier(
                 "com.android.keyguard:drawable/ic_lockscreen_unlock_normal", null, null));
@@ -196,10 +199,16 @@ public class LockscreenTargets extends Fragment implements
         unlockTarget.icon = LockscreenTargetUtils.getLayeredDrawable(
                 mActivity, unlockBack, unlockFront, 0, true);
         mTargetStore.add(unlockTarget);
+        description.add(getResources().getString(
+            com.android.internal.R.string.description_target_unlock));
+        directionDescription.add(getResources().getString(
+            com.android.internal.R.string.accessibility_target_direction));
 
         for (int i = 0; i < 8 - mTargetOffset - 1; i++) {
             if (i >= mMaxTargets) {
                 mTargetStore.add(new TargetInfo());
+                description.add("");
+                directionDescription.add("");
                 continue;
             }
 
@@ -236,6 +245,9 @@ public class LockscreenTargets extends Fragment implements
                     }
                 } catch (URISyntaxException e) {
                     Log.w(TAG, "Invalid lockscreen target " + info.uri);
+                    mTargetStore.add(new TargetInfo());
+                    description.add("");
+                    directionDescription.add("");
                 }
             }
 
@@ -249,10 +261,15 @@ public class LockscreenTargets extends Fragment implements
             info.defaultIcon = front;
 
             mTargetStore.add(info);
+            description.add(AppHelper.getFriendlyNameForUri(
+                    mActivity, mPm, info.uri));
+            directionDescription.add("");
         }
 
         for (int i = 0; i < mTargetOffset; i++) {
             mTargetStore.add(new TargetInfo());
+            description.add("");
+            directionDescription.add("");
         }
 
         ArrayList<TargetDrawable> targetDrawables = new ArrayList<TargetDrawable>();
@@ -260,6 +277,8 @@ public class LockscreenTargets extends Fragment implements
             targetDrawables.add(new TargetDrawable(mResources, i != null ? i.icon : null));
         }
         mWaveView.setTargetResources(targetDrawables);
+        mWaveView.setTargetDescriptions(description);
+        mWaveView.setDirectionDescriptions(directionDescription);
     }
 
     /**

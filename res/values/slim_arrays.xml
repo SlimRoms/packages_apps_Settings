@@ -687,7 +687,7 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="lockscreen_icon_picker_labels" translatable="false">
+    <string-array name="lockscreen_icon_picker_labels">
         <item>@string/icon_picker_alarm</item>
         <item>@string/icon_picker_browser</item>
         <item>@string/icon_picker_calendar</item>
@@ -736,11 +736,12 @@
     </string-array>
 
     <!-- QuietHours Incoming Contact -->
-    <string-array name="incoming_contact_entries" translatable="false">
+    <string-array name="incoming_contact_entries">
         <item>@string/quiet_hours_auto_disabled</item>
         <item>@string/quiet_hours_auto_enabled</item>
         <item>@string/quiet_hours_auto_contacts</item>
     </string-array>
+
     <string-array name="incoming_contact_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -748,19 +749,33 @@
     </string-array>
 
     <!-- QuietHours Calls Required -->
-    <string-array name="incoming_call_number_entries" translatable="false">
+    <string-array name="incoming_call_number_entries">
         <item>@string/two</item>
         <item>@string/three</item>
         <item>@string/four</item>
         <item>@string/five</item>
         <item>@string/six</item>
     </string-array>
+
     <string-array name="incoming_call_number_values" translatable="false">
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
+    </string-array>
+
+    <!-- Random PIN lock view -->
+    <string-array name="lock_numpad_random_entries">
+        <item>@string/lock_numpad_random_off</item>
+        <item>@string/lock_numpad_random_always</item>
+        <item>@string/lock_numpad_random_on_request</item>
+    </string-array>
+
+    <string-array name="lock_numpad_random_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
 </resources>

@@ -652,4 +652,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
+    <!-- Lockscreen widget settings -->
+    <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_camera_widget_title">Enable camera widget</string>
+    <string name="lockscreen_camera_widget_summary">Show secure camera widget on the lock screen</string>
+    <string name="lockscreen_maximize_widgets_title">Start maximized</string>
+    <string name="lockscreen_maximize_widgets_summary">Show widget maximized when screen turned on</string>
+    <string name="lockscreen_disable_hints_title">Disable initial page hints</string>
+    <string name="lockscreen_disable_hints_summary">Disables the glow on the edges that surrounds the widget pager on lock screen in portrait mode</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Enable portrait widget carousel</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Use carousel animation in portrait when switching between lock screen widgets</string>
+
 </resources>

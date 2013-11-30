@@ -28,6 +28,12 @@
          <extra android:name="fragment" android:value="com.android.settings.slim.fragments.NotificationsShortcutFragment" />
      </PreferenceScreen>
 
+     <Preference
+         android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+         android:key="notification_style"
+         android:title="@string/notification_style_title"
+         android:summary="@string/notification_style_summary" />
+
     <PreferenceCategory
         android:key="options"
         android:title="@string/additional_options_title">

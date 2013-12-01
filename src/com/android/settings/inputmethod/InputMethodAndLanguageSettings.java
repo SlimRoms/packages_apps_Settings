@@ -68,6 +68,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private static final String KEY_USER_DICTIONARY_SETTINGS = "key_user_dictionary_settings";
     private static final String KEY_STYLUS_GESTURES = "stylus_gestures";
     private static final String KEY_POINTER_SETTINGS_CATEGORY = "pointer_settings_category";
+    private static final String KEY_STYLUS_ICON_ENABLED = "stylus_icon_enabled";
 
     // false: on ICS or later
     private static final boolean SHOW_INPUT_METHOD_SWITCHER_SETTINGS = false;
@@ -82,6 +83,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
     private int mDefaultInputMethodSelectorVisibility = 0;
     private ListPreference mShowInputMethodSelectorPref;
+    private CheckBoxPreference mStylusIconEnabled;
     private PreferenceCategory mKeyboardSettingsCategory;
     private PreferenceCategory mHardKeyboardCategory;
     private PreferenceCategory mGameControllerCategory;
@@ -176,11 +178,15 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         updateInputDevices();
 
         mStylusGestures = (PreferenceScreen) findPreference(KEY_STYLUS_GESTURES);
+        mStylusIconEnabled = (CheckBoxPreference) findPreference(KEY_STYLUS_ICON_ENABLED);
         // remove stylus preference for non stylus devices
         if (!getResources().getBoolean(com.android.internal.R.bool.config_stylusGestures)) {
             PreferenceGroup pointerSettingsCategory = (PreferenceGroup)
                     findPreference(KEY_POINTER_SETTINGS_CATEGORY);
             pointerSettingsCategory.removePreference(mStylusGestures);
+            pointerSettingsCategory.removePreference(mStylusIconEnabled);
+        } else {
+            mStylusIconEnabled.setOnPreferenceChangeListener(this);
         }
 
         // Spell Checker
@@ -288,6 +294,11 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             if (SHOW_INPUT_METHOD_SWITCHER_SETTINGS) {
                 mShowInputMethodSelectorPref.setOnPreferenceChangeListener(this);
             }
+        }
+
+        if (mStylusIconEnabled != null) {
+            mStylusIconEnabled.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STYLUS_ICON_ENABLED, 0) == 1);
         }
 
         // Hard keyboard
@@ -411,6 +422,11 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                     saveInputMethodSelectorVisibility((String)value);
                 }
             }
+        }
+        if (preference == mStylusIconEnabled) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STYLUS_ICON_ENABLED, (Boolean) value ? 1 : 0);
+            return true;
         }
         return false;
     }

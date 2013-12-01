@@ -103,6 +103,12 @@
                 android:key="stylus_gestures"
                 android:title="@string/gestures_settings_title" />
 
+        <CheckBoxPreference android:key="stylus_icon_enabled"
+                android:title="@string/stylus_icon_enabled_title"
+                android:summary="@string/stylus_icon_enabled_summary"
+                android:defaultValue="false"
+                android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="game_controller_settings_category"

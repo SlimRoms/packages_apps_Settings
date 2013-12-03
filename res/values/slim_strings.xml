@@ -379,7 +379,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_warning">Warning</string>
     <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
     <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
     <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
 
     <string name="shortcut_action_help_shortcut">shortcut</string>
@@ -687,6 +687,21 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!--Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Lockscreen style settings -->
+    <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
+    <string name="lockscreen_icon_title">Lock handle icon</string>
+    <string name="lockscreen_lock_icon_custom">Custom icon</string>
+    <string name="lockscreen_lock_icon_default">Default icon</string>
+    <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
+    <string name="lockscreen_colorize_handle_summary">Lock color will be set to your custom image</string>
+    <string name="lockscreen_style_title">Theme style</string>
+    <string name="lockscreen_frame_color_title">Frame color</string>
+    <string name="lockscreen_frame_color_summary">Color of the widget and unlock frames</string>
+    <string name="lockscreen_lock_color_title">Lock color</string>
+    <string name="lockscreen_lock_color_summary">Color of the lock handles</string>
+    <string name="lockscreen_dots_color_title">Dots color</string>
+    <string name="lockscreen_dots_color_summary">Color of the glowpad dots</string>
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>

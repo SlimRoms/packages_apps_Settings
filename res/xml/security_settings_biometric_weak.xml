@@ -27,6 +27,11 @@
             android:persistent="false"/>
 
         <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.slim.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
+        <PreferenceScreen
             android:key="biometric_weak_improve_matching"
             android:title="@string/biometric_weak_improve_matching_title"/>
 

@@ -26,6 +26,11 @@
             android:summary="@string/unlock_set_unlock_mode_pattern"
             android:persistent="false"/>
 
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.slim.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
         <CheckBoxPreference
             android:key="visiblepattern"
             android:title="@string/lockpattern_settings_enable_visible_pattern_title"/>

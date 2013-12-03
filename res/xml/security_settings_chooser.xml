@@ -27,6 +27,11 @@
             android:persistent="false"/>
 
         <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.slim.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
+        <PreferenceScreen
             android:key="lock_screen_settings"
             android:fragment="com.android.settings.slim.LockscreenInterface"
             android:title="@string/lock_screen_title"

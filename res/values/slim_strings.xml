@@ -24,6 +24,7 @@
     <string name="additional_options_title">Additional options</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
+    <string name="add">Add</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
@@ -458,6 +459,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
     <!-- Notification drawer settings  -->
+    <string name="notification_drawer_qs_title">Notification drawer and quick settings</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_hide_carrier_title">Hide network label</string>
     <string name="notification_hide_carrier_summary">Hide carrier and Wi-Fi label on the notification drawer</string>
@@ -715,8 +717,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_pattern_size_6">6x6</string>
 
     <!-- Notification drawer background -->
-    <string name="notification_style_title">Style</string>
-    <string name="notification_style_summary">Change your notification drawer style</string>
+    <string name="notification_style_title">Background style</string>
+    <string name="notification_style_summary">View or change your notification drawer and quicksettings background</string>
     <string name="notification_wallpaper_title">Background</string>
     <string name="notification_wallpaper_landscape_title">Different landscape background</string>
     <string name="notification_background_color_fill">Color fill</string>
@@ -740,5 +742,60 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="less_notification_sounds_1m">1 minute</string>
     <string name="less_notification_sounds_2m">2 minutes</string>
     <string name="less_notification_sounds_5m">5 minutes</string>
+
+    <!-- Quick Settings -->
+    <string name="quick_settings_title">Quick settings</string>
+    <string name="tile_picker_title">Tiles and layout</string>
+    <string name="tile_picker_summary">View, select or change the displayed tiles</string>
+    <string name="tile_choose_title">Choose a tile</string>
+    <string name="title_tile_airplane">Airplane mode</string>
+    <string name="title_tile_battery">Battery</string>
+    <string name="title_tile_bluetooth">Bluetooth</string>
+    <string name="title_tile_brightness">Brightness</string>
+    <string name="title_tile_sleep">Go to sleep</string>
+    <string name="title_tile_location">Location</string>
+    <string name="title_tile_torch">Torch</string>
+    <string name="title_tile_lockscreen">Lock screen</string>
+    <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_mobiledata">Mobile data</string>
+    <string name="title_tile_autorotate">Orientation</string>
+    <string name="title_tile_settings">Settings</string>
+    <string name="title_tile_sound">Sound</string>
+    <string name="title_tile_sync">Sync</string>
+    <string name="title_tile_wifiap">Wi-Fi AP</string>
+    <string name="title_tile_wifi">Wi-Fi</string>
+    <string name="title_tile_user">User switcher</string>
+    <string name="title_tile_networkmode">Network mode</string>
+    <string name="title_tile_nfc">NFC</string>
+    <string name="title_tile_screen_timeout">Screen timeout</string>
+    <string name="title_tile_quiet_hours">Quiet hours</string>
+    <string name="title_tile_volume">Volume</string>
+    <string name="title_tile_expanded_desktop">Expanded desktop</string>
+    <string name="title_tile_music">Music</string>
+    <string name="title_tile_reboot">Reboot</string>
+    <string name="tiles_reset_message">Restore the default displayed tiles and layout?</string>
+
+    <!-- QuickSettings style options -->
+    <string name="quicksettings_tiles_style">Style</string>
+    <string name="summary_quicksettings_tiles_style">View or change quick settings style options</string>
+    <string name="quicksettings_tiles_style_additional_options">Additional options</string>
+    <string name="tiles_per_row_title">Tiles per row</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Scale landscape quantity</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">Landscape view doubles tiles per row quantity</string>
+    <string name="quick_tiles_bg_color_title">Tiles background color</string>
+    <string name="quick_tiles_bg_pressed_color_title">Tiles pressed background color</string>
+    <string name="quick_tiles_text_color_title">Tiles text color</string>
+    <string name="quick_tiles_alpha_title">Tiles background transparency</string>
+    <string name="qs_style_reset_message">Reset all colors to default?</string>
+
+    <string name="pref_network_mode_title">Network modes</string>
+    <string name="pref_screentimeout_mode_title">Screen timeout modes</string>
+    <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="screentimeout_mode1">15s | 1m | 5m | Never</string>
+    <string name="screentimeout_mode2">30s | 2m | 5m | Never</string>
+    <string name="sound_mode_silent">Silent</string>
+    <string name="sound_mode_vibrate">Vibrate</string>
+    <string name="sound_mode_sound">Sound</string>
+    <string name="sound_mode_soundVibrate">Sound &amp; Vibrate</string>
 
 </resources>

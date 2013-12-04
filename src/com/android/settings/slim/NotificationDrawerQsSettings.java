@@ -41,9 +41,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "notification_hide_carrier";
     private static final String PREF_NOTIFICATION_ALPHA =
             "notification_alpha";
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     CheckBoxPreference mHideCarrier;
     SeekBarPreference mNotificationAlpha;
+    ListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,17 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setProperty(Settings.System.NOTIFICATION_ALPHA);
         mNotificationAlpha.setOnPreferenceChangeListener(this);
+
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        if (!DeviceUtils.isPhone(getActivity())) {
+            prefs.removePreference(mQuickPulldown);
+        } else {
+            mQuickPulldown.setOnPreferenceChangeListener(this);
+            int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
+                    Settings.System.QS_QUICK_PULLDOWN, 0);
+            mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
+            updatePulldownSummary();
+        }
     }
 
     @Override
@@ -101,8 +114,38 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, valNav / 100);
             return true;
+        } else if (preference == mQuickPulldown) {
+            int statusQuickPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.QS_QUICK_PULLDOWN,
+                    statusQuickPulldown);
+            updatePulldownSummary();
+            return true;
         }
         return false;
+    }
+
+    private void updatePulldownSummary() {
+        int summaryId;
+        int directionId;
+        summaryId = R.string.summary_quick_pulldown;
+        String value = Settings.System.getString(getContentResolver(),
+                Settings.System.QS_QUICK_PULLDOWN);
+        String[] pulldownArray = getResources().getStringArray(R.array.quick_pulldown_values);
+        if (pulldownArray[0].equals(value)) {
+            directionId = R.string.quick_pulldown_off;
+            mQuickPulldown.setValueIndex(0);
+            mQuickPulldown.setSummary(getResources().getString(directionId));
+        } else if (pulldownArray[1].equals(value)) {
+            directionId = R.string.quick_pulldown_right;
+            mQuickPulldown.setValueIndex(1);
+            mQuickPulldown.setSummary(getResources().getString(directionId)
+                    + " " + getResources().getString(summaryId));
+        } else {
+            directionId = R.string.quick_pulldown_left;
+            mQuickPulldown.setValueIndex(2);
+            mQuickPulldown.setSummary(getResources().getString(directionId)
+                    + " " + getResources().getString(summaryId));
+        }
     }
 
 }

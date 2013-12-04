@@ -798,4 +798,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="sound_mode_sound">Sound</string>
     <string name="sound_mode_soundVibrate">Sound &amp; Vibrate</string>
 
+    <!-- QuickSettings: Quick Pulldown -->
+    <string name="title_quick_pulldown">Quick pulldown</string>
+    <string name="summary_quick_pulldown">edge of the status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_right">Right</string>
+
 </resources>

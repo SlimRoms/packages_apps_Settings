@@ -156,6 +156,7 @@ public class QuickSettingsUtil {
         ENABLED_TILES.remove(id);
         DISABLED_TILES.remove(id);
         TILES_DEFAULT.remove(id);
+Log.e("qsUtil", "finally removed current tile: " + id);
     }
 
     private static void disableTile(String id) {
@@ -192,9 +193,10 @@ public class QuickSettingsUtil {
         if (!DeviceUtils.deviceSupportsLte(context)) {
             removeTile(TILE_LTE);
         }
-
+Log.e("qsUtil", "short before we remove torch");
         // Don't show the Torch tile if not supported
         if (!DeviceUtils.deviceSupportsTorch(context)) {
+Log.e("qsUtil", "torch removed");
             removeTile(TILE_TORCH);
         }
 

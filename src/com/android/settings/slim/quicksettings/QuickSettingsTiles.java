@@ -68,6 +68,8 @@ public class QuickSettingsTiles extends Fragment {
     private static final int DLG_SCREENTIMEOUT = 1;
     private static final int DLG_NETWORK_MODE  = 2;
     private static final int DLG_RINGER        = 3;
+    private static final int DLG_MUSIC         = 4;
+    private static final int DLG_SHOW_LIST     = 5;
 
     private DraggableGridView mDragView;
     private ViewGroup mContainer;
@@ -211,9 +213,13 @@ public class QuickSettingsTiles extends Fragment {
             if (titleId == QuickSettingsUtil.TILES.get(
                         QSConstants.TILE_SCREENTIMEOUT).getTitleResId()
                 || titleId == QuickSettingsUtil.TILES.get(
-                            QSConstants.TILE_NETWORKMODE).getTitleResId()
+                            QSConstants.TILE_RINGER).getTitleResId()
                 || titleId == QuickSettingsUtil.TILES.get(
-                            QSConstants.TILE_RINGER).getTitleResId()) {
+                            QSConstants.TILE_MUSIC).getTitleResId()
+                || QuickSettingsUtil.isTileAvailable(QSConstants.TILE_NETWORKMODE)
+                        && titleId == QuickSettingsUtil.TILES.get(
+                            QSConstants.TILE_NETWORKMODE).getTitleResId()) {
+
                 ImageView settings =  (ImageView) tileView.findViewById(R.id.settings);
                 if (settings != null) {
                     settings.setVisibility(View.VISIBLE);
@@ -265,28 +271,12 @@ public class QuickSettingsTiles extends Fragment {
                     if (tiles.get(arg2).equals(QSConstants.TILE_RINGER)) {
                         showDialogInner(DLG_RINGER);
                     }
+                    if (tiles.get(arg2).equals(QSConstants.TILE_MUSIC)) {
+                        showDialogInner(DLG_MUSIC);
+                    }
                     return;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle(R.string.tile_choose_title)
-                .setAdapter(mTileAdapter, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, final int position) {
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                ArrayList<String> curr = QuickSettingsUtil.getTileListFromString(
-                                        QuickSettingsUtil.getCurrentTiles(getActivity()));
-                                curr.add(mTileAdapter.getTileId(position));
-                                QuickSettingsUtil.saveCurrentTiles(getActivity(),
-                                        QuickSettingsUtil.getTileStringFromList(curr));
-                            }
-                        }).start();
-                        TileInfo info =
-                            QuickSettingsUtil.TILES.get(mTileAdapter.getTileId(position));
-                        addTile(info.getTitleResId(), info.getIcon(), 0, true);
-                    }
-                });
-                builder.create().show();
+                showDialogInner(DLG_SHOW_LIST);
             }
         });
 
@@ -473,6 +463,75 @@ public class QuickSettingsTiles extends Fragment {
                                 getActivity().getContentResolver(),
                                 Settings.System.EXPANDED_RING_MODE,
                                 finalValues);
+                        }
+                    })
+                    .create();
+                case DLG_MUSIC:
+                    int storedMode = Settings.System.getIntForUser(
+                            getActivity().getContentResolver(),
+                            Settings.System.MUSIC_TILE_MODE, 3,
+                            UserHandle.USER_CURRENT);
+                    final boolean[] actualMode = new boolean[2];
+                    actualMode[0] = storedMode == 1 || storedMode == 3;
+                    actualMode[1] = storedMode > 1;
+
+                    final String[] entries =  {
+                            getResources().getString(R.string.music_tile_mode_background),
+                            getResources().getString(R.string.music_tile_mode_tracktitle)
+                    };
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.pref_music_mode_title)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setMultiChoiceItems(entries, actualMode,
+                        new  DialogInterface.OnMultiChoiceClickListener() {
+                        public void onClick(DialogInterface dialog, int indexSelected,
+                                boolean isChecked) {
+                            actualMode[indexSelected] = isChecked;
+                        }
+                    })
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            int mode = 0;
+                            if (actualMode[0]) {
+                                if (actualMode[1]) {
+                                    mode = 3;
+                                } else {
+                                    mode = 1;
+                                }
+                            } else {
+                                if (actualMode[1]) {
+                                    mode = 2;
+                                }
+                            }
+                            Settings.System.putInt(
+                                getActivity().getContentResolver(),
+                                Settings.System.MUSIC_TILE_MODE,
+                                mode);
+                        }
+                    })
+                    .create();
+                case DLG_SHOW_LIST:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.tile_choose_title)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setAdapter(getOwner().mTileAdapter, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, final int position) {
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ArrayList<String> curr =
+                                            QuickSettingsUtil.getTileListFromString(
+                                                QuickSettingsUtil.getCurrentTiles(getActivity()));
+                                    curr.add(getOwner().mTileAdapter.getTileId(position));
+                                    QuickSettingsUtil.saveCurrentTiles(getActivity(),
+                                            QuickSettingsUtil.getTileStringFromList(curr));
+                                }
+                            }).start();
+                            TileInfo info =
+                                QuickSettingsUtil.TILES.get(
+                                    getOwner().mTileAdapter.getTileId(position));
+                            getOwner().addTile(info.getTitleResId(), info.getIcon(), 0, true);
                         }
                     })
                     .create();

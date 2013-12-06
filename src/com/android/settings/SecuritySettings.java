@@ -308,7 +308,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
         // and remove them on low memory devices
         mEnableKeyguardWidgets = root.findPreference(KEY_ENABLE_WIDGETS);
         if (mEnableKeyguardWidgets != null) {
-            if (ActivityManager.isLowRamDeviceStatic()) {
+            if (ActivityManager.isLowRamDeviceStatic()
+                    || mLockPatternUtils.isLockScreenDisabled()) {
                 // Widgets take a lot of RAM, so disable them on low-memory devices
                 if (securityCategory != null) {
                     securityCategory.removePreference(root.findPreference(KEY_ENABLE_WIDGETS));

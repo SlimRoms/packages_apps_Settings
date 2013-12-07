@@ -97,6 +97,12 @@
                 android:key="pointer_speed"
                 android:title="@string/pointer_speed"
                 android:dialogTitle="@string/pointer_speed" />
+
+        <PreferenceScreen
+                android:fragment="com.android.settings.slim.StylusGestures"
+                android:key="stylus_gestures"
+                android:title="@string/gestures_settings_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="game_controller_settings_category"

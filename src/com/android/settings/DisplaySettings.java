@@ -107,11 +107,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
-        if (!RotationPolicy.isRotationSupported(getActivity())
-                || RotationPolicy.isRotationLockToggleSupported(getActivity())) {
-            // If rotation lock is supported, then we do not provide this option in
-            // Display settings.  However, is still available in Accessibility settings,
-            // if the device supports rotation.
+        if (!RotationPolicy.isRotationSupported(getActivity())) {
             getPreferenceScreen().removePreference(mDisplayRotationPreference);
         }
 

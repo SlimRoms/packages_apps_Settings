@@ -44,6 +44,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
@@ -150,6 +151,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 R.string.lockscreen_dots_color_summary), dotsColor);
         mDotsColor.setNewPreviewColor(dotsColor);
 
+        // No lock-slider is available
         boolean dotsDisabled = new LockPatternUtils(getActivity()).isSecure()
             && Settings.Secure.getInt(getContentResolver(),
             Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 0;
@@ -158,6 +160,10 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         mDotsColor.setEnabled(!dotsDisabled);
         mLockIcon.setEnabled(!dotsDisabled);
         mColorizeCustom.setEnabled(!dotsDisabled && imageExists);
+        // Tablets don't have the extended-widget lock icon
+        if (DeviceUtils.isTablet(getActivity())) {
+            mLockColor.setEnabled(!dotsDisabled);
+        }
 
         updateLockSummary();
 

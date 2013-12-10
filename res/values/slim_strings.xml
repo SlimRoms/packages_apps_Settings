@@ -823,4 +823,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
 
+    <!-- About phone screen, build date of ROM -->
+    <string name="build_date">revolution build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+
 </resources>

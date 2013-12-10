@@ -251,9 +251,8 @@ public class QuickSettingsUtil {
     }
 
     public static void resetTiles(Context context) {
-        String defaultTiles = getDefaultTiles(context);
         Settings.System.putString(context.getContentResolver(),
-                Settings.System.QUICK_SETTINGS_TILES, defaultTiles);
+                Settings.System.QUICK_SETTINGS_TILES, null);
     }
 
     public static String mergeInNewTileString(String oldString, String newString) {

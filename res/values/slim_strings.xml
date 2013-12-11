@@ -22,6 +22,9 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
 
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="device_settings_title">Device</string>
+
     <!-- Setting checkbox title for root access -->
     <string name="root_access">Root access</string>
     <string name="root_access_warning_title">Allow root access?</string>
@@ -68,5 +71,10 @@
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
+
+    <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
+    <string name="debug_LAN_category">LAN Settings</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
 </resources>

@@ -46,7 +46,6 @@
     <string name="lock_numpad_random_off">Disabled</string>
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
-
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Disabled</string>
@@ -85,6 +84,9 @@
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
 
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="device_settings_title">Device</string>
+
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Advanced reboot</string>
     <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
@@ -99,5 +101,10 @@
     <string name="pref_volume_wake_summary">Pressing the volume rocker up/down will wake the device</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+
+    <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
+    <string name="debug_LAN_category">LAN Settings</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
 </resources>

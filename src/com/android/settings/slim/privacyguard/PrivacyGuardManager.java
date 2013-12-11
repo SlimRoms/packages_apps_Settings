@@ -131,8 +131,11 @@ public class PrivacyGuardManager extends Fragment
         mAppsList.setOnItemLongClickListener(this);
 
         // get shared preference
-        mPreferences = mActivity.getSharedPreferences("privacy_guard_manager", Activity.MODE_PRIVATE);
+        mPreferences = mActivity.getSharedPreferences(
+                "privacy_guard_manager", Activity.MODE_PRIVATE);
         if (!mPreferences.getBoolean("first_help_shown", false)) {
+            mPreferences.edit()
+                    .putBoolean("first_help_shown", true).commit();
             showDialogInner(DLG_HELP);
         }
 
@@ -343,7 +346,7 @@ public class PrivacyGuardManager extends Fragment
             switch (id) {
                 case DLG_RESET:
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.privacy_guard_reset_title)
+                    .setTitle(R.string.reset)
                     .setMessage(R.string.privacy_guard_app_ops_detail_reset_dialog_text)
                     .setPositiveButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
@@ -360,9 +363,9 @@ public class PrivacyGuardManager extends Fragment
                     .create();
                 case DLG_HELP:
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.privacy_guard_help_title)
+                    .setTitle(R.string.help_label)
                     .setMessage(R.string.privacy_guard_help_text)
-                    .setNegativeButton(R.string.dlg_cancel,
+                    .setNegativeButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
@@ -392,13 +395,7 @@ public class PrivacyGuardManager extends Fragment
 
         @Override
         public void onCancel(DialogInterface dialog) {
-            int id = getArguments().getInt("id");
-            switch (id) {
-                case DLG_HELP:
-                    getOwner().mPreferences.edit()
-                        .putBoolean("first_help_shown", true).commit();
-                    break;
-            }
+
         }
     }
 

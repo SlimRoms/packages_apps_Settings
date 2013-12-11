@@ -347,7 +347,7 @@ public class AutoBrightnessCustomizeDialog extends AlertDialog
         final View v = getLayoutInflater().inflate(R.layout.auto_brightness_help, null);
 
         mHelpDialog = new AlertDialog.Builder(getContext())
-            .setTitle(R.string.auto_brightness_help_dialog_title)
+            .setTitle(R.string.help_label)
             .setCancelable(true)
             .setView(v)
             .setNegativeButton(R.string.auto_brightness_close_button, null)

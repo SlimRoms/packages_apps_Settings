@@ -30,6 +30,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -255,6 +256,15 @@ public class ButtonsListViewSettings extends ListFragment implements
         mDivider = (View) view.findViewById(R.id.divider);
         loadAdditionalFragment();
 
+        // get shared preference
+        SharedPreferences preferences =
+                mActivity.getSharedPreferences("dslv_settings", Activity.MODE_PRIVATE);
+        if (!preferences.getBoolean("first_help_shown_mode_" + mButtonMode, false)) {
+            preferences.edit()
+                    .putBoolean("first_help_shown_mode_" + mButtonMode, true).commit();
+            showDialogInner(DLG_SHOW_HELP_SCREEN, 0, false, false);
+        }
+
         setHasOptionsMenu(true);
     }
 
@@ -441,7 +451,7 @@ public class ButtonsListViewSettings extends ListFragment implements
         menu.add(0, MENU_ADD, 0, R.string.shortcut_action_add)
                 .setIcon(R.drawable.ic_menu_add_dark)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        menu.add(0, MENU_HELP, 0, R.string.shortcut_action_help)
+        menu.add(0, MENU_HELP, 0, R.string.help_label)
                 .setIcon(R.drawable.ic_settings_about)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
@@ -667,12 +677,12 @@ public class ButtonsListViewSettings extends ListFragment implements
                             R.string.shortcut_action_help_delete_last_entry, buttonMode);
                     }
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.shortcut_action_help)
+                    .setTitle(R.string.help_label)
                     .setMessage(finalHelpMessage)
-                    .setPositiveButton(R.string.dlg_ok,
+                    .setNegativeButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-
+                            dialog.cancel();
                         }
                     })
                     .create();
@@ -680,10 +690,10 @@ public class ButtonsListViewSettings extends ListFragment implements
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.shortcut_action_warning)
                     .setMessage(R.string.shortcut_action_warning_message)
-                    .setPositiveButton(R.string.dlg_ok,
+                    .setNegativeButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-
+                            dialog.cancel();
                         }
                     })
                     .create();

@@ -238,7 +238,7 @@ public class AppOpsDetails extends Fragment {
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, R.string.privacy_guard_reset_title)
+        menu.add(0, MENU_RESET, 0, R.string.reset)
                 .setIcon(R.drawable.ic_settings_backup)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         if (mAppOps.getPrivacyGuardOpsForPackage(mPackageInfo.packageName).size() > 0) {
@@ -292,7 +292,7 @@ public class AppOpsDetails extends Fragment {
             switch (id) {
                 case DLG_RESET:
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.privacy_guard_reset_title)
+                    .setTitle(R.string.reset)
                     .setMessage(R.string.privacy_guard_app_ops_detail_reset_dialog_text)
                     .setPositiveButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {

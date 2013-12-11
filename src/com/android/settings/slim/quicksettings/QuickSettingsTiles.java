@@ -364,7 +364,7 @@ public class QuickSettingsTiles extends Fragment {
             switch (id) {
                 case DLG_DISABLED:
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.disable_qs)
+                    .setTitle(R.string.disabled)
                     .setMessage(R.string.disable_qs_message)
                     .setNegativeButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {

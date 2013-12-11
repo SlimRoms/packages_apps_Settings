@@ -786,8 +786,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_music">Music</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="tiles_reset_message">Restore the default displayed tiles and layout?</string>
-    <string name="disable_qs">Quick settings disabled</string>
-    <string name="disable_qs_message">All tiles were removed. Quick settings are disabled now.\n\nTo enable add a tile.</string>
+    <string name="disable_qs">Quick settings are disabled</string>
+    <string name="disable_qs_message">All tiles were removed. Quick settings are disabled.\n\nTo enable add a tile.</string>
     <string name="help_qs_message">To add a quick settings tile, press the Add button and choose the tile you would like. To rearrange your tiles, longpress the tile and drag it into the position you want. If you want to delete a tile, drag it to the delete button which appears while dragging the tile.\n\nTo disable quick settings, remove all tiles.</string>
 
     <!-- QuickSettings style options -->

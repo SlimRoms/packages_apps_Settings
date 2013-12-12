@@ -257,7 +257,9 @@ public class QuickSettingsTiles extends Fragment {
                 QuickSettingsUtil.saveCurrentTiles(getActivity(),
                         mDragView.getChildCount() == 1 ?
                         "" : QuickSettingsUtil.getTileStringFromList(tiles));
-                showDialogInner(DLG_DISABLED);
+                if (mDragView.getChildCount() == 1) {
+                    showDialogInner(DLG_DISABLED);
+                }
             }
         });
         mDragView.setOnItemClickListener(new OnItemClickListener() {

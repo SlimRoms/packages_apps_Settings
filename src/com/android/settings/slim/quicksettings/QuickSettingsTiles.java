@@ -33,6 +33,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.TypedValue;
@@ -89,6 +90,8 @@ public class QuickSettingsTiles extends Fragment {
     private int mTileTextSize;
     private int mTileTextPadding;
 
+    private boolean mHasVibrator;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -135,6 +138,10 @@ public class QuickSettingsTiles extends Fragment {
             mTileTextPadding = mDragView.getTileTextPadding(columnCount);
         }
         mTileAdapter = new TileAdapter(getActivity());
+
+        Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        mHasVibrator = vibrator.hasVibrator();
+
         return mDragView;
     }
 
@@ -223,6 +230,7 @@ public class QuickSettingsTiles extends Fragment {
                         QSConstants.TILE_SCREENTIMEOUT).getTitleResId()
                 || titleId == QuickSettingsUtil.TILES.get(
                             QSConstants.TILE_RINGER).getTitleResId()
+                        && mHasVibrator
                 || titleId == QuickSettingsUtil.TILES.get(
                             QSConstants.TILE_MUSIC).getTitleResId()
                 || QuickSettingsUtil.isTileAvailable(QSConstants.TILE_NETWORKMODE)
@@ -266,6 +274,7 @@ public class QuickSettingsTiles extends Fragment {
                 }
             }
         });
+        final boolean hasVibrator = mHasVibrator;
         mDragView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -281,7 +290,8 @@ public class QuickSettingsTiles extends Fragment {
                     if (tiles.get(arg2).equals(QSConstants.TILE_NETWORKMODE)) {
                         showDialogInner(DLG_NETWORK_MODE);
                     }
-                    if (tiles.get(arg2).equals(QSConstants.TILE_RINGER)) {
+                    if (tiles.get(arg2).equals(QSConstants.TILE_RINGER)
+                            && hasVibrator) {
                         showDialogInner(DLG_RINGER);
                     }
                     if (tiles.get(arg2).equals(QSConstants.TILE_MUSIC)) {

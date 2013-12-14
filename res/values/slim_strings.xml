@@ -215,6 +215,7 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_default_message">Reset default</string>
 
     <!-- Slim settings screens -->
     <string name="header_category_personalization">Personalization</string>
@@ -545,6 +546,7 @@
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_theme_switch">Theme switcher</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -1041,5 +1043,14 @@
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_auto_mode_title">Switch theme</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">On light condition change (experimental)</string>
+    <string name="theme_auto_mode_twilight">On daytime</string>
+    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+    <string name="theme_reset_message">Reset theme state to default?</string>
 
 </resources>

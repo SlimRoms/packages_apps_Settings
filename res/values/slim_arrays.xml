@@ -288,6 +288,25 @@
         <item>5000</item>
     </string-array>
 
+    <!-- Slim Actions For Shortcuts -->
+    <string-array name="shortcut_action_launcher_entries">
+        <item>@string/shortcut_action_ime</item>
+        <item>@string/shortcut_action_power_menu</item>
+        <item>@string/shortcut_action_ring_silent</item>
+        <item>@string/shortcut_action_ring_vib</item>
+        <item>@string/shortcut_action_ring_vib_silent</item>
+        <item>@string/shortcut_action_torch</item>
+    </string-array>
+
+    <string-array name="shortcut_action_launcher_values" translatable="false">
+        <item>**ime**</item>
+        <item>**power_menu**</item>
+        <item>**ring_silent**</item>
+        <item>**ring_vib**</item>
+        <item>**ring_vib_silent**</item>
+        <item>**torch**</item>
+    </string-array>
+
     <string-array name="clock_style_entries" translatable="false">
         <item>@string/right_clock</item>
         <item>@string/center_clock</item>

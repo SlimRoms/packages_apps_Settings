@@ -50,6 +50,9 @@
     <string name="privacy_guard_notification_title">Notification</string>
     <string name="privacy_guard_notifiation_summary">Show notification if privacy guard is active.</string>
 
+    <!-- Slim Shortcuts -->
+    <string name="slim_shortcut_picker">Slim Actions</string>
+
     <!-- About phone screen, Slim version -->
     <string name="slim_version_title">Slim version</string>
     <string name="slim_version_default">Unknown</string>
@@ -530,6 +533,7 @@
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_camera">Camera</string>
     <string name="shortcut_action_media_next">Music - next track</string>
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
@@ -882,5 +886,9 @@
     <string name="pie_trigger_warning">Minimum one of the main triggers (bottom, left or right) needs to be enabled.</string>
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
 
 </resources>

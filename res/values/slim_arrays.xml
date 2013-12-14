@@ -193,4 +193,6 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="shortcut_action_launcher_entries">@org.slim.framework:array/shortcut_action_launcher_entries</string-array>
+    <string-array name="shortcut_action_launcher_values">@org.slim.framework:array/shortcut_action_launcher_values</string-array>
 </resources>

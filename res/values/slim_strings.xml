@@ -199,6 +199,7 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_default_message">Reset default</string>
 
     <!-- Slim settings screens -->
     <string name="header_category_personalization">Personalization</string>
@@ -447,6 +448,7 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_theme_switch">Theme switcher</string>
 
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
@@ -530,5 +532,14 @@
     <string name="shortcuts_icon_picker_tv">TV</string>
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Unlock</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_auto_mode_title">Switch theme</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">On light condition change (experimental)</string>
+    <string name="theme_auto_mode_twilight">On daytime</string>
+    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+    <string name="theme_reset_message">Reset theme state to default?</string>
 
 </resources>

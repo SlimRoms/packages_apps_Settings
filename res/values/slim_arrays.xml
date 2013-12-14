@@ -513,6 +513,7 @@
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_search</item>
         <item>@string/shortcut_action_none</item>
+        <item>@string/shortcut_action_theme_switch</item>
     </string-array>
 
     <string-array name="shortcut_action_values" translatable="false">
@@ -526,6 +527,7 @@
         <item>**power**</item>
         <item>**search**</item>
         <item>**null**</item>
+        <item>**theme_switch**</item>
     </string-array>
 
      <string-array name="shortcut_action_screen_off_entries">
@@ -552,6 +554,19 @@
         <item>**ring_vib_silent**</item>
         <item>**wake_device**</item>
         <item>**null**</item>
+    </string-array>
+
+    <!-- Themes -->
+    <string-array name="theme_auto_mode_entries">
+        <item>@string/theme_auto_mode_off</item>
+        <item>@string/theme_auto_mode_lightsensor</item>
+        <item>@string/theme_auto_mode_twilight</item>
+    </string-array>
+
+    <string-array name="theme_auto_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
 </resources>

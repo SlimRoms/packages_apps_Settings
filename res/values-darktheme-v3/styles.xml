@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AlertDialog" parent="@android:style/Theme.Material.Dialog.Alert">
+        <item name="android:colorBackground">#ff000000</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources>

@@ -17,8 +17,10 @@
 <resources>
     <!-- Whether or not the dock settings are to be displayed for this device when docked -->
     <bool name="has_dock_settings">false</bool>
+
     <!-- Whether there is a silent mode checkbox  -->
     <bool name="has_silent_mode">true</bool>
+
     <!-- Whether the power control widget is enabled for this device. Should be overridden for 
          specific product builds. -->
     <bool name="has_powercontrol_widget">true</bool>
@@ -35,4 +37,5 @@
 
     <!-- Whether to show a preference item for mobile plan -->
     <bool name="config_show_mobile_plan">true</bool>
+
 </resources>

@@ -16,6 +16,9 @@
 
 package com.android.settings.slim;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.ListPreference;
@@ -32,7 +35,9 @@ public class AdvancedSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+    private static final String PREF_DEVICESETTINGS_APP = "devicesettings_app";
 
+    private PreferenceScreen mDeviceSettingsApp;
     private ListPreference mMsob;
 
     @Override
@@ -46,6 +51,25 @@ public class AdvancedSettings extends SettingsPreferenceFragment
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0)));
         mMsob.setSummary(mMsob.getEntry());
         mMsob.setOnPreferenceChangeListener(this);
+
+        mDeviceSettingsApp = (PreferenceScreen) findPreference(PREF_DEVICESETTINGS_APP);
+
+        if (!deviceSettingsAppExists()) {
+            getPreferenceScreen().removePreference(mDeviceSettingsApp);
+        }
+
+    }
+
+    private boolean deviceSettingsAppExists() {
+        Intent intent = mDeviceSettingsApp.getIntent();
+        if (intent != null) {
+            PackageManager pm = getActivity().getPackageManager();
+            List<ResolveInfo> list = pm.queryIntentActivities(intent, PackageManager.GET_META_DATA);
+            int listSize = list.size();
+            return (listSize > 0) ? true : false;
+
+        }
+        return false;
 
     }
 

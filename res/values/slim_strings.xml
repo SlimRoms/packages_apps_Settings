@@ -787,6 +787,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_expanded_desktop">Expanded desktop</string>
     <string name="title_tile_music">Music</string>
     <string name="title_tile_reboot">Reboot</string>
+    <string name="title_tile_theme">Theme switcher</string>
     <string name="dynamic_tile_ime_switcher">IME switcher</string>
     <string name="dynamic_tile_usb_tether">USB tether</string>
     <string name="dynamic_tile_alarm">Alarm</string>

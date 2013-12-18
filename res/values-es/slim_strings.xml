@@ -632,7 +632,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_screen_summary">Ver o cambiar los accesos directos del anillo de la pantalla de bloqueo</string>
 
     <!-- Lock Screen Targets -->
-    <string name="lockscreen_target_info">Arrastra el aniññp a los destinos para asignar aplicaciones</string>
+    <string name="lockscreen_target_info">Arrastra el anillo a los destinos para asignar aplicaciones</string>
     <string name="lockscreen_target_title">Accesos directos del anillo</string>
     <string name="lockscreen_target_summary">Ver o cambiar los accesos directos personalizables de la pantalla de bloqueo</string>
     <string name="lockscreen_target_color_title">Colos icono acceso directo</string>
@@ -781,11 +781,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_volume">Volumen</string>
     <string name="title_tile_expanded_desktop">Escritorio extendido</string>
     <string name="title_tile_music">Música</string>
-    <string name="title_tile_reboot">Reinicias</string>
+    <string name="title_tile_reboot">Reiniciar</string>
+    <string name="dynamic_tile_ime_switcher">Selector IME</string>
+    <string name="dynamic_tile_usb_tether">Anclaje USB</string>
+    <string name="dynamic_tile_alarm">Alarma</string>
+    <string name="dynamic_tile_bugreport">Reportar BUG</string>
+    <string name="dynamic_tiles_title">Botones dinámicos</string>
     <string name="tiles_reset_message">¿Restablecer valores predeterminados del panel de ajustes rápidos?</string>
     <string name="disable_qs">Ajustes rápidos deshabilitados</string>
     <string name="disable_qs_message">Todos los botones se han borrado. Los ajustes rápidos están deshabilitados.\n\nPara habilitarlos añade un botón.</string>
-    <string name="help_qs_message">Para añadir un botón de ajustes rápidos, toca en el botón Añadir y selecciona el botón que quieras. Para reordenar los botones pulsa prolongadamente en uno y arrastralo a la posición que quieras. Si quieres eliminar un botón, arrástralo sobre el botón Borrar que aparece al arrastrarlo.\n\nPara deshabilitar los ajustes rápidos, borra todos los botones.</string>
+    <string name="help_qs_message">Para añadir un botón de ajustes rápidos, toca en el botón Añadir y selecciona el botón que quieras. Para reordenar los botones pulsa prolongadamente en uno y arrastralo a la posición que quieras. Si quieres eliminar un botón, arrástralo sobre el botón Borrar que aparece al arrastrarlo.\n\nPara deshabilitar los ajustes rápidos, borra todos los botones.\n\nPara configurar los botones dinámicos toca ,en la zona superior derecha de la panatalla, el icono correspondiente.\n\nPara deshabilitar el panel de ajustes rápidos elimina todos los botones.</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Estilo</string>

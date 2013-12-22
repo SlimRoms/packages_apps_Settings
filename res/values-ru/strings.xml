@@ -2044,4 +2044,15 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"Сделать снимок"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"Выбрать из Галереи"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+
+    <string name="intent_sender_data_label"><xliff:g id="data">Данные:</xliff:g></string>
+    <string name="wifi_display_certification_heading">Сертификация</string>
+    <string name="wifi_display_session_info">Информация сессии</string>
+    <string name="wifi_display_listen_mode">Включить режим прослушивания</string>
+    <string name="wifi_display_autonomous_go">Включить автономный GO</string>
+    <string name="wifi_display_pause">Пауза</string>
+    <string name="wifi_display_resume">Продолжить</string>
+    <string name="wifi_display_wps_config">Конфигурация WPS</string>
+    <string name="wifi_display_listen_channel">Канал прослушивания</string>
+    <string name="wifi_display_operating_channel">Операционный канал</string>
 </resources>

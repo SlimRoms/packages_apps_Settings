@@ -124,6 +124,8 @@
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
     <!-- Wi-Fi settings diables message if Wifi is off-->
     <string name="wifi_setting_countrycode_disabled">Enable Wi-Fi to change this option.</string>
+    <!-- WiFi forget all networks -->
+    <string name="wifi_menu_forget_all">Forget all networks</string>
 
     <!-- Status bar -->
     <string name="status_bar_title">Status bar</string>

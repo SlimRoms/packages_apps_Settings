@@ -721,4 +721,15 @@
     <string name="music_tile_mode_background">Показывать обложку альбома</string>
     <string name="music_tile_mode_tracktitle">Показывать название композиции</string>
     <string name="stylus_app_not_installed">%s не установлен</string>
+    <string name="device_hostname">Имя хоста</string>
+    <string name="device_settings_title">Устройство</string>
+    <string name="title_tile_theme">Управление TRDS</string>
+    <string name="theme_settings_title">The Real Dark Slim</string>
+    <string name="theme_auto_mode_title">Переключить тему</string>
+    <string name="theme_auto_mode_off">Вручную</string>
+    <string name="theme_auto_mode_lightsensor">При изменении освещения</string>
+    <string name="theme_auto_mode_twilight">В дневное время</string>
+    <string name="theme_auto_switch_mode_error">Активирован режим автоматического изменения в зависимости от освещения. Ручной режим недоступен.</string>
+    <string name="debug_LAN_category">Настройки локальной сети</string>
+    <string name="shortcut_action_theme_switch">Переключатель тем</string>
 </resources>

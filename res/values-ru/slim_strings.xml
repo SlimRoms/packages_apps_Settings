@@ -732,4 +732,7 @@
     <string name="theme_auto_switch_mode_error">Активирован режим автоматического изменения в зависимости от освещения. Ручной режим недоступен.</string>
     <string name="debug_LAN_category">Настройки локальной сети</string>
     <string name="shortcut_action_theme_switch">Переключатель тем</string>
+    <string name="title_tile_quick_record">Быстрая запись</string>
+    <string name="chamber_title">Тайная комната</string>
+    <string name="chamber_toast">Тайная комната снова открыта</string>
 </resources>

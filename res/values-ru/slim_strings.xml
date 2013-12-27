@@ -296,7 +296,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
     <string name="battery_text_color">Цвет процентов</string>
-    <string name="battery_text_charging_color">Цвет процентов при зарядке</string>
+    <string name="battery_text_charging_color">Цвет молнии при зарядке</string>
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>
     <string name="circle_battery_animation_speed_slow">Медленно</string>

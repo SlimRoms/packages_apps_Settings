@@ -735,4 +735,9 @@
     <string name="title_tile_quick_record">Быстрая запись</string>
     <string name="chamber_title">Тайная комната</string>
     <string name="chamber_toast">Тайная комната снова открыта</string>
+    <!-- WiFi forget all networks -->
+    <string name="wifi_menu_forget_all">Удалить сохраненные сети</string>
+    <!-- Volume Keys Media Control -->
+    <string name="volume_keys_control_media_stream">Управление мультимедиа</string>
+    <string name="volume_keys_control_media_stream_summary">Кнопки громкости контролируют громкость мультимедиа, а не уведомлений</string>
 </resources>

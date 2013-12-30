@@ -821,4 +821,60 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_left">Bal</string>
     <string name="quick_pulldown_right">Jobb</string>
 
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Stílus gesztusok</string>
+    <string name="category_spen_title">Stílus gesztusok</string>
+    <string name="enable_subcat_title">Stílus</string>
+    <string name="enable_spen_title_head">Stílus gesztusok engedélyezése</string>
+    <string name="enable_spen_summary_head">Egyéni akció indítása a stílus gombbal húzó mozdulattal. Figyelmeztetés: alkalmazás nem lesz képes bemenetet fogadni míg nyomva tartod a stílus gombot</string>
+    <string name="gestures_subcat_title">Gesztusok</string>
+    <string name="gestures_left_spen_title_head">Balra húzás</string>
+    <string name="gestures_left_spen_summary_head">Egyéni alkalmazás indítása balra húzásra</string>
+    <string name="gestures_right_spen_title_head">Jobbra húzás</string>
+    <string name="gestures_right_spen_summary_head">Egyéni alkalmazás indítása jobbra húzásra</string>
+    <string name="gestures_up_spen_title_head">Fel húzás</string>
+    <string name="gestures_up_spen_summary_head">Egyéni alkalmazás indítása felfelé húzásra</string>
+    <string name="gestures_down_spen_title_head">Le húzás</string>
+    <string name="gestures_down_spen_summary_head">Egyéni alkalmazás indítása lefelé húzásra</string>
+    <string name="gestures_long_spen_title_head">Hosszan nyomás</string>
+    <string name="gestures_long_spen_summary_head">Egyéni alkalmazás indítása hosszan nyomásra</string>
+    <string name="gestures_double_spen_title_head">Dupla érintés</string>
+    <string name="gestures_double_spen_summary_head">Egyéni alkalmazás indítása dupla érintésre</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">Nincs akció</string>
+    <string name="gestures_action_home">Emulálja a home gombot</string>
+    <string name="gestures_action_back">Emulálja a vissza gombot</string>
+    <string name="gestures_action_menu">Emulálja a menü gombot</string>
+    <string name="gestures_action_search">Keresés indítása</string>
+    <string name="gestures_action_recent">Legutóbbi alkalmazások</string>
+
+    <!-- stylus gestures support -->
+    <string name="stylus_app_not_installed">%s nincs telepítve</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Ikon mutatása stílus használat közben</string>
+    <string name="stylus_icon_enabled_summary">Mutató ikon mutatása stílus használata közben</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">Az igazi fekete slim</string>
+    <string name="theme_auto_mode_title">Téma váltás</string>
+    <string name="theme_auto_mode_off">Kézi</string>
+    <string name="theme_auto_mode_lightsensor">Fényviszonyok változtatása</string>
+    <string name="theme_auto_mode_twilight">Nappali</string>
+    <string name="theme_auto_switch_mode_error">Automatikus fényviszonyok változásának engedélyezése. Kézi állítás nem lehetséges.</string>
+
+    <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
+    <string name="debug_LAN_category">LAN Beállítások</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Eszköz neve</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Titkok Kamrája</string>
+    <string name="chamber_toast">A Titkok Kamrája nyítva van</string>
+
+    <!-- Volume Keys Media Control -->
+    <string name="volume_keys_control_media_stream">Média vezérlés</string>
+    <string name="volume_keys_control_media_stream_summary">Hangerő gombokkal vezérli a média hangerejét</string>
+
 </resources>

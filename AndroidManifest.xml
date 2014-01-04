@@ -1732,7 +1732,7 @@
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
         <activity android:name="Settings$BatteryIconStyleSettingsActivity"
-                android:label="@string/quiet_hours_title"
+                android:label="@string/battery_icon_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
@@ -1745,7 +1745,7 @@
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
-                android:label="@string/quiet_hours_title"
+                android:label="@string/display_rotation_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>

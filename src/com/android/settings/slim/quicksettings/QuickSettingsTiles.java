@@ -579,9 +579,13 @@ public class QuickSettingsTiles extends Fragment {
                             new Thread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    ArrayList<String> curr =
-                                            QuickSettingsUtil.getTileListFromString(
-                                                QuickSettingsUtil.getCurrentTiles(getActivity()));
+                                    String tiles = QuickSettingsUtil.getCurrentTiles(getActivity());
+                                    ArrayList<String> curr = new ArrayList<String>();
+                                    // A blank string indicates tiles are currently disabled
+                                    // Avoid index being off by one when we add a new tile
+                                    if (!tiles.equals("")) {
+                                        curr = QuickSettingsUtil.getTileListFromString(tiles);
+                                    }
                                     curr.add(getOwner().mTileAdapter.getTileId(position));
                                     QuickSettingsUtil.saveCurrentTiles(getActivity(),
                                             QuickSettingsUtil.getTileStringFromList(curr));

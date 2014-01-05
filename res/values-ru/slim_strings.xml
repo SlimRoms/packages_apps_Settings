@@ -740,4 +740,7 @@
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Управление мультимедиа</string>
     <string name="volume_keys_control_media_stream_summary">Кнопки громкости контролируют громкость мультимедиа, а не уведомлений</string>
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Пересканировать медиа на накопителе</string>
+    <string name="storage_rescan_media_complete">Сканирование завершено</string>
 </resources>

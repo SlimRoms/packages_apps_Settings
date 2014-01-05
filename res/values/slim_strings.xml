@@ -892,4 +892,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
 
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Rescan media for the storage volume</string>
+    <string name="storage_rescan_media_complete">Scan completed</string>
+
 </resources>

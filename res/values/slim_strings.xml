@@ -980,14 +980,17 @@
     <string name="live_display_low_power_summary">Adjust display for lowest power consumption without degradation</string>
     <string name="live_display_enhance_color_title">Enhance colors</string>
     <string name="live_display_enhance_color_summary">Improve color vibrance of flesh tones, scenery, and other images</string>
-
     <string name="category_calibration">Calibration</string>
+    
+
     <!-- Display settings.  Screen color. -->
     <string name="screencolor">Screen color</string>
-    <string name="screencolor_summary">Tune screen hue, saturation, contrast or intensity</string>
+    <string name="screencolor_summary">Tune screen Hue, Saturation, Contrast and Intensity</string>
     <string name="custom_screencolor">Custom screen color</string>
     <string name="screencolor_save">Save</string>
     <string name="screencolor_cancel">Cancel</string>
+    <string name="previous_str">Previous</string>
+    <string name="new_str">New</string>
     <string name="restore_preview">View default picture</string>
     <string name="selectnewfile_menu">View new picture from Gallery</string>
     <string name="selectfile_menu">View picture from Gallery</string>

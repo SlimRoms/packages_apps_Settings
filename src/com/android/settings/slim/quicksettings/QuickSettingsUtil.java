@@ -26,6 +26,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_BATTERY;
 import static com.android.internal.util.slim.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.slim.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.slim.QSConstants.TILE_BUGREPORT;
+import static com.android.internal.util.slim.QSConstants.TILE_CONTACT;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM_KEY;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM_DELIMITER;
@@ -166,6 +167,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_CUSTOM, R.string.title_tile_custom,
                 "com.android.systemui:drawable/ic_qs_settings"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_CONTACT, R.string.title_tile_contact,
+                "com.android.systemui:drawable/ic_qs_default_user"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -311,6 +315,8 @@ public class QuickSettingsUtil {
                 Settings.System.CUSTOM_TOGGLE_EXTRAS, null);
         Settings.System.putString(context.getContentResolver(),
                 Settings.System.CUSTOM_TOGGLE_ACTIONS, null);
+        Settings.System.putString(context.getContentResolver(),
+                Settings.System.TILE_CONTACT_ACTIONS, null);
     }
 
     public static void deleteCustomTile(Context context, String tileKey) {
@@ -434,8 +440,7 @@ public class QuickSettingsUtil {
     }
 
     public static void saveCustomExtras(
-            Context context, String action, String tilekey) {
-        String setting = Settings.System.CUSTOM_TOGGLE_EXTRAS;
+            Context context, String action, String tilekey, String setting) {
         String oldSetting = Settings.System.getString(
                 context.getContentResolver(),
                 setting);

@@ -472,6 +472,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
 
+    <string name="notification_carrier_label_title">Carrier label</string>
+    <string name="notification_custom_carrier_label_title">Custom carrier label</string>
+    <string name="notification_custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
+    <string name="notification_custom_carrier_label_notset">Custom label currently not set</string>
+
     <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Hide notification labels</string>
     <string name="notification_hide_labels_disable">Show all labels</string>

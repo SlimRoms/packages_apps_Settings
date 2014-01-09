@@ -26,6 +26,17 @@
         android:entryValues="@array/notification_hide_labels_values"
         android:persistent="false" />
 
+     <com.android.settings.slim.CustomCarrier
+         android:key="notification_custom_carrier_label"
+         android:title="@string/notification_custom_carrier_label_title"
+         android:dialogTitle="@string/notification_custom_carrier_label_title"
+         android:positiveButtonText="@string/wifi_save"
+         android:negativeButtonText="@string/wifi_cancel"
+         android:selectAllOnFocus="true"
+         android:imeOptions="actionDone"
+         android:inputType="textNoSuggestions"
+         android:persistent="false" />
+
      <com.android.settings.widget.SeekBarPreference
          android:key="notification_alpha"
          android:title="@string/notif_alpha_title" />

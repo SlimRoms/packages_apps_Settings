@@ -872,4 +872,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_halo_label_black">Blacklist from HALO</string>
     <string name="app_halo_label_white">Whitelist from HALO</string>
 
+    <!-- Quick access ribbon -->
+    <string name="cm_style_tiles">Quick Access ribbon</string>
+    <string name="slim_style_tiles">Quick Setting tiles</string>
+    <string name="quick_settings_misc_cat">Misc</string>
+    <string name="title_quick_access">Show in drawer</string>
+    <string name="title_quick_access_linked">Linked layout</string>
+    <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
+
 </resources>

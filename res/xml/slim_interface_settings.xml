@@ -34,4 +34,8 @@
         android:fragment="com.android.settings.slim.StatusBar"
         android:title="@string/status_bar_title" />
 
+    <PreferenceScreen
+        android:fragment="com.android.settings.slim.QuickSettings"
+        android:title="@string/cm_style_tiles" />
+
 </PreferenceScreen>

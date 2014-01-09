@@ -33,6 +33,9 @@
     <string name="interface_settings_title">Interfész</string>
     <string name="navigation_settings_title">Navigáció</string>
     <string name="slim_center_title">SlimCenter</string>
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="device_settings_title">Eszköz
+</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Szín választó</string>
@@ -355,6 +358,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ime">Billentyűzet váltó megnyítása</string>
     <string name="shortcut_action_kill">Alkalmazás kilövése</string>
     <string name="shortcut_action_power">Képernyő KI</string>
+    <string name="shortcut_action_theme_switch">Téma választó</string>
     <string name="shortcut_action_notifications">Értesítések</string>
     <string name="shortcut_action_menu_big">Menü</string>
     <string name="shortcut_action_qs">Gyorsbeállítás panel</string>
@@ -778,11 +782,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Hálózati mód</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Képernyő késleltetési ideje</string>
+    <string name="title_tile_quick_record">Gyors felvétel</string>
     <string name="title_tile_quiet_hours">Csendes órák</string>
     <string name="title_tile_volume">Hangerő</string>
     <string name="title_tile_expanded_desktop">Kiterjesztet képernyő</string>
     <string name="title_tile_music">Zene</string>
     <string name="title_tile_reboot">Újraindítás</string>
+    <string name="title_tile_theme">Téma választó</string>
+    <string name="dynamic_tile_ime_switcher">Billentyűzet váltó</string>
+    <string name="dynamic_tile_usb_tether">USB megosztás</string>
+    <string name="dynamic_tile_alarm">Riasztás</string>
+    <string name="dynamic_tile_bugreport">Hibajelentés</string>
+    <string name="dynamic_tiles_title">Dinamikus csempék</string>
     <string name="tiles_reset_message">Visszaállítod az alapértelmezett csempéket és elrendezést?</string>
     <string name="disable_qs">Gyors beállítások tiltva</string>
     <string name="disable_qs_message">Összes csempe eltávolítva. Gyors elérések tiltva.\n\nEngedélyezve hozzáadhatsz csempéket.</string>

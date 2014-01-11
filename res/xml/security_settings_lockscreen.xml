@@ -31,6 +31,11 @@
             android:fragment="com.android.settings.slim.LockscreenStyle"
             android:title="@string/lockscreen_style_title"/>
 
+        <CheckBoxPreference
+            android:key="lockscreen_battery_status"
+            android:title="@string/lockscreen_battery_status_title"
+            android:summary="@string/lockscreen_battery_status_summary" />
+
         <PreferenceScreen
             android:key="keyguard_enable_widgets"
             android:fragment="com.android.settings.slim.LockscreenWidgets"

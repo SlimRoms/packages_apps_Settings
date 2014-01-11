@@ -58,6 +58,12 @@
             android:entryValues="@array/quick_pulldown_values"
             android:persistent="false" />
 
+        <CheckBoxPreference
+            android:key="collapse_panel"
+            android:title="@string/title_collapse_panel"
+            android:summary="@string/summary_collapse_panel"
+            android:defaultValue="false" />
+
         <PreferenceScreen
             android:key="quicksettings_tiles_style"
             android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"

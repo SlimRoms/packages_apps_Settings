@@ -259,4 +259,12 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
+    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
+    <string name="advanced_reboot_disabled">Disable</string>
+    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
+    <string name="advanced_reboot_show_always">Show always</string>
+
 </resources>

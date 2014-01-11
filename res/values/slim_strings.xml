@@ -260,4 +260,11 @@
     <string name="doze_wakeup_doubletap_summary_on">Require a double-tap to wake the device on a doze pulse screen</string>
     <string name="doze_wakeup_doubletap_summary_off">Require a single-tap to wake the device on a doze pulse screen (default)</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
+    <string name="advanced_reboot_disabled">Disable</string>
+    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
+    <string name="advanced_reboot_show_always">Show always</string>
+
 </resources>

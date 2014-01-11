@@ -86,8 +86,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String KEY_ADVANCED_SECURITY = "advanced_security";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
+<<<<<<< HEAD
     private static final String KEY_FINGERPRINT_SETTINGS = "fingerprint_settings";
+=======
     private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
+>>>>>>> 593b8ee... Settings: Add Advanced reboot [2/2]
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CHANGE_TRUST_AGENT_SETTINGS = 126;
@@ -319,7 +322,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mToggleAppInstallation.setEnabled(false);
         }
 
-
+<<<<<<< HEAD
+=======
         // AppOps summary, only visible when strict mode is enabled.
         if (!AppOpsManager.isStrictEnable()) {
             Preference appOpsSummary = findPreference(KEY_APP_OPS_SUMMARY);
@@ -338,7 +342,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             deviceAdminCategory.removePreference(mAdvancedReboot);
         }
 
-
+>>>>>>> 593b8ee... Settings: Add Advanced reboot [2/2]
         // Advanced Security features
         PreferenceGroup advancedCategory =
                 (PreferenceGroup)root.findPreference(KEY_ADVANCED_SECURITY);

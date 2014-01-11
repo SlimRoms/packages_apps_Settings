@@ -63,6 +63,19 @@
         <item>@string/volume_key_cursor_control_on_reverse</item>
     </string-array>
 
+    <!-- Advanced reboot menu dev options -->
+    <string-array name="advanced_reboot_entries">
+        <item>@string/advanced_reboot_disabled</item>
+        <item>@string/advanced_reboot_hide_on_keyguard</item>
+        <item>@string/advanced_reboot_show_always</item>
+    </string-array>
+
+    <string-array name="advanced_reboot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="volume_key_cursor_control_values" translatable="false">
         <item>0</item>
         <item>1</item>

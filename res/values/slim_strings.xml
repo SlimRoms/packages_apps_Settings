@@ -249,4 +249,11 @@
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
+    <string name="advanced_reboot_disabled">Disable</string>
+    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
+    <string name="advanced_reboot_show_always">Show always</string>
+
 </resources>

@@ -764,6 +764,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_battery">Akkumulátor</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Fényerő</string>
+    <string name="title_tile_custom">Egyéni</string>
     <string name="title_tile_sleep">Alvó állapot</string>
     <string name="title_tile_location">Hely</string>
     <string name="title_tile_torch">Zseblámpa</string>
@@ -796,6 +797,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="disable_qs">Gyors beállítások tiltva</string>
     <string name="disable_qs_message">Összes csempe eltávolítva. Gyors elérések tiltva.\n\nEngedélyezve hozzáadhatsz csempéket.</string>
     <string name="help_qs_message">Gyors beállítás csempe hozzáadásához nyomd meg a Hozzáadás gombot és válaszd ki amelyiket szeretnéd. Csempék átrendezéséhez hosszan nyomj rajta és húzd a kivánt helyre. Ha törölni szeretne egy csempét, húzza a törlés csempére.\n\nLetiltva a Gyors beállításokat, eltávolítja a csempéket.</string>
+    <string name="custom_tile_dialog_text">Minden művelet új állapotot add a csempének. Minden kattintás a következő állapotra vált. Hosszan nyomásra hozzáad egy hosszan nyomás műveletet. Ha nem kattintasz létező műveletre akkor a hossza nyomás ikonja használja a csempét. Lehetővé teszi, hogy megváltoztassa az állapotát kattintással és elindítja a műveletet hosszan nyomásra.</string>
+    <string name="custom_tile_dialog_title">Egyéni csempe művelet</string>
+    <string name="custom_toggle_extras">Egyéni csempe extrák</string>
+    <string name="custom_toggle_collapse_check">Összeomló értesítési árnyék</string>
+    <string name="custom_toggle_match_state_check">Kattintási művelet az ikonnak megfelelő</string>
+    <string name="custom_tile_long_press">Hosszan nyomás:</string>
+    <string name="custom_tile_null_warning">Be kell állítani egy műveletet elösszőr</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Stílus</string>
@@ -885,5 +893,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Média vezérlés</string>
     <string name="volume_keys_control_media_stream_summary">Hangerő gombokkal vezérli a média hangerejét</string>
+
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Média újra keresése a tárolón</string>
+    <string name="storage_rescan_media_complete">Keresés befejezve</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">Az APN törölve lesz.</string>
+
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Minimum rezgés időtartam</string>
 
 </resources>

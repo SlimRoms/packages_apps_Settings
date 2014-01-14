@@ -181,12 +181,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
         mVibrationDuration = (SeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
-        mVibrationDuration.setInitValue(userMillis);
         mVibrationDuration.setInterval(1);
-        mVibrationDuration.displaySameValue(true);
-        mVibrationDuration.zeroDefault(true);
+        mVibrationDuration.setDefault(0);
         mVibrationDuration.isMilliseconds(true);
-        mVibrationDuration.setProperty(Settings.System.MINIMUM_VIBRATION_DURATION);
+        mVibrationDuration.setInitValue(userMillis);
         mVibrationDuration.setOnPreferenceChangeListener(this);
         mLockSounds = (CheckBoxPreference) findPreference(KEY_LOCK_SOUNDS);
         mLockSounds.setPersistent(false);

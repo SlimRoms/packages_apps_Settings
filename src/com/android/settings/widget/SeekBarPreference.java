@@ -21,16 +21,15 @@ public class SeekBarPreference extends Preference
     public static int maximum = 100;
     public int interval = 5;
 
-    private String property;
-
     private TextView monitorBox;
     private SeekBar bar;
 
     int defaultValue = 60;
+    int mSetDefault = -1;
+    int mMultiply = -1;
+    int mMinimum = -1;
     boolean mDisablePercentageValue = false;
-    boolean mZeroDefault = false;
     boolean mIsMilliSeconds = false;
-    boolean mSameValue = false;
 
     private OnPreferenceChangeListener changer;
 
@@ -45,41 +44,16 @@ public class SeekBarPreference extends Preference
 
         monitorBox = (TextView) layout.findViewById(R.id.monitor_box);
         bar = (SeekBar) layout.findViewById(R.id.seek_bar);
-        int progress;
-        try{
-            float setting = Settings.System.getFloat(
-                    getContext().getContentResolver(), property);
-            progress = (int) (mSameValue ? setting : (setting * 100));
-        } catch (Exception e) {
-            progress = defaultValue;
-        }
         bar.setOnSeekBarChangeListener(this);
-        bar.setProgress(progress);
-        if (progress == 0 && mZeroDefault) {
-            monitorBox.setText(R.string.default_string);
-        } else {
-            if (mIsMilliSeconds) {
-                monitorBox.setText(progress + " ms");
-            } else if (!mDisablePercentageValue) {
-                monitorBox.setText(progress + "%");
-            }
-        }
+        bar.setProgress(defaultValue);
+
         return layout;
     }
 
     public void setInitValue(int progress) {
         defaultValue = progress;
-        if (bar!=null) {
-            bar.setProgress(progress);
-            if (progress == 0 && mZeroDefault) {
-                monitorBox.setText(R.string.default_string);
-            } else {
-                if (mIsMilliSeconds) {
-                    monitorBox.setText(progress + " ms");
-                } else if (!mDisablePercentageValue) {
-                    monitorBox.setText(progress + "%");
-                }
-            }
+        if (bar != null) {
+            bar.setProgress(defaultValue);
         }
     }
 
@@ -102,52 +76,46 @@ public class SeekBarPreference extends Preference
         progress = Math.round(((float) progress) / interval) * interval;
         seekBar.setProgress(progress);
 
-        if (progress == 0 && mZeroDefault) {
+        if (mMultiply != -1) {
+            progress = progress * mMultiply;
+        }
+
+        if (mMinimum != -1) {
+            progress += mMinimum;
+        }
+
+        if (progress == mSetDefault) {
             monitorBox.setText(R.string.default_string);
         } else {
             if (mIsMilliSeconds) {
                 monitorBox.setText(progress + " ms");
             } else if (!mDisablePercentageValue) {
                 monitorBox.setText(progress + "%");
+            } else {
+                monitorBox.setText(progress);
             }
         }
         changer.onPreferenceChange(this, Integer.toString(progress));
-    }
-
-    public void setValue(int progress){
-        if (bar!=null) {
-            bar.setProgress(progress);
-            if (progress == 0 && mZeroDefault) {
-                monitorBox.setText(R.string.default_string);
-            } else {
-                if (mIsMilliSeconds) {
-                    monitorBox.setText(progress + " ms");
-                } else if (!mDisablePercentageValue) {
-                    monitorBox.setText(progress + "%");
-                }
-            }
-            changer.onPreferenceChange(this, Integer.toString(progress));
-        }
     }
 
     public void disablePercentageValue(boolean disable) {
         mDisablePercentageValue = disable;
     }
 
-    public void setProperty(String property) {
-        this.property = property;
-    }
-
     public void setInterval(int inter) {
         interval = inter;
     }
 
-    public void displaySameValue(boolean same) {
-        mSameValue = same;
+    public void setDefault(int defaultVal) {
+        mSetDefault = defaultVal;
     }
 
-    public void zeroDefault(boolean displayDefault) {
-        mZeroDefault = displayDefault;
+    public void multiplyValue(int val) {
+        mMultiply = val;
+    }
+
+    public void minimumValue(int val) {
+        mMinimum = val;
     }
 
     public void isMilliseconds(boolean millis) {

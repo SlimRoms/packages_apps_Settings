@@ -236,7 +236,6 @@
     <string name="notification_drawer_title">Панель уведомлений</string>
     <string name="notification_style_title">Стиль панели уведомления</string>
     <string name="notification_style_summary">Изменить стиль панели уведомления</string>
-    <string name="notification_hide_carrier_title">Скрывать имя оператора</string>
     <string name="notification_wallpaper_title">Фон панели уведомлений</string>
     <string name="notification_wallpaper_landscape_title">Фон панели уведомлений в ландшафтном режиме</string>
     <string name="notification_background_color_fill">Заливка цветом</string>
@@ -628,7 +627,6 @@
     <string name="shortcuts_color_mode_title">Режим цвета значка</string>
     <string name="shortcuts_color_mode_summary">Изменить режим цвета значка ярлыка</string>
     <string name="notification_drawer_qs_title">Панель уведомлений и быстрых настроек</string>
-    <string name="notification_hide_carrier_summary">Скрывать имя оператора и Wi-Fi-сети в панели уведомлений</string>
     <string name="battery_icon_title">Значок батареи</string>
     <string name="battery_status_icon">Значок</string>
     <string name="battery_status_percentage">Проценты</string>

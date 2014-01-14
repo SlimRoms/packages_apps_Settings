@@ -19,11 +19,12 @@
     <PreferenceCategory
         android:title="@string/notification_drawer_title" />
 
-     <CheckBoxPreference
-         android:key="notification_hide_carrier"
-         android:title="@string/notification_hide_carrier_title"
-         android:summary="@string/notification_hide_carrier_summary"
-         android:defaultValue="false" />
+    <ListPreference
+        android:key="notification_hide_labels"
+        android:title="@string/notification_hide_labels_title"
+        android:entries="@array/notification_hide_labels_entries"
+        android:entryValues="@array/notification_hide_labels_values"
+        android:persistent="false" />
 
      <com.android.settings.widget.SeekBarPreference
          android:key="notification_alpha"

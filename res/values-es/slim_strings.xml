@@ -460,8 +460,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_qs_title">Panel de notificaciones &amp; ajustes rápidos</string>
     <string name="notification_drawer_title">Panel de notificaciones</string>
-    <string name="notification_hide_carrier_title">Ocultar nombre de operador</string>
-    <string name="notification_hide_carrier_summary">Ocultar nombre de operador y red Wi-Fi en el panel de notificaciones</string>
     <string name="notification_shortcuts_settings_title">Accesos directos</string>
     <string name="notification_shortcuts_settings_summary">Mostrar accesos directos en el panel de notificaciones</string>
 

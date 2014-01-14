@@ -460,8 +460,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_qs_title">Értesítési &amp; QS panel</string>
     <string name="notification_drawer_title">Értesítési panel</string>
-    <string name="notification_hide_carrier_title">Hálózati címke elrejtése</string>
-    <string name="notification_hide_carrier_summary">Szolgáltató és Wi-Fi címke elrejtése az Értesítési panelen</string>
     <string name="notification_shortcuts_settings_title">Parancsikonok</string>
     <string name="notification_shortcuts_settings_summary">Parancsikonok kihelyezése az Értesítési panelen</string>
 

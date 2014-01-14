@@ -769,6 +769,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_sleep">Apagar pantalla</string>
     <string name="title_tile_location">Localización</string>
     <string name="title_tile_torch">Linterna</string>
+    <string name="title_tile_custom">Personalizado</string>
     <string name="title_tile_lockscreen">Bloqueo de pantalla</string>
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Datos móviles</string>
@@ -796,6 +797,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="disable_qs">Ajustes rápidos deshabilitados</string>
     <string name="disable_qs_message">Todos los botones se han borrado. Los ajustes rápidos están deshabilitados.\n\nPara habilitarlos añade un botón.</string>
     <string name="help_qs_message">Para añadir un botón de ajustes rápidos, toca en el botón Añadir y selecciona el botón que quieras. Para reordenar los botones pulsa prolongadamente en uno y arrastralo a la posición que quieras. Si quieres eliminar un botón, arrástralo sobre el botón Borrar que aparece al arrastrarlo.\n\nPara deshabilitar los ajustes rápidos, borra todos los botones.\n\nPara configurar los botones dinámicos toca ,en la zona superior derecha de la panatalla, el icono correspondiente.\n\nPara deshabilitar el panel de ajustes rápidos elimina todos los botones.</string>
+    <string name="custom_tile_dialog_text">Cada acción creará un nuevo estado al interruptor. Cada toque cambiará al siguiente estado. Pulsa de forma prolongada para añadir acciones de pulsación larga. Si no se definen acciones al tocar se usará la pulsación larga como acción del interruptor. Esto permite cambiar el estado tocando y lanzar acciones con pulsación prolongada.</string>
+    <string name="custom_tile_dialog_title">Acciones del int. persolanizado</string>
+    <string name="custom_toggle_extras">Extras del int. personalizado</string>
+    <string name="custom_toggle_collapse_check">Cerrar panel de notificaciones</string>
+    <string name="custom_toggle_match_state_check">Acción al tocar concuerda con el icono</string>
+    <string name="custom_tile_long_press">Pulsación larga:</string>
+    <string name="custom_tile_null_warning">Primero se debe definir una acción</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Estilo</string>
@@ -890,4 +898,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media">Buscar ficheros multimedia en la tarjeta de almacenamiento</string>
     <string name="storage_rescan_media_complete">Búsqueda completada</string>
     
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Duración mínima de la vibración</string>
+
 </resources>

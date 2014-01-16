@@ -380,7 +380,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
         mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
-                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 1)));
+                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 0)));
         mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
         mAdvancedReboot.setOnPreferenceChangeListener(this);
 

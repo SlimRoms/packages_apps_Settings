@@ -781,4 +781,12 @@
     <string name="listview_anticipate_overshoot_interpolator">Ускорить и проскочить</string>
     <string name="listview_bounce_interpolator">Отскакивать</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Расширенная перезагрузка</string>
+    <string name="advanced_reboot_summary">Включить отображение в меню управления питанием настроек для загрузки в рекавери и бутлоадер</string>
+    <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
+    <string name="advanced_reboot_disabled">Выключено</string>
+    <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
+    <string name="advanced_reboot_show_always">Всегда показывать</string>
+
 </resources>

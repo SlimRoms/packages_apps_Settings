@@ -707,7 +707,9 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             try {
                 mTemporaryImage.createNewFile();
                 mTemporaryImage.setWritable(true, false);
-                mIconPicker.pickGallery(getId(), mTemporaryImage);
+                // Layout will scale down for us
+                mIconPicker.pickGalleryWithSize(
+                    getId(), mTemporaryImage, 360);
             } catch (IOException e) {
                 Log.d(TAG, "Could not create temporary icon", e);
             }

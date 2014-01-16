@@ -35,7 +35,8 @@
                     android:padding="5dp"
                     android:layout_width="@android:dimen/app_icon_size"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_height="@android:dimen/app_icon_size" />
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:scaleType="centerInside" />
 
                 <View
                     android:layout_width="2dp"
@@ -86,7 +87,8 @@
                     android:padding="5dp"
                     android:layout_width="@android:dimen/app_icon_size"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_height="@android:dimen/app_icon_size" />
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:scaleType="centerInside" />
 
                 <View
                     android:layout_width="2dp"
@@ -137,7 +139,8 @@
                     android:padding="5dp"
                     android:layout_width="@android:dimen/app_icon_size"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_height="@android:dimen/app_icon_size" />
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:scaleType="centerInside" />
 
                 <View
                     android:layout_width="2dp"
@@ -188,7 +191,8 @@
                     android:padding="5dp"
                     android:layout_width="@android:dimen/app_icon_size"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_height="@android:dimen/app_icon_size" />
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:scaleType="centerInside" />
 
                 <View
                     android:layout_width="2dp"
@@ -239,7 +243,8 @@
                     android:padding="5dp"
                     android:layout_width="@android:dimen/app_icon_size"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_height="@android:dimen/app_icon_size" />
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:scaleType="centerInside" />
 
                 <View
                     android:layout_width="2dp"

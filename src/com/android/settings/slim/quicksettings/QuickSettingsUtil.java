@@ -320,6 +320,14 @@ public class QuickSettingsUtil {
     }
 
     public static void deleteCustomTile(Context context, String tileKey) {
+        String tileExtra = getCustomExtras(context,
+                Settings.System.CUSTOM_TOGGLE_EXTRAS, tileKey);
+        if (tileExtra != null) {
+            String[] getResolvedIcon = tileExtra.split(TILE_CUSTOM_DELIMITER);
+            if (getResolvedIcon.length > 2) {
+                deleteCustomIcon(getResolvedIcon[1]);
+            }
+        }
         deleteActions(context,
                 Settings.System.CUSTOM_TOGGLE_EXTRAS, tileKey);
         for (int i = 0; i < 5; i++) {
@@ -330,7 +338,7 @@ public class QuickSettingsUtil {
     }
 
     private static void deleteCustomIcon(String file) {
-        if (file != null) {
+        if (file != null && !file.equals(" ")) {
             File f = new File(file);
             if (f != null && f.exists()) {
                 f.delete();
@@ -440,10 +448,72 @@ public class QuickSettingsUtil {
     }
 
     public static void saveCustomExtras(
+            Context context, String tileKey, String collapseMatch,
+            String icon, String name, String values, String resolver, String type) {
+        String setting = Settings.System.CUSTOM_TOGGLE_EXTRAS;
+        String oldSetting = getCustomExtras(context, setting, tileKey);
+        ArrayList<String> oldList = getCustomArray(context, setting);
+        ArrayList<String> newList = new ArrayList<String>();
+
+        String[] indexes = { " ", " ", " ", " ", " ", " " };
+
+        if (oldSetting != null) {
+            String[] returned = oldSetting.split(TILE_CUSTOM_DELIMITER);
+            if (returned.length == 6) {
+                indexes[0] = returned[0];
+                indexes[1] = returned[1];
+                indexes[2] = returned[2];
+                indexes[3] = returned[3];
+                indexes[4] = returned[4];
+                indexes[5] = returned[5];
+            } else {
+                indexes[0] = returned[0];
+            }
+        }
+
+        if (collapseMatch != null) {
+            indexes[0] = collapseMatch;
+        }
+        if (icon != null) {
+            deleteCustomIcon(indexes[1]);
+            indexes[1] = icon;
+        }
+        if (name != null) {
+            indexes[2] = name;
+        }
+        if (values != null) {
+            indexes[3] = values;
+        }
+        if (resolver != null) {
+            indexes[4] = resolver;
+        }
+        if (type != null) {
+            indexes[5] = type;
+        }
+
+        newList.add(
+                indexes[0] + TILE_CUSTOM_DELIMITER
+                + indexes[1] + TILE_CUSTOM_DELIMITER
+                + indexes[2] + TILE_CUSTOM_DELIMITER
+                + indexes[3] + TILE_CUSTOM_DELIMITER
+                + indexes[4] + TILE_CUSTOM_DELIMITER
+                + indexes[5] + TILE_CUSTOM_KEY
+                + tileKey);
+
+        for (String tile : oldList) {
+            if (tile != null && !tile.contains(tileKey)) {
+                newList.add(tile);
+            }
+        }
+
+        Settings.System.putString(
+                context.getContentResolver(), setting, getTileStringFromList(newList));
+    }
+
+    public static void saveExtras(
             Context context, String action, String tilekey, String setting) {
         String oldSetting = Settings.System.getString(
-                context.getContentResolver(),
-                setting);
+                context.getContentResolver(), setting);
         ArrayList<String> oldList = getCustomArray(context, setting);
         ArrayList<String> newList = new ArrayList<String>();
         newList.add(action + TILE_CUSTOM_KEY + tilekey);
@@ -455,7 +525,9 @@ public class QuickSettingsUtil {
         }
 
         Settings.System.putString(
-                context.getContentResolver(), setting, getTileStringFromList(newList));
+                context.getContentResolver(),
+                Settings.System.TILE_CONTACT_ACTIONS,
+                getTileStringFromList(newList));
     }
 
     public static void saveCustomActions(

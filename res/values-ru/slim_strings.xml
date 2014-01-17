@@ -685,6 +685,8 @@
     <string name="lockscreen_target_color_title">Цвет значков действий</string>
     <string name="lockscreen_enable_eight_targets_dialog">Включение этой настройки сбросит ваши текущие действия на экране блокировки к значениям по умолчанию.</string>
     <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nНельзя использовать одновременно и кольцо из 8 действий, и ярлыки экрана блокировки.</string>
+    <string name="lockscreen_glowpad_torch_title">Фонарик на ползунке</string>
+    <string name="lockscreen_glowpad_torch_summary">Дважды нажмите и удерживайте ползунок, чтобы включить фонарик</string>
     <string name="lockscreen_style_reset_message">Сбросить все цвета экрана блокировки?</string>
     <string name="lockscreen_icon_title">Значок ползунка блокировки</string>
     <string name="lockscreen_lock_icon_custom">Свой значок</string>

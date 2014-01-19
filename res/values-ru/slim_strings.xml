@@ -75,6 +75,14 @@
     <string name="increasing_ring_interval_10seconds">10 секунд</string>
     <string name="link_volume_ringtones">Связать громкость и звуки уведомления</string>
     <string name="volume_ring_only_description">Рингтон</string>
+
+    <!-- Volume Overlay -->
+    <string name="volume_overlay_title">Панель громкости</string>
+    <string name="volume_overlay_single">Одиночная</string>
+    <string name="volume_overlay_expandable">Расширяемая</string>
+    <string name="volume_overlay_expanded">Расширенная</string>
+    <string name="volume_overlay_disable">Нет</string>
+
     <string name="camera_sounds_title">Звук затвора камеры</string>
     <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
     <string name="sound_title">Звук</string>
@@ -252,6 +260,7 @@
     <string name="title_tile_battery">Батарея</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Подсветка</string>
+    <string name="title_tile_contact">Контакт</string>
     <string name="title_tile_custom">Свой ярлык</string>
     <string name="title_tile_torch">Фонарь</string>
     <string name="title_tile_lockscreen">Экран блокировки</string>
@@ -277,6 +286,18 @@
     <string name="quick_pulldown_off">Выкл.</string>
     <string name="quick_pulldown_left">Левый</string>
     <string name="quick_pulldown_right">Правый</string>
+
+    <!-- QuickSettings: Quick Collapse -->
+    <string name="title_collapse_panel">Быстрое сворачивание</string>
+    <string name="summary_collapse_panel">Закрывать панель уведомлений после выбора</string>
+
+    <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">\"Умная\" панель уведомлений</string>
+    <string name="smart_pulldown_summary">Открывать быстрые настройки, если нет %1$s уведомлений</string>
+    <string name="smart_pulldown_off">Выкл</string>
+    <string name="smart_pulldown_dismissable">Удаляемые</string>
+    <string name="smart_pulldown_persistent">Постоянные</string>
+
     <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
     <string name="quicksettings_tiles_style_additional_options">Дополнительные настройки</string>
@@ -790,5 +811,9 @@
     <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
+
+    <!-- Keyguard always show battery -->
+    <string name="lockscreen_battery_status_title">Состояние батареи</string>
+    <string name="lockscreen_battery_status_summary">Всегда показывать состояние батареи на экране блокировки</string>
 
 </resources>

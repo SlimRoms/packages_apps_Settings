@@ -211,6 +211,22 @@
         <item>2</item>
     </string-array>
 
+    <!-- Volume Overlay entries. Do not translate. -->
+    <string-array name="volume_overlay_entries" translatable="false">
+        <item>@string/volume_overlay_single</item>
+        <item>@string/volume_overlay_expandable</item>
+        <item>@string/volume_overlay_expanded</item>
+        <item>@string/volume_overlay_disable</item>
+    </string-array>
+
+    <!-- Values for Volume Overlay. Do not translate. -->
+    <string-array name="volume_overlay_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Auto keyboard rotation -->
     <string-array name="keyboard_rotation_timeout_entries" translatable="false">
         <item>2s</item>

@@ -88,7 +88,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_GLOWPAD_TORCH, 0) == 1);
         mGlowpadTorch.setOnPreferenceChangeListener(this);
 
-        if (!DeviceUtils.deviceSupportsTorch(getActivity())) {
+        if (!DeviceUtils.deviceSupportsTorch(getActivity().getApplicationContext())) {
             prefs.removePreference(mGlowpadTorch);
         }
 

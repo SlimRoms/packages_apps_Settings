@@ -17,6 +17,7 @@
 package com.android.settings.slim.quicksettings;
 
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM;
+import static com.android.internal.util.slim.QSConstants.TILE_CONTACT;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM_KEY;
 import static com.android.internal.util.slim.QSConstants.TILE_DELIMITER;
 
@@ -26,6 +27,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -33,11 +35,13 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.TypedValue;
@@ -102,6 +106,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
     private static final int DLG_CUSTOM_TILE_EXTRAS = 10;
 
     private static final int NUMBER_ACTIONS = 5;
+    private static final int PICK_CONTACT = 145;
 
     private DraggableGridView mDragView;
     private ViewGroup mContainer;
@@ -208,6 +213,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             QuickSettingsUtil.TileInfo tile = null;
             if (tileindex.contains(TILE_CUSTOM)) {
                 tile = QuickSettingsUtil.TILES.get(TILE_CUSTOM);
+            } else if (tileindex.contains(TILE_CONTACT)) {
+                tile = QuickSettingsUtil.TILES.get(TILE_CONTACT);
             } else {
                 tile = QuickSettingsUtil.TILES.get(tileindex);
             }
@@ -237,7 +244,10 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             iv.setImageDrawable(getResources().getDrawable(iconRegId));
         } else {
             final boolean isUserTile =
-                    titleId == QuickSettingsUtil.TILES.get(QSConstants.TILE_USER).getTitleResId();
+                    titleId == QuickSettingsUtil.TILES.get(
+                            QSConstants.TILE_USER).getTitleResId()
+                            ||  titleId == QuickSettingsUtil.TILES.get(
+                            TILE_CONTACT).getTitleResId();
             if (mSystemUiResources != null && iconSysId != null) {
                 int resId = mSystemUiResources.getIdentifier(iconSysId, null, null);
                 if (resId > 0) {
@@ -278,6 +288,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                             QSConstants.TILE_MUSIC).getTitleResId()
                 || titleId == QuickSettingsUtil.TILES.get(
                             QSConstants.TILE_CUSTOM).getTitleResId()
+                || titleId == QuickSettingsUtil.TILES.get(
+                            QSConstants.TILE_CONTACT).getTitleResId()
                 || QuickSettingsUtil.isTileAvailable(QSConstants.TILE_NETWORKMODE)
                         && titleId == QuickSettingsUtil.TILES.get(
                             QSConstants.TILE_NETWORKMODE).getTitleResId()) {
@@ -310,9 +322,13 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             public void onDelete(int index) {
                 ArrayList<String> tiles = QuickSettingsUtil.getTileListFromString(
                         QuickSettingsUtil.getCurrentTiles(getActivity()));
-                if (tiles.get(index).contains(TILE_CUSTOM)) {
+                String tileIndex = tiles.get(index);
+                if (tileIndex.contains(TILE_CUSTOM)) {
                     QuickSettingsUtil.deleteCustomTile(
-                            getActivity(), findCustomKey(tiles.get(index)));
+                            getActivity(), findCustomKey(tileIndex));
+                } else if (tileIndex.contains(TILE_CONTACT)) {
+                    QuickSettingsUtil.deleteActions(getActivity(),
+                            Settings.System.TILE_CONTACT_ACTIONS, findCustomKey(tileIndex));
                 }
                 tiles.remove(index);
                 QuickSettingsUtil.saveCurrentTiles(getActivity(),
@@ -348,6 +364,12 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                     if (tiles.get(arg2).contains(TILE_CUSTOM)) {
                         mCurrentCustomTile = findCustomKey(tiles.get(arg2));
                         showDialogInner(DLG_CUSTOM_TILE);
+                    }
+                    if (tiles.get(arg2).contains(TILE_CONTACT)) {
+                        mCurrentCustomTile = findCustomKey(tiles.get(arg2));
+                        Intent intent = new Intent(
+                                Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                        startActivityForResult(intent, PICK_CONTACT);
                     }
                     return;
                 }
@@ -527,19 +549,43 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == IconPicker.REQUEST_PICK_SYSTEM
-                || requestCode == IconPicker.REQUEST_PICK_GALLERY
-                || requestCode == IconPicker.REQUEST_PICK_ICON_PACK) {
-            mIconPicker.onActivityResult(requestCode, resultCode, data);
-        } else if (requestCode != Activity.RESULT_CANCELED
-                && resultCode != Activity.RESULT_CANCELED) {
-            mPicker.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
+                mPicker.onActivityResult(requestCode, resultCode, data);
+            } else if (requestCode == IconPicker.REQUEST_PICK_SYSTEM
+                    || requestCode == IconPicker.REQUEST_PICK_GALLERY
+                    || requestCode == IconPicker.REQUEST_PICK_ICON_PACK) {
+                mIconPicker.onActivityResult(requestCode, resultCode, data);
+            } else if (requestCode == PICK_CONTACT) {
+                Uri contactData = data.getData();
+                String[] projection = new String[]{
+                        ContactsContract.Contacts.LOOKUP_KEY
+                };
+                String selection = ContactsContract.Contacts.DISPLAY_NAME + " IS NOT NULL";
+                CursorLoader cursorLoader = new CursorLoader(getActivity().getBaseContext(),
+                        contactData, projection, selection, null, null);
+                Cursor cursor = cursorLoader.loadInBackground();
+                if (cursor != null) {
+                    try {
+                        if (cursor.moveToFirst()) {
+                            String lookupKey = cursor.getString(cursor
+                                    .getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY));
+                            QuickSettingsUtil.saveCustomExtras(getActivity(),
+                                    lookupKey, mCurrentCustomTile,
+                                    Settings.System.TILE_CONTACT_ACTIONS);
+                        }
+                    } finally {
+                        cursor.close();
+                    }
+                }
+            }
         }
     }
 
     @Override
     public void iconPicked(int requestCode, int resultCode, Intent intent) {
-        Drawable iconDrawable = null;
         if (requestCode == IconPicker.REQUEST_PICK_GALLERY) {
             if (resultCode == Activity.RESULT_OK) {
                 if (mTemporaryImage.length() == 0 || !mTemporaryImage.exists()) {
@@ -554,8 +600,6 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                 String path = imageFile.getAbsolutePath();
                 mTemporaryImage.renameTo(imageFile);
                 imageFile.setReadable(true, false);
-                iconDrawable = LockscreenTargetUtils.getDrawableFromFile(
-                        getActivity(), path);
 
                 deleteCustomIcon();  // Delete current icon if it exists before saving new.
                 QuickSettingsUtil.saveCustomActions(getActivity(), mCurrentAction, 2,
@@ -962,18 +1006,19 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                                 @Override
                                 public void run() {
                                     String tiles = QuickSettingsUtil.getCurrentTiles(getActivity());
+                                    String picked = getOwner().mTileAdapter.getTileId(position);
                                     ArrayList<String> curr = new ArrayList<String>();
                                     // A blank string indicates tiles are currently disabled
                                     // Avoid index being off by one when we add a new tile
                                     if (!tiles.equals("")) {
                                         curr = QuickSettingsUtil.getTileListFromString(tiles);
                                     }
-                                    if (getOwner().mTileAdapter.getTileId(
-                                            position).contains(TILE_CUSTOM)) {
-                                        curr.add(getOwner().mTileAdapter.getTileId(position)
+                                    if (picked.contains(TILE_CUSTOM)
+                                            || picked.contains(TILE_CONTACT)) {
+                                        curr.add(picked
                                                 + TILE_CUSTOM_KEY + System.currentTimeMillis());
                                     } else {
-                                        curr.add(getOwner().mTileAdapter.getTileId(position));
+                                        curr.add(picked);
                                     }
                                     QuickSettingsUtil.saveCurrentTiles(getActivity(),
                                             QuickSettingsUtil.getTileStringFromList(curr));
@@ -1059,7 +1104,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                                     Settings.System.CUSTOM_TOGGLE_EXTRAS,
                                     tileKey) == null) {
                                 QuickSettingsUtil.saveCustomExtras(getActivity(),
-                                        Integer.toString(1), tileKey);
+                                        Integer.toString(1), tileKey,
+                                        Settings.System.CUSTOM_TOGGLE_EXTRAS);
                             }
                             getOwner().showDialogInner(DLG_CUSTOM_TILE_EXTRAS);
                         }
@@ -1159,7 +1205,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                                 }
                             }
                             QuickSettingsUtil.saveCustomExtras(getActivity(),
-                                    Integer.toString(userValue), tileKey);
+                                    Integer.toString(userValue), tileKey,
+                                    Settings.System.CUSTOM_TOGGLE_EXTRAS);
                         }
                     })
                     .create();
@@ -1236,10 +1283,11 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         public boolean isEnabled(int position) {
             String usedTiles = QuickSettingsUtil.getCurrentTiles(
                     getContext());
-            if (TILE_CUSTOM.equals(mTiles[position].tile.getId())) {
+            String tile = mTiles[position].tile.getId();
+            if (TILE_CUSTOM.equals(tile) || TILE_CONTACT.equals(tile)) {
                 return true;
             }
-            return !(usedTiles.contains(mTiles[position].tile.getId()));
+            return !usedTiles.contains(tile);
         }
     }
 }

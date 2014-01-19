@@ -79,13 +79,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
 
-        /* Tablet case in handled in PhoneStatusBar
-        if (!DeviceUtils.isPhone(getActivity())
-            || !DeviceUtils.deviceSupportsMobileData(getActivity())) {
-            // Nothing for tablets, large screen devices and non mobile devices which doesn't show
-            // information in notification drawer.....remove options
-            prefs.removePreference(mHideCarrier);
-        }*/
+        if (!DeviceUtils.isPhone(getActivity())) {
+            // Nothing for tablets and large screen devices which doesn't show
+            // information in notification drawer.....remove option
+            prefs.removePreference(mHideLabels);
+        }
 
         float transparency;
         try{

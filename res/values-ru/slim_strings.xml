@@ -139,6 +139,10 @@
     <string name="group_applications">Приложения</string>
     <string name="notification_shortcuts_settings_title">Ярлыки</string>
     <string name="notification_shortcuts_settings_summary">Показывать ярлыки в панели уведомлений</string>
+    <string name="notification_carrier_label_title">Имя оператора</string>
+    <string name="notification_custom_carrier_label_title">Установить имя оператора</string>
+    <string name="notification_custom_carrier_label_explain">Пожалуйста, введите новое имя. Пустое вернет к значению по умолчанию.</string>
+    <string name="notification_custom_carrier_label_notset">Имя оператора не установлено</string>
     <string name="display_category_light_options_title">Настройки LED</string>
     <string name="light_sensor_current_value">Текущее значение сенсора освещения: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Автоуровни яркости</string>
@@ -815,5 +819,13 @@
     <!-- Keyguard always show battery -->
     <string name="lockscreen_battery_status_title">Состояние батареи</string>
     <string name="lockscreen_battery_status_summary">Всегда показывать состояние батареи на экране блокировки</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_hide_labels_title">Скрывать метки уведомлений</string>
+    <string name="notification_hide_labels_disable">Показывать все метки</string>
+    <string name="notification_hide_labels_carrier">Скрывать имя оператора</string>
+    <string name="notification_hide_labels_wifi">Скрывать имя WiFi-сети</string>
+    <string name="notification_hide_labels_all">Скрывать все метки</string>
+    <string name="notification_hide_labels_text">в панели уведомлений</string>
 
 </resources>

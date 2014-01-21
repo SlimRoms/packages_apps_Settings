@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.ServiceManager;
 import android.provider.Settings;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.view.IWindowManager;
 
 import com.android.settings.R;
@@ -28,7 +29,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class NavigationSettings extends SettingsPreferenceFragment {
 
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
     private static final String KEY_PIE_SETTINGS = "pie_settings";
 
     @Override
@@ -36,6 +37,14 @@ public class NavigationSettings extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.slim_navigation_settings);
+
+        // Hide Hardware Keys menu if device doesn't have any
+        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
+        int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (deviceKeys == 0 && hardwareKeys != null) {
+            getPreferenceScreen().removePreference(hardwareKeys);
+        }
     }
 
 }

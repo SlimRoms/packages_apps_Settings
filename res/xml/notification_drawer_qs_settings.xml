@@ -19,11 +19,23 @@
     <PreferenceCategory
         android:title="@string/notification_drawer_title" />
 
-     <CheckBoxPreference
-         android:key="notification_hide_carrier"
-         android:title="@string/notification_hide_carrier_title"
-         android:summary="@string/notification_hide_carrier_summary"
-         android:defaultValue="false" />
+    <ListPreference
+        android:key="notification_hide_labels"
+        android:title="@string/notification_hide_labels_title"
+        android:entries="@array/notification_hide_labels_entries"
+        android:entryValues="@array/notification_hide_labels_values"
+        android:persistent="false" />
+
+     <com.android.settings.slim.CustomCarrier
+         android:key="notification_custom_carrier_label"
+         android:title="@string/notification_custom_carrier_label_title"
+         android:dialogTitle="@string/notification_custom_carrier_label_title"
+         android:positiveButtonText="@string/wifi_save"
+         android:negativeButtonText="@string/wifi_cancel"
+         android:selectAllOnFocus="true"
+         android:imeOptions="actionDone"
+         android:inputType="textNoSuggestions"
+         android:persistent="false" />
 
      <com.android.settings.widget.SeekBarPreference
          android:key="notification_alpha"
@@ -56,6 +68,19 @@
             android:entries="@array/quick_pulldown_entries"
             android:entryValues="@array/quick_pulldown_values"
             android:persistent="false" />
+
+        <ListPreference
+            android:key="smart_pulldown"
+            android:title="@string/smart_pulldown_title"
+            android:entries="@array/smart_pulldown_entries"
+            android:entryValues="@array/smart_pulldown_values"
+            android:persistent="false" />
+
+        <CheckBoxPreference
+            android:key="collapse_panel"
+            android:title="@string/title_collapse_panel"
+            android:summary="@string/summary_collapse_panel"
+            android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"

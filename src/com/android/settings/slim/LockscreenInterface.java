@@ -30,6 +30,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -44,8 +45,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
+    private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
 
     private CheckBoxPreference mLockscreenEightTargets;
+    private CheckBoxPreference mGlowpadTorch;
     private Preference mShortcuts;
 
     private boolean mCheckPreferences;
@@ -78,6 +81,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_EIGHT_TARGETS, 0) == 1);
         mLockscreenEightTargets.setOnPreferenceChangeListener(this);
 
+        mGlowpadTorch = (CheckBoxPreference) findPreference(
+                PREF_LOCKSCREEN_TORCH);
+        mGlowpadTorch.setChecked(Settings.System.getInt(
+                getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_GLOWPAD_TORCH, 0) == 1);
+        mGlowpadTorch.setOnPreferenceChangeListener(this);
+
+        if (!DeviceUtils.deviceSupportsTorch(getActivity().getApplicationContext())) {
+            prefs.removePreference(mGlowpadTorch);
+        }
+
         mShortcuts = (Preference) findPreference(PREF_LOCKSCREEN_SHORTCUTS);
         mShortcuts.setEnabled(!mLockscreenEightTargets.isChecked());
 
@@ -103,6 +117,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         }
         if (preference == mLockscreenEightTargets) {
             showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
+            return true;
+        } else if (preference == mGlowpadTorch) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_GLOWPAD_TORCH,
+                    (Boolean) objValue ? 1 : 0);
             return true;
         }
         return false;

@@ -394,6 +394,14 @@ final class CachedBluetoothDevice implements Comparable<CachedBluetoothDevice> {
                 mName = mDevice.getAddress();
             } else {
                 mName = name;
+            }
+            dispatchAttributesChanged();
+        }
+    }
+    void setAliasName(String name) {
+        if (!mName.equals(name)) {
+            if (!TextUtils.isEmpty(name)) {
+                mName = name;
                 mDevice.setAlias(name);
             }
             dispatchAttributesChanged();

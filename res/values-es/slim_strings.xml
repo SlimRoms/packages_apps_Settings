@@ -33,6 +33,8 @@
     <string name="interface_settings_title">Interfaz</string>
     <string name="navigation_settings_title">Navegación</string>
     <string name="slim_center_title">SlimCenter</string>
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="device_settings_title">Dispositivo</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
@@ -122,6 +124,8 @@
     <string name="wifi_setting_countrycode_error">Ocurrió un error al establecer el código de país.</string>
     <!-- Wi-Fi settings diables message if Wifi is off-->
     <string name="wifi_setting_countrycode_disabled">Habilitar Wi-Fi para cambiar esta opción.</string>
+    <!-- WiFi forget all networks -->
+    <string name="wifi_menu_forget_all">Olvidar todas las redes</string>
 
     <!-- Status bar -->
     <string name="status_bar_title">Barra de estado</string>
@@ -170,6 +174,13 @@
     <string name="wakeup_when_plugged_unplugged_title">Despertar al cargar</string>
     <string name="wakeup_when_plugged_unplugged_summary">Despierta el dispositivo si se conecta/desconecta al cargador.</string>
 
+    <!-- Volume Overlay -->
+    <string name="volume_overlay_title">Estilo del panel de Volumen</string>
+    <string name="volume_overlay_single">Único</string>
+    <string name="volume_overlay_expandable">Expandible</string>
+    <string name="volume_overlay_expanded">Expandido</string>
+    <string name="volume_overlay_disable">Deshabilitado</string>
+
     <!-- Sound settings -->
     <string name="sound_title">Sonido</string>
     <string name="advanced_sound_title">Opciones avanzadas</string>
@@ -178,6 +189,7 @@
 
     <string name="volume_adjust_sounds_enable_title">Sonido de ajuste de volumen</string>
     <string name="volume_adjust_sounds_enable_summary">Reproduce un sonido cuando se cambia el volumen con las teclas físicas.</string>
+    <string name="link_volume_ringtones">Vincular volumen de tono de llamada &amp; notificaciones</string>
     <string name="volume_ring_only_description">Tono de llamada</string>
 
     <!-- Sound settings screen, setting check box label -->
@@ -455,10 +467,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_qs_title">Panel de notificaciones &amp; ajustes rápidos</string>
     <string name="notification_drawer_title">Panel de notificaciones</string>
-    <string name="notification_hide_carrier_title">Ocultar nombre de operador</string>
-    <string name="notification_hide_carrier_summary">Ocultar nombre de operador y red Wi-Fi en el panel de notificaciones</string>
     <string name="notification_shortcuts_settings_title">Accesos directos</string>
     <string name="notification_shortcuts_settings_summary">Mostrar accesos directos en el panel de notificaciones</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_hide_labels_title">Ocultar wifi/operador en panel notif.</string>
+    <string name="notification_hide_labels_disable">Mostrar todo</string>
+    <string name="notification_hide_labels_carrier">Ocultar operador</string>
+    <string name="notification_hide_labels_wifi">Ocultar red WiFi</string>
+    <string name="notification_hide_labels_all">Ocultar todo</string>
+    <string name="notification_hide_labels_text">en el panel de notificaciones</string>
 
     <!-- StatusBar Battery Settings -->
     <string name="battery_icon_title">Icono de batería</string>
@@ -761,9 +779,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_battery">Batería</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brillo</string>
+    <string name="title_tile_contact">Contacto</string>
     <string name="title_tile_sleep">Apagar pantalla</string>
     <string name="title_tile_location">Localización</string>
     <string name="title_tile_torch">Linterna</string>
+    <string name="title_tile_custom">Personalizado</string>
     <string name="title_tile_lockscreen">Bloqueo de pantalla</string>
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Datos móviles</string>
@@ -791,6 +811,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="disable_qs">Ajustes rápidos deshabilitados</string>
     <string name="disable_qs_message">Todos los botones se han borrado. Los ajustes rápidos están deshabilitados.\n\nPara habilitarlos añade un botón.</string>
     <string name="help_qs_message">Para añadir un botón de ajustes rápidos, toca en el botón Añadir y selecciona el botón que quieras. Para reordenar los botones pulsa prolongadamente en uno y arrastralo a la posición que quieras. Si quieres eliminar un botón, arrástralo sobre el botón Borrar que aparece al arrastrarlo.\n\nPara deshabilitar los ajustes rápidos, borra todos los botones.\n\nPara configurar los botones dinámicos toca ,en la zona superior derecha de la panatalla, el icono correspondiente.\n\nPara deshabilitar el panel de ajustes rápidos elimina todos los botones.</string>
+    <string name="custom_tile_dialog_text">Cada acción creará un nuevo estado al interruptor. Cada toque cambiará al siguiente estado. Pulsa de forma prolongada para añadir acciones de pulsación larga. Si no se definen acciones al tocar se usará la pulsación larga como acción del interruptor. Esto permite cambiar el estado tocando y lanzar acciones con pulsación prolongada.</string>
+    <string name="custom_tile_dialog_title">Acciones del int. persolanizado</string>
+    <string name="custom_toggle_extras">Extras del int. personalizado</string>
+    <string name="custom_toggle_collapse_check">Cerrar panel de notificaciones</string>
+    <string name="custom_toggle_match_state_check">Acción al tocar concuerda con el icono</string>
+    <string name="custom_tile_long_press">Pulsación larga:</string>
+    <string name="custom_tile_null_warning">Primero se debe definir una acción</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Estilo</string>
@@ -825,4 +852,111 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_left">Izquierda</string>
     <string name="quick_pulldown_right">Derecha</string>
     
+    <!-- QuickSettings: Quick Collapse -->
+    <string name="title_collapse_panel">Cierre rápido</string>
+    <string name="summary_collapse_panel">Cierra el panel de notificaciones tras tocar</string>
+
+    <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Despliegue inteligente</string>
+    <string name="smart_pulldown_summary">Despliega el panel de ajustes rápidos cuando no hay notificaciones %1$s</string>
+    <string name="smart_pulldown_off">Desactivado</string>
+    <string name="smart_pulldown_dismissable">Desechables</string>
+    <string name="smart_pulldown_persistent">Persistentes</string>
+
+     <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Gestos con Stylus</string>
+    <string name="category_spen_title">Gestos con Stylus</string>
+    <string name="enable_subcat_title">Stylus</string>
+    <string name="enable_spen_title_head">Habilitar gestos con stylus</string>
+    <string name="enable_spen_summary_head">Lanzar acciones personalizadas al deslizar el stylus con el botón presionado. Atención: las aplicaciones no podrán recibir toques al estar el botón del stylys presionado</string>
+    <string name="gestures_subcat_title">Gestos</string>
+    <string name="gestures_left_spen_title_head">Deslizar a la izquierda</string>
+    <string name="gestures_left_spen_summary_head">Lanza una acción personalizada al deslizar a la izquierda</string>
+    <string name="gestures_right_spen_title_head">Deslizar a la derecha</string>
+    <string name="gestures_right_spen_summary_head">Lanza una acción personalizada al deslizar a la derecha</string>
+    <string name="gestures_up_spen_title_head">Deslizar hacia arriba</string>
+    <string name="gestures_up_spen_summary_head">Lanza una acción personalizada al deslizar hacia arriba</string>
+    <string name="gestures_down_spen_title_head">Deslizar hacia abajo</string>
+    <string name="gestures_down_spen_summary_head">Lanza una acción personalizada al deslizar hacia abajo</string>
+    <string name="gestures_long_spen_title_head">Pulsación larga</string>
+    <string name="gestures_long_spen_summary_head">Lanza una acción personalizada al hacer una pulsación larga</string>
+    <string name="gestures_double_spen_title_head">Doble pulsación</string>
+    <string name="gestures_double_spen_summary_head">Lanza una acción personalizada al hacer una pulsación doble</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">Sin acción</string>
+    <string name="gestures_action_home">Emular botón Inicio</string>
+    <string name="gestures_action_back">Emular botón Atrás</string>
+    <string name="gestures_action_menu">Emular botón Menú</string>
+    <string name="gestures_action_search">Lanzar Búsqueda</string>
+    <string name="gestures_action_recent">Aplicaciones recientes</string>
+
+    <!-- stylus gestures support -->
+    <string name="stylus_app_not_installed">%s no está instalada</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Mostrar icono cuando se usa stylus</string>
+    <string name="stylus_icon_enabled_summary">Muestra un icono mientras se está usando el stylus</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_auto_mode_title">Cambiar tema</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">Al cambuir las condiciones de luz</string>
+    <string name="theme_auto_mode_twilight">en función de la hora del día</string>
+    <string name="theme_auto_switch_mode_error">El cambio automático en función de las condiciones de luz está habilitado. El cambio manual no puede utilizarse.</string>
+
+    <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
+    <string name="debug_LAN_category">Configuración LAN</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Nombre del dispositivo</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
+
+    <!-- Volume Keys Media Control -->
+    <string name="volume_keys_control_media_stream">Media control</string>
+    <string name="volume_keys_control_media_stream_summary">Las teclas de volumen controlan el volumen de música en lugar de las notificaciones</string>
+
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Buscar ficheros multimedia en la tarjeta de almacenamiento</string>
+    <string name="storage_rescan_media_complete">Búsqueda completada</string>
+    
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Duración mínima de la vibración</string>
+
+    <!-- ListView animation -->
+    <string name="interface_settings_animation_title">Opciones de animaciones</string>
+    <string name="listview_animation_title">Animación de listados</string>
+    <string name="listview_off">Predeterminado</string>
+    <string name="listview_wave_left">Ondas (izda)</string>
+    <string name="listview_wave_right">Ondas (dcha)</string>
+    <string name="listview_alpha">Alfa</string>
+    <string name="listview_scale">Escalar</string>
+    <string name="listview_stack_top">Pila (arriba)</string>
+    <string name="listview_stack_bottom">Pila (abajo)</string>
+    <string name="listview_unfold">Desplegar</string>
+    <string name="listview_fold">Plegar</string>
+    <string name="listview_translate_left">Trasladar (izda)</string>
+    <string name="listview_translate_right">Trasladar (dcha)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Interpolador de listados</string>
+    <string name="listview_accelerate_interpolator">Acelerar</string>
+    <string name="listview_decelerate_interpolator">Decelerar</string>
+    <string name="listview_accelerate_decelerate_interpolator">Acelerar y decelerar</string>
+    <string name="listview_anticipate_interpolator">Anticipar</string>
+    <string name="listview_overshoot_interpolator">Excedido</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipar y exceder</string>
+    <string name="listview_bounce_interpolator">Rebote</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Reinicio avanzado</string>
+    <string name="advanced_reboot_summary">Mostrar opciones para reiniciar en modo recovery y bootloader en el menú de apagado</string>
+    <string name="advanced_reboot_dialog_title">Menu de reinicio avanzado</string>
+    <string name="advanced_reboot_disabled">Deshabilitado</string>
+    <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
+    <string name="advanced_reboot_show_always">Mostrar siempre</string>
+
 </resources>

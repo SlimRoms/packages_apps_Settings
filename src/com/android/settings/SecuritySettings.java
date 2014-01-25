@@ -69,12 +69,14 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_DEVICE_ADMIN_CATEGORY = "device_admin_category";
     private static final String KEY_LOCK_AFTER_TIMEOUT = "lock_after_timeout";
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
+    private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_ENABLE_WIDGETS = "keyguard_enable_widgets";
     private static final String KEY_INTERFACE_SETTINGS = "lock_screen_settings";
     private static final String KEY_TARGET_SETTINGS = "lockscreen_targets";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
+    private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -117,10 +119,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mToggleVerifyApps;
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private Preference mEnableKeyguardWidgets;
+    private ListPreference mAdvancedReboot;
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
     private CheckBoxPreference mLockBeforeUnlock;
+
+    private CheckBoxPreference mBatteryStatus;
 
     private Preference mNotificationAccess;
 
@@ -155,6 +160,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         // Add package manager to check if features are available
         PackageManager pm = getPackageManager();
+
+        // App security settings
+        addPreferencesFromResource(R.xml.security_settings_app_slim);
+        mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
 
         // Add options for lock/unlock screen
         int resid = 0;
@@ -326,6 +335,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
         }
 
+        mBatteryStatus = (CheckBoxPreference) root.findPreference(KEY_ALWAYS_BATTERY_PREF);
+
         // Show password
         mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
         mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
@@ -372,9 +383,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
         }
 
-        // App security settings
-        addPreferencesFromResource(R.xml.security_settings_app_slim);
-        mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
+        mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
+        mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
+                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 0)));
+        mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+        mAdvancedReboot.setOnPreferenceChangeListener(this);
 
         // Determine options based on device telephony support
         if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
@@ -583,6 +596,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
         }
 
+        if (mBatteryStatus != null) {
+            mBatteryStatus.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0,
+                    UserHandle.USER_CURRENT) != 0);
+            mBatteryStatus.setOnPreferenceChangeListener(this);
+        }
+
         updateBlacklistSummary();
     }
 
@@ -706,6 +726,15 @@ public class SecuritySettings extends RestrictedSettingsFragment
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_BEFORE_UNLOCK,
                     ((Boolean) value) ? 1 : 0);
+        } else if (preference == mAdvancedReboot) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADVANCED_REBOOT,
+                    Integer.valueOf((String) value));
+            mAdvancedReboot.setValue(String.valueOf(value));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+        } else if (preference == mBatteryStatus) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY,
+                    ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
         }
         return true;
     }

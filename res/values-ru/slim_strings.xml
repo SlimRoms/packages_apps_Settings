@@ -75,6 +75,14 @@
     <string name="increasing_ring_interval_10seconds">10 секунд</string>
     <string name="link_volume_ringtones">Связать громкость и звуки уведомления</string>
     <string name="volume_ring_only_description">Рингтон</string>
+
+    <!-- Volume Overlay -->
+    <string name="volume_overlay_title">Панель громкости</string>
+    <string name="volume_overlay_single">Одиночная</string>
+    <string name="volume_overlay_expandable">Расширяемая</string>
+    <string name="volume_overlay_expanded">Расширенная</string>
+    <string name="volume_overlay_disable">Нет</string>
+
     <string name="camera_sounds_title">Звук затвора камеры</string>
     <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
     <string name="sound_title">Звук</string>
@@ -131,6 +139,10 @@
     <string name="group_applications">Приложения</string>
     <string name="notification_shortcuts_settings_title">Ярлыки</string>
     <string name="notification_shortcuts_settings_summary">Показывать ярлыки в панели уведомлений</string>
+    <string name="notification_carrier_label_title">Имя оператора</string>
+    <string name="notification_custom_carrier_label_title">Установить имя оператора</string>
+    <string name="notification_custom_carrier_label_explain">Пожалуйста, введите новое имя. Пустое вернет к значению по умолчанию.</string>
+    <string name="notification_custom_carrier_label_notset">Имя оператора не установлено</string>
     <string name="display_category_light_options_title">Настройки LED</string>
     <string name="light_sensor_current_value">Текущее значение сенсора освещения: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Автоуровни яркости</string>
@@ -236,7 +248,6 @@
     <string name="notification_drawer_title">Панель уведомлений</string>
     <string name="notification_style_title">Стиль панели уведомления</string>
     <string name="notification_style_summary">Изменить стиль панели уведомления</string>
-    <string name="notification_hide_carrier_title">Скрывать имя оператора</string>
     <string name="notification_wallpaper_title">Фон панели уведомлений</string>
     <string name="notification_wallpaper_landscape_title">Фон панели уведомлений в ландшафтном режиме</string>
     <string name="notification_background_color_fill">Заливка цветом</string>
@@ -253,6 +264,8 @@
     <string name="title_tile_battery">Батарея</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Подсветка</string>
+    <string name="title_tile_contact">Контакт</string>
+    <string name="title_tile_custom">Свой ярлык</string>
     <string name="title_tile_torch">Фонарь</string>
     <string name="title_tile_lockscreen">Экран блокировки</string>
     <string name="title_tile_lte">LTE</string>
@@ -277,6 +290,18 @@
     <string name="quick_pulldown_off">Выкл.</string>
     <string name="quick_pulldown_left">Левый</string>
     <string name="quick_pulldown_right">Правый</string>
+
+    <!-- QuickSettings: Quick Collapse -->
+    <string name="title_collapse_panel">Быстрое сворачивание</string>
+    <string name="summary_collapse_panel">Закрывать панель уведомлений после выбора</string>
+
+    <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">\"Умная\" панель уведомлений</string>
+    <string name="smart_pulldown_summary">Открывать быстрые настройки, если нет %1$s уведомлений</string>
+    <string name="smart_pulldown_off">Выкл</string>
+    <string name="smart_pulldown_dismissable">Удаляемые</string>
+    <string name="smart_pulldown_persistent">Постоянные</string>
+
     <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
     <string name="quicksettings_tiles_style_additional_options">Дополнительные настройки</string>
@@ -296,7 +321,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
     <string name="battery_text_color">Цвет процентов</string>
-    <string name="battery_text_charging_color">Цвет процентов при зарядке</string>
+    <string name="battery_text_charging_color">Цвет молнии при зарядке</string>
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>
     <string name="circle_battery_animation_speed_slow">Медленно</string>
@@ -627,7 +652,6 @@
     <string name="shortcuts_color_mode_title">Режим цвета значка</string>
     <string name="shortcuts_color_mode_summary">Изменить режим цвета значка ярлыка</string>
     <string name="notification_drawer_qs_title">Панель уведомлений и быстрых настроек</string>
-    <string name="notification_hide_carrier_summary">Скрывать имя оператора и Wi-Fi-сети в панели уведомлений</string>
     <string name="battery_icon_title">Значок батареи</string>
     <string name="battery_status_icon">Значок</string>
     <string name="battery_status_percentage">Проценты</string>
@@ -686,6 +710,8 @@
     <string name="lockscreen_target_color_title">Цвет значков действий</string>
     <string name="lockscreen_enable_eight_targets_dialog">Включение этой настройки сбросит ваши текущие действия на экране блокировки к значениям по умолчанию.</string>
     <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nНельзя использовать одновременно и кольцо из 8 действий, и ярлыки экрана блокировки.</string>
+    <string name="lockscreen_glowpad_torch_title">Фонарик на ползунке</string>
+    <string name="lockscreen_glowpad_torch_summary">Дважды нажмите и удерживайте ползунок, чтобы включить фонарик</string>
     <string name="lockscreen_style_reset_message">Сбросить все цвета экрана блокировки?</string>
     <string name="lockscreen_icon_title">Значок ползунка блокировки</string>
     <string name="lockscreen_lock_icon_custom">Свой значок</string>
@@ -710,6 +736,13 @@
     <string name="disable_qs">Быстрые настройки отключены</string>
     <string name="disable_qs_message">Все плитки удалены, быстрые настройки выключены.\n\nДобавьте плитку для включения.</string>
     <string name="help_qs_message">Чтобы добавить плитку быстрых настроек, нажмите кнопку \"Добавить\" и выберите нужную плитку. Чтобы поменятьпорядок плиток, нажмите и удерживайте плитку, затем перетащите ее на нужное место. Для удаления плитки перетащите ее на кнопку удаления, которая появляется при перетаскивании.\n\n Для настройки динамических плиток нажмите соответствующий значок на экране справа вверху.\n\nЧтобы отключить быстрые настройки, удалите все плитки.</string>
+    <string name="custom_tile_dialog_text">Каждое действие будет добавлять плитке новое состояние. Нажатие переключает эти состояния. По долгому нажатию задаются действия на долгое нажатие. При отсутствии основного действия по нажатию будет выполнено действие долгого нажатия. Это позволяет переключать состояния плитки обычным нажатием и запускать что-либо долгим нажатием.</string>
+    <string name="custom_tile_dialog_title">Действия своего ярлыка</string>
+    <string name="custom_toggle_extras">Дополнения своего ярлыка</string>
+    <string name="custom_toggle_collapse_check">Сворачивать тень уведомления</string>
+    <string name="custom_toggle_match_state_check">Значок для обычного нажатия</string>
+    <string name="custom_tile_long_press">Долгое нажатие:</string>
+    <string name="custom_tile_null_warning">Сначала нужно задать действие</string>
     <string name="quick_tiles_alpha_title">Прозрачность фона плиток</string>
     <string name="pref_music_mode_title">Режим музыки</string>
     <string name="screentimeout_mode1">15с | 1м | 5м | Никогда</string>
@@ -735,4 +768,64 @@
     <string name="title_tile_quick_record">Быстрая запись</string>
     <string name="chamber_title">Тайная комната</string>
     <string name="chamber_toast">Тайная комната снова открыта</string>
+    <!-- WiFi forget all networks -->
+    <string name="wifi_menu_forget_all">Удалить сохраненные сети</string>
+    <!-- Volume Keys Media Control -->
+    <string name="volume_keys_control_media_stream">Управление мультимедиа</string>
+    <string name="volume_keys_control_media_stream_summary">Кнопки громкости контролируют громкость мультимедиа, а не уведомлений</string>
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Пересканировать медиа на накопителе</string>
+    <string name="storage_rescan_media_complete">Сканирование завершено</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">APN будет удалена</string>
+
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Минимальная длительность вибрации</string>
+
+    <!-- ListView animation -->
+    <string name="interface_settings_animation_title">Настройки анимации</string>
+    <string name="listview_animation_title">Анимация списков</string>
+    <string name="listview_off">По умолчанию</string>
+    <string name="listview_wave_left">Волна (слева)</string>
+    <string name="listview_wave_right">Волна (справа)</string>
+    <string name="listview_alpha">Проявление</string>
+    <string name="listview_scale">Увеличение</string>
+    <string name="listview_stack_top">Стек (сверху)</string>
+    <string name="listview_stack_bottom">Стек (снизу)</string>
+    <string name="listview_unfold">Развернуть</string>
+    <string name="listview_fold">Свернуть</string>
+    <string name="listview_translate_left">Сдвиг (слева)</string>
+    <string name="listview_translate_right">Сдвиг (справа)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Эффекты анимации списков</string>
+    <string name="listview_accelerate_interpolator">Усилить</string>
+    <string name="listview_decelerate_interpolator">Ослабить</string>
+    <string name="listview_accelerate_decelerate_interpolator">Усилить и ослабить</string>
+    <string name="listview_anticipate_interpolator">Ускорить</string>
+    <string name="listview_overshoot_interpolator">Проскочить</string>
+    <string name="listview_anticipate_overshoot_interpolator">Ускорить и проскочить</string>
+    <string name="listview_bounce_interpolator">Отскакивать</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Расширенная перезагрузка</string>
+    <string name="advanced_reboot_summary">Включить отображение в меню управления питанием настроек для загрузки в рекавери и бутлоадер</string>
+    <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
+    <string name="advanced_reboot_disabled">Выключено</string>
+    <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
+    <string name="advanced_reboot_show_always">Всегда показывать</string>
+
+    <!-- Keyguard always show battery -->
+    <string name="lockscreen_battery_status_title">Состояние батареи</string>
+    <string name="lockscreen_battery_status_summary">Всегда показывать состояние батареи на экране блокировки</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_hide_labels_title">Скрывать метки уведомлений</string>
+    <string name="notification_hide_labels_disable">Показывать все метки</string>
+    <string name="notification_hide_labels_carrier">Скрывать имя оператора</string>
+    <string name="notification_hide_labels_wifi">Скрывать имя WiFi-сети</string>
+    <string name="notification_hide_labels_all">Скрывать все метки</string>
+    <string name="notification_hide_labels_text">в панели уведомлений</string>
+
 </resources>

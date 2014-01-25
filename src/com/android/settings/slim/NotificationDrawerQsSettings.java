@@ -40,20 +40,26 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     public static final String TAG = "NotificationDrawerSettings";
 
-    private static final String PREF_NOTIFICATION_HIDE_CARRIER =
-            "notification_hide_carrier";
+    private static final String PREF_NOTIFICATION_HIDE_LABELS =
+            "notification_hide_labels";
     private static final String PREF_NOTIFICATION_ALPHA =
             "notification_alpha";
     private static final String PRE_QUICK_PULLDOWN =
             "quick_pulldown";
+    private static final String PRE_SMART_PULLDOWN =
+            "smart_pulldown";
+    private static final String PRE_COLLAPSE_PANEL =
+            "collapse_panel";
     private static final String PREF_TILES_STYLE =
             "quicksettings_tiles_style";
     private static final String PREF_TILE_PICKER =
             "tile_picker";
 
-    CheckBoxPreference mHideCarrier;
+    ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
     ListPreference mQuickPulldown;
+    ListPreference mSmartPulldown;
+    CheckBoxPreference mCollapsePanel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,20 +69,20 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mHideCarrier = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_HIDE_CARRIER);
-        boolean hideCarrier = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.NOTIFICATION_HIDE_CARRIER, 0) == 1;
-        mHideCarrier.setChecked(hideCarrier);
-        mHideCarrier.setOnPreferenceChangeListener(this);
+        mHideLabels = (ListPreference) findPreference(PREF_NOTIFICATION_HIDE_LABELS);
+        int hideCarrier = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_HIDE_LABELS, 0);
+        mHideLabels.setValue(String.valueOf(hideCarrier));
+        mHideLabels.setOnPreferenceChangeListener(this);
+        updateHideNotificationLabelsSummary(hideCarrier);
 
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
 
-        if (!DeviceUtils.isPhone(getActivity())
-            || !DeviceUtils.deviceSupportsMobileData(getActivity())) {
-            // Nothing for tablets, large screen devices and non mobile devices which doesn't show
-            // information in notification drawer.....remove options
-            prefs.removePreference(mHideCarrier);
+        if (!DeviceUtils.isPhone(getActivity())) {
+            // Nothing for tablets and large screen devices which doesn't show
+            // information in notification drawer.....remove option
+            prefs.removePreference(mHideLabels);
         }
 
         float transparency;
@@ -90,19 +96,33 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         }
         mNotificationAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
         mNotificationAlpha.setInitValue((int) (transparency * 100));
-        mNotificationAlpha.setProperty(Settings.System.NOTIFICATION_ALPHA);
         mNotificationAlpha.setOnPreferenceChangeListener(this);
 
         mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
+        mSmartPulldown = (ListPreference) findPreference(PRE_SMART_PULLDOWN);
         if (!DeviceUtils.isPhone(getActivity())) {
             prefs.removePreference(mQuickPulldown);
+            prefs.removePreference(mSmartPulldown);
         } else {
+            // Quick Pulldown
             mQuickPulldown.setOnPreferenceChangeListener(this);
             int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
                     Settings.System.QS_QUICK_PULLDOWN, 0);
             mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-            updatePulldownSummary(statusQuickPulldown);
+            updateQuickPulldownSummary(statusQuickPulldown);
+
+            // Smart Pulldown
+            mSmartPulldown.setOnPreferenceChangeListener(this);
+            int smartPulldown = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+            mSmartPulldown.setValue(String.valueOf(smartPulldown));
+            updateSmartPulldownSummary(smartPulldown);
         }
+
+        mCollapsePanel = (CheckBoxPreference) findPreference(PRE_COLLAPSE_PANEL);
+        mCollapsePanel.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_COLLAPSE_PANEL, 0, UserHandle.USER_CURRENT) == 1);
+        mCollapsePanel.setOnPreferenceChangeListener(this);
 
         updateQuickSettingsOptions();
     }
@@ -114,6 +134,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                 Settings.System.QUICK_SETTINGS_TILES, UserHandle.USER_CURRENT);
         boolean hideSettingsPanel = qsConfig != null && qsConfig.isEmpty();
         mQuickPulldown.setEnabled(!hideSettingsPanel);
+        mSmartPulldown.setEnabled(!hideSettingsPanel);
         tilesStyle.setEnabled(!hideSettingsPanel);
         if (hideSettingsPanel) {
             tilesPicker.setSummary(getResources().getString(R.string.disable_qs));
@@ -131,10 +152,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHideCarrier) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_HIDE_CARRIER,
-                    (Boolean) newValue ? 1 : 0);
+        if (preference == mHideLabels) {
+            int hideLabels = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_HIDE_LABELS,
+                    hideLabels);
+            updateHideNotificationLabelsSummary(hideLabels);
             return true;
         } else if (preference == mNotificationAlpha) {
             float valNav = Float.parseFloat((String) newValue);
@@ -145,13 +167,24 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             int statusQuickPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(), Settings.System.QS_QUICK_PULLDOWN,
                     statusQuickPulldown);
-            updatePulldownSummary(statusQuickPulldown);
+            updateQuickPulldownSummary(statusQuickPulldown);
+            return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.QS_SMART_PULLDOWN,
+                    smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
+        } else if (preference == mCollapsePanel) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_COLLAPSE_PANEL,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
     }
 
-    private void updatePulldownSummary(int value) {
+    private void updateQuickPulldownSummary(int value) {
         Resources res = getResources();
 
         if (value == 0) {
@@ -165,4 +198,38 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         }
     }
 
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else {
+            String type = res.getString(value == 2
+                    ? R.string.smart_pulldown_persistent
+                    : R.string.smart_pulldown_dismissable);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
+    }
+
+    private void updateHideNotificationLabelsSummary(int value) {
+        Resources res = getResources();
+
+        StringBuilder text = new StringBuilder();
+
+        switch (value) {
+        case 1  : text.append(res.getString(R.string.notification_hide_labels_carrier));
+                break;
+        case 2  : text.append(res.getString(R.string.notification_hide_labels_wifi));
+                break;
+        case 3  : text.append(res.getString(R.string.notification_hide_labels_all));
+                break;
+        default : text.append(res.getString(R.string.notification_hide_labels_disable));
+                break;
+        }
+
+        text.append(" " + res.getString(R.string.notification_hide_labels_text));
+
+        mHideLabels.setSummary(text.toString());
+    }
 }

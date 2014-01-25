@@ -88,6 +88,7 @@ import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.slim.BatteryIconStyle;
 import com.android.settings.slim.blacklist.BlacklistSettings;
 import com.android.settings.slim.DisplayRotation;
+import com.android.settings.slim.quicksettings.QuickSettingsTiles;
 import com.android.settings.slim.QuietHours;
 import com.android.settings.slim.themes.ThemeEnabler;
 import com.android.settings.tts.TextToSpeechSettings;
@@ -361,8 +362,10 @@ public class Settings extends PreferenceActivity
         KeyboardLayoutPickerFragment.class.getName(),
         BlacklistSettings.class.getName(),
         QuietHours.class.getName(),
+        QuickSettingsTiles.class.getName(),
         BatteryIconStyle.class.getName(),
-        DisplayRotation.class.getName()
+        DisplayRotation.class.getName(),
+        ApnSettings.class.getName()
     };
 
     @Override
@@ -556,7 +559,8 @@ public class Settings extends PreferenceActivity
     private void updateHeaderList(List<Header> target) {
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
+                android.os.Build.TYPE.equals("eng"))
+                || android.os.Build.VERSION.CODENAME.equals("UNOFFICIAL");
         int i = 0;
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
@@ -613,9 +617,13 @@ public class Settings extends PreferenceActivity
                 } else {
                     // Only show if NFC is on and we have the HCE feature
                     NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
-                    if (!adapter.isEnabled() || !getPackageManager().hasSystemFeature(
-                            PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
-                        target.remove(i);
+                    if (adapter == null || !adapter.isEnabled()
+                            || !getPackageManager().hasSystemFeature(
+                                    PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
+                       target.remove(i);
+                       if (adapter == null) {
+                           Log.e(LOG_TAG, "NFC feature advertised but the default adapter is NULL!");
+                       }
                     }
                 }
             } else if (id == R.id.development_settings) {
@@ -1160,8 +1168,11 @@ public class Settings extends PreferenceActivity
     public static class PaymentSettingsActivity extends Settings { /* empty */ }
     public static class PrintSettingsActivity extends Settings { /* empty */ }
     public static class PrintJobSettingsActivity extends Settings { /* empty */ }
+    public static class ApnSettingsActivity extends Settings { /* empty */ }
+    public static class ApnEditorActivity extends Settings { /* empty */ }
     public static class BlacklistSettingsActivity extends Settings { /* empty */ }
     public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
+    public static class QuickSettingsTilesSettingsActivity extends Settings { /* empty */ }
     public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
 }

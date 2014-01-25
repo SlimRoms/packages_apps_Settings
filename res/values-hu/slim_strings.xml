@@ -33,6 +33,9 @@
     <string name="interface_settings_title">Interfész</string>
     <string name="navigation_settings_title">Navigáció</string>
     <string name="slim_center_title">SlimCenter</string>
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="device_settings_title">Eszköz
+</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Szín választó</string>
@@ -355,6 +358,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ime">Billentyűzet váltó megnyítása</string>
     <string name="shortcut_action_kill">Alkalmazás kilövése</string>
     <string name="shortcut_action_power">Képernyő KI</string>
+    <string name="shortcut_action_theme_switch">Téma választó</string>
     <string name="shortcut_action_notifications">Értesítések</string>
     <string name="shortcut_action_menu_big">Menü</string>
     <string name="shortcut_action_qs">Gyorsbeállítás panel</string>
@@ -456,8 +460,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_qs_title">Értesítési &amp; QS panel</string>
     <string name="notification_drawer_title">Értesítési panel</string>
-    <string name="notification_hide_carrier_title">Hálózati címke elrejtése</string>
-    <string name="notification_hide_carrier_summary">Szolgáltató és Wi-Fi címke elrejtése az Értesítési panelen</string>
     <string name="notification_shortcuts_settings_title">Parancsikonok</string>
     <string name="notification_shortcuts_settings_summary">Parancsikonok kihelyezése az Értesítési panelen</string>
 
@@ -762,6 +764,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_battery">Akkumulátor</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Fényerő</string>
+    <string name="title_tile_custom">Egyéni</string>
     <string name="title_tile_sleep">Alvó állapot</string>
     <string name="title_tile_location">Hely</string>
     <string name="title_tile_torch">Zseblámpa</string>
@@ -778,15 +781,29 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Hálózati mód</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Képernyő késleltetési ideje</string>
+    <string name="title_tile_quick_record">Gyors felvétel</string>
     <string name="title_tile_quiet_hours">Csendes órák</string>
     <string name="title_tile_volume">Hangerő</string>
     <string name="title_tile_expanded_desktop">Kiterjesztet képernyő</string>
     <string name="title_tile_music">Zene</string>
     <string name="title_tile_reboot">Újraindítás</string>
+    <string name="title_tile_theme">Téma választó</string>
+    <string name="dynamic_tile_ime_switcher">Billentyűzet váltó</string>
+    <string name="dynamic_tile_usb_tether">USB megosztás</string>
+    <string name="dynamic_tile_alarm">Riasztás</string>
+    <string name="dynamic_tile_bugreport">Hibajelentés</string>
+    <string name="dynamic_tiles_title">Dinamikus csempék</string>
     <string name="tiles_reset_message">Visszaállítod az alapértelmezett csempéket és elrendezést?</string>
     <string name="disable_qs">Gyors beállítások tiltva</string>
     <string name="disable_qs_message">Összes csempe eltávolítva. Gyors elérések tiltva.\n\nEngedélyezve hozzáadhatsz csempéket.</string>
     <string name="help_qs_message">Gyors beállítás csempe hozzáadásához nyomd meg a Hozzáadás gombot és válaszd ki amelyiket szeretnéd. Csempék átrendezéséhez hosszan nyomj rajta és húzd a kivánt helyre. Ha törölni szeretne egy csempét, húzza a törlés csempére.\n\nLetiltva a Gyors beállításokat, eltávolítja a csempéket.</string>
+    <string name="custom_tile_dialog_text">Minden művelet új állapotot add a csempének. Minden kattintás a következő állapotra vált. Hosszan nyomásra hozzáad egy hosszan nyomás műveletet. Ha nem kattintasz létező műveletre akkor a hossza nyomás ikonja használja a csempét. Lehetővé teszi, hogy megváltoztassa az állapotát kattintással és elindítja a műveletet hosszan nyomásra.</string>
+    <string name="custom_tile_dialog_title">Egyéni csempe művelet</string>
+    <string name="custom_toggle_extras">Egyéni csempe extrák</string>
+    <string name="custom_toggle_collapse_check">Összeomló értesítési árnyék</string>
+    <string name="custom_toggle_match_state_check">Kattintási művelet az ikonnak megfelelő</string>
+    <string name="custom_tile_long_press">Hosszan nyomás:</string>
+    <string name="custom_tile_null_warning">Be kell állítani egy műveletet elösszőr</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Stílus</string>
@@ -820,5 +837,71 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_off">KI</string>
     <string name="quick_pulldown_left">Bal</string>
     <string name="quick_pulldown_right">Jobb</string>
+
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Stílus gesztusok</string>
+    <string name="category_spen_title">Stílus gesztusok</string>
+    <string name="enable_subcat_title">Stílus</string>
+    <string name="enable_spen_title_head">Stílus gesztusok engedélyezése</string>
+    <string name="enable_spen_summary_head">Egyéni akció indítása a stílus gombbal húzó mozdulattal. Figyelmeztetés: alkalmazás nem lesz képes bemenetet fogadni míg nyomva tartod a stílus gombot</string>
+    <string name="gestures_subcat_title">Gesztusok</string>
+    <string name="gestures_left_spen_title_head">Balra húzás</string>
+    <string name="gestures_left_spen_summary_head">Egyéni alkalmazás indítása balra húzásra</string>
+    <string name="gestures_right_spen_title_head">Jobbra húzás</string>
+    <string name="gestures_right_spen_summary_head">Egyéni alkalmazás indítása jobbra húzásra</string>
+    <string name="gestures_up_spen_title_head">Fel húzás</string>
+    <string name="gestures_up_spen_summary_head">Egyéni alkalmazás indítása felfelé húzásra</string>
+    <string name="gestures_down_spen_title_head">Le húzás</string>
+    <string name="gestures_down_spen_summary_head">Egyéni alkalmazás indítása lefelé húzásra</string>
+    <string name="gestures_long_spen_title_head">Hosszan nyomás</string>
+    <string name="gestures_long_spen_summary_head">Egyéni alkalmazás indítása hosszan nyomásra</string>
+    <string name="gestures_double_spen_title_head">Dupla érintés</string>
+    <string name="gestures_double_spen_summary_head">Egyéni alkalmazás indítása dupla érintésre</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">Nincs akció</string>
+    <string name="gestures_action_home">Emulálja a home gombot</string>
+    <string name="gestures_action_back">Emulálja a vissza gombot</string>
+    <string name="gestures_action_menu">Emulálja a menü gombot</string>
+    <string name="gestures_action_search">Keresés indítása</string>
+    <string name="gestures_action_recent">Legutóbbi alkalmazások</string>
+
+    <!-- stylus gestures support -->
+    <string name="stylus_app_not_installed">%s nincs telepítve</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Ikon mutatása stílus használat közben</string>
+    <string name="stylus_icon_enabled_summary">Mutató ikon mutatása stílus használata közben</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">Az igazi fekete slim</string>
+    <string name="theme_auto_mode_title">Téma váltás</string>
+    <string name="theme_auto_mode_off">Kézi</string>
+    <string name="theme_auto_mode_lightsensor">Fényviszonyok változtatása</string>
+    <string name="theme_auto_mode_twilight">Nappali</string>
+    <string name="theme_auto_switch_mode_error">Automatikus fényviszonyok változásának engedélyezése. Kézi állítás nem lehetséges.</string>
+
+    <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
+    <string name="debug_LAN_category">LAN Beállítások</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Eszköz neve</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Titkok Kamrája</string>
+    <string name="chamber_toast">A Titkok Kamrája nyítva van</string>
+
+    <!-- Volume Keys Media Control -->
+    <string name="volume_keys_control_media_stream">Média vezérlés</string>
+    <string name="volume_keys_control_media_stream_summary">Hangerő gombokkal vezérli a média hangerejét</string>
+
+    <!-- Rescan media volume -->
+    <string name="storage_rescan_media">Média újra keresése a tárolón</string>
+    <string name="storage_rescan_media_complete">Keresés befejezve</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">Az APN törölve lesz.</string>
+
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Minimum rezgés időtartam</string>
 
 </resources>

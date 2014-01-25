@@ -107,7 +107,6 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         }
         mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
         mWallpaperAlpha.setInitValue((int) (transparency * 100));
-        mWallpaperAlpha.setProperty(Settings.System.NOTIFICATION_BACKGROUND_ALPHA);
         mWallpaperAlpha.setOnPreferenceChangeListener(this);
 
         updateCustomBackgroundSummary();

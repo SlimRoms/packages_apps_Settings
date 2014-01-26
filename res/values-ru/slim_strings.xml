@@ -828,4 +828,8 @@
     <string name="notification_hide_labels_all">Скрывать все метки</string>
     <string name="notification_hide_labels_text">в панели уведомлений</string>
 
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">Процессор</string>
+    <string name="mem_info">Память</string>
+
 </resources>

@@ -23,6 +23,7 @@ import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.admin.DevicePolicyManager;
 import android.app.backup.IBackupManager;
 import android.bluetooth.BluetoothAdapter;
@@ -162,6 +163,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final int RESULT_DEBUG_APP = 1000;
 
+    // Dialog identifiers used in showDialog
+    private static final int DLG_ADBTCP = 0;
+
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
     private DevicePolicyManager mDpm;
@@ -233,7 +237,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private boolean mDialogClicked;
     private Dialog mEnableDialog;
     private Dialog mAdbDialog;
-    private Dialog mAdbTcpDialog;
     private Dialog mAdbKeysDialog;
 
     private Dialog mRootDialog;
@@ -1300,17 +1303,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             }
         } else if (preference == mAdbOverNetwork) {
             if (mAdbOverNetwork.isChecked()) {
-                if (mAdbTcpDialog != null) {
-                    dismissDialogs();
-                }
-                mAdbTcpDialog = new AlertDialog.Builder(getActivity()).setMessage(
-                        getResources().getString(R.string.adb_over_network_warning))
-                        .setTitle(R.string.adb_over_network)
-                        .setIconAttribute(android.R.attr.alertDialogIcon)
-                        .setPositiveButton(android.R.string.yes, this)
-                        .setNegativeButton(android.R.string.no, this)
-                        .show();
-                mAdbTcpDialog.setOnDismissListener(this);
+                showDialogInner(DLG_ADBTCP);
             } else {
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.ADB_PORT, -1);
@@ -1496,10 +1489,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             mAdbDialog.dismiss();
             mAdbDialog = null;
         }
-        if (mAdbTcpDialog != null) {
-            mAdbTcpDialog.dismiss();
-            mAdbTcpDialog = null;
-        }
         if (mAdbKeysDialog != null) {
             mAdbKeysDialog.dismiss();
             mAdbKeysDialog = null;
@@ -1526,14 +1515,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             } else {
                 // Reset the toggle
                 mEnableAdb.setChecked(false);
-            }
-       } else if (dialog == mAdbTcpDialog) {
-            if (which == DialogInterface.BUTTON_POSITIVE) {
-                Settings.Secure.putInt(getActivity().getContentResolver(),
-                        Settings.Secure.ADB_PORT, 5555);
-            } else {
-                // Reset the toggle
-                mAdbOverNetwork.setChecked(false);
             }
         } else if (dialog == mAdbKeysDialog) {
             if (which == DialogInterface.BUTTON_POSITIVE) {
@@ -1577,11 +1558,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 mEnableAdb.setChecked(false);
             }
             mAdbDialog = null;
-
-        } else if (dialog == mAdbTcpDialog) {
-            updateAdbOverNetwork();
-            mAdbTcpDialog = null;
-
         } else if (dialog == mEnableDialog) {
             if (!mDialogClicked) {
                 mEnabledSwitch.setChecked(false);
@@ -1666,4 +1642,53 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         }
     }
 
+    private void showDialogInner(int id) {
+        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
+
+    public static class MyAlertDialogFragment extends DialogFragment {
+
+        public static MyAlertDialogFragment newInstance(int id) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        DevelopmentSettings getOwner() {
+            return (DevelopmentSettings) getTargetFragment();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            int id = getArguments().getInt("id");
+            switch (id) {
+                case DLG_ADBTCP:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.adb_over_network)
+                    .setMessage(getActivity().getString(R.string.adb_over_network_warning))
+                    .setIconAttribute(android.R.attr.alertDialogIcon)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Settings.Secure.putInt(getActivity().getContentResolver(),
+                                    Settings.Secure.ADB_PORT, 5555);
+                            getOwner().updateAdbOverNetwork();
+                        }
+                    })
+                    .setNegativeButton(R.string.dlg_cancel,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Reset the toggle
+                            getOwner().mAdbOverNetwork.setChecked(false);
+                        }
+                    })
+                    .create();
+            }
+            throw new IllegalArgumentException("unknown id " + id);
+        }
+    }
 }

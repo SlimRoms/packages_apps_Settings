@@ -832,4 +832,38 @@
     <string name="cpu_info">Процессор</string>
     <string name="mem_info">Память</string>
 
+    <string name="usb_mass_storage_title">USB-накопитель</string>
+    <string name="usb_mass_storage_summary">Включить режим USB-накопителя (UMS)</string>
+    <string name="adb_over_network">ADB по сети</string>
+    <string name="adb_over_network_summary">Включить отладку TCP/IP через сетевые интерфейсы (Wi-Fi, USB сети). Эта установка сбрасывается при перезагрузке</string>
+    <string name="adb_over_network_warning">ВНИМАНИЕ: когда включён ADB по сети, телефон открыт для доступа из всех подключённых сетей, включая передачу данных GSM!\n\nИспользуйте эту функцию только тогда, когда Вы подключены к доверенным сетям.\n\nВы действительно хотите включить эту функцию?</string>
+    <string name="unlock_menu_unlock_title">Разблок. по кнопке \"Меню\"</string>
+    <string name="unlock_menu_unlock_summary">Нажатие кнопки \"Меню\" разблокирует устройство</string>
+
+    <string name="shortcut_action_assist">Поиск</string>
+    <string name="shortcut_action_voice_search">Голосовой поиск</string>
+    <string name="button_keys_title">Физические кнопки</string>
+    <string name="keys_bindings_title">Назначения кнопок</string>
+    <string name="keys_enable_custom_title">Включить свои назначения</string>
+    <string name="keys_enable_custom_summary">Включить установку своих действий на физические кнопки</string>
+    <string name="keys_back_press_title">Кнопка \"Назад\"</string>
+    <string name="keys_back_long_press_title">Кнопка \"Назад\" (долгое нажатие)</string>
+    <string name="keys_back_double_tap_title">Кнопка \"Назад\" (двойное нажатие)</string>
+    <string name="keys_home_press_title">Кнопка \"Домой\"</string>
+    <string name="keys_home_long_press_title">Кнопка \"Домой\" (долгое нажатие)</string>
+    <string name="keys_home_double_tap_title">Кнопка \"Домой\" (двойное нажатие)</string>
+    <string name="keys_menu_press_title">Кнопка \"Меню\"</string>
+    <string name="keys_menu_long_press_title">Кнопка \"Меню\" (долгое нажатие)</string>
+    <string name="keys_menu_double_tap_title">Кнопка \"Меню\" (двойное нажатие)</string>
+    <string name="keys_assist_press_title">Кнопка \"Поиск\"</string>
+    <string name="keys_assist_long_press_title">Кнопка \"Поиск\" (долгое нажатие)</string>
+    <string name="keys_assist_double_tap_title">Кнопка \"Поиск\" (двойное нажатие)</string>
+    <string name="keys_app_switch_press_title">Кнопка переключения приложений</string>
+    <string name="keys_app_switch_long_press_title">Кнопка переключения приложений (долгое нажатие)</string>
+    <string name="keys_app_switch_double_tap_title">Кнопка переключения приложений (двойное нажатие)</string>
+    <string name="keys_action_normal">Обычное нажатие</string>
+    <string name="keys_action_long">Долгое нажатие</string>
+    <string name="keys_action_double">Двойное нажатие</string>
+    <string name="no_home_key">Действие \"Домой\" не назначено ни на какую кнопку!\n\nЭто может сделать невозможным использование устройства!</string>
+
 </resources>

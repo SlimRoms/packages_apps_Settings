@@ -55,7 +55,7 @@
 
         <PreferenceCategory
                 android:key="advanced_cat"
-                android:title="@string/advanced_settings">
+                android:title="@string/advanced_settings" />
 
             <ListPreference
                     android:key="pref_navbar_menu_display"
@@ -75,7 +75,5 @@
                     android:key="navbar_can_move"
                     android:title="@string/navbar_can_move"
                     android:summary="@string/navbar_can_move_summary" />
-
-        </PreferenceCategory>
 
 </PreferenceScreen>

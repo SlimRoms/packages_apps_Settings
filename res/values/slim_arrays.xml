@@ -481,42 +481,6 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="shortcut_action_entries">
-        <item>@string/shortcut_action_back</item>
-        <item>@string/shortcut_action_app</item>
-        <item>@string/shortcut_action_home</item>
-        <item>@string/shortcut_action_kill</item>
-        <item>@string/shortcut_action_lastapp</item>
-        <item>@string/shortcut_action_notifications</item>
-        <item>@string/shortcut_action_ime</item>
-        <item>@string/shortcut_action_power_menu</item>
-        <item>@string/shortcut_action_qs</item>
-        <item>@string/shortcut_action_recent</item>
-        <item>@string/shortcut_action_power</item>
-        <item>@string/shortcut_action_screenshot</item>
-        <item>@string/shortcut_action_search</item>
-        <item>@string/shortcut_action_torch</item>
-        <item>@string/shortcut_action_none</item>
-    </string-array>
-
-    <string-array name="shortcut_action_values" translatable="false">
-        <item>**back**</item>
-        <item>**app**</item>
-        <item>**home**</item>
-        <item>**kill**</item>
-        <item>**lastapp**</item>
-        <item>**notifications**</item>
-        <item>**ime**</item>
-        <item>**power_menu**</item>
-        <item>**quicksettings**</item>
-        <item>**recents**</item>
-        <item>**power**</item>
-        <item>**screenshot**</item>
-        <item>**search**</item>
-        <item>**torch**</item>
-        <item>**null**</item>
-    </string-array>
-
     <!-- NavBar -->
     <string-array name="pref_navigation_menu_entries">
         <item>@string/navigation_menu_right</item>
@@ -612,9 +576,11 @@
         <item>@string/shortcut_action_home</item>
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
+        <item>@string/shortcut_action_navbar</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_menu_big</item>
         <item>@string/shortcut_action_ime</item>
+        <item>@string/shortcut_action_pie</item>
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_qs</item>
         <item>@string/shortcut_action_recent</item>
@@ -633,9 +599,11 @@
         <item>**home**</item>
         <item>**kill**</item>
         <item>**lastapp**</item>
+        <item>**nav_bar**</item>
         <item>**notifications**</item>
         <item>**menu_big**</item>
         <item>**ime**</item>
+        <item>**pie**</item>
         <item>**power_menu**</item>
         <item>**quicksettings**</item>
         <item>**recents**</item>
@@ -694,9 +662,11 @@
         <item>@string/shortcut_action_home</item>
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
+        <item>@string/shortcut_action_navbar</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_menu_big</item>
         <item>@string/shortcut_action_ime</item>
+        <item>@string/shortcut_action_pie</item>
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_qs</item>
         <item>@string/shortcut_action_recent</item>
@@ -720,9 +690,11 @@
         <item>**home**</item>
         <item>**kill**</item>
         <item>**lastapp**</item>
+        <item>**nav_bar**</item>
         <item>**notifications**</item>
         <item>**menu_big**</item>
         <item>**ime**</item>
+        <item>**pie**</item>
         <item>**power_menu**</item>
         <item>**quicksettings**</item>
         <item>**recents**</item>
@@ -743,6 +715,8 @@
         <item>@string/shortcut_action_airplane</item>
         <item>@string/shortcut_action_app</item>
         <item>@string/shortcut_action_expanded_desktop</item>
+        <item>@string/shortcut_action_navbar</item>
+        <item>@string/shortcut_action_pie</item>
         <item>@string/shortcut_action_power_off</item>
         <item>@string/shortcut_action_reboot</item>
         <item>@string/shortcut_action_screenshot</item>
@@ -753,6 +727,8 @@
         <item>**airplane**</item>
         <item>**app**</item>
         <item>**expanded_desktop**</item>
+        <item>**nav_bar**</item>
+        <item>**pie**</item>
         <item>**poweroff**</item>
         <item>**reboot**</item>
         <item>**screenshot**</item>

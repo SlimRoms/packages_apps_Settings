@@ -144,6 +144,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         mContainer.setClipToPadding(false);
         mInflater = inflater;
 
+        QuickSettingsUtil.removeUnsupportedTiles(getActivity());
+
         mIconPicker = new IconPicker(getActivity(), this);
         mPicker = new ShortcutPickerHelper(getActivity(), this);
         mEmptyLabel = getResources().getString(R.string.lockscreen_target_empty);

@@ -27,6 +27,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -1174,8 +1175,12 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                             actions++;
                             try {
                                 intent = Intent.parseUri(checkClick, 0);
-                                String intentClass = intent.getComponent().getClassName();
-                                className = intentClass.substring(intentClass.lastIndexOf(".") + 1);
+                                ComponentName comp = intent.getComponent();
+                                if (comp != null) {
+                                    String intentClass = comp.getClassName();
+                                    className = intentClass.substring(
+                                            intentClass.lastIndexOf(".") + 1);
+                                }
                             } catch (URISyntaxException e) {
                                 // Tricky user
                             }

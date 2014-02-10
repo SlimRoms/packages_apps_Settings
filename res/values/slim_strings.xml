@@ -1069,7 +1069,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style">Style and dimension</string>
     <string name="pie_style_title">Style</string>
     <string name="pie_dimens_title">Dimension</string>
-    <string name="pie_additional_options">Additional options</string>
     <string name="pie_show_snap_title">Show snap points</string>
     <string name="pie_show_snap_summary">Shows snap points to change the trigger edge dynamically</string>
     <string name="pie_show_text_title">Show status and clock</string>
@@ -1083,5 +1082,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style_reset_message">Reset style entries to default?</string>
     <string name="pie_warning_no_navigation_present">No other navigation is currently enabled. Turning off pie controls can result in an unusable device. Do you want to enable navigation bar instead?</string>
     <string name="pie_trigger_warning">Minimum one of the main triggers (bottom, left or right) needs to be enabled.</string>
+    <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
+    <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
 </resources>

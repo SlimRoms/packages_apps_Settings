@@ -36,6 +36,9 @@
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Dispositivo</string>
 
+    <!-- Slim Shortcuts -->
+    <string name="slim_shortcut_picker">Acciones Slim</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
     <string name="press_color_to_apply">Presiona sobre el color para aplicar</string>
@@ -71,7 +74,7 @@
     <string name="dialog_delete_title">Borrar</string>
     <string name="dialog_delete_message">Borrar elemento seleccionado?</string>
     <string name="dialog_test_message">Apaga la pantalla para ver en acción la notificación seleccionada o descarta esta ventana para detener la prueba</string>
-    <string name="dialog_test_button">Dismiss</string>
+    <string name="dialog_test_button">Omitir</string>
 
     <!-- Values for the notification light pulse spinners -->
     <string name="pulse_length_always_on">Siempre encendido</string>
@@ -174,13 +177,6 @@
     <string name="wakeup_when_plugged_unplugged_title">Despertar al cargar</string>
     <string name="wakeup_when_plugged_unplugged_summary">Despierta el dispositivo si se conecta/desconecta al cargador.</string>
 
-    <!-- Volume Overlay -->
-    <string name="volume_overlay_title">Estilo del panel de Volumen</string>
-    <string name="volume_overlay_single">Único</string>
-    <string name="volume_overlay_expandable">Expandible</string>
-    <string name="volume_overlay_expanded">Expandido</string>
-    <string name="volume_overlay_disable">Deshabilitado</string>
-
     <!-- Sound settings -->
     <string name="sound_title">Sonido</string>
     <string name="advanced_sound_title">Opciones avanzadas</string>
@@ -191,6 +187,13 @@
     <string name="volume_adjust_sounds_enable_summary">Reproduce un sonido cuando se cambia el volumen con las teclas físicas.</string>
     <string name="link_volume_ringtones">Vincular volumen de tono de llamada &amp; notificaciones</string>
     <string name="volume_ring_only_description">Tono de llamada</string>
+
+    <!-- Volume Overlay -->
+    <string name="volume_overlay_title">Estilo del panel de Volumen</string>
+    <string name="volume_overlay_single">Único</string>
+    <string name="volume_overlay_expandable">Expandible</string>
+    <string name="volume_overlay_expanded">Expandido</string>
+    <string name="volume_overlay_disable">Deshabilitado</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Sonido de obturador de cámara</string>
@@ -246,6 +249,7 @@
     <string name="auto_brightness_dialog_title">Niveles de brillo automático</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
+
     <string name="auto_brightness_adjust_button">Ajustar</string>
     <string name="auto_brightness_close_button">Cerrar</string>
     <string name="auto_brightness_reset_button">Restablecer</string>
@@ -470,6 +474,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_shortcuts_settings_title">Accesos directos</string>
     <string name="notification_shortcuts_settings_summary">Mostrar accesos directos en el panel de notificaciones</string>
 
+    <string name="notification_carrier_label_title">Nombre de operador</string>
+    <string name="notification_custom_carrier_label_title">Nombre de operador personalizado</string>
+    <string name="notification_custom_carrier_label_explain">Introducir un nombre de operador. En blanco para establecer el valor predeterminado.</string>
+    <string name="notification_custom_carrier_label_notset">Nombre personalizado no establecido actualmente</string>
+
     <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Ocultar wifi/operador en panel notif.</string>
     <string name="notification_hide_labels_disable">Mostrar todo</string>
@@ -555,6 +564,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_targets_title">Accesos directos del anillo</string>
     <string name="navbar_cat">Barra de Navegación</string>
     <string name="navbar_dimensions_reset_message">¿Restablecer todas las dimensiones a los valores predeterminados?</string>
+    <string name="navigation_bar_warning_no_navigation_present">No hay ninguna otra barra de navegación habilitada. Desactivando la barra de navegación puede dejar el dispositivo inusable. Activar controles PIE en su lugar?</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style_summary">Cambiar colores de botones en barra de navegación</string>
@@ -818,6 +828,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_toggle_match_state_check">Acción al tocar concuerda con el icono</string>
     <string name="custom_tile_long_press">Pulsación larga:</string>
     <string name="custom_tile_null_warning">Primero se debe definir una acción</string>
+    <string name="custom_tile_resolve_name">Desconocido</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Estilo</string>
@@ -851,10 +862,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_off">Deshabilitado</string>
     <string name="quick_pulldown_left">Izquierda</string>
     <string name="quick_pulldown_right">Derecha</string>
-    
-    <!-- QuickSettings: Quick Collapse -->
-    <string name="title_collapse_panel">Cierre rápido</string>
-    <string name="summary_collapse_panel">Cierra el panel de notificaciones tras tocar</string>
 
     <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">Despliegue inteligente</string>
@@ -862,6 +869,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_pulldown_off">Desactivado</string>
     <string name="smart_pulldown_dismissable">Desechables</string>
     <string name="smart_pulldown_persistent">Persistentes</string>
+
+    <!-- QuickSettings: Quick Collapse -->
+    <string name="title_collapse_panel">Cierre rápido</string>
+    <string name="summary_collapse_panel">Cierra el panel de notificaciones tras tocar</string>
 
      <!-- Stylus Gestures -->
     <string name="gestures_settings_title">Gestos con Stylus</string>
@@ -922,7 +933,35 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Rescan media volume -->
     <string name="storage_rescan_media">Buscar ficheros multimedia en la tarjeta de almacenamiento</string>
     <string name="storage_rescan_media_complete">Búsqueda completada</string>
-    
+
+    <!-- Hardware keys -->
+    <string name="button_keys_title">Botones físicos</string>
+    <string name="keys_bindings_title">Acciones</string>
+    <string name="keys_enable_custom_title">Habilitar acciones personalizadas</string>
+    <string name="keys_enable_custom_summary">Habilita acciones personalizadas de los botones físicos</string>
+    <string name="keys_back_press_title">Botón atras</string>
+    <string name="keys_back_long_press_title">Botón atras (pulsación larga)</string>
+    <string name="keys_back_double_tap_title">Botón atras (doble pulsación)</string>
+    <string name="keys_home_press_title">Botón inicio</string>
+    <string name="keys_home_long_press_title">Botón inicio (pulsación larga)</string>
+    <string name="keys_home_double_tap_title">Botón inicio (doble pulsación)</string>
+    <string name="keys_menu_press_title">Menu key</string>
+    <string name="keys_menu_long_press_title">Botón menú (pulsación larga)</string>
+    <string name="keys_menu_double_tap_title">Botón menú (doble pulsación)</string>
+    <string name="keys_assist_press_title">Botón búsqueda</string>
+    <string name="keys_assist_long_press_title">Botón búsqueda (pulsación larga)</string>
+    <string name="keys_assist_double_tap_title">Botón búsqueda (doble pulsación)</string>
+    <string name="keys_app_switch_press_title">Botón aps. recientes</string>
+    <string name="keys_app_switch_long_press_title">Botón aps. recientes (pulsación larga)</string>
+    <string name="keys_app_switch_double_tap_title">Botón aps. recientes (doble pulsación)</string>
+    <string name="keys_action_normal">Pulsación normal</string>
+    <string name="keys_action_long">Pulsación larga</string>
+    <string name="keys_action_double">Doble pulsación</string>
+    <string name="no_home_key">¡No hay ningún botón asignado para la acción \"Inicio\"!\n\n¡El dispositivo podría volverse insusable!</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">Se va a borrar el APN.</string>
+
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Duración mínima de la vibración</string>
 
@@ -958,5 +997,77 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_reboot_disabled">Deshabilitado</string>
     <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
     <string name="advanced_reboot_show_always">Mostrar siempre</string>
+
+    <!-- Keyguard always show battery -->
+    <string name="lockscreen_battery_status_title">Estado de la batería</string>
+    <string name="lockscreen_battery_status_summary">Mostrar siempre estado de la batería</string>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memoria</string>
+
+    <!-- security settings menu unlock -->
+    <string name="unlock_menu_unlock_title">Menú de desbloqueo</string>
+    <string name="unlock_menu_unlock_summary">Presionando el botón menú se desbloquea el dispositivo</string>
+
+    <!-- Android debugging over WiFi -->
+    <string name="adb_over_network">ADB por red</string>
+    <string name="adb_over_network_summary">Habilitar depuración TCP/IP a través de las interfaces de red (redes Wi-Fi, USB).
+    This setting is reset on reboot</string>
+
+    <!-- Warning for Adb over Network -->
+    <string name="adb_over_network_warning">ATENCIÓN: Cuando ADB por red está habilitado el teléfono es vulnerable a intrusos conectados a la red, incluida la red GSM!\n\nSólo utilizar esta función cuando estemos conectados a redes de confianza.\n\n¿Sigue queriendo habilitar esta función?</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Almacenamiento masivo</string>
+    <string name="usb_mass_storage_summary">Habilitar almacenamiento USB</string>
+
+    <!-- Pie Control -->
+    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_summary">Habilitar controles PIE</string>
+    <string name="pie_control_size">Tamaño de controles</string>
+    <string name="pie_control_trigger_positions">Opciones del lanzador</string>
+    <string name="pie_control_trigger_left">Lanzador en borde izquierdo</string>
+    <string name="pie_control_trigger_bottom">Lanzador en borde inferior</string>
+    <string name="pie_control_trigger_right">Lanzador en borde derecho</string>
+    <string name="pie_control_trigger_top">Lanzador en borde superior</string>
+    <string name="pie_control_trigger_top_summary">En borde superior no se mostrará la información de estado ni el reloj</string>
+    <string name="pie_button_style">Estilo de botones</string>
+    <string name="pie_button_color_title">Color de botones</string>
+    <string name="pie_button_alpha_title">Transparencia de botones</string>
+    <string name="pie_button_outline_color_title">Color borde de botones</string>
+    <string name="pie_button_pressed_color_title">Color botón presionado</string>
+    <string name="pie_button_long_pressed_color_title">Color pulsación larga</string>
+    <string name="pie_button_pressed_alpha_title">Transparencia de botón presionado</string>
+    <string name="pie_icon_style">Estilo de iconos de botones</string>
+    <string name="pie_icon_color_title">Color del icono</string>
+    <string name="pie_icon_color_mode_title">Modo del color de los iconos</string>
+    <string name="pie_icon_color_mode_dialog_title">Colorear</string>
+    <string name="pie_icon_color_mode_summary">Cambia el modo de color del icono del botón</string>
+    <string name="pie_trigger_note_title">Nota</string>
+    <string name="pie_trigger_note_summary">Para evitar conflictos con la barra de estado o la de navegación, los lanzadores en estos bordes se deshabilitarán automáticamente si uno o los dos están disponibles</string>
+    <string name="pie_background_color_title">Color de fondo</string>
+    <string name="pie_snap_color_title">Color puntos de anclaje</string>
+    <string name="pie_text_color_title">Color del texto</string>
+    <string name="pie_background_alpha_title">Transparencia del fondo</string>
+    <string name="pie_mirror_right_title">Efecto espejo en pie derecho</string>
+    <string name="pie_mirror_right_summary">Efecto espejo en el pie derecho en eje horizontañ</string>
+    <string name="pie_style">Estilo y dimensiones</string>
+    <string name="pie_style_title">Estilo</string>
+    <string name="pie_dimens_title">Tamaño</string>
+    <string name="pie_additional_options">Opciones adicionales</string>
+    <string name="pie_show_snap_title">Mostrar puntos de anclaje</string>
+    <string name="pie_show_snap_summary">Muestra puntos de anclaje para cambiar lanzadores en los bordes automáticamente</string>
+    <string name="pie_show_text_title">Mostrar estado y reloj</string>
+    <string name="pie_show_text_summary">Mostrar la información del estado del teléfono, la hora y la fecha</string>
+    <string name="pie_show_background_title">Mostrar fondo</string>
+    <string name="pie_show_background_summary">Habilitar fondo de pantalla de pie</string>
+    <string name="pie_button">Botones</string>
+    <string name="pie_button_second_layer">Segunda fila de botones</string>
+    <string name="pie_button_second_layer_summary">Cambiar botones de la segunda fila</string>
+    <string name="pie_button_style_summary">Cambiar estilo de botones pie</string>
+    <string name="pie_style_reset_message">Restablecer valores de estilo predeterminados?</string>
+    <string name="pie_warning_no_navigation_present">No hay otra método de navegación habilitado. Deshabilitando los controles pie puede dejar el dispositivo inusable. ¿Habilitar barra de navegación en su lugar?</string>
+    <string name="pie_trigger_warning">Al menos uno de los bordes principales debe estar habilitado (inferior, izquierda o superior).</string>
 
 </resources>

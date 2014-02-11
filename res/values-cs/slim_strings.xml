@@ -239,7 +239,6 @@
     <string name="auto_brightness_dialog_title">Automatická úroveň podsvícení</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> luxů</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Upravit</string>
     <string name="auto_brightness_close_button">Zavřít</string>
     <string name="auto_brightness_reset_button">Obnovit</string>

@@ -917,4 +917,6 @@
     <string name="pie_control_summary">Включить управление pie</string>
     <string name="pie_warning_no_navigation_present">Не включено никакой навигации. Отключение pie может сделать использование аппарата невозможным. Стоит ли включить строку навигации?</string>
     <string name="pie_trigger_warning">Должна быть включена как минимум одна основная точка привязки (внизу, слева или справа).</string>
+    <string name="pie_disable_ime_triggers_title">Отключить срабатывание на клавиатуре</string>
+    <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
 </resources>

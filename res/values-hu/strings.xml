@@ -2044,4 +2044,8 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"Fotó készítése"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"Fotó kiválasztása a Galériából"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+
+    <!-- Setting checkbox summary for displaying USB debugging notification -->
+    <string name="adb_notify">USB hibakeresés értesítés</string>
+    <string name="adb_notify_summary">Értesítés kijelzése USB hibakeresés csatlakozásánál</string>
 </resources>

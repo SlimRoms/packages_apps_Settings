@@ -38,6 +38,7 @@ import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -66,7 +67,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.internal.util.slim.AppHelper;
+import com.android.internal.util.slim.Converter;
 import com.android.internal.util.slim.DeviceUtils;
+import com.android.internal.util.slim.ImageHelper;
 import com.android.internal.util.slim.LockscreenTargetUtils;
 import com.android.internal.util.slim.QSConstants;
 import com.android.settings.R;
@@ -78,6 +81,7 @@ import com.android.settings.slim.util.ShortcutPickerHelper;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.Collator;
@@ -552,15 +556,23 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
 
         Drawable icon = null;
         if (uri != null) {
+            String extraIconPath = uri.replaceAll(".*?hasExtraIcon=", "");
             String iconUri = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                 index, 2, mCurrentCustomTile);
-            if (iconUri != null && iconUri.length() > 0) {
-                File f = new File(Uri.parse(iconUri).getPath());
+            if ((iconUri != null && iconUri.length() > 0)
+                    || (extraIconPath != null && extraIconPath.length() > 0)) {
+                File f = new File(Uri.parse(
+                        (iconUri != null ? iconUri : extraIconPath)).getPath());
                 if (f.exists()) {
                     icon = new BitmapDrawable(
                             getResources(), f.getAbsolutePath());
                 }
-            } else {
+                if (icon != null) {
+                    icon = ImageHelper.resize(
+                        getActivity(), icon, Converter.dpToPx(getActivity(), 48));
+                }
+            }
+            if (icon == null) {
                 try {
                     Intent intent = Intent.parseUri(uri, 0);
                     icon = LockscreenTargetUtils.getDrawableFromIntent(getActivity(), intent);
@@ -635,7 +647,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                             null, path, null, null, null, null);
                     setResolvedImage();
                 } else {
-                    deleteCustomIcon();  // Delete current icon if it exists before saving new.
+                    deleteCustomIcon(-1);  // Delete current icon if it exists before saving new.
                     QuickSettingsUtil.saveCustomActions(getActivity(), mCurrentAction, 2,
                             path, mCurrentCustomTile);
 
@@ -650,13 +662,11 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
     }
 
     @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+    public void shortcutPicked(String uri,
+            String friendlyName, Bitmap bmp, boolean isApplication) {
         if (uri == null || mCurrentAction == -1) {
             return;
         }
-
-        Drawable icon = null;
-
         boolean changeIcon = false;
         int setting = 0;
 
@@ -670,8 +680,25 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             setting = 1;
         }
 
+        if (bmp != null && changeIcon) {
+            // Icon is present, save it for future use and add the file path to the action.
+            String fileName = getActivity().getFilesDir()
+                    + File.separator + "shortcut_" + System.currentTimeMillis() + ".png";
+            try {
+                FileOutputStream out = new FileOutputStream(fileName);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                uri = uri + "?hasExtraIcon=" + fileName;
+                File image = new File(fileName);
+                image.setReadable(true, false);
+            }
+        }
+
         if (changeIcon) {
-            deleteCustomIcon();
+            deleteCustomIcon(setting);
         }
 
         QuickSettingsUtil.saveCustomActions(getActivity(),
@@ -680,7 +707,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         setDialogIconsAndText(mCurrentAction);
     }
 
-    private void deleteCustomIcon() {
+    private void deleteCustomIcon(int setting) {
         String path = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                 mCurrentAction, 2, mCurrentCustomTile);
 
@@ -688,6 +715,17 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             File f = new File(path);
             if (f != null && f.exists()) {
                 f.delete();
+            }
+        }
+
+        if (setting != -1) {
+            String uri = QuickSettingsUtil.getActionsAtIndex(getActivity(),
+                    mCurrentAction, setting, mCurrentCustomTile);
+            if (uri != null) {
+                File f = new File(uri.replaceAll(".*?hasExtraIcon=", ""));
+                if (f.exists()) {
+                    f.delete();
+                }
             }
         }
         QuickSettingsUtil.saveCustomActions(getActivity(),

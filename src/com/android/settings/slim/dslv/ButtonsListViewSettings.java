@@ -68,6 +68,7 @@ import com.android.settings.slim.dslv.DragSortController;
 import com.android.settings.slim.util.ShortcutPickerHelper;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
@@ -152,7 +153,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                     mButtonConfigsAdapter.add(item);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else {
-                    deleteIconFileIfPresent(item);
+                    deleteIconFileIfPresent(item, true);
                     setConfig(mButtonConfigs, false);
                     if (mButtonConfigs.size() == 0) {
                         showDisableMessage(true);
@@ -300,9 +301,25 @@ public class ButtonsListViewSettings extends ListFragment implements
 
     @Override
     public void shortcutPicked(String action,
-                String description, boolean isApplication) {
+                String description, Bitmap bmp, boolean isApplication) {
         if (mPendingIndex == -1) {
             return;
+        }
+        if (bmp != null && !mPendingLongpress) {
+            // Icon is present, save it for future use and add the file path to the action.
+            String fileName = mActivity.getFilesDir()
+                    + File.separator + "shortcut_" + System.currentTimeMillis() + ".png";
+            try {
+                FileOutputStream out = new FileOutputStream(fileName);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                action = action + "?hasExtraIcon=" + fileName;
+                File image = new File(fileName);
+                image.setReadable(true, false);
+            }
         }
         if (mPendingNewButton) {
             addNewButton(action, description);
@@ -359,7 +376,7 @@ public class ButtonsListViewSettings extends ListFragment implements
         mButtonConfigsAdapter.remove(button);
 
         if (!longpress) {
-            deleteIconFileIfPresent(button);
+            deleteIconFileIfPresent(button, false);
         }
 
         if (icon != null) {
@@ -369,6 +386,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                 button.setLongpressAction(action);
                 button.setLongpressActionDescription(description);
             } else {
+                deleteIconFileIfPresent(button, true);
                 button.setClickAction(action);
                 button.setClickActionDescription(description);
                 button.setIcon(ButtonsConstants.ICON_EMPTY);
@@ -394,9 +412,13 @@ public class ButtonsListViewSettings extends ListFragment implements
         return false;
     }
 
-    private void deleteIconFileIfPresent(ButtonConfig button) {
+    private void deleteIconFileIfPresent(ButtonConfig button, boolean deleteShortCutIcon) {
         File oldImage = new File(button.getIcon());
         if (oldImage.exists()) {
+            oldImage.delete();
+        }
+        oldImage = new File(button.getClickAction().replaceAll(".*?hasExtraIcon=", ""));
+        if (oldImage.exists() && deleteShortCutIcon) {
             oldImage.delete();
         }
     }
@@ -633,7 +655,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                             // first delete custom icons in case they exist
                             ArrayList<ButtonConfig> buttonConfigs = getOwner().getConfig();
                             for (int i = 0; i < buttonConfigs.size(); i++) {
-                                getOwner().deleteIconFileIfPresent(buttonConfigs.get(i));
+                                getOwner().deleteIconFileIfPresent(buttonConfigs.get(i), true);
                             }
 
                             // reset provider values and button adapter to default

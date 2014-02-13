@@ -999,7 +999,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_reboot_summary">Kikapcsolási menü tartalmazza az újraindítás recovery és bootloader opciókat</string>
     <string name="advanced_reboot_dialog_title">Haladó újarindítási menü</string>
     <string name="advanced_reboot_disabled">Tiltva</string>
-    <string name="advanced_reboot_hide_on_keyguard">Rejtve a zárképernyőn</string>	
+    <string name="advanced_reboot_hide_on_keyguard">Rejtve a zárképernyőn</string>
     <string name="advanced_reboot_show_always">Mindig mutassa</string>
 
     <!-- Keyguard always show battery -->

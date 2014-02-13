@@ -37,6 +37,9 @@
     <string name="device_settings_title">Eszköz
 </string>
 
+    <!-- Slim Shortcuts -->
+    <string name="slim_shortcut_picker">Slim Műveletek</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Szín választó</string>
     <string name="press_color_to_apply">Nyomj egy színre az alkalmazásához</string>
@@ -183,6 +186,13 @@
     <string name="volume_adjust_sounds_enable_summary">Hanghatás, ha állítod a hangerőt a hangerő gombbal</string>
     <string name="link_volume_ringtones">Összekapcsolja a csengőhangot &amp; értesítési hangerővel</string>
     <string name="volume_ring_only_description">Csengőhang</string>
+
+    <!-- Volume Overlay -->
+    <string name="volume_overlay_title">Hangerő panel stílus</string>
+    <string name="volume_overlay_single">Egyszerű</string>
+    <string name="volume_overlay_expandable">Bővíthető</string>
+    <string name="volume_overlay_expanded">Kiterjesztett</string>
+    <string name="volume_overlay_disable">Tiltva</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Kamera zárhang</string>
@@ -342,6 +352,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_stats_title">Statisztikák</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_navbar">Navigációs sáv</string>
+    <string name="shortcut_action_pie">Pie vezérlők</string>
     <string name="shortcut_action_airplane">Repülőgép mód</string>
     <string name="shortcut_action_expanded_desktop">Kiterjesztett képernyő</string>
     <string name="shortcut_action_power_off">Leállítás</string>
@@ -387,6 +399,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_help_icon">, kiválasztva az ikont testreszabhatjuk</string>
     <string name="shortcut_action_help_main">Hozzáadáshoz %1$s, válaszd a Hozzáadás ikont.  Egyszer %1$s hozzáadva, kiválasztva a sort fogja változtatni az elemt%2$s\n\nEltávolításhoz %1$s, húzd a sort vízszintesen jobbra vagy balra.  Átrendezéshez %1$s a listában függőlegesen húzva a bal szélét.\n\nTörléshez vagy visszaállítani alaphelyzetbe, válaszd az Alaphelyzetbe ikont.</string>
     <string name="shortcut_action_help_delete_last_entry">Eltávolítás minden %1$s listában letiltja ezt a funkciót teljesen.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Eltávolítás minden %1$s listában tiltani fogja a második pie réteget teljesen.</string>
 
     <string name="shortcuts_icon_picker_alarm">Riasztás</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
@@ -462,6 +475,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_drawer_title">Értesítési panel</string>
     <string name="notification_shortcuts_settings_title">Parancsikonok</string>
     <string name="notification_shortcuts_settings_summary">Parancsikonok kihelyezése az Értesítési panelen</string>
+    <string name="notification_carrier_label_title">Szolgáltató felirat</string>
+    <string name="notification_custom_carrier_label_title">Egyéni szolgáltató felirat</string>
+    <string name="notification_custom_carrier_label_explain">Írj be egy új feliratot. Üresen hagyva visszaáll az eredeti felirat.</string>
+    <string name="notification_custom_carrier_label_notset">Egyéni felirat jelenleg nem beállítható</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_hide_labels_title">Értesítési felirat rejtés</string>
+    <string name="notification_hide_labels_disable">Mutasd az összes feliratot</string>
+    <string name="notification_hide_labels_carrier">Szolgáltatói felirat elrejtése</string>
+    <string name="notification_hide_labels_wifi">WiFi felirat rejtése</string>
+    <string name="notification_hide_labels_all">Összes felirat rejtése</string>
+    <string name="notification_hide_labels_text">az értesítési panelen</string>
 
     <!-- StatusBar Battery Settings -->
     <string name="battery_icon_title">Akkumulátor ikon</string>
@@ -639,10 +664,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_target_title">Csúszka elemek</string>
     <string name="lockscreen_target_summary">Megtekinted vagy változtathatod az egyéni zárképernyő elemeket</string>
     <string name="lockscreen_target_color_title">Elem ikon szín</string>
-    <string name="lockscreen_eight_targets_title">8 csüszkás elemek</string>
+    <string name="lockscreen_eight_targets_title">8 csúszkás elemek</string>
     <string name="lockscreen_eight_targets_summary">Engedélyez 8 zárképernyő elemet.</string>
     <string name="lockscreen_enable_eight_targets_dialog">Kiválasztva ezt lehetőséget a zárképernyő elemek alaphelyzetbe kerülnek.</string>
     <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\n8 zárképernyő elemet engedélyezve nem tudod használni a mostani elemeket egyidőben.</string>
+    <string name="lockscreen_glowpad_torch_title">Fogantyú zseblámpa</string>
+    <string name="lockscreen_glowpad_torch_summary">Duplán koppintva és nyomva a fogantyút világít a zseblámpa</string>
     <string name="lockscreen_target_reset">Zárképernyő elemek alaphelyzetbe állnak</string>
     <string name="lockscreen_target_reset_message">Törlöd az összes létre hozott elemet és visszaállsz alaphelyzetbe?</string>
     <string name="lockscreen_target_empty">Nincs</string>
@@ -764,6 +791,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_battery">Akkumulátor</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Fényerő</string>
+    <string name="title_tile_contact">Kapcsolat</string>
     <string name="title_tile_custom">Egyéni</string>
     <string name="title_tile_sleep">Alvó állapot</string>
     <string name="title_tile_location">Hely</string>
@@ -804,6 +832,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_toggle_match_state_check">Kattintási művelet az ikonnak megfelelő</string>
     <string name="custom_tile_long_press">Hosszan nyomás:</string>
     <string name="custom_tile_null_warning">Be kell állítani egy műveletet elösszőr</string>
+    <string name="custom_tile_resolve_name">Ismeretlen</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Stílus</string>
@@ -837,6 +866,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_pulldown_off">KI</string>
     <string name="quick_pulldown_left">Bal</string>
     <string name="quick_pulldown_right">Jobb</string>
+
+    <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Intelligens legördülő</string>
+    <string name="smart_pulldown_summary">Nyissa meg a Gyors Beállításokat ha nincs %1$s értesítés jelenleg</string>
+    <string name="smart_pulldown_off">Ki</string>
+    <string name="smart_pulldown_dismissable">Elmozdítható</string>
+    <string name="smart_pulldown_persistent">Állandó</string>
+
+    <!-- QuickSettings: Quick Collapse -->
+    <string name="title_collapse_panel">Gyors bezárás</string>
+    <string name="summary_collapse_panel">Zárja be az értesítési panelt váltás után</string>
 
     <!-- Stylus Gestures -->
     <string name="gestures_settings_title">Stílus gesztusok</string>
@@ -898,10 +938,141 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media">Média újra keresése a tárolón</string>
     <string name="storage_rescan_media_complete">Keresés befejezve</string>
 
+    <!-- Hardware keys -->
+    <string name="button_keys_title">Hardveres gombok</string>
+    <string name="keys_bindings_title">Gomb műveletek</string>
+    <string name="keys_enable_custom_title">Egyéni művelet engedélyezése</string>
+    <string name="keys_enable_custom_summary">Egyéni hardveres gomb műveletek engedélyezése</string>
+    <string name="keys_back_press_title">Vissza gomb</string>
+    <string name="keys_back_long_press_title">Vissza gomb (hosszan nyomás)</string>
+    <string name="keys_back_double_tap_title">Vissza gomb (dupla katt.)</string>
+    <string name="keys_home_press_title">Kezdőlap gomb</string>
+    <string name="keys_home_long_press_title">Kezdőlap gomb (hosszan nyomás)</string>
+    <string name="keys_home_double_tap_title">Kezdőlap gomb (dupla katt.)</string>
+    <string name="keys_menu_press_title">Menü gomb</string>
+    <string name="keys_menu_long_press_title">Menü gomb (hosszan nyomás)</string>
+    <string name="keys_menu_double_tap_title">Menü gomb (dupla katt.)</string>
+    <string name="keys_assist_press_title">Keresés gomb</string>
+    <string name="keys_assist_long_press_title">Keresés gomb (hosszan nyomás)</string>
+    <string name="keys_assist_double_tap_title">Keresés gomb (dupla katt.)</string>
+    <string name="keys_app_switch_press_title">Alk. váltó gomb</string>
+    <string name="keys_app_switch_long_press_title">Alk. váltó gomb (hosszan nyomás)</string>
+    <string name="keys_app_switch_double_tap_title">Alk. váltó gomb (dupla katt.)</string>
+    <string name="keys_action_normal">Normál nyomás</string>
+    <string name="keys_action_long">Hosszan nyomás</string>
+    <string name="keys_action_double">Dupla kattintás</string>
+    <string name="no_home_key">Nem jelöltél ki  \"Kezdőlap\" műveletet!\n\nKészülék használhatatlanná válhat!</string>
+
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">Az APN törölve lesz.</string>
 
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Minimum rezgés időtartam</string>
+
+    <!-- ListView animation -->
+    <string name="interface_settings_animation_title">Animáció beállítások</string>
+    <string name="listview_animation_title">ListaNézet animáció</string>
+    <string name="listview_off">Alapértelmezett</string>
+    <string name="listview_wave_left">Hullám (balra)</string>
+    <string name="listview_wave_right">Hullám (jobbra)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Skála</string>
+    <string name="listview_stack_top">Halmozás (felül)</string>
+    <string name="listview_stack_bottom">Halmozás (alul)</string>
+    <string name="listview_unfold">Kibontás</string>
+    <string name="listview_fold">Behajtás</string>
+    <string name="listview_translate_left">Fordítás (balra)</string>
+    <string name="listview_translate_right">Fordítás (jobbra)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">ListaNézet beszúrás</string>
+    <string name="listview_accelerate_interpolator">Gyorsítás</string>
+    <string name="listview_decelerate_interpolator">Lassítás</string>
+    <string name="listview_accelerate_decelerate_interpolator">Gyorsítás és Lassítás</string>
+    <string name="listview_anticipate_interpolator">Előre hoz</string>
+    <string name="listview_overshoot_interpolator">Túllövés</string>
+    <string name="listview_anticipate_overshoot_interpolator">Előre hoz és túllövés</string>
+    <string name="listview_bounce_interpolator">Visszapattanó</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Haladó újraindítás</string>
+    <string name="advanced_reboot_summary">Kikapcsolási menü tartalmazza az újraindítás recovery és bootloader opciókat</string>
+    <string name="advanced_reboot_dialog_title">Haladó újarindítási menü</string>
+    <string name="advanced_reboot_disabled">Tiltva</string>
+    <string name="advanced_reboot_hide_on_keyguard">Rejtve a zárképernyőn</string>	
+    <string name="advanced_reboot_show_always">Mindig mutassa</string>
+
+    <!-- Keyguard always show battery -->
+    <string name="lockscreen_battery_status_title">Akksi állapot</string>
+    <string name="lockscreen_battery_status_summary">Mindig mutassa az akksi állapotát a képernyőzáron</string>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memória</string>
+
+    <!-- security settings menu unlock -->
+    <string name="unlock_menu_unlock_title">Menü feloldás</string>
+    <string name="unlock_menu_unlock_summary">Menü gomb megnyomásával feloldja a készüléket</string>
+
+    <!-- Android debugging over WiFi -->
+    <string name="adb_over_network">ADB hálózaton keresztül</string>
+    <string name="adb_over_network_summary">Engedélyezi a  TCP/IP hibakeresést hálózati felületeken át (Wi-Fi, USB hálózatok).
+    Újraindítás után alaphelyzetbe áll</string>
+
+    <!-- Warning for Adb over Network -->
+    <string name="adb_over_network_warning">FIGYELEM: Ha az ADB hálózat enegdélyezve van, a telefon védtelen a hálózati behatolások ellen, beleértve a GSM hálózatot is!
+    \n\nCsak akkor használd, ha biztonságos hálózatra csatlakozol.\n\nBiztos engedélyezed ezt a funkciót?</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Háttértár</string>
+    <string name="usb_mass_storage_summary">USB háttértár engedélyezése</string>
+
+    <!-- Pie Control -->
+    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_summary">Pie vezérlés engedélyezése</string>
+    <string name="pie_control_size">Navigációs méret</string>
+    <string name="pie_control_trigger_positions">Programindító opciók</string>
+    <string name="pie_control_trigger_left">Programindító képernyő bal szélén</string>
+    <string name="pie_control_trigger_bottom">Programindító képernyő alsó szélén</string>
+    <string name="pie_control_trigger_right">Programindító képernyő jobb szélén</string>
+    <string name="pie_control_trigger_top">Programindító képernyő felső szélén</string>
+    <string name="pie_control_trigger_top_summary">Felső pie nem mutatja a státusz és óra információkat</string>
+    <string name="pie_button_style">Gomb stílus</string>
+    <string name="pie_button_color_title">Gomb szín</string>
+    <string name="pie_button_alpha_title">Gomb áttetszősség</string>
+    <string name="pie_button_outline_color_title">Gomb körvonal színe</string>
+    <string name="pie_button_pressed_color_title">Gomb nyomás színe</string>
+    <string name="pie_button_long_pressed_color_title">Gomb hosszan nyomás színe</string>
+    <string name="pie_button_pressed_alpha_title">Gomb nyomásának áttetszőssége</string>
+    <string name="pie_icon_style">Gomb ikon stílus</string>
+    <string name="pie_icon_color_title">Gomb ikon színe</string>
+    <string name="pie_icon_color_mode_title">Gomb ikon szín mód</string>
+    <string name="pie_icon_color_mode_dialog_title">Színezés</string>
+    <string name="pie_icon_color_mode_summary">Gomb ikon színének megváltoztatása</string>
+    <string name="pie_trigger_note_title">Jegyzet</string>
+    <string name="pie_trigger_note_summary">A navigációs és állapot sávval való ütközés elkerülése érdekében, a programindító azokon a széleken automatikusan kikapcsolja egyiket vagy mindkettőt</string>
+    <string name="pie_background_color_title">Háttér szín</string>
+    <string name="pie_snap_color_title">Törés gomb szín</string>
+    <string name="pie_text_color_title">Szöveg szín</string>
+    <string name="pie_background_alpha_title">Háttér áttetszőssége</string>
+    <string name="pie_mirror_right_title">Pie jobb tükrözése</string>
+    <string name="pie_mirror_right_summary">Pie jobbra tükrözése a vízszintes tengelyen</string>
+    <string name="pie_style">Stílus és méret</string>
+    <string name="pie_style_title">Stílus</string>
+    <string name="pie_dimens_title">Méret</string>
+    <string name="pie_additional_options">További opciók</string>
+    <string name="pie_show_snap_title">Mutassa a törés pontot</string>
+    <string name="pie_show_snap_summary">Mutassa a törés pontot a programindító szélén dinamikusan</string>
+    <string name="pie_show_text_title">Állapot és óra mutatása</string>
+    <string name="pie_show_text_summary">Mutassa a telefon állapotát, idő és dátum információt</string>
+    <string name="pie_show_background_title">Háttér mutatása</string>
+    <string name="pie_show_background_summary">Pie képernyő háttér engedélyezése</string>
+    <string name="pie_button">Gombok</string>
+    <string name="pie_button_second_layer">Gomb második réteg</string>
+    <string name="pie_button_second_layer_summary">Második gomb réteg módosítása</string>
+    <string name="pie_button_style_summary">Pie gomb stílus módosítása</string>
+    <string name="pie_style_reset_message">Visszaállítod alaphelyzetbe?</string>
+    <string name="pie_warning_no_navigation_present">Jelenleg nincs más navigáció engedélyezve. Pie vezérlés kikapcsolva használhatatlan lesz az eszköz. Szeretné engedélyezni navigációs sáv helyett?</string>
+    <string name="pie_trigger_warning">Minimium egy fő programindítót (alul, bal vagy jobb) engedélyezned kell.</string>
 
 </resources>

@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.LayerDrawable;
@@ -56,6 +57,7 @@ import com.android.settings.slim.util.IconPicker.OnIconPickListener;
 import com.android.settings.slim.util.ShortcutPickerHelper;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -332,8 +334,9 @@ public class LockscreenTargets extends Fragment implements
                 Settings.System.LOCKSCREEN_TARGETS, targets);
 
         for (File image : mActivity.getFilesDir().listFiles()) {
-            if (image.getName().startsWith("lockscreen_")
-                    && !existingImages.contains(image.getAbsolutePath())) {
+            if ((image.getName().startsWith("lockscreen_")
+                    || image.getName().startsWith("lock_shortcut_"))
+                            && !existingImages.contains(image.getAbsolutePath())) {
                 image.delete();
             }
         }
@@ -394,20 +397,47 @@ public class LockscreenTargets extends Fragment implements
     }
 
     @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+    public void shortcutPicked(String uri, String friendlyName,
+            Bitmap bmp, boolean isApplication) {
         if (uri == null) {
             return;
+        }
+        TargetInfo icon = new TargetInfo();
+        Drawable iconDrawable = null;
+        if (bmp != null) {
+            // Icon is present, save it for future use and add the file path to the action.
+            String fileName = mActivity.getFilesDir()
+                    + File.separator + "lock_shortcut_" + System.currentTimeMillis() + ".png";
+            try {
+                FileOutputStream out = new FileOutputStream(fileName);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+                out.close();
+            } catch (Exception e) {
+                icon = null;
+                e.printStackTrace();
+            } finally {
+                File image = new File(fileName);
+                image.setReadable(true, false);
+                icon.iconType = GlowPadView.ICON_FILE;
+                icon.iconSource = image.getAbsolutePath();
+                iconDrawable = LockscreenTargetUtils.getDrawableFromFile(
+                        mActivity, icon.iconSource);
+            }
+        } else {
+            icon = null;
         }
 
         try {
             Intent intent = Intent.parseUri(uri, 0);
-            Drawable icon = LockscreenTargetUtils.getDrawableFromIntent(mActivity, intent);
+            if (iconDrawable == null) {
+                iconDrawable = LockscreenTargetUtils.getDrawableFromIntent(mActivity, intent);
+            }
 
             mDialogLabel.setText(friendlyName);
             mDialogLabel.setTag(uri);
             // this is a fresh drawable, so we can assign it directly
-            mDialogIcon.setImageDrawable(icon);
-            mDialogIcon.setTag(null);
+            mDialogIcon.setImageDrawable(iconDrawable);
+            mDialogIcon.setTag(icon);
         } catch (URISyntaxException e) {
             Log.wtf(TAG, "Invalid uri " + uri + " on pick");
         }

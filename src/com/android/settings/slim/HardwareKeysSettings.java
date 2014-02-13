@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -457,7 +458,7 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void shortcutPicked(String action,
-                String description, boolean isApplication) {
+                String description, Bitmap bmp, boolean isApplication) {
         if (mPendingSettingsKey == null || action == null) {
             return;
         }

@@ -187,6 +187,7 @@
         <activity
             android:name=".slim.SlimActionShortcut"
             android:theme="@android:style/Theme.NoDisplay"
+            android:icon="@drawable/slim_lock"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
             <intent-filter>

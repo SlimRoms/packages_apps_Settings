@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -44,7 +46,7 @@ public class ShortcutPickerHelper {
     private int lastFragmentId;
 
     public interface OnPickListener {
-        void shortcutPicked(String uri, String friendlyName, boolean isApplication);
+        void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication);
     }
 
     public ShortcutPickerHelper(Activity parent, OnPickListener listener) {
@@ -120,7 +122,7 @@ public class ShortcutPickerHelper {
 
     private void completeSetCustomApp(Intent data) {
         mListener.shortcutPicked(data.toUri(0),
-            AppHelper.getFriendlyActivityName(mParent, mPackageManager, data, false), true);
+            AppHelper.getFriendlyActivityName(mParent, mPackageManager, data, false), null, true);
     }
 
     private void completeSetCustomShortcut(Intent data) {
@@ -131,8 +133,30 @@ public class ShortcutPickerHelper {
         String appUri = intent.toUri(0);
         appUri = appUri.replaceAll("com.android.contacts.action.QUICK_CONTACT",
                 "android.intent.action.VIEW");
+
+        // Check if icon is present
+        Bitmap bmp = null;
+        Parcelable extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON);
+        if (extra != null && extra instanceof Bitmap) {
+            bmp = (Bitmap) extra;
+        }
+        // No icon till now check if icon resource is present
+        if (bmp == null) {
+            extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE);
+            if (extra != null && extra instanceof Intent.ShortcutIconResource) {
+                try {
+                    Intent.ShortcutIconResource iconResource = (ShortcutIconResource) extra;
+                    Resources resources =
+                            mPackageManager.getResourcesForApplication(iconResource.packageName);
+                    final int id = resources.getIdentifier(iconResource.resourceName, null, null);
+                    bmp = BitmapFactory.decodeResource(resources, id);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         mListener.shortcutPicked(appUri,
-            AppHelper.getFriendlyShortcutName(mParent, mPackageManager, intent), false);
+                AppHelper.getFriendlyShortcutName(mParent, mPackageManager, intent), bmp, false);
     }
 
 }

@@ -1055,7 +1055,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style">Estilo y dimensiones</string>
     <string name="pie_style_title">Estilo</string>
     <string name="pie_dimens_title">Tamaño</string>
-    <string name="pie_additional_options">Opciones adicionales</string>
     <string name="pie_show_snap_title">Mostrar puntos de anclaje</string>
     <string name="pie_show_snap_summary">Muestra puntos de anclaje para cambiar lanzadores en los bordes automáticamente</string>
     <string name="pie_show_text_title">Mostrar estado y reloj</string>
@@ -1069,5 +1068,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style_reset_message">Restablecer valores de estilo predeterminados?</string>
     <string name="pie_warning_no_navigation_present">No hay otra método de navegación habilitado. Deshabilitando los controles pie puede dejar el dispositivo inusable. ¿Habilitar barra de navegación en su lugar?</string>
     <string name="pie_trigger_warning">Al menos uno de los bordes principales debe estar habilitado (inferior, izquierda o superior).</string>
+    <string name="pie_disable_ime_triggers_title">Reducir tamaño de lanzadores con teclado</string>
+    <string name="pie_disable_ime_triggers_summary">Reduce el tamaño de los lanzadores de la izquierda y derecha si el teclado está activo en pantalla</string>
 
 </resources>

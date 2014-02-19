@@ -1085,4 +1085,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
+    <!-- About phone screen, build date of ROM -->
+    <string name="build_date">Revolution build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+
 </resources>

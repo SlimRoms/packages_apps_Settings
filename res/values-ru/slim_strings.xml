@@ -611,6 +611,7 @@
     <string name="reset">Сброс</string>
     <string name="attention">Внимание</string>
     <string name="enabled">Включено</string>
+    <string name="disabled">Отключено</string>
     <string name="default_string">По умолчанию</string>
     <string name="reset_message">Сбросить все настройки по умолчанию?</string>
     <string name="style_title">Стиль</string>
@@ -919,4 +920,11 @@
     <string name="pie_trigger_warning">Должна быть включена как минимум одна основная точка привязки (внизу, слева или справа).</string>
     <string name="pie_disable_ime_triggers_title">Отключить срабатывание на клавиатуре</string>
     <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
+
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Напоминание уведомления</string>
+    <string name="noti_reminder_enable_title">Включить напоминание уведомления</string>
+    <string name="noti_reminder_sound_title">Звук напоминания</string>
+    <string name="noti_reminder_sound_looping">Пока не отключено</string>
+    <string name="noti_reminder_ringtone">Мелодия напоминания</string>
 </resources>

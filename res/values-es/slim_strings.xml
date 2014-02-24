@@ -1071,4 +1071,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_disable_ime_triggers_title">Reducir tamaño de lanzadores con teclado</string>
     <string name="pie_disable_ime_triggers_summary">Reduce el tamaño de los lanzadores de la izquierda y derecha si el teclado está activo en pantalla</string>
 
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Recordatorio de notificaciones</string>
+    <string name="noti_reminder_enable_title">Habilitar recordordatorios de notificaciones</string>
+    <string name="noti_reminder_sound_title">Sonido de notificación</string>
+    <string name="noti_reminder_sound_looping">Hasta que se descarte</string>
+    <string name="noti_reminder_ringtone">Tono de notificación</string>
+
 </resources>

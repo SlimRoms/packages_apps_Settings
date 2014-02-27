@@ -198,7 +198,7 @@
     <string name="wakeup_when_plugged_unplugged_title">Пробуждение при зарядке</string>
     <string name="wakeup_when_plugged_unplugged_summary">Подключение/отключение зарядного устройства пробуждает телефон.</string>
     <string name="display_category_animation_options_title">Настройки анимации</string>
-    <string name="system_power_crt_mode_title">Режим анимации</string>
+    <string name="system_power_crt_mode_title">CRT-эффект</string>
     <string name="system_power_crt_mode_dialog_title">Показывать анимацию</string>
     <string name="system_power_crt_mode_horizontal">Горизонтально в портретном режиме</string>
     <string name="system_power_crt_mode_vertical">Вертикально в портретном режиме</string>
@@ -363,12 +363,12 @@
     <string name="lockscreen_use_widget_container_carousel_title">Включить круговое листание виджетов</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Использовать анимацию в стиле карусели при листании виджетов экрана блокировки в портретном режиме</string>
     <string name="lockscreen_target_info">Потяните ползунок к цели, чтобы назначить ярлык</string>
-    <string name="lockscreen_target_title">Ярлыки экрана блокировки</string>
-    <string name="lockscreen_target_summary">Установка или настройка ярлыков экрана блокировки</string>
+    <string name="lockscreen_target_title">Ярлыки кольца блокировки</string>
+    <string name="lockscreen_target_summary">Установка или настройка ярлыков кольца блокировки</string>
     <string name="lockscreen_eight_targets_title">Включить 8-целевое кольцо</string>
     <string name="lockscreen_eight_targets_summary">Включить режим, когда на кольцо можно назначить 8 действий.\nПримечание: включение этой настройки сбросит ваши текущие действия</string>
-    <string name="lockscreen_target_reset">Ярлыки экрана блокировки сброшены по умолчанию</string>
-    <string name="lockscreen_target_reset_message">Удалить все созданные ярлыки экрана блокировки и восстановить значения по умолчанию?</string>
+    <string name="lockscreen_target_reset">Ярлыки кольца блокировки сброшены по умолчанию</string>
+    <string name="lockscreen_target_reset_message">Удалить все созданные ярлыки кольца блокировки и восстановить значения по умолчанию?</string>
     <string name="lockscreen_target_empty">Пусто</string>
     <string name="lockscreen_target_edit_title">Изменить ярлык и значок</string>
     <string name="lockscreen_target_edit_msg">Выберите или измените нужные приложения или действие и значок</string>

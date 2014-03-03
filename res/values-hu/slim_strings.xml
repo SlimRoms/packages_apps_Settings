@@ -20,6 +20,7 @@
     <string name="reset">Visszaállítás</string>
     <string name="attention">Figyelmeztetés</string>
     <string name="enabled">Engedélyez</string>
+    <string name="disabled">Tiltva</string>
     <string name="default_string">Alapértelmezett</string>
     <string name="additional_options_title">További beállítások</string>
     <string name="reset_message">Mindent visszaállítasz alaphelyzetbe?</string>
@@ -1074,5 +1075,24 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style_reset_message">Visszaállítod alaphelyzetbe?</string>
     <string name="pie_warning_no_navigation_present">Jelenleg nincs más navigáció engedélyezve. Pie vezérlés kikapcsolva használhatatlan lesz az eszköz. Szeretné engedélyezni navigációs sáv helyett?</string>
     <string name="pie_trigger_warning">Minimium egy fő programindítót (alul, bal vagy jobb) engedélyezned kell.</string>
+
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Értesítési emlékeztető</string>
+    <string name="noti_reminder_enable_title">Értesítési emlékeztető engedélyezése</string>
+    <string name="noti_reminder_sound_title">Értesítési hang</string>
+    <string name="noti_reminder_sound_looping">Elutasításig</string>
+    <string name="noti_reminder_ringtone">Értesítési csengőhang</string>
+
+    <!-- Network speed -->
+    <string name="show_network_speed">Hálózati sebesség kijelzés</string>
+    <string name="show_network_speed_summary">Hálózati sebesség mutatása az állapotsávon</string>
+
+    <!-- Density Changer -->
+    <string name="custom_density_title">Egyéni lcd felbontás</string>
+    <string name="set_custom_density_title">Egyéni felbontás beállítása</string>
+    <string name="set_custom_density_set">Beállítás</string>
+    <string name="current_density">"Jelenlegi felbontás: "</string>
+    <string name="new_density">"Új felbontás: "</string>
+    <string name="density_change_warning">Megjegyzés: Felbontás megváltoztatása bezárja az összes futó alkalmazást!</string>
 
 </resources>

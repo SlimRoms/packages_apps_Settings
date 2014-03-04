@@ -20,6 +20,7 @@
     <string name="reset">Restablecer</string>
     <string name="attention">Atención</string>
     <string name="enabled">Habilitado</string>
+    <string name="disabled">Deshabilitado</string>
     <string name="default_string">Default</string>
     <string name="additional_options_title">Opciones adicionales</string>
     <string name="reset_message">¿Restablecer todo por defecto?</string>
@@ -589,19 +590,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="six">Seis</string>
 
     <!-- Quiet hours -->
-    <string name="quiet_hours_title">Horas de tranquilidad</string>
-    <string name="quiet_hours_summary">Configurar las horas de tranquilidad del teléfono</string>
-    <string name="quiet_hours_enabled">Habilitar horas de tranquilidad</string>
-    <string name="quiet_hours_enabled_on">Las horas de tranquilidad serán forzadas</string>
+    <string name="quiet_hours_title">Modo descanso</string>
+    <string name="quiet_hours_summary">Configurar las horas de descanso del teléfono</string>
+    <string name="quiet_hours_enabled">Habilitar modo descanso</string>
+    <string name="quiet_hours_enabled_on">Se forzará el modo descanso</string>
     <string name="quiet_hours_enabled_off">Las notificaciones se comportarán de forma normal</string>
-    <string name="quiet_hours_start">Inicio de horas de tranquilidad</string>
-    <string name="quiet_hours_start_summary">Cuando comenzar el forzado de horas de tranquilidad</string>
-    <string name="quiet_hours_end">Fin de horas de tranquilidad</string>
-    <string name="quiet_hours_end_summary">Cuando terminar el forzado de horas de tranquilidad</string>
+    <string name="quiet_hours_start">Inicio de Modo descanso</string>
+    <string name="quiet_hours_start_summary">Hora de inicio del modo descanso</string>
+    <string name="quiet_hours_end">Fin de Modo descanso</string>
+    <string name="quiet_hours_end_summary">Hora de finalización del modo descanso</string>
     <string name="quiet_hours_ringer_title">Silenciar tono de llamada</string>
     <string name="quiet_hours_ringer_on">Las llamadas no sonarán</string>
     <string name="quiet_hours_ringer_off">Las llamadas sonarán de forma normal</string>
-    <string name="quiet_hours_mute">Silencias notificaciones</string>
+    <string name="quiet_hours_mute">Silenciar notificaciones</string>
     <string name="quiet_hours_mute_on">No se reproducirán los sonidos</string>
     <string name="quiet_hours_mute_off">Los sonidos se reproducirán de forma normal</string>
     <string name="quiet_hours_still">Deshabilitar vibraciones</string>
@@ -624,22 +625,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_auto_disabled">Deshabilitado</string>
     <string name="quiet_hours_auto_enabled">Todos los números</string>
     <string name="quiet_hours_auto_contacts">Sólo contactos</string>
-    <string name="quiet_hours_bypass_group">Evitar horas de tranquilidad</string>
+    <string name="quiet_hours_bypass_group">Ignorar modo descanso</string>
     <string name="quiet_hours_sms_code_null">[Alarma]</string>
     <string name="quiet_hours_sms_bypass_title">Mensaje de texto</string>
     <string name="quiet_hours_sms_code_title">Clave de mensaje de texto</string>
     <string name="quiet_hours_sms_code_explain">Si un mensaje de texto entrante contiene este texto sonará una alarma en el teléfono</string>
     <string name="quiet_hours_call_bypass_title">Evitar en llamadas entrantes</string>
     <string name="quiet_hours_calls_required_title">Número de llamadas en 30 minutos</string>
-    <string name="quiet_hours_calls_required_summary">" llamadas para saltarse las horas de tranquilidad"</string>
+    <string name="quiet_hours_calls_required_summary">" llamadas para ignorar el modo descanso"</string>
     <string name="quiet_hours_bypass_ringtone_title">Tono a reproducir</string>
     <string name="quiet_hours_bypass_ringtone_loop_title">Tono en bucle</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_on">El tono sonará constantemente hasta que se desestime la alerta</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_off">Tono suena una sola vez</string>
     <string name="quiet_hours_alarm_dismiss">Desechar alarma</string>
     <string name="quiet_hours_alarm_and">" y "</string>
-    <string name="quiet_hours_alarm_dialog_title">HORAS DE TRANQUILIDAD EVITADAS</string>
-    <string name="quiet_hours_alarm_message">" satisface los requerimientos para saltarse las horas de tranquilidad!"</string>
+    <string name="quiet_hours_alarm_dialog_title">MODO DESCANSO IGNORADO</string>
+    <string name="quiet_hours_alarm_message">" satisface los requerimientos para ignorar el modo descanso!"</string>
 
     <!-- time range preference -->
     <string name="start_time_title">Inicio</string>
@@ -807,7 +808,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Modo de red</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Tiempo espera pantalla</string>
-    <string name="title_tile_quiet_hours">Horas de tranquilidad</string>
+    <string name="title_tile_quiet_hours">Modo descanso</string>
     <string name="title_tile_volume">Volumen</string>
     <string name="title_tile_expanded_desktop">Escritorio extendido</string>
     <string name="title_tile_music">Música</string>
@@ -1077,5 +1078,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_sound_title">Sonido de notificación</string>
     <string name="noti_reminder_sound_looping">Hasta que se descarte</string>
     <string name="noti_reminder_ringtone">Tono de notificación</string>
+    <string name="noti_reminder_interval">Flip interval</string>
+    <string name="noti_reminder_interval_1s">1 second</string>
+    <string name="noti_reminder_interval_1dot5s">1.5 segundos</string>
+    <string name="noti_reminder_interval_2s">2 segundos</string>
+    <string name="noti_reminder_interval_2dot5s">2.5 segundos</string>
+    <string name="noti_reminder_interval_3s">3 seconds</string>
+    <string name="noti_reminder_interval_3dot5s">3.5 segundos</string>
+    <string name="noti_reminder_interval_4s">4 segundos</string>
 
 </resources>

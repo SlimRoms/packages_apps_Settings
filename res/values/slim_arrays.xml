@@ -61,6 +61,7 @@
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_qs</item>
         <item>@string/shortcut_action_smart</item>
+        <item>@string/shortcut_action_recent</item>
         <item>@string/shortcut_action_ring_silent</item>
         <item>@string/shortcut_action_ring_vib</item>
         <item>@string/shortcut_action_ring_vib_silent</item>
@@ -79,6 +80,7 @@
         <item>**power_menu**</item>
         <item>**quicksettings**</item>
         <item>**smart_pulldown**</item>
+        <item>**recents**</item>
         <item>**ring_silent**</item>
         <item>**ring_vib**</item>
         <item>**ring_vib_silent**</item>

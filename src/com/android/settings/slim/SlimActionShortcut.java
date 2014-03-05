@@ -20,7 +20,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
+import com.android.internal.util.slim.ButtonsConstants;
 import com.android.internal.util.slim.SlimActions;
 
 public class SlimActionShortcut extends Activity  {
@@ -34,7 +36,12 @@ public class SlimActionShortcut extends Activity  {
     public void onResume() {
         super.onResume();
         String value = getIntent().getStringExtra("value");
-        SlimActions.processAction(this, value, false);
+        if (ButtonsConstants.ACTION_RECENTS.equals(value)) {
+            SlimActions.triggerVirtualKeypress(
+                    KeyEvent.KEYCODE_APP_SWITCH, false);
+        } else {
+            SlimActions.processAction(this, value, false);
+        }
         this.finish();
     }
 }

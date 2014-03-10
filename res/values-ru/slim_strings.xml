@@ -497,6 +497,7 @@
     <string name="shortcut_action_power">Потушить экран</string>
     <string name="shortcut_action_notifications">Уведомления</string>
     <string name="shortcut_action_qs">Панель быстрых настроек</string>
+    <string name="shortcut_action_smart">\"Умные\" уведомления</string>
     <string name="shortcut_action_none">Нет</string>
     <string name="shortcut_action_ring_vib">Звонок/Вибро</string>
     <string name="shortcut_action_ring_silent">Звонок/Тихо</string>
@@ -935,4 +936,5 @@
     <string name="noti_reminder_interval_3s">3 секунды</string>
     <string name="noti_reminder_interval_3dot5s">3.5 секунды</string>
     <string name="noti_reminder_interval_4s">4 секунды</string>
+
 </resources>

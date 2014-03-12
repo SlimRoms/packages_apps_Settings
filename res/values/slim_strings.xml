@@ -657,6 +657,15 @@
     <string name="battery_saver_title">Warning color</string>
     <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
+    <!-- WiFi Ad-Hoc mode -->
+    <string name="wifi_mode">Mode</string>
+    <string name="wifi_mode_ibss">Ad-Hoc (IBSS) Network</string>
+    <string name="wifi_mode_ibss_short">Ad-Hoc</string>
+
+    <string name="wifi_ibss_freq_title">Channel / Frequency</string>
+    <string name="wifi_channel">Channel</string>
+    <string name="wifi_mhz">MHz</string>
+
     <!-- Doze pulse (ambient display) notification timeout -->
     <string name="doze_timeout_title">Ambient display timeout</string>
     <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>

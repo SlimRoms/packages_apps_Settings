@@ -29,6 +29,12 @@
         android:summary="@string/lockscreen_colorize_handle_summary" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_targets_color"
+        android:title="@string/lockscreen_targets_color_title"
+        android:summary="@string/lockscreen_targets_color_summary"
+        android:defaultValue="0xffffff" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="lockscreen_frame_color"
         android:title="@string/lockscreen_frame_color_title"
         android:summary="@string/lockscreen_frame_color_summary"
@@ -44,6 +50,12 @@
         android:key="lockscreen_dots_color"
         android:title="@string/lockscreen_dots_color_title"
         android:summary="@string/lockscreen_dots_color_summary"
+        android:defaultValue="0xffffff" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_misc_color"
+        android:title="@string/lockscreen_misc_color_title"
+        android:summary="@string/lockscreen_misc_color_summary"
         android:defaultValue="0xffffff" />
 
 </PreferenceScreen>

@@ -35,6 +35,7 @@ import android.os.Handler;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
@@ -42,6 +43,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.TextUtils.SimpleStringSplitter;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
@@ -102,6 +104,10 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             "captioning_preference_screen";
     private static final String DISPLAY_MAGNIFICATION_PREFERENCE_SCREEN =
             "screen_magnification_preference_screen";
+    private static final String RECENT_PANEL_LEFTY_MODE =
+            "recent_panel_lefty_mode";
+    private static final String RECENT_PANEL_SCALE =
+            "recent_panel_scale";
 
     // Extras passed to sub-fragments.
     static final String EXTRA_PREFERENCE_KEY = "preference_key";
@@ -197,6 +203,8 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mCaptioningPreferenceScreen;
     private PreferenceScreen mDisplayMagnificationPreferenceScreen;
     private PreferenceScreen mGlobalGesturePreferenceScreen;
+    private CheckBoxPreference mRecentPanelLeftyMode;
+    private ListPreference mRecentPanelScale;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -238,6 +246,16 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             String stringValue = (String) newValue;
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LONG_PRESS_TIMEOUT, Integer.parseInt(stringValue));
+            return true;
+        } else if (preference == mRecentPanelScale) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_SCALE_FACTOR, value);
+            return true;
+        } else if (preference == mRecentPanelLeftyMode) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_GRAVITY,
+                    ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT);
             return true;
         }
         return false;
@@ -376,6 +394,15 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             // nor long press power does not show global actions menu.
             mSystemsCategory.removePreference(mGlobalGesturePreferenceScreen);
         }
+
+        mRecentPanelLeftyMode =
+                (CheckBoxPreference) findPreference(RECENT_PANEL_LEFTY_MODE);
+        mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
+
+        mRecentPanelScale =
+                (ListPreference) findPreference(RECENT_PANEL_SCALE);
+        mRecentPanelScale.setOnPreferenceChangeListener(this);
+
     }
 
     private void updateAllPreferences() {
@@ -536,6 +563,15 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             mGlobalGesturePreferenceScreen.setSummary(
                     R.string.accessibility_global_gesture_preference_summary_off);
         }
+
+        final boolean recentLeftyMode = Settings.System.getInt(getContentResolver(),
+                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT) == Gravity.LEFT;
+        mRecentPanelLeftyMode.setChecked(recentLeftyMode);
+
+        final int recentScale = Settings.System.getInt(getContentResolver(),
+                Settings.System.RECENT_PANEL_SCALE_FACTOR, 100);
+        mRecentPanelScale.setValue(recentScale + "");
+
     }
 
     private void updateLockScreenRotationCheckbox() {

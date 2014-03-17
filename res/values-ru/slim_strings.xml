@@ -727,6 +727,10 @@
     <string name="lockscreen_lock_color_summary">Цвет значков ползунка блокировки</string>
     <string name="lockscreen_dots_color_title">Цвет точек</string>
     <string name="lockscreen_dots_color_summary">Цвет точек экрана блокировки</string>
+    <string name="lockscreen_targets_color_title">Цвет целей</string>
+    <string name="lockscreen_targets_color_summary">Цвет целей экрана блокировки</string>
+    <string name="lockscreen_misc_color_title">Цвет остального</string>
+    <string name="lockscreen_misc_color_summary">Цвет оставшихся пунктов</string>
     <string name="title_tile_sleep">Потушить экран</string>
     <string name="title_tile_location">Местоположение</string>
     <string name="dynamic_tile_ime_switcher">Переключатель IME</string>
@@ -936,5 +940,15 @@
     <string name="noti_reminder_interval_3s">3 секунды</string>
     <string name="noti_reminder_interval_3dot5s">3.5 секунды</string>
     <string name="noti_reminder_interval_4s">4 секунды</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">Панель недавних приложений</string>
+    <string name="recent_panel_scale_title">Размер</string>
+    <string name="recent_panel_scale_summary">Размер панели недавних приложений в процентах.</string>
+    <string name="recent_panel_100">100% (по умолчанию)</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
+    <string name="recent_panel_lefty_mode_summary">Показывать панель недавних приложений у левого края.</string>
 
 </resources>

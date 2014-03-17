@@ -725,6 +725,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_lock_color_summary">Color de la huella de bloqueo</string>
     <string name="lockscreen_dots_color_title">Color de los puntos</string>
     <string name="lockscreen_dots_color_summary">Color de los puntos de la huella de bloqueo</string>
+    <string name="lockscreen_targets_color_title">Color de los accesos directos</string>
+    <string name="lockscreen_targets_color_summary">Color de los accesos directos</string>
+    <string name="lockscreen_misc_color_title">Colores varios</string>
+    <string name="lockscreen_misc_color_summary">Color del resto de items</string>
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>
@@ -1074,17 +1078,29 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification Reminders -->
     <string name="noti_reminder_category">Recordatorio de notificaciones</string>
-    <string name="noti_reminder_enable_title">Habilitar recordordatorios de notificaciones</string>
+    <string name="noti_reminder_enable_title">Habilitar recordatorio notificaciones</string>
     <string name="noti_reminder_sound_title">Sonido de notificación</string>
     <string name="noti_reminder_sound_looping">Hasta que se descarte</string>
     <string name="noti_reminder_ringtone">Tono de notificación</string>
-    <string name="noti_reminder_interval">Flip interval</string>
-    <string name="noti_reminder_interval_1s">1 second</string>
+    <string name="noti_reminder_interval">Intervalo cambio título/mensaje</string>
+    <string name="noti_reminder_interval_1s">1 segundo</string>
     <string name="noti_reminder_interval_1dot5s">1.5 segundos</string>
     <string name="noti_reminder_interval_2s">2 segundos</string>
     <string name="noti_reminder_interval_2dot5s">2.5 segundos</string>
     <string name="noti_reminder_interval_3s">3 seconds</string>
     <string name="noti_reminder_interval_3dot5s">3.5 segundos</string>
     <string name="noti_reminder_interval_4s">4 segundos</string>
+
+     <!-- Recent panel -->
+    <string name="recent_panel_category">Panel de aps. recientes</string>
+    <string name="recent_panel_scale_title">Tamaño</string>
+    <string name="recent_panel_scale_summary">Tamaño del panel de aps recientes en porcentaje.</string>
+    <string name="recent_panel_100">100% (predeterminado)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>
+    <string name="recent_panel_lefty_mode_summary">Mostrar el panel de aps recientes en el lado izquierdo.</string>
 
 </resources>

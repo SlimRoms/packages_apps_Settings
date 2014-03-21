@@ -602,6 +602,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_enabled">Enable quiet hours</string>
     <string name="quiet_hours_enabled_on">Quiet hours will be enforced</string>
     <string name="quiet_hours_enabled_off">Notifications will function as normal</string>
+    <string name="quiet_hours_auto_title">Follow ringer mode</string>
+    <string name="quiet_hours_auto_silent">Quiet hours will enable when ringer is set to silent</string>
+    <string name="quiet_hours_auto_vibrate">Quiet hours will enable when ringer is set to vibrate or silent</string>
     <string name="quiet_hours_start">Start of quiet hours</string>
     <string name="quiet_hours_start_summary">When to start enforcing quiet hours</string>
     <string name="quiet_hours_end">End of quiet hours</string>

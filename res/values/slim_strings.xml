@@ -633,6 +633,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_auto_disabled">Disabled</string>
     <string name="quiet_hours_auto_enabled">All numbers</string>
     <string name="quiet_hours_auto_contacts">Contacts only</string>
+    <string name="quiet_hours_auto_starred">Starred contacts only</string>
     <string name="quiet_hours_bypass_group">Bypass quiet hours</string>
     <string name="quiet_hours_sms_code_null">[Alarm]</string>
     <string name="quiet_hours_sms_bypass_title">Text message bypass</string>

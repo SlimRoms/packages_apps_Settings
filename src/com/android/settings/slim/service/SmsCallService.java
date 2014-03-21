@@ -62,6 +62,11 @@ public class SmsCallService extends Service {
                 mIncomingNumber = incomingNumber;
                 int bypassPreference = SmsCallHelper.returnUserCallBypass(SmsCallService.this);
                 boolean isContact = SmsCallHelper.isContact(SmsCallService.this, mIncomingNumber);
+                boolean isStarred = false;
+
+                if (isContact) {
+                    isStarred = SmsCallHelper.isStarred(SmsCallService.this, mIncomingNumber);
+                }
 
                 if (!mKeepCounting) {
                     mKeepCounting = true;
@@ -84,6 +89,11 @@ public class SmsCallService extends Service {
                                 mBypassCallCount++;
                             }
                             break;
+                        case SmsCallHelper.STARRED_ONLY:
+                            if (isStarred) {
+                                mBypassCallCount++;
+                            }
+                            break;
                     }
 
                     if (mBypassCallCount == 0) {
@@ -98,6 +108,14 @@ public class SmsCallService extends Service {
                             break;
                         case SmsCallHelper.CONTACTS_ONLY:
                             if (isContact) {
+                                mBypassCallCount = 1;
+                            } else {
+                                // Reset call count and time at next call
+                                mKeepCounting = false;
+                            }
+                            break;
+                        case SmsCallHelper.STARRED_ONLY:
+                            if (isStarred) {
                                 mBypassCallCount = 1;
                             } else {
                                 // Reset call count and time at next call
@@ -155,6 +173,11 @@ public class SmsCallService extends Service {
             int userAutoSms = SmsCallHelper.returnUserAutoText(context);
             int bypassCodePref = SmsCallHelper.returnUserTextBypass(context);
             boolean isContact = SmsCallHelper.isContact(context, incomingNumber);
+            boolean isStarred = false;
+
+            if (isContact) {
+                isStarred = SmsCallHelper.isStarred(context, incomingNumber);
+            }
 
             if ((bypassCodePref != SmsCallHelper.DEFAULT_DISABLED
                     || userAutoSms != SmsCallHelper.DEFAULT_DISABLED)
@@ -172,6 +195,13 @@ public class SmsCallService extends Service {
                             break;
                         case SmsCallHelper.CONTACTS_ONLY:
                             if (isContact) {
+                                // Sound Alarm && Don't auto-respond
+                                nawDawg = true;
+                                startAlarm(SmsCallService.this, incomingNumber);
+                            }
+                            break;
+                        case SmsCallHelper.STARRED_ONLY:
+                            if (isStarred) {
                                 // Sound Alarm && Don't auto-respond
                                 nawDawg = true;
                                 startAlarm(SmsCallService.this, incomingNumber);
@@ -234,8 +264,8 @@ public class SmsCallService extends Service {
             if (!incomingNumber.equals(mNumberSent)) {
                 mNumberSent = incomingNumber;
                 mMinuteSent = SmsCallHelper.returnTimeInMinutes();
-                    SmsCallHelper.checkSmsQualifiers(
-                            context, incomingNumber, userSetting, isContact);
+                SmsCallHelper.checkSmsQualifiers(
+                        context, incomingNumber, userSetting, isContact);
             }
         }
     }

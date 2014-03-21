@@ -55,6 +55,7 @@ public class SmsCallHelper {
     public static final int DEFAULT_DISABLED = 0;
     public static final int ALL_NUMBERS = 1;
     public static final int CONTACTS_ONLY = 2;
+    public static final int STARRED_ONLY = 3;
     public static final int DEFAULT_TWO = 2;
 
     // Return the current time
@@ -215,6 +216,11 @@ public class SmsCallHelper {
                     sendAutoReply(message, incomingNumber);
                 }
                 break;
+            case STARRED_ONLY:
+                if (isContact && isStarred(context, incomingNumber)) {
+                    sendAutoReply(message, incomingNumber);
+                }
+                break;
         }
     }
 
@@ -241,6 +247,30 @@ public class SmsCallHelper {
             }
         }
         return isContact;
+    }
+
+    /* True: Starred contact
+     * False: Not starred
+     */
+    public static boolean isStarred(Context context, String phoneNumber) {
+        boolean isStarred = false;
+        Uri lookupUri = Uri.withAppendedPath(
+                PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
+        String[] numberProject = { PhoneLookup.STARRED };
+        Cursor c = context.getContentResolver().query(
+                lookupUri, numberProject, null, null, null);
+        try {
+            if (c.moveToFirst()) {
+                if (c.getInt(c.getColumnIndex(PhoneLookup.STARRED)) == 1) {
+                    isStarred = true;
+                }
+            }
+        } finally {
+            if (c != null) {
+               c.close();
+            }
+        }
+        return isStarred;
     }
 
     // Returns the contact name or number

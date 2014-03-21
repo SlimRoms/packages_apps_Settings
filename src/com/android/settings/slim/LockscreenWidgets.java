@@ -44,6 +44,8 @@ public class LockscreenWidgets extends SettingsPreferenceFragment
 
     private static final String KEY_ENABLE_WIDGETS =
             "lockscreen_enable_widgets";
+    private static final String KEY_DISABLE_FRAME =
+            "lockscreen_disable_frame";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET =
             "lockscreen_camera_widget";
     private static final String KEY_LOCKSCREEN_MAXIMIZE_WIDGETS =
@@ -54,6 +56,7 @@ public class LockscreenWidgets extends SettingsPreferenceFragment
             "lockscreen_use_widget_container_carousel";
 
     private CheckBoxPreference mEnableWidgets;
+    private CheckBoxPreference mDisableFrame;
     private CheckBoxPreference mCameraWidget;
     private CheckBoxPreference mMaximizeWidgets;
     private CheckBoxPreference mLockscreenHints;
@@ -86,6 +89,11 @@ public class LockscreenWidgets extends SettingsPreferenceFragment
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        mDisableFrame = (CheckBoxPreference) findPreference(KEY_DISABLE_FRAME);
+        mDisableFrame.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_WIDGET_FRAME_ENABLED, 0) == 1);
+        mDisableFrame.setOnPreferenceChangeListener(this);
 
         final boolean cameraDefault = keyguardResources != null
                 ? keyguardResources.getBoolean(keyguardResources.getIdentifier(
@@ -141,6 +149,11 @@ public class LockscreenWidgets extends SettingsPreferenceFragment
             mEnableWidgets.setSummary((Boolean) newValue ? R.string.enabled : R.string.disabled);
             updatePreferences(!((Boolean) newValue)
                     && (mCameraWidgetAttached ? !mCameraWidget.isChecked() : true));
+            return true;
+        } else if (preference == mDisableFrame) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_WIDGET_FRAME_ENABLED,
+                    (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == mCameraWidget) {
             Settings.System.putInt(getContentResolver(),

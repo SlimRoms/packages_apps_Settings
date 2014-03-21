@@ -22,6 +22,11 @@
             android:title="@string/security_enable_widgets_title" />
 
          <CheckBoxPreference
+            android:key="lockscreen_disable_frame"
+            android:title="@string/lockscreen_widget_frame_title"
+            android:summary="@string/lockscreen_widget_frame_summary" />
+
+         <CheckBoxPreference
             android:key="lockscreen_camera_widget"
             android:title="@string/lockscreen_camera_widget_title"
             android:summary="@string/lockscreen_camera_widget_summary" />

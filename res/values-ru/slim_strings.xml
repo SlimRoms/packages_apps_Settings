@@ -20,6 +20,9 @@
     <string name="quiet_hours_enabled">Включить тихие часы</string>
     <string name="quiet_hours_enabled_on">Тихие часы активированы</string>
     <string name="quiet_hours_enabled_off">Уведомления будут вести себя как обычно</string>
+    <string name="quiet_hours_auto_title">В зависимости от режима звонка</string>
+    <string name="quiet_hours_auto_silent">Тихие часы включат звонок, если он беззвучный</string>
+    <string name="quiet_hours_auto_vibrate">Тихие часы включат звонок, если он вибро или беззвучный</string>
     <string name="quiet_hours_start">Начало тихих часов</string>
     <string name="quiet_hours_start_summary">Когда начинаются тихие часы</string>
     <string name="quiet_hours_end">Конец тихих часов</string>
@@ -362,6 +365,8 @@
     <string name="lockscreen_disable_hints_summary">Отключить свечение, окружающее виджет в портретном режиме</string>
     <string name="lockscreen_use_widget_container_carousel_title">Включить круговое листание виджетов</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Использовать анимацию в стиле карусели при листании виджетов экрана блокировки в портретном режиме</string>
+    <string name="lockscreen_widget_frame_title">Отключить рамки виджетов</string>
+    <string name="lockscreen_widget_frame_summary">Отключить фоновые рамки виджетов</string>
     <string name="lockscreen_target_info">Потяните ползунок к цели, чтобы назначить ярлык</string>
     <string name="lockscreen_target_title">Ярлыки кольца блокировки</string>
     <string name="lockscreen_target_summary">Установка или настройка ярлыков кольца блокировки</string>
@@ -692,6 +697,7 @@
     <string name="quiet_hours_auto_disabled">Отключено</string>
     <string name="quiet_hours_auto_enabled">Все номера</string>
     <string name="quiet_hours_auto_contacts">Только в контактах</string>
+    <string name="quiet_hours_auto_starred">Только избранные контакты</string>
     <string name="quiet_hours_bypass_group">Игнорировать тихие часы</string>
     <string name="quiet_hours_sms_code_null">[Будильник]</string>
     <string name="quiet_hours_sms_bypass_title">Игнорировать \"тихие часы\" для сообщений</string>
@@ -822,6 +828,12 @@
     <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
+
+    <!-- Keyguard allow rotation -->
+    <string name="lockscreen_rotation_title">Вращение экрана блокировки</string>
+    <string name="lockscreen_rotation_portrait">Только портретный</string>
+    <string name="lockscreen_rotation_landscape">Только ландшафтный</string>
+    <string name="lockscreen_rotation_summary_extra">(в зависимости от положения)</string>
 
     <!-- Keyguard always show battery -->
     <string name="lockscreen_battery_status_title">Состояние батареи</string>

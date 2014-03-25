@@ -595,6 +595,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_enabled">Habilitar modo descanso</string>
     <string name="quiet_hours_enabled_on">Se forzará el modo descanso</string>
     <string name="quiet_hours_enabled_off">Las notificaciones se comportarán de forma normal</string>
+    <string name="quiet_hours_auto_title">Vincular con modo de sonido</string>
+    <string name="quiet_hours_auto_silent">El modo de descanso se activará con el tono del teléfono silenciado</string>
+    <string name="quiet_hours_auto_vibrate">El modo de descanso se activará el tono del teléfono silenciado o en vibración</string>
     <string name="quiet_hours_start">Inicio de Modo descanso</string>
     <string name="quiet_hours_start_summary">Hora de inicio del modo descanso</string>
     <string name="quiet_hours_end">Fin de Modo descanso</string>
@@ -625,6 +628,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_auto_disabled">Deshabilitado</string>
     <string name="quiet_hours_auto_enabled">Todos los números</string>
     <string name="quiet_hours_auto_contacts">Sólo contactos</string>
+    <string name="quiet_hours_auto_starred">Sólo contacos \"Starred\"</string>
     <string name="quiet_hours_bypass_group">Ignorar modo descanso</string>
     <string name="quiet_hours_sms_code_null">[Alarma]</string>
     <string name="quiet_hours_sms_bypass_title">Mensaje de texto</string>

@@ -60,36 +60,39 @@ public class SmsCallService extends Service {
             if (state == TelephonyManager.CALL_STATE_RINGING) {
                 mIncomingCall = true;
                 mIncomingNumber = incomingNumber;
-                int bypassPreference = SmsCallHelper.returnUserCallBypass(SmsCallService.this);
-                boolean isContact = SmsCallHelper.isContact(SmsCallService.this, mIncomingNumber);
+                final int bypassPreference = SmsCallController.getInstance(
+                        SmsCallService.this).returnUserCallBypass();
+                final boolean isContact = SmsCallController.getInstance(
+                        SmsCallService.this).isContact(mIncomingNumber);
                 boolean isStarred = false;
 
                 if (isContact) {
-                    isStarred = SmsCallHelper.isStarred(SmsCallService.this, mIncomingNumber);
+                    isStarred = SmsCallController.getInstance(
+                            SmsCallService.this).isStarred(mIncomingNumber);
                 }
 
                 if (!mKeepCounting) {
                     mKeepCounting = true;
                     mBypassCallCount = 0;
-                    mDay = SmsCallHelper.returnDayOfMonth();
-                    mMinutes = SmsCallHelper.returnTimeInMinutes();
+                    mDay = SmsCallController.getInstance(SmsCallService.this).returnDayOfMonth();
+                    mMinutes = SmsCallController.getInstance(SmsCallService.this).returnTimeInMinutes();
                 }
 
-                boolean timeConstraintMet = SmsCallHelper.returnTimeConstraintMet(
-                        SmsCallService.this, mMinutes, mDay);
+                boolean timeConstraintMet = SmsCallController.getInstance(
+                        SmsCallService.this).returnTimeConstraintMet(mMinutes, mDay);
                 if (timeConstraintMet) {
                     switch (bypassPreference) {
-                        case SmsCallHelper.DEFAULT_DISABLED:
+                        case SmsCallController.DEFAULT_DISABLED:
                             break;
-                        case SmsCallHelper.ALL_NUMBERS:
+                        case SmsCallController.ALL_NUMBERS:
                             mBypassCallCount++;
                             break;
-                        case SmsCallHelper.CONTACTS_ONLY:
+                        case SmsCallController.CONTACTS_ONLY:
                             if (isContact) {
                                 mBypassCallCount++;
                             }
                             break;
-                        case SmsCallHelper.STARRED_ONLY:
+                        case SmsCallController.STARRED_ONLY:
                             if (isStarred) {
                                 mBypassCallCount++;
                             }
@@ -101,12 +104,12 @@ public class SmsCallService extends Service {
                     }
                 } else {
                     switch (bypassPreference) {
-                        case SmsCallHelper.DEFAULT_DISABLED:
+                        case SmsCallController.DEFAULT_DISABLED:
                             break;
-                        case SmsCallHelper.ALL_NUMBERS:
+                        case SmsCallController.ALL_NUMBERS:
                             mBypassCallCount = 1;
                             break;
-                        case SmsCallHelper.CONTACTS_ONLY:
+                        case SmsCallController.CONTACTS_ONLY:
                             if (isContact) {
                                 mBypassCallCount = 1;
                             } else {
@@ -114,7 +117,7 @@ public class SmsCallService extends Service {
                                 mKeepCounting = false;
                             }
                             break;
-                        case SmsCallHelper.STARRED_ONLY:
+                        case SmsCallController.STARRED_ONLY:
                             if (isStarred) {
                                 mBypassCallCount = 1;
                             } else {
@@ -123,17 +126,20 @@ public class SmsCallService extends Service {
                             }
                             break;
                     }
-                    mDay = SmsCallHelper.returnDayOfMonth();
-                    mMinutes = SmsCallHelper.returnTimeInMinutes();
+                    mDay = SmsCallController.getInstance(
+                            SmsCallService.this).returnDayOfMonth();
+                    mMinutes = SmsCallController.getInstance(
+                            SmsCallService.this).returnTimeInMinutes();
                 }
                 if ((mBypassCallCount
-                        == SmsCallHelper.returnUserCallBypassCount(SmsCallService.this))
+                        == SmsCallController.getInstance(
+                                SmsCallService.this).returnUserCallBypassCount())
                         && QuietHoursHelper.inQuietHours(SmsCallService.this, null)
                         && timeConstraintMet) {
                     // Don't auto-respond if alarm fired
                     mIncomingCall = false;
                     mKeepCounting = false;
-                    startAlarm(SmsCallService.this, mIncomingNumber);
+                    startAlarm(mIncomingNumber);
                 }
             }
             if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
@@ -148,21 +154,22 @@ public class SmsCallService extends Service {
             if (state == TelephonyManager.CALL_STATE_IDLE && mIncomingCall) {
                 // Call Received and now inactive
                 mIncomingCall = false;
-                int userAutoSms = SmsCallHelper.returnUserAutoCall(SmsCallService.this);
+                final int userAutoSms = SmsCallController.getInstance(
+                        SmsCallService.this).returnUserAutoCall();
 
-                if (userAutoSms != SmsCallHelper.DEFAULT_DISABLED
+                if (userAutoSms != SmsCallController.DEFAULT_DISABLED
                         && QuietHoursHelper.inQuietHours(SmsCallService.this, null)) {
-                    boolean isContact =
-                        SmsCallHelper.isContact(SmsCallService.this, mIncomingNumber);
-                    checkTimeAndNumber(
-                            SmsCallService.this, mIncomingNumber, userAutoSms, isContact);
+                    final boolean isContact =
+                            SmsCallController.getInstance(
+                                    SmsCallService.this).isContact(mIncomingNumber);
+                    checkTimeAndNumber(mIncomingNumber, userAutoSms, isContact);
                 }
             }
             super.onCallStateChanged(state, incomingNumber);
         }
     };
 
-    private BroadcastReceiver smsReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver mSmsReceiver = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -170,47 +177,54 @@ public class SmsCallService extends Service {
             SmsMessage msg = msgs[0];
             String incomingNumber = msg.getOriginatingAddress();
             boolean nawDawg = false;
-            int userAutoSms = SmsCallHelper.returnUserAutoText(context);
-            int bypassCodePref = SmsCallHelper.returnUserTextBypass(context);
-            boolean isContact = SmsCallHelper.isContact(context, incomingNumber);
+            final int userAutoSms =
+                    SmsCallController.getInstance(SmsCallService.this).returnUserAutoText();
+            final int bypassCodePref =
+                    SmsCallController.getInstance(SmsCallService.this).returnUserTextBypass();
+            final boolean isContact =
+                    SmsCallController.getInstance(
+                            SmsCallService.this).isContact(incomingNumber);
             boolean isStarred = false;
 
             if (isContact) {
-                isStarred = SmsCallHelper.isStarred(context, incomingNumber);
+                isStarred = SmsCallController.getInstance(
+                        SmsCallService.this).isStarred(incomingNumber);
             }
 
-            if ((bypassCodePref != SmsCallHelper.DEFAULT_DISABLED
-                    || userAutoSms != SmsCallHelper.DEFAULT_DISABLED)
-                    && QuietHoursHelper.inQuietHours(context, null)) {
-                String bypassCode = SmsCallHelper.returnUserTextBypassCode(context);
-                String messageBody = msg.getMessageBody();
+            if ((bypassCodePref != SmsCallController.DEFAULT_DISABLED
+                   || userAutoSms != SmsCallController.DEFAULT_DISABLED)
+                    && QuietHoursHelper.inQuietHours(SmsCallService.this, null)) {
+                final String bypassCode =
+                        SmsCallController.getInstance(
+                                SmsCallService.this).returnUserTextBypassCode();
+                final String messageBody = msg.getMessageBody();
                 if (messageBody.contains(bypassCode)) {
-                    switch (bypassCodePref) {
-                        case SmsCallHelper.DEFAULT_DISABLED:
-                            break;
-                        case SmsCallHelper.ALL_NUMBERS:
-                            // Sound Alarm && Don't auto-respond
-                            nawDawg = true;
-                            startAlarm(SmsCallService.this, incomingNumber);
-                            break;
-                        case SmsCallHelper.CONTACTS_ONLY:
-                            if (isContact) {
-                                // Sound Alarm && Don't auto-respond
-                                nawDawg = true;
-                                startAlarm(SmsCallService.this, incomingNumber);
-                            }
-                            break;
-                        case SmsCallHelper.STARRED_ONLY:
-                            if (isStarred) {
-                                // Sound Alarm && Don't auto-respond
-                                nawDawg = true;
-                                startAlarm(SmsCallService.this, incomingNumber);
-                            }
-                            break;
+                   switch (bypassCodePref) {
+                       case SmsCallController.DEFAULT_DISABLED:
+                           break;
+                       case SmsCallController.ALL_NUMBERS:
+                           // Sound Alarm && Don't auto-respond
+                           nawDawg = true;
+                           startAlarm(incomingNumber);
+                           break;
+                       case SmsCallController.CONTACTS_ONLY:
+                           if (isContact) {
+                               // Sound Alarm && Don't auto-respond
+                               nawDawg = true;
+                               startAlarm(incomingNumber);
+                           }
+                           break;
+                       case SmsCallController.STARRED_ONLY:
+                           if (isStarred) {
+                               // Sound Alarm && Don't auto-respond
+                               nawDawg = true;
+                               startAlarm(incomingNumber);
+                           }
+                           break;
                     }
                 }
-                if (userAutoSms != SmsCallHelper.DEFAULT_DISABLED && nawDawg == false) {
-                    checkTimeAndNumber(context, incomingNumber, userAutoSms, isContact);
+                if (userAutoSms != SmsCallController.DEFAULT_DISABLED && nawDawg == false) {
+                    checkTimeAndNumber(incomingNumber, userAutoSms, isContact);
                 }
             }
         }
@@ -223,7 +237,7 @@ public class SmsCallService extends Service {
         mTelephony.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intents.SMS_RECEIVED_ACTION);
-        registerReceiver(smsReceiver, filter);
+        registerReceiver(mSmsReceiver, filter);
     }
 
     @Override
@@ -232,7 +246,7 @@ public class SmsCallService extends Service {
             mTelephony.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
         }
         mPhoneStateListener = null;
-        unregisterReceiver(smsReceiver);
+        unregisterReceiver(mSmsReceiver);
         super.onDestroy();
     }
 
@@ -251,32 +265,32 @@ public class SmsCallService extends Service {
      * If in same minute, don't send. This prevents message looping if sent to self
      * or another quiet-hours enabled device with this feature on.
      */
-    private void checkTimeAndNumber(Context context, String incomingNumber,
+    private void checkTimeAndNumber(String incomingNumber,
             int userSetting, boolean isContact) {
-        int minutesNow = SmsCallHelper.returnTimeInMinutes();
+        final int minutesNow = SmsCallController.getInstance(this).returnTimeInMinutes();
         if (minutesNow != mMinuteSent) {
             mNumberSent = incomingNumber;
-            mMinuteSent = SmsCallHelper.returnTimeInMinutes();
-            SmsCallHelper.checkSmsQualifiers(
-                    context, incomingNumber, userSetting, isContact);
+            mMinuteSent = SmsCallController.getInstance(this).returnTimeInMinutes();
+            SmsCallController.getInstance(this).checkSmsQualifiers(
+                    incomingNumber, userSetting, isContact);
         } else {
             // Let's try to send if number doesn't match prior
             if (!incomingNumber.equals(mNumberSent)) {
                 mNumberSent = incomingNumber;
-                mMinuteSent = SmsCallHelper.returnTimeInMinutes();
-                SmsCallHelper.checkSmsQualifiers(
-                        context, incomingNumber, userSetting, isContact);
+                mMinuteSent = SmsCallController.getInstance(this).returnTimeInMinutes();
+                SmsCallController.getInstance(this).checkSmsQualifiers(
+                        incomingNumber, userSetting, isContact);
             }
         }
     }
 
-    private void startAlarm(Context context, String phoneNumber) {
-        String contactName = SmsCallHelper.returnContactName(context, phoneNumber);
+    private void startAlarm(String phoneNumber) {
+        String contactName = SmsCallController.getInstance(this).returnContactName(phoneNumber);
         Intent alarmDialog = new Intent();
         alarmDialog.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        alarmDialog.setClass(context, com.android.settings.slim.service.BypassAlarm.class);
+        alarmDialog.setClass(this, com.android.settings.slim.service.BypassAlarm.class);
         alarmDialog.putExtra("number", contactName);
         startActivity(alarmDialog);
     }

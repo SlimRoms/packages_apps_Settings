@@ -110,7 +110,7 @@ public class AlarmService extends Service {
     public void startAlarmSound()
             throws java.io.IOException, IllegalArgumentException, IllegalStateException {
 
-        Uri alertSound = SmsCallHelper.returnUserRingtone(this);
+        Uri alertSound = SmsCallController.getInstance(this).returnUserRingtone();
 
         if (mPlaying) {
             stopAlarm();
@@ -137,7 +137,7 @@ public class AlarmService extends Service {
         mMediaPlayer.setDataSource(this, alertSound);
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
 
-        if (SmsCallHelper.returnUserRingtoneLoop(this)) {
+        if (SmsCallController.getInstance(this).returnUserRingtoneLoop()) {
             mMediaPlayer.setLooping(true);
         } else {
             mMediaPlayer.setLooping(false);

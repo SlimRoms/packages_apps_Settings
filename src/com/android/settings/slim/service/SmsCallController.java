@@ -65,7 +65,6 @@ public class SmsCallController {
     private boolean mServiceStarted = false;
 
     private Context mContext;
-    private Calendar mCalendar;
     private SharedPreferences mSharedPrefs;
     private AlarmManager mAlarmManager;
 
@@ -76,9 +75,6 @@ public class SmsCallController {
     private boolean mQuietHoursEnabled;
     private int mQuietHoursStart;
     private int mQuietHoursEnd;
-
-    private int mServiceStartMinutes = -1;
-    private int mServiceStopMinutes = -1;
 
     private int mSmsBypass;
     private int mCallBypass;
@@ -105,11 +101,9 @@ public class SmsCallController {
 
     /**
      * Constructor.
-     * Defines the LRU cache size and setup the broadcast receiver.
      */
     private SmsCallController(Context context) {
         mContext = context;
-        mCalendar = Calendar.getInstance();
 
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         mSharedPrefs.registerOnSharedPreferenceChangeListener(new PreferenceChangeListener());
@@ -139,12 +133,14 @@ public class SmsCallController {
 
     // Return the current time
     protected int returnTimeInMinutes() {
-        return mCalendar.get(Calendar.HOUR_OF_DAY) * 60 + mCalendar.get(Calendar.MINUTE);
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE);
     }
 
     // Return current day of month
     protected int returnDayOfMonth() {
-        return mCalendar.get(Calendar.DAY_OF_MONTH);
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.DAY_OF_MONTH);
     }
 
     // Return if last call versus current call less than 30 minute apart
@@ -374,31 +370,34 @@ public class SmsCallController {
      * AutoSMS service Stopped - Schedule again for next day
      */
     public void scheduleService() {
-        if (mServiceStarted && (!mQuietHoursEnabled
+        mAlarmManager.cancel(mStartIntent);
+        mAlarmManager.cancel(mStopIntent);
+        if (!mQuietHoursEnabled
                 || (mAutoCall == DEFAULT_DISABLED
                 && mAutoText == DEFAULT_DISABLED
                 && mCallBypass == DEFAULT_DISABLED
-                && mSmsBypass == DEFAULT_DISABLED))) {
-            mContext.stopServiceAsUser(mServiceTriggerIntent,
-                    new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-            mAlarmManager.cancel(mStartIntent);
-            mAlarmManager.cancel(mStopIntent);
-            mServiceStarted = false;
+                && mSmsBypass == DEFAULT_DISABLED)) {
+            if (mServiceStarted) {
+                mContext.stopServiceAsUser(mServiceTriggerIntent,
+                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
+                mServiceStarted = false;
+            }
             return;
         }
 
-        if (!mServiceStarted && mQuietHoursStart == mQuietHoursEnd) {
+        if (mQuietHoursStart == mQuietHoursEnd) {
             // 24 hours, start without stop
-            mContext.startServiceAsUser(mServiceTriggerIntent,
-                    new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-            mAlarmManager.cancel(mStartIntent);
-            mAlarmManager.cancel(mStopIntent);
-            mServiceStarted = true;
+            if (!mServiceStarted) {
+                mContext.startServiceAsUser(mServiceTriggerIntent,
+                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
+                mServiceStarted = true;
+            }
             return;
         }
 
-
-        final int currentMinutes = returnTimeInMinutes();
+        Calendar calendar = Calendar.getInstance();
+        final int currentMinutes =
+                calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE);
 
         boolean inQuietHours = false;
         // time from now on (in minutes) when the service start/stop should be scheduled
@@ -441,34 +440,32 @@ public class SmsCallController {
             }
         }
 
-        if (inQuietHours && !mServiceStarted) {
-            mContext.startServiceAsUser(mServiceTriggerIntent,
-                    new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-            mServiceStarted = true;
+        if (inQuietHours) {
+            if (!mServiceStarted) {
+                mContext.startServiceAsUser(mServiceTriggerIntent,
+                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
+                mServiceStarted = true;
+            }
         } else if (mServiceStarted) {
             mContext.stopServiceAsUser(mServiceTriggerIntent,
                     new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
             mServiceStarted = false;
         }
 
-        if (mServiceStartMinutes != serviceStartMinutes && serviceStartMinutes >= 0) {
-            mServiceStartMinutes = serviceStartMinutes;
+        if (serviceStartMinutes >= 0) {
             // Start service a minute early
             serviceStartMinutes--;
-            mCalendar.add(Calendar.MINUTE, serviceStartMinutes);
-            mAlarmManager.cancel(mStartIntent);
-            mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mStartIntent);
-            mCalendar.add(Calendar.MINUTE, -serviceStartMinutes);
+            calendar.add(Calendar.MINUTE, serviceStartMinutes);
+            mAlarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), mStartIntent);
+            calendar.add(Calendar.MINUTE, -serviceStartMinutes);
         }
 
-        if (mServiceStopMinutes != serviceStopMinutes && serviceStopMinutes >= 0) {
-            mServiceStopMinutes = serviceStopMinutes;
+        if (serviceStopMinutes >= 0) {
             // Stop service a minute late
             serviceStopMinutes++;
-            mCalendar.add(Calendar.MINUTE, serviceStopMinutes);
-            mAlarmManager.cancel(mStopIntent);
-            mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mStopIntent);
-            mCalendar.add(Calendar.MINUTE, -serviceStopMinutes);
+            calendar.add(Calendar.MINUTE, serviceStopMinutes);
+            mAlarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), mStopIntent);
+            calendar.add(Calendar.MINUTE, -serviceStopMinutes);
         }
     }
 

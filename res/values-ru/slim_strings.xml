@@ -323,7 +323,8 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
     <string name="battery_text_color">Цвет процентов</string>
-    <string name="battery_text_charging_color">Цвет молнии при зарядке</string>
+    <string name="battery_text_charging_color">Цвет текста при зарядке</string>
+    <string name="battery_circle_charging_color">Цвет круга при зарядке</string>
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>
     <string name="circle_battery_animation_speed_slow">Медленно</string>
@@ -672,10 +673,12 @@
     <string name="battery_status_icon">Значок</string>
     <string name="battery_status_percentage">Проценты</string>
     <string name="battery_status_icon_percentage">Значок с процентами</string>
+    <string name="battery_status_icon_percentage_jb">Значок с процентами в стиле JB</string>
     <string name="battery_status_circle">Круг</string>
     <string name="battery_status_circle_percentage">Круг с процентами</string>
     <string name="battery_status_dotted_circle_percentage">Точечный круг с процентами</string>
     <string name="battery_status_dotted_circle">Точечный круг</string>
+    <string name="battery_status_gone">Скрыть батарею</string>
     <string name="battery_color_title">Цвет батареи</string>
     <string name="battery_bolt_color">Цвет молнии при зарядке</string>
     <string name="battery_style_reset_message">Сбросить все цвета батареи?</string>

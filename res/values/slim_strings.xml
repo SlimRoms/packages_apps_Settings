@@ -518,10 +518,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_status_icon">Icon</string>
     <string name="battery_status_percentage">Percentage</string>
     <string name="battery_status_icon_percentage">Icon with percentage</string>
+    <string name="battery_status_icon_percentage_jb">Icon with percentage (JB style)</string>
     <string name="battery_status_circle">Circle</string>
     <string name="battery_status_circle_percentage">Circle with percentage</string>
     <string name="battery_status_dotted_circle_percentage">Dotted Circle with percentage</string>
     <string name="battery_status_dotted_circle">Dotted Circle</string>
+    <string name="battery_status_gone">No battery</string>
     <string name="battery_color_title">Battery color</string>
     <string name="circle_battery_animation_speed">Circle animation speed</string>
     <string name="circle_battery_animation_speed_none">None</string>
@@ -531,6 +533,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_text_color">Percentage text color</string>
     <string name="battery_bolt_color">Bolt charging color</string>
     <string name="battery_text_charging_color">Percentage text charging color</string>
+    <string name="battery_circle_charging_color">Circle charging color</string>
     <string name="battery_style_reset_message">Reset all battery colors?</string>
 
     <!-- Category title for power sound notification specific Settings.

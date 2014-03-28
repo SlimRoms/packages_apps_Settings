@@ -141,6 +141,8 @@ public class Settings extends PreferenceActivity
 
     private int mCurrentState = 0;
 
+    private boolean mAttached;
+
     // Show only these settings for restricted users
     private int[] SETTINGS_FOR_RESTRICTED = {
             R.id.wireless_section,
@@ -268,38 +270,46 @@ public class Settings extends PreferenceActivity
     public void onResume() {
         super.onResume();
 
-        mDevelopmentPreferencesListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                invalidateHeaders();
+        if (!mAttached) {
+            mAttached = true;
+            mDevelopmentPreferencesListener =
+                    new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(
+                        SharedPreferences sharedPreferences, String key) {
+                    invalidateHeaders();
+                }
+            };
+            mDevelopmentPreferences.registerOnSharedPreferenceChangeListener(
+                    mDevelopmentPreferencesListener);
+
+            ListAdapter listAdapter = getListAdapter();
+            if (listAdapter instanceof HeaderAdapter) {
+                ((HeaderAdapter) listAdapter).resume();
             }
-        };
-        mDevelopmentPreferences.registerOnSharedPreferenceChangeListener(
-                mDevelopmentPreferencesListener);
+            invalidateHeaders();
 
-        ListAdapter listAdapter = getListAdapter();
-        if (listAdapter instanceof HeaderAdapter) {
-            ((HeaderAdapter) listAdapter).resume();
+            registerReceiver(mBatteryInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         }
-        invalidateHeaders();
-
-        registerReceiver(mBatteryInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
     }
 
     @Override
     public void onPause() {
         super.onPause();
 
-        unregisterReceiver(mBatteryInfoReceiver);
+        if (mAttached) {
+            mAttached = false;
+            unregisterReceiver(mBatteryInfoReceiver);
 
-        ListAdapter listAdapter = getListAdapter();
-        if (listAdapter instanceof HeaderAdapter) {
-            ((HeaderAdapter) listAdapter).pause();
+            ListAdapter listAdapter = getListAdapter();
+            if (listAdapter instanceof HeaderAdapter) {
+                ((HeaderAdapter) listAdapter).pause();
+            }
+
+            mDevelopmentPreferences.unregisterOnSharedPreferenceChangeListener(
+                    mDevelopmentPreferencesListener);
+            mDevelopmentPreferencesListener = null;
         }
-
-        mDevelopmentPreferences.unregisterOnSharedPreferenceChangeListener(
-                mDevelopmentPreferencesListener);
-        mDevelopmentPreferencesListener = null;
     }
 
     @Override

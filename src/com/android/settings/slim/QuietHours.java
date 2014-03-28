@@ -26,7 +26,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -100,6 +103,7 @@ public class QuietHours extends SettingsPreferenceFragment implements
 
     private SharedPreferences mPrefs;
     private OnSharedPreferenceChangeListener mPreferencesChangeListener;
+    private SettingsObserver mSettingsObserver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -241,6 +245,9 @@ public class QuietHours extends SettingsPreferenceFragment implements
                     }
                 }
             };
+
+            mSettingsObserver = new SettingsObserver(new Handler());
+            mSettingsObserver.observe();
         }
     }
 
@@ -254,6 +261,7 @@ public class QuietHours extends SettingsPreferenceFragment implements
     public void onDestroy() {
         super.onDestroy();
         mPrefs.unregisterOnSharedPreferenceChangeListener(mPreferencesChangeListener);
+        mContext.getContentResolver().unregisterContentObserver(mSettingsObserver);
     }
 
     @Override
@@ -476,6 +484,36 @@ public class QuietHours extends SettingsPreferenceFragment implements
         @Override
         public void onCancel(DialogInterface dialog) {
 
+        }
+    }
+
+    /**
+     * Settingsobserver to listen for toggle change of QH state
+     */
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QUIET_HOURS_ENABLED),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            update();
+        }
+
+        public void update() {
+            if (mQuietHoursEnabled != null) {
+                mQuietHoursEnabled.setChecked(
+                        Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.QUIET_HOURS_ENABLED, 0) == 1);
+            }
         }
     }
 

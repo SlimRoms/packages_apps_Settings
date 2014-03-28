@@ -52,7 +52,7 @@ public class SmsCallController {
     private static final String KEY_REQUIRED_CALLS = "required_calls";
     private static final String KEY_SMS_BYPASS_CODE = "sms_bypass_code";
     private static final String SCHEDULE_SERVICE_COMMAND =
-            "com.android.settings.service.SCHEDULE_SERVICE_COMMAND";
+            "com.android.settings.slim.service.SCHEDULE_SERVICE_COMMAND";
 
     private static final int FULL_DAY = 1440; // 1440 minutes in a day
     private static final int TIME_LIMIT = 30; // 30 minute bypass limit
@@ -61,8 +61,6 @@ public class SmsCallController {
     public static final int CONTACTS_ONLY = 2;
     public static final int STARRED_ONLY = 3;
     public static final int DEFAULT_TWO = 2;
-
-    private boolean mServiceStarted = false;
 
     private Context mContext;
     private SharedPreferences mSharedPrefs;
@@ -112,8 +110,13 @@ public class SmsCallController {
         mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
 
         mServiceTriggerIntent = new Intent(mContext, SmsCallService.class);
-        mStartIntent = makeServiceIntent(SCHEDULE_SERVICE_COMMAND, 1);
-        mStopIntent = makeServiceIntent(SCHEDULE_SERVICE_COMMAND, 2);
+        Intent start = new Intent(mContext, SmsCallService.class);
+        mStartIntent = PendingIntent.getService(
+                mContext, 0, start, PendingIntent.FLAG_CANCEL_CURRENT);
+        Intent intent = new Intent(mContext, AlarmReceiver.class);
+        intent.setAction(SCHEDULE_SERVICE_COMMAND);
+        mStopIntent = PendingIntent.getBroadcast(
+                mContext, 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         // Settings observer
         SettingsObserver observer = new SettingsObserver(mHandler);
@@ -352,14 +355,6 @@ public class SmsCallController {
         }
     }
 
-    // Pending intent to start/stop SmsCallservice
-    private PendingIntent makeServiceIntent(String action, int requestCode) {
-        Intent intent = new Intent(mContext, AlarmReceiver.class);
-        intent.setAction(action);
-        return PendingIntent.getBroadcast(
-                mContext, requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-    }
-
     /*
      * Called when:
      * QuietHours Toggled
@@ -377,21 +372,15 @@ public class SmsCallController {
                 && mAutoText == DEFAULT_DISABLED
                 && mCallBypass == DEFAULT_DISABLED
                 && mSmsBypass == DEFAULT_DISABLED)) {
-            if (mServiceStarted) {
-                mContext.stopServiceAsUser(mServiceTriggerIntent,
-                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-                mServiceStarted = false;
-            }
+            mContext.stopServiceAsUser(mServiceTriggerIntent,
+                    android.os.Process.myUserHandle());
             return;
         }
 
         if (mQuietHoursStart == mQuietHoursEnd) {
             // 24 hours, start without stop
-            if (!mServiceStarted) {
-                mContext.startServiceAsUser(mServiceTriggerIntent,
-                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-                mServiceStarted = true;
-            }
+            mContext.startServiceAsUser(mServiceTriggerIntent,
+                    android.os.Process.myUserHandle());
             return;
         }
 
@@ -441,15 +430,11 @@ public class SmsCallController {
         }
 
         if (inQuietHours) {
-            if (!mServiceStarted) {
-                mContext.startServiceAsUser(mServiceTriggerIntent,
-                        new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-                mServiceStarted = true;
-            }
-        } else if (mServiceStarted) {
+            mContext.startServiceAsUser(mServiceTriggerIntent,
+                    android.os.Process.myUserHandle());
+        } else {
             mContext.stopServiceAsUser(mServiceTriggerIntent,
-                    new UserHandle(UserHandle.USER_CURRENT_OR_SELF));
-            mServiceStarted = false;
+                    android.os.Process.myUserHandle());
         }
 
         if (serviceStartMinutes >= 0) {
@@ -508,6 +493,7 @@ public class SmsCallController {
             mQuietHoursEnd = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.QUIET_HOURS_END, 0,
                     UserHandle.USER_CURRENT_OR_SELF);
+            scheduleService();
         }
     }
 
@@ -521,6 +507,7 @@ public class SmsCallController {
                     || key.equals(KEY_AUTO_SMS_CALL)
                     || key.equals(KEY_AUTO_SMS)) {
                 updateSharedPreferences();
+                scheduleService();
             }
         }
     }

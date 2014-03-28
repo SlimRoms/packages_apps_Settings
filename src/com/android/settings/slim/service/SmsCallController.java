@@ -64,6 +64,7 @@ public class SmsCallController {
 
     private Context mContext;
     private SharedPreferences mSharedPrefs;
+    private OnSharedPreferenceChangeListener mSharedPrefsObserver;
     private AlarmManager mAlarmManager;
 
     private Intent mServiceTriggerIntent;
@@ -104,7 +105,20 @@ public class SmsCallController {
         mContext = context;
 
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-        mSharedPrefs.registerOnSharedPreferenceChangeListener(new PreferenceChangeListener());
+
+        mSharedPrefsObserver =
+                new OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                if (key.equals(KEY_SMS_BYPASS)
+                        || key.equals(KEY_CALL_BYPASS)
+                        || key.equals(KEY_AUTO_SMS_CALL)
+                        || key.equals(KEY_AUTO_SMS)) {
+                    updateSharedPreferences();
+                    scheduleService();
+                }
+            }
+        };
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(mSharedPrefsObserver);
         updateSharedPreferences();
 
         mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
@@ -494,21 +508,6 @@ public class SmsCallController {
                     Settings.System.QUIET_HOURS_END, 0,
                     UserHandle.USER_CURRENT_OR_SELF);
             scheduleService();
-        }
-    }
-
-    private class PreferenceChangeListener
-            implements OnSharedPreferenceChangeListener {
-
-        @Override
-        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-            if (key.equals(KEY_SMS_BYPASS)
-                    || key.equals(KEY_CALL_BYPASS)
-                    || key.equals(KEY_AUTO_SMS_CALL)
-                    || key.equals(KEY_AUTO_SMS)) {
-                updateSharedPreferences();
-                scheduleService();
-            }
         }
     }
 

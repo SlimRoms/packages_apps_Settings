@@ -48,20 +48,31 @@
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
         <CheckBoxPreference
+            android:key="shake_to_secure"
+            android:title="@string/shake_to_secure_title"
+            android:summary="@string/shake_to_secure_summary" />
+
+        <ListPreference
+            android:key="shake_auto_timeout"
+            android:title="@string/shake_secure_timeout_title"
+            android:dependency="shake_to_secure"
+            android:entries="@array/shake_secure_timeout_entries"
+            android:entryValues="@array/shake_secure_timeout_values"
+            android:persistent="false"/>
+
+        <CheckBoxPreference
             android:key="lock_before_unlock"
             android:title="@string/lock_before_unlock_title"
             android:summary="@string/lock_before_unlock_summary" />
 
         <PreferenceScreen
             android:key="lock_screen_settings"
-            android:dependency="lock_before_unlock"
             android:fragment="com.android.settings.slim.LockscreenInterface"
             android:title="@string/lock_screen_title"
             android:summary="@string/lock_screen_summary" />
 
         <PreferenceScreen
             android:key="lockscreen_targets"
-            android:dependency="lock_before_unlock"
             android:fragment="com.android.settings.slim.LockscreenTargets"
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />

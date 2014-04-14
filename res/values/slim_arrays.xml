@@ -1208,4 +1208,21 @@
         <item>2</item>
     </string-array>
 
+    <!-- Shake to secure timeout -->
+    <string-array name="shake_secure_timeout_entries">
+        <item>@string/shake_secure_timeout_disabled</item>
+        <item>@string/shake_secure_timeout_1min</item>
+        <item>@string/shake_secure_timeout_5min</item>
+        <item>@string/shake_secure_timeout_10min</item>
+        <item>@string/shake_secure_timeout_30min</item>
+    </string-array>
+
+    <string-array name="shake_secure_timeout_values" translatable="false">
+        <item>0</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
 </resources>

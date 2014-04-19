@@ -415,6 +415,16 @@
     <string name="lock_numpad_random_off">Отключено</string>
     <string name="lock_numpad_random_always">Всегда</string>
     <string name="lock_numpad_random_on_request">По запросу</string>
+    <string name="shake_to_secure_title">Потрясите устройством на экране блокировки для включения защиты</string>
+    <string name="shake_to_secure_summary">Защита будет отключаться после каждой успешной разблокировки</string>
+    <string name="shake_to_secure_dlg_title">Внимание:</string>
+    <string name="shake_to_secure_dlg_message">Ваше устройство не будет защищено до тех пор, пока вы не потрясете его, чтобы включить временную защиту. Защита однократна: после успешной разблокировки защита отключается до следующей тряски.</string>
+    <string name="shake_secure_timeout_title">Включать защиту автоматически</string>
+    <string name="shake_secure_timeout_disabled">Никогда не включать автоматически</string>
+    <string name="shake_secure_timeout_1min">1 минута после отключения экрана</string>
+    <string name="shake_secure_timeout_5min">5 минут после отключения экрана</string>
+    <string name="shake_secure_timeout_10min">10 минут после отключения экрана</string>
+    <string name="shake_secure_timeout_30min">30 минут после отключения экрана</string>
     <string name="app_security_title">БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ</string>
     <string name="navigation_bar">Строка навигации</string>
     <string name="navbar_button_cat">Кнопки строки навигации</string>

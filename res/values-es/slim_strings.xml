@@ -752,6 +752,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_numpad_random_always">Siempre</string>
     <string name="lock_numpad_random_on_request">Bajo demanda</string>
 
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Agitar en pantalla de bloqueo para habilitar seguridad</string>
+    <string name="shake_to_secure_summary">La seguridad se deshabilitará despues de desbloquear</string>
+    <string name="shake_to_secure_dlg_title">Advertencia:</string>
+    <string name="shake_to_secure_dlg_message">El dispositivo será inseguro hasta que lo agites para habilitar el bloque seguro.  Una vez seguro: si el dispositivo se desbloquea no volverá a aparecer la pantalla de bloqueo con seguridad hasta que se agite de nuevo.</string>
+    <string name="shake_secure_timeout_title">Habilitar seguridad automáticamente</string>
+    <string name="shake_secure_timeout_disabled">Nunca habilitar seguridad automáticamente</string>
+    <string name="shake_secure_timeout_1min">1 minuto tras apagar la pantalla</string>
+    <string name="shake_secure_timeout_5min">5 minutos tras apagar la pantalla</string>
+    <string name="shake_secure_timeout_10min">10 minutos tras apagar la pantalla</string>
+    <string name="shake_secure_timeout_30min">30 minutos tras apagar la pantalla</string>
+
     <!-- Lock before unlock -->
     <string name="lock_before_unlock_title">Mostrar anillo de bloqueo antes del desbloqueo seguro</string>
     <string name="lock_before_unlock_summary">Muestra la pantalla de bloqueo con anillo antes del mecanismo de desbloqueo seguro</string>

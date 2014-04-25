@@ -45,6 +45,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_QUIETHOURS;
 import static com.android.internal.util.slim.QSConstants.TILE_RINGER;
 import static com.android.internal.util.slim.QSConstants.TILE_SCREENTIMEOUT;
 import static com.android.internal.util.slim.QSConstants.TILE_SETTINGS;
+import static com.android.internal.util.slim.QSConstants.TILE_SHAKE;
 import static com.android.internal.util.slim.QSConstants.TILE_SLEEP;
 import static com.android.internal.util.slim.QSConstants.TILE_SYNC;
 import static com.android.internal.util.slim.QSConstants.TILE_THEME;
@@ -170,6 +171,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_CONTACT, R.string.title_tile_contact,
                 "com.android.systemui:drawable/ic_qs_default_user"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_SHAKE, R.string.title_tile_shake,
+                "com.android.systemui:drawable/ic_qs_shake_events"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {

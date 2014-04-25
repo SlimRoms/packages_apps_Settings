@@ -38,6 +38,11 @@
             android:summary="@string/lock_screen_summary" />
 
         <PreferenceScreen
+            android:fragment="com.android.settings.slim.KeyguardShakeEvents"
+            android:key="shake_events"
+            android:title="@string/shake_events_title" />
+
+        <PreferenceScreen
             android:fragment="com.android.settings.slim.LockscreenTargets"
             android:key="lockscreen_targets"
             android:summary="@string/lockscreen_target_summary"

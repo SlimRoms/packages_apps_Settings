@@ -56,15 +56,16 @@
             android:key="power_button_instantly_locks"
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
-        <CheckBoxPreference
-            android:key="shake_to_secure"
+        <ListPreference
+            android:key="shake_to_secure_mode"
+            android:entries="@array/shake_secure_entries"
+            android:entryValues="@array/shake_secure_values"
             android:title="@string/shake_to_secure_title"
             android:summary="@string/shake_to_secure_summary" />
 
         <ListPreference
             android:key="shake_auto_timeout"
             android:title="@string/shake_secure_timeout_title"
-            android:dependency="shake_to_secure"
             android:entries="@array/shake_secure_timeout_entries"
             android:entryValues="@array/shake_secure_timeout_values"
             android:persistent="false"/>
@@ -85,6 +86,11 @@
             android:fragment="com.android.settings.slim.LockscreenTargets"
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.slim.KeyguardShakeEvents"
+            android:key="shake_events"
+            android:title="@string/shake_events_title" />
 
         <CheckBoxPreference
             android:key="lockscreen_battery_status"

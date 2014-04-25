@@ -363,6 +363,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_stats_title">Statistics</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_keyguard_camera">Keyguard camera</string>
     <string name="shortcut_action_navbar">Navigation bar</string>
     <string name="shortcut_action_pie">Pie controls</string>
     <string name="shortcut_action_airplane">Airplane mode</string>
@@ -779,6 +780,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shake_to_secure_dlg_title">Warning:</string>
     <string name="shake_to_secure_dlg_message">Your device will be insecure until you explicitly shake to enable a temporary secure lock.  Once secure: if your device is successfully unlocked it will become insecure until you shake again.</string>
     <string name="shake_secure_timeout_title">Automatically resecure</string>
+    <string name="shake_all">Shake any direction</string>
+    <string name="shake_horizontal">Shake horizontally</string>
+    <string name="shake_vertical">Shake vertically</string>
+    <string name="shake_back_forth">Shake back-and-forth</string>
     <string name="shake_secure_timeout_disabled">Never automatically secure</string>
     <string name="shake_secure_timeout_1min">1 minute after screen turned off</string>
     <string name="shake_secure_timeout_5min">5 minutes after screen turned off</string>

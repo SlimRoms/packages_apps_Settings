@@ -66,6 +66,14 @@
                 android:fragment="com.android.settings.tts.TextToSpeechSettings"
                 android:title="@string/tts_settings_title"/>
 
+        <ListPreference
+            android:key="shake_sensitivity"
+            android:title="@string/shake_sensitivity_title"
+            android:summary="@string/shake_sensitivity_summary"
+            android:entries="@array/shake_sensitivity_entries"
+            android:entryValues="@array/shake_sensitivity_values"
+            android:persistent="false"/>
+
         <com.android.settings.widget.SeekBarPreference
                 android:key="select_long_press_timeout_preference"
                 android:title="@string/accessibility_long_press_timeout_preference_title" />

@@ -179,6 +179,12 @@
     <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
     <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
 
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Shake sensitivity</string>
+    <string name="shake_sensitivity_summary">Global sensitivity of all shake preferences</string>
+    <string name="shake_sensitivity_less_sensitive">Less sensitive</string>
+    <string name="shake_sensitivity_more_sensitive">More sensitive</string>
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
     <string name="pref_volume_wake_title">Volume rocker wake</string>

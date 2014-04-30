@@ -183,7 +183,9 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         // No lock-slider is available
         boolean dotsDisabled = new LockPatternUtils(getActivity()).isSecure()
             && Settings.Secure.getInt(getContentResolver(),
-            Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 0;
+            Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 0
+            && Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0) == 0;
         boolean imageExists = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.LOCKSCREEN_LOCK_ICON) != null;
         mDotsColor.setEnabled(!dotsDisabled);

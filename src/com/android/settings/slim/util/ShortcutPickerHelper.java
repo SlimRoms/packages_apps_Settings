@@ -72,23 +72,38 @@ public class ShortcutPickerHelper {
     }
 
     public void pickShortcut(int fragmentId) {
-        Bundle bundle = new Bundle();
+        pickShortcut(fragmentId, false);
+    }
 
-        ArrayList<String> shortcutNames = new ArrayList<String>();
-        shortcutNames.add(mParent.getString(R.string.group_applications));
-        bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
-
-        ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
-        shortcutIcons.add(ShortcutIconResource.fromContext(mParent,
-                android.R.drawable.sym_def_app_icon));
-        bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
-
-        Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
-        pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
-        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.select_custom_app_title));
-        pickIntent.putExtras(bundle);
+    public void pickShortcut(int fragmentId, boolean fullAppsOnly) {
         lastFragmentId = fragmentId;
-        startFragmentOrActivity(pickIntent, REQUEST_PICK_SHORTCUT);
+
+        if (fullAppsOnly) {
+            Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+            mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+            Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
+            pickIntent.putExtra(Intent.EXTRA_INTENT, mainIntent);
+            startFragmentOrActivity(pickIntent, REQUEST_PICK_APPLICATION);
+        } else {
+            Bundle bundle = new Bundle();
+
+            ArrayList<String> shortcutNames = new ArrayList<String>();
+            shortcutNames.add(mParent.getString(R.string.group_applications));
+            bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
+
+            ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
+            shortcutIcons.add(ShortcutIconResource.fromContext(mParent,
+                    android.R.drawable.sym_def_app_icon));
+            bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
+
+            Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
+            pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
+            pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(
+                    R.string.select_custom_app_title));
+            pickIntent.putExtras(bundle);
+            startFragmentOrActivity(pickIntent, REQUEST_PICK_SHORTCUT);
+        }
     }
 
     private void startFragmentOrActivity(Intent pickIntent, int requestCode) {

@@ -175,6 +175,8 @@
     <string name="shake_events_title">Shake events</string>
     <string name="shake_events_enabled_title">Enable shake listener</string>
     <string name="shake_events_normal_title">Active shake events</string>
+    <string name="shake_events_disabled_title">Disabled apps</string>
+    <string name="shake_events_disabled_summary">Shake will be disabled while in these apps</string>
     <string name="shake_event_x_title">Activity to launch when shaken horizontally</string>
     <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
     <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
@@ -417,6 +419,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="shortcut_action_help_shortcut">shortcut</string>
     <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_app">app</string>
     <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon.  Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right.  Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>

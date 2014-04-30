@@ -93,6 +93,7 @@ public class ButtonsListViewSettings extends ListFragment implements
     private static final int LOCKSCREEN_SHORTCUT   = 4;
     private static final int NOTIFICATION_SHORTCUT = 5;
     private static final int POWER_MENU_SHORTCUT   = 6;
+    private static final int SHAKE_EVENTS_DISABLED = 7;
 
     private static final int DEFAULT_MAX_BUTTON_NUMBER = 5;
 
@@ -101,6 +102,7 @@ public class ButtonsListViewSettings extends ListFragment implements
     private int mButtonMode;
     private int mMaxAllowedButtons;
     private boolean mUseAppPickerOnly;
+    private boolean mUseFullAppsOnly;
     private boolean mDisableLongpress;
     private boolean mDisableIconPicker;
     private boolean mDisableDeleteLastEntry;
@@ -187,6 +189,7 @@ public class ButtonsListViewSettings extends ListFragment implements
         mActionEntriesKey = getArguments().getString("actionEntries", "shortcut_action_entries");
         mDisableLongpress = getArguments().getBoolean("disableLongpress", false);
         mUseAppPickerOnly = getArguments().getBoolean("useAppPickerOnly", false);
+        mUseFullAppsOnly = getArguments().getBoolean("useOnlyFullAppPicker", false);
         mDisableIconPicker = getArguments().getBoolean("disableIconPicker", false);
         mDisableDeleteLastEntry = getArguments().getBoolean("disableDeleteLastEntry", false);
 
@@ -213,7 +216,14 @@ public class ButtonsListViewSettings extends ListFragment implements
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                     long arg3) {
-                if (!mUseAppPickerOnly) {
+                if (mUseFullAppsOnly) {
+                    if (mPicker != null) {
+                        mPendingIndex = arg2;
+                        mPendingLongpress = false;
+                        mPendingNewButton = false;
+                        mPicker.pickShortcut(getId(), true);
+                    }
+                } else if (!mUseAppPickerOnly) {
                     showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, false, false);
                 } else {
                     if (mPicker != null) {
@@ -231,7 +241,14 @@ public class ButtonsListViewSettings extends ListFragment implements
                 @Override
                 public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2,
                         long arg3) {
-                    if (!mUseAppPickerOnly) {
+                    if (mUseFullAppsOnly) {
+                        if (mPicker != null) {
+                            mPendingIndex = arg2;
+                            mPendingLongpress = true;
+                            mPendingNewButton = false;
+                            mPicker.pickShortcut(getId(), true);
+                        }
+                    } else if (!mUseAppPickerOnly) {
                         showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, true, false);
                     } else {
                         if (mPicker != null) {
@@ -444,7 +461,14 @@ public class ButtonsListViewSettings extends ListFragment implements
                             Toast.LENGTH_LONG).show();
                     break;
                 }
-                if (!mUseAppPickerOnly) {
+                if (mUseFullAppsOnly) {
+                    if (mPicker != null) {
+                        mPendingIndex = 0;
+                        mPendingLongpress = false;
+                        mPendingNewButton = true;
+                        mPicker.pickShortcut(getId(), true);
+                    }
+                } else if (!mUseAppPickerOnly) {
                     showDialogInner(DLG_SHOW_ACTION_DIALOG, 0, false, true);
                 } else {
                     if (mPicker != null) {
@@ -513,6 +537,8 @@ public class ButtonsListViewSettings extends ListFragment implements
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case LOCKSCREEN_SHORTCUT:
                 return ButtonsHelper.getLockscreenShortcutConfig(mActivity);
+            case SHAKE_EVENTS_DISABLED:
+                return ButtonsHelper.getDisabledShakeApps(mActivity);
         }
         return null;
     }
@@ -542,6 +568,8 @@ public class ButtonsListViewSettings extends ListFragment implements
                 break;
             case LOCKSCREEN_SHORTCUT:
                 ButtonsHelper.setLockscreenShortcutConfig(mActivity, buttonConfigs, reset);
+            case SHAKE_EVENTS_DISABLED:
+                ButtonsHelper.setDisabledShakeApps(mActivity, buttonConfigs, reset);
                 break;
         }
     }
@@ -692,6 +720,9 @@ public class ButtonsListViewSettings extends ListFragment implements
                         case NOTIFICATION_SHORTCUT:
                         case POWER_MENU_SHORTCUT:
                             buttonMode = res.getString(R.string.shortcut_action_help_shortcut);
+                            break;
+                        case SHAKE_EVENTS_DISABLED:
+                            buttonMode = res.getString(R.string.shortcut_action_help_app);
                             break;
                         case NAV_BAR:
                         case NAV_RING:

@@ -435,7 +435,6 @@
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
-
     <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_app">Custom app</string>
     <string name="shortcut_action_home">Home</string>
@@ -582,5 +581,8 @@
 
     <!-- Doze (ambient display) preference category -->
     <string name="display_category_doze_options_title">Ambient display options</string>
+
+    <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
+    <string name="bluetooth_accept_all_files">Accept all file types</string>
 
 </resources>

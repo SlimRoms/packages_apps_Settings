@@ -65,6 +65,7 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
@@ -320,6 +321,12 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         } else if (hasHomeKey()) {
             preferences.edit()
                     .putBoolean("no_home_action", false).commit();
+        }
+
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefs.removePreference(backlight);
         }
 
         mCheckPreferences = true;

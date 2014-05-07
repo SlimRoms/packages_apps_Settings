@@ -26,6 +26,11 @@
                 android:title="@string/keys_enable_custom_title"
                 android:summary="@string/keys_enable_custom_summary" />
 
+            <com.android.settings.slim.ButtonBacklightBrightness
+                android:key="button_backlight"
+                android:title="@string/button_backlight_title"
+                android:dialogTitle="@string/button_backlight_title"
+                android:persistent="false" />
         </PreferenceCategory>
 
         <PreferenceCategory

@@ -889,6 +889,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_toggle_extras">Custom tile extras</string>
     <string name="custom_toggle_collapse_check">Collapse notification shade</string>
     <string name="custom_toggle_match_state_check">Click action matches icon</string>
+    <string name="custom_toggle_double_click_check">Double-tap to switch to the previous action</string>
     <string name="custom_tile_long_press">Longpress:</string>
     <string name="custom_tile_null_warning">An action must be set first</string>
     <string name="custom_tile_resolve_name">Unknown</string>

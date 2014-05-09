@@ -1196,11 +1196,12 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                     .create();
                 case DLG_CUSTOM_TILE_EXTRAS:
                     int actions = 0;
+                    int tileStates = 0;
                     int advActions = 0;
                     int type = 0;
-                    boolean matchIncluded = false;
                     String advSetting = null;
                     String checkClick = null;
+                    String checkLongClick = null;
                     String className = null;
                     Intent intent = null;
                     String values = "";
@@ -1209,6 +1210,13 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                         intent = null;
                         checkClick = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                                 i, 0, tileKey);
+                        checkLongClick = QuickSettingsUtil.getActionsAtIndex(getActivity(),
+                                i, 1, tileKey);
+                        if (checkClick != null || checkLongClick != null) {
+                            // increment to check if we should add a double-tap option
+                            // for the user to move to the last action on double tap
+                            tileStates++;
+                        }
                         if (checkClick != null) {
                             actions++;
                             try {
@@ -1252,9 +1260,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                     // User selected multiple click actions
                     // Tile isn't advanced
                     // Only now is this preference relevant
-                    if (actions > 1 && advActions == 0) {
-                        matchIncluded = true;
-                    }
+                    final boolean matchIncluded = actions > 1 && advActions == 0;
 
                     final String typeSaved = Integer.toString(type);
                     // Location mode is google's evil step child.
@@ -1277,46 +1283,167 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                             checksSaved = 0;
                         } else if (checksSaved == 3) {
                             checksSaved = 1;
+                        } else if (checksSaved == 6) {
+                            checksSaved = 4;
+                        } else if (checksSaved == 7) {
+                            checksSaved = 5;
                         }
-                        QuickSettingsUtil.saveCustomExtras(getActivity(), tileKey,
-                                Integer.toString(checksSaved), null, null, null, null, null);
                     }
 
-                    final boolean[] checkBox = new boolean[matchIncluded ? 2 : 1];
+                    int checkBoxSize = 1;
+
+                    if (matchIncluded) {
+                        // User has multiple short-click actions
+                        checkBoxSize++;
+                    }
+
+                    final boolean doubleTapIncluded = tileStates >= 3;
+
+                    if (doubleTapIncluded) {
+                        // User has three or more tile states
+                        checkBoxSize++;
+                    } else {
+                        if (checksSaved == 4) {
+                            checksSaved = 0;
+                        } else if (checksSaved == 5) {
+                            checksSaved = 1;
+                        } else if (checksSaved == 6) {
+                            checksSaved = 2;
+                        } else if (checksSaved == 7) {
+                            checksSaved = 3;
+                        }
+                    }
+
+                    // Save due to possible user changes to the tile
+                    // we want to automatically deactivate the unneeded
+                    // features on this tile
+                    QuickSettingsUtil.saveCustomExtras(getActivity(), tileKey,
+                            Integer.toString(checksSaved), null, null, null, null, null);
+
+                    final boolean[] checkBox = new boolean[checkBoxSize];
                     switch (checksSaved) {
                         case 0:
                             checkBox[0] = false;
                             if (matchIncluded) {
                                 checkBox[1] = false;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = false;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = false;
+                                }
                             }
                             break;
                         case 1:
                             checkBox[0] = true;
                             if (matchIncluded) {
                                 checkBox[1] = false;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = false;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = false;
+                                }
                             }
                             break;
                         case 2:
                             checkBox[0] = false;
                             if (matchIncluded) {
                                 checkBox[1] = true;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = false;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = false;
+                                }
                             }
                             break;
                         case 3:
                             checkBox[0] = true;
                             if (matchIncluded) {
                                 checkBox[1] = true;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = false;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = false;
+                                }
+                            }
+                            break;
+                        case 4:
+                            checkBox[0] = false;
+                            if (matchIncluded) {
+                                checkBox[1] = false;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = true;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = true;
+                                }
+                            }
+                            break;
+                        case 5:
+                            checkBox[0] = true;
+                            if (matchIncluded) {
+                                checkBox[1] = false;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = true;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = true;
+                                }
+                            }
+                            break;
+                        case 6:
+                            checkBox[0] = false;
+                            if (matchIncluded) {
+                                checkBox[1] = true;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = true;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = true;
+                                }
+                            }
+                            break;
+                        case 7:
+                            checkBox[0] = true;
+                            if (matchIncluded) {
+                                checkBox[1] = true;
+                                if (doubleTapIncluded) {
+                                    checkBox[2] = true;
+                                }
+                            } else {
+                                if (doubleTapIncluded) {
+                                    checkBox[1] = true;
+                                }
                             }
                             break;
                     }
 
-                    final String[] entry = new String[matchIncluded ? 2 : 1];
+                    final String[] entry = new String[checkBoxSize];
 
                     entry[0] = getResources().getString(
                             R.string.custom_toggle_collapse_check);
                     if (matchIncluded) {
                         entry[1] = getResources().getString(
                                 R.string.custom_toggle_match_state_check);
+                        if (doubleTapIncluded) {
+                            entry[2] = getResources().getString(
+                                    R.string.custom_toggle_double_click_check);
+                        }
+                    } else {
+                        if (doubleTapIncluded) {
+                            entry[1] = getResources().getString(
+                                    R.string.custom_toggle_double_click_check);
+                        }
                     }
                     AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                     View view = getOwner().customTileExtrasView(tileKey);
@@ -1346,8 +1473,9 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             int userValue = 0;
+                            boolean addIt;
                             for (int i = 0; i < checkBox.length; i++) {
-                                boolean addIt = checkBox[i];
+                                addIt = checkBox[i];
                                 switch (i) {
                                     case 0:
                                         if (addIt) {
@@ -1356,7 +1484,16 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                                         break;
                                     case 1:
                                         if (addIt) {
-                                            userValue += 2;
+                                            if (matchIncluded) {
+                                                userValue += 2;
+                                            } else {
+                                                userValue += 4;
+                                            }
+                                        }
+                                        break;
+                                    case 2:
+                                        if (addIt) {
+                                            userValue += 4;
                                         }
                                         break;
                                 }

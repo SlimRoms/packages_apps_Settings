@@ -132,6 +132,22 @@
     <string name="status_bar_toggle_brightness">Управление яркостью</string>
     <string name="status_bar_toggle_brightness_summary">Изменять яркость, проводя по строке состояния</string>
     <string name="status_bar_toggle_info">Включена автоматическая регулировка яркости</string>
+
+    <!-- Shake Events -->
+    <string name="shake_events_title">События тряски</string>
+    <string name="shake_events_enabled_title">Включить проверку тряски</string>
+    <string name="shake_events_normal_title">Активные события тряски</string>
+    <string name="shake_events_disabled_title">Приложения-исключения</string>
+    <string name="shake_events_disabled_summary">Отключить тряску в следующих приложениях</string>
+    <string name="shake_event_x_title">Запускать при горизонтальной тряске</string>
+    <string name="shake_event_y_title">Запускать при вертикальной тряске</string>
+    <string name="shake_event_z_title">Запускать при тряске туда-сюда</string>
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Чувствительность обнаружения тряски</string>
+    <string name="shake_sensitivity_summary">Общая чувствительность всех настроек тряски</string>
+    <string name="shake_sensitivity_less_sensitive">Меньшая чувствительность</string>
+    <string name="shake_sensitivity_more_sensitive">Большая чувствительность</string>
+
     <string name="pref_low_battery_warning_policy_title">Низкий заряд батареи</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Предупреждение о низком заряде</string>
     <string name="low_battery_warning_policy_popup_sound">Сообщение и звук</string>
@@ -299,10 +315,11 @@
 
     <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">\"Умная\" панель уведомлений</string>
-    <string name="smart_pulldown_summary">Открывать быстрые настройки, если нет %1$s уведомлений</string>
+    <string name="smart_pulldown_summary">Открывать быстрые настройки при %1$s уведомлениях</string>
     <string name="smart_pulldown_off">Выкл</string>
-    <string name="smart_pulldown_dismissable">Удаляемые</string>
-    <string name="smart_pulldown_persistent">Постоянные</string>
+    <string name="smart_pulldown_dismissable">Без удаляемых</string>
+    <string name="smart_pulldown_persistent">Без постоянных</string>
+    <string name="smart_pulldown_all">Без удаляемых и постоянных</string>
 
     <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
@@ -421,6 +438,10 @@
     <string name="shake_to_secure_dlg_title">Внимание:</string>
     <string name="shake_to_secure_dlg_message">Ваше устройство не будет защищено до тех пор, пока вы не потрясете его, чтобы включить временную защиту. Защита однократна: после успешной разблокировки защита отключается до следующей тряски.</string>
     <string name="shake_secure_timeout_title">Включать защиту автоматически</string>
+    <string name="shake_all">Трясти в любую сторону</string>
+    <string name="shake_horizontal">Трясти горизонтально</string>
+    <string name="shake_vertical">Трясти вертикально</string>
+    <string name="shake_back_forth">Трясти туда-сюда</string>
     <string name="shake_secure_timeout_disabled">Никогда не включать автоматически</string>
     <string name="shake_secure_timeout_1min">1 минута после отключения экрана</string>
     <string name="shake_secure_timeout_5min">5 минут после отключения экрана</string>
@@ -658,6 +679,7 @@
     <string name="auto_brightness_menu_edit">Редактировать</string>
     <string name="battery_prefs_title">Настройки</string>
     <string name="battery_stats_title">Статистика</string>
+    <string name="shortcut_action_keyguard_camera">Камера экрана блокировки</string>
     <string name="shortcut_action_airplane">Режим полета</string>
     <string name="shortcut_action_power_off">Выключение</string>
     <string name="shortcut_action_reboot">Перезагрузка</string>

@@ -788,6 +788,7 @@
     <string name="custom_toggle_extras">Дополнения своего ярлыка</string>
     <string name="custom_toggle_collapse_check">Сворачивать тень уведомления</string>
     <string name="custom_toggle_match_state_check">Значок для обычного нажатия</string>
+    <string name="custom_toggle_double_click_check">Двойное нажатие для переключения к предыдущему действию</string>
     <string name="custom_tile_long_press">Долгое нажатие:</string>
     <string name="custom_tile_null_warning">Сначала нужно задать действие</string>
     <string name="custom_tile_resolve_name">Неизвестно</string>

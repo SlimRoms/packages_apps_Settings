@@ -568,6 +568,7 @@ public class ButtonsListViewSettings extends ListFragment implements
                 break;
             case LOCKSCREEN_SHORTCUT:
                 ButtonsHelper.setLockscreenShortcutConfig(mActivity, buttonConfigs, reset);
+                break;
             case SHAKE_EVENTS_DISABLED:
                 ButtonsHelper.setDisabledShakeApps(mActivity, buttonConfigs, reset);
                 break;

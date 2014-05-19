@@ -921,6 +921,23 @@
     <string name="keys_action_double">Двойное нажатие</string>
     <string name="no_home_key">Действие \"Домой\" не назначено ни на какую кнопку!\n\nЭто может сделать невозможным использование устройства!</string>
 
+    <!-- Hardware keys backlight -->
+    <string name="button_backlight_title">Подсветка кнопок</string>
+    <string name="button_backlight_enabled">Включить подсветку кнопок</string>
+    <string name="keyboard_backlight_enabled">Включить подсветку клавиатуры</string>
+    <string name="button_backlight_seekbar_title">Яркость кнопок</string>
+    <string name="keyboard_backlight_seekbar_title">Яркость клавиатуры</string>
+    <string name="backlight_timeout_title">Длительность подсветки</string>
+    <string name="backlight_timeout_unlimited">Не отключать</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> секунды</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> секунд</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Отключена</string>
+    <string name="backlight_summary_enabled_with_timeout">Включена, длится <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Включена</string>
+
     <string name="pie_control_size">Размер pie</string>
     <string name="pie_control_trigger_positions">Параметры переключения</string>
     <string name="pie_control_trigger_left">Включать по левой границе экрана</string>

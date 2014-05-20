@@ -172,6 +172,22 @@ limitations under the License.
     <string name="status_bar_toggle_brightness_summary">Helligkeit durch Wischen über die Statusleiste ändern</string>
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
 
+    <!-- Shake Events -->
+    <string name="shake_events_title">Shake-Events</string>
+    <string name="shake_events_enabled_title">Shake-Überwachung aktivieren</string>
+    <string name="shake_events_normal_title">Aktive Shake-Events</string>
+    <string name="shake_events_disabled_title">Deaktivierte Apps</string>
+    <string name="shake_events_disabled_summary">Shake wird in diesen Apps deaktviert</string>
+    <string name="shake_event_x_title">Zu startende Aktivität bei horizontalem Schütteln</string>
+    <string name="shake_event_y_title">Zu startende Aktivität bei vertikalem Schütteln</string>
+    <string name="shake_event_z_title">Zu startende Aktivität beim hin-und-her Schütteln</string>
+
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Shake-Sensibilität</string>
+    <string name="shake_sensitivity_summary">Globale Empfindlichkeit aller Shake-Präferenzen</string>
+    <string name="shake_sensitivity_less_sensitive">Weniger empfindlich</string>
+    <string name="shake_sensitivity_more_sensitive">Empfindlicher</string>
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Aufwecken</string>
     <string name="pref_volume_wake_title">Lautstärketaste</string>
@@ -504,10 +520,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="battery_status_icon">Symbol</string>
     <string name="battery_status_percentage">Prozent</string>
     <string name="battery_status_icon_percentage">Symbol und Prozent</string>
+    <string name="battery_status_icon_percentage_jb">Symbol und Prozent (JB Stil)</string>
     <string name="battery_status_circle">Kreis</string>
     <string name="battery_status_circle_percentage">Kreis und Prozent</string>
     <string name="battery_status_dotted_circle_percentage">Gepunkteter Kreis und Prozent</string>
     <string name="battery_status_dotted_circle">Gepunkteter Kreis</string>
+    <string name="battery_status_gone">Nicht anzeigen</string>
     <string name="battery_color_title">Akku-Farbe</string>
     <string name="circle_battery_animation_speed">Geschwindigkeit Kreis-Animation</string>
     <string name="circle_battery_animation_speed_none">Keine</string>
@@ -516,8 +534,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="circle_battery_animation_speed_fast">Schnell</string>
     <string name="battery_text_color">Prozent-Text-Farbe</string>
     <string name="battery_bolt_color">Ladesymbol Farbe</string>
-    <string name="battery_text_charging_color">Prozent-Text Lade-Farbe</string>
+    <string name="battery_text_charging_color">Lade-Farbe Prozent (Text)</string>
+    <string name="battery_circle_charging_color">Lade-Farbe Kreis</string>
     <string name="battery_style_reset_message">Alle Akku-Farben zurücksetzen?</string>
+
     <!-- Category title for power sound notification specific Settings. [CHAR LIMIT=40] -->
     <string name="power_notifications_category_title">Lade-Benachrichtigungen</string>
     <!-- Sound settings, power notifications enable/disable, setting check box label -->
@@ -557,7 +577,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="navbar_button_cat">Tasten Navigationsleiste</string>
     <string name="title_pref_menu_location">Menü Position</string>
     <string name="summary_pref_menu_location">Wo soll der Menü Knopf angezeigt werden?</string>
-    <string name="title_pref_menu_display">Menü Sichtbarkeit</string>
+    <string name="title_pref_menu_display">Menü-Sichtbarkeit</string>
     <string name="summary_pref_menu_display">Wann soll das Menü angezeigt werden?</string>
     <string name="navbar_enable_bar">Navigationsleiste aktivieren</string>
     <string name="navbar_enable_bar_summary">Aktivieren der Navigationsleiste</string>
@@ -573,7 +593,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="navbar_button_title">Tasten</string>
     <string name="navbar_targets_title">Ring Ziele</string>
     <string name="navbar_cat">Navigationsleiste</string>
-    <string name="navbar_dimensions_style_reset_message">Alle Design und Dimensions Einstellungen zurücksetzen?</string>
+    <string name="navbar_dimensions_style_reset_message">Alle Design- und Dimensions-Einstellungen zurücksetzen?</string>
     <string name="navigation_bar_warning_no_navigation_present">Zur Zeit ist keine andere Navigation aktiviert. Das Ausschalten der Navigationsleiste kann zu einem unbrauchbaren Gerät führen. Wollen Sie stattdessen die Pie-Steuerung aktivieren?</string>
 
     <!-- Navigation bar button style -->
@@ -586,10 +606,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="advanced_options_settings_title">Erweiterte Einstellungen</string>
 
     <!-- MediaScanner behavior on boot -->
-    <string name="media_scanner_on_boot_title">MediaScanner Verhalten beim Booten</string>
-    <string name="media_scanner_on_boot_enabled">Medien Scannen</string>
+    <string name="media_scanner_on_boot_title">MediaScanner-Verhalten beim Booten</string>
+    <string name="media_scanner_on_boot_enabled">Medien scannen</string>
     <string name="media_scanner_on_boot_ask">Nachfragen (Benachrichtigung)</string>
-    <string name="media_scanner_on_boot_disabled">Medien nicht Scannen</string>
+    <string name="media_scanner_on_boot_disabled">Medien nicht scannen</string>
 
     <!-- Basic Numbers -->
     <string name="two">Zwei</string>
@@ -843,6 +863,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="custom_toggle_extras">Benutzerdefinierte Kacheln Extras</string>
     <string name="custom_toggle_collapse_check">Benachrichtigungs-Schatten</string>
     <string name="custom_toggle_match_state_check">Klick-Aktion stimmt mit Icon überein</string>
+    <string name="custom_toggle_double_click_check">Zweimal tippen, um zur vorherigen Aktion zu wechseln</string>
     <string name="custom_tile_long_press">Lange drücken:</string>
     <string name="custom_tile_null_warning">Es muss zuerst eine Aktion asugewählt werden</string>
     <string name="custom_tile_resolve_name">Unbekannt</string>
@@ -977,6 +998,22 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="keys_action_double">Doppelt drücken</string>
     <string name="no_home_key">Es ist keine Taste mehr mit der \"Home\"-Funktion belegt!\n\nDies kann ihr Gerät unbedienbar machen!</string>
 
+    <!-- Hardware keys backlight -->
+    <string name="button_backlight_title">Hintergrundbeleuchtung</string>
+    <string name="button_backlight_enabled">Tasten beleuchten</string>
+    <string name="keyboard_backlight_enabled">Tastatur beleuchten</string>
+    <string name="button_backlight_seekbar_title">Tastenhelligkeit</string>
+    <string name="keyboard_backlight_seekbar_title">Tastaturhelligkeit</string>
+    <string name="backlight_timeout_title">Beleuchtungs-Timeout</string>
+    <string name="backlight_timeout_unlimited">Nicht ausschalten</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> Sekunde</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> Sekunden</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Deaktiviert</string>
+    <string name="backlight_summary_enabled_with_timeout">Aktiviert für <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Aktiviert</string>
+
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">Die APN werden gelöscht.</string>
 
@@ -1093,5 +1130,38 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="pie_disable_ime_triggers_title">Reduziere Schaltflächengröße auf der Tastaur</string>
     <string name="pie_disable_ime_triggers_summary">Reduziert linke und rechte Schaltflächengröße wenn die Tastatur aktiviert ist</string>
     <string name="pie_additional_options">Zusätzliche Einstellungen</string>
+
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Benachrichtigungserinnerung</string>
+    <string name="noti_reminder_enable_title">Benachrichtigungserinnerung aktivieren</string>
+    <string name="noti_reminder_sound_title">Benachrichtigungston</string>
+    <string name="noti_reminder_sound_looping">Bis verworfen</string>
+    <string name="noti_reminder_ringtone">Benachrichtigungsklingelton</string>
+    <string name="noti_reminder_interval">Flip-Intervall</string>
+    <string name="noti_reminder_interval_1s">1 Sekunde</string>
+    <string name="noti_reminder_interval_1dot5s">1.5 Sekunden</string>
+    <string name="noti_reminder_interval_2s">2 Sekunden</string>
+    <string name="noti_reminder_interval_2dot5s">2.5 Sekunden</string>
+    <string name="noti_reminder_interval_3s">3 Sekunden</string>
+    <string name="noti_reminder_interval_3dot5s">3.5 Sekunden</string>
+    <string name="noti_reminder_interval_4s">4 Sekunden</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">Recent Apps Panel</string>
+    <string name="recent_panel_scale_title">Größe</string>
+    <string name="recent_panel_scale_summary">Recent Apps Panel-Größe in Prozent.</string>
+    <string name="recent_panel_100">100% (standard)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Erweiterter Modus</string>
+    <string name="recent_panel_expanded_mode_summary">Erweiterter Vorschaumodus für vorherige Aufgaben.</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (standard)</string>
+    <string name="recent_panel_expanded_mode_always">Immer</string>
+    <string name="recent_panel_expanded_mode_never">Nie</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
+    <string name="recent_panel_lefty_mode_summary">Zeige den Recent Apps Panel am linken Rand an.</string>
+
 
 </resources>

@@ -28,6 +28,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
@@ -36,7 +37,6 @@ import android.view.MenuItem;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.widget.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -73,8 +73,8 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     ColorPickerPreference mPieButtonOutlineColor;
     ColorPickerPreference mPieIconColor;
     ListPreference mPieIconColorMode;
-    SeekBarPreference mPieButtonAlpha;
-    SeekBarPreference mPieButtonPressedAlpha;
+    SlimSeekBarPreference mPieButtonAlpha;
+    SlimSeekBarPreference mPieButtonPressedAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,11 +116,11 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         mPieIconColor.setOnPreferenceChangeListener(this);
 
         mPieButtonAlpha =
-                (SeekBarPreference) findPreference(PREF_PIE_BUTTON_ALPHA);
+                (SlimSeekBarPreference) findPreference(PREF_PIE_BUTTON_ALPHA);
         mPieButtonAlpha.setOnPreferenceChangeListener(this);
 
         mPieButtonPressedAlpha =
-                (SeekBarPreference) findPreference(PREF_PIE_BUTTON_PRESSED_ALPHA);
+                (SlimSeekBarPreference) findPreference(PREF_PIE_BUTTON_PRESSED_ALPHA);
         mPieButtonPressedAlpha.setOnPreferenceChangeListener(this);
 
         mPieIconColorMode =

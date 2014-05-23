@@ -32,7 +32,7 @@
             android:entries="@array/notification_wallpaper_landscape_entries"
             android:entryValues="@array/notification_wallpaper_landscape_values"/>
 
-        <com.android.settings.widget.SeekBarPreference
+        <SlimSeekBarPreference
              android:key="notification_wallpaper_alpha"
              android:title="@string/notif_wallpaper_alpha_title" />
 

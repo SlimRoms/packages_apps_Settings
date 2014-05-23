@@ -33,7 +33,7 @@
             android:defaultValue="0xff000000"
             android:dependency="pie_show_background" />
 
-        <com.android.settings.widget.SeekBarPreference
+        <SlimSeekBarPreference
             android:key="pie_background_alpha"
             android:title="@string/pie_background_alpha_title"
             android:dependency="pie_show_background" />
@@ -67,7 +67,7 @@
     <PreferenceCategory
         android:title="@string/pie_dimens_title">
 
-        <com.android.settings.widget.SeekBarPreference
+        <SlimSeekBarPreference
              android:key="pie_control_size"
              android:title="@string/pie_control_size" />
 

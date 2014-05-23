@@ -74,7 +74,7 @@
             android:entryValues="@array/shake_sensitivity_values"
             android:persistent="false"/>
 
-        <com.android.settings.widget.SeekBarPreference
+        <SlimSeekBarPreference
                 android:key="select_long_press_timeout_preference"
                 android:title="@string/accessibility_long_press_timeout_preference_title" />
 

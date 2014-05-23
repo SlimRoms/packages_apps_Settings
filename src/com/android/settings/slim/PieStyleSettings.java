@@ -28,6 +28,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
@@ -36,7 +37,6 @@ import android.view.MenuItem;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.widget.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -67,11 +67,11 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mPieBackgroundColor;
     private ColorPickerPreference mPieSnapColor;
     private ColorPickerPreference mPieTextColor;
-    private SeekBarPreference mPieBackgroundAlpha;
+    private SlimSeekBarPreference mPieBackgroundAlpha;
     private CheckBoxPreference mShowSnap;
     private CheckBoxPreference mShowText;
     private CheckBoxPreference mShowBackground;
-    private SeekBarPreference mPieControlSize;
+    private SlimSeekBarPreference mPieControlSize;
     private CheckBoxPreference mMirrorRightPie;
 
     @Override
@@ -101,7 +101,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         mPieTextColor = (ColorPickerPreference) findPreference(PREF_PIE_TEXT_COLOR);
         mPieTextColor.setOnPreferenceChangeListener(this);
 
-        mPieBackgroundAlpha = (SeekBarPreference) findPreference(PREF_PIE_BACKGROUND_ALPHA);
+        mPieBackgroundAlpha = (SlimSeekBarPreference) findPreference(PREF_PIE_BACKGROUND_ALPHA);
         mPieBackgroundAlpha.setOnPreferenceChangeListener(this);
 
         mShowSnap = (CheckBoxPreference) findPreference(PREF_PIE_SHOW_SNAP);
@@ -113,7 +113,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         mShowBackground = (CheckBoxPreference) findPreference(PREF_PIE_SHOW_BACKGROUND);
         mShowBackground.setOnPreferenceChangeListener(this);
 
-        mPieControlSize = (SeekBarPreference) findPreference(PREF_PIE_CONTROL_SIZE);
+        mPieControlSize = (SlimSeekBarPreference) findPreference(PREF_PIE_CONTROL_SIZE);
         mPieControlSize.setOnPreferenceChangeListener(this);
 
         mMirrorRightPie = (CheckBoxPreference) findPreference(PREF_PIE_MIRROR_RIGHT);

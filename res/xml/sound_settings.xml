@@ -94,7 +94,7 @@
             android:title="@string/haptic_feedback_enable_title"
             android:defaultValue="true" />
 
-    <com.android.settings.widget.SeekBarPreference
+    <SlimSeekBarPreference
             android:key="vibration_duration"
             android:title="@string/minimum_vibration_duration" />
 

@@ -31,6 +31,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -41,7 +42,6 @@ import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.widget.SeekBarPreference;
 
 import java.io.File;
 
@@ -63,7 +63,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
-    SeekBarPreference mWallpaperAlpha;
+    SlimSeekBarPreference mWallpaperAlpha;
 
     private File mImageTmp;
 
@@ -105,7 +105,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_BACKGROUND_ALPHA, 0.1f);
         }
-        mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+        mWallpaperAlpha = (SlimSeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
         mWallpaperAlpha.setInitValue((int) (transparency * 100));
         mWallpaperAlpha.setOnPreferenceChangeListener(this);
 

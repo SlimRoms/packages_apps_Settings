@@ -375,6 +375,9 @@
     <string name="lock_screen_title">Экран блокировки</string>
     <string name="lock_screen_summary">Просмотреть или изменить настройки экрана блокировки</string>
     <string name="lockscreen_widgets_title">Виджеты</string>
+    <string name="lockscreen_allow_all_title">Разрешить все виджеты</string>
+    <string name="lockscreen_allow_all_summary">Разрешить также виджеты, которые изначально не поддерживают расположение на экране блокировки</string>
+    <string name="lockscreen_allow_all_warning">Некоторые виджеты на экране блокировки могут работать не так, как ожидается. Некоторые могут показать ваши личные данные лицам, имеющим доступ к вашему аппарату. Пожалуйста, будтье внимательны, включая эту возможность.</string>
     <string name="lockscreen_camera_widget_title">Включить виджет камеры</string>
     <string name="lockscreen_camera_widget_summary">Показывать виджет камеры на экране блокировки</string>
     <string name="lockscreen_maximize_widgets_title">В полный экран</string>

@@ -1244,15 +1244,23 @@
 
     <!-- Shake sensitivity -->
     <string-array name="shake_sensitivity_entries">
+        <item>@string/shake_sensitivity_ultra_sensitive</item>
+        <item>@string/shake_sensitivity_super_sensitive</item>
+        <item>@string/shake_sensitivity_very_sensitive</item>
         <item>@string/shake_sensitivity_more_sensitive</item>
         <item>@string/default_string</item>
         <item>@string/shake_sensitivity_less_sensitive</item>
+        <item>@string/shake_sensitivity_even_less_sensitive</item>
     </string-array>
 
     <string-array name="shake_sensitivity_values" translatable="false">
+        <item>-4</item>
+        <item>-3</item>
+        <item>-2</item>
         <item>-1</item>
         <item>0</item>
         <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Shake to secure modes -->

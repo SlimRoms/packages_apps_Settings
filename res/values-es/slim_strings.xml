@@ -171,6 +171,26 @@
     <string name="status_bar_toggle_brightness_summary">Ajusta el brillo deslizando a lo largo de la barra de estado</string>
     <string name="status_bar_toggle_info">Brillo automático está habilitado</string>
 
+    <!-- Shake Events -->
+    <string name="shake_events_title">Eventos al agitar</string>
+    <string name="shake_events_enabled_title">Habilitar servicio de eventos al agitar</string>
+    <string name="shake_events_normal_title">Eventos al agitar activos</string>
+    <string name="shake_events_disabled_title">Aps. deshabilitadas</string>
+    <string name="shake_events_disabled_summary">Los eventos al agitar se deshabilitarán cuando se estén usando estas aplicaciones</string>
+    <string name="shake_event_x_title">Evento a lanzar al agitar horizontalmente</string>
+    <string name="shake_event_y_title">Evento a lanzar al agitar verticalmente</string>
+    <string name="shake_event_z_title">Evento a lanzar al agitar alante y atrás</string>
+
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Sensibilidad al agitar</string>
+    <string name="shake_sensitivity_summary">Configuración general de la sensibilidad al agitar</string>
+    <string name="shake_sensitivity_even_less_sensitive">Muy poca sensibilidad</string>
+    <string name="shake_sensitivity_less_sensitive">Poco sensible</string>
+    <string name="shake_sensitivity_more_sensitive">Más sensible</string>
+    <string name="shake_sensitivity_very_sensitive">Muy sensible</string>
+    <string name="shake_sensitivity_super_sensitive">Super sensible</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ultra sensible</string>
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Opciones de encendido de pantalla</string>
     <string name="pref_volume_wake_title">Despertar con teclas de volumen</string>
@@ -355,6 +375,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_stats_title">Estadísticas</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_keyguard_camera">Cámara en bloqueo</string>
+    <string name="shortcut_action_navbar">Barra de navegación</string>
+    <string name="shortcut_action_pie">Controles Pie</string>
     <string name="shortcut_action_airplane">Modo avión</string>
     <string name="shortcut_action_expanded_desktop">Escritorio extendido</string>
     <string name="shortcut_action_power_off">Apagar</string>
@@ -366,14 +389,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_recent">Recientes</string>
     <string name="shortcut_action_lastapp">Última app.</string>
     <string name="shortcut_action_search">Buscar</string>
+    <string name="shortcut_action_search">Buscar en la app.</string>
+    <string name="shortcut_action_voice_search">Búsqueda por voz</string>
     <string name="shortcut_action_screenshot">Captura pantalla</string>
     <string name="shortcut_action_menu">Menú</string>
     <string name="shortcut_action_ime">Abrir selector IME</string>
     <string name="shortcut_action_kill">Matar proceso</string>
     <string name="shortcut_action_power">Apagar pantalla</string>
+    <string name="shortcut_action_theme_switch">Selector de tema</string>
     <string name="shortcut_action_notifications">Notificaciones</string>
     <string name="shortcut_action_menu_big">Menú</string>
     <string name="shortcut_action_qs">Panel de ajustes rápidos</string>
+    <string name="shortcut_action_smart">Despliegue inteligente</string>
     <string name="shortcut_action_none">Nada</string>
     <string name="shortcut_action_power_menu">Menú apagado</string>
     <string name="shortcut_action_torch">Linterna</string>
@@ -396,9 +423,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="shortcut_action_help_shortcut">acceso directo</string>
     <string name="shortcut_action_help_button">botón</string>
+    <string name="shortcut_action_help_app">ap</string>
     <string name="shortcut_action_help_icon">, mientras selecciona el icono aparecerán las opciones de personalización</string>
     <string name="shortcut_action_help_main">Para añadir un %1$s, toca el icono Añadir. Una vez que %1$s ha sido añadida, seleccionando la fila cambiará el destino%2$s\n\nPara borrar una %1$s, desliza la fila horizontalmente a la izquierda o a la derecha.  Ordena una %1$s en la lista arrastrando verticalmente el marcador de la izquierda.\n\nPara limpiar o restablecer a los valores predeterminados toca el icono Restablecer.</string>
     <string name="shortcut_action_help_delete_last_entry">Borrando cada %1$s en la lista deshabilitará esta característica completamente.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Borrando cada %1$s en la lista deshabilitará totalmente la segunda fila de PIE.</string>
 
     <string name="shortcuts_icon_picker_alarm">Alarma</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
@@ -493,10 +522,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_status_icon">Icono</string>
     <string name="battery_status_percentage">Porcentaje</string>
     <string name="battery_status_icon_percentage">Icono con porcentaje</string>
+    <string name="battery_status_icon_percentage_jb">Icono con porcentaje (Estilo JB)</string>
     <string name="battery_status_circle">Círculo</string>
     <string name="battery_status_circle_percentage">Círculo con porcentaje</string>
     <string name="battery_status_dotted_circle_percentage">Círculo punteado con porcentaje</string>
     <string name="battery_status_dotted_circle">Círculo punteado</string>
+    <string name="battery_status_gone">Sin icono de batería</string>
     <string name="battery_color_title">Color batería</string>
     <string name="circle_battery_animation_speed">Velocidad animación círculo</string>
     <string name="circle_battery_animation_speed_none">Ninguno</string>
@@ -506,6 +537,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_text_color">Color del texto de porcentaje</string>
     <string name="battery_bolt_color">Color del rayo de carga</string>
     <string name="battery_text_charging_color">Color del texto de porcentaje cargando</string>
+    <string name="battery_circle_charging_color">Color del círculo cargando</string>
     <string name="battery_style_reset_message">¿Restablecer los colores de la batería?</string>
 
     <!-- Category title for power sound notification specific Settings.
@@ -673,6 +705,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_eight_targets_summary">Habilita ocho accesos directos en el anillo de la pantalla de bloqueo.</string>
     <string name="lockscreen_enable_eight_targets_dialog">Cambiando esta opción restablece a la configuración predetermianada los la conaccesos directos de la pantalla de bloqueo.</string>
     <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nCon ocho accesos directos habilitados no se pueden usar los accesos directos personalizados al mismo tiempo.</string>
+    <string name="lockscreen_glowpad_torch_title">Linterna en huella</string>
+    <string name="lockscreen_glowpad_torch_summary">Tocar dos veces y mantener para encender la linterna</string>
     <string name="lockscreen_target_reset">Accesos directos del bloqueo de pantalla restablecidos</string>
     <string name="lockscreen_target_reset_message">¿Borrar todos los accesos directos creados por el usuario y restablecer los predeterminados?</string>
     <string name="lockscreen_target_empty">Ninguno</string>
@@ -736,6 +770,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_allow_all_title">Permitir todos los widgets</string>
+    <string name="lockscreen_allow_all_summary">Permitir todos los widgets que, de forma nativa, no soportan su colocación en la pantalla de bloqueo</string>
+    <string name="lockscreen_allow_all_warning">Algunos widgets no se comportan como se espera al colocarlos en la pantalla de bloqueo. Otros pueden exponer sus datos personales a cualquiera que acceda a su dispositivo. Por favor tenga en cuenta esta advertencia antes de continuar.</string>
     <string name="lockscreen_camera_widget_title">Habilitar widget de cámara</string>
     <string name="lockscreen_camera_widget_summary">Mostrar widget de cámara seguro en la pantalla de bloqueo</string>
     <string name="lockscreen_maximize_widgets_title">Iniciar maximizado</string>
@@ -744,6 +781,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_disable_hints_summary">Deshabilita el efecto en los lados del paginador de la pantalla de bloqueo en modo vertical</string>
     <string name="lockscreen_use_widget_container_carousel_title">Habilitar paginar de widgets</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Usar animación del paginador de widgets en modo vertical al cambiar entre las pantallas</string>
+    <string name="lockscreen_widget_frame_title">Deshabilitar marcos de los widgets</string>
+    <string name="lockscreen_widget_frame_summary">Deshabilita el marco del fondo de los widgets</string>
 
     <!-- Lockscreen pin shuffle -->
     <string name="lock_numpad_random_title">Cambiar el orden de los números en el panel del PIN</string>
@@ -758,6 +797,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shake_to_secure_dlg_title">Advertencia:</string>
     <string name="shake_to_secure_dlg_message">El dispositivo será inseguro hasta que lo agites para habilitar el bloque seguro.  Una vez seguro: si el dispositivo se desbloquea no volverá a aparecer la pantalla de bloqueo con seguridad hasta que se agite de nuevo.</string>
     <string name="shake_secure_timeout_title">Habilitar seguridad automáticamente</string>
+    <string name="shake_all">Agitar en cualquier dirección</string>
+    <string name="shake_horizontal">Agitar horizontalmente</string>
+    <string name="shake_vertical">Agitar verticalmente</string>
+    <string name="shake_back_forth">Agitar alante y atrás</string>
     <string name="shake_secure_timeout_disabled">Nunca habilitar seguridad automáticamente</string>
     <string name="shake_secure_timeout_1min">1 minuto tras apagar la pantalla</string>
     <string name="shake_secure_timeout_5min">5 minutos tras apagar la pantalla</string>
@@ -811,10 +854,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brillo</string>
     <string name="title_tile_contact">Contacto</string>
+    <string name="title_tile_custom">Personalizado</string>
     <string name="title_tile_sleep">Apagar pantalla</string>
     <string name="title_tile_location">Localización</string>
     <string name="title_tile_torch">Linterna</string>
-    <string name="title_tile_custom">Personalizado</string>
     <string name="title_tile_lockscreen">Bloqueo de pantalla</string>
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Datos móviles</string>
@@ -828,11 +871,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Modo de red</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Tiempo espera pantalla</string>
+    <string name="title_tile_quick_record">Grabación rápida</string>
     <string name="title_tile_quiet_hours">Modo descanso</string>
     <string name="title_tile_volume">Volumen</string>
     <string name="title_tile_expanded_desktop">Escritorio extendido</string>
     <string name="title_tile_music">Música</string>
     <string name="title_tile_reboot">Reiniciar</string>
+    <string name="title_tile_theme">Selector de tema</string>
+    <string name="title_tile_shake">Eventos al agitar</string>
     <string name="dynamic_tile_ime_switcher">Selector IME</string>
     <string name="dynamic_tile_usb_tether">Anclaje USB</string>
     <string name="dynamic_tile_alarm">Alarma</string>
@@ -844,9 +890,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="help_qs_message">Para añadir un botón de ajustes rápidos, toca en el botón Añadir y selecciona el botón que quieras. Para reordenar los botones pulsa prolongadamente en uno y arrastralo a la posición que quieras. Si quieres eliminar un botón, arrástralo sobre el botón Borrar que aparece al arrastrarlo.\n\nPara deshabilitar los ajustes rápidos, borra todos los botones.\n\nPara configurar los botones dinámicos toca ,en la zona superior derecha de la panatalla, el icono correspondiente.\n\nPara deshabilitar el panel de ajustes rápidos elimina todos los botones.</string>
     <string name="custom_tile_dialog_text">Cada acción creará un nuevo estado al interruptor. Cada toque cambiará al siguiente estado. Pulsa de forma prolongada para añadir acciones de pulsación larga. Si no se definen acciones al tocar se usará la pulsación larga como acción del interruptor. Esto permite cambiar el estado tocando y lanzar acciones con pulsación prolongada.</string>
     <string name="custom_tile_dialog_title">Acciones del int. persolanizado</string>
+    <string name="custom_tile_dialog_extra_text">Detectado interruptor avanzado. El interruptor cambiará de estado cuando se toque. Puede configurar un icono y una etiqueta para el interruptor si no reconoce el estado en el que está.</string>
     <string name="custom_toggle_extras">Extras del int. personalizado</string>
     <string name="custom_toggle_collapse_check">Cerrar panel de notificaciones</string>
     <string name="custom_toggle_match_state_check">Acción al tocar concuerda con el icono</string>
+    <string name="custom_toggle_double_click_check">Doble toque para cambiar a la acción anterior</string>
     <string name="custom_tile_long_press">Pulsación larga:</string>
     <string name="custom_tile_null_warning">Primero se debe definir una acción</string>
     <string name="custom_tile_resolve_name">Desconocido</string>
@@ -890,6 +938,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_pulldown_off">Desactivado</string>
     <string name="smart_pulldown_dismissable">Desechables</string>
     <string name="smart_pulldown_persistent">Persistentes</string>
+    <string name="smart_pulldown_all">Desechables o persistentes</string>
 
     <!-- QuickSettings: Quick Collapse -->
     <string name="title_collapse_panel">Cierre rápido</string>
@@ -980,6 +1029,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="keys_action_double">Doble pulsación</string>
     <string name="no_home_key">¡No hay ningún botón asignado para la acción \"Inicio\"!\n\n¡El dispositivo podría volverse insusable!</string>
 
+    <!-- Hardware keys backlight -->
+    <string name="button_backlight_title">Retroiluminación</string>
+    <string name="button_backlight_enabled">Iluminar botones</string>
+    <string name="keyboard_backlight_enabled">Iluminar teclado</string>
+    <string name="button_backlight_seekbar_title">Brillo de los botones</string>
+    <string name="keyboard_backlight_seekbar_title">Brillo del teclado</string>
+    <string name="backlight_timeout_title">Tiempo de espera de iluminación</string>
+    <string name="backlight_timeout_unlimited">No apagar</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> segundo</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segundos</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Deshabilitado</string>
+    <string name="backlight_summary_enabled_with_timeout">Habilitado <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Habilitado</string>
+
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">Se va a borrar el APN.</string>
 
@@ -1018,6 +1083,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_reboot_disabled">Deshabilitado</string>
     <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
     <string name="advanced_reboot_show_always">Mostrar siempre</string>
+
+    <!-- Keyguard allow rotation -->
+    <string name="lockscreen_rotation_title">Rotación de bloqueo de pantalla</string>
+    <string name="lockscreen_rotation_portrait">Sólo vertical</string>
+    <string name="lockscreen_rotation_landscape">Sólo horizontal</string>
+    <string name="lockscreen_rotation_summary_extra">(en función de la configuración de pantalla)</string>
 
     <!-- Keyguard always show battery -->
     <string name="lockscreen_battery_status_title">Estado de la batería</string>
@@ -1114,6 +1185,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_100">100% (predeterminado)</string>
     <string name="recent_panel_85">85%</string>
     <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Modo expandido</string>
+    <string name="recent_panel_expanded_mode_summary">Previsualización en modo expandido de los procesos recientes</string>
+    <string name="recent_panel_expanded_mode_auto">Automático (predeterminado)</string>
+    <string name="recent_panel_expanded_mode_always">Siempre</string>
+    <string name="recent_panel_expanded_mode_never">Nunca</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>

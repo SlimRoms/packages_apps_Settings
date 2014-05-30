@@ -145,8 +145,12 @@
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Чувствительность обнаружения тряски</string>
     <string name="shake_sensitivity_summary">Общая чувствительность всех настроек тряски</string>
+    <string name="shake_sensitivity_even_less_sensitive">Минимальная чувствительность</string>
     <string name="shake_sensitivity_less_sensitive">Меньшая чувствительность</string>
     <string name="shake_sensitivity_more_sensitive">Большая чувствительность</string>
+    <string name="shake_sensitivity_very_sensitive">Высокая чувствительность</string>
+    <string name="shake_sensitivity_super_sensitive">Супер-чувствительность</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ультра-чувствительность</string>
 
     <string name="pref_low_battery_warning_policy_title">Низкий заряд батареи</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Предупреждение о низком заряде</string>

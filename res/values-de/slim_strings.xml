@@ -268,7 +268,6 @@ limitations under the License.
     <string name="auto_brightness_dialog_title">Helligkeitsstufen</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> Lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e Lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Anpassen</string>
     <string name="auto_brightness_close_button">Schließen</string>
     <string name="auto_brightness_reset_button">Zurücksetzen</string>

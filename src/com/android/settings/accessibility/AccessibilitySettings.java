@@ -104,6 +104,8 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             "captioning_preference_screen";
     private static final String DISPLAY_MAGNIFICATION_PREFERENCE_SCREEN =
             "screen_magnification_preference_screen";
+    private static final String RECENT_PANEL_SHOW_TOPMOST =
+            "recent_panel_show_topmost";
     private static final String SHAKE_SENSITIVITY =
             "shake_sensitivity";
     private static final String RECENT_PANEL_LEFTY_MODE =
@@ -208,6 +210,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mCaptioningPreferenceScreen;
     private PreferenceScreen mDisplayMagnificationPreferenceScreen;
     private PreferenceScreen mGlobalGesturePreferenceScreen;
+    private CheckBoxPreference mRecentsShowTopmost;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
@@ -272,6 +275,11 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.RECENT_PANEL_GRAVITY,
                     ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT);
+            return true;
+        } else if (preference == mRecentsShowTopmost) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_SHOW_TOPMOST,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         }
         return false;
@@ -415,6 +423,12 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             // nor long press power does not show global actions menu.
             mSystemsCategory.removePreference(mGlobalGesturePreferenceScreen);
         }
+
+        boolean enableRecentsShowTopmost = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.RECENT_PANEL_SHOW_TOPMOST, 0) == 1;
+        mRecentsShowTopmost = (CheckBoxPreference) findPreference(RECENT_PANEL_SHOW_TOPMOST);
+        mRecentsShowTopmost.setChecked(enableRecentsShowTopmost);
+        mRecentsShowTopmost.setOnPreferenceChangeListener(this);
 
         mRecentPanelLeftyMode =
                 (CheckBoxPreference) findPreference(RECENT_PANEL_LEFTY_MODE);

@@ -1028,4 +1028,12 @@
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
     <string name="recent_panel_lefty_mode_summary">Показывать панель недавних приложений у левого края.</string>
 
+    <!-- App moving -->
+    <string name="app_moving_enable">Включить перемещение приложений</string>
+    <string name="app_moving_disable">Отключить перемщеение приложений</string>
+    <string name="app_moving_reboot_title">Перезагрузить</string>
+    <string name="app_moving_reboot_enabled_desc">Перемещение приложений включено.\n\nДля применения перезагрузите устройство.</string>
+    <string name="app_moving_reboot_disabled_desc">Перемещение приложений отключено.\n\nДля применения перезагрузите устройство.</string>
+    <string name="app_moving_reboot_now_button">Сейчас</string>
+    <string name="app_moving_reboot_later_button">Позже</string>
 </resources>

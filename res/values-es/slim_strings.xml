@@ -1195,4 +1195,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>
     <string name="recent_panel_lefty_mode_summary">Mostrar el panel de aps recientes en el lado izquierdo.</string>
 
+    <!-- App moving -->
+    <string name="app_moving_enable">Habilitar mover aps.</string>
+    <string name="app_moving_disable">Deshabilitar mover aps.</string>
+    <string name="app_moving_reboot_title">¿Reinicar ahora?</string>
+    <string name="app_moving_reboot_enabled_desc">Se ha habilitado el poder mover aplicaciones.\n\nPara que los cambios se apliquen es necesario reiniciar el dispositivo.</string>
+    <string name="app_moving_reboot_disabled_desc">Se ha deshabilitado el poder mover aplicaciones.\n\nPara que los cambios se apliquen es necesario reiniciar el dispositivo.</string>
+    <string name="app_moving_reboot_now_button">Reiniciar ahora</string>
+    <string name="app_moving_reboot_later_button">Reiniciar más tarde</string>
+
 </resources>

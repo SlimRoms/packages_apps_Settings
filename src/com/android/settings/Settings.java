@@ -79,7 +79,6 @@ import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
-import com.android.settings.location.LocationEnabler;
 import com.android.settings.location.LocationSettings;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
@@ -826,7 +825,6 @@ public class Settings extends PreferenceActivity
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
         public static ThemeEnabler mThemeEnabler;
-        private final LocationEnabler mLocationEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
 
@@ -847,8 +845,7 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_CATEGORY;
             } else if (header.id == R.id.wifi_settings
                     || header.id == R.id.bluetooth_settings
-                    || header.id == R.id.theme_settings
-                    || header.id == R.id.location_settings) {
+                    || header.id == R.id.theme_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
                 return HEADER_TYPE_BUTTON;
@@ -895,7 +892,6 @@ public class Settings extends PreferenceActivity
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
             mThemeEnabler = new ThemeEnabler(context, new Switch(context));
-            mLocationEnabler = new LocationEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
         }
 
@@ -969,8 +965,6 @@ public class Settings extends PreferenceActivity
                         mBluetoothEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.theme_settings) {
                         mThemeEnabler.setSwitch(holder.switch_);
-                    } else if (header.id == R.id.location_settings) {
-                        mLocationEnabler.setSwitch(holder.switch_);
                     }
                     updateCommonHeaderView(header, holder);
                     break;
@@ -1045,14 +1039,12 @@ public class Settings extends PreferenceActivity
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
             mThemeEnabler.resume();
-            mLocationEnabler.resume();
         }
 
         public void pause() {
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
             mThemeEnabler.resume();
-            mLocationEnabler.pause();
         }
     }
 

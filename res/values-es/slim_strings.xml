@@ -1190,6 +1190,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_expanded_mode_auto">Automático (predeterminado)</string>
     <string name="recent_panel_expanded_mode_always">Siempre</string>
     <string name="recent_panel_expanded_mode_never">Nunca</string>
+    <string name="recent_panel_show_topmost_title">Mostrar aplicación en uso</string>
+    <string name="recent_panel_show_topmost_summary">Incluir la aplicación en uso en primer plano en la vista de aplicaciones recientes</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>

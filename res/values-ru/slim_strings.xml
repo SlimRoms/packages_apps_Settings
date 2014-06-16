@@ -1023,6 +1023,8 @@
     <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
     <string name="recent_panel_expanded_mode_always">Всегда</string>
     <string name="recent_panel_expanded_mode_never">Никогда</string>
+    <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
+    <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>

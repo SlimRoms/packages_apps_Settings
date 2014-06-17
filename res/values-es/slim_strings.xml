@@ -1179,7 +1179,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_4s">4 segundos</string>
 
      <!-- Recent panel -->
-    <string name="recent_panel_category">Panel de aps. recientes</string>
+    <string name="recent_panel_category">Panel de aplicaciones recientes</string>
     <string name="recent_panel_scale_title">Tamaño</string>
     <string name="recent_panel_scale_summary">Tamaño del panel de aps recientes en porcentaje.</string>
     <string name="recent_panel_100">100% (predeterminado)</string>

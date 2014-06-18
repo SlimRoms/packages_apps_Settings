@@ -536,7 +536,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="circle_battery_animation_speed_fast">Fast</string>
     <string name="battery_text_color">Percentage text color</string>
     <string name="battery_bolt_color">Bolt charging color</string>
-    <string name="battery_text_charging_color">Percentage text charging color</string>
+    <string name="battery_text_charging_color">Percentage text charging color (15-89%)</string>
     <string name="battery_circle_charging_color">Circle charging color</string>
     <string name="battery_style_reset_message">Reset all battery colors?</string>
 

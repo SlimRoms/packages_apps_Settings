@@ -344,7 +344,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
     <string name="battery_text_color">Цвет процентов</string>
-    <string name="battery_text_charging_color">Цвет текста при зарядке</string>
+    <string name="battery_text_charging_color">Цвет текста при зарядке (15-89%)</string>
     <string name="battery_circle_charging_color">Цвет круга при зарядке</string>
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>

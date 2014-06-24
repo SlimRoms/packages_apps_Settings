@@ -435,8 +435,8 @@
     <string name="unlock_quick_unlock_control_summary">Не требуется нажимать \&quot;ОК\&quot; после ввода пароля или PIN. Стирание засчитывается как неудачная попытка</string>
     <string name="lock_before_unlock_title">Показывать ползунок перед безопасной разблокировкой</string>
     <string name="lock_before_unlock_summary">Показывать стандартный ползунок разблокировки до безопасной разблокировки</string>
-    <string name="lock_numpad_random_title">Изменять порядок кнопока при вводе PIN</string>
-    <string name="lock_numpad_random_dialog_title">Поризвольный порядок цифр PIN</string>
+    <string name="lock_numpad_random_title">Изменять порядок кнопок при вводе PIN</string>
+    <string name="lock_numpad_random_dialog_title">Произвольный порядок цифр PIN</string>
     <string name="lock_numpad_random_off">Отключено</string>
     <string name="lock_numpad_random_always">Всегда</string>
     <string name="lock_numpad_random_on_request">По запросу</string>

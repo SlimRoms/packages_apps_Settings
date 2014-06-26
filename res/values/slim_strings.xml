@@ -1283,4 +1283,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Bluetooth accept all Filestypes -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
 
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Proximity wake-up</string>
+    <string name="proximity_wake_summary">Use proximity sensor to help decide whether to wake device up</string>
+
 </resources>

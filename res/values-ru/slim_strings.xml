@@ -564,6 +564,7 @@
     <string name="shortcut_duplicate_entry">Выбранное приложение не может быть добавлено дважды</string>
     <string name="shortcut_action_help_shortcut">ярлык</string>
     <string name="shortcut_action_help_button">кнопка</string>
+    <string name="shortcut_action_help_app">приложение</string>
     <string name="shortcut_action_help_icon">, в процессе выбора значка покажет настройки модификации</string>
     <string name="shortcut_action_help_main">Чтобы добавить %1$s, нажмите значок \&quot;Добавить\&quot;.  Когда %1$s добавлено, выбором ряда, можно изменить цель%2$s\n\nЧтобы удалить %1$s, сдвиньте ряд горизонтально.  Переопределить %1$s в списке можно вертикальным перетаскиванием привязки слева.\n\nЧтобы сбросить все к значениям по умолчанию, нажмите значок сброса.</string>
     <string name="shortcut_action_help_delete_last_entry">Удаление последнего %1$s в списке отключит эту возможность.</string>
@@ -813,6 +814,7 @@
     <string name="device_hostname">Имя хоста</string>
     <string name="device_settings_title">Устройство</string>
     <string name="title_tile_theme">Управление TRDS</string>
+    <string name="title_tile_shake">Действия встряхивания</string>
     <string name="theme_settings_title">The Real Dark Slim</string>
     <string name="theme_auto_mode_title">Переключить тему</string>
     <string name="theme_auto_mode_off">Вручную</string>

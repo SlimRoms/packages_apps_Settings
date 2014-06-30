@@ -40,10 +40,14 @@ public class TimeRangePreference extends Preference implements
     private static final int DIALOG_START_TIME = 1;
     private static final int DIALOG_END_TIME = 2;
 
+    private TextView mStartTimeTitle;
+    private TextView mEndTimeTitle;
     private TextView mStartTimeText;
     private TextView mEndTimeText;
     private int mStartTime;
     private int mEndTime;
+    private String mStartTitle;
+    private String mEndTitle;
 
     /**
      * @param context
@@ -80,6 +84,9 @@ public class TimeRangePreference extends Preference implements
             endTimeLayout.setOnClickListener(this);
         }
 
+        mStartTimeTitle = (TextView) view.findViewById(R.id.start_time_title);
+        mEndTimeTitle = (TextView) view.findViewById(R.id.end_time_title);
+
         mStartTimeText = (TextView) view.findViewById(R.id.start_time_text);
         mEndTimeText = (TextView) view.findViewById(R.id.end_time_text);
 
@@ -97,6 +104,12 @@ public class TimeRangePreference extends Preference implements
         if (mEndTimeText != null) {
             mEndTimeText.setText(returnTime(mEndTime));
         }
+        if (mEndTitle != null && mEndTimeTitle != null) {
+            mEndTimeTitle.setText(mEndTitle);
+        }
+        if (mStartTitle != null && mStartTimeTitle != null) {
+            mStartTimeTitle.setText(mStartTitle);
+        }
     }
 
     public void setStartTime(int time) {
@@ -107,6 +120,23 @@ public class TimeRangePreference extends Preference implements
     public void setEndTime(int time) {
         mEndTime = time;
         updatePreferenceViews();
+    }
+
+    public void setAppendedText(String firstDay, String secondDay) {
+        if (firstDay != null && secondDay != null) {
+            Context context = getContext();
+            mStartTitle = context.getResources().getString(
+                        R.string.start_time_title) + " - " + firstDay;
+            mEndTitle = context.getResources().getString(
+                        R.string.end_time_title) + " - " + secondDay;
+
+            if (mStartTimeTitle != null) {
+                mStartTimeTitle.setText(mStartTitle);
+            }
+            if (mEndTimeTitle != null) {
+                mEndTimeTitle.setText(mEndTitle);
+            }
+        }
     }
 
     public void setTimeRange(int stime, int etime) {

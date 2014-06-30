@@ -888,6 +888,19 @@
         <item>ic_lockscreen_twitter_normal</item>
     </string-array>
 
+    <!-- QuietHours Mode -->
+    <string-array name="quiet_hours_mode_entries">
+        <item>@string/quiet_hours_off</item>
+        <item>@string/quiet_hours_timed</item>
+        <item>@string/quiet_hours_forced</item>
+    </string-array>
+
+    <string-array name="quiet_hours_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- QuietHours Incoming Contact -->
     <string-array name="incoming_contact_entries">
         <item>@string/quiet_hours_auto_disabled</item>

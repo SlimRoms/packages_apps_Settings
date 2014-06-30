@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 SlimRoms Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/quiet_time_prefs_title">
+
+    <CheckBoxPreference
+        android:key="daily_checkbox"
+        android:title="@string/quiet_hours_daily_times"
+        android:summaryOn="@string/quiet_hours_daily_on"
+        android:summaryOff="@string/quiet_hours_daily_off" />
+
+    <CheckBoxPreference
+        android:key="require_wifi"
+        android:title="@string/quiet_hours_wifi"
+        android:summaryOn="@string/quiet_hours_wifi_on"
+        android:summaryOff="@string/quiet_hours_wifi_off" />
+
+    <CheckBoxPreference
+        android:key="require_charging"
+        android:title="@string/quiet_hours_charging"
+        android:summaryOn="@string/quiet_hours_charging_on"
+        android:summaryOff="@string/quiet_hours_charging_off" />
+
+    <com.android.settings.slim.TimeRangePreference
+        android:key="quiet_hours_timerange" />
+
+    <PreferenceCategory
+        android:key="daily_times"
+        android:title="@string/quiet_hours_daily_times">
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_sun"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_mon"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_tues"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_wed"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_thurs"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_fri"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_sat"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

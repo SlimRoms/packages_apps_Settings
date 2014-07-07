@@ -643,6 +643,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_charging_off">Device charging can be in any state</string>
     <string name="quiet_hours_charging_on">Device must be charging</string>
     <string name="quiet_hours_timed">Quiet hours relies on time functions</string>
+    <string name="quiet_hours_reset_times">Reset all times to default?</string>
     <string name="quiet_hours_daily_times">Daily times</string>
     <string name="quiet_hours_daily_on">Individual times per day are enabled</string>
     <string name="quiet_hours_daily_off">A single set of times is enabled</string>

@@ -42,34 +42,95 @@
 
     <PreferenceCategory
         android:key="daily_times"
-        android:title="@string/quiet_hours_daily_times">
+        android:title="@string/quiet_hours_daily_times"/>
+
+    <PreferenceCategory
+        android:key="sunday">
 
         <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_sun"
             android:dependency="daily_checkbox" />
 
         <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_sun_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="monday">
+
+        <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_mon"
             android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_mon_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="tuesday">
 
         <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_tues"
             android:dependency="daily_checkbox" />
 
         <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_tues_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="wednesday">
+
+        <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_wed"
             android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_wed_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="thursday">
 
         <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_thurs"
             android:dependency="daily_checkbox" />
 
         <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_thurs_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="friday">
+
+        <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_fri"
             android:dependency="daily_checkbox" />
 
         <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_fri_extra"
+            android:dependency="daily_checkbox" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="saturday">
+
+        <com.android.settings.slim.TimeRangePreference
             android:key="quiet_hours_timerange_sat"
+            android:dependency="daily_checkbox" />
+
+        <com.android.settings.slim.TimeRangePreference
+            android:key="quiet_hours_timerange_sat_extra"
             android:dependency="daily_checkbox" />
 
     </PreferenceCategory>

@@ -202,6 +202,10 @@ public class TimeRangePreference extends Preference implements
             return "";
         }
 
+        // Preference is doing nothing, make it obvious
+        if (mEndTime == mStartTime) {
+            return "- - : - -";
+        }
         int hr = t;
         int mn = t;
 

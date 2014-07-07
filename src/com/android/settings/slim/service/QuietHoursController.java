@@ -77,9 +77,11 @@ public class QuietHoursController {
 
     private Intent mServiceTriggerIntent;
 
+    private boolean mDaily;
+
     private int mQuietHoursMode;
-    private int[] mQuietHoursStart = new int[7];
-    private int[] mQuietHoursEnd = new int[7];
+    private int[] mQuietHoursStart = new int[14];
+    private int[] mQuietHoursEnd = new int[14];
 
     private int mSmsBypass;
     private int mCallBypass;
@@ -147,30 +149,33 @@ public class QuietHoursController {
 
     // Called when time-range is changed and at init
     public void updateTimePrefs() {
-        mQuietHoursMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+        ContentResolver resolver = mContext.getContentResolver();
+        mQuietHoursMode = Settings.System.getIntForUser(resolver,
                 Settings.System.QUIET_HOURS_ENABLED, 0,
                 UserHandle.USER_CURRENT_OR_SELF);
 
-        if (Settings.System.getIntForUser(mContext.getContentResolver(),
+        mDaily = Settings.System.getIntForUser(resolver,
                 Settings.System.QUIET_HOURS_DAILY, 0,
-                UserHandle.USER_CURRENT_OR_SELF) == 1) {
-            for (int i = 0; i < 7; i++) {
+                UserHandle.USER_CURRENT_OR_SELF) == 1;
+
+        if (mDaily) {
+            for (int i = 0; i < 14; i++) {
                     mQuietHoursStart[i] = Settings.System.getIntForUser(
-                        mContext.getContentResolver(),
+                        resolver,
                         Settings.System.QUIET_HOURS_START_TIMES[i], 720,
                         UserHandle.USER_CURRENT_OR_SELF);
                     mQuietHoursEnd[i] = Settings.System.getIntForUser(
-                        mContext.getContentResolver(),
+                        resolver,
                         Settings.System.QUIET_HOURS_END_TIMES[i], 720,
                         UserHandle.USER_CURRENT_OR_SELF);
             }
         } else {
             final int startTimesSingle = Settings.System.getIntForUser(
-                    mContext.getContentResolver(),
+                    resolver,
                     Settings.System.QUIET_HOURS_START, 720,
                     UserHandle.USER_CURRENT_OR_SELF);
             final int endTimesSingle = Settings.System.getIntForUser(
-                    mContext.getContentResolver(),
+                    resolver,
                     Settings.System.QUIET_HOURS_END, 720,
                     UserHandle.USER_CURRENT_OR_SELF);
             for (int i = 0; i < 7; i++) {
@@ -500,7 +505,29 @@ public class QuietHoursController {
             // Check if enabled requirements are true before enabling
             checkRequirements();
         } else {
-            // Disable any active settings
+            if (mDaily && mQuietHoursEnd[dayIndex] != mQuietHoursStart[dayIndex]) {
+                lastIndex = lastIndex + 7;
+                dayIndex = dayIndex + 7;
+                if (mQuietHoursEnd[lastIndex] < mQuietHoursStart[lastIndex]
+                        && currentMinutes <= mQuietHoursEnd[lastIndex]) {
+                    // We're in "today" but the last quiet hours are in affect
+                    inQuietHours = true;
+                } else if (mQuietHoursEnd[dayIndex] < mQuietHoursStart[dayIndex]
+                        && currentMinutes >= mQuietHoursStart[dayIndex]) {
+                    // Starts before now today and ends tomorrow
+                    inQuietHours = true;
+                } else if (mQuietHoursEnd[dayIndex] > mQuietHoursStart[dayIndex]
+                        && currentMinutes <= mQuietHoursEnd[dayIndex]
+                        && currentMinutes >= mQuietHoursStart[dayIndex]) {
+                    // Starts and ends today and we're in between those two times
+                    inQuietHours = true;
+                }
+            }
+        }
+
+        if (inQuietHours) {
+            checkRequirements();
+        } else {
             toggleQuietHoursEntries(false);
         }
     }
@@ -607,25 +634,15 @@ public class QuietHoursController {
                 break;
         }
 
-        if (mQuietHoursStart[lastIndex] == mQuietHoursEnd[lastIndex]
+        final boolean normalDaysInvalid =
+                mQuietHoursStart[lastIndex] == mQuietHoursEnd[lastIndex]
                 && mQuietHoursStart[dayIndex] == mQuietHoursEnd[dayIndex]
-                && mQuietHoursStart[nextIndex] == mQuietHoursEnd[nextIndex]) {
-            // equal times mean we're disabled with the new "forced" methods
-            // and quiet hours rewrite - we're going back to the old logic due to this.
-            // If this is all true: we just need to check again in 24 hours (tomorrow)
-            // to make sure the day after tomorrow doesn't match as well.
-            if (ignoreChanges == false) {
-                mQuietHoursMode = 1;
-                Settings.System.putIntForUser(mContext.getContentResolver(),
-                        Settings.System.QUIET_HOURS_ENABLED,
-                        mQuietHoursMode, UserHandle.USER_CURRENT_OR_SELF);
-                toggleQuietHoursEntries(false);
-            }
-            calendar.add(Calendar.MINUTE, FULL_DAY);
-            mAlarmManager.set(AlarmManager.RTC_WAKEUP,
-                    calendar.getTimeInMillis(), getScheduler());
-            return;
-        }
+                && mQuietHoursStart[nextIndex] == mQuietHoursEnd[nextIndex];
+
+        final boolean extraDaysInvalid = !mDaily
+                && mQuietHoursStart[lastIndex + 7] == mQuietHoursEnd[lastIndex + 7]
+                && mQuietHoursStart[dayIndex + 7] == mQuietHoursEnd[dayIndex + 7]
+                && mQuietHoursStart[nextIndex + 7] == mQuietHoursEnd[nextIndex + 7];
 
         // if we are or are not currently in quiet hours
         boolean inQuietHours = false;
@@ -639,50 +656,141 @@ public class QuietHoursController {
         // Current time in minutes
         final int currentMinutes =
                 calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE);
-        if (mQuietHoursEnd[lastIndex] < mQuietHoursStart[lastIndex]) {
-            // End time of yesterday is somtime today
-            if (currentMinutes <= mQuietHoursEnd[lastIndex]) {
-                // We're before yesterday's end time
-                inQuietHours = true;
-                nextSchedule = mQuietHoursEnd[lastIndex] - currentMinutes + 1;
+
+        if (!normalDaysInvalid) {
+            if (mQuietHoursEnd[lastIndex] < mQuietHoursStart[lastIndex]) {
+                // End time of yesterday is somtime today
+                if (currentMinutes <= mQuietHoursEnd[lastIndex]) {
+                    // We're before yesterday's end time
+                    inQuietHours = true;
+                    nextSchedule = mQuietHoursEnd[lastIndex] - currentMinutes + 1;
+                }
+            }
+
+            // We already scheduled for yesterday's end time
+            if (nextSchedule == -1) {
+                if (mQuietHoursEnd[dayIndex] == mQuietHoursStart[dayIndex]) {
+                    // Disabled for today, schedule for tomorrow's start
+                    inQuietHours = false;
+                    nextSchedule = FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
+                } else if (mQuietHoursEnd[dayIndex] < mQuietHoursStart[dayIndex]) {
+                    // End time for today is sometime tomorrow
+                    if (currentMinutes >= mQuietHoursStart[dayIndex]) {
+                        // We're after today's start time
+                        inQuietHours = true;
+                        nextSchedule = FULL_DAY - currentMinutes + mQuietHoursEnd[dayIndex] + 1;
+                    } else {
+                        // Current time is less than today's start time
+                        inQuietHours = false;
+                        nextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
+                    }
+                } else {
+                    // End time for today is sometime today
+                    if (currentMinutes >= mQuietHoursStart[dayIndex]
+                        && currentMinutes <= mQuietHoursEnd[dayIndex]) {
+                        // We're between today's start and end times
+                        inQuietHours = true;
+                        nextSchedule = mQuietHoursEnd[dayIndex] - currentMinutes + 1;
+                    } else {
+                        if (currentMinutes < mQuietHoursStart[dayIndex]) {
+                            // We're waiting for today's start time
+                            inQuietHours = false;
+                            nextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
+                        } else {
+                            // we're after today's end time
+                            inQuietHours = false;
+                            nextSchedule = FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
+                        }
+                    }
+                }
             }
         }
 
-        // We already scheduled for yesterday's end time
-        if (nextSchedule == -1) {
-            if (mQuietHoursEnd[dayIndex] == mQuietHoursStart[dayIndex]) {
-                // Disabled for today, schedule for tomorrow's start
-                inQuietHours = false;
-                nextSchedule = FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
-            } else if (mQuietHoursEnd[dayIndex] < mQuietHoursStart[dayIndex]) {
-                // End time for today is sometime tomorrow
-                if (currentMinutes >= mQuietHoursStart[dayIndex]) {
-                    // We're after today's start time
-                    inQuietHours = true;
-                    nextSchedule = FULL_DAY - currentMinutes + mQuietHoursEnd[dayIndex] + 1;
-                } else {
-                    // Current time is less than today's start time
-                    inQuietHours = false;
-                    nextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
-                }
-            } else {
-                // End time for today is sometime today
-                if (currentMinutes >= mQuietHoursStart[dayIndex]
-                    && currentMinutes <= mQuietHoursEnd[dayIndex]) {
-                    // We're between today's start and end times
-                    inQuietHours = true;
-                    nextSchedule = mQuietHoursEnd[dayIndex] - currentMinutes + 1;
-                } else {
-                    if (currentMinutes < mQuietHoursStart[dayIndex]) {
-                        // We're waiting for today's start time
-                        inQuietHours = false;
-                        nextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
-                    } else {
-                        // we're after today's end time
-                        inQuietHours = false;
-                        nextSchedule = FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
+        // We're allowing daily timers and are not in quiet hours:
+        // check the extra times to see if that changes, or if
+        // we need to schedule to a sooner time
+        if (!extraDaysInvalid && !inQuietHours) {
+            int altNextSchedule = -1;
+
+            if (mQuietHoursEnd[lastIndex] != mQuietHoursStart[lastIndex]) {
+                // Yesterday's extra preference is enabled
+                lastIndex = lastIndex + 7;
+                if (mQuietHoursEnd[lastIndex] < mQuietHoursStart[lastIndex]) {
+                    // End time of yesterday is somtime today
+                    if (currentMinutes <= mQuietHoursEnd[lastIndex]) {
+                        // We're before yesterday's end time
+                        inQuietHours = true;
+                        altNextSchedule = mQuietHoursEnd[lastIndex] - currentMinutes + 1;
                     }
                 }
+            }
+
+            if (altNextSchedule == -1) {
+                boolean todayDisabled = false;
+                boolean tomorrowDisabled = false;
+                if (mQuietHoursStart[dayIndex] == mQuietHoursEnd[dayIndex]) {
+                    // Today's extra preference is disabled
+                    todayDisabled = true;
+                }
+                if (mQuietHoursStart[nextIndex] == mQuietHoursEnd[nextIndex]) {
+                    // Tomorrow's extra preference is disabled
+                    tomorrowDisabled = true;
+                }
+                dayIndex = dayIndex + 7;
+                nextIndex = nextIndex + 7;
+                if (mQuietHoursStart[dayIndex] == mQuietHoursEnd[dayIndex]) {
+                    // Today's extra preference is disabled
+                    todayDisabled = true;
+                }
+                if (mQuietHoursStart[nextIndex] == mQuietHoursEnd[nextIndex]) {
+                    // Tomorrow's extra preference is disabled
+                    tomorrowDisabled = true;
+                }
+                if (mQuietHoursEnd[dayIndex] == mQuietHoursStart[dayIndex]) {
+                    if (!tomorrowDisabled) {
+                        // Disabled for today, schedule for tomorrow's start
+                        inQuietHours = false;
+                        altNextSchedule = FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
+                    }
+                } else if (!todayDisabled
+                        && mQuietHoursEnd[dayIndex] < mQuietHoursStart[dayIndex]) {
+                    // End time for today is sometime tomorrow
+                    if (currentMinutes >= mQuietHoursStart[dayIndex]) {
+                        // We're after today's start time
+                        inQuietHours = true;
+                        altNextSchedule = FULL_DAY - currentMinutes + mQuietHoursEnd[dayIndex] + 1;
+                    } else {
+                        // Current time is less than today's start time
+                        inQuietHours = false;
+                        altNextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
+                    }
+                } else {
+                    // End time for today is sometime today
+                    if (!todayDisabled && currentMinutes >= mQuietHoursStart[dayIndex]
+                        && currentMinutes <= mQuietHoursEnd[dayIndex]) {
+                        // We're between today's start and end times
+                        inQuietHours = true;
+                        altNextSchedule = mQuietHoursEnd[dayIndex] - currentMinutes + 1;
+                    } else {
+                        if (!todayDisabled && currentMinutes < mQuietHoursStart[dayIndex]) {
+                            // We're waiting for today's start time
+                            inQuietHours = false;
+                            altNextSchedule = mQuietHoursStart[dayIndex] - currentMinutes;
+                        } else {
+                            if (!tomorrowDisabled) {
+                                // we're after today's end time
+                                inQuietHours = false;
+                                altNextSchedule =
+                                        FULL_DAY - currentMinutes + mQuietHoursStart[nextIndex];
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (altNextSchedule >= 0 && altNextSchedule < nextSchedule) {
+                // Our next "extra time" event falls before the general one
+                nextSchedule = altNextSchedule;
             }
         }
 
@@ -704,10 +812,15 @@ public class QuietHoursController {
         // Add a second - we want to be IN quiet hours or OUT of
         // quiet hours and avoid accidental matches due to inconsistencies
         calendar.add(Calendar.SECOND, 1);
-        if (nextSchedule >= 0) {
-            calendar.add(Calendar.MINUTE, nextSchedule);
-            mAlarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), getScheduler());
+
+        if (nextSchedule <= 0) {
+            // Our day times are invalid (unused), so we need to check
+            // again tomorrow to make sure that doesn't change
+            nextSchedule = FULL_DAY;
         }
+
+        calendar.add(Calendar.MINUTE, nextSchedule);
+        mAlarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), getScheduler());
     }
 
     /*

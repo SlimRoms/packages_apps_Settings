@@ -17,10 +17,22 @@
     <string name="slim_center_title">Slim-Центр</string>
     <string name="quiet_hours_title">Тихие часы</string>
     <string name="quiet_hours_summary">Настройка часов, когда устройство должно быть тихим</string>
-    <string name="quiet_hours_enabled">Включить тихие часы</string>
-    <string name="quiet_hours_enabled_on">Тихие часы активированы</string>
-    <string name="quiet_hours_enabled_off">Уведомления будут вести себя как обычно</string>
-    <string name="quiet_hours_auto_title">В зависимости от режима звонка</string>
+    <string name="quiet_hours_mode">Режим \"тихих часов\"</string>
+    <string name="quiet_hours_off">\"Тихие часы\" отключены</string>
+    <string name="quiet_hours_forced">\"Тихие часы\" всегда включены</string>
+    <string name="quiet_hours_times_warning">Преиоды времени не могут пересекаться: будет принято ближайшее возможное время</string>
+    <string name="quiet_hours_wifi">Требуется WiFi-подключение</string>
+    <string name="quiet_hours_wifi_on">WiFi должен быть подключен</string>
+    <string name="quiet_hours_wifi_off">WiFi может находиться в любом состоянии</string>
+    <string name="quiet_hours_charging">Требуется подключение к сети питания</string>
+    <string name="quiet_hours_charging_off">Устройство может находиться в любом состоянии</string>
+    <string name="quiet_hours_charging_on">Устройство должно быть подключено к зарядке</string>
+    <string name="quiet_hours_timed">\"Тихие часы\" полагаются на функции времени</string>
+    <string name="quiet_hours_daily_times">Дневное время</string>
+    <string name="quiet_hours_daily_on">Дневное время имеет отдельную конфигурацию</string>
+    <string name="quiet_hours_daily_off">Дневное время считается общим временным периодом</string>
+    <string name="quiet_time_prefs_title">Временные периоды \"тихих часов\"</string>
+    <string name="quiet_hours_auto_title">В зависимости от режима звонка (всегда включен и определен)</string>
     <string name="quiet_hours_auto_silent">Тихие часы включат звонок, если он беззвучный</string>
     <string name="quiet_hours_auto_vibrate">Тихие часы включат звонок, если он вибро или беззвучный</string>
     <string name="quiet_hours_start">Начало тихих часов</string>
@@ -53,6 +65,13 @@
     <string name="less_notification_sounds_1m">1 минута</string>
     <string name="less_notification_sounds_2m">2 минуты</string>
     <string name="less_notification_sounds_5m">5 минут</string>
+    <string name="sunday">Воскресенье</string>
+    <string name="monday">Понедельник</string>
+    <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
+    <string name="thursday">Четверг</string>
+    <string name="friday">Пятница</string>
+    <string name="saturday">Суббота</string>
     <string name="header_category_rom_settings">РАСШИРЕННЫЕ НАСТРОЙКИ</string>
     <string name="ok">OK</string>
     <string name="interface_settings_title">Интерфейс</string>
@@ -1040,4 +1059,28 @@
     <string name="app_moving_reboot_disabled_desc">Перемещение приложений отключено.\n\nДля применения перезагрузите устройство.</string>
     <string name="app_moving_reboot_now_button">Сейчас</string>
     <string name="app_moving_reboot_later_button">Позже</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Уведомления \"поверх\"</string>
+    <string name="heads_up_expanded_title">Всегда развернуты</string>
+    <string name="heads_up_expanded_summary">Показывать уведомления \"поверх\" всегда развернутыми</string>
+    <string name="heads_up_show_updates_title">Показывать изменения</string>
+    <string name="heads_up_show_updates_summary">Показывать обновившиеся фоновые уведомления \"поверх\"</string>
+    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="heads_up_snooze_summary">При нажатии кнопки \"Отложить\" уведомления \"поверх\" будут приостановлены на <xliff:g id="number">%d</xliff:g> минут.</string>
+    <string name="heads_up_snooze_disabled_summary">Функция \"Отложить\" отключена.</string>
+    <string name="heads_up_snooze_3min">3 минуты</string>
+    <string name="heads_up_snooze_5min">5 минут</string>
+    <string name="heads_up_snooze_10min">10 минут</string>
+    <string name="heads_up_snooze_15min">15 минут</string>
+    <string name="heads_up_snooze_20min">20 минут</string>
+    <string name="heads_up_time_out_title">Длительность</string>
+    <string name="heads_up_time_out_summary">Уведомление \"поверх\" будет показываться в течение <xliff:g id="number">%d</xliff:g> секунд.</string>
+    <string name="heads_up_time_out_never_summary">Уведомление \"поверх\" будет показываться, пока не будет закрыто.</string>
+    <string name="heads_up_time_out_4sec">4 секунды</string>
+    <string name="heads_up_time_out_6sec">6 секунд</string>
+    <string name="heads_up_time_out_8sec">8 секунд</string>
+    <string name="heads_up_time_out_10sec">10 секунд</string>
+    <string name="heads_up_time_out_never">Никогда</string>
+    <string name="heads_up_switch_label">Включить уведомления \"поверх\"</string>
 </resources>

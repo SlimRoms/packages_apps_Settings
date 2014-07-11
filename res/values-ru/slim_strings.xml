@@ -307,7 +307,7 @@
     <string name="title_tile_brightness">Подсветка</string>
     <string name="title_tile_contact">Контакт</string>
     <string name="title_tile_custom">Свой ярлык</string>
-    <string name="title_tile_torch">Фонарь</string>
+    <string name="title_tile_torch">Фонарик</string>
     <string name="title_tile_lockscreen">Экран блокировки</string>
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_music">Музыка</string>

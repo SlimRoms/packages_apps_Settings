@@ -85,13 +85,17 @@ import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintServiceSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
+import com.android.settings.slim.AdvancedSettings;
 import com.android.settings.slim.BatteryIconStyle;
 import com.android.settings.slim.blacklist.BlacklistSettings;
 import com.android.settings.slim.DisplayRotation;
+import com.android.settings.slim.InterfaceSettings;
+import com.android.settings.slim.NavigationSettings;
 import com.android.settings.slim.quicksettings.QuickSettingsTiles;
 import com.android.settings.slim.ShakeEvents;
 import com.android.settings.slim.QuietHours;
 import com.android.settings.slim.themes.ThemeEnabler;
+import com.android.settings.slim.themes.ThemeSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
@@ -377,7 +381,12 @@ public class Settings extends PreferenceActivity
         BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
         ApnSettings.class.getName(),
-        ShakeEvents.class.getName()
+        ShakeEvents.class.getName(),
+        HomeSettings.class.getName(),
+        InterfaceSettings.class.getName(),
+        NavigationSettings.class.getName(),
+        ThemeSettings.class.getName(),
+        AdvancedSettings.class.getName()
     };
 
     @Override
@@ -1188,4 +1197,9 @@ public class Settings extends PreferenceActivity
     public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
+    public static class HomeSettingsActivity extends Settings { /* empty */ }
+    public static class InterfaceSettingsActivity extends Settings { /* empty */ }
+    public static class NavigationSettingsActivity extends Settings { /* empty */ }
+    public static class ThemeSettingsActivity extends Settings { /* empty */ }
+    public static class AdvancedSettingsActivity extends Settings { /* empty */ }
 }

@@ -28,6 +28,7 @@
     <string name="quiet_hours_charging_off">Устройство может находиться в любом состоянии</string>
     <string name="quiet_hours_charging_on">Устройство должно быть подключено к зарядке</string>
     <string name="quiet_hours_timed">\"Тихие часы\" полагаются на функции времени</string>
+    <string name="quiet_hours_reset_times">Сбросить все счетчики времени к значению по умолчанию?</string>
     <string name="quiet_hours_daily_times">Дневное время</string>
     <string name="quiet_hours_daily_on">Дневное время имеет отдельную конфигурацию</string>
     <string name="quiet_hours_daily_off">Дневное время считается общим временным периодом</string>

@@ -643,6 +643,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_charging_off">La conexión con el cargador puede estar en cualquier estado</string>
     <string name="quiet_hours_charging_on">El dispositivo tiene que estar cargando</string>
     <string name="quiet_hours_timed">El modo descanso depende de las funciones horarias</string>
+    <string name="quiet_hours_reset_times">¿Restablecer tiempos a valores predeterminados?</string>
     <string name="quiet_hours_daily_times">Horarios diarios</string>
     <string name="quiet_hours_daily_on">Los horarios individuales por día están activados</string>
     <string name="quiet_hours_daily_off">Habilitado sólo una configuración de horarios</string>

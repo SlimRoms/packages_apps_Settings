@@ -24,17 +24,20 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
              android:key="quick_tiles_bg_color"
              android:title="@string/quick_tiles_bg_color_title"
-             android:defaultValue="0xff161616" />
+             android:defaultValue="0xff161616"
+             hexValue="true" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
              android:key="quick_tiles_bg_pressed_color"
              android:title="@string/quick_tiles_bg_pressed_color_title"
-             android:defaultValue="0xff212121" />
+             android:defaultValue="0xff212121"
+             hexValue="true" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
              android:key="quick_tiles_text_color"
              android:title="@string/quick_tiles_text_color_title"
-             android:defaultValue="0xffcccccc" />
+             android:defaultValue="0xffcccccc"
+             hexValue="true" />
 
         <SlimSeekBarPreference
              android:key="quick_tiles_alpha"

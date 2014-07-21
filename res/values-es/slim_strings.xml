@@ -903,6 +903,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dynamic_tile_ime_switcher">Selector IME</string>
     <string name="dynamic_tile_usb_tether">Anclaje USB</string>
     <string name="dynamic_tile_alarm">Alarma</string>
+    <string name="dynamic_tile_remote_display">Pantalla remota</string>
     <string name="dynamic_tile_bugreport">Reportar BUG</string>
     <string name="dynamic_tiles_title">Botones dinámicos</string>
     <string name="tiles_reset_message">¿Restablecer valores predeterminados del panel de ajustes rápidos?</string>

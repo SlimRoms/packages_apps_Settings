@@ -1068,6 +1068,8 @@
     <string name="heads_up_expanded_summary">Показывать уведомления \"поверх\" всегда развернутыми</string>
     <string name="heads_up_show_updates_title">Показывать изменения</string>
     <string name="heads_up_show_updates_summary">Показывать обновившиеся фоновые уведомления \"поверх\"</string>
+    <string name="heads_up_gravity_title">Показывать внизу</string>
+    <string name="heads_up_gravity_summary">Показывать уведомления \"поверх\" в нижней части экрана</string>
     <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
     <string name="heads_up_snooze_summary">При нажатии кнопки \"Отложить\" уведомления \"поверх\" будут приостановлены на <xliff:g id="number">%d</xliff:g> минут.</string>
     <string name="heads_up_snooze_disabled_summary">Функция \"Отложить\" отключена.</string>

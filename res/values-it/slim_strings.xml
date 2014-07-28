@@ -298,8 +298,8 @@
     <string name="auto_brightness_help_text"><b>Com\'è determinata la luminosità?</b>
 \n\n
 La curva della luminosità è calcolata effettuando <i>un\'interpolazione con spline cubica</i>
-su un dato numero di <i>punti di controllo</i>. Non è un calcolo di tipo bucket in cui la 
-luminosità dello schermo resta costante per uno specifico range di luminosità ambientale. 
+su un dato numero di <i>punti di controllo</i>. Non è un calcolo di tipo bucket in cui la
+luminosità dello schermo resta costante per uno specifico range di luminosità ambientale.
 In questo modo i piccoli cambiamenti della luce ambientale non causano variazioni nette della
 luminosità dello schermo; comunque può essere complicato prevedere le conseguenze reali dovute
 al cambiamento dei punti di controllo.\n
@@ -316,7 +316,7 @@ presente in ogni riga. La luminosità dello schermo sarà cambiata contestualmen
 spostamento dello slider per dare un\'anteprima del livello.\n
 Sono presenti opzioni addizionali premendo a lungo su una riga. Selezionando \'Modifica\', puoi
 editare il livello di luce ambientale del punto di controllo o inserire manualmente la luminosità
-desiderata per lo schermo. Selezionando \'Suddividi\' puoi suddividere una riga in due in modo da 
+desiderata per lo schermo. Selezionando \'Suddividi\' puoi suddividere una riga in due in modo da
 aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata.
     </string>
 
@@ -415,6 +415,11 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="shortcut_action_torch">Torcia</string>
     <string name="shortcut_action_ring_vib">Squilla/Vibra</string>
     <string name="shortcut_action_ring_silent">Squilla/Silenzia</string>
+    <string name="shortcut_action_camera">Fotocamera</string>
+    <string name="shortcut_action_media_next">Musica - Traccia successiva</string>
+    <string name="shortcut_action_media_play_pause">Musica - play/pausa</string>
+    <string name="shortcut_action_media_previous">Musica - Traccia precedente</string>
+    <string name="shortcut_action_wake_device">Risveglio dispositivo</string>
     <string name="shortcut_action_ring_vib_silent">Squilla/Vibra/Silenzia</string>
     <string name="shortcut_action_longpress">Pressione lunga:</string>
     <string name="shortcut_action_select_action_longpress">Scegli azione per pressione lunga:</string>
@@ -1259,5 +1264,8 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="heads_up_time_out_10sec">10 secondi</string>
     <string name="heads_up_time_out_never">Mai</string>
     <string name="heads_up_switch_label">Attiva le notifiche heads up</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Gestures a schermo spento</string>
 
 </resources>

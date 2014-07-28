@@ -566,6 +566,11 @@
     <string name="shortcut_action_ring_vib">Звонок/Вибро</string>
     <string name="shortcut_action_ring_silent">Звонок/Тихо</string>
     <string name="shortcut_action_ring_vib_silent">Звонок/Вибро/Тихо</string>
+    <string name="shortcut_action_camera">Камера</string>
+    <string name="shortcut_action_media_next">Музыка - следующий трек</string>
+    <string name="shortcut_action_media_play_pause">Музыка - играть/пауза</string>
+    <string name="shortcut_action_media_previous">Музыка - предыдущий трек</string>
+    <string name="shortcut_action_wake_device">Разбудить устройство</string>
     <string name="shortcut_action_expanded_desktop">Расширенный рабочий стол</string>
     <string name="shortcut_action_power_menu">Меню управления питанием</string>
     <string name="shortcut_action_torch">Фонарик</string>
@@ -1087,4 +1092,7 @@
     <string name="heads_up_time_out_10sec">10 секунд</string>
     <string name="heads_up_time_out_never">Никогда</string>
     <string name="heads_up_switch_label">Включить уведомления \"поверх\"</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
 </resources>

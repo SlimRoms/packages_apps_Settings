@@ -672,6 +672,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_dim">Disable notification light</string>
     <string name="quiet_hours_dim_on">Notification light will be disabled</string>
     <string name="quiet_hours_dim_off">Notification light will function as normal</string>
+    <string name="quiet_hours_system">Disable system sounds</string>
+    <string name="quiet_hours_system_on">System sounds will be disabled</string>
+    <string name="quiet_hours_system_off">System sounds will function as normal</string>
     <string name="quiet_hours_haptic">Disable haptic feedback</string>
     <string name="quiet_hours_haptic_on">Haptic feedback will be disabled</string>
     <string name="quiet_hours_haptic_off">Haptic feedback will function as normal</string>

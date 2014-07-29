@@ -864,6 +864,13 @@ public class QuietHoursController {
                     enable ? 2 : 1, UserHandle.USER_CURRENT_OR_SELF);
         }
         if (Settings.System.getIntForUser(resolver,
+                Settings.System.QUIET_HOURS_SYSTEM, 0,
+                UserHandle.USER_CURRENT_OR_SELF) != 0) {
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QUIET_HOURS_SYSTEM,
+                    enable ? 2 : 1, UserHandle.USER_CURRENT_OR_SELF);
+        }
+        if (Settings.System.getIntForUser(resolver,
                 Settings.System.QUIET_HOURS_HAPTIC, 0,
                 UserHandle.USER_CURRENT_OR_SELF) != 0) {
             Settings.System.putIntForUser(resolver,

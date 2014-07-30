@@ -42,11 +42,7 @@ limitations under the License.
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farbe wählen</string>
     <string name="press_color_to_apply">Klicke eine Farbe zum Wählen</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#ff000000</string>
-    <string name="set">Set</string>
+    <string name="set">Einstellen</string>
 
     <!-- About phone screen, slim version -->
     <string name="slim_version_title">Slim Version</string>
@@ -187,6 +183,9 @@ limitations under the License.
     <string name="shake_sensitivity_summary">Globale Empfindlichkeit aller Shake-Präferenzen</string>
     <string name="shake_sensitivity_less_sensitive">Weniger empfindlich</string>
     <string name="shake_sensitivity_more_sensitive">Empfindlicher</string>
+    <string name="shake_sensitivity_very_sensitive">Sehr empfindlich</string>
+    <string name="shake_sensitivity_super_sensitive">Super empfindlich</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ultra empfindlich</string>
 
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Aufwecken</string>
@@ -375,6 +374,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="battery_stats_title">Statistiken</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_keyguard_camera">Keyguard Kamera</string>
     <string name="shortcut_action_navbar">Navigationsleiste</string>
     <string name="shortcut_action_pie">Pie Steuerung</string>
     <string name="shortcut_action_airplane">Flugmodus</string>
@@ -421,13 +421,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <string name="shortcut_action_help_shortcut">Kurzziel</string>
     <string name="shortcut_action_help_button">Schaltfläche</string>
+    <string name="shortcut_action_help_app">App</string>
     <string name="shortcut_action_help_icon">, drückt man auf das Symbol kann dieses auch individuell geändert werden.</string>
     <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, drücke das hinzufügen Symbol. Wenn ein %1$s hinzugefügt worden ist kann dieses geändert werden wenn man nochmals auf den Eintrag drückt%2$s\n\nUm eine %1$s zu löschen schiebe den Eintrag einfach nach links oder rechts aus dem Bildschirm. Um die Reigenfolge einer %1$s zu ändern drücke und halte das Symbol auf der linken Seite und schiebe es in die neue Position wo es hin soll.\n\nUm alles zurück zu setzen drücke das zurücksetzen Symbol.</string>
     <string name="shortcut_action_help_delete_last_entry">Löschen aller %1$s deaktiviert die Funktion.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Löschen aller %1$s aus der Liste deaktiviert den zweiten Pie-Layer vollständig.</string>
 
-    <string name="shortcuts_icon_picker_alarm">Alarm</string>
-    <string name="shortcuts_icon_picker_andy">Andy</string>
     <string name="shortcuts_icon_picker_battery">Batterie</string>
     <string name="shortcuts_icon_picker_browser">Browser</string>
     <string name="shortcuts_icon_picker_calendar">Kalender</string>
@@ -436,47 +435,26 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shortcuts_icon_picker_contact">Kontakte</string>
     <string name="shortcuts_icon_picker_directdial">Direktanruf</string>
     <string name="shortcuts_icon_picker_directmessage">Direktnachricht</string>
-    <string name="shortcuts_icon_picker_drive">Drive</string>
-    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="shortcuts_icon_picker_email">Email</string>
     <string name="shortcuts_icon_picker_email2">Email Alternative</string>
-    <string name="shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="shortcuts_icon_picker_facebook">Facebook</string>
     <string name="shortcuts_icon_picker_favorite">Favoriten</string>
     <string name="shortcuts_icon_picker_file_browser">Datei-Browser</string>
     <string name="shortcuts_icon_picker_file_browser2">Datei-Browser Alternative</string>
-    <string name="shortcuts_icon_picker_fitness">Fitness</string>
     <string name="shortcuts_icon_picker_gallery">Galerie</string>
-    <string name="shortcuts_icon_picker_gears">Gears</string>
-    <string name="shortcuts_icon_picker_google_small">Google</string>
-    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
-    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
     <string name="shortcuts_icon_picker_help">Hilfe</string>
-    <string name="shortcuts_icon_picker_joystick">Joystick</string>
     <string name="shortcuts_icon_picker_key">Keys/Konten</string>
     <string name="shortcuts_icon_picker_laptop">Laptop</string>
     <string name="shortcuts_icon_picker_notes">Notes</string>
     <string name="shortcuts_icon_picker_luggage">Travel</string>
-    <string name="shortcuts_icon_picker_maps">Maps</string>
     <string name="shortcuts_icon_picker_market">Play Store</string>
     <string name="shortcuts_icon_picker_movie">Filme</string>
     <string name="shortcuts_icon_picker_music">Musik</string>
-    <string name="shortcuts_icon_picker_nav">Navigation</string>
     <string name="shortcuts_icon_picker_phone">Telefon</string>
     <string name="shortcuts_icon_picker_package">Paket</string>
-    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="shortcuts_icon_picker_play">Play</string>
-    <string name="shortcuts_icon_picker_pocket">Pocket</string>
     <string name="shortcuts_icon_picker_quicksettings">Schnelleinstellungen</string>
     <string name="shortcuts_icon_picker_rss">RSS</string>
-    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_sdcard">SD-Karte</string>
     <string name="shortcuts_icon_picker_search">Suche</string>
     <string name="shortcuts_icon_picker_sms">SMS/MMS</string>
-    <string name="shortcuts_icon_picker_tasks">Tasks</string>
-    <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Transit</string>
-    <string name="shortcuts_icon_picker_tv">TV</string>
-    <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Entsperren</string>
 
     <string name="icon_picker_type">Icon auswählen:</string>
@@ -533,7 +511,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="circle_battery_animation_speed_fast">Schnell</string>
     <string name="battery_text_color">Prozent-Text-Farbe</string>
     <string name="battery_bolt_color">Ladesymbol Farbe</string>
-    <string name="battery_text_charging_color">Lade-Farbe Prozent (Text)</string>
+    <string name="battery_text_charging_color">Lade-Farbe Prozent (Text, 15-89%)</string>
     <string name="battery_circle_charging_color">Lade-Farbe Kreis</string>
     <string name="battery_style_reset_message">Alle Akku-Farben zurücksetzen?</string>
 
@@ -558,13 +536,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 dp (standard)</string>
-    <string name="navigation_bar_size_36_dp">36 dp</string>
-    <string name="navigation_bar_size_30_dp">30 dp</string>
-    <string name="navigation_bar_size_24_dp">24 dp</string>
     <string name="navigation_bar_size_48_dp_default">48 dp (standard)</string>
-    <string name="navigation_bar_size_44_dp">44 dp</string>
-    <string name="navigation_bar_size_40_dp">40 dp</string>
-    <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (aus)</string>
     <string name="navigation_menu_right">Rechts</string>
     <string name="navigation_menu_left">Links</string>
@@ -620,11 +592,25 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Ruhemodus</string>
     <string name="quiet_hours_summary">Stunden konfigurieren, in denen das Telefon stumm bleibt</string>
-    <string name="quiet_hours_note_title">Hinweis</string>
-    <string name="quiet_hours_note_summary">Ankommende Anrufe verhalten sich bei aktiviertem Ruhemodus wie gewohnt</string>
-    <string name="quiet_hours_enabled">Ruhemodus aktiv</string>
-    <string name="quiet_hours_enabled_on">Ruhemodus wird erzwungen</string>
-    <string name="quiet_hours_enabled_off">Benachrichtigungen verhalten sich wie gewohnt</string>
+    <string name="quiet_hours_mode">Ruhemodus</string>
+    <string name="quiet_hours_off">Ruhemodus deaktiviert</string>
+    <string name="quiet_hours_forced">Ruhemodus ist immer aktiviert</string>
+    <string name="quiet_hours_times_warning">Zeiten können sich nicht überschneiden: Einstellung zum nächst möglichen Zeitpunkt</string>
+    <string name="quiet_hours_wifi">Erfordert eine WiFi-Verbindung</string>
+    <string name="quiet_hours_wifi_on">WiFi muss verbunden sein</string>
+    <string name="quiet_hours_wifi_off">WiFi kann in jedem Zustand sein</string>
+    <string name="quiet_hours_charging">Erfordere das Gerät anzuschliessen</string>
+    <string name="quiet_hours_charging_off">Gerät kann in jedem Ladezustand sein</string>
+    <string name="quiet_hours_charging_on">Gerät muss aufladen</string>
+    <string name="quiet_hours_timed">Ruhemodus setzt auf Zeitfunktionen</string>
+    <string name="quiet_hours_reset_times">Alle Zeiten auf Standardeinstellungen zurücksetzen??</string>
+    <string name="quiet_hours_daily_times">Tageszeiten</string>
+    <string name="quiet_hours_daily_on">Individuelle Zeiten pro Tag sind aktiviert</string>
+    <string name="quiet_hours_daily_off">Ein einziger Satz von Zeiten ist aktiviert</string>
+    <string name="quiet_time_prefs_title">Ruhemodus Zeitbereiche</string>
+    <string name="quiet_hours_auto_title">Rufton-Modus folgen (immer an und zeitlich)</string>
+    <string name="quiet_hours_auto_silent">Ruhemodus wird aktiviert, wenn der Rufton stumm geschaltet ist</string>
+    <string name="quiet_hours_auto_vibrate">Ruhemodus wird aktiviert, wenn der Rufton auf vibrieren oder stumm geschaltet ist</string>
     <string name="quiet_hours_start">Ruhemodus Startzeitpunk</string>
     <string name="quiet_hours_start_summary">Startzeitpunkt zum Durchsetzen des Ruhemodus</string>
     <string name="quiet_hours_end">Ende des Ruhemodus</string>
@@ -641,6 +627,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_dim">LED deaktivieren</string>
     <string name="quiet_hours_dim_on">Benachrichtigungs-LED wird deaktiviert</string>
     <string name="quiet_hours_dim_off">Benachrichtigungs-LED verhält sich wie gewohnt</string>
+    <string name="quiet_hours_system">Systemtöne deaktivieren</string>
+    <string name="quiet_hours_system_on">Systemtöne werden werden deaktiviert</string>
+    <string name="quiet_hours_system_off">Systemtöne werden normal funktionieren</string>
     <string name="quiet_hours_haptic">Haptisches Feedback deaktivieren</string>
     <string name="quiet_hours_haptic_on">Haptisches Feedback wird deaktiviert</string>
     <string name="quiet_hours_haptic_off">Haptisches Feedback verhält sich wie gewohnt</string>
@@ -655,6 +644,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_auto_disabled">Deaktiviert</string>
     <string name="quiet_hours_auto_enabled">Alle Nummern</string>
     <string name="quiet_hours_auto_contacts">Nur Kontakte</string>
+    <string name="quiet_hours_auto_starred">Nur favorisierte Kontakte</string>
     <string name="quiet_hours_bypass_group">Ruhemodus umgehen</string>
     <string name="quiet_hours_sms_code_null">[Alarm]</string>
     <string name="quiet_hours_sms_bypass_title">Textnachricht umgehen</string>
@@ -672,8 +662,15 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_alarm_dialog_title">RUHEMODUS UMGANGEN</string>
     <string name="quiet_hours_alarm_message">" hat die Anforderungen erfüllt, um den Ruhemodus zu umgehen!"</string>
 
+    <!-- Still used for Quite-Hours? -->
+    <string name="quiet_hours_note_title">Hinweis</string>
+    <string name="quiet_hours_note_summary">Ankommende Anrufe verhalten sich bei aktiviertem Ruhemodus wie gewohnt</string>
+    <string name="quiet_hours_enabled">Ruhemodus aktiv</string>
+    <string name="quiet_hours_enabled_on">Ruhemodus wird erzwungen</string>
+    <string name="quiet_hours_enabled_off">Benachrichtigungen verhalten sich wie gewohnt</string>
+
     <!-- time range preference -->
-    <string name="start_time_title">Start</string>
+    <string name="start_time_title">Beginn</string>
     <string name="end_time_title">Ende</string>
 
     <!-- Display : Rotation -->
@@ -716,27 +713,15 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Lock screen targets and shortcuts -->
     <string name="picker_activities">Aktivitäten</string>
     <string name="select_custom_activity_title">Benutzerdefinierte Aktivität auswählen</string>
-    <string name="icon_picker_alarm">Alarm</string>
-    <string name="icon_picker_browser">Browser</string>
     <string name="icon_picker_calendar">Kalender</string>
     <string name="icon_picker_camera">Kamera</string>
-    <string name="icon_picker_email">Email</string>
-    <string name="icon_picker_email2">Email Holo</string>
-    <string name="icon_picker_facebook">Facebook</string>
     <string name="icon_picker_gallery">Galerie</string>
     <string name="icon_picker_google_small">Google (klein)</string>
-    <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Hangouts</string>
-    <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_sms">SMS/MMS</string>
     <string name="icon_picker_movie">Filme</string>
     <string name="icon_picker_music">Musik</string>
-    <string name="icon_picker_nav_normal">Navigation</string>
     <string name="icon_picker_phone">Telefon</string>
-    <string name="icon_picker_podcast">Podcast</string>
-    <string name="icon_picker_rss">RSS</string>
     <string name="icon_picker_search">Suche</string>
-    <string name="icon_picker_twitter">Twitter</string>
 
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
@@ -757,9 +742,14 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_lock_color_summary">Sperr-Ring Farbe</string>
     <string name="lockscreen_dots_color_title">Gepunktete Farbe</string>
     <string name="lockscreen_dots_color_summary">Farbe der Illumination</string>
+    <string name="lockscreen_targets_color_title">Zielfarbe</string>
+    <string name="lockscreen_misc_color_title">Verschiedene Farben</string>
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_allow_all_title">Alle Widgets erlauben</string>
+    <string name="lockscreen_allow_all_summary">Erlaube legacy Widgets ohne nativen Support für Lock Screen Platzierung</string>
+    <string name="lockscreen_allow_all_warning">Einige Widgets verhalten sich nicht wie erwartet, wenn sie auf dem Sperrbildschirm platziert werden. Andere Widgets können Ihre persönlichen Daten an alle freigeben, die Zugriff auf Ihr Gerät haben. Bitte beachten Sie diese Warnungen bevor Sie fortfahren.</string>
     <string name="lockscreen_camera_widget_title">Kamera-Widget aktivieren</string>
     <string name="lockscreen_camera_widget_summary">Ermöglicht Zugriff auf die Kamera-Funktion bei aktiver Bildschirmsperre</string>
     <string name="lockscreen_maximize_widgets_title">Maximiert starten</string>
@@ -768,6 +758,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_disable_hints_summary">Deaktiviert die optischen Hinweise auf weitere Widgets</string>
     <string name="lockscreen_use_widget_container_carousel_title">Widget-Karussell aktivieren</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Gleiche Karussell-Animation für Widgets wie im Querformat verwenden</string>
+    <string name="lockscreen_widget_frame_title">Widget-Rahmen deaktivieren</string>
+    <string name="lockscreen_widget_frame_summary">Widget-Hintergrundrahmen deaktivieren</string>
 
     <!-- Lockscreen pin shuffle -->
     <string name="lock_numpad_random_title">Ändere die Reihenfolge der PIN Tasten</string>
@@ -776,15 +768,25 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lock_numpad_random_always">Immer</string>
     <string name="lock_numpad_random_on_request">Nur wenn benötigt</string>
 
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Schütteln Sie den Lockscreen, um die Sicherheit zu ermöglichen</string>
+    <string name="shake_to_secure_summary">Sicherheit wird nach jedem erfolgreichen Unlock gesperrt werden</string>
+    <string name="shake_to_secure_dlg_title">Warnung:</string>
+    <string name="shake_to_secure_dlg_message">Ihr Gerät wird unsicher sein, bis Sie explizit schütteln, um eine vorübergehende sichere Sicherung zu aktivieren. Sobald sicher: wenn Ihr Gerät erfolgreich entsperrt wird, wird es unsicher, bis Sie erneut schütteln.</string>
+    <string name="shake_secure_timeout_title">Automatisch wieder sichern</string>
+    <string name="shake_all">Irgendeine Richtung Schütteln</string>
+    <string name="shake_horizontal">Horizontal Schütteln</string>
+    <string name="shake_vertical">Vertikal Schütteln</string>
+    <string name="shake_back_forth">Hin-und her Schütteln</string>
+    <string name="shake_secure_timeout_disabled">Nie automatisch sichern</string>
+    <string name="shake_secure_timeout_1min">1 Minute nach Bildschirmabschaltung</string>
+    <string name="shake_secure_timeout_5min">5 Minuten nach Bildschirmabschaltung</string>
+    <string name="shake_secure_timeout_10min">10 Minuten nach Bildschirmabschaltung</string>
+    <string name="shake_secure_timeout_30min">30 Minuten nach Bildschirmabschaltung</string>
+
     <!-- Lock before unlock -->
     <string name="lock_before_unlock_title">Zeige Schieber vor der Sicherheitssperre</string>
     <string name="lock_before_unlock_summary">Zeige den Sperrbildschirm-Schieber vor der gewählten Sicherheitssperre</string>
-
-    <!-- Sizes for pattern lockscreen -->
-    <string name="lock_pattern_size_3">3x3</string>
-    <string name="lock_pattern_size_4">4x4</string>
-    <string name="lock_pattern_size_5">5x5</string>
-    <string name="lock_pattern_size_6">6x6</string>
 
     <!-- Notification drawer background -->
     <string name="notification_style_title">Layout</string>
@@ -820,7 +822,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="tile_choose_title">Kachel auswählen</string>
     <string name="title_tile_airplane">Flugmodus</string>
     <string name="title_tile_battery">Batterie</string>
-    <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Helligkeit</string>
     <string name="title_tile_contact">Kontakte</string>
     <string name="title_tile_custom">Benutzerdefiniert</string>
@@ -828,17 +829,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_location">Standort</string>
     <string name="title_tile_torch">Taschenlampe</string>
     <string name="title_tile_lockscreen">Sperrbildschirm</string>
-    <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Mobile Daten</string>
     <string name="title_tile_autorotate">Orientierung</string>
     <string name="title_tile_settings">Einstellungen</string>
     <string name="title_tile_sound">Töne</string>
-    <string name="title_tile_sync">Sync</string>
-    <string name="title_tile_wifiap">Wi-Fi AP</string>
-    <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Benutzer wechseln</string>
     <string name="title_tile_networkmode">Netzwerkmodus</string>
-    <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Bildschirm Timeout</string>
     <string name="title_tile_quick_record">Schnellaufnahme</string>
     <string name="title_tile_quiet_hours">Ruhemodus</string>
@@ -905,8 +901,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="smart_pulldown_title">Smart Pulldown</string>
     <string name="smart_pulldown_summary">Öffnet die Schnelleinstellungen, wenn keine Benachrichtigungen vorliegen: %1$s</string>
     <string name="smart_pulldown_off">Deaktiviert</string>
-    <string name="smart_pulldown_dismissable">Verwerfbar</string>
-    <string name="smart_pulldown_persistent">Anhaltend</string>
+    <string name="smart_pulldown_dismissable">Nicht verwerfbar</string>
+    <string name="smart_pulldown_persistent">Nicht anhaltend</string>
+    <string name="smart_pulldown_all">Nicht verwerfbar oder anhaltend</string>
 
     <!-- QuickSettings: Quick Collapse -->
     <string name="title_collapse_panel">Automatisch schließen</string>
@@ -1052,12 +1049,17 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="advanced_reboot_hide_on_keyguard">Auf Sperrbildschirm verbergen</string>
     <string name="advanced_reboot_show_always">Immer anzeigen</string>
 
+    <!-- Keyguard allow rotation -->
+    <string name="lockscreen_rotation_title">Sperrbildschirm-Rotation</string>
+    <string name="lockscreen_rotation_portrait">Nur Portrait</string>
+    <string name="lockscreen_rotation_landscape">Nur Landscape</string>
+    <string name="lockscreen_rotation_summary_extra">(Display-Rotation abhängig)</string>
+
     <!-- Keyguard always show battery -->
     <string name="lockscreen_battery_status_title">Akku Status</string>
     <string name="lockscreen_battery_status_summary">Akkustatus auf dem Sperrbildschirm anzeigen</string>
 
     <!-- About device screen, CPU and RAM info. -->
-    <string name="cpu_info">CPU</string>
     <string name="mem_info">Speicher</string>
 
     <!-- security settings menu unlock -->
@@ -1081,7 +1083,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="usb_mass_storage_summary">Massenspeichermodus aktivieren</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">SlimPIE</string>
     <string name="pie_control_summary">PIE aktivieren</string>
     <string name="pie_control_size">Größe Navigation</string>
     <string name="pie_control_trigger_positions">Trigger-Optionen</string>
@@ -1158,9 +1159,46 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="recent_panel_expanded_mode_always">Immer</string>
     <string name="recent_panel_expanded_mode_never">Nie</string>
 
+    <!-- App moving -->
+    <string name="app_moving_enable">Aktiviere App-Verschiebung</string>
+    <string name="app_moving_disable">Deaktiviere App-Verschiebung</string>
+    <string name="app_moving_reboot_title">Jetzt neustarten?</string>
+    <string name="app_moving_reboot_enabled_desc">App-Verschiebung erfolgreich aktiviert.\n\nDas Gerät muss neu gestartet werden, damit die Einstellung wirksam wird.</string>
+    <string name="app_moving_reboot_disabled_desc">App-Verschiebung erfolgreich deaktiviert.\n\nDas Gerät muss neu gestartet werden, damit die Einstellung wirksam wird.</string>
+    <string name="app_moving_reboot_now_button">Jetzt neustarten</string>
+    <string name="app_moving_reboot_later_button">Später neustarten</string>
+
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
     <string name="recent_panel_lefty_mode_summary">Zeige den Recent Apps Panel am linken Rand an.</string>
 
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads Up Benachrichtigung</string>
+    <string name="heads_up_expanded_title">Immer erweitert</string>
+    <string name="heads_up_expanded_summary">Heads Up Benachrichtigungen immer erweitert anzeigen</string>
+    <string name="heads_up_show_updates_title">Updates anzeigen</string>
+    <string name="heads_up_show_updates_summary">Updates auf schwebenden Hintergrund-Benachrichtigungen als Heads Up anzeigen</string>
+    <string name="heads_up_gravity_title">An der Unterseite anzeigen</string>
+    <string name="heads_up_gravity_summary">Heads Up Benachrichtigungen an der Unterseite des Bildschirms anzeigen</string>
+    <string name="heads_up_snooze_title">Snooze-Timer</string>
+    <string name="heads_up_snooze_summary">Wenn die Snooze-Taste gedrückt wird, wird Heads Up für <xliff:g id="number">%d</xliff:g> Minuten deaktivieren.</string>
+    <string name="heads_up_snooze_disabled_summary">Snooze-Timer ist deaktiviert.</string>
+    <string name="heads_up_snooze_3min">3 Minuten</string>
+    <string name="heads_up_snooze_5min">5 Minuten</string>
+    <string name="heads_up_snooze_10min">10 Minuten</string>
+    <string name="heads_up_snooze_15min">15 Minuten</string>
+    <string name="heads_up_snooze_20min">20 Minuten</string>
+    <string name="heads_up_time_out_title">Timeout</string>
+    <string name="heads_up_time_out_summary">Heads Up Benachrichtigungen werden für <xliff:g id="number">%d</xliff:g> Sekunden angezeigt.</string>
+    <string name="heads_up_time_out_never_summary">Heads Up Benachrichtigungen werden angezeit, bis sie verworfen werden.</string>
+    <string name="heads_up_time_out_4sec">4 Sekunden</string>
+    <string name="heads_up_time_out_6sec">6 Sekunden</string>
+    <string name="heads_up_time_out_8sec">8 Sekunden</string>
+    <string name="heads_up_time_out_10sec">10 Sekunden</string>
+    <string name="heads_up_time_out_never">Nie</string>
+    <string name="heads_up_switch_label">Heads Up Benachrichtigungen aktivieren</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Bildschirm aus Gesten</string>
 
 </resources>

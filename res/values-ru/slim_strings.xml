@@ -49,6 +49,9 @@
     <string name="quiet_hours_dim">Отключить световое уведомление</string>
     <string name="quiet_hours_dim_on">Световое уведомление отключено</string>
     <string name="quiet_hours_dim_off">Световое уведомление функционирует нормально</string>
+    <string name="quiet_hours_system">Отключить системные звуки</string>
+    <string name="quiet_hours_system_on">Системные звуки отключены</string>
+    <string name="quiet_hours_system_off">Системные звуки функционируют нормально</string>
     <string name="quiet_hours_haptic">Отключить отклик на нажатие</string>
     <string name="quiet_hours_haptic_on">Отклик на нажатие выключен</string>
     <string name="quiet_hours_haptic_off">Отклик на нажатие включён</string>

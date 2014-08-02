@@ -672,6 +672,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="quiet_hours_still_off">Il dispositivo vibrerà normalmente</string>
     <string name="quiet_hours_dim">Disattiva led notifiche</string>
     <string name="quiet_hours_dim_on">Il led di notifica sarà disattivato</string>
+    <string name="quiet_hours_system">Disattiva suoni di sistema</string>
+    <string name="quiet_hours_system_on">I suoni di sistema saranno disattivati</string>
+    <string name="quiet_hours_system_off">I suoni di sistema funzioneranno normalmente</string>
     <string name="quiet_hours_dim_off">Il led di notifica funzionerà normalmente</string>
     <string name="quiet_hours_haptic">Disattiva feedback aptico</string>
     <string name="quiet_hours_haptic_on">Il feedback aptico sarà disattivato</string>

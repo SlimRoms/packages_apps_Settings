@@ -415,6 +415,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ring_vib">Sonar/Vibrar</string>
     <string name="shortcut_action_ring_silent">Sonar/Silencio</string>
     <string name="shortcut_action_ring_vib_silent">Sonar/Vibrar/Silencio</string>
+    <string name="shortcut_action_camera">Cámara</string>
+    <string name="shortcut_action_media_next">Música - siguiente tema</string>
+    <string name="shortcut_action_media_play_pause">Música - reproducir/pausar</string>
+    <string name="shortcut_action_media_previous">Música - tema anterior</string>
+    <string name="shortcut_action_wake_device">Despertar dispositivo</string>
     <string name="shortcut_action_longpress">Pulsación larga:</string>
     <string name="shortcut_action_select_action_longpress">Seleccionar acción de puls. larga:</string>
     <string name="shortcut_action_select_action">Seleccionar acción:</string>
@@ -667,6 +672,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_dim">Deshabilitar led de notificación</string>
     <string name="quiet_hours_dim_on">El led de notificación se deshabilitará</string>
     <string name="quiet_hours_dim_off">El led de notificación funcionará de forma normal</string>
+    <string name="quiet_hours_system">Deshabilitar sonidos de sistema</string>
+    <string name="quiet_hours_system_on">Los sonidos de sistemas se deshabilitarán</string>
+    <string name="quiet_hours_system_off">Los sonidos de sistema funcionarán de forma normal</string>
     <string name="quiet_hours_haptic">Deshabilitar haptic feedback</string>
     <string name="quiet_hours_haptic_on">Haptic feedback se deshabilitará</string>
     <string name="quiet_hours_haptic_off">Haptic feedback funcionará de forma normal</string>
@@ -1234,6 +1242,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_expanded_summary">Muestra las notificaciones "heads up" siempre desplegadas</string>
     <string name="heads_up_show_updates_title">Mostrar actualizaciones</string>
     <string name="heads_up_show_updates_summary">Muestra las actualizaciones de notificaciones pendientes en segundo plano como "heads up"</string>
+    <string name="heads_up_gravity_title">Mostrar en parte inferior</string>
+    <string name="heads_up_gravity_summary">Muestra las notificaciones "heads up" en la parte inferior de la pantalla</string>
     <string name="heads_up_snooze_title">Temporizador de reposo</string>
     <string name="heads_up_snooze_summary">Si se toca el botón de reposo se deshabilitan las notificaciones "heads up" durante <xliff:g id="number">%d</xliff:g> minutos.</string>
     <string name="heads_up_snooze_disabled_summary">Temporizador de repos deshabilitado.</string>
@@ -1251,5 +1261,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_time_out_10sec">10 segundos</string>
     <string name="heads_up_time_out_never">Nunca</string>
     <string name="heads_up_switch_label">Habilitar notificaciones "heads up"</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Gestos con pantalla apagada</string>
 
 </resources>

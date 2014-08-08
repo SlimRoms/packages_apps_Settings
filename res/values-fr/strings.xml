@@ -1143,7 +1143,7 @@
     <string name="filter_apps_running" msgid="7767071454371350486">"En cours"</string>
     <string name="filter_apps_onsdcard" product="nosdcard" msgid="4843063154701023349">"Stockage USB"</string>
     <string name="filter_apps_onsdcard" product="default" msgid="1477351142334784771">"Sur la carte SD"</string>
-    <string name="disabled" msgid="9206776641295849915">"Désactivée"</string>
+    <string name="disabled" msgid="9206776641295849915">"Désactivés"</string>
     <string name="not_installed" msgid="1475144352069281880">"Non installée"</string>
     <string name="no_applications" msgid="7336588977497084921">"Aucune application"</string>
     <string name="internal_storage" msgid="1584700623164275282">"Stockage interne"</string>

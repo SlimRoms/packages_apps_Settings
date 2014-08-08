@@ -275,7 +275,6 @@
     <string name="auto_brightness_dialog_title">Niveaux de luminosité automatique</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Ajuster</string>
     <string name="auto_brightness_close_button">Fermer</string>
     <string name="auto_brightness_reset_button">Réinitialiser</string>
@@ -295,24 +294,24 @@
     <string name="auto_brightness_help_text"><b>Comment est calculée la luminosité?</b>
 \n\n
 La courbe de luminosité est calculée en réalisant une <i>interpolation par spline cubique</i>
- sur un nombre défini de <i>points de contrôle</i>. Ce n\'est pas un calcul de type «seau» où la 
-luminosité de l\'écran restera constante pour une gamme spécifique de la luminosité ambiante. De cette façon, de 
+ sur un nombre défini de <i>points de contrôle</i>. Ce n\'est pas un calcul de type «seau» où la
+luminosité de l\'écran restera constante pour une gamme spécifique de la luminosité ambiante. De cette façon, de
 petits changements de luminosité ambiante ne provoquent pas un grand écart dans la luminosité de l\'écran; cependant,
 il peut être un peu difficile de prédire les conséquences exactes de l\'évolution des points de contrôle.\n
-Pour aider cela, un aperçu de la courbe calculée peut être montré. Notez que l\'aperçu montre la courbe à l\'échelle 
+Pour aider cela, un aperçu de la courbe calculée peut être montré. Notez que l\'aperçu montre la courbe à l\'échelle
 <i>logarithmique</i>, de manière à ce que tous les points de contrôle soient montrés distinctement.
- En utilisant une échelle linéaire, il ne serait pas possible de distinguer les 
+ En utilisant une échelle linéaire, il ne serait pas possible de distinguer les
 points de contrôle potentiellement les plus importants dans la gamme inférieure de la luminosité ambiante.
 \n\n
 <b>Comment éditer la courbe de luminosité?</b>
 \n\n
-Chaque ligne dans la liste de luminosité correspond à un <i>point de contrôle</i> de la courbe 
-de luminosité. Pour éditer le niveau de luminosité du point, vous pouvez utiliser le curseur 
-présent à chaque ligne. La luminosité de l\'écran sera modifiée en fonction de la position 
+Chaque ligne dans la liste de luminosité correspond à un <i>point de contrôle</i> de la courbe
+de luminosité. Pour éditer le niveau de luminosité du point, vous pouvez utiliser le curseur
+présent à chaque ligne. La luminosité de l\'écran sera modifiée en fonction de la position
 du curseur pour donner un aperçu du niveau de luminosité.\n
-Des options additionnelles sont disponibles en effectuant une pression longue sur une ligne. En choisissant \'Editer\', vous pouvez 
-à la fois modifier le niveau de luminosité ambiante du point de contrôle ainsi qu\'entrer manuellement la 
-luminosité d\'écran désirée. En choisissant \'Couper\' vous pouvez dupliquer une ligne en deux pour ajouter un point de 
+Des options additionnelles sont disponibles en effectuant une pression longue sur une ligne. En choisissant \'Editer\', vous pouvez
+à la fois modifier le niveau de luminosité ambiante du point de contrôle ainsi qu\'entrer manuellement la
+luminosité d\'écran désirée. En choisissant \'Couper\' vous pouvez dupliquer une ligne en deux pour ajouter un point de
 contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     </string>
 

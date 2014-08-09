@@ -125,18 +125,18 @@
     <string name="privacy_guard_app_ops_detail_dialog_title">Attenzione</string>
     <string name="privacy_guard_app_ops_detail_dialog_text">Le apps selezionate non richiedono permessi per l\'accesso a dati personali. Vuoi visualizzare gli altri permessi?</string>
     <string name="privacy_guard_app_ops_detail_reset_dialog_text">Reimpostare tutti i permessi a default?</string>
-    <string name="app_ops_btn_text">Modica</string>
-    <string name="app_ops_no_item_text">Questa app non ha permessi modificabili.</string>
+    <string name="app_ops_btn_text">Modifica</string>
+    <string name="app_ops_no_item_text">Questa app non ha permessi modificabili</string>
 
     <!-- Wi-Fi region code settings-->
     <string name="wifi_setting_countrycode_title">Codice regionale Wi-Fi</string>
-    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]. -->
+    <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi frequency band [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_summary">Specia il codice regionale per il Wi-Fi</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">C\'è stato un problema nell\'impostazione del codice regionale.</string>
-    <!-- Wi-Fi settings diables message if Wifi is off-->
-    <string name="wifi_setting_countrycode_disabled">Attiva il Wi-Fi per cambiare queste opzioni.</string>
-    <!-- WiFi forget all networks -->
+    <!-- Wi-Fi settings diables message if Wi-Fi is off-->
+    <string name="wifi_setting_countrycode_disabled">Attiva il Wi-Fi per cambiare queste opzioni</string>
+    <!-- Wi-Fi forget all networks -->
     <string name="wifi_menu_forget_all">Dimentica tutte le reti</string>
 
     <!-- Status bar -->
@@ -255,7 +255,7 @@
     <string name="keyboard_rotation_toggle_summary">Forza la rotazione automatica se è visualizzata la tastiera</string>
     <string name="keyboard_rotation_timeout_title">Timeout rotazione automatica</string>
     <string name="keyboard_rotation_timeout_summary">Disattiva il sensore di rotazione <xliff:g id="rotate_timeout">%1$s</xliff:g> secondi dopo la scomparsa della tastiera</string>
-    <string name="keyboard_rotation_dialog">Questa funzione attiva la rotazione automatica durante la visualizzazione della tastiera.  Non ha effetti quando la rotazione automatica è attivata.</string>
+    <string name="keyboard_rotation_dialog">Questa funzione attiva la rotazione automatica durante la visualizzazione della tastiera. Non ha effetti quando la rotazione automatica è attivata.</string>
     <string name="show_enter_key_title">Mostra pulsante Invio</string>
     <string name="show_enter_key_summary">Forza la tastiera a mostrare il pulsante Invio anzichè quello per le emoticons</string>
     <string name="ime_switcher_notify">Notifica selezione</string>
@@ -278,7 +278,6 @@
     <string name="auto_brightness_dialog_title">Livelli luminosità automatica</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Personalizza</string>
     <string name="auto_brightness_close_button">Chiudi</string>
     <string name="auto_brightness_reset_button">Resetta</string>
@@ -333,9 +332,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="blacklist_prefs">Impostazioni</string>
     <string name="blacklist_button_delete">Cancella</string>
     <string name="blacklist_empty_text">Non hai nessun numero blacklistato. Aggiungine uno toccando il pulsante Add (+).</string>
-    <string name="blacklist_disabled_empty_text">Per blacklistare chiamate o messaggi di alcuni numeri, attivare la blacklist.</string>
+    <string name="blacklist_disabled_empty_text">Per blacklistare chiamate o messaggi di alcuni numeri, attivare la blacklist</string>
     <string name="blacklist_summary_disabled">Disattivata</string>
-    <string name="blacklist_summary">Le chiamate e i messaggi in arrivo dai numeri nella blacklist saranno bloccati.</string>
+    <string name="blacklist_summary">Le chiamate e i messaggi in arrivo dai numeri nella blacklist saranno bloccati</string>
     <string name="blacklist_notify">Mostra notifica</string>
     <string name="blacklist_private_numbers_title">Numeri privati</string>
     <string name="blacklist_private_numbers_summary_disabled">Non bloccare chiamate dai numeri privati</string>
@@ -527,7 +526,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="notification_hide_labels_title">Nascondi etichette</string>
     <string name="notification_hide_labels_disable">Mostra tutte le etichette</string>
     <string name="notification_hide_labels_carrier">Nascondi l\'etichetta operatore</string>
-    <string name="notification_hide_labels_wifi">Nascondi l\'etichetta WiFi</string>
+    <string name="notification_hide_labels_wifi">Nascondi l\'etichetta Wi-Fi</string>
     <string name="notification_hide_labels_all">Nascondi tutte le etichette</string>
     <string name="notification_hide_labels_text">nel pannello notifiche</string>
 
@@ -601,9 +600,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="navigation_bar_height_title">Altezza barra portrait</string>
     <string name="navigation_bar_height_summary">Altezza barra navigazione quando in modalità portrait</string>
     <string name="navigation_bar_height_landscape_title">Altezza barra landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Altezza barra navigazione quando in modalità landscape.</string>
+    <string name="navigation_bar_height_landscape_summary">Altezza barra navigazione quando in modalità landscape</string>
     <string name="navigation_bar_width_title">Larghezza barra navigazione</string>
-    <string name="navigation_bar_width_summary">Larghezza della barra quando questa è posta su un lato dello schermo.</string>
+    <string name="navigation_bar_width_summary">Larghezza della barra quando questa è posta su un lato dello schermo</string>
     <string name="navbar_can_move">Mostra in landscape</string>
     <string name="navbar_can_move_summary">Mostra la barra di navigazione in basso se in modalità landscape</string>
     <string name="navbar_style_dimen_title">Dimensioni</string>
@@ -642,9 +641,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="quiet_hours_off">Ore di quiete disattivate</string>
     <string name="quiet_hours_forced">Ore di quiete sempre attive</string>
     <string name="quiet_hours_times_warning">Gli orari non possono sovrapporsi: saranno impostati ai valori più vicini</string>
-    <string name="quiet_hours_wifi">Richiedi connessione WiFi</string>
-    <string name="quiet_hours_wifi_on">Il WiFi deve essere connesso</string>
-    <string name="quiet_hours_wifi_off">WiFi ininfluente</string>
+    <string name="quiet_hours_wifi">Richiedi connessione Wi-Fi</string>
+    <string name="quiet_hours_wifi_on">Il Wi-Fi deve essere connesso</string>
+    <string name="quiet_hours_wifi_off">Wi-Fi ininfluente</string>
     <string name="quiet_hours_charging">Richiedi connessione a caricatore</string>
     <string name="quiet_hours_charging_off">Connessione caricatore ininfluente</string>
     <string name="quiet_hours_charging_on">Il dispositivo deve essere in ricarica</string>
@@ -743,7 +742,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="lockscreen_target_reset_message">Cancellare tutti gli obiettivi creati dall\'utente e resettarli a default?</string>
     <string name="lockscreen_target_empty">Nessuno</string>
     <string name="lockscreen_target_edit_title">Modifica obiettivo ed icona</string>
-    <string name="lockscreen_target_edit_msg">Seleziona o cambia l\'app desiderata o l\'attività e l\'icona associata</string>
+    <string name="lockscreen_target_edit_msg">Seleziona o cambia l\'app desiderata o l\'attività e l\'icona associata.</string>
 
     <!-- Lockscreen Shortcuts -->
     <string name="lockscreen_shortcuts_title">Collegamenti</string>
@@ -808,7 +807,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="lockscreen_camera_widget_title">Attiva widget fotocamera</string>
     <string name="lockscreen_camera_widget_summary">Attiva il widget della fotocamera nella lockscreen</string>
     <string name="lockscreen_maximize_widgets_title">Avvia massimizzato</string>
-    <string name="lockscreen_maximize_widgets_summary">Avvia il widget massimizzato quando lo schermo viene acceso.</string>
+    <string name="lockscreen_maximize_widgets_summary">Avvia il widget massimizzato quando lo schermo viene acceso</string>
     <string name="lockscreen_disable_hints_title">Disattiva suggerimenti</string>
     <string name="lockscreen_disable_hints_summary">Disattiva il bagliore laterale che suggerisce la presenza di widgets in modalità portrait</string>
     <string name="lockscreen_use_widget_container_carousel_title">Attiva animazione 3D</string>
@@ -851,7 +850,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
 
     <!-- Notification drawer background -->
     <string name="notification_style_title">Stile sfondo</string>
-    <string name="notification_style_summary">Visualizza o cambia lo sfondo del pannello delle notifiche e dei Quicksettings</string>
+    <string name="notification_style_summary">Visualizza o cambia lo sfondo del pannello delle notifiche e dei Quick Settings</string>
     <string name="notification_wallpaper_title">Sfondo</string>
     <string name="notification_wallpaper_landscape_title">Sfondo modalità landscape</string>
     <string name="notification_background_color_fill">Colore riempimento</string>
@@ -897,8 +896,8 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="title_tile_settings">Impostazioni</string>
     <string name="title_tile_sound">Suono</string>
     <string name="title_tile_sync">Sincronizzazione</string>
-    <string name="title_tile_wifiap">WiFi Access Point</string>
-    <string name="title_tile_wifi">WiFi</string>
+    <string name="title_tile_wifiap">Wi-Fi Access Point</string>
+    <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Cambio utente</string>
     <string name="title_tile_networkmode">Modalità rete</string>
     <string name="title_tile_nfc">NFC</string>
@@ -933,7 +932,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="custom_tile_null_warning">Devi prima assegnare un\'azione</string>
     <string name="custom_tile_resolve_name">Sconosciuto</string>
 
-    <!-- QuickSettings style options -->
+    <!-- Quick Settings style options -->
     <string name="quicksettings_tiles_style">Stile</string>
     <string name="summary_quicksettings_tiles_style">Visualizza o cambia le opzioni di stile dei Quick settings</string>
     <string name="quicksettings_tiles_style_additional_options">Opzioni aggiuntive</string>
@@ -955,18 +954,18 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="sound_mode_silent">Silenzioso</string>
     <string name="sound_mode_vibrate">Vibrazione</string>
     <string name="sound_mode_sound">Suono</string>
-    <string name="sound_mode_soundVibrate">Suono &amp; Vibrazione</string>
+    <string name="sound_mode_soundVibrate">Suono e Vibrazione</string>
     <string name="music_tile_mode_background">Mostra copertina album</string>
     <string name="music_tile_mode_tracktitle">Mostra titolo traccia</string>
 
-    <!-- QuickSettings: Quick Pulldown -->
+    <!-- Quick Settings: Quick Pulldown -->
     <string name="title_quick_pulldown">Comparsa rapida Quick Settings</string>
     <string name="summary_quick_pulldown">L\'angolo a %1$s della barra di stato mostra i Quick Settings</string>
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">sinistra</string>
     <string name="quick_pulldown_right">destra</string>
 
-    <!-- QuickSettings: Smart Pulldown -->
+    <!-- Quick Settings: Smart Pulldown -->
     <string name="smart_pulldown_title">Comparsa intelligente Quick Settings</string>
     <string name="smart_pulldown_summary">Apri i Quick Settings quando non sono presenti notifiche %1$s</string>
     <string name="smart_pulldown_off">Off</string>
@@ -974,7 +973,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="smart_pulldown_persistent">Persistenti</string>
     <string name="smart_pulldown_all">Eliminabili o persistenti</string>
 
-    <!-- QuickSettings: Quick Collapse -->
+    <!-- Quick Settings: Quick Collapse -->
     <string name="title_collapse_panel">Chiusura rapida</string>
     <string name="summary_collapse_panel">Chiudi il pannello dopo l\'uso di una tile</string>
 
@@ -1136,10 +1135,10 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="unlock_menu_unlock_title">Sblocco menu</string>
     <string name="unlock_menu_unlock_summary">Sblocco schermo tramite tasto Menu</string>
 
-    <!-- Android debugging over WiFi -->
+    <!-- Android debugging over Wi-Fi -->
     <string name="adb_over_network">ADB su rete</string>
     <string name="adb_over_network_summary">Attiva il debugging TCP/IP sulle interfacce di rete (Wi-Fi, reti USB).
-    Questo settaggio è reimpostato dopo un riavvio</string>
+    Questo settaggio è reimpostato dopo un riavvio.</string>
 
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">ATTENZIONE: Quando ADB su rete è attivo, il tuo telefono è aperto ad intrusioni tramite tutte le reti connesse, incluse quella GSM!
@@ -1194,7 +1193,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="pie_button_style_summary">Cambia lo stile dei tasti</string>
     <string name="pie_style_reset_message">Resettare lo stile a default?</string>
     <string name="pie_warning_no_navigation_present">Nessuna barra di navigazione è attiva. Disattivando la Pie il dispositivo può diventare inutilizzabile. Vuoi attivare la barra di navigazione standard?</string>
-    <string name="pie_trigger_warning">Almeno uno dei punti di attivazione deve essere attivato.</string>
+    <string name="pie_trigger_warning">Almeno uno dei punti di attivazione deve essere attivato</string>
     <string name="pie_disable_ime_triggers_title">Attivazione ridotta per tastiera</string>
     <string name="pie_disable_ime_triggers_summary">Riduce la zona di attivazione della Pie se è attiva la tastiera</string>
 
@@ -1217,7 +1216,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <!-- Recent panel -->
     <string name="recent_panel_category">Pannello apps recenti</string>
     <string name="recent_panel_scale_title">Dimensione</string>
-    <string name="recent_panel_scale_summary">Dimensione pannello apps recenti in percentuale.</string>
+    <string name="recent_panel_scale_summary">Dimensione pannello apps recenti in percentuale</string>
     <string name="recent_panel_100">100% (default)</string>
     <string name="recent_panel_85">85%</string>
     <string name="recent_panel_70">70%</string>
@@ -1231,7 +1230,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostra a sinistra</string>
-    <string name="recent_panel_lefty_mode_summary">Mostra il pannello delle apps recenti sul lato sinistro.</string>
+    <string name="recent_panel_lefty_mode_summary">Mostra il pannello delle apps recenti sul lato sinistro</string>
 
     <!-- App moving -->
     <string name="app_moving_enable">Attiva spostamento apps</string>
@@ -1251,16 +1250,16 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="heads_up_gravity_title">Mostra in basso</string>
     <string name="heads_up_gravity_summary">Mostra le notifiche heads up nella parte bassa dello schermo</string>
     <string name="heads_up_snooze_title">Tempo di riposo (snooze)</string>
-    <string name="heads_up_snooze_summary">Se viene premuto il pulsante per lo snooze, disattiva le heads up per <xliff:g id="number">%d</xliff:g> minuti.</string>
-    <string name="heads_up_snooze_disabled_summary">Il timer di snooze è disattivato.</string>
+    <string name="heads_up_snooze_summary">Se viene premuta l\'icona di snooze, disattiva le heads up per <xliff:g id="number">%d</xliff:g> minuti</string>
+    <string name="heads_up_snooze_disabled_summary">Il timer di snooze è disattivato</string>
     <string name="heads_up_snooze_3min">3 minuti</string>
     <string name="heads_up_snooze_5min">5 minuti</string>
     <string name="heads_up_snooze_10min">10 minuti</string>
     <string name="heads_up_snooze_15min">15 minuti</string>
     <string name="heads_up_snooze_20min">20 minuti</string>
     <string name="heads_up_time_out_title">Time out</string>
-    <string name="heads_up_time_out_summary">Le notifiche heads up saranno mostrate per <xliff:g id="number">%d</xliff:g> secondi.</string>
-    <string name="heads_up_time_out_never_summary">Le notifiche heads up saranno mostrate fino alla loro eliminazione.</string>
+    <string name="heads_up_time_out_summary">Le notifiche heads up saranno mostrate per <xliff:g id="number">%d</xliff:g> secondi</string>
+    <string name="heads_up_time_out_never_summary">Le notifiche heads up saranno mostrate fino alla loro eliminazione</string>
     <string name="heads_up_time_out_4sec">4 secondi</string>
     <string name="heads_up_time_out_6sec">6 secondi</string>
     <string name="heads_up_time_out_8sec">8 secondi</string>

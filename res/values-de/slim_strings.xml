@@ -1158,6 +1158,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="recent_panel_expanded_mode_auto">Auto (standard)</string>
     <string name="recent_panel_expanded_mode_always">Immer</string>
     <string name="recent_panel_expanded_mode_never">Nie</string>
+    <string name="recent_panel_bg_color_title">Hintergrundfarbe</string>
 
     <!-- App moving -->
     <string name="app_moving_enable">Aktiviere App-Verschiebung</string>
@@ -1197,6 +1198,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="heads_up_time_out_10sec">10 Sekunden</string>
     <string name="heads_up_time_out_never">Nie</string>
     <string name="heads_up_switch_label">Heads Up Benachrichtigungen aktivieren</string>
+
+    <string name="reset_default_message">Standard wiederherstellen</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Bildschirm aus Gesten</string>

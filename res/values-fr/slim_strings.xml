@@ -1213,6 +1213,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="recent_panel_expanded_mode_never">Jamais</string>
     <string name="recent_panel_show_topmost_title">Affichage de l\'application en cours</string>
     <string name="recent_panel_show_topmost_summary">Ne pas exclure l\'application en cours lors de l\'affichage des applications récentes</string>
+    <string name="recent_panel_bg_color_title">Couleur du fond</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Affichage du côté gauche</string>
@@ -1252,5 +1253,10 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="heads_up_time_out_10sec">10 secondes</string>
     <string name="heads_up_time_out_never">Jamais</string>
     <string name="heads_up_switch_label">Activer les notifications Heads up</string>
+
+    <string name="reset_default_message">Réinitialiser</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Gestures écran éteint</string>
 
 </resources>

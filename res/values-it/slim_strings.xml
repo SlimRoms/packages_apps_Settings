@@ -1227,6 +1227,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="recent_panel_expanded_mode_never">Mai</string>
     <string name="recent_panel_show_topmost_title">Mostra task principale</string>
     <string name="recent_panel_show_topmost_summary">Non esclude il task principale nel pannello delle apps recenti</string>
+    <string name="recent_panel_bg_color_title">Colore sfondo</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostra a sinistra</string>
@@ -1266,6 +1267,8 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="heads_up_time_out_10sec">10 secondi</string>
     <string name="heads_up_time_out_never">Mai</string>
     <string name="heads_up_switch_label">Attiva le notifiche heads up</string>
+
+    <string name="reset_default_message">Resetta a default</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Gestures a schermo spento</string>

@@ -1228,6 +1228,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="recent_panel_show_topmost_title">Mostra task principale</string>
     <string name="recent_panel_show_topmost_summary">Non esclude il task principale nel pannello delle apps recenti</string>
     <string name="recent_panel_bg_color_title">Colore sfondo</string>
+    <string name="trds_default_color">TRDS predefinito</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostra a sinistra</string>

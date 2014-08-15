@@ -1212,6 +1212,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="recent_panel_show_topmost_title">Affichage de l\'application en cours</string>
     <string name="recent_panel_show_topmost_summary">Ne pas exclure l\'application en cours lors de l\'affichage des applications récentes.</string>
     <string name="recent_panel_bg_color_title">Couleur du fond</string>
+    <string name="trds_default_color">Couleur par défaut</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Afficher du côté gauche</string>

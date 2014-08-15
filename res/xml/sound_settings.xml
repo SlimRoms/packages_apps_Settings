@@ -110,6 +110,12 @@
             android:entries="@array/volume_overlay_entries"
             android:entryValues="@array/volume_overlay_values" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="volume_panel_bg_color"
+            android:title="@string/volume_panel_bg_color_title"
+            android:defaultValue="0x00ffffff"
+            alphaSlider="true" />
+
     <ListPreference
             android:key="emergency_tone"
             android:title="@string/emergency_tone_title"

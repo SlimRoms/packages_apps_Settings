@@ -211,6 +211,7 @@ limitations under the License.
     <string name="volume_overlay_expandable">Erweiterbar</string>
     <string name="volume_overlay_expanded">Ergänzen</string>
     <string name="volume_overlay_disable">Deaktivieren</string>
+    <string name="volume_panel_bg_color_title">Lautstärkenregler Hintergrundfarbe</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Kamera-Auslöse-Ton</string>
@@ -1159,6 +1160,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="recent_panel_expanded_mode_always">Immer</string>
     <string name="recent_panel_expanded_mode_never">Nie</string>
     <string name="recent_panel_bg_color_title">Hintergrundfarbe</string>
+    <string name="trds_default_color">TRDS Standard</string>
 
     <!-- App moving -->
     <string name="app_moving_enable">Aktiviere App-Verschiebung</string>

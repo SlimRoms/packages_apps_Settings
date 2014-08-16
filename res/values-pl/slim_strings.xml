@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012-2013 SlimRoms Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +50,7 @@
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selektor koloru</string>
-    <string name="press_color_to_apply">Dotknij koloru aby ustawić</string>
+    <string name="press_color_to_apply">Dotknij koloru, aby ustawić</string>
     <string name="arrow_right">›</string>
     <string name="arrow_down">ˇ</string>
     <string name="hex">Hex:</string>
@@ -82,7 +82,7 @@
     <string name="dialog_test">Test</string>
     <string name="dialog_delete_title">Usuń</string>
     <string name="dialog_delete_message">Usunąć wybraną?</string>
-    <string name="dialog_test_message">Wyłącz ekran żeby zobaczyć jak działa wybrane powiadomienie lub odrzuć to okno aby zatrzymać test</string>
+    <string name="dialog_test_message">Wyłącz ekran, żeby zobaczyć, jak działa wybrane powiadomienie lub odrzuć to okno, aby zatrzymać test</string>
     <string name="dialog_test_button">Odrzuć</string>
 
     <!-- Values for the notification light pulse spinners -->
@@ -108,19 +108,19 @@
 
     <!-- Privacy Guard -->
     <string name="app_security_title">Bezpieczeństwo aplikacji</string>
-    <string name="privacy_guard_dlg_title">Włączyć Strażnika Prywatności?</string>
-    <string name="privacy_guard_dlg_text">Kiedy Strażnik Prywatności jest włączony, aplikacja nie będzie miała dostępu do danych osobistych takich jak kontakty, wiadomości, lokalizacja lub reejstr połączeń.</string>
-    <string name="privacy_guard_dlg_system_app_text">Włączenie Strażnika Prywatności dla aplikacji systemowej spowoduje, że aplikacja ta nie będzie miała dostępu do danych osobistych takich jak kontakty, wiadomości, lokalizacja lub reejstr połączeń. To może spowodować błędy w działaniu tych aplikacji.</string>
-    <string name="privacy_guard_default_title">Domyślnie włączony</string>
+    <string name="privacy_guard_dlg_title">Włącz kontrolę prywatności?</string>
+    <string name="privacy_guard_dlg_text">Kiedy kontrola prywatności jest włączona, aplikacja nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacja lub rejestr połączeń.</string>
+    <string name="privacy_guard_dlg_system_app_text">Włączenie kontroli prywatności dla aplikacji systemowej spowoduje, że aplikacja ta nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacji lub rejestru połączeń. To może spowodować błędy w działaniu tych aplikacji.</string>
+    <string name="privacy_guard_default_title">Domyślnie włączona</string>
     <string name="privacy_guard_default_summary">Brak dostępu do danych osobistych dla nowo zainstalowanych aplikacji</string>
     <string name="privacy_guard_notification_title">Powiadomienia</string>
-    <string name="privacy_guard_notifiation_summary">Pokazuj powiadomienia kiedy Strażnik Prywatności jest włączony.</string>
-    <string name="privacy_guard_manager_title">Strażnik Prywatności</string>
-    <string name="privacy_guard_manager_summary">Zarządzaj które aplikacje mają dostęp do danych osobistych i innych uprawnień.</string>
+    <string name="privacy_guard_notifiation_summary">Pokazuj powiadomienia kiedy kontrola prywatności jest włączona.</string>
+    <string name="privacy_guard_manager_title">Kontrola prywatności</string>
+    <string name="privacy_guard_manager_summary">Zarządzaj, które aplikacje mają dostęp do danych osobistych i innych uprawnień.</string>
     <string name="privacy_guard_no_user_apps">Brak zainstalowanych aplikacji</string>
     <string name="privacy_guard_filter_does_not_match">Brak zainstalowanych aplikacji z odpowiednimi uprawnieniami</string>
-    <string name="privacy_guard_help_text">W tym oknie możesz wybrać aplikacje, dla których Strażnik Prywatności ma być włączony. Wybrane aplikacjie nie będą miały dostępu do danych osobistych takich jak kontakty, wiadomości, lokalizacja lub reejstr połączeń. Poprzez długie naciśnięcie możesz ustawić poszczególne uprawnienia aplikacji.\n\nDomyślnie aplikacje systemowe nie są widoczne. Jeśli chcesz żeby były widoczne lub wyświetlić tylko te aplikacje, które żądają dostępu do danych osobistych, wybierz odpowiednią opcję w menu.</string>
-    <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
+    <string name="privacy_guard_help_text">W tym oknie możesz wybrać aplikacje, dla których kontrola prywatności ma być włączona. Wybrane aplikacjie nie będą miały dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacja lub rejestr połączeń. Poprzez długie naciśnięcie możesz ustawić poszczególne uprawnienia aplikacji.\n\nDomyślnie aplikacje systemowe nie są widoczne. Jeśli chcesz, żeby były widoczne lub wyświetlić tylko te aplikacje, które żądają dostępu do danych osobistych, wybierz odpowiednią opcję w menu.</string>
+    <string name="privacy_guard_manager_show_system_apps">Pokaż aplikacje systemowe</string>
     <string name="privacy_guard_manager_filter_permissions">Filtr uprawnień</string>
     <string name="privacy_guard_app_ops_detail_dialog_title">Uwaga</string>
     <string name="privacy_guard_app_ops_detail_dialog_text">Wybrana aplikacja nie potrzebuje dostępu do danych osobistych. Czy chcesz zmienić inne uprawnienia?</string>
@@ -262,9 +262,9 @@
     <string name="ime_switcher_notify_summary">Wyświetl selektor klawiatury w pasku powiadomień</string>
 
     <!-- Setting checkbox title for root access -->
-    <string name="root_access">Dostęp root</string>
-    <string name="root_access_warning_title">Zezwolić na dostęp root?</string>
-    <string name="root_access_warning_message">Zezwiolnie aplikacjom na dostęp do roota jest bardzo niebezpieczne i może naruszyć bezpieczeństwo systemu!</string>
+    <string name="root_access">Dostęp do praw administratora</string>
+    <string name="root_access_warning_title">Zezwolić na dostęp do praw administratora?</string>
+    <string name="root_access_warning_message">Zezwolenie aplikacjom na dostęp do praw administratora jest bardzo niebezpieczne i może naruszyć bezpieczeństwo systemu!</string>
     <string name="root_access_none">Wyłączone</string>
     <string name="root_access_apps">Tylko aplikacje</string>
     <string name="root_access_adb">Tylko ADB</string>
@@ -274,50 +274,35 @@
     <string name="auto_brightness_setup_title">Automatyczna korekcja jasności</string>
     <string name="auto_brightness_adjustment_title">Regulacja jasności</string>
     <string name="auto_brightness_twilight_adjustment">Dopasuj do wschodu i zachodu słońca</string>
-    <string name="light_sensor_current_value">Bieżąca wartość czujnika światła: <xliff:g id="light_level">%d</xliff:g> lux</string>
-    <string name="auto_brightness_dialog_title">Poziomy automatycznej korekcji jasności</string>
-    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
-    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="light_sensor_current_value">Bieżąca wartość czujnika światła: <xliff:g id="light_level">%d</xliff:g> luksów</string>
+    <string name="auto_brightness_dialog_title">Automatyczne poziomy jasności</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> luks</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e luks</string>
     <string name="auto_brightness_adjust_button">Dostosuj</string>
     <string name="auto_brightness_close_button">Zamknij</string>
     <string name="auto_brightness_reset_button">Przywróć</string>
-    <string name="auto_brightness_split_dialog_title">Podziel poziomy jasności</string>
-    <string name="auto_brightness_level_dialog_title">Ustawienia poziomów światła</string>
-    <string name="auto_brightness_lux">Jasność otoczenia (lux)</string>
+    <string name="auto_brightness_split_dialog_title">Dzielenie poziomów natężenia oświetlenia</string>
+    <string name="auto_brightness_level_dialog_title">Dostosowywanie poziomu natężenia oświetlenia</string>
+    <string name="auto_brightness_lux">Natężenie oświetlenia (luks)</string>
     <string name="auto_brightness_backlight">Jasność ekranu (%)</string>
-    <string name="auto_brightness_reset_dialog_title">Przywrócić poziomy?</string>
+    <string name="auto_brightness_reset_dialog_title">Przywrócić domyślne poziomy?</string>
     <string name="auto_brightness_reset_confirmation">Wszystkie poziomy jasności zostaną przywrócone do wartości domyślnych.</string>
-    <string name="auto_brightness_split_lux_format">Podziel pozycję (pomiędzy <xliff:g id="min">%1$d</xliff:g> i <xliff:g id="max">%2$d</xliff:g> lux)</string>
-    <string name="auto_brightness_level_options">Opcje poziomów światła</string>
+    <string name="auto_brightness_split_lux_format">Podziel pozycję (pomiędzy <xliff:g id="min">%1$d</xliff:g> i <xliff:g id="max">%2$d</xliff:g> luks)</string>
+    <string name="auto_brightness_level_options">Opcje poziomów natężenia oświetlenia</string>
     <string name="auto_brightness_menu_edit">Edytuj</string>
     <string name="auto_brightness_menu_split">Podziel</string>
     <string name="auto_brightness_menu_remove">Usuń</string>
     <string name="auto_brightness_preview">Podgląd</string>
-    <string name="auto_brightness_preview_dialog_title">Podgląd krzywej jasności</string>
-    <string name="auto_brightness_help_text"><b>Jak jest obliczana jasność?</b>
+    <string name="auto_brightness_preview_dialog_title">Podgląd krzywej natężenia oświetlenia</string>
+    <string name="auto_brightness_help_text"><b>Jak natężenie oświetlenia jest obliczane?</b>
 \n\n
-The brightness curve is calculated by performing a <i>cubic spline interpolation</i>
-on a given number of <i>control points</i>. It\'s not a \'bucket-type\' calculation where
-screen brightness will stay constant for a specific range of ambient brightness. That way,
-small changes in ambient brightness do not cause a large jump in screen brightness; however,
-it can be a little hard to predict the exact consequences of changing control points.\n
-To help with that, a preview of the calculated curve can be examined. Please note that the
-preview shows the curve in <i>logarithmic</i> scale, so that all control points can be shown
-distinctively. When using a linear scale, it wouldn\'t be possible to distinguish the tendentially
-more important control points in the lower range of ambient brightness.
+Krzywa jasności jest obliczana przez wykonywanie <i>sześciennej interpolacji</i> na określoną liczbę <i>punktów kontrolnych</i>. Nie jest to kalkulacja \"typu wiadro\" gdzie jasność ekranu pozostanie stała dla określonego zakresu jasności otoczenia. W ten sposób, małe zmiany w jasności otoczenia nie powodują dużych skoków w jasności ekranu. Jednak mogą być trochę trudne do przewidzenia szczegółowe konsekwencje zmiany kontroli punktów. \n
+Aby pomóc, można zbadać podgląd krzywej obliczeniowej. Należy pamiętać, że podgląd pokazuje łuk w skali <i>logarytmicznej</i>, tak, że wszystkie punkty kontroli mogą być wyświetlane wyraźnie. Przy użyciu skali liniowej, nie byłoby możliwe do odróżnienia ważniejszych punktów w dolnym zakresie jasności otoczenia.
 \n\n
-<b>How to edit the brightness curve?</b>
+<b>Jak edytować łuk jasności?</b>
 \n\n
-Each line in the brightness list corresponds to one <i>control point</i> of the
-brightness curve. To edit the brightness level of the point, you can use the slider
-present in each line. The screen brightness will be changed accordingly while touching
-the slider to give a preview of the light level.\n
-Additional options are available by long-pressing a line. By selecting \'Edit\', you can
-both edit the ambient brightness level of the control point as well as manually input the
-desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
-two in order to insert additional control points. \'Remove\' deletes the selected line.
-    </string>
+Na każdy wiersz na liście odpowiada jeden <i>punkt kontroli</i> krzywej jasności. Aby zmienić poziom jasności, można użyć suwaka w każdej linii. Jasność ekranu zostanie zmieniona odpowiednio do ustawień suwaka, aby dać podgląd na poziom światła.\n
+Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opcję \"Edytuj\", można zmienić poziom jasności otoczenia punktu kontroli, jak również ręcznie wprowadzić pożądaną jasność ekranu. Opcja \"Dzielenie\" pozwala na przerobieniu jednej linii na dwie identyczne, aby wstawić dodatkową kontrolę punktów. Opcja \"Usuń\" usuwa wybrany wiersz.</string>
 
     <string name="auto_brightness_sensitivity_title">Regulacja czułości</string>
     <string name="auto_brightness_sensitivity_verylow">Bardzo mała</string>
@@ -328,13 +313,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Czarna lista</string>
-    <string name="blacklist_edit_dialog_title">Edytuj wpisy Czarnej listy</string>
+    <string name="blacklist_edit_dialog_title">Edytuj wpisy czarnej listy</string>
     <string name="blacklist_prefs">Ustawienia</string>
     <string name="blacklist_button_delete">Usuń</string>
-    <string name="blacklist_empty_text">Nie masz żadnych numerów na Czarnej liście. Dodaj wpis przyciskiem (+)</string>
-    <string name="blacklist_disabled_empty_text">Aby blokować numery lub wiadomości od konkretnych numerów, włącz Czarną listę.</string>
+    <string name="blacklist_empty_text">Nie masz żadnych numerów na czarnej liście. Dodaj wpis przyciskiem (+)</string>
+    <string name="blacklist_disabled_empty_text">Aby blokować numery lub wiadomości od konkretnych numerów, włącz czarną listę.</string>
     <string name="blacklist_summary_disabled">Wyłączone</string>
-    <string name="blacklist_summary">Połączenia przychodzące i wiadomości z Czarnej listy będą blokowane</string>
+    <string name="blacklist_summary">Połączenia przychodzące i wiadomości z czarnej listy będą blokowane</string>
     <string name="blacklist_notify">Pokaż powiadomienia</string>
     <string name="blacklist_private_numbers_title">Numery zastrzeżone</string>
     <string name="blacklist_private_numbers_summary_disabled">Nie blokuj połączeń z numerów zastrzeżonych</string>
@@ -353,7 +338,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Blacklist management -->
     <string name="add_blacklist_number">Dodaj numer</string>
     <string name="remove_blacklist_number_title">Usuń numer</string>
-    <string name="remove_blacklist_entry">Czy chcesz usunąć ten wpis z Czarnej listy?</string>
+    <string name="remove_blacklist_entry">Czy chcesz usunąć ten wpis z czarnej listy?</string>
     <string name="select_contact">Wybierz kontakt</string>
 
     <string name="increasing_ring_title">Rosnący dzwonek</string>
@@ -416,7 +401,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ring_silent">Dzwonek/wyciszony</string>
     <string name="shortcut_action_ring_vib_silent">Dzwonek/Wibracja/Wyciszony</string>
     <string name="shortcut_action_camera">Aparat</string>
-    <string name="shortcut_action_media_next">Muzyska-następny utwór</string>
+    <string name="shortcut_action_media_next">Muzyka-następny utwór</string>
     <string name="shortcut_action_media_play_pause">Muzyka-play/pause</string>
     <string name="shortcut_action_media_previous">Muzyka-poprzedni utwór</string>
     <string name="shortcut_action_wake_device">Wybudź telefon</string>
@@ -430,7 +415,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_max">Osiągnięto maksymalną liczbę wpisów</string>
     <string name="shortcut_action_warning">Uwaga</string>
     <string name="shortcut_action_warning_message">Nie można usunąć ostatniego wpisu</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_action_disable_message">Wyłączone\nDodaj wpis aby włączyć tą funkcję</string>
     <string name="shortcut_image_not_valid">Wybrana aplikacja nie ma poprawnej ikony albo nie obsługuje kadrowania ikon. Wybierz inną aplikację.</string>
     <string name="shortcut_duplicate_entry">Wybrana akcja nie może być dodana dwukrotnie</string>
 
@@ -485,7 +470,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_icon_picker_pocket">Pocket</string>
     <string name="shortcuts_icon_picker_quicksettings">Szybkie ustawienia</string>
     <string name="shortcuts_icon_picker_rss">Kanał RSS</string>
-    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_sdcard">SD-Card</string>
     <string name="shortcuts_icon_picker_search">Szukaj</string>
     <string name="shortcuts_icon_picker_sms">Wiadomości</string>
     <string name="shortcuts_icon_picker_tasks">Zadania</string>
@@ -592,9 +577,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar">Pasek nawigacji</string>
     <string name="navbar_button_cat">Przyciski paska nawigacji</string>
     <string name="title_pref_menu_location">Lokalizacja menu</string>
-    <string name="summary_pref_menu_location">Gdzie chcesz żeby wyświetlał się przycisk menu?</string>
+    <string name="summary_pref_menu_location">Gdzie chcesz, żeby wyświetlał się przycisk menu?</string>
     <string name="title_pref_menu_display">Widoczność przycisku menu</string>
-    <string name="summary_pref_menu_display">Jak i gdzie chcesz żeby wyświetlał się przycisk menu?</string>
+    <string name="summary_pref_menu_display">Jak i gdzie chcesz, żeby wyświetlał się przycisk menu?</string>
     <string name="navbar_enable_bar">Włącz pasek nawigacji</string>
     <string name="navbar_enable_bar_summary">Włącz pasek nawigacji</string>
     <string name="navigation_bar_height_title">Wysokość paska nawigacji</string>
@@ -602,7 +587,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar_height_landscape_title">Wysokość paska nawigacji w poziomie</string>
     <string name="navigation_bar_height_landscape_summary">Wysokość paska nawigacji w poziomie.</string>
     <string name="navigation_bar_width_title">Szerokość paska nawigacji</string>
-    <string name="navigation_bar_width_summary">Wysokość paska nawigacji jeśli pasek jest z boku.</string>
+    <string name="navigation_bar_width_summary">Wysokość paska nawigacji, jeśli pasek jest z boku.</string>
     <string name="navbar_can_move">Pokazuj w poziomie</string>
     <string name="navbar_can_move_summary">Pokazuje pasek nawigacji w poziomie na dole ekranu</string>
     <string name="navbar_style_dimen_title">Wymiary</string>
@@ -610,11 +595,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_targets_title">Skróty pierścienia</string>
     <string name="navbar_cat">Pasek nawigacji</string>
     <string name="navbar_dimensions_reset_message">Przywrócić domyślne wymiary?</string>
-    <string name="navigation_bar_warning_no_navigation_present">Żadne sterowanie nie jest włączone. Wyłączenie paska nawigacji spowoduje, brak możliwośći obsługi urządzenia. Czy chcesz właczyć sterowanie Pie?</string>
+    <string name="navigation_bar_warning_no_navigation_present">Żadne sterowanie nie jest włączone. Wyłączenie paska nawigacji spowoduje brak możliwośći obsługi urządzenia. Czy nadal chcesz włączyć sterowanie Pie?</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style_summary">Zmień kolory przycisków paska nawigacji</string>
-    <string name="button_transparency_title">Przejrzystość przycisków</string>
+    <string name="button_transparency_title">Przezroczystość przycisków</string>
     <string name="nav_button_color_mode_summary">Zmień tryb koloru przycisków paska nawigacji</string>
     <string name="navigation_bar_glow_tint_title">Kolor poświaty</string>
 
@@ -622,7 +607,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_options_settings_title">Ustawienia zaawansowane</string>
 
     <!-- MediaScanner behavior on boot -->
-    <string name="media_scanner_on_boot_title">Zachowanie Skanera Mediów przy uruchomieniu</string>
+    <string name="media_scanner_on_boot_title">Zachowanie skanera mediów przy uruchomieniu</string>
     <string name="media_scanner_on_boot_enabled">Skanuj media</string>
     <string name="media_scanner_on_boot_ask">Zapytaj czy skanować (powiadomienie)</string>
     <string name="media_scanner_on_boot_disabled">Nie skanuj</string>
@@ -654,8 +639,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_daily_off">Pojedynczy zestaw czasów jest włączony</string>
     <string name="quiet_time_prefs_title">Zakresy Godzin ciszy</string>
     <string name="quiet_hours_auto_title">Po trybie dzwonka (zawsze włączone)</string>
-    <string name="quiet_hours_auto_silent">Godziny ciszy zostaną włączone kiedy dzwonek zostanie wyciszony</string>
-    <string name="quiet_hours_auto_vibrate">Godziny ciszy zostaną włączone kiedy dzwonek zostanie wyciszony lub zostanie włączona wibracja</string>
+    <string name="quiet_hours_auto_silent">Godziny ciszy zostaną włączone, kiedy dzwonek zostanie wyciszony</string>
+    <string name="quiet_hours_auto_vibrate">Godziny ciszy zostaną włączone, kiedy dzwonek zostanie wyciszony lub zostanie włączona wibracja</string>
     <string name="quiet_hours_start">Początek Godzin ciszy</string>
     <string name="quiet_hours_start_summary">Kiedy rozpocząć wymuszanie Godzin ciszy</string>
     <string name="quiet_hours_end">Koniec Godzin ciszy</string>
@@ -722,25 +707,25 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="display_rotation_270_title">270 stopni</string>
 
     <!-- Lock Screen ASS -->
-    <string name="lock_screen_title">Cele i skróty Suwaka</string>
-    <string name="lock_screen_summary">Zobacz lub zmień cele i skróty Suwaka</string>
+    <string name="lock_screen_title">Ekran blokady</string>
+    <string name="lock_screen_summary">Zobacz lub zmień ustawienia ekranu blokady</string>
 
     <!-- Lock Screen Targets -->
-    <string name="lockscreen_target_info">Przeciągnij Suwak do celów aby przypisać aplikacje</string>
-    <string name="lockscreen_target_title">Cele Suwaka</string>
-    <string name="lockscreen_target_summary">Zobacz lub zmień skróty ekranu blokady</string>
+    <string name="lockscreen_target_info">Przeciągnij palcem na wybrane pola by przypisać skróty</string>
+    <string name="lockscreen_target_title">Skróty ekranu blokady</string>
+    <string name="lockscreen_target_summary">Podejrzyj lub dodaj własne skróty ekranu blokady</string>
     <string name="lockscreen_target_color_title">Kolor skrótu</string>
     <string name="lockscreen_eight_targets_title">Osiem skrótów ekranu blokady</string>
     <string name="lockscreen_eight_targets_summary">Włącz osiem skrótów ekranu blokady.</string>
-    <string name="lockscreen_enable_eight_targets_dialog">Zmiana tej opcji przywróci wartości domyślne celów suwaka ekranu blokady.</string>
-    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nZ włączonymi ośmioma celami ekranu blokady nie możesz używać skrótów na ekranie blokady.</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Zmiana tej opcji przywróci wartości domyślne ilości skrótów.</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nZ włączonymi ośmioma skrótami ekranu blokady nie możesz używać skrótów na ekranie blokady.</string>
     <string name="lockscreen_glowpad_torch_title">Latarka Suwaka</string>
     <string name="lockscreen_glowpad_torch_summary">Dotknij dwukrotnie i przytrzymaj suwak aby włączyć latarkę</string>
-    <string name="lockscreen_target_reset">Przywróc domyślne Cele ekranu blokady</string>
-    <string name="lockscreen_target_reset_message">Usunąć wszystkie cele ekranu blokady i przywrócić wartości domyślne?</string>
+    <string name="lockscreen_target_reset">Przywróc domyślne skróty ekranu blokady</string>
+    <string name="lockscreen_target_reset_message">Usunąć wszystkie skróty ekranu blokady i przywrócić wartości domyślne?</string>
     <string name="lockscreen_target_empty">Żadne</string>
-    <string name="lockscreen_target_edit_title">Edytuj cel i ikonę</string>
-    <string name="lockscreen_target_edit_msg">Wybierz lub zmień aplikację lub aktywność i przypisaną ikonę</string>
+    <string name="lockscreen_target_edit_title">Edytuj skrót i ikonę</string>
+    <string name="lockscreen_target_edit_msg">Wybierz lub zmień aplikację albo aktywność i przypisaną ikonę</string>
 
     <!-- Lockscreen Shortcuts -->
     <string name="lockscreen_shortcuts_title">Skróty</string>
@@ -779,7 +764,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen style settings -->
     <string name="lockscreen_style_reset_message">Przywrócić wszystkie kolory ekranu blokady?</string>
-    <string name="lockscreen_icon_title">Ikona uchywtu ekranu blokady</string>
+    <string name="lockscreen_icon_title">Ikona uchwytu ekranu blokady</string>
     <string name="lockscreen_lock_icon_custom">Własna ikona</string>
     <string name="lockscreen_lock_icon_slim">Ikona Slim</string>
     <string name="lockscreen_lock_icon_default">Domyślna ikona</string>
@@ -792,8 +777,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_lock_color_summary">Kolor uchwytu blokady</string>
     <string name="lockscreen_dots_color_title">Kolor kropek</string>
     <string name="lockscreen_dots_color_summary">Kolor kropek uchwytu blokady</string>
-    <string name="lockscreen_targets_color_title">Kolor celów</string>
-    <string name="lockscreen_targets_color_summary">Kolor celów uchwytu</string>
+    <string name="lockscreen_targets_color_title">Kolor skrótów</string>
+    <string name="lockscreen_targets_color_summary">Kolor skrótów uchwytu</string>
     <string name="lockscreen_misc_color_title">Pozostałe kolory</string>
     <string name="lockscreen_misc_color_summary">Kolor pozostałych elementów</string>
 
@@ -918,25 +903,25 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="tiles_reset_message">Przywrócić kafelki do wartości domyślnych?</string>
     <string name="disable_qs">Szybkie ustawienia wyłączone</string>
     <string name="disable_qs_message">Wszystkie kafelki zostały usunięte. Szybkie ustawienia są wyłączone.\n\nAby włączyć dodaj kafelek.</string>
-    <string name="help_qs_message">Aby dodać kafelek szybkich ustawień naciśnij przysisk dodaj i wybierz kafelek. Aby zmienić kolejność przytrzymaj kafelek i przestaw go tam gdzie chcesz. Jeśli chcesz usunąć kafelek, przytrzymaj go i przesuń do kosza który się pojawi.\n\nAby ustawić dynamiczne kafelki naciśnij przycisk w prawym górnym rogu\n\nAby wyłączyć Szybkie ustawienia, usuń wszystkie kafelki.</string>
-    <string name="custom_tile_dialog_text">Każda akcja doda nowy stan kafelka. Każde naciśnięcie kafelka przełączy następny stan. Przytrzymaj dłużej aby dodać akcję długiego naciśnięcia. Jeśli nie ma akcji naciśnięcia, ikona długiego naciśnięcia będzie wyświetlana na kafelku. To umożliwi zmianę stanów lub uruchamiania akcji poprzez długie naciśnięcie.</string>
+    <string name="help_qs_message">Aby dodać kafelek szybkich ustawień naciśnij przysisk dodaj i wybierz kafelek. Aby zmienić kolejność, przytrzymaj kafelek i przestaw go tam gdzie chcesz. Jeśli chcesz usunąć kafelek, przytrzymaj go i przesuń do kosza, który się pojawi.\n\nAby ustawić dynamiczne kafelki naciśnij przycisk w prawym górnym rogu\n\nAby wyłączyć Szybkie ustawienia, usuń wszystkie kafelki.</string>
+    <string name="custom_tile_dialog_text">Każda akcja doda nowy stan kafelka. Każde naciśnięcie kafelka przełączy następny stan. Przytrzymaj dłużej, aby dodać akcję długiego naciśnięcia. Jeśli nie ma akcji naciśnięcia, ikona długiego naciśnięcia będzie wyświetlana na kafelku. To umożliwi zmianę stanów lub uruchamiania akcji poprzez długie naciśnięcie.</string>
     <string name="custom_tile_dialog_title">Własna akcja kafelka</string>
-    <string name="custom_tile_dialog_extra_text">Wykryto zaawansowany kafelek. Twój kafelek będzie teraz zmieniał stany niezależnie od tego gdzie będziesz. Możesz opcjonalnie wprowadzić etykietę i ikonę dla zmiany przełącznika jeżeli nie rozpozna stanu w jakim jest.</string>
+    <string name="custom_tile_dialog_extra_text">Wykryto zaawansowany kafelek. Twój kafelek będzie teraz zmieniał stany niezależnie od tego, gdzie będziesz. Możesz opcjonalnie wprowadzić etykietę i ikonę dla zmiany przełącznika, jeżeli nie rozpozna stanu w jakim jest.</string>
     <string name="custom_toggle_extras">Dodatki własnych kafelek</string>
     <string name="custom_toggle_collapse_check">Zwiń cień powiadomienia</string>
     <string name="custom_toggle_match_state_check">Dopasuj ikonę do akcji naciśnięcia</string>
-    <string name="custom_toggle_double_click_check">Naciśnij dwukrotnie żeby przełączyć do poprzedniej akcji</string>
+    <string name="custom_toggle_double_click_check">Naciśnij dwukrotnie, żeby przełączyć do poprzedniej akcji</string>
     <string name="custom_tile_long_press">Długie naciśnięcie:</string>
     <string name="custom_tile_null_warning">Najpierw ustaw akcję</string>
     <string name="custom_tile_resolve_name">Nieznana</string>
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Styl</string>
-    <string name="summary_quicksettings_tiles_style">Zobacz lub zmień opcje stylu Szybkich ustawień</string>
+    <string name="summary_quicksettings_tiles_style">Zobacz lub zmień opcje stylu szybkich ustawień</string>
     <string name="quicksettings_tiles_style_additional_options">Dodatkowe opcje</string>
     <string name="tiles_per_row_title">Ilość kafelków w rzędzie</string>
     <string name="tiles_per_row_duplicate_landscape_title">Skaluj w poziomie</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">W poziomie liczbę kafelek w rzędzie podwaja się</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">W poziomie liczbę kafelków w rzędzie podwaja się</string>
     <string name="quick_tiles_bg_color_title">Kolor tła kafelków</string>
     <string name="quick_tiles_bg_pressed_color_title">Kolor tła gdy naciśnięty</string>
     <string name="quick_tiles_text_color_title">Kolor tekstu kafelków</string>
@@ -958,8 +943,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Szybkie wysuwanie</string>
-    <string name="summary_quick_pulldown">%1$s strona paska powiadomień wysunie Szybkie ustawienia</string>
-    <string name="quick_pulldown_off">Wyłaczone</string>
+    <string name="summary_quick_pulldown">%1$s strona paska powiadomień wysunie szybkie ustawienia</string>
+    <string name="quick_pulldown_off">Wyłączone</string>
     <string name="quick_pulldown_left">Lewa</string>
     <string name="quick_pulldown_right">Prawa</string>
 
@@ -1011,7 +996,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Show the pointer icon while using stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">Prawdziwy mroczny Slim</string>
+    <string name="theme_settings_title">Ciemny motyw</string>
     <string name="theme_auto_mode_title">Przełącz motyw</string>
     <string name="theme_auto_mode_off">Ręcznie</string>
     <string name="theme_auto_mode_lightsensor">Przy zmianie oświetlenia</string>
@@ -1169,7 +1154,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_icon_color_mode_dialog_title">Koloryzuj</string>
     <string name="pie_icon_color_mode_summary">Zmień tryb koloru przycisku</string>
     <string name="pie_trigger_note_title">Uwaga</string>
-    <string name="pie_trigger_note_summary">Aby uniknąć konfilktów z paskiem nawigacji i paskiem statusu, wyzwalanie na tych krawędziach są automatycznie wyłączane kiedy paski te są włączone</string>
+    <string name="pie_trigger_note_summary">Aby uniknąć konfliktów z paskiem nawigacji i paskiem statusu, wyzwalanie na tych krawędziach jest automatycznie wyłączane, kiedy paski te są włączone</string>
     <string name="pie_background_color_title">Kolor tła</string>
     <string name="pie_snap_color_title">Kolor punktu przyciągania</string>
     <string name="pie_text_color_title">Kolor tekstu</string>
@@ -1218,11 +1203,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_100">100% (domyślne)</string>
     <string name="recent_panel_85">85%</string>
     <string name="recent_panel_70">70%</string>
-    <string name="recent_panel_expanded_mode_title">Rozszerzony pulpit</string>
+    <string name="recent_panel_expanded_mode_title">Tryb rozszerzony</string>
     <string name="recent_panel_expanded_mode_summary">Widok rozszerzony panelu ostatnich aplikacji</string>
     <string name="recent_panel_expanded_mode_auto">Auto (domyślne)</string>
     <string name="recent_panel_expanded_mode_always">Zawsze</string>
     <string name="recent_panel_expanded_mode_never">Nigdy</string>
+    <string name="recent_panel_bg_color_title">Kolor tła</string>
     <string name="recent_panel_show_topmost_title">Pokaż aktualne</string>
     <string name="recent_panel_show_topmost_summary">Nie wykluczaj aktualnie używanych aplikacji</string>
 
@@ -1264,6 +1250,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_time_out_10sec">10 sekund</string>
     <string name="heads_up_time_out_never">Nigdy</string>
     <string name="heads_up_switch_label">Włącz powiadomienia Heads-Up</string>
+    <string name="reset_default_message">Przywróć domyślne </string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Gesty przy wyłączonym ekranie</string>

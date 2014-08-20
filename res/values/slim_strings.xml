@@ -900,6 +900,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_wifiap">Wi-Fi AP</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">User switcher</string>
+    <string name="title_tile_network_adb">ADB over network</string>
     <string name="title_tile_networkmode">Network mode</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Screen timeout</string>

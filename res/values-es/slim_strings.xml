@@ -223,6 +223,7 @@
     <string name="volume_overlay_expandable">Expandible</string>
     <string name="volume_overlay_expanded">Expandido</string>
     <string name="volume_overlay_disable">Deshabilitado</string>
+    <string name="volume_panel_bg_color_title">Color fondo del panel de volumen</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Sonido de obturador de cámara</string>
@@ -1223,6 +1224,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_show_topmost_title">Mostrar aplicación en uso</string>
     <string name="recent_panel_show_topmost_summary">Incluir la aplicación en uso en primer plano en la vista de aplicaciones recientes</string>
     <string name="recent_panel_bg_color_title">Color del fondo</string>
+    <string name="trds_default_color">Predeterminado TRDS</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>

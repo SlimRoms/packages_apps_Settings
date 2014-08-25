@@ -80,41 +80,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-            android:title="@string/recent_panel_category" />
-
-        <ListPreference
-                android:key="recent_panel_expanded_mode"
-                android:entries="@array/recent_panel_expanded_mode_entries"
-                android:entryValues="@array/recent_panel_expanded_mode_values"
-                android:title="@string/recent_panel_expanded_mode_title"
-                android:summary="@string/recent_panel_expanded_mode_summary"
-                android:persistent="false" />
-
-        <CheckBoxPreference
-                android:key="recent_panel_lefty_mode"
-                android:title="@string/recent_panel_lefty_mode_title"
-                android:summary="@string/recent_panel_lefty_mode_summary"
-                android:persistent="false" />
-
-        <CheckBoxPreference
-                android:key="recent_panel_show_topmost"
-                android:title="@string/recent_panel_show_topmost_title"
-                android:summary="@string/recent_panel_show_topmost_summary"
-                android:persistent="false" />
-
-        <ListPreference
-                android:key="recent_panel_scale"
-                android:entries="@array/recent_panel_scale_entries"
-                android:entryValues="@array/recent_panel_scale_values"
-                android:title="@string/recent_panel_scale_title"
-                android:summary="@string/recent_panel_scale_summary"
-                android:persistent="false" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="recent_panel_bg_color"
-                android:title="@string/recent_panel_bg_color_title"
-                android:defaultValue="0x00ffffff"
-                alphaSlider="true" />
-
 </PreferenceScreen>

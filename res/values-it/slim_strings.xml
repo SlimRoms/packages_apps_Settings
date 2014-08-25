@@ -401,10 +401,10 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="shortcut_action_voice_search">Ricerca vocale</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Apri switcher IME</string>
+    <string name="shortcut_action_ime">Apri commutatore IME</string>
     <string name="shortcut_action_kill">Termina app</string>
     <string name="shortcut_action_power">Schermo Off</string>
-    <string name="shortcut_action_theme_switch">Swticher tema</string>
+    <string name="shortcut_action_theme_switch">Cambia tema</string>
     <string name="shortcut_action_notifications">Notifiche</string>
     <string name="shortcut_action_menu_big">Menu</string>
     <string name="shortcut_action_qs">Pannello Quick Settings</string>
@@ -1018,7 +1018,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="theme_auto_mode_off">Manuale</string>
     <string name="theme_auto_mode_lightsensor">In base ai cambiamenti di luce</string>
     <string name="theme_auto_mode_twilight">In base all\'orario</string>
-    <string name="theme_auto_switch_mode_error">La modalità automatica in base alla luce è attiva. Lo switch manuale non è disponibile.</string>
+    <string name="theme_auto_switch_mode_error">La modalità automatica basata sulla luce è attiva. La commutazione manuale non è disponibile.</string>
 
     <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
     <string name="debug_LAN_category">Impostazioni LAN</string>

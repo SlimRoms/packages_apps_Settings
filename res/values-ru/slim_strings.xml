@@ -108,6 +108,7 @@
     <string name="volume_overlay_expandable">Расширяемая</string>
     <string name="volume_overlay_expanded">Расширенная</string>
     <string name="volume_overlay_disable">Нет</string>
+    <string name="volume_panel_bg_color_title">Цвет фона панели громкости</string>
 
     <string name="camera_sounds_title">Звук затвора камеры</string>
     <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
@@ -1056,6 +1057,8 @@
     <string name="recent_panel_expanded_mode_never">Никогда</string>
     <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
     <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
+    <string name="recent_panel_bg_color_title">Цвет фона</string>
+    <string name="trds_default_color">TRDS по умолчанию</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
@@ -1095,6 +1098,8 @@
     <string name="heads_up_time_out_10sec">10 секунд</string>
     <string name="heads_up_time_out_never">Никогда</string>
     <string name="heads_up_switch_label">Включить уведомления \"поверх\"</string>
+
+    <string name="reset_default_message">Reset default</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>

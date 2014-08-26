@@ -223,6 +223,7 @@
     <string name="volume_overlay_expandable">Rozszerzalny</string>
     <string name="volume_overlay_expanded">Rozszerzony</string>
     <string name="volume_overlay_disable">Wyłączony</string>
+	<string name="volume_panel_bg_color_title">Kolor tła panelu głośności</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Dźwięk migawki aparatu</string>
@@ -1208,9 +1209,10 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
     <string name="recent_panel_expanded_mode_auto">Auto (domyślne)</string>
     <string name="recent_panel_expanded_mode_always">Zawsze</string>
     <string name="recent_panel_expanded_mode_never">Nigdy</string>
-    <string name="recent_panel_bg_color_title">Kolor tła</string>
     <string name="recent_panel_show_topmost_title">Pokaż aktualne</string>
     <string name="recent_panel_show_topmost_summary">Nie wykluczaj aktualnie używanych aplikacji</string>
+	<string name="recent_panel_bg_color_title">Kolor tła</string>
+	<string name="trds_default_color">Domyślny motywu</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Wyświetl z lewej strony</string>

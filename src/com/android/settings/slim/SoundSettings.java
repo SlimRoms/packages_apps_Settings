@@ -28,6 +28,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -35,10 +36,15 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
+import android.view.VolumePanel;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class SoundSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -56,6 +62,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
+    private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
+    private static final String VOLUME_PANEL_BG_COLOR = "volume_panel_bg_color";
 
     // Request code for power notification ringtone picker
     private static final int REQUEST_CODE_POWER_NOTIFICATIONS_RINGTONE = 1;
@@ -71,6 +80,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCameraSounds;
     private ListPreference mAnnoyingNotifications;
     private CheckBoxPreference mVolumeKeysControlMedia;
+    private CheckBoxPreference mVolumeAdustSound;
+    private ListPreference mVolumeOverlay;
+    private ColorPickerPreference mVolumePanelBgColor;
+
+    private static final int MENU_RESET = Menu.FIRST;
+    private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -144,6 +159,72 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeKeysControlMedia.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM, 0) != 0);
         mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);
+
+        mVolumeAdustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUNDS);
+        mVolumeAdustSound.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) == 1);
+        mVolumeAdustSound.setOnPreferenceChangeListener(this);
+
+        mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
+        mVolumeOverlay.setOnPreferenceChangeListener(this);
+        int volumeOverlay = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.MODE_VOLUME_OVERLAY, VolumePanel.VOLUME_OVERLAY_EXPANDABLE,
+                UserHandle.USER_CURRENT);
+        mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
+        mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
+
+        // Volume panel background color
+        mVolumePanelBgColor =
+                (ColorPickerPreference) findPreference(VOLUME_PANEL_BG_COLOR);
+        mVolumePanelBgColor.setOnPreferenceChangeListener(this);
+        final int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_PANEL_BG_COLOR, 0x00ffffff);
+        String hexColor = String.format("#%08x", (0x00ffffff & intColor));
+        if (hexColor.equals("#00ffffff")) {
+            mVolumePanelBgColor.setSummary(R.string.trds_default_color);
+        } else {
+            mVolumePanelBgColor.setSummary(hexColor);
+        }
+        mVolumePanelBgColor.setNewPreviewColor(intColor);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.reset_default_message)
+                .setIcon(R.drawable.ic_settings_backup)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.shortcut_action_reset);
+        alertDialog.setMessage(R.string.qs_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                resetValues();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
+    }
+
+    private void resetValues() {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.VOLUME_PANEL_BG_COLOR, DEFAULT_BACKGROUND_COLOR);
+        mVolumePanelBgColor.setNewPreviewColor(DEFAULT_BACKGROUND_COLOR);
+        mVolumePanelBgColor.setSummary(R.string.trds_default_color);
     }
 
     @Override
@@ -207,6 +288,31 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM,
                     (Boolean) objValue ? 1 : 0);
+        }
+        if (preference == mVolumeAdustSound) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
+                (Boolean) objValue ? 1 : 0);
+        }
+        if (preference == mVolumeOverlay) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mVolumeOverlay.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MODE_VOLUME_OVERLAY, value);
+            mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
+        }
+        if (preference == mVolumePanelBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(objValue)));
+            if (hex.equals("#00ffffff")) {
+                preference.setSummary(R.string.trds_default_color);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_PANEL_BG_COLOR,
+                    intHex);
         }
         return true;
     }

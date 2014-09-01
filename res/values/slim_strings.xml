@@ -36,7 +36,7 @@
     <string name="saturday">Saturday</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">Advanced settings</string>
+    <string name="header_category_rom_settings">Personalization</string>
 
     <!-- Slim settings screens -->
     <string name="interface_settings_title">Interface</string>
@@ -185,9 +185,9 @@
     <string name="shake_events_normal_title">Active shake events</string>
     <string name="shake_events_disabled_title">Disabled apps</string>
     <string name="shake_events_disabled_summary">Shake will be disabled while in these apps</string>
-    <string name="shake_event_x_title">Activity to launch when shaken horizontally</string>
-    <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
-    <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
+    <string name="shake_event_x_title">Horizontal shake</string>
+    <string name="shake_event_y_title">Vertical shake</string>
+    <string name="shake_event_z_title">Back-and-forth shake</string>
 
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Shake sensitivity</string>
@@ -513,7 +513,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_qs_title">Notification &amp; QS drawer</string>
+    <string name="qs_title">Quick settings</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
@@ -1119,6 +1119,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <string name="lockscreen_settings_title">Lockscreen</string>
+
     <!-- Keyguard allow rotation -->
     <string name="lockscreen_rotation_title">Lockscreen rotation</string>
     <string name="lockscreen_rotation_portrait">Portrait only</string>
@@ -1248,7 +1250,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_moving_reboot_later_button">Reboot later</string>
 
     <!-- Heads up -->
-    <string name="heads_up_title">Heads up notification</string>
+    <string name="heads_up_title">Heads up</string>
     <string name="heads_up_expanded_title">Always expanded</string>
     <string name="heads_up_expanded_summary">Show heads up notification always expanded</string>
     <string name="heads_up_show_updates_title">Show updates</string>

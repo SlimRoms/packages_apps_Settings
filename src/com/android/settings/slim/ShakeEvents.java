@@ -105,9 +105,12 @@ public class ShakeEvents extends SettingsPreferenceFragment
     }
 
     private String returnFriendlyName(int setting) {
-        final String uri = Settings.System.getString(
+        String uri = Settings.System.getString(
                 getContentResolver(),
                 Settings.System.SHAKE_EVENTS_REGULAR[setting]);
+
+        if (uri == null)
+            uri = ButtonsConstants.ACTION_NULL;
 
         if (uri != null) {
             if (uri.startsWith("**")) {

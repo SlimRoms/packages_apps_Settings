@@ -19,11 +19,6 @@
     android:title="@string/sound_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:key="quiet_hours_settings"
-        android:fragment="com.android.settings.slim.QuietHours"
-        android:title="@string/quiet_hours_title" />
-
     <CheckBoxPreference
         android:key="camera_sounds"
         android:title="@string/camera_sounds_title"
@@ -41,6 +36,24 @@
         android:title="@string/volbtn_music_controls_title"
         android:summary="@string/volbtn_music_controls_summary"
         android:persistent="false" />
+
+    <CheckBoxPreference
+            android:key="volume_adjust_sounds"
+            android:title="@string/volume_adjust_sounds_enable_title"
+            android:summary="@string/volume_adjust_sounds_enable_summary"
+            android:defaultValue="true" />
+
+    <ListPreference
+            android:key="volume_overlay"
+            android:title="@string/volume_overlay_title"
+            android:entries="@array/volume_overlay_entries"
+            android:entryValues="@array/volume_overlay_values" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="volume_panel_bg_color"
+            android:title="@string/volume_panel_bg_color_title"
+            android:defaultValue="0x00ffffff"
+            alphaSlider="true" />
 
     <PreferenceCategory
         android:title="@string/notifications_category_title" />

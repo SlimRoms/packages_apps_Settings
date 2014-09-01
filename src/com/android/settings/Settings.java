@@ -80,6 +80,7 @@ import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
@@ -115,7 +116,7 @@ import java.util.List;
  * Top-level settings activity to handle single pane and double pane UI layout.
  */
 public class Settings extends PreferenceActivity
-        implements ButtonBarHandler, OnAccountsUpdateListener {
+        implements ButtonBarHandler {
 
     private static final String LOG_TAG = "Settings";
 
@@ -167,7 +168,6 @@ public class Settings extends PreferenceActivity
             R.id.language_settings,
             R.id.user_settings,
             R.id.account_settings,
-            R.id.account_add,
             R.id.system_section,
             R.id.date_time_settings,
             R.id.about_settings,
@@ -186,7 +186,6 @@ public class Settings extends PreferenceActivity
 
     private AuthenticatorHelper mAuthenticatorHelper;
     private Header mLastHeader;
-    private boolean mListeningToAccountUpdates;
 
     private boolean mBatteryPresent = true;
     private BroadcastReceiver mBatteryInfoReceiver = new BroadcastReceiver() {
@@ -320,9 +319,6 @@ public class Settings extends PreferenceActivity
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mListeningToAccountUpdates) {
-            AccountManager.get(this).removeOnAccountsUpdatedListener(this);
-        }
     }
 
     @Override
@@ -590,7 +586,8 @@ public class Settings extends PreferenceActivity
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-            if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
+            if (id == R.id.operator_settings || id == R.id.manufacturer_settings ||
+                        id == R.id.advanced_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
@@ -600,6 +597,11 @@ public class Settings extends PreferenceActivity
             } else if (id == R.id.bluetooth_settings) {
                 // Remove Bluetooth Settings if Bluetooth service is not available.
                 if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
+                    target.remove(i);
+                }
+            } else if (id == R.id.mobile_network_settings) {
+                // Remove mobile network settings if the device doesn't have telephony
+                if (Utils.isWifiOnly(this)) {
                     target.remove(i);
                 }
             } else if (id == R.id.data_usage_settings) {
@@ -619,9 +621,6 @@ public class Settings extends PreferenceActivity
                 if (!mBatteryPresent) {
                     target.remove(i);
                 }
-            } else if (id == R.id.account_settings) {
-                int headerIndex = i + 1;
-                i = insertAccountsHeaders(target, headerIndex);
             } else if (id == R.id.home_settings) {
                 if (!updateHomeSettingHeaders(header)) {
                     target.remove(i);
@@ -651,8 +650,8 @@ public class Settings extends PreferenceActivity
                 if (!showDev) {
                     target.remove(i);
                 }
-            } else if (id == R.id.account_add) {
-                if (um.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
+            } else if (id == R.id.superuser) {
+                if (!superuserEnabled()) {
                     target.remove(i);
                 }
             }
@@ -676,66 +675,18 @@ public class Settings extends PreferenceActivity
         }
     }
 
-    private int insertAccountsHeaders(List<Header> target, int headerIndex) {
-        String[] accountTypes = mAuthenticatorHelper.getEnabledAccountTypes();
-        List<Header> accountHeaders = new ArrayList<Header>(accountTypes.length);
-        for (String accountType : accountTypes) {
-            CharSequence label = mAuthenticatorHelper.getLabelForType(this, accountType);
-            if (label == null) {
-                continue;
-            }
-
-            Account[] accounts = AccountManager.get(this).getAccountsByType(accountType);
-            boolean skipToAccount = accounts.length == 1
-                    && !mAuthenticatorHelper.hasAccountPreferences(accountType);
-            Header accHeader = new Header();
-            accHeader.title = label;
-            if (accHeader.extras == null) {
-                accHeader.extras = new Bundle();
-            }
-            if (skipToAccount) {
-                accHeader.breadCrumbTitleRes = R.string.account_sync_settings_title;
-                accHeader.breadCrumbShortTitleRes = R.string.account_sync_settings_title;
-                accHeader.fragment = AccountSyncSettings.class.getName();
-                accHeader.fragmentArguments = new Bundle();
-                // Need this for the icon
-                accHeader.extras.putString(ManageAccountsSettings.KEY_ACCOUNT_TYPE, accountType);
-                accHeader.extras.putParcelable(AccountSyncSettings.ACCOUNT_KEY, accounts[0]);
-                accHeader.fragmentArguments.putParcelable(AccountSyncSettings.ACCOUNT_KEY,
-                        accounts[0]);
-            } else {
-                accHeader.breadCrumbTitle = label;
-                accHeader.breadCrumbShortTitle = label;
-                accHeader.fragment = ManageAccountsSettings.class.getName();
-                accHeader.fragmentArguments = new Bundle();
-                accHeader.extras.putString(ManageAccountsSettings.KEY_ACCOUNT_TYPE, accountType);
-                accHeader.fragmentArguments.putString(ManageAccountsSettings.KEY_ACCOUNT_TYPE,
-                        accountType);
-                if (!isMultiPane()) {
-                    accHeader.fragmentArguments.putString(ManageAccountsSettings.KEY_ACCOUNT_LABEL,
-                            label.toString());
-                }
-            }
-            accountHeaders.add(accHeader);
-            mAuthenticatorHelper.preloadDrawableForType(this, accountType);
+    private boolean superuserEnabled() {
+        int val = android.os.SystemProperties.getInt("persist.sys.root_access", 0);
+        switch (val) {
+            case 0:
+            case 2:
+                return false;
+            case 1:
+            case 3:
+                return true;
+            default:
+                return false;
         }
-
-        // Sort by label
-        Collections.sort(accountHeaders, new Comparator<Header>() {
-            @Override
-            public int compare(Header h1, Header h2) {
-                return h1.title.toString().compareTo(h2.title.toString());
-            }
-        });
-
-        for (Header header : accountHeaders) {
-            target.add(headerIndex++, header);
-        }
-        if (!mListeningToAccountUpdates) {
-            AccountManager.get(this).addOnAccountsUpdatedListener(this, null, true);
-            mListeningToAccountUpdates = true;
-        }
-        return headerIndex;
     }
 
     private boolean updateHomeSettingHeaders(Header header) {
@@ -833,6 +784,7 @@ public class Settings extends PreferenceActivity
 
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
+        private final MobileDataEnabler mMobileDataEnabler;
         public static ThemeEnabler mThemeEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
@@ -854,6 +806,7 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_CATEGORY;
             } else if (header.id == R.id.wifi_settings
                     || header.id == R.id.bluetooth_settings
+                    || header.id == R.id.mobile_network_settings
                     || header.id == R.id.theme_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
@@ -900,6 +853,7 @@ public class Settings extends PreferenceActivity
             // Switches inflated from their layouts. Must be done before adapter is set in super
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
+            mMobileDataEnabler = new MobileDataEnabler(context, new Switch(context));
             mThemeEnabler = new ThemeEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
         }
@@ -972,6 +926,8 @@ public class Settings extends PreferenceActivity
                         mWifiEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.bluetooth_settings) {
                         mBluetoothEnabler.setSwitch(holder.switch_);
+                    } else if (header.id == R.id.mobile_network_settings) {
+                        mMobileDataEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.theme_settings) {
                         mThemeEnabler.setSwitch(holder.switch_);
                     }
@@ -1047,12 +1003,14 @@ public class Settings extends PreferenceActivity
         public void resume() {
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
+            mMobileDataEnabler.resume();
             mThemeEnabler.resume();
         }
 
         public void pause() {
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
+            mMobileDataEnabler.pause();
             mThemeEnabler.resume();
         }
     }
@@ -1060,9 +1018,6 @@ public class Settings extends PreferenceActivity
     @Override
     public void onHeaderClick(Header header, int position) {
         boolean revert = false;
-        if (header.id == R.id.account_add) {
-            revert = true;
-        }
 
         super.onHeaderClick(header, position);
 
@@ -1106,14 +1061,6 @@ public class Settings extends PreferenceActivity
                     (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
             super.setListAdapter(new HeaderAdapter(this, getHeaders(), mAuthenticatorHelper, dpm));
         }
-    }
-
-    @Override
-    public void onAccountsUpdated(Account[] accounts) {
-        // TODO: watch for package upgrades to invalidate cache; see 7206643
-        mAuthenticatorHelper.updateAuthDescriptions(this);
-        mAuthenticatorHelper.onAccountsUpdated(this, accounts);
-        invalidateHeaders();
     }
 
     @Override

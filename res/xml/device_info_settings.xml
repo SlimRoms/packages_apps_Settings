@@ -17,12 +17,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
-        <!-- System update settings - launches activity -->
+        <!-- Remove this for now until we add this intent to SlimOTA -->
+        <!-- System update settings - launches activity
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
                 android:summary="@string/system_update_settings_list_item_summary">
             <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
-        </PreferenceScreen>
+        </PreferenceScreen>-->
 
 
         <PreferenceScreen android:key="additional_system_update_settings"

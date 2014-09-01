@@ -17,19 +17,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="security_category"
-        android:title="@string/lock_settings_title">
+        android:title="@string/lock_settings_title" />
 
         <PreferenceScreen
             android:key="unlock_set_or_change"
             android:title="@string/unlock_set_unlock_launch_picker_title"
             android:summary="@string/unlock_set_unlock_mode_pattern"
             android:persistent="false"/>
-
-        <PreferenceScreen
-            android:key="keyguard_style"
-            android:fragment="com.android.settings.slim.LockscreenStyle"
-            android:title="@string/lockscreen_style_title"/>
 
         <CheckBoxPreference
             android:key="visiblepattern"
@@ -60,6 +54,14 @@
             android:entries="@array/shake_secure_timeout_entries"
             android:entryValues="@array/shake_secure_timeout_values"
             android:persistent="false"/>
+
+    <PreferenceCategory
+        android:title="@string/additional_options_title" />
+
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.slim.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
 
         <CheckBoxPreference
             android:key="lock_before_unlock"
@@ -104,7 +106,5 @@
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

@@ -131,9 +131,12 @@ public class KeyguardShakeEvents extends SettingsPreferenceFragment
     }
 
     private String returnFriendlyName(int setting) {
-        final String uri = Settings.Secure.getString(
+        String uri = Settings.Secure.getString(
                 getContentResolver(),
                 Settings.Secure.LOCK_SHAKE_EVENTS[setting]);
+
+        if (uri == null)
+            uri = ButtonsConstants.ACTION_NULL;
 
         if (uri != null) {
             if (uri.startsWith("**")) {

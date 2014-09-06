@@ -900,6 +900,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Cambio utente</string>
     <string name="title_tile_networkmode">Modalità rete</string>
+    <string name="title_tile_network_adb">ADB su rete</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Timeout schermo</string>
     <string name="title_tile_quick_record">Registrazione rapida</string>

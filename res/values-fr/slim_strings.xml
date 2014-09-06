@@ -50,10 +50,10 @@
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Sélecteur de couleur</string>
-    <string name="press_color_to_apply">Appuyer sur la couleur pour valider</string>
+    <string name="press_color_to_apply">Appuyer sur la couleur pour l\'appliquer</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
-    <string name="set">Choisir</string>
+    <string name="set">Définir</string>
 
     <!-- About phone screen, slim version -->
     <string name="slim_version_title">Version Slim</string>
@@ -61,25 +61,25 @@
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Options de la LED</string>
-    <string name="notification_light_title">LED de notification</string>
+    <string name="notification_light_title">Voyant de notification</string>
     <string name="notification_light_general_title">Général</string>
     <string name="notification_light_applist_title">Applications</string>
     <string name="notification_light_phonelist_title">Téléphone</string>
     <string name="notification_light_use_custom">Utiliser des valeurs personnalisées</string>
-    <string name="notification_light_missed_call_title">Appels manqués</string>
+    <string name="notification_light_missed_call_title">Appel manqué</string>
     <string name="notification_light_voicemail_title">Messagerie vocale</string>
     <string name="notification_light_choose_app">Choisir une application</string>
     <string name="notification_light_add">Ajouter</string>
 
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Modifier les paramètres de la LED</string>
-    <string name="pulse_speed_title">Vitesse et durée du clignotement</string>
+    <string name="pulse_speed_title">Vitesse et durée d\'impulsion</string>
     <string name="default_time">Normal</string>
     <string name="custom_time">Personnalisé</string>
     <string name="dialog_test">Test</string>
     <string name="dialog_delete_title">Effacer</string>
     <string name="dialog_delete_message">Supprimer l\'élément sélectionné ?</string>
-    <string name="dialog_test_message">Éteindre l\'écran pour voir la notification en action. Annuler cette boîte de dialogue pour arrêter le test.</string>
+    <string name="dialog_test_message">Éteindre l\'écran pour voir la notification en action. Fermer cette boîte de dialogue pour annuler le test.</string>
     <string name="dialog_test_button">Annuler</string>
 
     <!-- Values for the notification light pulse spinners -->
@@ -96,8 +96,8 @@
     <string name="pulse_speed_very_slow">Très lent</string>
 
     <!-- Battery light settings -->
-    <string name="battery_light_title">LED pour la batterie</string>
-    <string name="battery_low_pulse_title">Clignotement si batterie faible</string>
+    <string name="battery_light_title">Voyant de batterie</string>
+    <string name="battery_low_pulse_title">Clignoter si batterie faible</string>
     <string name="battery_light_list_title">Couleurs pendant la charge</string>
     <string name="battery_light_low_color_title">Batterie faible</string>
     <string name="battery_light_medium_color_title">En charge</string>
@@ -106,7 +106,7 @@
     <!-- Privacy Guard -->
     <string name="app_security_title">Sécurité des applications</string>
     <string name="privacy_guard_dlg_title">Activer Privacy Guard ?</string>
-    <string name="privacy_guard_dlg_text">Quand Privacy Guard est activé, l\'application ne pourra pas accéder aux données personnelles comme les contacts, messages, la localisation ou le journal d\'appels.</string>
+    <string name="privacy_guard_dlg_text">Quand Privacy Guard est activé, l\'application n\'est pas en mesure d\'accéder aux données personnelles tel que les contacts, les messages, la localisation ou le journal d\'appels.</string>
     <string name="privacy_guard_dlg_system_app_text">En activant Privacy Guard pour une application préinstallée, l\'application ne pourra plus accéder aux données personnelles comme les contacts, messages, la localisation ou le journal d\'appels. Ceci peut causer un comportement inattendu des autres applications.</string>
     <string name="privacy_guard_default_title">Activé par défaut</string>
     <string name="privacy_guard_default_summary">Ne pas accéder aux données personnelles par défaut pour les applications fraichement installées.</string>
@@ -137,7 +137,7 @@
     <string name="wifi_menu_forget_all">Oublier tous les réseaux</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Barre de statut</string>
+    <string name="status_bar_title">Barre d\'état</string>
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_general_title">Général</string>
 
@@ -151,7 +151,7 @@
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">L\'horloge 24H est activée</string>
     <string name="enable_clock_weekday">Jour de la semaine</string>
-    <string name="enable_clock_weekday_summary">Jour de la semaine affiché avant l\'heure</string>
+    <string name="enable_clock_weekday_summary">Jour de la semaine abrégé devant l\'heure</string>
     <string name="right_clock">Horloge à droite</string>
     <string name="center_clock">Horloge au centre</string>
     <string name="dont_show">Ne pas montrer</string>
@@ -173,18 +173,18 @@
     <string name="clock_date_format_custom">Format personnalisé</string>
     <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge ?</string>
     <string name="status_bar_toggle_brightness">Contrôle de la luminosité</string>
-    <string name="status_bar_toggle_brightness_summary">Ajuster le niveau de luminosité en glissant le doigt sur la barre de statut.</string>
+    <string name="status_bar_toggle_brightness_summary">Ajuster le niveau de luminosité en glissant le doigt sur la barre d\'état.</string>
     <string name="status_bar_toggle_info">La luminosité automatique est activée.</string>
 
     <!-- Shake Events -->
-    <string name="shake_events_title">Shake events</string>
-    <string name="shake_events_enabled_title">Activer la surveillance des shake events</string>
-    <string name="shake_events_normal_title">Shake events actifs</string>
+    <string name="shake_events_title">Évènements de secousse</string>
+    <string name="shake_events_enabled_title">Activer la surveillance des secousses.</string>
+    <string name="shake_events_normal_title">Évènements actifs</string>
     <string name="shake_events_disabled_title">Applications désactivées</string>
-    <string name="shake_events_disabled_summary">Les shake events seront désactivés dans ces applications.</string>
-    <string name="shake_event_x_title">Activité à lancer quand secoué horizontalement</string>
-    <string name="shake_event_y_title">Activité à lancer quand secoué verticalement</string>
-    <string name="shake_event_z_title">Activité à lancer quand secoué d\'avant en arrière</string>
+    <string name="shake_events_disabled_summary">Les évènements de secousses seront désactivés dans ces applications.</string>
+    <string name="shake_event_x_title">Secousse horizontale</string>
+    <string name="shake_event_y_title">Secousse verticale</string>
+    <string name="shake_event_z_title">Secousse d\'avant en arrière</string>
 
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Sensibilité de la secousse</string>
@@ -219,6 +219,7 @@
     <string name="volume_overlay_expandable">Extensible</string>
     <string name="volume_overlay_expanded">Étendu</string>
     <string name="volume_overlay_disable">Désactiver</string>
+    <string name="volume_panel_bg_color_title">Couleur du panneau de volume</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Son d\'obturateur de l\'appareil photo</string>
@@ -359,7 +360,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="increasing_ring_volume_notice">Note :\nSi le volume de départ défini est plus grand que celui de la sonnerie, il sera réduit à son niveau.</string>
     <string name="increasing_ring_interval_title">Intervalle de progression</string>
     <string name="increasing_ring_interval_eachring">À chaque sonnerie</string>
-    <string name="increasing_ring_interval_half_second">0.5 seconde</string>
+    <string name="increasing_ring_interval_half_second">0,5 seconde</string>
     <string name="increasing_ring_interval_1second">1 seconde</string>
     <string name="increasing_ring_interval_2seconds">2 secondes</string>
     <string name="increasing_ring_interval_3seconds">3 secondes</string>
@@ -405,7 +406,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="shortcut_action_qs">Panneau des paramètres rapides</string>
     <string name="shortcut_action_smart">Smart Pulldown</string>
     <string name="shortcut_action_none">Aucun</string>
-    <string name="shortcut_action_power_menu">Menu Général</string>
+    <string name="shortcut_action_power_menu">Menu marche/arrêt</string>
     <string name="shortcut_action_torch">Torche</string>
     <string name="shortcut_action_ring_vib">Son/Vibreur</string>
     <string name="shortcut_action_ring_silent">Son/Silencieux</string>
@@ -460,9 +461,9 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="shortcuts_icon_picker_help">Aide</string>
     <string name="shortcuts_icon_picker_joystick">Joystick</string>
     <string name="shortcuts_icon_picker_key">Clés/Comptes</string>
-    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_laptop">PC Portable</string>
     <string name="shortcuts_icon_picker_notes">Notes</string>
-    <string name="shortcuts_icon_picker_luggage">Travel</string>
+    <string name="shortcuts_icon_picker_luggage">Voyage</string>
     <string name="shortcuts_icon_picker_maps">Maps</string>
     <string name="shortcuts_icon_picker_market">Play Store</string>
     <string name="shortcuts_icon_picker_movie">Films</string>
@@ -498,8 +499,8 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="select_custom_app_title">Sélectionner une application perso.</string>
     <string name="shortcuts_text_color_title">Couleur du texte</string>
     <string name="shortcuts_color_title">Couleur de l\'icône</string>
-    <string name="shortcuts_color_mode_title">Mode de couleur de l\'icône</string>
-    <string name="shortcuts_color_mode_summary">Changer le mode de couleur de l\'icône des raccourcis.</string>
+    <string name="shortcuts_color_mode_title">Icônes à colorer</string>
+    <string name="shortcuts_color_mode_summary">Choisir les icônes qui devront utiliser la couleur personnalisée.</string>
 
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_qs_title">Barre de notif. &amp; paramètres rapides</string>
@@ -538,7 +539,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="circle_battery_animation_speed_stock">Normale</string>
     <string name="circle_battery_animation_speed_fast">Rapide</string>
     <string name="battery_text_color">Couleur du texte de pourcentage</string>
-    <string name="battery_bolt_color">Bolt charging color</string>
     <string name="battery_text_charging_color">Couleur du texte de pourcentage en charge (15-89%)</string>
     <string name="battery_circle_charging_color">Couleur du cercle pendant la charge</string>
     <string name="battery_style_reset_message">Réinitialiser toutes les couleurs de batterie ?</string>
@@ -546,22 +546,18 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <!-- Category title for power sound notification specific Settings.
          [CHAR LIMIT=40] -->
     <string name="power_notifications_category_title">Son d\'alimentation</string>
-    <!-- Sound settings, power notifications enable/disable, setting check box label -->
     <string name="power_notifications_enable_title">Activer</string>
     <string name="power_notifications_enable_summary">Alerter lors du branchement ou débranchement de la source d\'alimentation.</string>
-    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
     <string name="power_notifications_vibrate_title">Vibreur</string>
-    <!-- Sound settings, power notifications ringtone selection, preference label -->
     <string name="power_notifications_ringtone_title">Son de notification</string>
-    <!-- Sound settings, power notifications label for ringtone == none -->
     <string name="power_notifications_ringtone_silent">Silencieux</string>
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Options de navigation</string>
-    <string name="power_menu_title">Menu Général</string>
+    <string name="power_menu_title">Menu marche/arrêt</string>
 
     <!-- Power menu -->
-    <string name="power_menu_style_summary">Modifier les couleurs du menu Général</string>
+    <string name="power_menu_style_summary">Modifier les couleurs du menu marche/arrêt</string>
 
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 dp (Par défaut)</string>
@@ -582,9 +578,9 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="navigation_bar">Barre de navigation</string>
     <string name="navbar_button_cat">Boutons de la barre de navigation</string>
     <string name="title_pref_menu_location">Position du bouton Menu</string>
-    <string name="summary_pref_menu_location">Où souhaitez-vous voir apparaître le bouton Menu ?</string>
+    <string name="summary_pref_menu_location">Choisir le côté où le bouton Menu doit être affiché.</string>
     <string name="title_pref_menu_display">Visibilité du bouton Menu</string>
-    <string name="summary_pref_menu_display">Quand et comment voulez-vous voir le bouton Menu ?</string>
+    <string name="summary_pref_menu_display">Choisir quand le bouton Menu doit être affiché.</string>
     <string name="navbar_enable_bar">Barre de navigation</string>
     <string name="navbar_enable_bar_summary">Activer la barre de navigation.</string>
     <string name="navigation_bar_height_title">Hauteur de la barre de navigation</string>
@@ -603,18 +599,17 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="navigation_bar_warning_no_navigation_present">Aucun autre moyen de navigation actuellement activé. Désactiver la barre de navigation peut rendre votre appareil inutilisable. Voulez-vous activer le SlimPIE ?</string>
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style_summary">Modifier la couleur des boutons de la barre de navigation.</string>
+    <string name="nav_bar_button_style_summary">Modifier les couleurs des boutons de la barre de navigation.</string>
     <string name="button_transparency_title">Transparence des boutons</string>
-    <string name="nav_button_color_mode_summary">Modifier le mode de couleur des boutons de la barre de navigation.</string>
     <string name="navigation_bar_glow_tint_title">Couleur du halo</string>
 
     <!-- Advanced settings -->
     <string name="advanced_options_settings_title">Options avancées</string>
 
     <!-- MediaScanner behavior on boot -->
-    <string name="media_scanner_on_boot_title">Scanner de médias au démarrage</string>
+    <string name="media_scanner_on_boot_title">Scan des médias au démarrage</string>
     <string name="media_scanner_on_boot_enabled">Activé</string>
-    <string name="media_scanner_on_boot_ask">Toujours demander (notification)</string>
+    <string name="media_scanner_on_boot_ask">Sur demande (notification)</string>
     <string name="media_scanner_on_boot_disabled">Désactivé</string>
 
     <!-- Basic Numbers -->
@@ -680,22 +675,22 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="quiet_hours_auto_enabled">Tous les numéros</string>
     <string name="quiet_hours_auto_contacts">Contacts uniquement</string>
     <string name="quiet_hours_auto_starred">Contacts préférés uniquement</string>
-    <string name="quiet_hours_bypass_group">Outrepasser les heures silencieuses</string>
+    <string name="quiet_hours_bypass_group">Contourner les heures silencieuses</string>
     <string name="quiet_hours_sms_code_null">[Alarme]</string>
     <string name="quiet_hours_sms_bypass_title">SMS à vérifier</string>
     <string name="quiet_hours_sms_code_title">Mot-clé recherché</string>
-    <string name="quiet_hours_sms_code_explain">Si un SMS entrant contient ce mot-clé, les heures silencieuses seront outrepassées et votre appareil émettra un son.</string>
+    <string name="quiet_hours_sms_code_explain">Si un SMS entrant contient ce mot-clé, les heures silencieuses seront contournées et votre appareil émettra un son.</string>
     <string name="quiet_hours_call_bypass_title">Appels à vérifier</string>
     <string name="quiet_hours_calls_required_title">Nombre d\'appels en 30 minutes</string>
-    <string name="quiet_hours_calls_required_summary">" appels pour outrepasser les heures silencieuses."</string>
+    <string name="quiet_hours_calls_required_summary">" appels pour contourner les heures silencieuses."</string>
     <string name="quiet_hours_bypass_ringtone_title">Sonnerie à jouer</string>
     <string name="quiet_hours_bypass_ringtone_loop_title">Sonnerie en boucle</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_on">La sonnerie sera jouée en boucle jusqu\'à annulation.</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_off">La sonnerie sera jouée une seule fois.</string>
     <string name="quiet_hours_alarm_dismiss">Annuler l\'alarme</string>
     <string name="quiet_hours_alarm_and">" et "</string>
-    <string name="quiet_hours_alarm_dialog_title">HEURES SILENCIEUSES OUTREPASSÉES</string>
-    <string name="quiet_hours_alarm_message">" a requis les conditions pour outrepasser les heures silencieuses !"</string>
+    <string name="quiet_hours_alarm_dialog_title">HEURES SILENCIEUSES CONTOURNÉES</string>
+    <string name="quiet_hours_alarm_message">" a satisfait les exigences pour contourner les heures silencieuses !"</string>
 
     <!-- time range preference -->
     <string name="start_time_title">Début</string>
@@ -704,7 +699,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Désactivée</string>
-    <string name="display_rotation_unit">degrés</string>
+    <string name="display_rotation_unit">degré(s)</string>
     <string name="display_rotation_category_title">Modes de rotation</string>
     <string name="display_rotation_0_title">0 degré</string>
     <string name="display_rotation_90_title">90 degrés</string>
@@ -750,7 +745,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="icon_picker_facebook">Facebook</string>
     <string name="icon_picker_gallery">Galerie</string>
     <string name="icon_picker_google_small">Google (petit)</string>
-    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googleplus">Google+</string>
     <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_sms">Messages</string>
@@ -765,7 +760,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
 
     <!--Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
-    <string name="unlock_quick_unlock_control_summary">Déverouille automatiquement lorsque le PIN/mot de passe correct est entré.</string>
+    <string name="unlock_quick_unlock_control_summary">Déverouille automatiquement l\'appareil lorsque le PIN/mot de passe correct est entré.</string>
 
     <!-- Lockscreen style settings -->
     <string name="lockscreen_style_reset_message">Réinitialiser toutes les couleurs de l\'écran de verrouillage ?</string>
@@ -775,7 +770,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="lockscreen_lock_icon_default">Icône par défaut</string>
     <string name="lockscreen_colorize_handle_title">Couleur de l\'icône du Pad</string>
     <string name="lockscreen_colorize_handle_summary">La couleur sera appliquée à l\'icône du Pad.</string>
-    <string name="lockscreen_style_title">Style de thème</string>
+    <string name="lockscreen_style_title">Style des éléments</string>
     <string name="lockscreen_frame_color_title">Couleur du cadre</string>
     <string name="lockscreen_frame_color_summary">Couleur du cadre des widgets et de l\'icône.</string>
     <string name="lockscreen_lock_color_title">Couleur du verrou</string>
@@ -887,6 +882,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="title_tile_wifiap">Point d\'accès Wi-Fi</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Utilisateur</string>
+    <string name="title_tile_network_adb">ADB via réseau</string>
     <string name="title_tile_networkmode">Mode réseau</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Extinction de l\'écran</string>
@@ -897,7 +893,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="title_tile_music">Musique</string>
     <string name="title_tile_reboot">Redémarrer</string>
     <string name="title_tile_theme">Sélecteur de thème</string>
-    <string name="title_tile_shake">Shake events</string>
+    <string name="title_tile_shake">Évènements de secousse</string>
     <string name="dynamic_tile_ime_switcher">Sélecteur de clavier</string>
     <string name="dynamic_tile_usb_tether">Partage de co. via USB</string>
     <string name="dynamic_tile_alarm">Alarme</string>
@@ -927,8 +923,8 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="tiles_per_row_title">Tuiles par ligne</string>
     <string name="tiles_per_row_duplicate_landscape_title">Échelle de quantité</string>
     <string name="tiles_per_row_duplicate_landscape_summary">Double le nombre de tuiles par ligne en mode paysage.</string>
-    <string name="quick_tiles_bg_color_title">Couleur de fond des tuiles</string>
-    <string name="quick_tiles_bg_pressed_color_title">Couleur de fond des tuiles appuyées</string>
+    <string name="quick_tiles_bg_color_title">Couleur du fond des tuiles</string>
+    <string name="quick_tiles_bg_pressed_color_title">Couleur du fond des tuiles appuyées</string>
     <string name="quick_tiles_text_color_title">Couleur du texte des tuiles</string>
     <string name="quick_tiles_alpha_title">Transparence du fond des tuiles</string>
     <string name="qs_style_reset_message">Réinitialiser toutes les couleurs ?</string>
@@ -948,7 +944,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
 
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Quick Pulldown</string>
-    <string name="summary_quick_pulldown">Glisser sur le côté %1$s de la barre de statut affiche les paramètres rapides.</string>
+    <string name="summary_quick_pulldown">Glisser sur le côté %1$s de la barre d\'état affiche les paramètres rapides.</string>
     <string name="quick_pulldown_off">Désactivé</string>
     <string name="quick_pulldown_left">gauche</string>
     <string name="quick_pulldown_right">droit</string>
@@ -957,9 +953,9 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="smart_pulldown_title">Smart Pulldown</string>
     <string name="smart_pulldown_summary">Ouvre les paramètres rapides lorsqu\'il n\'y a pas de notification %1$s.</string>
     <string name="smart_pulldown_off">Désactivé</string>
-    <string name="smart_pulldown_dismissable">effaçable</string>
-    <string name="smart_pulldown_persistent">persistante</string>
-    <string name="smart_pulldown_all">effaçable ou persistante</string>
+    <string name="smart_pulldown_dismissable">Amovible</string>
+    <string name="smart_pulldown_persistent">Persistante</string>
+    <string name="smart_pulldown_all">Amovible ou persistante</string>
 
     <!-- QuickSettings: Quick Collapse -->
     <string name="title_collapse_panel">Fermeture rapide</string>
@@ -1004,9 +1000,9 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="theme_settings_title">The real dark slim</string>
     <string name="theme_auto_mode_title">Changer de thème</string>
     <string name="theme_auto_mode_off">Manuel</string>
-    <string name="theme_auto_mode_lightsensor">Selon les conditions d\'éclairage</string>
+    <string name="theme_auto_mode_lightsensor">Selon la luminosité ambiante</string>
     <string name="theme_auto_mode_twilight">Selon l\'heure</string>
-    <string name="theme_auto_switch_mode_error">Le changement automatique selon les conditions d\'éclairage est activé. Le changement manuel n\'est pas possible.</string>
+    <string name="theme_auto_switch_mode_error">Le changement automatique selon la luminosité ambiante est activé. Le changement manuel n\'est pas possible.</string>
 
     <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
     <string name="debug_LAN_category">Paramètres LAN</string>
@@ -1073,7 +1069,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="minimum_vibration_duration">Durée minimum de la vibration</string>
 
     <!-- ListView animation -->
-    <string name="interface_settings_animation_title">Options d\'animation</string>
+    <string name="interface_settings_animation_title">Options des animations</string>
     <string name="listview_animation_title">Animations des listes</string>
     <string name="listview_off">Par défaut</string>
     <string name="listview_wave_left">Vague (gauche)</string>
@@ -1099,7 +1095,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
 
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Redémarrage avancé</string>
-    <string name="advanced_reboot_summary">Inclure dans le menu Général la possibilité de redémarrer dans le recovery et le bootloader.</string>
+    <string name="advanced_reboot_summary">Inclure dans le menu marche/arrêt la possibilité de redémarrer dans le recovery et le bootloader.</string>
     <string name="advanced_reboot_dialog_title">Redémarrage avancé</string>
     <string name="advanced_reboot_disabled">Désactiver</string>
     <string name="advanced_reboot_hide_on_keyguard">Désactiver si verrouillé</string>
@@ -1109,7 +1105,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="lockscreen_rotation_title">Rotation de l\'écran de verrouillage</string>
     <string name="lockscreen_rotation_portrait">Portrait uniquement</string>
     <string name="lockscreen_rotation_landscape">Paysage uniquement</string>
-    <string name="lockscreen_rotation_summary_extra">(Rotation automatique)</string>
+    <string name="lockscreen_rotation_summary_extra">(rotation automatique).</string>
 
     <!-- Keyguard always show battery -->
     <string name="lockscreen_battery_status_title">État de la batterie</string>
@@ -1155,7 +1151,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="pie_icon_color_mode_dialog_title">Colorer</string>
     <string name="pie_icon_color_mode_summary">Modifier la couleur de l\'icône du bouton.</string>
     <string name="pie_trigger_note_title">Note</string>
-    <string name="pie_trigger_note_summary">Pour éviter les conflits avec la barre de statut ou la barre de navigation, les déclencheurs sur ces côtés sont automatiquement désactivés si un ou tous sont disponibles.</string>
+    <string name="pie_trigger_note_summary">Pour éviter les conflits avec la barre d\'état ou la barre de navigation, les déclencheurs sur ces côtés sont automatiquement désactivés si un ou tous sont disponibles.</string>
     <string name="pie_background_color_title">Couleur du fond</string>
     <string name="pie_snap_color_title">Couleur du point d\'ancrage</string>
     <string name="pie_text_color_title">Couleur du texte</string>
@@ -1195,7 +1191,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="noti_reminder_interval_3s">3 secondes</string>
     <string name="noti_reminder_interval_3dot5s">3,5 secondes</string>
     <string name="noti_reminder_interval_4s">4 secondes</string>
-
 
     <!-- Recent panel -->
     <string name="recent_panel_category">Panneau d\'applications récentes</string>

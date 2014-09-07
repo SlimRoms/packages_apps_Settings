@@ -943,7 +943,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="quick_tiles_bg_pressed_color_title">Colore sfondo tiles premute</string>
     <string name="quick_tiles_text_color_title">Colore testo tiles</string>
     <string name="quick_tiles_alpha_title">Trasparenza sfondo tiles</string>
-    <string name="qs_style_reset_message">Resettare tutti i colori a default?</string>
+    <string name="qs_style_reset_message">Resettare a default?</string>
 
     <string name="pref_network_mode_title">Modalità rete</string>
     <string name="pref_screentimeout_mode_title">Modalità timeout schermo</string>

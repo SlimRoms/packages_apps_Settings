@@ -326,6 +326,7 @@
     <string name="title_tile_wifiap">Точка доступа Wi-Fi</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Пользователи</string>
+    <string name="title_tile_network_adb">ADB по сети</string>
     <string name="title_tile_volume">Громкость</string>
     <string name="title_tile_networkmode">Режим сети</string>
     <string name="title_tile_reboot">Перезагрузка</string>
@@ -1057,8 +1058,10 @@
     <string name="recent_panel_expanded_mode_never">Никогда</string>
     <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
     <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
-    <string name="recent_panel_bg_color_title">Цвет фона</string>
     <string name="trds_default_color">TRDS по умолчанию</string>
+    <string name="recent_panel_bg_color_title">Цвет фона панели</string>
+    <string name="recent_card_bg_color_title">Цвет фона карточки</string>
+    <string name="recent_card_text_color_title">Цвет текста карточки</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>

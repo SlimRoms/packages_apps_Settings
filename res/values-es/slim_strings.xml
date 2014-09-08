@@ -898,6 +898,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_wifiap">Wi-Fi AP</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Selector de usuario</string>
+    <string name="title_tile_network_adb">ADB en red</string>
     <string name="title_tile_networkmode">Modo de red</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Tiempo espera pantalla</string>
@@ -1225,6 +1226,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_show_topmost_summary">Incluir la aplicación en uso en primer plano en la vista de aplicaciones recientes</string>
     <string name="recent_panel_bg_color_title">Color del fondo</string>
     <string name="trds_default_color">Predeterminado TRDS</string>
+    <string name="recent_card_bg_color_title">Color de fondo de tarjetas</string>
+    <string name="recent_card_text_color_title">Color de texto de tarjetas</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostrar en el lado izquierdo</string>

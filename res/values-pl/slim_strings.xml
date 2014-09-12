@@ -1211,8 +1211,10 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
     <string name="recent_panel_expanded_mode_never">Nigdy</string>
     <string name="recent_panel_show_topmost_title">Pokaż aktualne</string>
     <string name="recent_panel_show_topmost_summary">Nie wykluczaj aktualnie używanych aplikacji</string>
-	<string name="recent_panel_bg_color_title">Kolor tła</string>
 	<string name="trds_default_color">Domyślny motywu</string>
+	<string name="recent_panel_bg_color_title">Kolor tła</string>
+	<string name="recent_card_bg_color_title">Kolor tła kart</string>
+    <string name="recent_card_text_color_title">Kolor tekstu kart</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Wyświetl z lewej strony</string>

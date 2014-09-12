@@ -247,7 +247,7 @@
     <!-- Keyboard and Input ASS methods  -->
     <string name="title_keyboard_input">Opzioni avanzate</string>
     <string name="disable_fullscreen_keyboard_title">Disattiva tastiera a schermo intero</string>
-    <string name="disable_fullscreen_keyboard_summary">La tastiera in modalità landescape non riempirà lo schermo</string>
+    <string name="disable_fullscreen_keyboard_summary">La tastiera in modalità landscape non riempirà lo schermo</string>
     <string name="volume_key_cursor_control_title">Controllo cursore tramite tasti volume</string>
     <string name="volume_key_cursor_control_on">Volume su/giu sposta il cursore a sinistra/destra</string>
     <string name="volume_key_cursor_control_on_reverse">Volume su/giu sposta il cursore a destra/sinistra</string>
@@ -1014,7 +1014,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="stylus_icon_enabled_summary">Usa icona puntamento quando lo stilo è in uso</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">Modalità scura TRDS</string>
+    <string name="theme_settings_title">Modalità TRDS</string>
     <string name="theme_auto_mode_title">Cambia modalità</string>
     <string name="theme_auto_mode_off">Manuale</string>
     <string name="theme_auto_mode_lightsensor">In base ai cambiamenti di luce</string>

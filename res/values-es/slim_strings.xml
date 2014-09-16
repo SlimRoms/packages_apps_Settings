@@ -1268,6 +1268,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_time_out_never">Nunca</string>
     <string name="heads_up_switch_label">Habilitar notificaciones "heads up"</string>
     <string name="reset_default_message">Restablecer predeterminado</string>
+    <string name="heads_up_bg_color_title">Color de fondo</string>
+    <string name="heads_up_text_color_title">Color de texto</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Gestos con pantalla apagada</string>

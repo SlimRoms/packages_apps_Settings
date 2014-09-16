@@ -1200,6 +1200,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="heads_up_time_out_10sec">10 Sekunden</string>
     <string name="heads_up_time_out_never">Nie</string>
     <string name="heads_up_switch_label">Heads Up Benachrichtigungen aktivieren</string>
+    <string name="heads_up_bg_color_title">Hintergrundfarbe</string>
+    <string name="heads_up_text_color_title">Textfarbe</string>
 
     <string name="reset_default_message">Standard wiederherstellen</string>
 

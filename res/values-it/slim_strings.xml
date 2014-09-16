@@ -1271,6 +1271,8 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="heads_up_time_out_10sec">10 secondi</string>
     <string name="heads_up_time_out_never">Mai</string>
     <string name="heads_up_switch_label">Attiva le notifiche heads up</string>
+    <string name="heads_up_bg_color_title">Colore sfondo</string>
+    <string name="heads_up_text_color_title">Colore testo</string>
 
     <string name="reset_default_message">Resetta a default</string>
 

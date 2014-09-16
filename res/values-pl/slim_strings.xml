@@ -1255,6 +1255,8 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
     <string name="heads_up_time_out_never">Nigdy</string>
     <string name="heads_up_switch_label">Włącz powiadomienia Heads-Up</string>
     <string name="reset_default_message">Przywróć domyślne </string>
+    <string name="heads_up_bg_color_title">Kolor tła</string>
+    <string name="heads_up_text_color_title">Kolor tekstu</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Gesty przy wyłączonym ekranie</string>

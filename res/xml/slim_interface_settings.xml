@@ -25,6 +25,11 @@
         android:title="@string/battery_icon_title" />
 
     <PreferenceScreen
+        android:fragment="com.android.settings.slim.HeadsUp"
+        android:key="heads_up"
+        android:title="@string/heads_up_title" />
+
+    <PreferenceScreen
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
         android:title="@string/notification_drawer_qs_title" />

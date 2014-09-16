@@ -1249,6 +1249,8 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
     <string name="heads_up_time_out_10sec">10 secondes</string>
     <string name="heads_up_time_out_never">Illimité</string>
     <string name="heads_up_switch_label">Activer les notifications Heads Up</string>
+    <string name="heads_up_bg_color_title">Couleur du fond</string>
+    <string name="heads_up_text_color_title">Couleur du texte</string>
 
     <string name="reset_default_message">Réinitialiser</string>
 

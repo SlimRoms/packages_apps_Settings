@@ -1101,6 +1101,8 @@
     <string name="heads_up_time_out_10sec">10 секунд</string>
     <string name="heads_up_time_out_never">Никогда</string>
     <string name="heads_up_switch_label">Включить уведомления \"поверх\"</string>
+    <string name="heads_up_bg_color_title">Цвет фона</string>
+    <string name="heads_up_text_color_title">Цвет текста</string>
 
     <string name="reset_default_message">Reset default</string>
 

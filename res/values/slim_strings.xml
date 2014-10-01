@@ -1283,4 +1283,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Bluetooth accept all Filestypes -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
 
+    <!-- Disable Smart Cover -->
+    <string name="disable_smart_cover_title">Force disable smart cover window</string>
+    <string name="disable_smart_cover_desc">Check if your phone has a smart cover and you do not wish to trigger the smart window</string>
+
 </resources>

@@ -595,9 +595,9 @@
     <string name="shortcut_action_help_shortcut">ярлык</string>
     <string name="shortcut_action_help_button">кнопка</string>
     <string name="shortcut_action_help_app">приложение</string>
-    <string name="shortcut_action_help_icon">, в процессе выбора значка покажет настройки модификации</string>
-    <string name="shortcut_action_help_main">Чтобы добавить %1$s, нажмите значок \&quot;Добавить\&quot;.  Когда %1$s добавлено, выбором ряда, можно изменить цель%2$s\n\nЧтобы удалить %1$s, сдвиньте ряд горизонтально.  Переопределить %1$s в списке можно вертикальным перетаскиванием привязки слева.\n\nЧтобы сбросить все к значениям по умолчанию, нажмите значок сброса.</string>
-    <string name="shortcut_action_help_delete_last_entry">Удаление последнего %1$s в списке отключит эту возможность.</string>
+    <string name="shortcut_action_help_icon">; в процессе выбора значка будут показаны настройки модификации.</string>
+    <string name="shortcut_action_help_main">Чтобы добавить %1$s, нажмите значок \&quot;Добавить\&quot;.  Когда %1$s добавлен(а)(о), выбором ряда можно изменить цель%2$s\n\nЧтобы удалить %1$s, сдвиньте ряд по горизонтали. Переопределить %1$s в списке можно вертикальным перетаскиванием привязки слева.\n\nЧтобы сбросить все к значениям по умолчанию, нажмите значок сброса.</string>
+    <string name="shortcut_action_help_delete_last_entry">Удаление последнего(-ей) %1$s в списке отключит эту возможность.</string>
     <string name="icon_picker_type">Выбрать тип значка:</string>
     <string name="icon_default">По умолчанию</string>
     <string name="icon_presets">Системные значки</string>

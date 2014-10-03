@@ -1287,4 +1287,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
+    <!-- Disable Smart Cover -->
+    <string name="disable_smart_cover_title">Force disable smart cover window</string>
+    <string name="disable_smart_cover_desc">Check if your phone has a smart cover and you do not wish to trigger the smart window</string>
+
 </resources>

@@ -57,7 +57,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
-
+    private static final String KEY_DISABLE_SMART_COVER = "disable_smart_cover";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -79,6 +79,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_270 = "270";
 
     private PreferenceScreen mDisplayRotationPreference;
+    private CheckBoxPreference mDisableSmartCover;
     private WarnedListPreference mFontSizePref;
     private CheckBoxPreference mNotificationPulse;
     private PreferenceCategory mLightOptions;
@@ -169,6 +170,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 updateBatteryPulseDescription();
             }
+
+        // Disable smart cover
+         mDisableSmartCover = (CheckBoxPreference) findPreference(KEY_DISABLE_SMART_COVER);
+         if (mDisableSmartCover != null) {
+             mDisableSmartCover.setChecked(Settings.System.getInt(resolver,
+                     Settings.System.DISABLE_SMART_COVER, 0) == 1);
+             mDisableSmartCover.setOnPreferenceChangeListener(this);
+         }
 
             //If we're removed everything, get rid of the category
             if (mLightOptions.getPreferenceCount() == 0) {
@@ -500,6 +509,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
+        } else if (KEY_DISABLE_SMART_COVER.equals(key)) {
+             Settings.System.putInt(getContentResolver(),
+                     Settings.System.DISABLE_SMART_COVER,
+                     ((Boolean) objValue).booleanValue() ? 1 : 0);
         }
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),

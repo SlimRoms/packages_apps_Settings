@@ -96,8 +96,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
 
-    private int[] mSmartCoverCoords;
-
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
         @Override
@@ -171,16 +169,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 updateBatteryPulseDescription();
             }
 
-        mSmartCoverCoords = getResources().getIntArray(
-                com.android.internal.R.array.config_smartCoverWindowCoords);
-        if(mSmartCoverCoords.length != 4) {
-            // make sure there are exactly 4 dimensions provided, or ignore the values
-            mSmartCoverCoords = null;
-        }
-
         // Disable smart cover
          mDisableSmartCover = (CheckBoxPreference) findPreference(KEY_DISABLE_SMART_COVER);
-         if (mDisableSmartCover != null && mSmartCoverCoords != null) {
+         if (mDisableSmartCover != null) {
              mDisableSmartCover.setChecked(Settings.System.getInt(resolver,
                      Settings.System.DISABLE_SMART_COVER, 0) == 1);
              mDisableSmartCover.setOnPreferenceChangeListener(this);

@@ -76,7 +76,7 @@
     <string name="thursday">Четверг</string>
     <string name="friday">Пятница</string>
     <string name="saturday">Суббота</string>
-    <string name="header_category_rom_settings">РАСШИРЕННЫЕ НАСТРОЙКИ</string>
+    <string name="header_category_rom_settings">ПЕРСОНАЛИЗАЦИЯ</string>
     <string name="ok">OK</string>
     <string name="interface_settings_title">Интерфейс</string>
     <string name="navigation_settings_title">Навигация</string>
@@ -163,9 +163,9 @@
     <string name="shake_events_normal_title">Активные действия встряхивания</string>
     <string name="shake_events_disabled_title">Приложения-исключения</string>
     <string name="shake_events_disabled_summary">Отключить встряхивание в следующих приложениях</string>
-    <string name="shake_event_x_title">Запускать при горизонтальном встряхивании</string>
-    <string name="shake_event_y_title">Запускать при вертикальном встряхивании</string>
-    <string name="shake_event_z_title">Запускать при встряхивании туда-сюда</string>
+    <string name="shake_event_x_title">Горизонтальное встряхивание</string>
+    <string name="shake_event_y_title">Вертикальное встряхивание</string>
+    <string name="shake_event_z_title">Встряхивание туда-сюда</string>
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Чувствительность встряхивания</string>
     <string name="shake_sensitivity_summary">Общая чувствительность всех настроек встряхивания</string>
@@ -728,7 +728,7 @@
     <string name="shortcuts_color_title">Цвет значка</string>
     <string name="shortcuts_color_mode_title">Режим цвета значка</string>
     <string name="shortcuts_color_mode_summary">Изменить режим цвета значка ярлыка</string>
-    <string name="notification_drawer_qs_title">Панель уведомлений и быстрых настроек</string>
+    <string name="qs_title">Быстрые настройки</string>
     <string name="battery_icon_title">Значок батареи</string>
     <string name="battery_status_icon">Значок</string>
     <string name="battery_status_percentage">Проценты</string>
@@ -904,6 +904,8 @@
     <string name="advanced_reboot_disabled">Выключено</string>
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
+
+    <string name="lockscreen_settings_title">Экран блокировки</string>
 
     <!-- Keyguard allow rotation -->
     <string name="lockscreen_rotation_title">Вращение экрана блокировки</string>
@@ -1108,4 +1110,8 @@
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Предотвращать случайные пробуждения</string>
+    <string name="proximity_wake_summary">Проверять датчик приближения перед включением экрана</string>
 </resources>

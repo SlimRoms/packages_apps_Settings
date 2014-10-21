@@ -36,7 +36,7 @@
     <string name="saturday">Sabato</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">Impostazioni avanzate</string>
+    <string name="header_category_rom_settings">Personalizzazione</string>
 
     <!-- Slim settings screens -->
     <string name="interface_settings_title">Interfaccia</string>
@@ -185,9 +185,9 @@
     <string name="shake_events_normal_title">Eventi shake attivi</string>
     <string name="shake_events_disabled_title">Apps disattivate</string>
     <string name="shake_events_disabled_summary">Lo shake sarà disattivato durante l\'uso di queste apps</string>
-    <string name="shake_event_x_title">Attività da lanciare dopo uno shake orizzontale</string>
-    <string name="shake_event_y_title">Attività da lanciare dopo uno shake verticale</string>
-    <string name="shake_event_z_title">Attività da lanciare dopo uno shake fronte-retro</string>
+    <string name="shake_event_x_title">Shake orizzontale</string>
+    <string name="shake_event_y_title">Shake verticale</string>
+    <string name="shake_event_z_title">Shake fronte-retro</string>
 
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Sensibilità shake</string>
@@ -223,6 +223,7 @@
     <string name="volume_overlay_expandable">Espandibile</string>
     <string name="volume_overlay_expanded">Espanso</string>
     <string name="volume_overlay_disable">Disattivato</string>
+    <string name="volume_panel_bg_color_title">Colore pannello Volume</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="camera_sounds_title">Suono scatto fotocamera</string>
@@ -512,7 +513,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="shortcuts_color_mode_summary">Cambia la modalità colore delle icone dei collegamenti</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_qs_title">Notifiche e Quick Settings</string>
+    <string name="qs_title">Quick Settings</string>
     <string name="notification_drawer_title">Pannello notifiche</string>
     <string name="notification_shortcuts_settings_title">Collegamenti</string>
     <string name="notification_shortcuts_settings_summary">Mostra collegamenti nel gestore notifiche</string>
@@ -1118,6 +1119,8 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="advanced_reboot_hide_on_keyguard">Nascondi nella lockscreen</string>
     <string name="advanced_reboot_show_always">Mostra sempre</string>
 
+    <string name="lockscreen_settings_title">Schermata di sblocco</string>
+
     <!-- Keyguard allow rotation -->
     <string name="lockscreen_rotation_title">Rotazione lockscreen</string>
     <string name="lockscreen_rotation_portrait">Solo portrait</string>
@@ -1247,7 +1250,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
     <string name="app_moving_reboot_later_button">Riavvia più tardi</string>
 
     <!-- Heads up -->
-    <string name="heads_up_title">Notifiche avanzate heads up</string>
+    <string name="heads_up_title">Heads up</string>
     <string name="heads_up_expanded_title">Sempre espanse</string>
     <string name="heads_up_expanded_summary">Mostra notifiche heads up sempre espanse</string>
     <string name="heads_up_show_updates_title">Mostra aggiornamenti</string>
@@ -1278,5 +1281,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Gestures a schermo spento</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Previeni risveglio accidentale</string>
+    <string name="proximity_wake_summary">Controlla il sensore di prossimità prima di risvegliare lo schermo</string>
 
 </resources>

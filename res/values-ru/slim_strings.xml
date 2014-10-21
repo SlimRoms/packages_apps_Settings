@@ -1108,4 +1108,8 @@
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
+
+    <!-- Disable Smart Cover -->
+    <string name="disable_smart_cover_title">Отключить окно \"умной\" обложки</string>
+    <string name="disable_smart_cover_desc">На случай, если у вашего аппарата есть \"умная\" обложка и вы не хотите, чтобы она запускала соответствующее окно</string>
 </resources>

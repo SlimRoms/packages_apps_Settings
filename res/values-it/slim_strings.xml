@@ -51,8 +51,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Cattura colore</string>
     <string name="press_color_to_apply">Premere sul colore sottostante per applicare</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Imposta</string>
@@ -76,7 +74,6 @@
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Modifica impostazioni led</string>
     <string name="pulse_speed_title">Lunghezza e velocità pulsazione</string>
-    <string name="picker_arrow">→</string>
     <string name="default_time">Normale</string>
     <string name="custom_time">Personalizzato</string>
     <string name="dialog_test">Test</string>

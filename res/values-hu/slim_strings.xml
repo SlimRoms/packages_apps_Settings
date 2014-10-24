@@ -44,8 +44,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Szín választó</string>
     <string name="press_color_to_apply">Nyomj egy színre az alkalmazásához</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Beállítás</string>
@@ -69,7 +67,6 @@
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Fény beállítások szerkesztése</string>
     <string name="pulse_speed_title">Impulzus hossza és sebessége</string>
-    <string name="picker_arrow">→</string>
     <string name="default_time">Normál</string>
     <string name="custom_time">Egyéni</string>
     <string name="dialog_test">Teszt</string>

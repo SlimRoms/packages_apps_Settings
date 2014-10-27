@@ -39,8 +39,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Kapátko</string>
     <string name="press_color_to_apply">Níže klikněte na barvu, kterou chcete použít</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Nastavit</string>
@@ -64,7 +62,6 @@
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Upravit nastavení světel</string>
     <string name="pulse_speed_title">Délka impulsu a rychlost</string>
-    <string name="picker_arrow">→</string>
     <string name="default_time">Normální</string>
     <string name="custom_time">Vlastní</string>
     <string name="dialog_test">Otestovat</string>

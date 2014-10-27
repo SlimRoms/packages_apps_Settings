@@ -51,8 +51,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selektor koloru</string>
     <string name="press_color_to_apply">Dotknij koloru, aby ustawić</string>
-    <string name="arrow_right">›</string>
-    <string name="arrow_down">ˇ</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Ustaw</string>
@@ -76,7 +74,6 @@
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Edytuj ustawienia diody</string>
     <string name="pulse_speed_title">Długość i prędkość pulsowania</string>
-    <string name="picker_arrow">›</string>
     <string name="default_time">Normalna</string>
     <string name="custom_time">Własna</string>
     <string name="dialog_test">Test</string>

@@ -266,7 +266,6 @@
     <string name="notification_light_voicemail_title">Голосовая почта</string>
     <string name="edit_light_settings">Изменить настройки индикатора</string>
     <string name="pulse_speed_title">Длительность и скорость мигания</string>
-    <string name="picker_arrow">&gt;</string>
     <string name="default_time">Нормально</string>
     <string name="custom_time">Пользовательский</string>
     <string name="dialog_test">Тест</string>
@@ -363,8 +362,6 @@
     <string name="tiles_reset_message">Восстановить отображаемые плитки и их стиль по умолчанию?</string>
     <string name="dialog_color_picker">Выбор цвета</string>
     <string name="press_color_to_apply">Нажмите на цвет внизу, чтобы применить его</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>

@@ -55,6 +55,11 @@
             android:defaultValue="0x00ffffff"
             alphaSlider="true" />
 
+    <SlimSeekBarPreference
+            android:key="volume_panel_timeout"
+            android:title="@string/volume_panel_timeout_title"
+            android:summary="@string/volume_panel_timeout_summary" />
+
     <PreferenceCategory
         android:title="@string/notifications_category_title" />
 

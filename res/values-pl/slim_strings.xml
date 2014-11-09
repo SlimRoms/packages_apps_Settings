@@ -139,6 +139,8 @@
   <string name="clock_date_style_uppercase">Duże litery</string>
   <string name="clock_date_format_custom">Format niestandardowy java</string>
   <string name="status_bar_clock_style_reset_message">Przywrócić kolor zegara?</string>
+  <string name="status_bar_ticker_title">Pasek informacji i powiadomień</string>
+  <string name="status_bar_ticker_summary">Animacja tekstu powiadomienia na pasku stanu</string>
   <string name="status_bar_toggle_brightness">Kontrola jasności</string>
   <string name="status_bar_toggle_brightness_summary">Dopasuj jasność przesuwając przez pasek stanu</string>
   <string name="status_bar_toggle_info">Automatyczna korekcja jasności jest włączona</string>
@@ -422,6 +424,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="shortcuts_color_title">Kolor ikony</string>
   <string name="shortcuts_color_mode_title">Tryb koloru ikony</string>
   <string name="shortcuts_color_mode_summary">Zmień tryb koloru skrótów</string>
+  <string name="qs_title">Szybkie ustawienia</string>
   <string name="notification_drawer_title">Panel powiadomień</string>
   <string name="notification_shortcuts_settings_title">Skróty</string>
   <string name="notification_shortcuts_settings_summary">Pokaż skróty w panelu powiadomień</string>
@@ -746,6 +749,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="title_tile_wifiap">Wi-Fi AP</string>
   <string name="title_tile_wifi">Wi-Fi</string>
   <string name="title_tile_user">Przełącznik użytkownika</string>
+  <string name="title_tile_network_adb">ADB poprzez sieć</string>
   <string name="title_tile_networkmode">Tryb sieci</string>
   <string name="title_tile_nfc">NFC</string>
   <string name="title_tile_screen_timeout">Wygaszanie ekranu</string>
@@ -916,6 +920,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="advanced_reboot_disabled">Wyłączone</string>
   <string name="advanced_reboot_hide_on_keyguard">Ukryj na ekranie blokady</string>
   <string name="advanced_reboot_show_always">Zawsze pokazuj</string>
+  <string name="lockscreen_settings_title">Ekran blokady</string>
   <string name="lockscreen_rotation_title">Obrót ekranu blokady</string>
   <string name="lockscreen_rotation_portrait">Tylko pionowo</string>
   <string name="lockscreen_rotation_landscape">Tylko poziomo</string>
@@ -1047,4 +1052,6 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="heads_up_text_color_title">Kolor tekstu</string>
   <string name="reset_default_message">Przywróć domyślne </string>
   <string name="screen_off_gesture_settings_title">Gesty przy wyłączonym ekranie</string>
+  <string name="proximity_wake_title">Zapobiegaj przypadkowemu wybudzeniu</string>
+  <string name="proximity_wake_summary">Sprawdź czujnik zbliżeniowy przed wybudzeniem ekranu</string>
 </resources>

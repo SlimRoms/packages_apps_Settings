@@ -139,6 +139,8 @@
   <string name="clock_date_style_uppercase">Mayúscula</string>
   <string name="clock_date_format_custom">Formato java personalizado</string>
   <string name="status_bar_clock_style_reset_message">¿Restablecer color del reloj?</string>
+  <string name="status_bar_ticker_title">Notificación Ticker</string>
+  <string name="status_bar_ticker_summary">Animación de texto de notificación</string>
   <string name="status_bar_toggle_brightness">Control de brillo</string>
   <string name="status_bar_toggle_brightness_summary">Ajusta el brillo deslizando a lo largo de la barra de estado</string>
   <string name="status_bar_toggle_info">Brillo automático está habilitado</string>
@@ -325,6 +327,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="shortcut_action_back">Atrás</string>
   <string name="shortcut_action_recent">Recientes</string>
   <string name="shortcut_action_lastapp">Última app.</string>
+  <string name="shortcut_action_assist">Buscar</string>
   <string name="shortcut_action_search">Buscar en la app.</string>
   <string name="shortcut_action_voice_search">Búsqueda por voz</string>
   <string name="shortcut_action_screenshot">Captura pantalla</string>
@@ -435,6 +438,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="shortcuts_color_title">Color del icono</string>
   <string name="shortcuts_color_mode_title">Modo del color del icono</string>
   <string name="shortcuts_color_mode_summary">Cambiar modo de color del icono de accesos directos</string>
+  <string name="qs_title">Ajustes Rápidos</string>
   <string name="notification_drawer_title">Panel de notificaciones</string>
   <string name="notification_shortcuts_settings_title">Accesos directos</string>
   <string name="notification_shortcuts_settings_summary">Mostrar accesos directos en el panel de notificaciones</string>
@@ -934,6 +938,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="advanced_reboot_disabled">Deshabilitado</string>
   <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
+  <string name="lockscreen_settings_title">Pantalla de Bloqueo</string>
   <string name="lockscreen_rotation_title">Rotación de bloqueo de pantalla</string>
   <string name="lockscreen_rotation_portrait">Sólo vertical</string>
   <string name="lockscreen_rotation_landscape">Sólo horizontal</string>
@@ -1064,4 +1069,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="heads_up_text_color_title">Color de texto</string>
   <string name="reset_default_message">Restablecer predeterminado</string>
   <string name="screen_off_gesture_settings_title">Gestos con pantalla apagada</string>
+  <string name="bluetooth_accept_all_files">Aceptar todos los tipos de archivo</string>
+  <string name="proximity_wake_title">Evitar despertar accidental</string>
+  <string name="proximity_wake_summary">Comprobar el sensor de proximidad antes de encender la pantalla</string>
+  <string name="disable_smart_cover_title">Desactivar la cubierta de pantalla inteligente</string>
+  <string name="disable_smart_cover_desc">Comprobar si el dispositivo tiene una cubierta inteligente y no deseas activar la pantalla</string>
 </resources>

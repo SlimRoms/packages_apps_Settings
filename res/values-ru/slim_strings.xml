@@ -483,7 +483,13 @@
   <string name="power_menu_title">Меню управления питанием</string>
   <string name="power_menu_style_summary">Изменить глобальные цвета меню</string>
   <string name="navigation_bar_size_42_dp_default">42 dp (по умолчанию)</string>
+  <string name="navigation_bar_size_36_dp">36 dp</string>
+  <string name="navigation_bar_size_30_dp">30 dp</string>
+  <string name="navigation_bar_size_24_dp">24 dp</string>
   <string name="navigation_bar_size_48_dp_default">48 dp (по умолчанию)</string>
+  <string name="navigation_bar_size_44_dp">44 dp</string>
+  <string name="navigation_bar_size_40_dp">40 dp</string>
+  <string name="navigation_bar_size_42_dp">42 dp</string>
   <string name="navigation_bar_size_0_dp">0 dp (выкл)</string>
   <string name="navigation_menu_right">Справа</string>
   <string name="navigation_menu_left">Слева</string>
@@ -707,6 +713,10 @@
   <string name="shake_secure_timeout_30min">30 минут после отключения экрана</string>
   <string name="lock_before_unlock_title">Показывать ползунок перед безопасной разблокировкой</string>
   <string name="lock_before_unlock_summary">Показывать стандартный ползунок разблокировки до безопасной разблокировки</string>
+  <string name="lock_pattern_size_3">3x3</string>
+  <string name="lock_pattern_size_4">4x4</string>
+  <string name="lock_pattern_size_5">5x5</string>
+  <string name="lock_pattern_size_6">6x6</string>
   <string name="notification_style_title">Стиль панели уведомления</string>
   <string name="notification_style_summary">Изменить стиль панели уведомления</string>
   <string name="notification_wallpaper_title">Фон панели уведомлений</string>
@@ -945,6 +955,7 @@
   <string name="adb_over_network_warning">ВНИМАНИЕ: когда включён ADB по сети, телефон открыт для доступа из всех подключённых сетей, включая передачу данных GSM!\n\nИспользуйте эту функцию только тогда, когда Вы подключены к доверенным сетям.\n\nВы действительно хотите включить эту функцию?</string>
   <string name="usb_mass_storage_title">USB-накопитель</string>
   <string name="usb_mass_storage_summary">Включить режим USB-накопителя (UMS)</string>
+  <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Включить управление pie</string>
   <string name="pie_control_size">Размер pie</string>
   <string name="pie_control_trigger_positions">Параметры переключения</string>
@@ -1008,6 +1019,8 @@
   <string name="recent_panel_scale_title">Размер</string>
   <string name="recent_panel_scale_summary">Размер панели недавних приложений в процентах.</string>
   <string name="recent_panel_100">100% (по умолчанию)</string>
+  <string name="recent_panel_85">85%</string>
+  <string name="recent_panel_70">70%</string>
   <string name="recent_panel_expanded_mode_title">Расширенный режим</string>
   <string name="recent_panel_expanded_mode_summary">Расширенный режим просмотра недавних приложений</string>
   <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
@@ -1056,6 +1069,7 @@
   <string name="heads_up_text_color_title">Цвет текста</string>
   <string name="reset_default_message">Reset default</string>
   <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
+  <string name="bluetooth_accept_all_files">Принимать все типы файлов</string>
   <string name="proximity_wake_title">Предотвращать случайные пробуждения</string>
   <string name="proximity_wake_summary">Проверять датчик приближения перед включением экрана</string>
   <string name="disable_smart_cover_title">Отключить окно \"умной\" обложки</string>

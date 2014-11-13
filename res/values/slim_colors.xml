@@ -18,5 +18,6 @@ limitations under the License.
 
     <color name="qs_tile_tint_color">#FF009587</color>
     <color name="qs_tile_default_background_color">@android:color/transparent</color>
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
 
 </resources>

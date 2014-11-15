@@ -102,6 +102,7 @@
     <!-- For Search -->
     <declare-styleable name="Preference">
         <attr name="keywords" format="string" />
+        <attr name="advanced" format="boolean" />
     </declare-styleable>
 
     <attr name="switchBarTheme" format="reference" />
@@ -137,6 +138,13 @@
         <attr name="flingHandleId" format="integer" />
         <attr name="clickRemoveId" format="integer" />
         <attr name="useDefaultController" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="IntervalSeekBar">
+        <attr name="min" format="float" />
+        <attr name="max" format="float" />
+        <attr name="defaultValue" format="float" />
+        <attr name="digits" format="integer" />
     </declare-styleable>
 
 </resources>

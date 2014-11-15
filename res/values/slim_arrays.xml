@@ -839,4 +839,16 @@
         <item>2</item>
     </string-array>
 
+    <!-- Gamma calibration descriptors, deliberately empty as string values populated via
+         per-device overlay. Required to build on non-hardware tunable devices -->
+    <string-array name="gamma_descriptors" translatable="false">
+    </string-array>
+
+    <!-- Values for screen color  -->
+    <string-array name="screen_color_setting" translatable="false">
+        <item>@string/screen_color_setting_standard</item>
+        <item>@string/screen_color_setting_vivid</item>
+        <item>@string/screen_color_setting_custom</item>
+    </string-array>
+
 </resources>

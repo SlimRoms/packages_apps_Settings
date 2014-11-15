@@ -629,6 +629,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
 
+        @Override
+        public void prepare() {
+            super.prepare();
+        }
+
         public List<SearchIndexableResource> getXmlResourcesToIndex(
                 Context context, boolean enabled) {
             final SearchIndexableResource sir = new SearchIndexableResource(context);

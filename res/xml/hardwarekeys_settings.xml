@@ -17,6 +17,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:key="disable_hw_keys"
+        android:title="@string/disable_navkeys_title"
+        android:summary="@string/disable_navkeys_summary"
+        android:defaultValue="false" />
+
         <PreferenceCategory
                 android:key="keys_cat"
                 android:title="@string/keys_bindings_title" >

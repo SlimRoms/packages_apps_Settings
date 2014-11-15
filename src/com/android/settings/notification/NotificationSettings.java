@@ -28,6 +28,7 @@ import android.content.pm.ServiceInfo;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
+import android.hardware.CmHardwareManager;
 import android.media.AudioManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -52,6 +53,9 @@ import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+
+import com.android.settings.notification.NotificationAccessSettings;
+import com.android.settings.notification.VolumeSeekBarPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -74,6 +78,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private static final String KEY_NOTIFICATION = "notification";
     private static final String KEY_LOCK_SCREEN_NOTIFICATIONS = "lock_screen_notifications";
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
+
+    private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
 
     // Notification and Battery Light
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
@@ -135,6 +141,15 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                     initVolumePreference(KEY_NOTIFICATION_VOLUME, AudioManager.STREAM_NOTIFICATION,
                             com.android.internal.R.drawable.ic_audio_ring_notif_mute);
             sound.removePreference(sound.findPreference(KEY_RING_VOLUME));
+        }
+
+        CmHardwareManager cmHardwareManager =
+                (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
+        if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {
+            Preference preference = sound.findPreference(KEY_VIBRATION_INTENSITY);
+            if (preference != null) {
+                sound.removePreference(preference);
+            }
         }
         initRingtones(sound);
         initVibrateWhenRinging(sound);
@@ -559,6 +574,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
 
+        @Override
+        public void prepare() {
+            super.prepare();
+        }
+
         public List<SearchIndexableResource> getXmlResourcesToIndex(
                 Context context, boolean enabled) {
             final SearchIndexableResource sir = new SearchIndexableResource(context);
@@ -575,6 +595,13 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 rt.add(KEY_PHONE_RINGTONE);
                 rt.add(KEY_VIBRATE_WHEN_RINGING);
             }
+
+            CmHardwareManager cmHardwareManager =
+                    (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
+            if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {
+                rt.add(KEY_VIBRATION_INTENSITY);
+            }
+
             return rt;
         }
     };

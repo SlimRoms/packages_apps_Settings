@@ -19,6 +19,12 @@
         android:title="@string/display_settings"
         settings:keywords="@string/keywords_display">
 
+        <SwitchPreference
+            android:key="disable_nav_keys"
+            android:title="@string/disable_navkeys_title"
+            android:summary="@string/disable_navkeys_summary"
+            android:defaultValue="false" />
+
         <PreferenceScreen
                 android:key="brightness"
                 android:title="@string/brightness"
@@ -32,6 +38,13 @@
                 settings:keywords="@string/keywords_display_auto_brightness"
                 android:summary="@string/auto_brightness_summary"
                 android:persistent="false" />
+
+                <!-- LiveDisplay -->
+        <PreferenceScreen
+                android:key="live_display"
+                android:title="@string/live_display_title"
+                android:summary="@string/live_display_summary"
+                android:fragment="com.android.settings.livedisplay.LiveDisplay" />
 
         <PreferenceScreen
                 android:key="wallpaper"
@@ -81,6 +94,22 @@
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+
+        <PreferenceCategory
+                android:key="advanced_display_prefs"
+                android:title="@string/advanced_settings">
+
+                <SwitchPreference
+                    android:key="double_tap_wake_gesture"
+                    android:title="@string/double_tap_to_wake_title" />
+
+                <com.android.settings.slim.SystemSettingSwitchPreference
+                    android:key="double_tap_sleep_gesture"
+                    android:title="@string/double_tap_to_sleep_title"
+                    android:summary="@string/double_tap_to_sleep_summary"
+                    android:defaultValue="true" />
+
+        </PreferenceCategory>
 
         <!-- DeviceHandler device specific screen off gesture settings -->
         <Preference
@@ -134,5 +163,17 @@
                 android:title="@string/doze_settings_title"
                 android:dependency="doze" />
 
-         </PreferenceCategory>
+        </PreferenceCategory>
+
+        <PreferenceScreen
+                android:persistent="false"
+                android:key="screencolor_settings"
+                android:title="@string/screencolor"
+                android:summary="@string/screencolor_summary">
+            <intent
+                android:action="com.qualcomm.display.PPService"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.ScreenColorSettings" />
+         </PreferenceScreen>
+
 </PreferenceScreen>

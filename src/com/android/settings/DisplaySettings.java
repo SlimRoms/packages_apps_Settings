@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +17,15 @@
 
 package com.android.settings;
 
+import android.os.UserHandle;
+
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.notification.DropDownPreference;
 import com.android.settings.notification.DropDownPreference.Callback;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import static android.hardware.CmHardwareManager.FEATURE_TAP_TO_WAKE;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 import static android.provider.Settings.Secure.WAKE_GESTURE_ENABLED;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
@@ -39,6 +43,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
+import android.hardware.CmHardwareManager;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
@@ -51,8 +57,10 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
@@ -60,6 +68,8 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.IWindowManager;
+import android.view.WindowManagerGlobal;
 
 import com.android.settings.slim.DisplayRotation;
 
@@ -74,6 +84,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
+    private static final String KEY_CATEGORY_LIGHTS = "lights";
+    private static final String KEY_CATEGORY_DISPLAY = "display";
+    private static final String KEY_CATEGORY_INTERFACE = "interface";
+
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -84,8 +98,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
-    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
+    private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
+    private static final String KEY_DISPLAY_COLOR = "color_calibration";
+    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
+    private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -112,6 +132,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mVolumeWake;
     private ListPreference mLcdDensityPreference;
 
+    private SwitchPreference mTapToWake;
+    private SwitchPreference mWakeWhenPluggedOrUnplugged;
+
+    private SwitchPreference mDisableNavigationKeys;
+
+    private CmHardwareManager mCmHardwareManager;
+
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
         @Override
@@ -124,15 +151,27 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mDozePreference;
     private PreferenceScreen mAdvancedDozeOptions;
 
+    private SwitchPreference mAdaptiveBacklight;
+    private SwitchPreference mSunlightEnhancement;
+    private SwitchPreference mColorEnhancement;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final Activity activity = getActivity();
         final ContentResolver resolver = activity.getContentResolver();
+        mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
 
         addPreferencesFromResource(R.xml.display_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceCategory displayPrefs = (PreferenceCategory)
+                findPreference(KEY_CATEGORY_DISPLAY);
+        PreferenceCategory interfacePrefs = (PreferenceCategory)
+                findPreference(KEY_CATEGORY_INTERFACE);
+
+        mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -203,9 +242,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mDozeCategory = (PreferenceCategory) findPreference(KEY_DOZE_CATEGORY);
+
+        PreferenceCategory advancedPrefs = (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
+
         if (isDozeAvailable(activity)) {
             // Doze master switch
             mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
+        }
+
+        mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
+        if (mDozePreference != null && isDozeAvailable(activity)) {
             mDozePreference.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(mDozeCategory);
@@ -216,7 +262,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             removePreference(KEY_DISPLAY_ROTATION);
         }
-
 
         mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
         int counter = 0;
@@ -245,16 +290,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
         }
 
-        boolean proximityCheckOnWait = getResources().getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWait) {
-            counter++;
-            mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_WAKE));
-            Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
-        }
+        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
 
-        if (counter == 3) {
-            prefSet.removePreference(mWakeUpOptions);
+        if (displayPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+            advancedPrefs.removePreference(mTapToWake);
+            mTapToWake = null;
         }
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
@@ -435,11 +475,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+        updateDisplayRotationPreferenceDescription();
+        if (mTapToWake != null) {
+            mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
+        }
+
         updateState();
         getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
         updateDisplayRotationPreferenceDescription();
+
+        updateState();
     }
 
     @Override
@@ -533,17 +580,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         task.execute();
     }
 
-    public void writeFontSizePreference(Object objValue) {
-        try {
-            mCurConfig.fontScale = Float.parseFloat(objValue.toString());
-            ActivityManagerNative.getDefault().updatePersistentConfiguration(mCurConfig);
-        } catch (RemoteException e) {
-            Log.w(TAG, "Unable to save font size");
-        }
-    }
-
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mTapToWake) {
+            return mCmHardwareManager.set(FEATURE_TAP_TO_WAKE, mTapToWake.isChecked());
+        }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -572,9 +614,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     (Boolean) objValue ? 1 : 0);
-        }
-        if (KEY_FONT_SIZE.equals(key)) {
-            writeFontSizePreference(objValue);
         }
         if (preference == mAutoBrightnessPreference) {
             boolean auto = (Boolean) objValue;
@@ -611,8 +650,31 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+
+    /**
+     * Restore the properties associated with this preference on boot
+     *
+     * @param ctx A valid context
+     */
+    public static void restore(Context ctx) {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        CmHardwareManager cmHardwareManager =
+            (CmHardwareManager) ctx.getSystemService(Context.CMHW_SERVICE);
+        if (cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+            final boolean enabled = prefs.getBoolean(KEY_TAP_TO_WAKE,
+                cmHardwareManager.get(FEATURE_TAP_TO_WAKE));
+
+            if (!cmHardwareManager.set(FEATURE_TAP_TO_WAKE, enabled)) {
+                Log.e(TAG, "Failed to restore tap-to-wake settings.");
+            } else {
+                Log.d(TAG, "Tap-to-wake settings restored.");
+            }
+        }
+    }
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
+
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
@@ -628,10 +690,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
+                    CmHardwareManager cmHardwareManager =
+                        (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
                     ArrayList<String> result = new ArrayList<String>();
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_dreamsSupported)) {
                         result.add(KEY_SCREEN_SAVER);
+                    }
+                    if (!cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+                        result.add(KEY_TAP_TO_WAKE);
                     }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);

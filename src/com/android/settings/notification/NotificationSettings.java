@@ -54,6 +54,7 @@ import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -143,6 +144,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                             com.android.internal.R.drawable.ic_audio_ring_notif_mute);
             sound.removePreference(sound.findPreference(KEY_RING_VOLUME));
         }
+
         initRingtones(sound);
         initVibrateWhenRinging(sound);
 
@@ -628,6 +630,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
+
+        @Override
+        public void prepare() {
+            super.prepare();
+        }
 
         public List<SearchIndexableResource> getXmlResourcesToIndex(
                 Context context, boolean enabled) {

@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ServiceInfo;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
+import android.hardware.CmHardwareManager;
 import android.hardware.input.InputDeviceIdentifier;
 import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
@@ -43,6 +44,7 @@ import android.provider.Settings;
 import android.provider.Settings.System;
 import android.speech.tts.TtsEngines;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.InputDevice;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -77,12 +79,19 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, InputManager.InputDeviceListener,
         KeyboardLayoutDialogFragment.OnSetupKeyboardLayoutsListener, Indexable,
         InputMethodPreference.OnSavePreferenceListener {
+
+    private static final String TAG = "InputMethodAndLanguageSettings";
+
     private static final String KEY_SPELL_CHECKERS = "spellcheckers_settings";
     private static final String KEY_PHONE_LANGUAGE = "phone_language";
     private static final String KEY_CURRENT_INPUT_METHOD = "current_input_method";
     private static final String KEY_INPUT_METHOD_SELECTOR = "input_method_selector";
     private static final String KEY_USER_DICTIONARY_SETTINGS = "key_user_dictionary_settings";
     private static final String KEY_PREVIOUSLY_ENABLED_SUBTYPES = "previously_enabled_subtypes";
+    private static final String KEY_POINTER_SETTINGS_CATEGORY = "pointer_settings_category";
+    private static final String KEY_HIGH_TOUCH_SENSITIVITY = "high_touch_sensitivity";
+    private static final String KEY_TOUCHSCREEN_HOVERING = "touchscreen_hovering";
+
     // false: on ICS or later
     private static final boolean SHOW_INPUT_METHOD_SWITCHER_SETTINGS = false;
 
@@ -102,6 +111,10 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private Intent mIntentWaitingForResult;
     private InputMethodSettingValuesWrapper mInputMethodSettingValues;
     private DevicePolicyManager mDpm;
+    private CmHardwareManager mCmHardwareManager;
+
+    private SwitchPreference mHighTouchSensitivity;
+    private SwitchPreference mTouchscreenHovering;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -112,6 +125,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         final Activity activity = getActivity();
         mImm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mInputMethodSettingValues = InputMethodSettingValuesWrapper.getInstance(activity);
+
+        mCmHardwareManager = (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
 
         try {
             mDefaultInputMethodSelectorVisibility = Integer.valueOf(
@@ -159,6 +174,37 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         // Build hard keyboard and game controller preference categories.
         mIm = (InputManager)activity.getSystemService(Context.INPUT_SERVICE);
         updateInputDevices();
+
+        PreferenceCategory pointerSettingsCategory = (PreferenceCategory)
+                        findPreference(KEY_POINTER_SETTINGS_CATEGORY);
+
+        mHighTouchSensitivity = (SwitchPreference) findPreference(KEY_HIGH_TOUCH_SENSITIVITY);
+
+        mTouchscreenHovering = (SwitchPreference) findPreference(KEY_TOUCHSCREEN_HOVERING);
+
+        if (pointerSettingsCategory != null) {
+
+            if (!mCmHardwareManager.isSupported(
+                    CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
+                pointerSettingsCategory.removePreference(mHighTouchSensitivity);
+                mHighTouchSensitivity = null;
+            } else {
+                mHighTouchSensitivity.setChecked(
+                        mCmHardwareManager.get(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY));
+            }
+
+            if (!mCmHardwareManager.isSupported(CmHardwareManager.FEATURE_TOUCH_HOVERING)) {
+                pointerSettingsCategory.removePreference(mTouchscreenHovering);
+                mTouchscreenHovering = null;
+            } else {
+                mTouchscreenHovering.setChecked(
+                        mCmHardwareManager.get(CmHardwareManager.FEATURE_TOUCH_HOVERING));
+            }
+
+            if (pointerSettingsCategory.getPreferenceCount() == 0) {
+                getPreferenceScreen().removePreference(pointerSettingsCategory);
+            }
+        }
 
         // Spell Checker
         final Preference spellChecker = findPreference(KEY_SPELL_CHECKERS);
@@ -328,6 +374,12 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                         pref.isChecked() ? 1 : 0);
                 return true;
             }
+        } else if (preference == mHighTouchSensitivity) {
+            return mCmHardwareManager.set(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY,
+                    mHighTouchSensitivity.isChecked());
+        } else if (preference == mTouchscreenHovering) {
+            return mCmHardwareManager.set(CmHardwareManager.FEATURE_TOUCH_HOVERING,
+                    mTouchscreenHovering.isChecked());
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -638,6 +690,31 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
         public void pause() {
             mContext.getContentResolver().unregisterContentObserver(this);
+        }
+    }
+
+    public static void restore(Context context) {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final CmHardwareManager cmHardwareManager =
+                (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
+        if (cmHardwareManager.isSupported(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
+            final boolean enabled = prefs.getBoolean(KEY_HIGH_TOUCH_SENSITIVITY,
+                    cmHardwareManager.get(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY));
+            if (!cmHardwareManager.set(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY,
+                    enabled)) {
+                Log.e(TAG, "Failed to restore high touch sensitivity settings.");
+            } else {
+                Log.d(TAG, "High touch sensitivity settings restored.");
+            }
+        }
+        if (cmHardwareManager.isSupported(CmHardwareManager.FEATURE_TOUCH_HOVERING)) {
+            final boolean enabled = prefs.getBoolean(KEY_TOUCHSCREEN_HOVERING,
+                    cmHardwareManager.get(CmHardwareManager.FEATURE_TOUCH_HOVERING));
+            if (!cmHardwareManager.set(CmHardwareManager.FEATURE_TOUCH_HOVERING, enabled)) {
+                Log.e(TAG, "Failed to restore touch hovering settings.");
+            } else {
+                Log.d(TAG, "Touch hovering settings restored.");
+            }
         }
     }
 

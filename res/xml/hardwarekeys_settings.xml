@@ -17,11 +17,16 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <com.android.settings.slim.ButtonBacklightBrightness
-            android:key="button_backlight"
-            android:title="@string/button_backlight_title"
-            android:dialogTitle="@string/button_backlight_title"
-            android:persistent="false" />
+    <SwitchPreference
+        android:key="enable_hw_keys"
+        android:title="@string/enable_navkeys_title"
+        android:defaultValue="true" />
+
+    <com.android.settings.slim.ButtonBacklightBrightness
+        android:key="button_backlight"
+        android:title="@string/button_backlight_title"
+        android:dialogTitle="@string/button_backlight_title"
+        android:persistent="false" />
 
         <PreferenceCategory
             android:key="keys_cat"

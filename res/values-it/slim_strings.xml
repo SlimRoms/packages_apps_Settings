@@ -139,6 +139,8 @@
   <string name="clock_date_style_uppercase">Maiuscolo</string>
   <string name="clock_date_format_custom">Formato java personalizzato</string>
   <string name="status_bar_clock_style_reset_message">Resettare colori orologio?</string>
+  <string name="status_bar_ticker_title">Scorrimento notifica</string>
+  <string name="status_bar_ticker_summary">Animazione testo notifiche nella barra di stato</string>
   <string name="status_bar_toggle_brightness">Controllo luminosità</string>
   <string name="status_bar_toggle_brightness_summary">Modifica la luminosità effettuando uno slide sulla barra di stato</string>
   <string name="status_bar_toggle_info">E\' attiva la luminosità automatica</string>
@@ -177,6 +179,8 @@
   <string name="volume_overlay_expanded">Espanso</string>
   <string name="volume_overlay_disable">Disattivato</string>
   <string name="volume_panel_bg_color_title">Colore pannello Volume</string>
+  <string name="volume_panel_timeout_title">Timeout pannello volume</string>
+  <string name="volume_panel_timeout_summary">Tempo di visualizzazione del pannello volume</string>
   <string name="camera_sounds_title">Suono scatto fotocamera</string>
   <string name="camera_sounds_summary">Attiva suono in caso di scatto con la fotocamera</string>
   <string name="camera_sound_warning_dialog_text">La disattivazione del suono di scatto è illegale in alcuni Paesi! Verifica la legislazione vigente prima di disattivarlo.</string>
@@ -1071,6 +1075,9 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="heads_up_text_color_title">Colore testo</string>
   <string name="reset_default_message">Resetta a default</string>
   <string name="screen_off_gesture_settings_title">Gestures a schermo spento</string>
+  <string name="bluetooth_accept_all_files">Accetta tutti i tipi di file</string>
   <string name="proximity_wake_title">Previeni risveglio accidentale</string>
   <string name="proximity_wake_summary">Controlla il sensore di prossimità prima di risvegliare lo schermo</string>
+  <string name="disable_smart_cover_title">Impedisci attivazione risveglio intelligente</string>
+  <string name="disable_smart_cover_desc">Impedisci il risveglio intelligente anche se il dispositivo lo supporta</string>
 </resources>

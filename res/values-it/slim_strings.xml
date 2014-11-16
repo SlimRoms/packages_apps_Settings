@@ -139,6 +139,8 @@
   <string name="clock_date_style_uppercase">Maiuscolo</string>
   <string name="clock_date_format_custom">Formato java personalizzato</string>
   <string name="status_bar_clock_style_reset_message">Resettare colori orologio?</string>
+  <string name="status_bar_ticker_title">Scorrimento notifica</string>
+  <string name="status_bar_ticker_summary">Animazione testo notifiche nella barra di stato</string>
   <string name="status_bar_toggle_brightness">Controllo luminosità</string>
   <string name="status_bar_toggle_brightness_summary">Modifica la luminosità effettuando uno slide sulla barra di stato</string>
   <string name="status_bar_toggle_info">E\' attiva la luminosità automatica</string>

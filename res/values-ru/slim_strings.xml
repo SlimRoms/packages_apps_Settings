@@ -179,6 +179,8 @@
   <string name="volume_overlay_expanded">Расширенная</string>
   <string name="volume_overlay_disable">Нет</string>
   <string name="volume_panel_bg_color_title">Цвет фона панели громкости</string>
+  <string name="volume_panel_timeout_title">Тайм-аут панели громкости</string>
+  <string name="volume_panel_timeout_summary">Длительность показа панель громкости</string>
   <string name="camera_sounds_title">Звук затвора камеры</string>
   <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
   <string name="camera_sound_warning_dialog_text">Отключение звука камеры в некоторых странах незаконно!</string>

@@ -179,6 +179,8 @@
   <string name="volume_overlay_expanded">Expandido</string>
   <string name="volume_overlay_disable">Deshabilitado</string>
   <string name="volume_panel_bg_color_title">Color fondo del panel de volumen</string>
+  <string name="volume_panel_timeout_title">Espera del panel de volumen</string>
+  <string name="volume_panel_timeout_summary">Tiempo que será visible el panel de volumen después de ajustar el volumen</string>
   <string name="camera_sounds_title">Sonido de obturador de cámara</string>
   <string name="camera_sounds_summary">Habilitar el sonido del disparador de la cámara</string>
   <string name="camera_sound_warning_dialog_text">¡Deshabilitar el sonido del obturador de la cámara es ilegal en algunos paises!. Por favor revise las leyes de su país.</string>

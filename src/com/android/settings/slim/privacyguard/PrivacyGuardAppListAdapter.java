@@ -110,7 +110,7 @@ public class PrivacyGuardAppListAdapter extends BaseAdapter implements SectionIn
         appHolder.icon.setImageDrawable(icon != null ? icon : mDefaultImg);
 
         appHolder.privacyGuardIcon.setImageResource(
-            AppOpsManager.getPrivacyGuardIconResId(app.privacyGuardState));
+            AppOpsManager.getPrivacyGuardIconResId(app.privacyGuardState, true));
 
         return convertView;
     }

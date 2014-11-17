@@ -59,6 +59,11 @@
                 android:title="@string/screensaver_settings_title"
                 android:fragment="com.android.settings.DreamSettings" />
 
+        <PreferenceScreen
+                android:key="expanded_desktop"
+                android:title="@string/power_menu_expanded_desktop"
+                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+
         <ListPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"
@@ -143,6 +148,7 @@
 </PreferenceCategory>
 <!--
 
+<<<<<<< HEAD
          <PreferenceCategory
                 android:key="advanced_display_prefs"
                 android:title="@string/advanced_settings">
@@ -194,3 +200,7 @@
         </PreferenceCategory>
 -->
 </PreferenceScreen>
+=======
+        </PreferenceCategory>
+</PreferenceScreen>
+>>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.

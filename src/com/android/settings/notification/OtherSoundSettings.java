@@ -65,6 +65,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DOCKING_SOUNDS = "docking_sounds";
     private static final String KEY_TOUCH_SOUNDS = "touch_sounds";
     private static final String KEY_VIBRATE_ON_TOUCH = "vibrate_on_touch";
+    private static final String KEY_VOLUME_ADJUST_SOUND = "volume_adjust_sound";
     private static final String KEY_DOCK_AUDIO_MEDIA = "dock_audio_media";
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
@@ -107,6 +108,14 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         @Override
         public boolean isApplicable(Context context) {
             return hasHaptic(context);
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_ADJUST_SOUND = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_ADJUST_SOUND, System.VOLUME_ADJUST_SOUND, DEFAULT_ON) {
+        @Override
+        protected boolean setSetting(Context context, int value) {
+            return super.setSetting(context, value);
         }
     };
 
@@ -161,6 +170,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         PREF_DOCKING_SOUNDS,
         PREF_TOUCH_SOUNDS,
         PREF_VIBRATE_ON_TOUCH,
+        PREF_VOLUME_ADJUST_SOUND,
         PREF_DOCK_AUDIO_MEDIA,
         PREF_EMERGENCY_TONE,
     };

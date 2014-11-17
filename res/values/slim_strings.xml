@@ -1042,4 +1042,7 @@
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
 
+    <!-- Sound & notification > Other sounds: Title for the option enabling sound on volume slide adjust. [CHAR LIMIT=30] -->
+    <string name="volume_adjust_sound_title">Volume slider sound</string>
+
 </resources>

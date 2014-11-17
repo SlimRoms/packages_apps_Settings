@@ -2018,6 +2018,8 @@
         </activity>
 
         <activity android:name=".cyanogenmod.PrivacySettings" />
+        <activity android:name=".notificationlight.NotificationLightSettings" />
+        <activity android:name=".notificationlight.BatteryLightSettings" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"

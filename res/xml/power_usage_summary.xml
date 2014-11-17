@@ -19,4 +19,20 @@
         android:title="@string/power_usage_summary_title"
         settings:keywords="@string/keywords_battery"
         android:key="app_list">
+
+    <PreferenceCategory
+            android:key="battery_options"
+            android:title="@string/battery_options_title" />
+
+    <!-- Battery light -->
+    <PreferenceScreen
+            android:key="battery_light"
+            android:title="@string/battery_light_title"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.android.settings.notificationlight.BatteryLightSettings" />
+
+    <PreferenceCategory
+            android:key="battery_stats"
+            android:title="@string/battery_stats_title" />
+
 </PreferenceScreen>

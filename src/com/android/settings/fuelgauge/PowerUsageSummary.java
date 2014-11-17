@@ -30,10 +30,12 @@ import android.os.Message;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -61,6 +63,10 @@ public class PowerUsageSummary extends PreferenceFragment {
 
     private static final String BATTERY_HISTORY_FILE = "tmp_bat_history.bin";
 
+    private static final String KEY_OPTIONS_CATEGORY = "battery_options";
+    private static final String KEY_STATS_CATEGORY = "battery_stats";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+
     private static final int MENU_STATS_TYPE = Menu.FIRST;
     private static final int MENU_STATS_REFRESH = Menu.FIRST + 1;
     private static final int MENU_BATTERY_SAVER = Menu.FIRST + 2;
@@ -68,6 +74,9 @@ public class PowerUsageSummary extends PreferenceFragment {
 
     private UserManager mUm;
 
+    private Preference mBatteryLight;
+    private PreferenceCategory mOptionsCategory;
+    private PreferenceCategory mStatsCategory;
     private BatteryHistoryPreference mHistPref;
     private PreferenceGroup mAppListGroup;
     private String mBatteryLevel;
@@ -110,6 +119,11 @@ public class PowerUsageSummary extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.power_usage_summary);
         mAppListGroup = (PreferenceGroup) findPreference(KEY_APP_LIST);
+
+        mOptionsCategory = (PreferenceCategory) findPreference(KEY_OPTIONS_CATEGORY);
+        mStatsCategory = (PreferenceCategory) findPreference(KEY_STATS_CATEGORY);
+        mBatteryLight = (Preference) findPreference(KEY_BATTERY_LIGHT);
+
         setHasOptionsMenu(true);
     }
 
@@ -166,6 +180,9 @@ public class PowerUsageSummary extends PreferenceFragment {
             SettingsActivity sa = (SettingsActivity) getActivity();
             sa.startPreferencePanel(BatteryHistoryDetail.class.getName(), args,
                     R.string.history_details_title, null, null, 0);
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+        if (preference == mBatteryLight) {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         if (!(preference instanceof PowerGaugePreference)) {
@@ -251,6 +268,17 @@ public class PowerUsageSummary extends PreferenceFragment {
     private void refreshStats() {
         mAppListGroup.removeAll();
         mAppListGroup.setOrderingAsAdded(false);
+
+        if (getResources()
+                .getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            mOptionsCategory.setOrder(-4);
+            mAppListGroup.addPreference(mOptionsCategory);
+            mBatteryLight.setOrder(-3);
+            mAppListGroup.addPreference(mBatteryLight);
+            mStatsCategory.setOrder(-2);
+            mAppListGroup.addPreference(mStatsCategory);
+        }
+
         mHistPref = new BatteryHistoryPreference(getActivity(), mStatsHelper.getStats(),
                 mStatsHelper.getBatteryBroadcast());
         mHistPref.setOrder(-1);
@@ -266,6 +294,7 @@ public class PowerUsageSummary extends PreferenceFragment {
             mStatsHelper.refreshStats(BatteryStats.STATS_SINCE_CHARGED, profiles);
 
             final List<BatterySipper> usageList = mStatsHelper.getUsageList();
+            int sipperCount = 0;
 
             final int dischargeAmount = stats != null ? stats.getDischargeAmount(mStatsType) : 0;
             final int numSippers = usageList.size();
@@ -324,9 +353,8 @@ public class PowerUsageSummary extends PreferenceFragment {
                 }
                 addedSome = true;
                 mAppListGroup.addPreference(pref);
-                if (mAppListGroup.getPreferenceCount() > (MAX_ITEMS_TO_LIST + 1)) {
-                    break;
-                }
+                sipperCount++;
+                if (sipperCount >= MAX_ITEMS_TO_LIST) break;
             }
         }
         if (!addedSome) {

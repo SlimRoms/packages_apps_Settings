@@ -239,7 +239,7 @@ public class AppOpsDetails extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.add(0, MENU_RESET, 0, R.string.reset)
-                .setIcon(R.drawable.ic_settings_backup)
+                .setIcon(R.drawable.ic_settings_reset)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         if (mAppOps.getPrivacyGuardOpsForPackage(mPackageInfo.packageName).size() > 0) {
             menu.add(0, MENU_ENABLE_PRIVACY_GUARD, 0, R.string.privacy_guard_manager_title)

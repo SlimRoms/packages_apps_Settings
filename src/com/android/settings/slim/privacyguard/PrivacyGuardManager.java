@@ -235,12 +235,10 @@ public class PrivacyGuardManager extends Fragment
     }
 
     private void startAppOpsDetails(AppInfo app) {
-        Bundle args = new Bundle();
-        args.putString(AppOpsDetails.ARG_PACKAGE_NAME, app.packageName);
-
-        PreferenceActivity pa = (PreferenceActivity) getActivity();
-        pa.startPreferencePanel(AppOpsDetails.class.getName(), args,
-                R.string.app_ops_settings, null, this, 2);
+        Intent intent = new Intent(
+                android.provider.Settings.ACTION_APP_OPS_DETAILS_SETTINGS,
+                Uri.parse("package:" + app.packageName));
+        startActivity(intent);
     }
 
     /**

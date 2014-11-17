@@ -149,6 +149,7 @@
 <!--
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          <PreferenceCategory
                 android:key="advanced_display_prefs"
                 android:title="@string/advanced_settings">
@@ -200,6 +201,10 @@
         </PreferenceCategory>
 -->
 </PreferenceScreen>
+=======
+        </PreferenceCategory>
+</PreferenceScreen>
+>>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
 =======
         </PreferenceCategory>
 </PreferenceScreen>

@@ -1046,6 +1046,7 @@
     <string name="select_contact">Select contact</string>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
     <string name="show_network_traffic_state">Status bar traffic monitor</string>
@@ -1073,6 +1074,8 @@
 
 </resources>
 =======
+=======
+>>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
@@ -1084,5 +1087,9 @@
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_user_configurable">User configurable</string>
 
+<<<<<<< HEAD
+</resources>
+>>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
+=======
 </resources>
 >>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.

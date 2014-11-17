@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
+<!--
+     Copyright (C) 2012-2015 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,17 +14,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
 
-<resources>
-    <!-- Navbar -->
-    <dimen name="navigation_bar_48">48dp</dimen>
-    <dimen name="navigation_bar_44">44dp</dimen>
-    <dimen name="navigation_bar_42">42dp</dimen>
-    <dimen name="navigation_bar_40">40dp</dimen>
-    <dimen name="navigation_bar_36">36dp</dimen>
-    <dimen name="navigation_bar_30">30dp</dimen>
-    <dimen name="navigation_bar_24">24dp</dimen>
-    <dimen name="navigation_bar_0">0dp</dimen>
-    <!-- Expanded Desktop -->
-    <dimen name="fab_line_width">2dp</dimen>
-</resources>
+    <path
+        android:fillColor="#039588"
+        android:pathData="M6,4h12v12H6V4Z
+M6,22h12c1.1,0,2-0.9,2-2V4c0-1.1-0.9-2-2-2H6C4.9,2,4,2.9,4,4v16C4,21.1,4.9,22,6,22L6,22z" />
+</vector>

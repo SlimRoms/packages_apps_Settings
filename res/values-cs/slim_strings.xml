@@ -478,6 +478,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
   <string name="six">Šest</string>
   <string name="quiet_hours_title">Klidný mód</string>
   <string name="quiet_hours_summary">Nastavení hodin, kdy má být zařízení v tichém režimu</string>
+  <string name="quiet_hours_forced">Režim \"Tiché hodiny\" je vždy zapnutý</string>
   <string name="quiet_hours_start">Začátek klidného módu</string>
   <string name="quiet_hours_start_summary">Kdy začít prosazovat klidný mód</string>
   <string name="quiet_hours_end">Konec klidného módu</string>

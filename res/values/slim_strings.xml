@@ -232,6 +232,7 @@
     <string name="app_ops_summaries_delete_mms">delete MMS</string>
     <string name="app_ops_summaries_delete_contacts">delete contacts</string>
     <string name="app_ops_summaries_delete_call_log">delete call log</string>
+    <string name="app_ops_summaries_wake_up">wake up</string>
 
     <string name="app_ops_labels_location">Location</string>
     <string name="app_ops_labels_vibrate">Vibrate</string>
@@ -283,6 +284,7 @@
     <string name="app_ops_labels_delete_mms">Delete MMS</string>
     <string name="app_ops_labels_delete_contacts">Delete contacts</string>
     <string name="app_ops_labels_delete_call_log">Delete call log</string>
+    <string name="app_ops_labels_wake_up">Wake up</string>
 
     <!-- App ops categories -->
     <string name="app_ops_categories_location">Location</string>

@@ -47,12 +47,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
 
     private SwitchPreference mSafeHeadsetVolume;
     private ListPreference mAnnoyingNotifications;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mCameraSounds;
     private SwitchPreference mSwapVolumeButtons;
+    private SwitchPreference mVolBtnMusicCtrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mSwapVolumeButtons.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0) != 0);
         mSwapVolumeButtons.setOnPreferenceChangeListener(this);
+
+        mVolBtnMusicCtrl = (SwitchPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
+        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
+        mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -119,11 +126,16 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
         if (KEY_CAMERA_SOUNDS.equals(key)) {
-           if ((Boolean) objValue) {
-               SystemProperties.set(PROP_CAMERA_SOUND, "1");
-           } else {
-               showDialogInner(DLG_CAMERA_SOUND);
-           }
+            if ((Boolean) objValue) {
+                SystemProperties.set(PROP_CAMERA_SOUND, "1");
+            } else {
+                showDialogInner(DLG_CAMERA_SOUND);
+            }
+        }
+        if (KEY_VOLBTN_MUSIC_CTRL.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    (Boolean) objValue ? 1 : 0);
         }
         if (KEY_SWAP_VOLUME_BUTTONS.equals(key)) {
             Settings.System.putInt(getContentResolver(),

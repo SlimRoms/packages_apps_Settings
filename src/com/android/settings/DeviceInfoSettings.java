@@ -74,6 +74,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
+    private static final String KEY_SLIM_VERSION = "slim_version";
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
@@ -94,6 +95,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
         setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
         findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
+        setValueSummary(KEY_SLIM_VERSION, "ro.slim.version");
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);

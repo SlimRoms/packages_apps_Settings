@@ -216,4 +216,8 @@
     <!-- Memory -->
     <string name="memory_startup_apps_title">Apps started on boot</string>
 
+    <!-- About phone screen, Slim version -->
+    <string name="slim_version_title">Slim version</string>
+    <string name="slim_version_default">Unknown</string>
+
 </resources>

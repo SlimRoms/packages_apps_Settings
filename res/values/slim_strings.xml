@@ -315,4 +315,8 @@
     <string name="profile_choose_app">Choose app</string>
     <string name="profile_reset_title">Reset</string>
 
+    <!-- About phone screen, Slim version -->
+    <string name="slim_version_title">Slim Version</string>
+    <string name="slim_version_default">Unknown</string>
+
 </resources>

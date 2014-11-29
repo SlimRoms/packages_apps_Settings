@@ -21,4 +21,8 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <!-- About phone screen, Slim version -->
+    <string name="slim_version_title">Slim version</string>
+    <string name="slim_version_default">Unknown</string>
+
 </resources>

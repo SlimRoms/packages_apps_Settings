@@ -47,6 +47,9 @@
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
     <string name="build_date_default">Unknown</string>
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
 
     <!-- Setting checkbox title for root access -->
     <string name="root_access">Root access</string>

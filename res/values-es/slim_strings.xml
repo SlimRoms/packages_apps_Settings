@@ -755,7 +755,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="title_tile_sleep">Apagar pantalla</string>
   <string name="title_tile_location">Localización</string>
   <string name="title_tile_torch">Linterna</string>
-  <string name="title_tile_lockscreen">Bloqueo de pantalla</string>
+  <string name="title_tile_lockscreen">Pantalla de Bloqueo</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Datos móviles</string>
   <string name="title_tile_autorotate">Orientación</string>
@@ -938,7 +938,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="advanced_reboot_summary">Mostrar opciones, en el menú de apagado, para reiniciar en modos especiales</string>
   <string name="advanced_reboot_dialog_title">Menú de reinicio avanzado</string>
   <string name="advanced_reboot_disabled">Deshabilitado</string>
-  <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ocultar en la pantalla de bloqueo</string>
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
   <string name="lockscreen_settings_title">Pantalla de Bloqueo</string>
   <string name="lockscreen_rotation_title">Rotación de bloqueo de pantalla</string>

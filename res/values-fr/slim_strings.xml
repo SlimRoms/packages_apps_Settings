@@ -181,7 +181,6 @@
   <string name="camera_sounds_summary">Activer le son de l\'obturateur de l\'appareil photo.</string>
   <string name="camera_sound_warning_dialog_text">Désactiver le son de l\'obturateur est illégal dans certains pays ! Merci de vous conformer aux lois de votre pays.</string>
   <string name="safe_headset_volume_title">Volume sécurisé</string>
-  <string name="safe_headset_volume_summary">Empêche un volume trop haut du son lorsqu\'un périphérique audio est branché.</string>
   <string name="safe_headset_volume_warning_dialog_text">L\'écoute prolongée à haut volume peut endommager votre audition. Désactiver avec précaution.</string>
   <string name="display_category_animation_options_title">Options des animations</string>
   <string name="system_power_crt_mode_title">Animation d\'extinction</string>
@@ -743,7 +742,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="title_tile_sleep">Mettre en veille</string>
   <string name="title_tile_location">Localisation</string>
   <string name="title_tile_torch">Torche</string>
-  <string name="title_tile_lockscreen">Écran de verrouillage</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Données mobiles</string>
   <string name="title_tile_autorotate">Orientation</string>
@@ -926,7 +924,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="advanced_reboot_summary">Inclure dans le menu marche/arrêt la possibilité de redémarrer dans le recovery et le bootloader.</string>
   <string name="advanced_reboot_dialog_title">Redémarrage avancé</string>
   <string name="advanced_reboot_disabled">Désactiver</string>
-  <string name="advanced_reboot_hide_on_keyguard">Désactiver si verrouillé</string>
   <string name="advanced_reboot_show_always">Toujours afficher</string>
   <string name="lockscreen_rotation_title">Rotation de l\'écran de verrouillage</string>
   <string name="lockscreen_rotation_portrait">Portrait uniquement</string>

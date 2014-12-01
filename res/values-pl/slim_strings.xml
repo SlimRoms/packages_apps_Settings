@@ -179,11 +179,12 @@
   <string name="volume_overlay_expanded">Rozszerzony</string>
   <string name="volume_overlay_disable">Wyłączony</string>
   <string name="volume_panel_bg_color_title">Kolor tła panelu głośności</string>
+  <string name="volume_panel_timeout_title">Wygaszanie panelu głośności</string>
+  <string name="volume_panel_timeout_summary">Czas widoczności panelu głośności po jej zmianie</string>
   <string name="camera_sounds_title">Dźwięk migawki aparatu</string>
   <string name="camera_sounds_summary">Włącz dźwiek migawki aparatu</string>
   <string name="camera_sound_warning_dialog_text">Wyłączenie dźwięku migawki aparatu jest nielegalne w niektórych regionach! Sprawdź czy w Twoim państwie jest to zgodne z prawem</string>
   <string name="safe_headset_volume_title">Bezpieczna głośność słuchawek</string>
-  <string name="safe_headset_volume_summary">Zapobiegaj wysokiej głośności podczas podłączania słuchawek</string>
   <string name="safe_headset_volume_warning_dialog_text">Słuchanie przez długi czas na wysokiej głośności może uszkodzić Twój słuch. Wyłącz tą opcję z rozwagą.</string>
   <string name="display_category_animation_options_title">Ustawienia animacji</string>
   <string name="system_power_crt_mode_title">Animacja CRT </string>
@@ -739,7 +740,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="title_tile_sleep">Uśpij</string>
   <string name="title_tile_location">Lokalizacja</string>
   <string name="title_tile_torch">Latarka</string>
-  <string name="title_tile_lockscreen">Zablokuj ekran</string>
+  <string name="title_tile_lockscreen">Blokada ekranu</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Dane mobilne</string>
   <string name="title_tile_autorotate">Orientacja ekranu</string>
@@ -918,7 +919,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="advanced_reboot_summary">Dodaj opcję uruchomienia w trybie recovery lub bootloader w menu zasilania</string>
   <string name="advanced_reboot_dialog_title">Menu zaawansowanego uruchamiania</string>
   <string name="advanced_reboot_disabled">Wyłączone</string>
-  <string name="advanced_reboot_hide_on_keyguard">Ukryj na ekranie blokady</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ukryj na zabezpieczonej blokadzie ekranu</string>
   <string name="advanced_reboot_show_always">Zawsze pokazuj</string>
   <string name="lockscreen_settings_title">Ekran blokady</string>
   <string name="lockscreen_rotation_title">Obrót ekranu blokady</string>

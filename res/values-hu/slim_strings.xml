@@ -157,7 +157,6 @@
   <string name="camera_sounds_summary">Engedélyezi a kamera zárhangot</string>
   <string name="camera_sound_warning_dialog_text">Kamera zárhang tiltása egyes területeken tiltott! Kérjük ellenőrizze a jogszabályokat az Ön országában</string>
   <string name="safe_headset_volume_title">Biztonsági fejhallgató hangerő</string>
-  <string name="safe_headset_volume_summary">Megakadályozza a hangos hangerőt mikor csatlakoztatod a fejhallgatót</string>
   <string name="safe_headset_volume_warning_dialog_text">Hosszú ideig hangos zenét hallgatva halláskárosodást okozhat. Óvatosan tiltsa le.</string>
   <string name="display_category_animation_options_title">Animáció opciók</string>
   <string name="system_power_crt_mode_title">CRT animáció </string>
@@ -666,7 +665,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="title_tile_sleep">Alvó állapot</string>
   <string name="title_tile_location">Hely</string>
   <string name="title_tile_torch">Zseblámpa</string>
-  <string name="title_tile_lockscreen">Zárképernyő</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Mobil adat</string>
   <string name="title_tile_autorotate">Tájolás</string>
@@ -829,7 +827,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="advanced_reboot_summary">Kikapcsolási menü tartalmazza az újraindítás recovery és bootloader opciókat</string>
   <string name="advanced_reboot_dialog_title">Haladó újarindítási menü</string>
   <string name="advanced_reboot_disabled">Tiltva</string>
-  <string name="advanced_reboot_hide_on_keyguard">Rejtve a zárképernyőn</string>
   <string name="advanced_reboot_show_always">Mindig mutassa</string>
   <string name="lockscreen_battery_status_title">Akksi állapot</string>
   <string name="lockscreen_battery_status_summary">Mindig mutassa az akksi állapotát a képernyőzáron</string>

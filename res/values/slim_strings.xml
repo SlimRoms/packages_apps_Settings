@@ -228,4 +228,8 @@
     <string name="restarting_ui">Restarting UI\u2026</string>
     <string name="lcd_density_prompt_message">Some apps may not function at non-standard dpi.\n\nThis will restart your phone.</string>
 
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Prevent accidental wake-up</string>
+    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
 </resources>

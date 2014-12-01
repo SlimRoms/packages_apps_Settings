@@ -185,7 +185,7 @@
   <string name="camera_sounds_summary">Habilita el sonido del obturador de la cámara</string>
   <string name="camera_sound_warning_dialog_text">¡Deshabilitar el sonido del obturador de la cámara es ilegal en algunos paises!. Por favor revise las leyes de su país.</string>
   <string name="safe_headset_volume_title">Volumen seguro de auriculares</string>
-  <string name="safe_headset_volume_summary">Al conectar los auriculares por primera vez, controla el volumen para que no sea demasiado fuerte</string>
+  <string name="safe_headset_volume_summary">Al conectar los auriculares por primera vez, controlar que el volumen no sea demasiado alto</string>
   <string name="safe_headset_volume_warning_dialog_text">Utilizar auriculares con volumen alto durante mucho tiempo puede causar daños en los oidos. Deshabilita esta opción con precaución.</string>
   <string name="display_category_animation_options_title">Ajustes de animaciones</string>
   <string name="system_power_crt_mode_title">Animación CRT </string>
@@ -755,7 +755,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="title_tile_sleep">Apagar pantalla</string>
   <string name="title_tile_location">Localización</string>
   <string name="title_tile_torch">Linterna</string>
-  <string name="title_tile_lockscreen">Bloqueo de pantalla</string>
+  <string name="title_tile_lockscreen">Pantalla de Bloqueo</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Datos móviles</string>
   <string name="title_tile_autorotate">Orientación</string>
@@ -938,7 +938,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="advanced_reboot_summary">Mostrar opciones para reiniciar en modo recovery y bootloader en el menú de apagado</string>
   <string name="advanced_reboot_dialog_title">Menu de reinicio avanzado</string>
   <string name="advanced_reboot_disabled">Deshabilitado</string>
-  <string name="advanced_reboot_hide_on_keyguard">Ocultar en pantalla de bloqueo</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ocultar en la pantalla de bloqueo</string>
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
   <string name="lockscreen_settings_title">Pantalla de Bloqueo</string>
   <string name="lockscreen_rotation_title">Rotación de bloqueo de pantalla</string>

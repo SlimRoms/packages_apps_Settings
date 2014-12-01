@@ -185,7 +185,6 @@
   <string name="camera_sounds_summary">Ενεργοποίηση του ήχου κλείστρου της κάμερας του συστήματος</string>
   <string name="camera_sound_warning_dialog_text">Η απενεργοποίηση του ήχου του κλείστρου της φωτογραφηκής μηχανής είναι παράνομη σε ορισμένες περιοχές! Παρακαλώ ελέγξτε το εφαρμοστέο δίκαιο στη χώρα σας.</string>
   <string name="safe_headset_volume_title">Ασφαλής ένταση ακουστικών</string>
-  <string name="safe_headset_volume_summary">Πρόληψη υψηλών επιπέδων έντασης όταν τα ακουστικά συνδέονται για πρώτη φορά</string>
   <string name="safe_headset_volume_warning_dialog_text">Ακούγοντας σε υψηλή ένταση για μεγάλο χρονικό διάστημα μπορεί να βλάψει την ακοή σας. Απενεργοποιήσετε με προσοχή.</string>
   <string name="display_category_animation_options_title">Επιλογές κίνησης εικόνας</string>
   <string name="system_power_crt_mode_title">Κίνηση εικόνας CRT</string>
@@ -760,7 +759,6 @@
   <string name="title_tile_sleep">Αναστολή λειτουργίας</string>
   <string name="title_tile_location">Τοποθεσία</string>
   <string name="title_tile_torch">Φακός</string>
-  <string name="title_tile_lockscreen">Οθόνη κλειδώματος</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Δεδομένα κινητής τηλεφωνίας</string>
   <string name="title_tile_autorotate">Προσανατολισμός</string>
@@ -943,7 +941,6 @@
   <string name="advanced_reboot_summary">Περιλαμβάνουν επιλογές στο power μενού για επανεκκίνηση σε recovery και bootloader</string>
   <string name="advanced_reboot_dialog_title">Προηγμένο μενού επανεκκίνησης</string>
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
-  <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη στην οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
   <string name="lockscreen_settings_title">Οθόνη κλειδώματος</string>
   <string name="lockscreen_rotation_title">Περιστροφή οθόνης κλειδώματος</string>

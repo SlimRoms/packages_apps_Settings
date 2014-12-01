@@ -185,7 +185,6 @@
   <string name="camera_sounds_summary">Attiva suono in caso di scatto con la fotocamera</string>
   <string name="camera_sound_warning_dialog_text">La disattivazione del suono di scatto è illegale in alcuni Paesi! Verifica la legislazione vigente prima di disattivarlo.</string>
   <string name="safe_headset_volume_title">Volume sicuro cuffie</string>
-  <string name="safe_headset_volume_summary">Evita un volume elevato quando le cuffie vengono inserite</string>
   <string name="safe_headset_volume_warning_dialog_text">L\'ascolto proloungato a volume elevato danneggia l\'udito. Disattiva con cautela.</string>
   <string name="display_category_animation_options_title">Opzioni animazione</string>
   <string name="system_power_crt_mode_title">Animazione CRT</string>
@@ -758,7 +757,6 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="title_tile_sleep">Addormenta</string>
   <string name="title_tile_location">Posizione</string>
   <string name="title_tile_torch">Torcia</string>
-  <string name="title_tile_lockscreen">Lockscreen</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Dati mobili</string>
   <string name="title_tile_autorotate">Orientamento</string>
@@ -941,7 +939,6 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="advanced_reboot_summary">Permette il riavvio in recovery o bootloader dal menu power</string>
   <string name="advanced_reboot_dialog_title">Menu riavvio avanzato</string>
   <string name="advanced_reboot_disabled">Disattiva</string>
-  <string name="advanced_reboot_hide_on_keyguard">Nascondi nella lockscreen</string>
   <string name="advanced_reboot_show_always">Mostra sempre</string>
   <string name="lockscreen_settings_title">Schermata di sblocco</string>
   <string name="lockscreen_rotation_title">Rotazione lockscreen</string>

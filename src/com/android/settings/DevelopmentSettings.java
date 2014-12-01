@@ -106,8 +106,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String LOCAL_BACKUP_PASSWORD = "local_backup_password";
     private static final String HARDWARE_UI_PROPERTY = "persist.sys.ui.hw";
     private static final String MSAA_PROPERTY = "debug.egl.force_msaa";
-    private static final String BUGREPORT = "bugreport";
-    private static final String BUGREPORT_IN_POWER_KEY = "bugreport_in_power";
     private static final String OPENGL_TRACES_PROPERTY = "debug.egl.trace";
 
     private static final String DEBUG_APP_KEY = "debug_app";
@@ -190,8 +188,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Preference mClearAdbKeys;
     private SwitchPreference mAdbNotify;
     private SwitchPreference mEnableTerminal;
-    private Preference mBugreport;
-    private SwitchPreference mBugreportInPower;
     private SwitchPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
     private SwitchPreference mEnableOemUnlock;
@@ -301,8 +297,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             mEnableTerminal = null;
         }
 
-        mBugreport = findPreference(BUGREPORT);
-        mBugreportInPower = findAndInitSwitchPref(BUGREPORT_IN_POWER_KEY);
         mKeepScreenOn = findAndInitSwitchPref(KEEP_SCREEN_ON);
         mBtHciSnoopLog = findAndInitSwitchPref(BT_HCI_SNOOP_LOG);
         mEnableOemUnlock = findAndInitSwitchPref(ENABLE_OEM_UNLOCK);
@@ -543,8 +537,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                     context.getPackageManager().getApplicationEnabledSetting(TERMINAL_APP_PACKAGE)
                             == PackageManager.COMPONENT_ENABLED_STATE_ENABLED);
         }
-        updateSwitchPreference(mBugreportInPower, Settings.Secure.getInt(cr,
-                Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0);
         updateSwitchPreference(mKeepScreenOn, Settings.Global.getInt(cr,
                 Settings.Global.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         updateSwitchPreference(mBtHciSnoopLog, Settings.Secure.getInt(cr,
@@ -580,7 +572,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateAppProcessLimitOptions();
         updateShowAllANRsOptions();
         updateVerifyAppsOverUsbOptions();
-        updateBugreportOptions();
         updateForceRtlOptions();
         updateLogdSizeValues();
         updateWifiDisplayCertificationOptions();
@@ -778,25 +769,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static boolean showEnableOemUnlockPreference() {
         return !SystemProperties.get(PERSISTENT_DATA_BLOCK_PROP).equals("");
-    }
-
-    private void updateBugreportOptions() {
-        if ("user".equals(Build.TYPE)) {
-            final ContentResolver resolver = getActivity().getContentResolver();
-            final boolean adbEnabled = Settings.Global.getInt(
-                    resolver, Settings.Global.ADB_ENABLED, 0) != 0;
-            if (adbEnabled) {
-                mBugreport.setEnabled(true);
-                mBugreportInPower.setEnabled(true);
-            } else {
-                mBugreport.setEnabled(false);
-                mBugreportInPower.setEnabled(false);
-                mBugreportInPower.setChecked(false);
-                Settings.Secure.putInt(resolver, Settings.Secure.BUGREPORT_IN_POWER_MENU, 0);
-            }
-        } else {
-            mBugreportInPower.setEnabled(true);
-        }
     }
 
     // Returns the current state of the system property that controls
@@ -1454,7 +1426,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         Settings.Global.ADB_ENABLED, 0);
                 mVerifyAppsOverUsb.setEnabled(false);
                 mVerifyAppsOverUsb.setChecked(false);
-                updateBugreportOptions();
             }
         } else if (preference == mClearAdbKeys) {
             if (mAdbKeysDialog != null) dismissDialogs();
@@ -1472,10 +1443,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             pm.setApplicationEnabledSetting(TERMINAL_APP_PACKAGE,
                     mEnableTerminal.isChecked() ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                             : PackageManager.COMPONENT_ENABLED_STATE_DEFAULT, 0);
-        } else if (preference == mBugreportInPower) {
-            Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.BUGREPORT_IN_POWER_MENU,
-                    mBugreportInPower.isChecked() ? 1 : 0);
         } else if (preference == mKeepScreenOn) {
             Settings.Global.putInt(getActivity().getContentResolver(),
                     Settings.Global.STAY_ON_WHILE_PLUGGED_IN,
@@ -1655,7 +1622,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 mAdbNotify.setChecked(true);
                 mVerifyAppsOverUsb.setEnabled(true);
                 updateVerifyAppsOverUsbOptions();
-                updateBugreportOptions();
             } else {
                 // Reset the toggle
                 mEnableAdb.setChecked(false);

@@ -87,6 +87,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
 
+<<<<<<< HEAD
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
@@ -112,6 +113,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         int networkArrows = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0);
         updateNetworkArrowsSummary(networkArrows);
+=======
+>>>>>>> 532006a... Settings: Show clock enabled/disabled status summary in status bar settings
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -177,6 +180,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
     }
 
+<<<<<<< HEAD
     private void updateNetworkArrowsSummary(int value) {
         String summary = value != 0
                 ? getResources().getString(R.string.enabled)
@@ -184,6 +188,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mNetworkArrows.setSummary(summary);
     }
 
+=======
+>>>>>>> 532006a... Settings: Show clock enabled/disabled status summary in status bar settings
     private void updateClockStyleDescription() {
         if (mClockStyle == null) {
             return;

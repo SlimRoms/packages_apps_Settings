@@ -16,6 +16,8 @@
 
 package com.android.settings.deviceinfo;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.ClipboardManager;
@@ -42,6 +44,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -275,6 +278,12 @@ public class Status extends PreferenceActivity {
         mUnknown = mRes.getString(R.string.device_info_default);
         mUnavailable = mRes.getString(R.string.status_unavailable);
 
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            // android.R.id.home will be triggered in onOptionsItemSelected()
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
             mPhone = PhoneFactory.getDefaultPhone();
         }
@@ -389,6 +398,7 @@ public class Status extends PreferenceActivity {
                     return true;
                 }
             });
+
     }
 
     @Override
@@ -632,4 +642,24 @@ public class Status extends PreferenceActivity {
 
         return h + ":" + pad(m) + ":" + pad(s);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        final int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                goUpToTopLevelSetting(this);
+                return true;
+            default:
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Finish current Activity and go up to the top level Settings.
+     */
+    private static void goUpToTopLevelSetting(Activity activity) {
+        activity.finish();
+    }
+
 }

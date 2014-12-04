@@ -261,9 +261,19 @@ public class AppOpsDetails extends Fragment {
                     showDialogInner(DLG_ENABLE_PRIVACY_GUARD);
                 }
                 return true;
+            case android.R.id.home:
+                goUpToTopLevelSetting(getActivity());
+                return true;
              default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    /**
+     * Finish current Activity and go up to the top level Settings.
+     */
+    private static void goUpToTopLevelSetting(Activity activity) {
+        activity.finish();
     }
 
     private void showDialogInner(int id) {

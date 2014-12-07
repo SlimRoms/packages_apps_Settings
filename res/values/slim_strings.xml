@@ -427,4 +427,85 @@
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
+    <!-- Caf Strings -->
+    <!-- About phone screen, summary of the item to go into the phone status screen -->
+    <string name="device_status_summary" product="default">Battery Status, battery level, etc.</string>
+    <string name="subs_settings">SUBS Status</string>
+    <!-- About phone screen, summary of the item to go into the phone status screen -->
+    <string name="device_additional_status_summary">Phone number, Signal, IMEI, etc.</string>
+    <!-- In About phone->Status screen, title of the item to go into the subscription status screen -->
+    <string name="device_additional_status">Additional Status Info</string>
+
+    <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the DUN profile. -->
+    <string name="bluetooth_profile_dun">Dial-up Network Access</string>
+    <!-- Bluetooth settings.  Connection options screen.  The summary for the DUN checkbox preference when DUN is connected. -->
+    <string name="bluetooth_dun_profile_summary_connected">Connected to DUN Server</string>
+    <!-- Bluetooth settings.  Connection options screen.  The summary for the DUN checkbox preference that describes how checking it will set the DUN profile as preferred. -->
+    <string name="bluetooth_dun_profile_summary_use_for">Use for Dial-up Network Access</string>
+    <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the SAP profile. -->
+    <string name="bluetooth_profile_sap">SIM Access</string>
+    <!-- Bluetooth settings.  Connection options screen.  The summary for the SAP checkbox preference when SAP is connected. -->
+    <string name="bluetooth_sap_profile_summary_connected">Connected to SIM Access Server</string>
+    <!-- Bluetooth settings.  Connection options screen.  The summary for the SAP checkbox preference that describes how checking it will set the SAP profile as preferred. -->
+    <string name="bluetooth_sap_profile_summary_use_for">Use for SIM Access</string>
+
+    <!-- [CHAR LIMIT=130] Location mode screen, sub category for IZat Location -->
+    <string name="location_category_enhanced_location">Enhanced Location</string>
+
+    <!-- Checkbox title for option to toggle wifi RSSI threshold check -->
+    <string name="wifi_rssi_threshold_check">Enable RSSI threshold</string>
+    <!-- Checkbox summary for option to toggle poor network detection -->
+    <string name="wifi_rssi_threshold_check_summary">Do not connect to an AP if RSSI is poor</string>
+
+    <!-- Message when bluetooth dialog for pin entry is showing  when HIGH security enabled-->
+    <string name="bluetooth_enter_pin_msg_hs">Device requires High Security 16 character passkey</string>
+
+    <!-- MultiSim Settings changes-->
+    <string name="close_dialog">OK</string>
+    <string name="sim_enabler_title">SIM Enablers</string>
+    <string name="sim_enabler_summary">SIM is %1$s</string>
+    <string name="sim_enabled">enabled</string>
+    <string name="sim_disabled">disabled</string>
+    <string name="sim_missing">missing or error</string>
+    <string name="sim_enabler_need_enable_sim">Activating the SIM, are you sure?</string>
+    <string name="sim_enabler_need_disable_sim">Deactivating the SIM, are you sure?</string>
+    <string name="sim_enabler_airplane_on">ERROR, airplane mode is on!</string>
+    <string name="sim_enabler_in_call">ERROR, in call!</string>
+    <string name="sim_enabler_both_inactive">"Error, can't disable all the SIMs"</string>
+    <string name="sim_enabler_enabling">Activating...</string>
+    <string name="sim_enabler_disabling">Deactivating...</string>
+    <string name="sub_activate_success">Successfully Activated.</string>
+    <string name="sub_activate_failed">Activation failed.</string>
+    <string name="sub_deactivate_success">Successfully Deactivated.</string>
+    <string name="sub_deactivate_failed">Deactivation failed.</string>
+    <string name="sub_deactivate_not_supported">Deactivation not supported</string>
+    <string name="sub_activate_not_supported">Activation not supported</string>
+    <string name="slot_name">SIM <xliff:g id="sub">%d</xliff:g></string>
+
+    <!-- SIM lock settings title  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings">SIM/RUIM card lock settings</string>
+    <!-- Security & location settings screen, setting option name  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings_category">Set up SIM/RUIM card lock</string>
+    <!-- Security & location settings screen, section heading for settings related to sim card locking  [CHAR LIMIT=40] -->
+    <string name="sim_lock_settings_title">SIM/RUIM card lock</string>
+    <!-- SIM card lock settings screen, SIM PIN dialog message when SIM card is absent-->
+    <string name="sim_absent">No SIM/RUIM</string>
+    <!-- SIM card lock settings screen, toast after not entering correct SIM PIN  [CHAR LIMIT=40] -->
+    <string name="sim_change_failed">Can\'t change PIN.\nPossibly incorrect PIN.</string>
+    <!-- SIM card lock settings screen, SIM PIN dialog message when PIN disable fails-->
+    <string name="sim_pin_disable_failed">Can\'t disable PIN.</string>
+    <!-- SIM card lock settings screen, SIM PIN dialog message when PIN enable fails-->
+    <string name="sim_pin_enable_failed">Can\'t enable PIN.</string>
+    <!-- SIM password can't be changed as SIM LOCK is not enabled: -->
+    <string name="sim_pin_change_failed_enable_sim_lock">Unable to Change SIM/RUIM PIN.\n Enable SIM/RUIM Lock.</string>
+    <!-- SIM lock can't be changed - not supported -->
+    <string name="sim_enable_disable_lock_not_supported">Unable to Change SIM/RUIM Lock.\n SIM/RUIM doesn\'t support it.</string>
+    <!-- SIM card lock settings screen, toast displayed on wrong PIN1: -->
+    <string name="sim_pin_attempts">\nAttempts Remaining :</string>
+    <!-- SIM card lock settings screen, toast displayed on PIN1 enable: -->
+    <string name="sim_pin_enabled">PIN1 Enabled!</string>
+    <!-- SIM card lock settings screen, toast displayed on PIN1 disable: -->
+    <string name="sim_pin_disabled">PIN1 Disabled!</string>
+
+    <string name="primary_sub_select_title">Default 4G/3G Subscription</string>
 </resources>

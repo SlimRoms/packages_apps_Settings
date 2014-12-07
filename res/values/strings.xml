@@ -1135,9 +1135,6 @@
     <!-- Message when bluetooth is informing the user of the pairing key. [CHAR LIMIT=NONE] -->
     <string name="bluetooth_pairing_key_msg">Pairing code</string>
 
-    <!-- Message when bluetooth dialog for pin entry is showing  when HIGH security enabled-->
-    <string name="bluetooth_enter_pin_msg_hs">Device requires High Security 16 character passkey</string>
-
     <!-- Message when bluetooth dialog for passkey entry is showing. [CHAR LIMIT=NONE] -->
     <string name="bluetooth_enter_passkey_msg">Type the pairing code then press Return or Enter</string>
 
@@ -1259,10 +1256,6 @@
     <string name="bluetooth_profile_pan_nap">Internet connection sharing</string>
     <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the map profile. -->
     <string name="bluetooth_profile_map">Message Access</string>
-    <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the DUN profile. -->
-    <string name="bluetooth_profile_dun">Dial-up Network Access</string>
-    <!-- Bluetooth settings.  The user-visible string that is used whenever referring to the SAP profile. -->
-    <string name="bluetooth_profile_sap">SIM Access</string>
     <!-- Bluetooth settings.  Message for disconnecting from the A2DP profile. [CHAR LIMIT=80] -->
     <string name="bluetooth_disconnect_a2dp_profile"><xliff:g id="device_name">%1$s</xliff:g> will be disconnected from media audio.</string>
     <!-- Bluetooth settings.  Message for disconnecting from the headset profile. [CHAR LIMIT=80] -->
@@ -1297,10 +1290,6 @@
     <string name="bluetooth_opp_profile_summary_connected">Connected to file transfer server</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the map checkbox preference when map is connected. -->
     <string name="bluetooth_map_profile_summary_connected">Connected to map</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the DUN checkbox preference when DUN is connected. -->
-    <string name="bluetooth_dun_profile_summary_connected">Connected to DUN Server</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the SAP checkbox preference when SAP is connected. -->
-    <string name="bluetooth_sap_profile_summary_connected">Connected to SIM Access Server</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the OPP checkbox preference when OPP is not connected. -->
     <string name="bluetooth_opp_profile_summary_not_connected">Not connected to file transfer server</string>
     <!-- Bluetooth settings. Connection options screen. The summary for the HID checkbox preference when HID is connected. -->
@@ -1316,10 +1305,6 @@
     <string name="bluetooth_headset_profile_summary_use_for">Use for phone audio</string>
     <!-- Bluetooth settings.  Connection options screen.  The summary for the OPP checkbox preference that describes how checking it will set the OPP profile as preferred. -->
     <string name="bluetooth_opp_profile_summary_use_for">Use for file transfer</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the DUN checkbox preference that describes how checking it will set the DUN profile as preferred. -->
-    <string name="bluetooth_dun_profile_summary_use_for">Use for Dial-up Network Access</string>
-    <!-- Bluetooth settings.  Connection options screen.  The summary for the SAP checkbox preference that describes how checking it will set the SAP profile as preferred. -->
-    <string name="bluetooth_sap_profile_summary_use_for">Use for SIM Access</string>
     <!-- Bluetooth settings. Connection options screen. The summary
          for the HID checkbox preference that describes how checking it
          will set the HID profile as preferred. -->
@@ -1469,10 +1454,6 @@
     <string name="wifi_poor_network_detection">Avoid poor connections</string>
     <!-- Checkbox summary for option to toggle poor network detection -->
     <string name="wifi_poor_network_detection_summary">Don\'t use a Wi\u2011Fi network unless it has a good Internet connection</string>
-    <!-- Checkbox title for option to toggle wifi RSSI threshold check -->
-    <string name="wifi_rssi_threshold_check">Enable RSSI threshold</string>
-    <!-- Checkbox summary for option to toggle poor network detection -->
-    <string name="wifi_rssi_threshold_check_summary">Do not connect to an AP if RSSI is poor</string>
     <!-- Checkbox summary for option to toggle poor network detection [CHAR LIMIT=60] -->
     <string name="wifi_avoid_poor_network_detection_summary">Only use networks that have a good Internet connection</string>
     <!-- Checkbox title for option to scan always available setting -->
@@ -2084,12 +2065,6 @@
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
 
-    <!-- SIM lock settings title  [CHAR LIMIT=40] -->
-    <string name="sim_lock_settings">SIM/RUIM card lock settings</string>
-    <!-- Security & location settings screen, setting option name  [CHAR LIMIT=40] -->
-    <string name="sim_lock_settings_category">Set up SIM/RUIM card lock</string>
-    <!-- Security & location settings screen, section heading for settings related to sim card locking  [CHAR LIMIT=40] -->
-    <string name="sim_lock_settings_title">SIM/RUIM card lock</string>
     <!-- SIM card lock settings screen, setting check box label  [CHAR LIMIT=40] -->
     <string name="sim_pin_toggle">Lock SIM card</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is selected  [CHAR LIMIT=40] -->
@@ -2120,14 +2095,6 @@
     <string name="sim_bad_pin">Incorrect PIN</string>
     <!-- SIM card lock settings screen, SIM PIN dialog message when PINs don't match  [CHAR LIMIT=40] -->
     <string name="sim_pins_dont_match">PINs don\'t match</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when SIM card is absent-->
-    <string name="sim_absent">No SIM/RUIM</string>
-    <!-- SIM card lock settings screen, toast after not entering correct SIM PIN  [CHAR LIMIT=40] -->
-    <string name="sim_change_failed">Can\'t change PIN.\nPossibly incorrect PIN.</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when PIN disable fails-->
-    <string name="sim_pin_disable_failed">Can\'t disable PIN.</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when PIN enable fails-->
-    <string name="sim_pin_enable_failed">Can\'t enable PIN.</string>
     <!-- SIM card lock settings screen, SIM PIN dialog message when the entered PIN is correct-->
     <string name="sim_change_succeeded">SIM PIN changed successfully</string>
     <!-- SIM card lock settings screen, toast after not entering correct SIM PIN [CHAR LIMIT=40] -->
@@ -2140,16 +2107,6 @@
     <string name="sim_multi_sims_title">Multiple SIMs found</string>
     <!-- Multiple SIMs found summary.  [CHAR LIMIT=100] -->
     <string name="sim_multi_sims_summary">Choose the SIM you prefer for cellular data.</string>
-    <!-- SIM password can't be changed as SIM LOCK is not enabled: -->
-    <string name="sim_pin_change_failed_enable_sim_lock">Unable to Change SIM/RUIM PIN.\n Enable SIM/RUIM Lock.</string>
-    <!-- SIM lock can't be changed - not supported -->
-    <string name="sim_enable_disable_lock_not_supported">Unable to Change SIM/RUIM Lock.\n SIM/RUIM doesn\'t support it.</string>
-    <!-- SIM card lock settings screen, toast displayed on wrong PIN1: -->
-    <string name="sim_pin_attempts">\nAttempts Remaining :</string>
-    <!-- SIM card lock settings screen, toast displayed on PIN1 enable: -->
-    <string name="sim_pin_enabled">PIN1 Enabled!</string>
-    <!-- SIM card lock settings screen, toast displayed on PIN1 disable: -->
-    <string name="sim_pin_disabled">PIN1 Disabled!</string>
 
     <!-- Instructions telling the user that they entered the wrong SIM PIN for the last time.
          Displayed in a dialog box.  [CHAR LIMIT=100] -->
@@ -2195,13 +2152,6 @@
     <string name="device_status">Status</string>
     <!-- About tablet screen, summary of the item that takes you to tablet status screen -->
     <string name="device_status_summary" product="tablet">Status of the battery, network, and other information</string>
-    <!-- About phone screen, summary of the item to go into the phone status screen -->
-    <string name="device_status_summary" product="default">Battery Status, battery level, etc.</string>
-    <string name="subs_settings">SUBS Status</string>
-    <!-- About phone screen, summary of the item to go into the phone status screen -->
-    <string name="device_additional_status_summary">Phone number, Signal, IMEI, etc.</string>
-    <!-- In About phone->Status screen, title of the item to go into the subscription status screen -->
-    <string name="device_additional_status">Additional Status Info</string>
     <!-- Main settings screen item's title to go into the storage settings screen [CHAR LIMIT=25] -->
     <string name="storage_settings" >Storage</string>
     <!-- Storage settings screen title -->
@@ -2669,8 +2619,6 @@
     <string name="location_mode_battery_saving_description">Use Wi\u2011Fi and cellular networks to determine location</string>
     <!-- [CHAR LIMIT=130] Location mode screen, description for sensors only mode -->
     <string name="location_mode_sensors_only_description">Use GPS to determine your location</string>
-    <!-- [CHAR LIMIT=130] Location mode screen, sub category for IZat Location -->
-    <string name="location_category_enhanced_location">Enhanced Location</string>
     <!-- [CHAR LIMIT=30] Security & location settings screen, setting check box label for Google location service (cell ID, wifi, etc.) -->
     <string name="location_network_based">Wi\u2011Fi &amp; cellular network location</string>
     <!-- [CHAR LIMIT=130] Security & location settings screen, setting summary for Google location service check box-->
@@ -5182,28 +5130,6 @@
     <!-- Button label for cancelling the new-password operation and retaining the user's previous full-backup password -->
     <string name="backup_pw_cancel_button_text">Cancel</string>
 
-    <!-- MultiSim Settings changes-->
-    <string name="close_dialog">OK</string>
-    <string name="sim_enabler_title">SIM Enablers</string>
-    <string name="sim_enabler_summary">SIM is %1$s</string>
-    <string name="sim_enabled">enabled</string>
-    <string name="sim_disabled">disabled</string>
-    <string name="sim_missing">missing or error</string>
-    <string name="sim_enabler_need_enable_sim">Activating the SIM, are you sure?</string>
-    <string name="sim_enabler_need_disable_sim">Deactivating the SIM, are you sure?</string>
-    <string name="sim_enabler_airplane_on">ERROR, airplane mode is on!</string>
-    <string name="sim_enabler_in_call">ERROR, in call!</string>
-    <string name="sim_enabler_both_inactive">"Error, can't disable all the SIMs"</string>
-    <string name="sim_enabler_enabling">Activating...</string>
-    <string name="sim_enabler_disabling">Deactivating...</string>
-    <string name="sub_activate_success">Successfully Activated.</string>
-    <string name="sub_activate_failed">Activation failed.</string>
-    <string name="sub_deactivate_success">Successfully Deactivated.</string>
-    <string name="sub_deactivate_failed">Deactivation failed.</string>
-    <string name="sub_deactivate_not_supported">Deactivation not supported</string>
-    <string name="sub_activate_not_supported">Activation not supported</string>
-    <string name="slot_name">SIM <xliff:g id="sub">%d</xliff:g></string>
-
     <!-- A menu item in "About phone" that allows the user to update the phone with settings
     from their cell phone carrier. The use of the string is similar to the string
     "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
@@ -6042,5 +5968,4 @@
    <!-- Message for encryption dialog telling the user that Talkback and other accessibility services will be disabled. -->
    <string name="encrypt_talkback_dialog_message_password">When you enter your password to start this device, accessibility services like <xliff:g id="service" example="TalkBack">%1$s</xliff:g> won\'t yet be available.</string>
 
-    <string name="primary_sub_select_title">Default 4G/3G Subscription</string>
 </resources>

@@ -57,6 +57,8 @@
   <string name="camera_sounds_title">Som do obturador</string>
   <string name="camera_sounds_summary">Ativar o som do obturador da câmara</string>
   <string name="camera_sound_warning_dialog_text">Desativar o som do obturador da câmara é ilegal em alguns países! Por favor, verifique a lei aplicável no seu país</string>
+  <string name="volbtn_music_controls_title">Controle de música com teclas de volume</string>
+  <string name="volbtn_music_controls_summary">Quando o ecrã está desligado, o toque longo nas teclas de volume procurará faixas de música</string>
   <string name="safe_headset_volume_title">Proteção de volume nos auriculares</string>
   <string name="safe_headset_volume_summary">Evitar níveis de volume alto quando o auricular é ligado pela primeira vez</string>
   <string name="safe_headset_volume_warning_dialog_text">Ouvir com o volume alto por longos períodos pode prejudicar a sua audição. Desative-o com cuidado.</string>
@@ -99,8 +101,8 @@
   <string name="ime_switcher_notify_summary">Exibir notificação do seletor de método de entrada</string>
   <string name="app_security_title">Segurança das aplicações</string>
   <string name="privacy_guard_dlg_title">Ativar a Proteção da Privacidade?</string>
-  <string name="privacy_guard_dlg_text">Quando a Proteção da Privacidade está ativada, a aplicação não será capaz de aceder aos dados pessoais, como contactos, mensagens ou registos de chamadas.</string>
-  <string name="privacy_guard_dlg_system_app_text">Ao ativar a Proteção da Privacidade para uma aplicação de sistema, a aplicação não será capaz de aceder a dados pessoais, como contactos, mensagens, localização ou registos de chamadas. Isso pode causar com que outras aplicações não funcionem corretamente.</string>
+  <string name="privacy_guard_enable_dlg_text">Quando a Proteção da Privacidade está ativada, %s não será capaz de aceder aos dados pessoais, como contactos, mensagens ou registos de chamadas.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Ao ativar a Proteção da Privacidade para a aplicação de sistema %s, a aplicação não será capaz de aceder a dados pessoais, como contactos, mensagens, localização ou registos de chamadas. Isso pode causar que outras aplicações não funcionem corretamente.</string>
   <string name="privacy_guard_default_title">Ativar por defeito</string>
   <string name="privacy_guard_default_summary">Não aceder a dados pessoais por padrão para aplicações recém instaladas</string>
   <string name="privacy_guard_notification_title">Notificação</string>
@@ -314,6 +316,8 @@
   <string name="clock_date_style_uppercase">Maiúsculas</string>
   <string name="clock_date_format_custom">Formato personalizado java</string>
   <string name="status_bar_clock_style_reset_message">Restaurar cor do relógio?</string>
+  <string name="status_bar_ticker_title">Ticker de notificação</string>
+  <string name="status_bar_ticker_summary">Animação do texto de notificação na barra de estado</string>
   <string name="status_bar_toggle_brightness">Controle do brilho</string>
   <string name="status_bar_toggle_brightness_summary">Ajustar o brilho deslizando através da barra de estado</string>
   <string name="status_bar_toggle_info">Brilho automático está ativado</string>
@@ -328,6 +332,23 @@
   <string name="title_quick_pulldown">Puxar rápido para baixo</string>
   <string name="summary_quick_pulldown">O canto %1$s da barra de estado faz baixar o painel de definições rápidas</string>
   <string name="quick_pulldown_off">Desligado</string>
-  <string name="quick_pulldown_left">Esquerda</string>
-  <string name="quick_pulldown_right">Direita</string>
+  <string name="quick_pulldown_left">esquerdo</string>
+  <string name="quick_pulldown_right">direito</string>
+  <string name="smart_pulldown_title">Desdobrável inteligente</string>
+  <string name="smart_pulldown_summary">Abrir o painel de definições rápidas quando as notificações presentes forem %1$s</string>
+  <string name="smart_pulldown_off">Desligado</string>
+  <string name="smart_pulldown_dismissable">Não descartáveis</string>
+  <string name="smart_pulldown_persistent">Não persistentes</string>
+  <string name="smart_pulldown_all">Não descartáveis ou persistentes</string>
+  <string name="block_on_secure_keyguard_title">Desativar no ecrã de bloqueio</string>
+  <string name="block_on_secure_keyguard_summary">Desativar as definições rápidas no ecrã de bloqueio seguro.</string>
+  <string name="proximity_wake_title">Impedir que o ecrã se ligue acidentalmente</string>
+  <string name="proximity_wake_summary">Verificar o sensor de proximidade antes de ligar o ecrã</string>
+  <string name="unlock_quick_unlock_control_title">Desbloqueio rápido</string>
+  <string name="unlock_quick_unlock_control_summary">Desbloquear automaticamente quando o PIN/senha correto é inserido</string>
+  <string name="lock_numpad_random_title">Alterar a ordem dos números do teclado do PIN</string>
+  <string name="lock_numpad_random_dialog_title">Ordem aleatória do teclado do PIN</string>
+  <string name="lock_numpad_random_off">Desativado</string>
+  <string name="lock_numpad_random_always">Sempre</string>
+  <string name="lock_numpad_random_on_request">A pedido</string>
 </resources>

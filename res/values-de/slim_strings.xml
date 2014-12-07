@@ -51,6 +51,9 @@
   <string name="display_rotation_180_title">180 Grad</string>
   <string name="display_rotation_270_title">270 Grad</string>
   <string name="advanced_sound_title">Erweiterte Einstellungen</string>
+  <string name="camera_sounds_title">Kameraverschlusston</string>
+  <string name="camera_sounds_summary">Kameraverschlusston aktivieren</string>
+  <string name="camera_sound_warning_dialog_text">In manchen Ländern ist es verboten, den Kameraverschlusston auszuschalten! Bitte überprüfen Sie die rechtlichen Bestimmungen in Ihrem Land</string>
   <string name="safe_headset_volume_title">Lautstärkebegrenzung</string>
   <string name="safe_headset_volume_summary">Schützt vor zu hohen Lautstärkepegeln beim Einstecken des Kopfhörers</string>
   <string name="safe_headset_volume_warning_dialog_text">Hören Sie nicht über längere Zeit mit hoher Lautstärke, um Hörschäden zu vermeiden.</string>
@@ -83,8 +86,6 @@
   <string name="show_enter_key_summary">Tastatur immer mit Enter-Taste statt Emoticon-Taste anzeigen</string>
   <string name="app_security_title">App-Sicherheit</string>
   <string name="privacy_guard_dlg_title">Datenschutz aktivieren?</string>
-  <string name="privacy_guard_dlg_text">Bei aktiviertem Datenschutz kann die App nicht auf personenbezogene Daten wie Kontakte, Nachrichten, Standort oder Anrufprotokolle zugreifen.</string>
-  <string name="privacy_guard_dlg_system_app_text">Bei Aktivierung des Datenschutzes für eine System-App, kann diese nicht auf personenbezogene Daten wie Kontakte, Nachrichten, Standort oder Anrufprotokolle zugreifen. Dies kann zu einem Fehlverhalten anderer Apps führen.</string>
   <string name="privacy_guard_default_title">Standardmäßig aktiviert</string>
   <string name="privacy_guard_default_summary">Standardmäßig wird neu installierten Apps der Zugriff auf persönliche Daten verweigert</string>
   <string name="privacy_guard_notification_title">Benachrichtigung</string>
@@ -128,6 +129,7 @@
   <string name="custom_time">Benutzerdefiniert</string>
   <string name="battery_light_title">Akku-LED</string>
   <string name="battery_light_low_color_title">Niedriger Akkustand</string>
+  <string name="battery_light_medium_color_title">Laden</string>
   <string name="battery_light_full_color_title">Vollständig aufgeladen</string>
   <string name="battery_options_title">Einstellungen</string>
   <string name="battery_stats_title">Statistik</string>
@@ -161,6 +163,7 @@
   <string name="clock_date_style_uppercase">Großbuchstaben</string>
   <string name="clock_date_format_custom">Benutzerdefiniertes Java-Format</string>
   <string name="status_bar_clock_style_reset_message">Farbe der Uhr zurücksetzen?</string>
+  <string name="status_bar_ticker_summary">Textanimation für Benachrichtigung in Statusleiste</string>
   <string name="status_bar_toggle_brightness">Helligkeitssteuerung</string>
   <string name="options_settings_title">Einstellungen</string>
   <string name="media_scanner_on_boot_title">MediaScanner-Verhalten beim Booten</string>
@@ -168,4 +171,19 @@
   <string name="media_scanner_on_boot_disabled">Medien nicht durchsuchen</string>
   <string name="qs_title">Schnelleinstellungen</string>
   <string name="quick_pulldown_off">Deaktiviert</string>
+  <string name="smart_pulldown_title">Intelligentes Aufklappen</string>
+  <string name="smart_pulldown_summary">Schnelleinstellungen öffnen, wenn %1$s Benachrichtigungen vorliegen</string>
+  <string name="smart_pulldown_off">Deaktiviert</string>
+  <string name="smart_pulldown_dismissable">keine verwerfbaren</string>
+  <string name="smart_pulldown_persistent">keine dauerhaften</string>
+  <string name="smart_pulldown_all">keine verwerfbaren oder dauerhaften</string>
+  <string name="block_on_secure_keyguard_title">Auf Sperrbildschirm deaktivieren</string>
+  <string name="proximity_wake_title">Unbeabsichtigtes Aufwecken verhindern</string>
+  <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
+  <string name="unlock_quick_unlock_control_summary">Entsperren durch korrekte PIN- oder Passworteingabe</string>
+  <string name="lock_numpad_random_title">Reihenfolge der Tasten zur PIN-Eingabe ändern</string>
+  <string name="lock_numpad_random_dialog_title">Zufällige PIN-Tastenreihenfolge</string>
+  <string name="lock_numpad_random_off">Deaktiviert</string>
+  <string name="lock_numpad_random_always">Immer</string>
+  <string name="lock_numpad_random_on_request">Nur wenn benötigt</string>
 </resources>

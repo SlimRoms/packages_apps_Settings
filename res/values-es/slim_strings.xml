@@ -99,8 +99,6 @@
   <string name="ime_switcher_notify_summary">Mostrar una notificación de selección del método de entrada</string>
   <string name="app_security_title">Seguridad de aplicaciones</string>
   <string name="privacy_guard_dlg_title">¿Habilitar Privacy Guard?</string>
-  <string name="privacy_guard_dlg_text">Cuando Privacy Guard está habilitado, la aplicación no podrá acceder a datos personales como contactos, mensajes, localización e histórico de llamadas.</string>
-  <string name="privacy_guard_dlg_system_app_text">Cuando se habilita Privacy Guard para una aplicación de sistema, la aplicación no tendrá acceso a datos personales como contactos, mensajes, localización o histórico de llamadas. Esto puede provocar que otras aplicaciones no funcionen correctamente.</string>
   <string name="privacy_guard_default_title">Habilitado por defecto</string>
   <string name="privacy_guard_default_summary">Denegar acceso por defecto a datos personales para nuevas aplicaciones</string>
   <string name="privacy_guard_notification_title">Notificación</string>
@@ -320,14 +318,24 @@
   <string name="double_tap_to_sleep_title">Doble toque para bloquear</string>
   <string name="double_tap_to_sleep_summary">Poner el dispositivo a dormir mediante un doble toque sobre la barra de estado</string>
   <string name="options_settings_title">Opciones</string>
-  <string name="media_scanner_on_boot_title">Buscar archivos multimedia en el arranque</string>
-  <string name="media_scanner_on_boot_enabled">Buscar archivos multimedia</string>
+  <string name="media_scanner_on_boot_title">Explorar archivos multimedia en el arranque</string>
+  <string name="media_scanner_on_boot_enabled">Explorar archivos multimedia</string>
   <string name="media_scanner_on_boot_ask">Preguntar si buscar (notificación)</string>
-  <string name="media_scanner_on_boot_disabled">No buscar archivos multimedia</string>
+  <string name="media_scanner_on_boot_disabled">No explorar archivos multimedia</string>
   <string name="qs_title">Ajustes rápidos</string>
   <string name="title_quick_pulldown">Desplegado rápido</string>
-  <string name="summary_quick_pulldown">Desplegar el panel de ajustes rápidos desde la %1$s de la barra de estado</string>
+  <string name="summary_quick_pulldown">El borde %1$s de la barra de estado desplegará el panel de Ajustes Rápidos</string>
   <string name="quick_pulldown_off">Deshabilitado</string>
   <string name="quick_pulldown_left">Izquierda</string>
   <string name="quick_pulldown_right">Derecha</string>
+  <string name="smart_pulldown_title">Despliegue inteligente</string>
+  <string name="smart_pulldown_summary">Desplegar la configuración rápida cuando hay %1$s notificaciones presentes</string>
+  <string name="smart_pulldown_off">Apagar</string>
+  <string name="smart_pulldown_dismissable">No descartable</string>
+  <string name="smart_pulldown_persistent">No persistente</string>
+  <string name="smart_pulldown_all">No descartable o persistente</string>
+  <string name="block_on_secure_keyguard_title">Deshabilitar en pantalla de bloqueo</string>
+  <string name="block_on_secure_keyguard_summary">Desactivar la configuración rápida en la pantalla de bloqueo</string>
+  <string name="proximity_wake_title">Evitar despertar accidental</string>
+  <string name="proximity_wake_summary">Comprobar el sensor de proximidad antes de encender la pantalla</string>
 </resources>

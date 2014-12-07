@@ -83,8 +83,6 @@
   <string name="battery_light_full_color_title">Carica completa</string>
   <string name="app_security_title">Sicurezza appy</string>
   <string name="privacy_guard_dlg_title">Attivare Privacy Guard?</string>
-  <string name="privacy_guard_dlg_text">Quando Privacy Guard è attivo, l\'app non sarà in grado di accedere a dati personali come contatti, messaggi, posizioni o cronologia chiamate.</string>
-  <string name="privacy_guard_dlg_system_app_text">Attivando Privacy Guard per un\'app integrata, questa non sarà in grado di accedere a dati personali come contatti, messaggi, posizioni o cronologia chiamate. Ciò potrebbe causare il malfunzionamento di altre apps.</string>
   <string name="privacy_guard_default_title">Attivo di default</string>
   <string name="privacy_guard_default_summary">Impedisci di default l\'accesso ai dati personali da parte delle nuove apps</string>
   <string name="privacy_guard_notification_title">Notifica</string>
@@ -179,10 +177,13 @@
   <string name="volume_overlay_expanded">Espanso</string>
   <string name="volume_overlay_disable">Disattivato</string>
   <string name="volume_panel_bg_color_title">Colore pannello Volume</string>
+  <string name="volume_panel_timeout_title">Timeout pannello volume</string>
+  <string name="volume_panel_timeout_summary">Tempo di visualizzazione del pannello volume</string>
   <string name="camera_sounds_title">Suono scatto fotocamera</string>
   <string name="camera_sounds_summary">Attiva suono in caso di scatto con la fotocamera</string>
   <string name="camera_sound_warning_dialog_text">La disattivazione del suono di scatto è illegale in alcuni Paesi! Verifica la legislazione vigente prima di disattivarlo.</string>
   <string name="safe_headset_volume_title">Volume sicuro cuffie</string>
+  <string name="safe_headset_volume_summary">Evita un volume elevato quando le cuffie vengono inserite</string>
   <string name="safe_headset_volume_warning_dialog_text">L\'ascolto proloungato a volume elevato danneggia l\'udito. Disattiva con cautela.</string>
   <string name="display_category_animation_options_title">Opzioni animazione</string>
   <string name="system_power_crt_mode_title">Animazione CRT</string>
@@ -505,7 +506,6 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="summary_pref_menu_display">Come e quando vuoi far apparire il tasto Menu?</string>
   <string name="navbar_enable_bar">Attiva barra navigazione</string>
   <string name="navbar_enable_bar_summary">Attiva la barra di navigazione</string>
-  <string name="navigation_bar_height_title">Altezza barra portrait</string>
   <string name="navigation_bar_height_summary">Altezza barra navigazione quando in modalità portrait</string>
   <string name="navigation_bar_height_landscape_title">Altezza barra landscape</string>
   <string name="navigation_bar_height_landscape_summary">Altezza barra navigazione quando in modalità landscape</string>
@@ -755,6 +755,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="title_tile_sleep">Addormenta</string>
   <string name="title_tile_location">Posizione</string>
   <string name="title_tile_torch">Torcia</string>
+  <string name="title_tile_lockscreen">Schermata di blocco</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Dati mobili</string>
   <string name="title_tile_autorotate">Orientamento</string>
@@ -937,6 +938,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="advanced_reboot_summary">Permette il riavvio in recovery o bootloader dal menu power</string>
   <string name="advanced_reboot_dialog_title">Menu riavvio avanzato</string>
   <string name="advanced_reboot_disabled">Disattiva</string>
+  <string name="advanced_reboot_hide_on_keyguard">Nascondi con schermata di blocco protetta</string>
   <string name="advanced_reboot_show_always">Mostra sempre</string>
   <string name="lockscreen_settings_title">Schermata di sblocco</string>
   <string name="lockscreen_rotation_title">Rotazione lockscreen</string>
@@ -958,7 +960,6 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="usb_mass_storage_summary">Attiva archivio di massa USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Attiva i controlli Pie</string>
-  <string name="pie_control_size">Dimensioni Pie</string>
   <string name="pie_control_trigger_positions">Punti di attivazione</string>
   <string name="pie_control_trigger_left">Attiva da bordo sinistro schermo</string>
   <string name="pie_control_trigger_bottom">Attiva da bordo inferiore schermo</string>
@@ -991,7 +992,6 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="pie_show_snap_title">Mostra punti di ancoraggio</string>
   <string name="pie_show_snap_summary">Mostra i punti di ancoraggio per cambiare i punti di attivazione dinamicamente</string>
   <string name="pie_show_text_title">Mostra stato e orologio</string>
-  <string name="pie_show_text_summary">Mostra lo stato del telefono, la data e l\'ora</string>
   <string name="pie_show_background_title">Mostra sfondo</string>
   <string name="pie_show_background_summary">Attiva lo sfondo della Pie su tutto lo schermo</string>
   <string name="pie_button">Tasti</string>

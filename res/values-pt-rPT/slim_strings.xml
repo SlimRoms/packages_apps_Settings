@@ -39,7 +39,7 @@
   <string name="device_settings_title">Dispositivo</string>
   <string name="slim_shortcut_picker">Ações Slim</string>
   <string name="dialog_color_picker">Escolher cor</string>
-  <string name="press_color_to_apply">Pressione uma cor em abaixo para aplicar as mudanças</string>
+  <string name="press_color_to_apply">Pressione numa cor em abaixo para aplicar</string>
   <string name="hex">Hex:</string>
   <string name="hex_hint">#ff000000</string>
   <string name="set">Aplicar</string>
@@ -83,8 +83,8 @@
   <string name="battery_light_full_color_title">Completamente carregada</string>
   <string name="app_security_title">Segurança das aplicações</string>
   <string name="privacy_guard_dlg_title">Ativar a Proteção da Privacidade?</string>
-  <string name="privacy_guard_dlg_text">Quando a Proteção da Privacidade está ativada, a aplicação não será capaz de aceder aos dados pessoais, como contactos, mensagens ou registos de chamadas.</string>
-  <string name="privacy_guard_dlg_system_app_text">Ao ativar a Proteção da Privacidade para uma aplicação de sistema, a aplicação não será capaz de aceder a dados pessoais, como contactos, mensagens, localização ou registos de chamadas. Isso pode causar com que outras aplicações não funcionem corretamente.</string>
+  <string name="privacy_guard_enable_dlg_text">Quando a Proteção da Privacidade está ativada, %s não será capaz de aceder aos dados pessoais, como contactos, mensagens ou registos de chamadas.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Ao ativar a Proteção da Privacidade para a aplicação de sistema %s, a aplicação não será capaz de aceder a dados pessoais, como contactos, mensagens, localização ou registos de chamadas. Isso pode causar que outras aplicações não funcionem corretamente.</string>
   <string name="privacy_guard_default_title">Ativar por defeito</string>
   <string name="privacy_guard_default_summary">Não aceder a dados pessoais por padrão para aplicações recém instaladas</string>
   <string name="privacy_guard_notification_title">Notificação</string>
@@ -140,7 +140,7 @@
   <string name="clock_date_format_custom">Formato personalizado java</string>
   <string name="status_bar_clock_style_reset_message">Restaurar cor do relógio?</string>
   <string name="status_bar_ticker_title">Ticker de notificação</string>
-  <string name="status_bar_ticker_summary">Animação de texto de notificação na barra de estado</string>
+  <string name="status_bar_ticker_summary">Animação do texto de notificação na barra de estado</string>
   <string name="status_bar_toggle_brightness">Controle de brilho</string>
   <string name="status_bar_toggle_brightness_summary">Ajustar o brilho deslizando através da barra de estado</string>
   <string name="status_bar_toggle_info">Brilho automático está ativado</string>
@@ -485,7 +485,7 @@
   <string name="summary_pref_menu_display">Como e quando quer que os botões do menu apareçam?</string>
   <string name="navbar_enable_bar">Ativar a barra de navegação</string>
   <string name="navbar_enable_bar_summary">Ativar a barra de navegação</string>
-  <string name="navigation_bar_height_title">Altura da barra de navegação</string>
+  <string name="navigation_bar_height_title">Altura da barra de navegação em modo retrato</string>
   <string name="navigation_bar_height_summary">Altura da barra de navegação no modo retrato</string>
   <string name="navigation_bar_height_landscape_title">Altura da barra de navegação no modo de paisagem</string>
   <string name="navigation_bar_height_landscape_summary">Altura da barra de navegação no modo de paisagem</string>
@@ -801,11 +801,11 @@
   <string name="title_quick_pulldown">Puxar rápido para baixo</string>
   <string name="summary_quick_pulldown">O canto %1$s da barra de estado faz baixar o painel de definições rápidas</string>
   <string name="quick_pulldown_off">Desligado</string>
-  <string name="quick_pulldown_left">Esquerda</string>
-  <string name="quick_pulldown_right">Direita</string>
-  <string name="smart_pulldown_title">Abertura inteligente</string>
-  <string name="smart_pulldown_summary">Abra o painel de definições rápidas quando as notificações presentes forem %1$s</string>
-  <string name="smart_pulldown_off">Desligada</string>
+  <string name="quick_pulldown_left">esquerdo</string>
+  <string name="quick_pulldown_right">direito</string>
+  <string name="smart_pulldown_title">Desdobrável inteligente</string>
+  <string name="smart_pulldown_summary">Abrir o painel de definições rápidas quando as notificações presentes forem %1$s</string>
+  <string name="smart_pulldown_off">Desligado</string>
   <string name="smart_pulldown_dismissable">Não descartáveis</string>
   <string name="smart_pulldown_persistent">Não persistentes</string>
   <string name="smart_pulldown_all">Não descartáveis ou persistentes</string>
@@ -925,7 +925,7 @@
   <string name="lockscreen_rotation_summary_extra">(exibir a rotação dependente)</string>
   <string name="lockscreen_battery_status_title">Estado da bateria</string>
   <string name="lockscreen_battery_status_summary">Mostrar sempre o estado da bateria</string>
-  <string name="cpu_info">CPU</string>
+  <string name="cpu_info">Processador</string>
   <string name="mem_info">Memória</string>
   <string name="unlock_menu_unlock_title">Desbloquear com menu</string>
   <string name="unlock_menu_unlock_summary">Pressionar o botão menu desbloqueia o dispositivo</string>
@@ -936,7 +936,7 @@
   <string name="usb_mass_storage_summary">Ativar armazenamento em massa USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Ativar os controles PIE</string>
-  <string name="pie_control_size">Tamanho de navegação</string>
+  <string name="pie_control_size">Tamanho da PIE</string>
   <string name="pie_control_trigger_positions">Opções de ativação</string>
   <string name="pie_control_trigger_left">Ativar no lado esquerdo do ecrã</string>
   <string name="pie_control_trigger_bottom">Ativar na parte de baixo do ecrã</string>
@@ -969,7 +969,7 @@
   <string name="pie_show_snap_title">Mostrar pontos de encaixe</string>
   <string name="pie_show_snap_summary">Mostra os pontos de encaixe para alterar a borda de ativação dinamicamente</string>
   <string name="pie_show_text_title">Mostrar estado e relógio</string>
-  <string name="pie_show_text_summary">Mostra informações de data, hora e estado do dispositivo</string>
+  <string name="pie_show_text_summary">Mostra o estado do dispositivo, a hora e a data</string>
   <string name="pie_show_background_title">Mostrar plano de fundo</string>
   <string name="pie_show_background_summary">Ativar o ecrã de fundo da PIE</string>
   <string name="pie_button">Botões</string>

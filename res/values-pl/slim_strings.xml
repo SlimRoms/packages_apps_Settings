@@ -83,8 +83,6 @@
   <string name="battery_light_full_color_title">Naładowana</string>
   <string name="app_security_title">Bezpieczeństwo aplikacji</string>
   <string name="privacy_guard_dlg_title">Włącz kontrolę prywatności?</string>
-  <string name="privacy_guard_dlg_text">Kiedy kontrola prywatności jest włączona, aplikacja nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacja lub rejestr połączeń.</string>
-  <string name="privacy_guard_dlg_system_app_text">Włączenie kontroli prywatności dla aplikacji systemowej spowoduje, że aplikacja ta nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacji lub rejestru połączeń. To może spowodować błędy w działaniu tych aplikacji.</string>
   <string name="privacy_guard_default_title">Domyślnie włączona</string>
   <string name="privacy_guard_default_summary">Brak dostępu do danych osobistych dla nowo zainstalowanych aplikacji</string>
   <string name="privacy_guard_notification_title">Powiadomienia</string>
@@ -492,7 +490,6 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="summary_pref_menu_display">Jak i gdzie chcesz, żeby wyświetlał się przycisk menu?</string>
   <string name="navbar_enable_bar">Włącz pasek nawigacji</string>
   <string name="navbar_enable_bar_summary">Włącz pasek nawigacji</string>
-  <string name="navigation_bar_height_title">Wysokość paska nawigacji</string>
   <string name="navigation_bar_height_summary">Wysokość paska nawigacji w pionie.</string>
   <string name="navigation_bar_height_landscape_title">Wysokość paska nawigacji w poziomie</string>
   <string name="navigation_bar_height_landscape_summary">Wysokość paska nawigacji w poziomie.</string>
@@ -941,7 +938,6 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="usb_mass_storage_summary">Włącz pamięć masową USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Włącz kontrolę PIE</string>
-  <string name="pie_control_size">Wielkość</string>
   <string name="pie_control_trigger_positions">Opcje wyzwalania</string>
   <string name="pie_control_trigger_left">Wyzwalaj z lewej krawędzi ekranu</string>
   <string name="pie_control_trigger_bottom">Wyzwalaj z dolnej krawędzi ekranu</string>
@@ -974,7 +970,6 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="pie_show_snap_title">Pokaż punkty przyciągania</string>
   <string name="pie_show_snap_summary">Pokazuj punkty przyciągania z możliwością ich przesunięcia</string>
   <string name="pie_show_text_title">Pokaż status i zegar</string>
-  <string name="pie_show_text_summary">Pokazuje status telefonu, czas i datę</string>
   <string name="pie_show_background_title">Pokaż tło</string>
   <string name="pie_show_background_summary">Włącz tło dla PIE</string>
   <string name="pie_button">Przyciski</string>

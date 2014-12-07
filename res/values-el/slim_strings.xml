@@ -83,8 +83,6 @@
   <string name="battery_light_full_color_title">Πλήρης φόρτιση</string>
   <string name="app_security_title">Ασφάλεια εφαρμογών</string>
   <string name="privacy_guard_dlg_title">Ενεργοποίηση της Προστασίας Απορρήτου;</string>
-  <string name="privacy_guard_dlg_text">Όταν η Προστασία Απορρήτου είναι ενεργή, η εφαρμογή δεν θα μπορεί να έχει πρόσβαση σε προσωπικά δεδομένα όπως επαφές, μηνύματα ή το αρχείο κλήσεων.</string>
-  <string name="privacy_guard_dlg_system_app_text">Όταν ενεργοποιήσετε την Προστασία Απορρήτου για μια ενσωματωμένη εφαρμογή, η εφαρμογή αυτή δεν θα είναι σε θέση να έχει πρόσβαση σε προσωπικά δεδομένα, όπως επαφές, μηνύματα, τοποθεσία ή αρχεία καταγραφής κλήσεων. Αυτό μπορεί να προκαλέσει άλλες εφαρμογές να μη λειτουργούν σωστά.</string>
   <string name="privacy_guard_default_title">Ενεργοποιημένο από προεπιλογή</string>
   <string name="privacy_guard_default_summary">Αποτροπή πρόσβασης προσωπικών δεδομένων για νέες εφαρμογές</string>
   <string name="privacy_guard_notification_title">Ειδοποίηση</string>
@@ -185,6 +183,7 @@
   <string name="camera_sounds_summary">Ενεργοποίηση του ήχου κλείστρου της κάμερας του συστήματος</string>
   <string name="camera_sound_warning_dialog_text">Η απενεργοποίηση του ήχου του κλείστρου της φωτογραφηκής μηχανής είναι παράνομη σε ορισμένες περιοχές! Παρακαλώ ελέγξτε το εφαρμοστέο δίκαιο στη χώρα σας.</string>
   <string name="safe_headset_volume_title">Ασφαλής ένταση ακουστικών</string>
+  <string name="safe_headset_volume_summary">Πρόληψη υψηλών επιπέδων έντασης όταν τα ακουστικά συνδέονται για πρώτη φορά</string>
   <string name="safe_headset_volume_warning_dialog_text">Ακούγοντας σε υψηλή ένταση για μεγάλο χρονικό διάστημα μπορεί να βλάψει την ακοή σας. Απενεργοποιήσετε με προσοχή.</string>
   <string name="display_category_animation_options_title">Επιλογές κίνησης εικόνας</string>
   <string name="system_power_crt_mode_title">Κίνηση εικόνας CRT </string>
@@ -511,7 +510,6 @@
   <string name="summary_pref_menu_display">Πώς και πότε θέλετε τα κουμπιά μενού να εμφανίζονται;</string>
   <string name="navbar_enable_bar">Ενεργοποίηση μπάρας πλοήγησης</string>
   <string name="navbar_enable_bar_summary">Ενεργοποίησε την μπάρα πλοήγησης</string>
-  <string name="navigation_bar_height_title">Ύψος μπάρας πλοήγησης</string>
   <string name="navigation_bar_height_summary">Πλοήγησης ύψος μπαράς ενώ βρίσκεται στο πορτρέτο</string>
   <string name="navigation_bar_height_landscape_title">Ύψος μπάρας πλοήγησης (τοπίο)</string>
   <string name="navigation_bar_height_landscape_summary">Ύψος μπάρας πλοήγησης ενώ βρίσκεται στο τοπίο</string>
@@ -759,6 +757,7 @@
   <string name="title_tile_sleep">Αναστολή λειτουργίας</string>
   <string name="title_tile_location">Τοποθεσία</string>
   <string name="title_tile_torch">Φακός</string>
+  <string name="title_tile_lockscreen">Οθόνη κλειδώματος</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Δεδομένα κινητής τηλεφωνίας</string>
   <string name="title_tile_autorotate">Προσανατολισμός</string>
@@ -937,6 +936,7 @@
   <string name="advanced_reboot_summary">Περιλαμβάνουν επιλογές στο power μενού για επανεκκίνηση σε recovery και bootloader</string>
   <string name="advanced_reboot_dialog_title">Προηγμένο μενού επανεκκίνησης</string>
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
+  <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη σε ασφαλές οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
   <string name="lockscreen_settings_title">Οθόνη κλειδώματος</string>
   <string name="lockscreen_rotation_title">Περιστροφή οθόνης κλειδώματος</string>
@@ -956,7 +956,6 @@
   <string name="usb_mass_storage_summary">Ενεργοποίηση μαζικής αποθήκευσης USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Ενεργοποίηση στοιχείων ελέγχου pie</string>
-  <string name="pie_control_size">Μέγεθος πλοήγησης</string>
   <string name="pie_control_trigger_positions">Επιλογές ενεργοποίησης</string>
   <string name="pie_control_trigger_left">Ενεργοποίηση στα αριστερά σύνορα οθόνης</string>
   <string name="pie_control_trigger_bottom">Ενεργοποίηση στα κάτω σύνορα οθόνης</string>
@@ -989,7 +988,6 @@
   <string name="pie_show_snap_title">Εμφάνιση σημείων θραύσης</string>
   <string name="pie_show_snap_summary">Εμφανίζει σημεία θραύσης για να αλλάξει την ενεργοποίηση δυναμικά</string>
   <string name="pie_show_text_title">Εμφάνιση κατάστασης και ρολόι</string>
-  <string name="pie_show_text_summary">Δείχνει πληροφορίες κατάστασης τηλεφώνου, την ώρα και την ημερομηνία</string>
   <string name="pie_show_background_title">Προβολή φόντου</string>
   <string name="pie_show_background_summary">Ενεργοποίηση φόντο οθόνης pie</string>
   <string name="pie_button">Κουμπιά</string>

@@ -83,8 +83,6 @@
   <string name="battery_light_full_color_title">Charge complète</string>
   <string name="app_security_title">Sécurité des applications</string>
   <string name="privacy_guard_dlg_title">Activer Privacy Guard ?</string>
-  <string name="privacy_guard_dlg_text">Quand Privacy Guard est activé, l\'application n\'est pas en mesure d\'accéder aux données personnelles tel que les contacts, les messages, la localisation ou le journal d\'appels.</string>
-  <string name="privacy_guard_dlg_system_app_text">En activant Privacy Guard pour une application préinstallée, l\'application ne pourra plus accéder aux données personnelles comme les contacts, messages, la localisation ou le journal d\'appels. Ceci peut causer un comportement inattendu des autres applications.</string>
   <string name="privacy_guard_default_title">Activé par défaut</string>
   <string name="privacy_guard_default_summary">Ne pas accéder aux données personnelles par défaut pour les applications fraichement installées.</string>
   <string name="privacy_guard_notification_title">Notification</string>
@@ -495,7 +493,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="summary_pref_menu_display">Choisir quand le bouton Menu doit être affiché.</string>
   <string name="navbar_enable_bar">Barre de navigation</string>
   <string name="navbar_enable_bar_summary">Activer la barre de navigation.</string>
-  <string name="navigation_bar_height_title">Hauteur de la barre de navigation</string>
   <string name="navigation_bar_height_summary">Hauteur de la barre de navigation en mode portrait.</string>
   <string name="navigation_bar_height_landscape_title">Hauteur de la barre de navigation</string>
   <string name="navigation_bar_height_landscape_summary">Hauteur de la barre de navigation en mode paysage.</string>
@@ -942,7 +939,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="usb_mass_storage_summary">Vous permet de transférer des fichiers entre votre ordinateur et votre carte SD en la montant en tant que périphérique de stockage de masse.</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Activer le contrôle via le Pie.</string>
-  <string name="pie_control_size">Taille du Pie</string>
   <string name="pie_control_trigger_positions">Options de déclenchement</string>
   <string name="pie_control_trigger_left">Utiliser le bord gauche de l\'écran</string>
   <string name="pie_control_trigger_bottom">Utiliser le bord bas de l\'écran</string>
@@ -975,7 +971,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="pie_show_snap_title">Afficher les points d\'ancrage</string>
   <string name="pie_show_snap_summary">Affiche les points d\'ancrage pour changer le côté de déclenchement de manière dynamique.</string>
   <string name="pie_show_text_title">Afficher le statut et l\'horloge</string>
-  <string name="pie_show_text_summary">Afficher l\'état de l\'appareil, l\'heure et la date.</string>
   <string name="pie_show_background_title">Afficher le fond</string>
   <string name="pie_show_background_summary">Affiche la couleur de fond à l\'arrière du Pie.</string>
   <string name="pie_button">Boutons</string>

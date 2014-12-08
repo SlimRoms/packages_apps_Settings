@@ -57,6 +57,8 @@
   <string name="camera_sounds_title">Zvuk závěrky fotoaparátu</string>
   <string name="camera_sounds_summary">Povolit systémový zvuk závěrky fotoaparátu</string>
   <string name="camera_sound_warning_dialog_text">Vypnutí zvuku spouště fotoaparátu může být v některých zemích nezákonné! Prosím ověřte si platnost zákonů ve Vaší zemi</string>
+  <string name="volbtn_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
+  <string name="volbtn_music_controls_summary">V případě vypnutého displeje, dojde dlouhým stisknutím tlačítek hlasitosti k přepnutí skladby</string>
   <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>
   <string name="safe_headset_volume_summary">Zabránit hlasité úrovni hlasitosti, při prvním zasunutí sluchátek</string>
   <string name="safe_headset_volume_warning_dialog_text">Poslech při vysoké hlasitosti po delší dobu může poškodit váš sluch. Nastavení zakažte s opatrností.</string>
@@ -99,8 +101,8 @@
   <string name="ime_switcher_notify_summary">Při psaní zobrazovat systémové upozornění s výběrem metody zadávání</string>
   <string name="app_security_title">Zabezpečení aplikací</string>
   <string name="privacy_guard_dlg_title">Povolit Ochranu soukromí?</string>
-  <string name="privacy_guard_dlg_text">Pokud je režim ochrany soukromí povolen. Aplikace nebude mít přístup k osobním údajům jako jsou kontakty, seznam hovorů, poloha nebo SMS/MMS zprávy.</string>
-  <string name="privacy_guard_dlg_system_app_text">Při povolení Ochrany soukromí pro systémové aplikace, nemůžou tyto aplikace přistupovat k osobním datům, ani je poskytovat. To může způsobit chybnou funkci ostatních aplikací.</string>
+  <string name="privacy_guard_enable_dlg_text">Pokud je Ochrana soukromí povolena, %s nebude mít přístup k osobním datům jako jsou kontakty, zprávy nebo historie volání.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Při povolení Ochrany soukromí pro systémovou aplikaci %s, nemůže tato aplikace přistupovat ani poskytovat osobní data. To může způsobit chybnou funkci ostatních aplikací.</string>
   <string name="privacy_guard_default_title">Ve výchozím stavu povolena</string>
   <string name="privacy_guard_default_summary">Automaticky aktivovat Ochranu soukromí pro nově nainstalované aplikace</string>
   <string name="privacy_guard_notification_title">Upozornění</string>
@@ -314,6 +316,8 @@
   <string name="clock_date_style_uppercase">Velká písmena</string>
   <string name="clock_date_format_custom">Vlastní java formát</string>
   <string name="status_bar_clock_style_reset_message">Obnovit barvu hodin?</string>
+  <string name="status_bar_ticker_title">Animace oznámení</string>
+  <string name="status_bar_ticker_summary">Animace textu oznámení v liště oznámení</string>
   <string name="status_bar_toggle_brightness">Ovládání jasu</string>
   <string name="status_bar_toggle_brightness_summary">Umožňuje nastavit jas tažením prstu po stavové liště</string>
   <string name="status_bar_toggle_info">Automatický jas je povolen</string>
@@ -330,4 +334,14 @@
   <string name="quick_pulldown_off">Žádný</string>
   <string name="quick_pulldown_left">Levý</string>
   <string name="quick_pulldown_right">Pravý</string>
+  <string name="smart_pulldown_title">Chytré rozbalení lišty</string>
+  <string name="smart_pulldown_summary">Otevře nabídku rychlého nastavení, když je přítomno %1$s oznámení</string>
+  <string name="smart_pulldown_off">Vypnuto</string>
+  <string name="smart_pulldown_dismissable">Žádné zrušitelné</string>
+  <string name="smart_pulldown_persistent">Žádné trvalé</string>
+  <string name="smart_pulldown_all">Žádné zrušitelné nebo trvalé</string>
+  <string name="block_on_secure_keyguard_title">Vypnout na zamknuté obrazovce</string>
+  <string name="block_on_secure_keyguard_summary">Zakázat rychlé nastavení na zabezpečené zamykací obrazovce.</string>
+  <string name="proximity_wake_title">Zabránit nechtěnému probuzení</string>
+  <string name="proximity_wake_summary">Kontrolovat senzor přiblížení pro zabránění nechtěného probuzení</string>
 </resources>

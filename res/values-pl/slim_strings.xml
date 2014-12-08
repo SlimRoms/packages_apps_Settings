@@ -99,8 +99,6 @@
   <string name="ime_switcher_notify_summary">Wyświetl wybór klawiatury w pasku powiadomień</string>
   <string name="app_security_title">Zabezpieczenia aplikacji</string>
   <string name="privacy_guard_dlg_title">Włącz kontrolę prywatności?</string>
-  <string name="privacy_guard_dlg_text">Kiedy kontrola prywatności jest włączona, aplikacja nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacja lub rejestr połączeń.</string>
-  <string name="privacy_guard_dlg_system_app_text">Włączenie kontroli prywatności dla aplikacji systemowej spowoduje, że aplikacja ta nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacji lub rejestru połączeń. Może to spowodować błędy w działaniu tych aplikacji.</string>
   <string name="privacy_guard_default_title">Domyślnie włączona</string>
   <string name="privacy_guard_default_summary">Brak dostępu do danych osobistych dla nowo zainstalowanych aplikacji</string>
   <string name="privacy_guard_notification_title">Powiadomienia</string>

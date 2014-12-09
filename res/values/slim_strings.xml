@@ -27,6 +27,7 @@
 
     <!-- General strings -->
     <string name="add">Add</string>
+    <string name="help">Help</string>
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
 

@@ -16,7 +16,7 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/help"
-          android:title="@string/help_label" />
+          android:title="@string/help" />
     <item android:id="@+id/reset"
           android:title="@string/reset" />
     <item android:id="@+id/filter_app_permissions"

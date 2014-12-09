@@ -16,6 +16,17 @@
     <string name="privacy_settings_cyanogenmod_title">Privacy</string>
     <string name="privacy_settings_cyanogenmod_category" translatable="false">CyanogenMod</string>
 
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="add">Add</string>
+    <string name="help">Help</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>
+    <string name="choose_app">Choose application</string>
+    <string name="reset_message">Reset all entries to default?</string>
+
     <!-- Privacy Guard -->
     <string name="app_security_title">App security</string>
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>

@@ -65,9 +65,9 @@ public class QsSettings extends SettingsPreferenceFragment
         // Quick Pulldown
         mQuickPulldown.setOnPreferenceChangeListener(this);
         int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
         mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-            updateQuickPulldownSummary(statusQuickPulldown);
+        updateQuickPulldownSummary(statusQuickPulldown);
 
         // Smart Pulldown
         mSmartPulldown.setOnPreferenceChangeListener(this);

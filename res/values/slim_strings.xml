@@ -883,4 +883,8 @@
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
+    <!-- Unaccounted and overcounted battery stats -->
+    <string name="show_unac_and_overcounted_stats_title">Show unaccounted/overcounted stats</string>
+    <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
+
 </resources>

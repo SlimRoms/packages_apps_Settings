@@ -21,4 +21,5 @@
   <string name="app_ops_summaries_read_calendar">lire le calendrier</string>
   <string name="app_ops_summaries_read_sms">lire les SMS</string>
   <string name="app_ops_summaries_send_sms">envoyer des SMS</string>
+  <string name="smart_pulldown_title">Déroulement intelligent</string>
 </resources>

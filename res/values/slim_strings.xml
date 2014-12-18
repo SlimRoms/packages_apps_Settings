@@ -1106,4 +1106,8 @@
     <string name="autoperf_title">Enable per-app profiles</string>
     <string name="autoperf_summary">Automatically choose an appropriate performance profile for various applications</string>
 
+    <!-- Volume rocker music seek options -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will skip music tracks</string>
+
 </resources>

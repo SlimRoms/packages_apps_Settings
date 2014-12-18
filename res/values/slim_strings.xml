@@ -1085,4 +1085,8 @@
     <string name="show_unac_and_overcounted_stats_title">Show unaccounted/overcounted stats</string>
     <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
 
+    <!-- Volume rocker music seek options -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will skip music tracks</string>
+
 </resources>

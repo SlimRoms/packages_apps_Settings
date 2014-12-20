@@ -83,6 +83,8 @@
   <string name="battery_light_full_color_title">Carica completa</string>
   <string name="app_security_title">Sicurezza appy</string>
   <string name="privacy_guard_dlg_title">Attivare Privacy Guard?</string>
+  <string name="privacy_guard_enable_dlg_text">Quando Privacy Guard è attivo, %s non sarà in grado di accedere a dati personali come contatti, messaggi, posizioni o alla cronologia chiamate.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Se Privacy Guard è attivato per l\'app di sistema %s, l\'app non avrà accesso ai dati personali ad esempio contatti, messaggi, posizione o al registro chiamate. Può causare malfunzionamenti di altre apps.</string>
   <string name="privacy_guard_default_title">Attivo di default</string>
   <string name="privacy_guard_default_summary">Impedisci di default l\'accesso ai dati personali da parte delle nuove apps</string>
   <string name="privacy_guard_notification_title">Notifica</string>
@@ -506,6 +508,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="summary_pref_menu_display">Come e quando vuoi far apparire il tasto Menu?</string>
   <string name="navbar_enable_bar">Attiva barra navigazione</string>
   <string name="navbar_enable_bar_summary">Attiva la barra di navigazione</string>
+  <string name="navigation_bar_height_title">Altezza della barra navigazione in verticale</string>
   <string name="navigation_bar_height_summary">Altezza barra navigazione quando in modalità portrait</string>
   <string name="navigation_bar_height_landscape_title">Altezza barra landscape</string>
   <string name="navigation_bar_height_landscape_summary">Altezza barra navigazione quando in modalità landscape</string>
@@ -960,6 +963,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="usb_mass_storage_summary">Attiva archivio di massa USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Attiva i controlli Pie</string>
+  <string name="pie_control_size">Dimensioni PIE</string>
   <string name="pie_control_trigger_positions">Punti di attivazione</string>
   <string name="pie_control_trigger_left">Attiva da bordo sinistro schermo</string>
   <string name="pie_control_trigger_bottom">Attiva da bordo inferiore schermo</string>
@@ -992,6 +996,7 @@ aggiungere ulteriori punti di controllo. \'Rimuovi\' elimina la riga selezionata
   <string name="pie_show_snap_title">Mostra punti di ancoraggio</string>
   <string name="pie_show_snap_summary">Mostra i punti di ancoraggio per cambiare i punti di attivazione dinamicamente</string>
   <string name="pie_show_text_title">Mostra stato e orologio</string>
+  <string name="pie_show_text_summary">Mostra stato del dispositivo, ora e data</string>
   <string name="pie_show_background_title">Mostra sfondo</string>
   <string name="pie_show_background_summary">Attiva lo sfondo della Pie su tutto lo schermo</string>
   <string name="pie_button">Tasti</string>

@@ -83,6 +83,8 @@
   <string name="battery_light_full_color_title">Charge complète</string>
   <string name="app_security_title">Sécurité des applications</string>
   <string name="privacy_guard_dlg_title">Activer Privacy Guard ?</string>
+  <string name="privacy_guard_enable_dlg_text">Quand Privacy Guard est activé, %s n\'est pas en mesure d\'accéder aux données personnelles telles que les contacts, les messages, la localisation ou le journal d\'appels.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">En activant Privacy Guard pour l\'application préinstallée %s, celle-ci ne pourra plus accéder aux données personnelles telles que les contacts, les messages, la localisation ou le journal d\'appels. Ceci peut causer un comportement inattendu des autres applications.</string>
   <string name="privacy_guard_default_title">Activé par défaut</string>
   <string name="privacy_guard_default_summary">Ne pas accéder aux données personnelles par défaut pour les applications fraichement installées.</string>
   <string name="privacy_guard_notification_title">Notification</string>
@@ -137,6 +139,8 @@
   <string name="clock_date_style_uppercase">Majuscule</string>
   <string name="clock_date_format_custom">Format personnalisé</string>
   <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge ?</string>
+  <string name="status_bar_ticker_title">Notifications animées</string>
+  <string name="status_bar_ticker_summary">Animation du texte des notifications dans la barre d\'état</string>
   <string name="status_bar_toggle_brightness">Contrôle de la luminosité</string>
   <string name="status_bar_toggle_brightness_summary">Ajuster le niveau de luminosité en glissant le doigt sur la barre d\'état.</string>
   <string name="status_bar_toggle_info">La luminosité automatique est activée.</string>
@@ -175,10 +179,13 @@
   <string name="volume_overlay_expanded">Étendu</string>
   <string name="volume_overlay_disable">Désactiver</string>
   <string name="volume_panel_bg_color_title">Couleur du panneau de volume</string>
+  <string name="volume_panel_timeout_title">Expiration du panneau de volume</string>
+  <string name="volume_panel_timeout_summary">Temps pendant lequel le panneau de volume reste affiché après le réglage du volume</string>
   <string name="camera_sounds_title">Son d\'obturateur de l\'appareil photo</string>
   <string name="camera_sounds_summary">Activer le son de l\'obturateur de l\'appareil photo.</string>
   <string name="camera_sound_warning_dialog_text">Désactiver le son de l\'obturateur est illégal dans certains pays ! Merci de vous conformer aux lois de votre pays.</string>
   <string name="safe_headset_volume_title">Volume sécurisé</string>
+  <string name="safe_headset_volume_summary">Empêche un volume trop haut du son lorsqu\'un périphérique audio est branché</string>
   <string name="safe_headset_volume_warning_dialog_text">L\'écoute prolongée à haut volume peut endommager votre audition. Désactiver avec précaution.</string>
   <string name="display_category_animation_options_title">Options des animations</string>
   <string name="system_power_crt_mode_title">Animation d\'extinction</string>
@@ -341,6 +348,11 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="shortcut_action_ring_vib">Son/Vibreur</string>
   <string name="shortcut_action_ring_silent">Son/Silencieux</string>
   <string name="shortcut_action_ring_vib_silent">Son/Vib/Silencieux</string>
+  <string name="shortcut_action_camera">Appareil photo</string>
+  <string name="shortcut_action_media_next">Musique - piste suivante</string>
+  <string name="shortcut_action_media_play_pause">Musique - lecture/pause</string>
+  <string name="shortcut_action_media_previous">Musique - piste précédente</string>
+  <string name="shortcut_action_wake_device">Réveiller l\'appareil</string>
   <string name="shortcut_action_longpress">Appui long:</string>
   <string name="shortcut_action_select_action_longpress">Choisir l\'action d\'appui long:</string>
   <string name="shortcut_action_select_action">Choisir l\'action:</string>
@@ -428,6 +440,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="shortcuts_color_title">Couleur de l\'icône</string>
   <string name="shortcuts_color_mode_title">Icônes à colorer</string>
   <string name="shortcuts_color_mode_summary">Choisir les icônes qui devront utiliser la couleur personnalisée.</string>
+  <string name="qs_title">Paramètres rapides</string>
   <string name="notification_drawer_title">Barre de notification</string>
   <string name="notification_shortcuts_settings_title">Raccourcis</string>
   <string name="notification_shortcuts_settings_summary">Montrer les raccourcis dans la barre de notification.</string>
@@ -493,6 +506,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="summary_pref_menu_display">Choisir quand le bouton Menu doit être affiché.</string>
   <string name="navbar_enable_bar">Barre de navigation</string>
   <string name="navbar_enable_bar_summary">Activer la barre de navigation.</string>
+  <string name="navigation_bar_height_title">Hauteur de la barre de navigation en mode portrait</string>
   <string name="navigation_bar_height_summary">Hauteur de la barre de navigation en mode portrait.</string>
   <string name="navigation_bar_height_landscape_title">Hauteur de la barre de navigation</string>
   <string name="navigation_bar_height_landscape_summary">Hauteur de la barre de navigation en mode paysage.</string>
@@ -508,6 +522,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="navigation_bar_warning_no_navigation_present">Aucun autre moyen de navigation actuellement activé. Désactiver la barre de navigation peut rendre votre appareil inutilisable. Voulez-vous activer le SlimPIE ?</string>
   <string name="nav_bar_button_style_summary">Modifier les couleurs des boutons de la barre de navigation.</string>
   <string name="button_transparency_title">Transparence des boutons</string>
+  <string name="nav_button_color_mode_summary">Changer le mode de coloration des boutons de la barre de navigation</string>
   <string name="navigation_bar_glow_tint_title">Couleur du halo</string>
   <string name="advanced_options_settings_title">Options avancées</string>
   <string name="media_scanner_on_boot_title">Scan des médias au démarrage</string>
@@ -739,6 +754,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="title_tile_sleep">Mettre en veille</string>
   <string name="title_tile_location">Localisation</string>
   <string name="title_tile_torch">Torche</string>
+  <string name="title_tile_lockscreen">Écran de verrouillage</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Données mobiles</string>
   <string name="title_tile_autorotate">Orientation</string>
@@ -921,7 +937,9 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="advanced_reboot_summary">Inclure dans le menu marche/arrêt la possibilité de redémarrer dans le recovery et le bootloader.</string>
   <string name="advanced_reboot_dialog_title">Redémarrage avancé</string>
   <string name="advanced_reboot_disabled">Désactiver</string>
+  <string name="advanced_reboot_hide_on_keyguard">Masquer sur écran verrouillé</string>
   <string name="advanced_reboot_show_always">Toujours afficher</string>
+  <string name="lockscreen_settings_title">Écran de verrouillage</string>
   <string name="lockscreen_rotation_title">Rotation de l\'écran de verrouillage</string>
   <string name="lockscreen_rotation_portrait">Portrait uniquement</string>
   <string name="lockscreen_rotation_landscape">Paysage uniquement</string>
@@ -939,6 +957,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="usb_mass_storage_summary">Vous permet de transférer des fichiers entre votre ordinateur et votre carte SD en la montant en tant que périphérique de stockage de masse.</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Activer le contrôle via le Pie.</string>
+  <string name="pie_control_size">Taille du PIE</string>
   <string name="pie_control_trigger_positions">Options de déclenchement</string>
   <string name="pie_control_trigger_left">Utiliser le bord gauche de l\'écran</string>
   <string name="pie_control_trigger_bottom">Utiliser le bord bas de l\'écran</string>
@@ -971,6 +990,7 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="pie_show_snap_title">Afficher les points d\'ancrage</string>
   <string name="pie_show_snap_summary">Affiche les points d\'ancrage pour changer le côté de déclenchement de manière dynamique.</string>
   <string name="pie_show_text_title">Afficher le statut et l\'horloge</string>
+  <string name="pie_show_text_summary">Afficher l\'heure, la date et les informations à propos de l\'appareil</string>
   <string name="pie_show_background_title">Afficher le fond</string>
   <string name="pie_show_background_summary">Affiche la couleur de fond à l\'arrière du Pie.</string>
   <string name="pie_button">Boutons</string>
@@ -1049,4 +1069,6 @@ contrôle additionnel. \'Retirer\' supprime la ligne sélectionnée.
   <string name="heads_up_text_color_title">Couleur du texte</string>
   <string name="reset_default_message">Réinitialiser</string>
   <string name="screen_off_gesture_settings_title">Gestes écran éteint</string>
+  <string name="proximity_wake_title">Empêcher un réveil involontaire</string>
+  <string name="proximity_wake_summary">Vérifier le capteur de proximité avant d\'allumer l\'écran</string>
 </resources>

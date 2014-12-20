@@ -83,6 +83,8 @@
   <string name="battery_light_full_color_title">Naładowana</string>
   <string name="app_security_title">Bezpieczeństwo aplikacji</string>
   <string name="privacy_guard_dlg_title">Włącz kontrolę prywatności?</string>
+  <string name="privacy_guard_enable_dlg_text">Kiedy kontrola prywatności jest włączona, aplikacja %s nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacja lub rejestr połączeń.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Włączenie kontroli prywatności dla aplikacji systemowej %s spowoduje, że aplikacja ta nie będzie miała dostępu do danych osobistych, takich jak: kontakty, wiadomości, lokalizacji lub rejestru połączeń. To może spowodować błędy w działaniu tych aplikacji.</string>
   <string name="privacy_guard_default_title">Domyślnie włączona</string>
   <string name="privacy_guard_default_summary">Brak dostępu do danych osobistych dla nowo zainstalowanych aplikacji</string>
   <string name="privacy_guard_notification_title">Powiadomienia</string>
@@ -183,6 +185,7 @@
   <string name="camera_sounds_summary">Włącz dźwiek migawki aparatu</string>
   <string name="camera_sound_warning_dialog_text">Wyłączenie dźwięku migawki aparatu jest nielegalne w niektórych regionach! Sprawdź czy w Twoim państwie jest to zgodne z prawem</string>
   <string name="safe_headset_volume_title">Bezpieczna głośność słuchawek</string>
+  <string name="safe_headset_volume_summary">Zapobiegaj wysokiej głośności podczas pierwszego podłączania słuchawek</string>
   <string name="safe_headset_volume_warning_dialog_text">Słuchanie przez długi czas na wysokiej głośności może uszkodzić Twój słuch. Wyłącz tą opcję z rozwagą.</string>
   <string name="display_category_animation_options_title">Ustawienia animacji</string>
   <string name="system_power_crt_mode_title">Animacja CRT </string>
@@ -490,6 +493,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="summary_pref_menu_display">Jak i gdzie chcesz, żeby wyświetlał się przycisk menu?</string>
   <string name="navbar_enable_bar">Włącz pasek nawigacji</string>
   <string name="navbar_enable_bar_summary">Włącz pasek nawigacji</string>
+  <string name="navigation_bar_height_title">Wysokość paska nawigacyjnego w pionie</string>
   <string name="navigation_bar_height_summary">Wysokość paska nawigacji w pionie.</string>
   <string name="navigation_bar_height_landscape_title">Wysokość paska nawigacji w poziomie</string>
   <string name="navigation_bar_height_landscape_summary">Wysokość paska nawigacji w poziomie.</string>
@@ -938,6 +942,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="usb_mass_storage_summary">Włącz pamięć masową USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Włącz kontrolę PIE</string>
+  <string name="pie_control_size">Rozmiar PIE</string>
   <string name="pie_control_trigger_positions">Opcje wyzwalania</string>
   <string name="pie_control_trigger_left">Wyzwalaj z lewej krawędzi ekranu</string>
   <string name="pie_control_trigger_bottom">Wyzwalaj z dolnej krawędzi ekranu</string>
@@ -970,6 +975,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="pie_show_snap_title">Pokaż punkty przyciągania</string>
   <string name="pie_show_snap_summary">Pokazuj punkty przyciągania z możliwością ich przesunięcia</string>
   <string name="pie_show_text_title">Pokaż status i zegar</string>
+  <string name="pie_show_text_summary">Pokaż informacje o stanie urządzenia, godzinę i datę</string>
   <string name="pie_show_background_title">Pokaż tło</string>
   <string name="pie_show_background_summary">Włącz tło dla PIE</string>
   <string name="pie_button">Przyciski</string>

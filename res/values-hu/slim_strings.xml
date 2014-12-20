@@ -679,6 +679,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lockscreen_misc_color_summary">a fennmaradó elemek színe</string>
   <string name="lockscreen_widgets_title">Modulok</string>
   <string name="lockscreen_allow_all_title">Minden widget engedélyezése</string>
+  <string name="lockscreen_allow_all_warning">Vannak olyan widgetek,amik nem úgy viselkednek,ahogy elvárható,ha kihelyezed őket a zárképernyőre.Más widgetek kiadhatnak rólad személyes adatokat,annak aki hozzáfér a készülékhez.Kérjük tartsd ezeket szem előtt,mielőtt folytatod.</string>
   <string name="lockscreen_camera_widget_title">Kamera modul engedélyezése</string>
   <string name="lockscreen_camera_widget_summary">Mutassa a biztonsági kamera modult a zárképernyőn</string>
   <string name="lockscreen_maximize_widgets_title">Kezdő oldal maximumon</string>
@@ -696,6 +697,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lock_numpad_random_on_request">Kérésre</string>
   <string name="shake_to_secure_title">képernyő zár aktiválása rázással</string>
   <string name="shake_to_secure_dlg_title">VIGYÁZAT:</string>
+  <string name="shake_all">Rázza bármely irányban</string>
+  <string name="shake_horizontal">Vízszintesen rázza</string>
+  <string name="shake_vertical">Rázza függőlegesen</string>
   <string name="lock_before_unlock_title">Csúszka mutatása biztonsági zárképernyő előtt</string>
   <string name="lock_before_unlock_summary">A biztonsági zárképernyő használata előtt mutassa a csúszkát</string>
   <string name="lock_pattern_size_3">3x3</string>
@@ -747,6 +751,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="title_tile_wifiap">Wi-Fi AP</string>
   <string name="title_tile_wifi">Wi-Fi</string>
   <string name="title_tile_user">Felhasználó váltás</string>
+  <string name="title_tile_network_adb">ADB hálózaton keresztül</string>
   <string name="title_tile_networkmode">Hálózati mód</string>
   <string name="title_tile_nfc">NFC</string>
   <string name="title_tile_screen_timeout">Képernyő késleltetési ideje</string>
@@ -873,6 +878,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="keys_action_long">Hosszan nyomás</string>
   <string name="keys_action_double">Dupla kattintás</string>
   <string name="no_home_key">Nem jelöltél ki  \"Kezdőlap\" műveletet!\n\nKészülék használhatatlanná válhat!</string>
+  <string name="button_backlight_title">Háttérvilágítás</string>
   <string name="keyboard_backlight_seekbar_title">Billentyűzet fényereje</string>
   <string name="backlight_timeout_title">Megvilágítás ideje</string>
   <string name="backlight_timeout_unlimited">Ne kapcsoljon ki</string>
@@ -910,6 +916,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lockscreen_settings_title">Képernyőzár</string>
   <string name="lockscreen_rotation_title">Zárolási képernyő elforgatás</string>
   <string name="lockscreen_rotation_portrait">Portré csak</string>
+  <string name="lockscreen_rotation_landscape">Csak a fekvő</string>
   <string name="lockscreen_rotation_summary_extra">(kijelző elforgatás függő)</string>
   <string name="lockscreen_battery_status_title">Akksi állapot</string>
   <string name="lockscreen_battery_status_summary">Mindig mutassa az akksi állapotát a képernyőzáron</string>
@@ -984,4 +991,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="noti_reminder_interval_4s">4 másodperc</string>
   <string name="recent_panel_category">Alkalmazás előzmények panel</string>
   <string name="recent_panel_scale_title">méret</string>
+  <string name="recent_panel_100">100% (alapértelmezett)</string>
+  <string name="recent_panel_85">85%</string>
+  <string name="recent_panel_70">70%</string>
+  <string name="recent_panel_expanded_mode_title">Kiterjesztett mód</string>
+  <string name="recent_panel_expanded_mode_auto">Auto (alapértelmezett)</string>
+  <string name="recent_panel_expanded_mode_always">Mindig</string>
+  <string name="recent_panel_expanded_mode_never">Soha</string>
+  <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
+  <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
+  <string name="app_moving_reboot_title">Újraindítja most?</string>
 </resources>

@@ -44,6 +44,8 @@ import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
 import com.android.internal.util.slim.HwKeyHelper;
 
+import com.android.settings.slim.ButtonBacklightBrightness;
+
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.slim.util.ShortcutPickerHelper;
@@ -66,6 +68,7 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
@@ -186,6 +189,12 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefs.findPreference(CATEGORY_ASSIST);
         PreferenceCategory keysAppSwitchCategory =
                 (PreferenceCategory) prefs.findPreference(CATEGORY_APPSWITCH);
+
+        final ButtonBacklightBrightness backlight = (ButtonBacklightBrightness)
+                findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            getPreferenceScreen().removePreference(backlight);
+        }
 
         mEnableCustomBindings = (SwitchPreference) prefs.findPreference(
                 KEYS_ENABLE_CUSTOM);

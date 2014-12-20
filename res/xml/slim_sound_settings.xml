@@ -32,6 +32,11 @@
         android:persistent="false"
         android:defaultValue="true" />
 
+    <SwitchPreference
+        android:key="swap_volume_buttons"
+        android:title="@string/swap_volume_buttons_title"
+        android:summary="@string/swap_volume_buttons_summary" />
+
     <PreferenceCategory
         android:title="@string/notifications_category_title" />
 

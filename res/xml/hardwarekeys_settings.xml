@@ -17,9 +17,15 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+        <com.android.settings.slim.ButtonBacklightBrightness
+            android:key="button_backlight"
+            android:title="@string/button_backlight_title"
+            android:dialogTitle="@string/button_backlight_title"
+            android:persistent="false" />
+
         <PreferenceCategory
-                android:key="keys_cat"
-                android:title="@string/keys_bindings_title" >
+            android:key="keys_cat"
+            android:title="@string/keys_bindings_title" >
 
             <SwitchPreference
                 android:key="enable_hardware_rebind"

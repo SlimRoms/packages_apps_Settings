@@ -46,11 +46,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
     private SwitchPreference mSafeHeadsetVolume;
     private ListPreference mAnnoyingNotifications;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mCameraSounds;
+    private SwitchPreference mSwapVolumeButtons;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
         mCameraSounds.setOnPreferenceChangeListener(this);
+
+        mSwapVolumeButtons = (SwitchPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+        mSwapVolumeButtons.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0) != 0);
+        mSwapVolumeButtons.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -117,6 +124,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
            } else {
                showDialogInner(DLG_CAMERA_SOUND);
            }
+        }
+        if (KEY_SWAP_VOLUME_BUTTONS.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
+                    (Boolean) objValue ? 1 : 0);
         }
         return true;
     }

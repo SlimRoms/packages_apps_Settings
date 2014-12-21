@@ -83,6 +83,8 @@
   <string name="battery_light_full_color_title">Plně nabito</string>
   <string name="app_security_title">Zabezpečení aplikací</string>
   <string name="privacy_guard_dlg_title">Povolit Ochranu soukromí?</string>
+  <string name="privacy_guard_enable_dlg_text">Pokud je Ochrana soukromí povolena, %s nebude mít přístup k osobním datům jako jsou kontakty, zprávy nebo historie volání.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Při povolení Ochrany soukromí pro systémovou aplikaci %s, nemůže tato aplikace přistupovat ani poskytovat osobní data. To může způsobit chybnou funkci ostatních aplikací.</string>
   <string name="privacy_guard_default_title">Ve výchozím stavu povolen</string>
   <string name="privacy_guard_default_summary">Automaticky aktivovat Ochranu soukromí pro nově nainstalované aplikace</string>
   <string name="privacy_guard_notification_title">Upozornění</string>
@@ -503,6 +505,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
   <string name="summary_pref_menu_display">Jak a kdy chcete, aby se tlačítka nabídky zobrazovaly?</string>
   <string name="navbar_enable_bar">Povolit navigační lištu</string>
   <string name="navbar_enable_bar_summary">Povolit navigační lištu</string>
+  <string name="navigation_bar_height_title">Výška navigační lišty při svislé poloze zařízení</string>
   <string name="navigation_bar_height_summary">Výška navigační lišty v případě zařízení na výšku</string>
   <string name="navigation_bar_height_landscape_title">Výška navigační lišty na šířku</string>
   <string name="navigation_bar_height_landscape_summary">Vyška navigační lišty v případě zařízení na šířku.</string>
@@ -954,6 +957,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
   <string name="usb_mass_storage_summary">Povolit velkokapacitní paměťové zařízení</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Povolit kruhy PIE</string>
+  <string name="pie_control_size">Velikost PIE ovládání</string>
   <string name="pie_control_trigger_positions">Možnosti aktivace</string>
   <string name="pie_control_trigger_left">Aktivace na levém okraji obrazovky</string>
   <string name="pie_control_trigger_bottom">Aktivace na spodním okraji obrazovky</string>
@@ -986,6 +990,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
   <string name="pie_show_snap_title">Zobrazit body přichycení</string>
   <string name="pie_show_snap_summary">Zobrazit body přichycení pro dynamickou změnu aktivační hrany</string>
   <string name="pie_show_text_title">Zobrazit stav a hodiny</string>
+  <string name="pie_show_text_summary">Zobrazí stav zařízení, čas a datum</string>
   <string name="pie_show_background_title">Zobrazit pozadí</string>
   <string name="pie_show_background_summary">Povolit obrazovku pozadí kruhového ovládání</string>
   <string name="pie_button">Tlačítka</string>

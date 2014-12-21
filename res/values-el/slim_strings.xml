@@ -512,6 +512,7 @@
   <string name="summary_pref_menu_display">Πώς και πότε θέλετε τα κουμπιά μενού να εμφανίζονται;</string>
   <string name="navbar_enable_bar">Ενεργοποίηση μπάρας πλοήγησης</string>
   <string name="navbar_enable_bar_summary">Ενεργοποίηση γραμμή πλοήγησης</string>
+  <string name="navigation_bar_height_title">Ύψος μπάρας πλοήγησης σε πορτρέτο</string>
   <string name="navigation_bar_height_summary">Πλοήγησης ύψος μπαράς ενώ βρίσκεται στο πορτρέτο</string>
   <string name="navigation_bar_height_landscape_title">Ύψος μπάρας πλοήγησης (τοπίο)</string>
   <string name="navigation_bar_height_landscape_summary">Ύψος μπάρας πλοήγησης ενώ βρίσκεται στο τοπίο</string>
@@ -962,6 +963,7 @@
   <string name="usb_mass_storage_summary">Ενεργοποίηση μαζικής αποθήκευσης USB</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Ενεργοποίηση στοιχείων ελέγχου pie</string>
+  <string name="pie_control_size">Μέγεθος PIE</string>
   <string name="pie_control_trigger_positions">Επιλογές ενεργοποίησης</string>
   <string name="pie_control_trigger_left">Ενεργοποίηση στα αριστερά σύνορα οθόνης</string>
   <string name="pie_control_trigger_bottom">Ενεργοποίηση στα κάτω σύνορα οθόνης</string>
@@ -994,6 +996,7 @@
   <string name="pie_show_snap_title">Εμφάνιση σημείων θραύσης</string>
   <string name="pie_show_snap_summary">Εμφανίζει σημεία θραύσης για να αλλάξει την ενεργοποίηση δυναμικά</string>
   <string name="pie_show_text_title">Εμφάνιση κατάστασης και ρολόι</string>
+  <string name="pie_show_text_summary">Εμφανίζει πληροφορίες κατάστασης, την ώρα και την ημερομηνία της συσκευής</string>
   <string name="pie_show_background_title">Προβολή φόντου</string>
   <string name="pie_show_background_summary">Ενεργοποίηση φόντο οθόνης pie</string>
   <string name="pie_button">Κουμπιά</string>

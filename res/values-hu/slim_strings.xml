@@ -673,6 +673,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lockscreen_dots_color_title">Pontok színe</string>
   <string name="lockscreen_dots_color_summary">Glowpad pontok színe</string>
   <string name="lockscreen_targets_color_title">Hivatkozások színe</string>
+  <string name="lockscreen_targets_color_summary">kiválasztott hivatkozások színe</string>
   <string name="lockscreen_misc_color_title">Vegyes szín</string>
   <string name="lockscreen_misc_color_summary">a fennmaradó elemek színe</string>
   <string name="lockscreen_widgets_title">Modulok</string>
@@ -960,6 +961,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="noti_reminder_interval_1dot5s">1.5 mp</string>
   <string name="noti_reminder_interval_2s">2 mp</string>
   <string name="noti_reminder_interval_2dot5s">2.5 mp</string>
+  <string name="noti_reminder_interval_3s">3 mp</string>
+  <string name="noti_reminder_interval_3dot5s">3,5 mp</string>
   <string name="noti_reminder_interval_4s">4 mp</string>
   <string name="recent_panel_100">100% (alapértelmezett)</string>
   <string name="recent_panel_85">85%</string>
@@ -980,4 +983,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="heads_up_time_out_4sec">4 mp</string>
   <string name="heads_up_time_out_6sec">6 mp</string>
   <string name="heads_up_time_out_8sec">8 mp</string>
+  <string name="heads_up_time_out_10sec">10 mp</string>
+  <string name="heads_up_time_out_never">Soha</string>
+  <string name="heads_up_bg_color_title">Háttér szín</string>
+  <string name="bluetooth_accept_all_files">Minden fájltípus elfogadása</string>
 </resources>

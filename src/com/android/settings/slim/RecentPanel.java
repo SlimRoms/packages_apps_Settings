@@ -71,6 +71,8 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
             "recent_card_bg_color";
     private static final String RECENT_CARD_TEXT_COLOR =
             "recent_card_text_color";
+    private static final String RECENTS_SHOW_HIDE_SEARCH_BAR =
+            "recents_show_hide_search_bar";
 
     private SwitchPreference mUseSlimRecents;
     private SwitchPreference mShowRunningTasks;
@@ -82,6 +84,7 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
     private ColorPickerPreference mRecentCardTextColor;
+    private SwitchPreference mDisableStockSearch;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
@@ -97,6 +100,7 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         if (preference == mUseSlimRecents) {
             Settings.System.putInt(getContentResolver(), Settings.System.USE_SLIM_RECENTS,
                     ((Boolean) newValue) ? 1 : 0);
+            updateRecentsPreferences((Boolean) newValue);
             return true;
         } else if (preference == mShowRunningTasks) {
             Settings.System.putInt(getContentResolver(), Settings.System.RECENT_SHOW_RUNNING_TASKS,
@@ -161,6 +165,11 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
                     Settings.System.RECENT_PANEL_SHOW_TOPMOST,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
+        } else if (preference == mDisableStockSearch) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENTS_SHOW_HIDE_SEARCH_BAR,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
         } else if (preference == mMaxApps) {
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
@@ -168,6 +177,10 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
             return true;
         }
         return false;
+    }
+
+    private void updateRecentsPreferences(boolean show) {
+        mDisableStockSearch.setEnabled(!show);
     }
 
     @Override
@@ -237,7 +250,10 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
     }
 
     private void initializeAllPreferences() {
+        boolean useSlimRecents = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.USE_SLIM_RECENTS, 0) == 1;
         mUseSlimRecents = (SwitchPreference) findPreference(USE_SLIM_RECENTS);
+        mUseSlimRecents.setChecked(useSlimRecents);
         mUseSlimRecents.setOnPreferenceChangeListener(this);
 
         mShowRunningTasks = (SwitchPreference) findPreference(ONLY_SHOW_RUNNING_TASKS);
@@ -250,6 +266,12 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
                 Settings.System.RECENTS_MAX_APPS, ActivityManager.getMaxRecentTasksStatic(),
                 UserHandle.USER_CURRENT) - 5);
         mMaxApps.disablePercentageValue(true);
+
+        boolean enableDisableStockSearch = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.RECENTS_SHOW_HIDE_SEARCH_BAR, 0) == 1;
+        mDisableStockSearch = (SwitchPreference) findPreference(RECENTS_SHOW_HIDE_SEARCH_BAR);
+        mDisableStockSearch.setChecked(enableDisableStockSearch);
+        mDisableStockSearch.setOnPreferenceChangeListener(this);
 
         // Recent panel background color
         mRecentPanelBgColor =
@@ -318,6 +340,8 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         mRecentPanelExpandedMode =
                 (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
         mRecentPanelExpandedMode.setOnPreferenceChangeListener(this);
+
+        updateRecentsPreferences(useSlimRecents);
     }
 
 }

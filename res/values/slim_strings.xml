@@ -910,6 +910,8 @@
     <string name="recent_panel_bg_color_title">Panel background color</string>
     <string name="recent_card_bg_color_title">Card background color</string>
     <string name="recent_card_text_color_title">Card text color</string>
+    <string name="recents_show_searchbar">Disable search bar in stock Recents</string>
+    <string name="recents_show_searchbar_summary">Disable or enable the search bar in the stock Recents panel</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>

@@ -908,4 +908,8 @@
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_show_searchbar">Disable Search Bar in stock Recents</string>
+    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the stock recents panel</string>
+
 </resources>

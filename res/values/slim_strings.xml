@@ -683,4 +683,8 @@
     <string name="doze_brightness_title">Doze brightness level</string>
     <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
 
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_show_searchbar">Disable Search Bar in Recents Menu</string>
+    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the recents menu</string>
+
 </resources>

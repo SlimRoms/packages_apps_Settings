@@ -19,12 +19,11 @@
   <string name="reset">Restablecer</string>
   <string name="help">Ayuda</string>
   <string name="add">Añadir</string>
-  <string name="help">Ayuda</string>
   <string name="attention">Atención</string>
   <string name="enabled">Habilitado</string>
   <string name="default_string">Defecto</string>
   <string name="choose_app">Elegir aplicación</string>
-  <string name="reset_message">¿Restablecer a los valores por defecto?</string>
+  <string name="reset_message">¿Restablecer todas las entradas a los valores por defecto?</string>
   <string name="header_category_personalization">Personalización</string>
   <string name="interface_settings_title">Interfaz</string>
   <string name="dialog_color_picker">Seleccionar color</string>
@@ -461,4 +460,25 @@
   <string name="lockscreen_shorcuts_longpress_summary">Abrir accesos directos de la pantalla de bloqueo al pulsar de forma prolongada</string>
   <string name="show_unac_and_overcounted_stats_title">Estadísticas de no contados/sobrecontados</string>
   <string name="show_unac_and_overcounted_stats_summary">Mostrar en la estadísticas de uso de la batería los no contados y los sobrecontados</string>
+  <string name="heads_up_title">Notificaciones de aviso</string>
+  <string name="app_notification_enable_heads_up_title">Mostrar avisos</string>
+  <string name="app_notification_enable_heads_up_summary">Mostrar las notificaciones de esta aplicación como avisos</string>
+  <string name="heads_up_snooze_title">Temporizador de reposo</string>
+  <string name="heads_up_snooze_summary">Al tocar el botón de reposo se deshabilitarán los avisos durante <xliff:g id="number">%d</xliff:g> minutos</string>
+  <string name="heads_up_snooze_disabled_summary">Temporizador de reposo deshabilitado</string>
+  <string name="heads_up_snooze_3min">3 minutos</string>
+  <string name="heads_up_snooze_5min">5 minutos</string>
+  <string name="heads_up_snooze_10min">10 minutos</string>
+  <string name="heads_up_snooze_15min">15 minutos</string>
+  <string name="heads_up_snooze_20min">20 minutos</string>
+  <string name="heads_up_time_out_title">Tiempo de espera</string>
+  <string name="heads_up_time_out_summary">Los avisos se mostrarán durante <xliff:g id="number">%d</xliff:g> segundos</string>
+  <string name="heads_up_time_out_never_summary">Los avisos se mostrarán hasta que se descarten</string>
+  <string name="heads_up_time_out_4sec">4 segundos</string>
+  <string name="heads_up_time_out_6sec">6 segundos</string>
+  <string name="heads_up_time_out_8sec">8 segundos</string>
+  <string name="heads_up_time_out_10sec">10 segundos</string>
+  <string name="heads_up_time_out_never">Nunca</string>
+  <string name="battery_saver_title">Color de advertencia</string>
+  <string name="battery_saver_style_reset_message">¿Restablecer el color de la advertencia para el protector de batería?</string>
 </resources>

@@ -19,7 +19,6 @@
   <string name="reset">Reset</string>
   <string name="help">Aiuto</string>
   <string name="add">Aggiungi</string>
-  <string name="help">Aiuto</string>
   <string name="attention">Attenzione</string>
   <string name="enabled">Abilitato</string>
   <string name="default_string">Default</string>
@@ -480,4 +479,6 @@
   <string name="heads_up_time_out_8sec">8 secondi</string>
   <string name="heads_up_time_out_10sec">10 secondi</string>
   <string name="heads_up_time_out_never">Mai</string>
+  <string name="battery_saver_title">Colore di attivazione</string>
+  <string name="battery_saver_style_reset_message">Resettare il colore di attivazione della modalità di risparmio energetico?</string>
 </resources>

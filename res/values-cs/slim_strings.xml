@@ -19,7 +19,6 @@
   <string name="reset">Obnovit</string>
   <string name="help">Nápověda</string>
   <string name="add">Přidat</string>
-  <string name="help">Nápověda</string>
   <string name="attention">Upozornění</string>
   <string name="enabled">Povoleno</string>
   <string name="default_string">Výchozí</string>
@@ -65,7 +64,7 @@
   <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>
   <string name="safe_headset_volume_summary">Zabránit hlasité úrovni hlasitosti, při prvním zasunutí sluchátek</string>
   <string name="safe_headset_volume_warning_dialog_text">Poslech při vysoké hlasitosti po delší dobu může poškodit váš sluch. Nastavení zakažte s opatrností.</string>
-  <string name="notifications_category_title">Upozornění</string>
+  <string name="notifications_category_title">Ozmámení</string>
   <string name="less_notification_sounds_title">Méně časté zvuky oznámení</string>
   <string name="less_notification_sounds_summary">Omezit počet přehrání zvukových oznámení každé aplikace pouze na jedno za stanovené časové období</string>
   <string name="less_notification_sounds_default">Výchozí chování</string>
@@ -79,7 +78,7 @@
   <string name="less_notification_sounds_2m">2 minuty</string>
   <string name="less_notification_sounds_5m">5 minut</string>
   <string name="volume_keys_control_media_stream">Ovládání médií</string>
-  <string name="volume_keys_control_media_stream_summary">Tlačítka hlasitosti ovládají hlasitost média, nikoli oznámení</string>
+  <string name="volume_keys_control_media_stream_summary">Tlačítka hlasitosti ovládají média místo oznámení</string>
   <string name="debug_LAN_category">Nastavení sítě LAN</string>
   <string name="device_hostname">Hostitelské jméno zařízení</string>
   <string name="display_category_wakeup_options_title">Možnosti probuzení</string>
@@ -101,15 +100,15 @@
   <string name="show_enter_key_title">Zobrazit tlačítko Enter</string>
   <string name="show_enter_key_summary">Vynutit zobrazení klávesnice Enter místo smajlíků</string>
   <string name="ime_switcher_notify">Oznámení metody zadávání</string>
-  <string name="ime_switcher_notify_summary">Při psaní zobrazovat systémové upozornění s výběrem metody zadávání</string>
+  <string name="ime_switcher_notify_summary">Při psaní zobrazovat systémové oznámení s výběrem metody zadávání</string>
   <string name="app_security_title">Zabezpečení aplikací</string>
   <string name="privacy_guard_dlg_title">Povolit Ochranu soukromí?</string>
   <string name="privacy_guard_enable_dlg_text">Pokud je Ochrana soukromí povolena, %s nebude mít přístup k osobním datům jako jsou kontakty, zprávy nebo historie volání.</string>
   <string name="privacy_guard_enable_dlg_system_app_text">Při povolení Ochrany soukromí pro systémovou aplikaci %s, nemůže tato aplikace přistupovat ani poskytovat osobní data. To může způsobit chybnou funkci ostatních aplikací.</string>
   <string name="privacy_guard_default_title">Ve výchozím stavu povolena</string>
   <string name="privacy_guard_default_summary">Automaticky aktivovat Ochranu soukromí pro nově nainstalované aplikace</string>
-  <string name="privacy_guard_notification_title">Upozornění</string>
-  <string name="privacy_guard_notifiation_summary">Zobrazit upozornění pokud je Ochrana soukromí aktivní.</string>
+  <string name="privacy_guard_notification_title">Oznámení</string>
+  <string name="privacy_guard_notifiation_summary">Zobrazit oznámení, pokud je Ochrana soukromí aktivní.</string>
   <string name="privacy_guard_manager_title">Ochrana soukromí</string>
   <string name="privacy_guard_manager_summary">Spravovat aplikace, které mají přístup k osobním údajům a k oprávněním ostatních aplikací</string>
   <string name="privacy_guard_no_user_apps">Není nainstalovaná žádná aplikace</string>
@@ -129,9 +128,9 @@
   <string name="advanced_reboot_hide_on_keyguard">Skrýt na zabezpečené obrazovce</string>
   <string name="advanced_reboot_show_always">Vždy zobrazit</string>
   <string name="app_notification_show_on_keyguard_title">Zobrazovat na zamčené obrazovce</string>
-  <string name="app_notification_show_on_keyguard_summary">Zobrazovat upozornění této aplikace na zamčené obrazovce</string>
-  <string name="app_notification_no_ongoing_on_keyguard_title">Skrýt trvalá upozornění</string>
-  <string name="app_notification_no_ongoing_on_keyguard_summary">Nikdy nezobrazovat trvalá upozornění této aplikace na zamčené obrazovce</string>
+  <string name="app_notification_show_on_keyguard_summary">Zobrazovat oznámení této aplikace na zamčené obrazovce</string>
+  <string name="app_notification_no_ongoing_on_keyguard_title">Skrýt trvalá oznámení</string>
+  <string name="app_notification_no_ongoing_on_keyguard_summary">Nikdy nezobrazovat trvalá oznámení této aplikace na zamčené obrazovce</string>
   <string name="app_ops_summaries_coarse_location">přibližná poloha</string>
   <string name="app_ops_summaries_fine_location">přesná poloha</string>
   <string name="app_ops_summaries_gps">GPS</string>
@@ -143,7 +142,7 @@
   <string name="app_ops_summaries_read_calendar">číst kalendář</string>
   <string name="app_ops_summaries_modify_calendar">měnit kalendář</string>
   <string name="app_ops_summaries_wifi_scan">Hledat Wi\u2011Fi</string>
-  <string name="app_ops_summaries_notification">upozornění</string>
+  <string name="app_ops_summaries_notification">oznámení</string>
   <string name="app_ops_summaries_cell_scan">hledat buňky</string>
   <string name="app_ops_summaries_call_phone">hovor</string>
   <string name="app_ops_summaries_read_sms">číst SMS</string>
@@ -157,7 +156,7 @@
   <string name="app_ops_summaries_write_icc_sms">vytvořit ICC SMS</string>
   <string name="app_ops_summaries_modify_settings">měnit nastavení</string>
   <string name="app_ops_summaries_draw_on_top">vykreslovat do nejvyšší vrstvy</string>
-  <string name="app_ops_summaries_access_notifications">přístup k upozornění</string>
+  <string name="app_ops_summaries_access_notifications">přístup k oznámením</string>
   <string name="app_ops_summaries_camera">fotoaparát</string>
   <string name="app_ops_summaries_record_audio">nahrávat zvuk</string>
   <string name="app_ops_summaries_play_audio">přehrávat zvuky</string>
@@ -201,7 +200,7 @@
   <string name="app_ops_labels_modify_call_log">Měnit seznam hovorů</string>
   <string name="app_ops_labels_read_calendar">Číst kalendář</string>
   <string name="app_ops_labels_modify_calendar">Měnit kalendář</string>
-  <string name="app_ops_labels_notification_toast">Upozornění/Bublinové oznámení</string>
+  <string name="app_ops_labels_notification_toast">Oznámení/Bublinové oznámení</string>
   <string name="app_ops_labels_call_phone">Volat</string>
   <string name="app_ops_labels_read_sms_db">Číst SMS DB</string>
   <string name="app_ops_labels_write_sms_db">vytvořit SMS DB</string>
@@ -210,7 +209,7 @@
   <string name="app_ops_labels_send_sms">Poslat SMS</string>
   <string name="app_ops_labels_modify_settings">Měnit nastavení</string>
   <string name="app_ops_labels_draw_on_top">Vykreslovat do nejvyšší vrstvy</string>
-  <string name="app_ops_labels_access_notifications">Přístup k upozornění</string>
+  <string name="app_ops_labels_access_notifications">Přístup k oznámením</string>
   <string name="app_ops_labels_camera">Fotoaparát</string>
   <string name="app_ops_labels_record_audio">Nahrávat zvuk</string>
   <string name="app_ops_labels_play_audio">Přehrávat zvuky</string>
@@ -332,12 +331,12 @@
   <string name="options_settings_title">Možnosti</string>
   <string name="media_scanner_on_boot_title">Chování skenování medií při startu</string>
   <string name="media_scanner_on_boot_enabled">Skenovat média</string>
-  <string name="media_scanner_on_boot_ask">Zeptat se na skenování (upozornění)</string>
+  <string name="media_scanner_on_boot_ask">Zeptat se na skenování (oznámení)</string>
   <string name="media_scanner_on_boot_disabled">Neskenovat média</string>
   <string name="qs_title">Rychlé nastavení</string>
   <string name="title_quick_pulldown">Rychlé vysunutí nabídky</string>
   <string name="summary_quick_pulldown">%1$s okraj stavové lišty umožňuje rychlé vysunutí nabídky nastavení</string>
-  <string name="quick_pulldown_off">Žádný</string>
+  <string name="quick_pulldown_off">Vypnuto</string>
   <string name="quick_pulldown_left">Levý</string>
   <string name="quick_pulldown_right">Pravý</string>
   <string name="smart_pulldown_title">Chytré rozbalení lišty</string>
@@ -461,4 +460,25 @@
   <string name="lockscreen_shorcuts_longpress_summary">Otevřít vlastní zástupce na zámku obrazovky dlouhým stisknutím</string>
   <string name="show_unac_and_overcounted_stats_title">Zobrazit nezapočítané statistiky</string>
   <string name="show_unac_and_overcounted_stats_summary">Zobrazovat rozdíly mezi skutečnou a vypočtenou hodnotou spotřeby.</string>
+  <string name="heads_up_title">Plovoucí oznámení</string>
+  <string name="app_notification_enable_heads_up_title">Zobrazovat plovoucí oznámení</string>
+  <string name="app_notification_enable_heads_up_summary">Zobrazovat oznámení této aplikace jako plovoucí</string>
+  <string name="heads_up_snooze_title">Odložení</string>
+  <string name="heads_up_snooze_summary">Pokud stisknete tlačítko odložení, zakážete plovoucí oznámení na <xliff:g id="number">%d</xliff:g> minut</string>
+  <string name="heads_up_snooze_disabled_summary">Odložení je deaktivováno</string>
+  <string name="heads_up_snooze_3min">3 minuty</string>
+  <string name="heads_up_snooze_5min">5 minut</string>
+  <string name="heads_up_snooze_10min">10 minut</string>
+  <string name="heads_up_snooze_15min">15 minut</string>
+  <string name="heads_up_snooze_20min">20 minut</string>
+  <string name="heads_up_time_out_title">Délka zobrazení</string>
+  <string name="heads_up_time_out_summary">Plovoucí oznámení budou zobrazena na <xliff:g id="number">%d</xliff:g> sekund</string>
+  <string name="heads_up_time_out_never_summary">Plovoucí oznámení bude zobrazeno, dokud nebude odstraněno</string>
+  <string name="heads_up_time_out_4sec">4 sekundy</string>
+  <string name="heads_up_time_out_6sec">6 sekund</string>
+  <string name="heads_up_time_out_8sec">8 sekund</string>
+  <string name="heads_up_time_out_10sec">10 sekund</string>
+  <string name="heads_up_time_out_never">Nikdy</string>
+  <string name="battery_saver_title">Výstražná barva</string>
+  <string name="battery_saver_style_reset_message">Obnovit výstražnou barvu spořiče baterie?</string>
 </resources>

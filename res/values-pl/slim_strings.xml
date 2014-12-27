@@ -19,7 +19,6 @@
   <string name="reset">Resetuj</string>
   <string name="help">Pomoc</string>
   <string name="add">Dodaj</string>
-  <string name="help">Pomoc</string>
   <string name="attention">Uwaga</string>
   <string name="enabled">Włączono</string>
   <string name="default_string">Domyślnie</string>
@@ -185,6 +184,7 @@
   <string name="app_ops_summaries_get_usage_stat">uzyskiwanie statystyk użytkowania</string>
   <string name="app_ops_summaries_mute_microphone">wyciszanie/włączanie mikrofonu</string>
   <string name="app_ops_summaries_toast_window">wyskakujące okno</string>
+  <string name="app_ops_summaries_project_media">projekt multimedialny</string>
   <string name="app_ops_summaries_vpn">aktywowowanie VPN</string>
   <string name="app_ops_summaries_nfc">zmiana NFC</string>
   <string name="app_ops_summaries_delete_sms">usuwanie SMS-ów</string>
@@ -235,6 +235,7 @@
   <string name="app_ops_labels_get_usage_stat">Uzyskiwanie statystyk użytkowania</string>
   <string name="app_ops_labels_mute_microphone">Wyciszanie/włączanie mikrofonu</string>
   <string name="app_ops_labels_toast_window">Wyskakujące okno</string>
+  <string name="app_ops_labels_project_media">Projekt multimedialny</string>
   <string name="app_ops_labels_vpn">Aktywowowanie VPN</string>
   <string name="app_ops_labels_nfc">Zmiana NFC</string>
   <string name="app_ops_labels_delete_sms">Usuwanie SMS-ów</string>
@@ -356,9 +357,12 @@
   <string name="lock_numpad_random_always">Zawsze</string>
   <string name="lock_numpad_random_on_request">Na żądanie</string>
   <string name="shortcut_action_none">Żaden</string>
+  <string name="shortcut_action_app">Inna aplikacja</string>
   <string name="shortcut_action_home">Ekran domowy</string>
   <string name="shortcut_action_back">Wstecz</string>
   <string name="shortcut_action_menu">Menu</string>
+  <string name="shortcut_action_ime">Otwórz okno zmiany metod wprowadzania</string>
+  <string name="shortcut_action_power_menu">Menu zasilania</string>
   <string name="shortcut_action_recent">Ostatnie</string>
   <string name="shortcut_action_power">Wyłącz ekran</string>
   <string name="shortcut_action_search">Szukaj w aplikacji</string>
@@ -449,10 +453,32 @@
   <string name="shortcuts_icon_picker_tv">TV</string>
   <string name="shortcuts_icon_picker_twitter">Twitter</string>
   <string name="shortcuts_icon_picker_unlock">Odblokuj</string>
+  <string name="screen_off_gesture_settings_title">Gesty przy wyłączonym ekranie</string>
   <string name="lockscreen_shortcuts_title">Skróty</string>
   <string name="lockscreen_shortcuts_summary">Zobacz lub zmień skróty ekranu blokady</string>
   <string name="lockscreen_shorcuts_longpress_title">Długie naciśnięcie skrótu</string>
   <string name="lockscreen_shorcuts_longpress_summary">Otwórz własny skrót ekranu blokady przy długim naciśnięciu</string>
   <string name="show_unac_and_overcounted_stats_title">Pokaż statystyki sprawdzone / niesprawdzone</string>
   <string name="show_unac_and_overcounted_stats_summary">Pokaż w statystykach baterii użycie sprawdzone i niesprawdzone.</string>
+  <string name="heads_up_title">Wyskakujące powiadomienia</string>
+  <string name="app_notification_enable_heads_up_title">Pokaż wyskakujące powiadomienia</string>
+  <string name="app_notification_enable_heads_up_summary">Powiadomienia dla tej aplikacji pokaż jako wyskakujące powiadomienia</string>
+  <string name="heads_up_snooze_title">Drzemka</string>
+  <string name="heads_up_snooze_summary">Jeżeli zostanie naciśnięty przycisk drzemki, wyłącz wyskakujące powiadomienia na <xliff:g id="number">%d</xliff:g> minut</string>
+  <string name="heads_up_snooze_disabled_summary">Przycisk drzemki wyłączony</string>
+  <string name="heads_up_snooze_3min">3 minuty</string>
+  <string name="heads_up_snooze_5min">5 minut</string>
+  <string name="heads_up_snooze_10min">10 minut</string>
+  <string name="heads_up_snooze_15min">15 minut</string>
+  <string name="heads_up_snooze_20min">20 minut</string>
+  <string name="heads_up_time_out_title">Czas wyświetlania</string>
+  <string name="heads_up_time_out_summary">Wyskakujące powiadomienia będą wyświetlane przez <xliff:g id="number">%d</xliff:g> sekund</string>
+  <string name="heads_up_time_out_never_summary">Wyskakujące powiadomienia będą wyświetlane dopóki nie zostaną usunięte</string>
+  <string name="heads_up_time_out_4sec">4 sekundy</string>
+  <string name="heads_up_time_out_6sec">6 sekund</string>
+  <string name="heads_up_time_out_8sec">8 sekund</string>
+  <string name="heads_up_time_out_10sec">10 sekund</string>
+  <string name="heads_up_time_out_never">Nigdy</string>
+  <string name="battery_saver_title">Kolor ostrzeżenia</string>
+  <string name="battery_saver_style_reset_message">Zresetować kolor ostrzeżenia oszczędzania baterii?</string>
 </resources>

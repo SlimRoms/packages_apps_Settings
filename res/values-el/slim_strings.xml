@@ -19,7 +19,6 @@
   <string name="reset">Επαναφορά</string>
   <string name="help">Βοήθεια</string>
   <string name="add">Προσθήκη</string>
-  <string name="help">Βοήθεια</string>
   <string name="attention">Προσοχή</string>
   <string name="enabled">Ενεργοποιήθηκε</string>
   <string name="default_string">Προεπιλογή</string>
@@ -312,6 +311,7 @@
   <string name="status_bar_toggle_brightness_summary">Επιτρέπει τον έλεγχο της φωτεινότητας με ολίσθιση στη μπάρα κατάστασης</string>
   <string name="status_bar_toggle_info">Η αυτόματη φωτεινότητα είναι ενεργή</string>
   <string name="double_tap_to_sleep_title">Διπλό πάτημα για αναστολή</string>
+  <string name="font_size_sample">Δείγμα</string>
   <string name="options_settings_title">Επιλογές</string>
   <string name="media_scanner_on_boot_title">Συμπεριφορά κατά την εκκίνηση του σαρωτή μέσων ενημέρωσης</string>
   <string name="media_scanner_on_boot_enabled">Σάρωση των μέσων ενημέρωσης</string>
@@ -438,6 +438,9 @@
   <string name="lockscreen_shortcuts_summary">Εμφάνιση ή αλλαγή συντομεύσεων οθόνης κλειδώματος</string>
   <string name="lockscreen_shorcuts_longpress_title">Μακρύ πάτημα συντομεύσεων</string>
   <string name="lockscreen_shorcuts_longpress_summary">Άνοιγμα προσαρμοσμένων συντομεύσεων στην οθόνη κλειδώματος κατά το παρατεταμένο πάτημα</string>
+  <string name="app_notification_enable_heads_up_title">Εμφάνιση heads up</string>
+  <string name="heads_up_snooze_title">Αναβολή χρονομέτρου</string>
+  <string name="heads_up_snooze_disabled_summary">Η αναβολή χρονομέτρου είναι απενεργοποιημένη</string>
   <string name="heads_up_snooze_3min">3 λεπτά</string>
   <string name="heads_up_snooze_5min">5 λεπτά</string>
   <string name="heads_up_snooze_10min">10 λεπτά</string>
@@ -451,4 +454,5 @@
   <string name="heads_up_time_out_8sec">8 δευτερόλεπτα</string>
   <string name="heads_up_time_out_10sec">10 δευτερόλεπτα</string>
   <string name="heads_up_time_out_never">Ποτέ</string>
+  <string name="battery_saver_title">Χρώμα προειδοποίησης</string>
 </resources>

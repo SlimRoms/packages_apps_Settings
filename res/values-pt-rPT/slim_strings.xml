@@ -19,7 +19,6 @@
   <string name="reset">Restaurar</string>
   <string name="help">Ajuda</string>
   <string name="add">Adicionar</string>
-  <string name="help">Ajuda</string>
   <string name="attention">Atenção</string>
   <string name="enabled">Ativado</string>
   <string name="default_string">Predefinido</string>
@@ -459,4 +458,24 @@
   <string name="lockscreen_shortcuts_summary">Ver ou alterar os atalhos personalizados do ecrã de bloqueio</string>
   <string name="lockscreen_shorcuts_longpress_title">Toque longo nos atalhos</string>
   <string name="lockscreen_shorcuts_longpress_summary">Abrir atalhos do ecrã de bloqueio personalizado com toque longo</string>
+  <string name="show_unac_and_overcounted_stats_title">Mostrar estatísticas ignoradas/sobrecontadas</string>
+  <string name="show_unac_and_overcounted_stats_summary">Mostrar nas estatísticas da bateria a utilização de ignoradas/sobrecontadas.</string>
+  <string name="heads_up_title">Notificações pop-up</string>
+  <string name="app_notification_enable_heads_up_title">Mostrar notificações pop-up</string>
+  <string name="app_notification_enable_heads_up_summary">Mostrar notificações desta aplicação como pop-up</string>
+  <string name="heads_up_snooze_3min">3 minutos</string>
+  <string name="heads_up_snooze_5min">5 minutos</string>
+  <string name="heads_up_snooze_10min">10 minutos</string>
+  <string name="heads_up_snooze_15min">15 minutos</string>
+  <string name="heads_up_snooze_20min">20 minutos</string>
+  <string name="heads_up_time_out_title">Tempo limite</string>
+  <string name="heads_up_time_out_summary">Notificações pop-up aparecerão por <xliff:g id="number">%d</xliff:g> segundos</string>
+  <string name="heads_up_time_out_never_summary">Notificações pop-up serão mostradas até serem descartadas</string>
+  <string name="heads_up_time_out_4sec">4 segundos</string>
+  <string name="heads_up_time_out_6sec">6 segundos</string>
+  <string name="heads_up_time_out_8sec">8 segundos</string>
+  <string name="heads_up_time_out_10sec">10 segundos</string>
+  <string name="heads_up_time_out_never">Nunca</string>
+  <string name="battery_saver_title">Cor de aviso</string>
+  <string name="battery_saver_style_reset_message">Restaurar cor de aviso de poupança de bateria?</string>
 </resources>

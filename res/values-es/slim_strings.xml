@@ -19,12 +19,11 @@
   <string name="reset">Restablecer</string>
   <string name="help">Ayuda</string>
   <string name="add">Añadir</string>
-  <string name="help">Ayuda</string>
   <string name="attention">Atención</string>
   <string name="enabled">Habilitado</string>
   <string name="default_string">Defecto</string>
   <string name="choose_app">Selecciona aplicación</string>
-  <string name="reset_message">¿Resetear todas las entradas a por defecto?</string>
+  <string name="reset_message">¿Restablecer todas las entradas a su valor por defecto?</string>
   <string name="header_category_personalization">Personalización</string>
   <string name="interface_settings_title">Interfaz</string>
   <string name="dialog_color_picker">Selector de color</string>
@@ -42,7 +41,7 @@
   <string name="mem_info">Memoria</string>
   <string name="root_access">Acceso Root</string>
   <string name="root_access_warning_title">¿Permitir acceso Root?</string>
-  <string name="root_access_warning_message">Permitir acceso Root a las aplicaciones es muy peligroso y puede comprometer la seguridad del sistema</string>
+  <string name="root_access_warning_message">Permitir acceso administrativo a las aplicaciones es muy peligroso y puede comprometer la seguridad del sistema</string>
   <string name="root_access_none">Deshabilitado</string>
   <string name="root_access_apps">Solo aplicaciones</string>
   <string name="root_access_adb">Solo ADB</string>
@@ -79,14 +78,14 @@
   <string name="less_notification_sounds_2m">2 minutos</string>
   <string name="less_notification_sounds_5m">5 minutos</string>
   <string name="volume_keys_control_media_stream">Control multimedia</string>
-  <string name="volume_keys_control_media_stream_summary">Las teclas de volumen controlan el volumen de la música en lugar de las notificaciones</string>
+  <string name="volume_keys_control_media_stream_summary">Las teclas de volumen controlan el volumen multimedia en lugar de las notificaciones</string>
   <string name="debug_LAN_category">Configuración LAN</string>
   <string name="device_hostname">Nombre del dispositivo</string>
   <string name="display_category_wakeup_options_title">Opciones de encendido de pantalla</string>
   <string name="pref_volume_wake_title">Despertar con las teclas de volumen</string>
   <string name="pref_volume_wake_summary">Al pulsar las teclas de volumen arriba/abajo el dispositivo se despertará</string>
   <string name="wakeup_when_plugged_unplugged_title">Despertar al cargar</string>
-  <string name="wakeup_when_plugged_unplugged_summary">Despierta el dispositivo si se conecta/desconecta un medio de carga</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Despertar el dispositivo si se conecta/desconecta el cargador</string>
   <string name="title_keyboard_input">Opciones avanzadas</string>
   <string name="disable_fullscreen_keyboard_title">Desactivar teclado a pantalla completa</string>
   <string name="disable_fullscreen_keyboard_summary">En modo apaisado, el teclado nunca ocupará toda la pantalla</string>
@@ -368,6 +367,8 @@
   <string name="bluetooth_sap_profile_summary_connected">Conectado al servidor de acceso a SIM</string>
   <string name="bluetooth_sap_profile_summary_use_for">Utilizar para acceso a SIM</string>
   <string name="location_category_enhanced_location">Ubicación mejorada</string>
+  <string name="wifi_rssi_threshold_check">Habilita el umbral de potencia de la señal</string>
+  <string name="wifi_rssi_threshold_check_summary">No conectar al AP si la calidad de señal es baja</string>
   <string name="bluetooth_enter_pin_msg_hs">El dispositivo necesita contraseña de alta seguridad con 16 caracteres</string>
   <string name="close_dialog">Vale</string>
   <string name="sim_enabler_title">Activadores de SIM</string>
@@ -397,6 +398,7 @@
   <string name="sim_pin_disable_failed">No se puede desactivar el PIN.</string>
   <string name="sim_pin_enable_failed">No se puede habilitar PIN.</string>
   <string name="sim_pin_change_failed_enable_sim_lock">No se puede cambiar el PIN SIM/RUIM.\nactiva el bloqueo de SIM/RUIM.</string>
+  <string name="sim_enable_disable_lock_not_supported">No se puede cambiar el bloqueo de SIM/RUIM.\n La SIM/RUIM no lo admite.</string>
   <string name="sim_pin_attempts">\nIntentos restantes :</string>
   <string name="sim_pin_enabled">PIN1 activado</string>
   <string name="sim_pin_disabled">PIN1 desactivado</string>
@@ -411,6 +413,9 @@
   <string name="shortcut_action_recent">Recientes</string>
   <string name="shortcut_action_power">Apagar pantalla</string>
   <string name="shortcut_action_search">Buscar en la aplicación</string>
+  <string name="shortcut_action_ring_vib">Sonar/Vibrar</string>
+  <string name="shortcut_action_ring_silent">Sonar/Silencio</string>
+  <string name="shortcut_action_ring_vib_silent">Sonar/Vibrar/Silencio</string>
   <string name="shortcut_action_camera">Cámara</string>
   <string name="shortcut_action_media_next">Música - pista siguiente</string>
   <string name="shortcut_action_media_play_pause">Música - reproducir/pausar</string>
@@ -422,9 +427,20 @@
   <string name="shortcut_action_select_action_newaction">Elija nueva acción:</string>
   <string name="shortcut_action_reset">Restablecer</string>
   <string name="shortcut_action_add">Añadir</string>
+  <string name="shortcut_action_reset_message">¿Restablecer todas las entradas a los valores por defecto?</string>
+  <string name="shortcut_action_max">Se ha alcanzado el tamaño máximo de las entradas</string>
+  <string name="shortcut_action_warning">Advertencia</string>
+  <string name="shortcut_action_warning_message">No es posible eliminar la última entrada</string>
+  <string name="shortcut_action_disable_message">Deshabilitado\nAñade una entrada para habilitar esta característica</string>
+  <string name="shortcut_image_not_valid">La aplicación seleccionada no tiene un icono válido o no soporta el recorte de la imagen. Usa otra aplicación.</string>
+  <string name="shortcut_duplicate_entry">La acción seleccionada no puede añadirse dos veces</string>
   <string name="shortcut_action_help_shortcut">acceso directo</string>
   <string name="shortcut_action_help_button">botón</string>
   <string name="shortcut_action_help_app">aplicación</string>
+  <string name="shortcut_action_help_icon">, mientras seleccionas el icono aparecerán las opciones de personalización</string>
+  <string name="shortcut_action_help_main">Para añadir un %1$s, toca el icono Añadir. Una vez añadido un %1$s, seleccionando la fila cambiará el destino%2$s\n\nPara borrar una %1$s, desliza la fila horizontalmente a la izquierda o a la derecha.  Ordena una %1$s en la lista arrastrando verticalmente el marcador de la izquierda.\n\nPara restablecer a los valores predeterminados pulsa el icono Restablecer.</string>
+  <string name="shortcut_action_help_delete_last_entry">Borrando cada %1$s en la lista, deshabilitarás completamente esta característica</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Borrando cada %1$s en la lista, deshabilitarás totalmente la segunda fila del control PIE</string>
   <string name="shortcuts_applications">Aplicaciones</string>
   <string name="shortcuts_select_custom_app_title">Selecciona la aplicación personalizada</string>
   <string name="shortcuts_icon_picker_type">Selecciona el tipo de icono:</string>
@@ -494,6 +510,9 @@
   <string name="heads_up_title">Notificaciones de aviso</string>
   <string name="app_notification_enable_heads_up_title">Mostrar avisos</string>
   <string name="app_notification_enable_heads_up_summary">Mostrar las notificaciones de esta aplicación como avisos</string>
+  <string name="heads_up_snooze_title">Temporizador de reposo</string>
+  <string name="heads_up_snooze_summary">Al pulsar el botón de reposo se deshabilitarán los avisos durante <xliff:g id="number">%d</xliff:g> minutos</string>
+  <string name="heads_up_snooze_disabled_summary">El temporizador de reposo está desactivado</string>
   <string name="heads_up_snooze_3min">3 minutos</string>
   <string name="heads_up_snooze_5min">5 minutos</string>
   <string name="heads_up_snooze_10min">10 minutos</string>
@@ -507,4 +526,6 @@
   <string name="heads_up_time_out_8sec">8 segundos</string>
   <string name="heads_up_time_out_10sec">10 segundos</string>
   <string name="heads_up_time_out_never">Nunca</string>
+  <string name="battery_saver_title">Color de advertencia</string>
+  <string name="battery_saver_style_reset_message">¿Restablecer el color de la advertencia para el protector de batería?</string>
 </resources>

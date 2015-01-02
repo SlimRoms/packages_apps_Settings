@@ -231,4 +231,8 @@
     <dimen name="color_swatch_size">16dp</dimen>
     <dimen name="color_swatch_stroke_width">4dp</dimen>
 
+    <dimen name="qs_tile_max_size">120dp</dimen>
+    <dimen name="qs_tile_max_padding">10dp</dimen>
+    <dimen name="qs_tile_dragged_z">10dp</dimen>
+
 </resources>

@@ -46,4 +46,10 @@
             android:summary="@string/double_tap_to_sleep_summary"
             android:defaultValue="true" />
 
+    <com.android.settings.slim.SystemSettingSwitchPreference
+            android:key="show_su_indicator"
+            android:title="@string/su_indicator"
+            android:summary="@string/su_indicator_summary"
+            android:defaultValue="true" />
+
 </PreferenceScreen>

@@ -1140,4 +1140,7 @@
     <!-- Data toggler title -->
     <string name="toggleData">Data connection</string>
 
+    <!-- MSIM Ringtone title -->
+    <string name="sim_ringtone_title">SIM %d ringtone</string>
+
 </resources>

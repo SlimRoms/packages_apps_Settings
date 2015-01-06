@@ -1396,4 +1396,5 @@
     <!-- WiFi auto-configure priorities -->
     <string name="wifi_auto_config_priorities">Automatic priority</string>
 
+    <string name="sim_ringtone_title">SIM %d ringtone</string>
 </resources>

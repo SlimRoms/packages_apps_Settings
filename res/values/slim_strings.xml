@@ -520,6 +520,7 @@
     <string name="sim_pin_disabled">PIN1 Disabled!</string>
 
     <string name="primary_sub_select_title">Default 4G/3G Subscription</string>
+    <string name="data_usage_tab_slot">SIM </string>
 
     <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_app">Custom app</string>

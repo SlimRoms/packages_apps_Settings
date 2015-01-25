@@ -17,11 +17,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="ok">Ok</string>
   <string name="reset">Törlés</string>
+  <string name="help">segítség</string>
   <string name="add">Hozzáadás</string>
   <string name="attention">Figyelmeztetés</string>
   <string name="enabled">Engedélyezve</string>
   <string name="default_string">Alapértelmezett</string>
   <string name="choose_app">Alkalmazás kiválasztása</string>
+  <string name="reset_message">Visszaállítja az összes beállítást alapértelmezettre?</string>
   <string name="header_category_personalization">Személyre szabás</string>
   <string name="interface_settings_title">Interfész</string>
   <string name="dialog_color_picker">Színválasztó</string>
@@ -57,6 +59,7 @@
   <string name="camera_sounds_title">Kamera zárhang</string>
   <string name="camera_sounds_summary">Engedélyezi a kamera zárhangot</string>
   <string name="camera_sound_warning_dialog_text">Kamera zárhang tiltása egyes területeken tiltott! Kérjük ellenőrizze a jogszabályokat az Ön országában</string>
+  <string name="volbtn_music_controls_summary">Kikapcsolt képernyőnél hosszan nyomva lépteti a zene számokat</string>
   <string name="safe_headset_volume_title">Biztonsági fejhallgató hangerő</string>
   <string name="safe_headset_volume_summary">Túl magas hangerő megakadályozása fülhallgató csatlakoztatásakor</string>
   <string name="safe_headset_volume_warning_dialog_text">A hosszú ideig nagy hangerőn való zenehallgatás károsíthatja a hallását. Óvatosan kapcsolja ki.</string>
@@ -99,6 +102,7 @@
   <string name="ime_switcher_notify_summary">Billentyűzet váltó megjelenítése</string>
   <string name="app_security_title">Alkalmazás biztonság</string>
   <string name="privacy_guard_dlg_title">Adatvédelem engedélyezése?</string>
+  <string name="privacy_guard_enable_dlg_text">Ha a Privacy Guard engedélyezve van,%s az alkalmazás nem lesz képes hozzáférni a személyes adatokhoz, névjegyekhez, üzenetekhez, hívás naplókhoz.</string>
   <string name="privacy_guard_default_title">Alapértelmezés szerint engedélyezve</string>
   <string name="privacy_guard_default_summary">Nem férnek hozzá a személyes adatokhoz alapértelmezés szerint az újonnan telepített alkalmazások</string>
   <string name="privacy_guard_notification_title">Értesítés</string>

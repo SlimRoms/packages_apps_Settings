@@ -76,6 +76,16 @@
 
     <color name="wifi_divider">#ffe0e0e0</color>
 
+    <!-- Exposed resources for theming -->
+    <color name="exposed_bg_dark">#ffffffff</color>
+    <color name="exposed_bg_light">#ff212121</color>
+    <color name="exposed_primary_text_light">#de000000</color>
+    <color name="exposed_secondary_text_light">#8a000000</color>
+    <color name="exposed_primary_text_dark">#ffffffff</color>
+    <color name="exposed_secondary_text_dark">#b3ffffff</color>
+    <color name="exposed_barPrimaryColor">#ff009688</color>
+    <color name="exposed_barPredictionColor">@color/material_empty_color_light</color>
+
     <!-- DSLV colors -->
     <color name="dslv_icon_dark">#ff009688</color>
     <color name="dslv_float_cackground_color">#ffe1e1e0</color>

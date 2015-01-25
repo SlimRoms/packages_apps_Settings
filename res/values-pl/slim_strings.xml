@@ -340,7 +340,7 @@
   <string name="quick_pulldown_left">Lewa</string>
   <string name="quick_pulldown_right">Prawa</string>
   <string name="smart_pulldown_title">Sprytne rozwijanie</string>
-  <string name="smart_pulldown_summary">Otwórz Szybkie Ustawienia gdy jest %1$s aktualnych powiadomień</string>
+  <string name="smart_pulldown_summary">Otwórz Szybkie Ustawienia gdy %1$s powiadomień</string>
   <string name="smart_pulldown_off">Wył</string>
   <string name="smart_pulldown_dismissable">Nie ma usuwalnych</string>
   <string name="smart_pulldown_persistent">Nie ma trwałych</string>

@@ -463,6 +463,9 @@
   <string name="heads_up_title">Notificações pop-up</string>
   <string name="app_notification_enable_heads_up_title">Mostrar notificações pop-up</string>
   <string name="app_notification_enable_heads_up_summary">Mostrar notificações desta aplicação como pop-up</string>
+  <string name="heads_up_snooze_title">Temporizador de dormitar</string>
+  <string name="heads_up_snooze_summary">Se o botão dormitar for pressionado, desativar as notificações pop-up por <xliff:g id="number">%d</xliff:g> minutos</string>
+  <string name="heads_up_snooze_disabled_summary">Temporizador de dormitar desativado</string>
   <string name="heads_up_snooze_3min">3 minutos</string>
   <string name="heads_up_snooze_5min">5 minutos</string>
   <string name="heads_up_snooze_10min">10 minutos</string>

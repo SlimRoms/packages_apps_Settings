@@ -300,7 +300,7 @@
   <string name="status_bar_am_pm_info">Formato de 24 horas habilitado</string>
   <string name="enable_clock_weekday">Día de la semana</string>
   <string name="enable_clock_weekday_summary">Día de la semana abreviado antes de la hora</string>
-  <string name="right_clock">Reloj rn la derecha</string>
+  <string name="right_clock">Reloj en la derecha</string>
   <string name="center_clock">Reloj en el centro</string>
   <string name="dont_show">No mostrar</string>
   <string name="clock_date_display">Fecha</string>
@@ -322,7 +322,7 @@
   <string name="status_bar_clock_style_reset_message">¿Restablecer el color del reloj?</string>
   <string name="status_bar_ticker_title">Línea de notificación</string>
   <string name="status_bar_ticker_summary">Animación de texto de notificación</string>
-  <string name="status_bar_toggle_brightness">Control de brillo</string>
+  <string name="status_bar_toggle_brightness">Ajuste de brillo</string>
   <string name="status_bar_toggle_brightness_summary">Ajustar brillo de la pantalla deslizando el dedo sobre la barra de estado</string>
   <string name="status_bar_toggle_info">Brillo automático activado</string>
   <string name="double_tap_to_sleep_title">Doble toque para bloquear</string>

@@ -77,6 +77,14 @@
             android:id="@+id/personalization_section"
             android:title="@string/header_category_personalization" >
 
+        <!-- Interface -->
+        <dashboard-tile
+                android:id="@+id/interface_settings"
+                android:icon="@drawable/ic_settings_interface"
+                android:fragment="com.android.settings.slim.InterfaceSettings"
+                android:title="@string/interface_settings_title"
+                />
+
         <!-- Navigation -->
         <dashboard-tile
                 android:id="@+id/navigation_settings"

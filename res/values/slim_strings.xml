@@ -649,6 +649,7 @@
     <string name="qs_tile_usb_tether">USB tethering</string>
     <string name="qs_tile_visualizer">AudioFX</string>
     <string name="qs_tile_reboot">Reboot</string>
+    <string name="qs_sync_tile">Sync</string>
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
     <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>

@@ -1135,4 +1135,7 @@
     <string name="navigation_save_button_text">Save</string>
     <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
 
+    <!-- Sim enabler title -->
+    <string name="sim_enabler_sim">SIM</string>
+
 </resources>

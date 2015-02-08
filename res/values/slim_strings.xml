@@ -468,6 +468,13 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_power_off">Power off</string>
+    <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_sound">Sound</string>
+    <string name="shortcut_action_users">Users</string>
+    <string name="shortcut_action_lockdown">Lock now</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
 
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
@@ -558,5 +565,8 @@
 
     <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
+
+    <!-- Navigation settings -->
+    <string name="power_menu_title">Global menu</string>
 
 </resources>

@@ -447,6 +447,12 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_power_off">Power off</string>
+    <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_sound">Sound</string>
+    <string name="shortcut_action_users">Users</string>
+    <string name="shortcut_action_lockdown">Lock now</string>
 
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
@@ -544,5 +550,8 @@
     <string name="su_indicator_icon">Statusbar Icon</string>
     <string name="su_indicator_notification">Notification</string>
     <string name="su_indicator_none">No indicator</string>
+
+    <!-- Navigation settings -->
+    <string name="power_menu_title">Global menu</string>
 
 </resources>

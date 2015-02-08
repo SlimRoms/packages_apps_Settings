@@ -56,6 +56,7 @@ import android.widget.Toast;
 import com.android.internal.util.slim.ActionConfig;
 import com.android.internal.util.slim.ActionConstants;
 import com.android.internal.util.slim.ActionHelper;
+import com.android.internal.util.slim.PolicyHelper;
 import com.android.internal.util.slim.ImageHelper;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
@@ -517,8 +518,12 @@ public class ActionListViewSettings extends ListFragment implements
     }
 
     private ArrayList<ActionConfig> getConfig() {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
         switch (mActionMode) {
+            case POWER_MENU_SHORTCUT:
+                return PolicyHelper.getPowerMenuConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
+        }
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -531,21 +536,21 @@ public class ActionListViewSettings extends ListFragment implements
             case PIE_SECOND:
                 return ActionHelper.getPieSecondLayerConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
-            case POWER_MENU_SHORTCUT:
-                return PolicyHelper.getPowerMenuConfigWithDescription(
-                    mActivity, mActionValuesKey, mActionEntriesKey);
             case LOCKSCREEN_SHORTCUT:
                 return ActionHelper.getLockscreenShortcutConfig(mActivity);
             case SHAKE_EVENTS_DISABLED:
                 return ActionHelper.getDisabledShakeApps(mActivity);
-        }
 */
         return null;
     }
 
     private void setConfig(ArrayList<ActionConfig> actionConfigs, boolean reset) {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
         switch (mActionMode) {
+            case POWER_MENU_SHORTCUT:
+                PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
+                break;
+        }
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -558,16 +563,12 @@ public class ActionListViewSettings extends ListFragment implements
             case PIE_SECOND:
                 ActionHelper.setPieSecondLayerConfig(mActivity, actionConfigs, reset);
                 break;
-            case POWER_MENU_SHORTCUT:
-                PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
-                break;
             case LOCKSCREEN_SHORTCUT:
                 ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
                 break;
             case SHAKE_EVENTS_DISABLED:
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
                 break;
-        }
 */
     }
 
@@ -612,12 +613,10 @@ public class ActionListViewSettings extends ListFragment implements
                     + " " + getItem(position).getLongpressActionDescription());
             }
             if (mActionMode == POWER_MENU_SHORTCUT) {
-/* Disabled for now till slims power menu is back!!!!!!!!!!!!!!
-
                 holder.iconView.setImageDrawable(ImageHelper.resize(
                         mActivity, PolicyHelper.getPowerMenuIconImage(mActivity,
                         getItem(position).getClickAction(),
-                        getItem(position).getIcon(), false), 36)); */
+                        getItem(position).getIcon()), 36));
             } else {
                 holder.iconView.setImageDrawable(ImageHelper.resize(
                         mActivity, ActionHelper.getActionIconImage(mActivity,

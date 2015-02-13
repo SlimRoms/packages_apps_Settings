@@ -481,4 +481,7 @@
   <string name="heads_up_time_out_never">Nunca</string>
   <string name="battery_saver_title">Cor de aviso</string>
   <string name="battery_saver_style_reset_message">Resetar a cor de aviso de economia de bateria?</string>
+  <string name="doze_timeout_title">Tempo limite dos pulsos de notificação</string>
+  <string name="doze_timeout_summary">Tempo que a tela fica ligada para pulsos de notificação</string>
+  <string name="display_category_doze_options_title">Opções dos pulsos de notificação</string>
 </resources>

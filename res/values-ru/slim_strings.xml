@@ -481,4 +481,7 @@
   <string name="heads_up_time_out_never">Никогда</string>
   <string name="battery_saver_title">Цвет предупреждения</string>
   <string name="battery_saver_style_reset_message">Сбросить предупреждающий цвет заставки батареи?</string>
+  <string name="doze_timeout_title">Длительность работы \"активного экрана\"</string>
+  <string name="doze_timeout_summary">Время, в течение которого экран будет включен для показа уведомления</string>
+  <string name="display_category_doze_options_title">Настройки \"активного экрана\"</string>
 </resources>

@@ -482,4 +482,7 @@ Ez hibákat okozhat némelyik alkalmazásnál.%s.</string>
   <string name="heads_up_time_out_never">Soha</string>
   <string name="battery_saver_title">Figyelmeztetés színe</string>
   <string name="battery_saver_style_reset_message">törli az energiatakarékos mód figyelmeztető színét?</string>
+  <string name="doze_timeout_title">Környezeti kijelző időtúllépése</string>
+  <string name="doze_timeout_summary">Az az idő, amíg a képernyő bekapcsolva marad az értesítési impulzusra</string>
+  <string name="display_category_doze_options_title">Környezet ikijelző megjelenítési beállítások</string>
 </resources>

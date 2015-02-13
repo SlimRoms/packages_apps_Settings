@@ -210,6 +210,7 @@
   <string name="app_ops_labels_play_audio">Audioinhalte wiedergeben</string>
   <string name="app_ops_labels_read_clipboard">Zwischenablage lesen</string>
   <string name="app_ops_labels_modify_clipboard">Zwischenablage ändern</string>
+  <string name="app_ops_labels_media_buttons">Medienschaltflächen</string>
   <string name="app_ops_labels_audio_focus">Audiofokus</string>
   <string name="app_ops_labels_master_volume">Gesamtlautstärke</string>
   <string name="app_ops_labels_voice_volume">Sprachlautstärke</string>
@@ -341,7 +342,7 @@
   <string name="proximity_wake_title">Unbeabsichtigtes Aufwecken verhindern</string>
   <string name="proximity_wake_summary">Vor Einschalten des Bildschirms Näherungssensor überprüfen</string>
   <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
-  <string name="unlock_quick_unlock_control_summary">Automatisch entsperren, wenn die korrekte PIN/Passwort eingegeben wird</string>
+  <string name="unlock_quick_unlock_control_summary">Automatisch entsperren, wenn PIN/Passwort korrekt eingegeben wird</string>
   <string name="lock_numpad_random_title">Reihenfolge der Tasten zur PIN-Eingabe ändern</string>
   <string name="lock_numpad_random_dialog_title">Zufällige PIN-Tastenreihenfolge</string>
   <string name="lock_numpad_random_off">Deaktiviert</string>
@@ -393,6 +394,7 @@
   <string name="shortcuts_icon_custom">Galerie</string>
   <string name="shortcuts_icon_picker_choose_icon_title">Symbol auswählen</string>
   <string name="shortcuts_icon_picker_alarm">Wecker</string>
+  <string name="shortcuts_icon_picker_andy">Andy</string>
   <string name="shortcuts_icon_picker_battery">Akku</string>
   <string name="shortcuts_icon_picker_browser">Browser</string>
   <string name="shortcuts_icon_picker_calendar">Kalender</string>
@@ -418,6 +420,7 @@
   <string name="shortcuts_icon_picker_joystick">Joystick</string>
   <string name="shortcuts_icon_picker_key">Schlüssel/Konten</string>
   <string name="shortcuts_icon_picker_laptop">Laptop</string>
+  <string name="shortcuts_icon_picker_notes">Notizen</string>
   <string name="shortcuts_icon_picker_maps">Maps</string>
   <string name="shortcuts_icon_picker_market">Play Store</string>
   <string name="shortcuts_icon_picker_movie">Filme</string>

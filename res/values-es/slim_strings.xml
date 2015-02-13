@@ -481,4 +481,7 @@
   <string name="heads_up_time_out_never">Nunca</string>
   <string name="battery_saver_title">Color de advertencia</string>
   <string name="battery_saver_style_reset_message">¿Restablecer el color de la advertencia para el protector de batería?</string>
+  <string name="doze_timeout_title">Tiempo de espera de pantalla de ambiente</string>
+  <string name="doze_timeout_summary">Tiempo que la pantalla se queda encendida con las notificaciones</string>
+  <string name="display_category_doze_options_title">Opciones de pantalla de ambiente</string>
 </resources>

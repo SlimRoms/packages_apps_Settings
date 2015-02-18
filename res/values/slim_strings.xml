@@ -1132,4 +1132,7 @@
     <string name="sim_mobile_network_settings_category_title">Mobile network settings</string>
     <string name="sim_mobile_network_settings_title">SIM %d settings</string>
 
+    <!-- Data toggler title -->
+    <string name="toggleData">Data connection</string>
+
 </resources>

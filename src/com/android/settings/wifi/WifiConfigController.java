@@ -62,7 +62,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import android.telephony.SubscriptionManager;
-import android.telephony.SubInfoRecord;
+import android.telephony.SubscriptionInfo;
 import com.android.settings.ProxySelector;
 import com.android.settings.R;
 
@@ -281,7 +281,8 @@ public class WifiConfigController implements TextWatcher,
                 }
             }
 
-            if (mAccessPoint.networkId == INVALID_NETWORK_ID || mEdit) {
+            if ((mAccessPoint.networkId == INVALID_NETWORK_ID && !mAccessPoint.isActive())
+                    || mEdit) {
                 showSecurityFields();
                 showIpConfigFields();
                 showProxyFields();
@@ -305,7 +306,8 @@ public class WifiConfigController implements TextWatcher,
                 } else {
                     if (state != null) {
                         addRow(group, R.string.wifi_status, Summary.get(mConfigUi.getContext(),
-                                state));
+                                state, mAccessPoint.networkId ==
+                                WifiConfiguration.INVALID_NETWORK_ID));
                     }
 
                     if (signalLevel != null) {
@@ -339,14 +341,15 @@ public class WifiConfigController implements TextWatcher,
                     addRow(group, R.string.wifi_security, mAccessPoint.getSecurityString(false));
                     mView.findViewById(R.id.ip_fields).setVisibility(View.GONE);
                 }
-                if (mAccessPoint.networkId != INVALID_NETWORK_ID
+                if ((mAccessPoint.networkId != INVALID_NETWORK_ID || mAccessPoint.isActive())
                         && ActivityManager.getCurrentUser() == UserHandle.USER_OWNER) {
                     mConfigUi.setForgetButton(res.getString(R.string.wifi_forget));
                 }
             }
         }
 
-        if (mEdit || (mAccessPoint.getState() == null && mAccessPoint.getLevel() != -1)){
+        if ((mEdit) || (mAccessPoint != null
+                && mAccessPoint.getState() == null && mAccessPoint.getLevel() != -1)){
             mConfigUi.setCancelButton(res.getString(R.string.wifi_cancel));
         }else{
             mConfigUi.setCancelButton(res.getString(R.string.wifi_display_options_done));
@@ -762,11 +765,10 @@ public class WifiConfigController implements TextWatcher,
 
     private void checkEapSimInfo() {
         for(int i = 0; i < mWifiEapSimInfo.mNumOfSims; i++) {
-            List<SubInfoRecord> sir =
-                SubscriptionManager.getSubInfoUsingSlotId(i);
-            String displayname = ((sir != null) && (sir.size() > 0)) ?
-                sir.get(0).displayName : "Default Sub " + (i+1);
-
+            SubscriptionInfo sir =
+                SubscriptionManager.from(mContext).getActiveSubscriptionInfoForSimSlotIndex(i);
+            String displayname = (sir != null) ? sir.getDisplayName().toString()
+                    : "Default Sub " + (i+1);
             mSimDisplayNames.add(displayname);
             if (mWifiEapSimInfo.mSimTypes.get(i) == WifiEapSimInfo.SIM_2G) {
                 Log.d(TAG, "Sim " + (i+1) + " type is SIM_2G");

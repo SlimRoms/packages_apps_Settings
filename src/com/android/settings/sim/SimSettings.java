@@ -598,10 +598,14 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
                 public void onClick(DialogInterface dialog, int whichButton) {
                     final EditText nameText = (EditText)dialogLayout.findViewById(R.id.sim_name);
 
-                    mSubscriptionInfo.setDisplayName(nameText.getText());
+                    String displayName = nameText.getText().toString();
+                    int subId = mSubscriptionInfo.getSubscriptionId();
+                    mSubscriptionInfo.setDisplayName(displayName);
                     mSubscriptionManager.setDisplayName(
-                            mSubscriptionInfo.getDisplayName().toString(),
-                            mSubscriptionInfo.getSubscriptionId());
+                            displayName,
+                            subId,
+                            SubscriptionManager.NAME_SOURCE_USER_INPUT);
+                    findRecordBySubId(subId).setDisplayName(displayName);
 
                     updateAllOptions();
                     update();

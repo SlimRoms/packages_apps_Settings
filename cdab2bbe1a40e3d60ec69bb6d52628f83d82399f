@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_5f1dcf72",
+        "filename": "res/xml/display_settings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2015-03-29T08:56:00Z",
+      "side": 1,
+      "message": "remove it!",
+      "revId": "cdab2bbe1a40e3d60ec69bb6d52628f83d82399f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

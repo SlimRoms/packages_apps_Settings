@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_1f406755",
+        "filename": "res/xml/slim_interface_settings.xml.save",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2015-03-29T02:42:03Z",
+      "side": 1,
+      "message": "WTH makes this file here? DERP",
+      "revId": "9c64466e8af0f0f6a3385942dbe19eadb0690e8f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

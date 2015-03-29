@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_020c8e41",
+        "filename": "src/com/android/settings/slim/SystemSettingSwitchPreference.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2015-03-29T20:41:53Z",
+      "side": 1,
+      "message": "protected boolean isPersistent() {",
+      "range": {
+        "startLine": 60,
+        "startChar": 22,
+        "endLine": 60,
+        "endChar": 33
+      },
+      "revId": "8141d25657dd1fe897c8b949f4dd20a53d1ecaaa",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

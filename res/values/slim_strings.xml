@@ -670,6 +670,7 @@
     <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
+    <string name="qs_tile_notifications">Notifications</string>
 
     <!-- QuickSettings 4 columns -->
     <string name="qs_four_columns_title">Show four tiles per row</string>

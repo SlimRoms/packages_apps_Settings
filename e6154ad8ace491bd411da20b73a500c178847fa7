@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_f0aba8d4",
+        "filename": "res/values/slim_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2015-03-30T22:16:35Z",
+      "side": 1,
+      "message": "shortcut_action_screenshot",
+      "revId": "e6154ad8ace491bd411da20b73a500c178847fa7",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

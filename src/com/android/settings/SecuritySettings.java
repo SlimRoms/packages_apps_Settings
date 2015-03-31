@@ -345,29 +345,61 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Append the rest of the settings
         addPreferencesFromResource(R.xml.security_settings_misc);
 
-        TelephonyManager tm = TelephonyManager.getDefault();
-        int numPhones = tm.getPhoneCount();
-        boolean disableLock = true;
-        boolean removeLock = true;
-        for (int i = 0; i < numPhones; i++) {
-            // Do not display SIM lock for devices without an Icc card
-            if (tm.hasIccCard(i)) {
-                // Disable SIM lock if sim card is missing or unknown
-                removeLock = false;
-                if (!((tm.getSimState(i) == TelephonyManager.SIM_STATE_ABSENT)
-                        || (tm.getSimState(i) == TelephonyManager.SIM_STATE_UNKNOWN)
-                        || (tm.getSimState(i) == TelephonyManager.SIM_STATE_CARD_IO_ERROR))) {
-                    disableLock = false;
+        // SIM/RUIM lock
+        Preference iccLock = root.findPreference(KEY_SIM_LOCK_SETTINGS);
+        PreferenceGroup iccLockGroup = (PreferenceGroup) root.findPreference(KEY_SIM_LOCK);
+
+        if (!mIsPrimary) {
+            root.removePreference(iccLockGroup);
+        } else {
+            SubscriptionManager subMgr = SubscriptionManager.from(getActivity());
+            TelephonyManager tm = TelephonyManager.getDefault();
+            int numPhones = tm.getPhoneCount();
+            boolean hasAnySim = false;
+
+            for (int i = 0; i < numPhones; i++) {
+                final Preference pref;
+
+                if (numPhones > 1) {
+                    SubscriptionInfo sir = subMgr.getActiveSubscriptionInfoForSimSlotIndex(i);
+                    if (sir == null) {
+                        continue;
+                    }
+
+                    pref = new Preference(getActivity());
+                    pref.setOrder(iccLock.getOrder());
+                    pref.setTitle(getString(R.string.sim_card_lock_settings_title, i + 1));
+                    pref.setSummary(sir.getDisplayName());
+
+                    Intent intent = new Intent(getActivity(), IccLockSettings.class);
+                    intent.putExtra(IccLockSettings.EXTRA_SUB_ID, sir.getSubscriptionId());
+                    intent.putExtra(IccLockSettings.EXTRA_SUB_DISPLAY_NAME, sir.getDisplayName());
+                    pref.setIntent(intent);
+
+                    iccLockGroup.addPreference(pref);
+                } else {
+                    pref = iccLock;
+                }
+
+                // Do not display SIM lock for devices without an Icc card
+                hasAnySim |= tm.hasIccCard(i);
+
+                int simState = tm.getSimState(i);
+                boolean simPresent = simState != TelephonyManager.SIM_STATE_ABSENT
+                        && simState != TelephonyManager.SIM_STATE_UNKNOWN
+                        && simState != TelephonyManager.SIM_STATE_CARD_IO_ERROR;
+                if (!simPresent) {
+                    pref.setEnabled(false);
                 }
             }
-        }
-        if (!mIsPrimary || removeLock) {
-            root.removePreference(root.findPreference(KEY_SIM_LOCK));
-        } else {
-            if (disableLock) {
-                root.findPreference(KEY_SIM_LOCK).setEnabled(false);
+
+            if (!hasAnySim) {
+                root.removePreference(iccLockGroup);
+            } else if (numPhones > 1) {
+                iccLockGroup.removePreference(iccLock);
             }
         }
+
         if (Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCK_TO_APP_ENABLED, 0) != 0) {
             root.findPreference(KEY_SCREEN_PINNING).setSummary(
@@ -377,23 +409,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Show password
         mShowPassword = (SwitchPreference) root.findPreference(KEY_SHOW_PASSWORD);
         mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
-
-        if (root.findPreference(KEY_SIM_LOCK) != null) {
-            // SIM/RUIM lock
-            Preference iccLock = (Preference) root.findPreference(KEY_SIM_LOCK_SETTINGS);
-
-            Intent intent = new Intent();
-            if (TelephonyManager.getDefault().getPhoneCount() > 1) {
-                intent.setClassName("com.android.settings",
-                        "com.android.settings.SelectSubscription");
-                intent.putExtra(SelectSubscription.PACKAGE, "com.android.settings");
-                intent.putExtra(SelectSubscription.TARGET_CLASS,
-                        "com.android.settings.IccLockSettings");
-            } else {
-                intent.setClassName("com.android.settings", "com.android.settings.IccLockSettings");
-            }
-            iccLock.setIntent(intent);
-        }
 
         // Credential storage
         final UserManager um = (UserManager) getActivity().getSystemService(Context.USER_SERVICE);

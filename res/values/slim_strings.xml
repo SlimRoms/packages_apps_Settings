@@ -1138,4 +1138,7 @@
     <!-- Sim enabler title -->
     <string name="sim_enabler_sim">SIM</string>
 
+    <!-- Text for missing number for a sim -->
+    <string name="sim_no_number_set">No number assigned</string>
+
 </resources>

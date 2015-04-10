@@ -343,6 +343,6 @@
     </style>
 
     <style name="Widget.TimePicker" parent="@*android:style/Widget.Material.Light.TimePicker">
-        <item name="@android:numbersBackgroundColor">@android:color/white</item>
+        <item name="@android:numbersBackgroundColor">@color/background_color_white</item>
     </style>
 </resources>

@@ -91,6 +91,13 @@
         <item name="ic_menu_moreoverflow">@*android:drawable/ic_menu_moreoverflow_material</item>
         <item name="ic_wps">@drawable/ic_wps_dark</item>
         <item name="wifi_signal">@drawable/wifi_signal_dark</item>
+
+        <!-- Used by the ActionBar -->
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <!-- Used by the StatusBar -->
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <!-- Used by controls, e.g. CheckBox, ProgressBar, etc. -->
+        <item name="android:colorAccent">@color/theme_accent</item>
     </style>
 
     <style name="Theme.Light.WifiDialog" parent="@*android:style/Theme.Material.Light.Dialog.Alert">
@@ -142,6 +149,13 @@
 
         <!-- For the TimePicker -->
         <item name="@android:timePickerStyle">@style/Widget.TimePicker</item>
+
+        <!-- Used by the ActionBar -->
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <!-- Used by the StatusBar -->
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <!-- Used by controls, e.g. CheckBox, ProgressBar, etc. -->
+        <item name="android:colorAccent">@color/theme_accent</item>
     </style>
 
     <style name="Theme.SubSettings" parent="Theme.Settings">
@@ -149,6 +163,9 @@
         <item name="android:actionBarStyle">@style/Theme.ActionBar.SubSettings</item>
 
         <item name="switchBarTheme">@style/Theme.SwitchBar.SubSettings</item>
+
+        <!-- Themes -->
+	<item name="android:textColorPrimary">@color/text_color_black</item>
     </style>
 
     <style name="Theme.ActionBar" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
@@ -204,6 +221,10 @@
         <item name="@*android:actionBarSize">@dimen/actionbar_size</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
         <item name="preferenceBackgroundColor">@drawable/preference_background</item>
+
+        <!-- Themes -->
+        <item name="android:textColorPrimary">@color/text_color_black</item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
     </style>
 
     <style name="Theme.AlertDialog" parent="@*android:style/Theme.Material.Light.Dialog.Alert">

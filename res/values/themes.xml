@@ -137,7 +137,7 @@
 
         <item name="switchBarTheme">@style/Theme.SwitchBar.Settings</item>
 
-        <item name="preferenceBackgroundColor">@drawable/preference_background</item>
+        <item name="preferenceBackgroundColor">@color/background_color_white</item>
 
         <!-- For all Alert Dialogs -->
         <item name="android:alertDialogTheme">@style/Theme.AlertDialog</item>

@@ -26,6 +26,17 @@
             android:persistent="false" />
 
     <PreferenceCategory
+        android:key="none"
+        android:title="@string/zen_mode_none_category" >
+
+        <com.android.settings.slim.SystemSettingSwitchPreference
+            android:key="allow_lights"
+            android:title="@string/allow_lights_title"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="important"
         android:title="@string/zen_mode_important_category" >
 

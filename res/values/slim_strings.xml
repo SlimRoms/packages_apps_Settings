@@ -809,4 +809,8 @@
     <!-- Data activity icons -->
     <string name="status_bar_show_network_activity_title">Network activity arrows</string>
 
+    <!-- Zen Mode -->
+    <string name="zen_mode_none_category">No interruptions</string>
+    <string name="allow_lights_title">Allow notification lights</string>
+
 </resources>

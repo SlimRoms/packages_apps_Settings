@@ -1146,4 +1146,8 @@
     <string name="notification_volume_option_title">Notification volume</string>
     <string name="ring_notification_volume_option_tile">Ring and notification volume</string>
 
+    <!-- Zen Mode -->
+    <string name="zen_mode_none_category">No interruptions</string>
+    <string name="allow_lights_title">Allow notification lights</string>
+
 </resources>

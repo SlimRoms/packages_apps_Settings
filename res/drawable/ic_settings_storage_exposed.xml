@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+This is the file youll now call in place of the icon call in Dashboard xml
+
+     Call your desired icon
+     @drawable/your_icon
+
+     color/defined_in_colors_xml((DONT CHANGE)) 
+-->
+
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+        android:src="@drawable/ic_settings_storage"
+        android:tint="@color/ic_settings_icons_exposed" />

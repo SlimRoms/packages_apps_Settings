@@ -26,4 +26,5 @@
     <color name="exposed_datachartfillcolor_secondary">#ff80cbc4</color>
     <color name="exposed_data_limit_chart_labelcolor">#ff37474f</color>
     <color name="exposed_data_warning_chart_labelcolor">#fff4511e</color>
+    <color name="ic_settings_icons_exposed">#009587</color>
 </resources> 

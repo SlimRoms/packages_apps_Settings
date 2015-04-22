@@ -36,6 +36,11 @@
             android:switchTextOff=""
             android:switchTextOn="" />
 
+        <com.android.settings.slim.SystemSettingSwitchPreference
+            android:key="allow_lights"
+            android:title="@string/allow_lights_title"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

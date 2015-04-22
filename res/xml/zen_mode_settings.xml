@@ -42,6 +42,11 @@
         android:key="important"
         android:title="@string/zen_mode_important_category" >
 
+        <com.android.settings.slim.SystemSettingSwitchPreference
+            android:key="allow_lights"
+            android:title="@string/allow_lights_title"
+            android:defaultValue="false" />
+
         <SwitchPreference
             android:key="events"
             android:title="@string/zen_mode_events"

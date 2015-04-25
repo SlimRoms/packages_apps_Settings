@@ -24,6 +24,7 @@
     <string name="help">Help</string>
     <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
     <string name="default_string">Default</string>
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
@@ -682,5 +683,8 @@
     <string name="doze_schedule_summary_off">Doze will only pulse once per notification</string>
     <string name="doze_brightness_title">Doze brightness level</string>
     <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
+
+    <!-- Data activity icons -->
+    <string name="status_bar_show_network_activity_title">Network activity arrows</string>
 
 </resources>

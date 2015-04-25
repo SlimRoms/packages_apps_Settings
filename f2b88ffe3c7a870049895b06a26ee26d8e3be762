@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a202591_c9c7e163",
+        "filename": "src/com/android/settings/slim/QsSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-04-25T02:48:59Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 50
+      },
+      "revId": "f2b88ffe3c7a870049895b06a26ee26d8e3be762",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a202591_a9c4a55f",
+        "filename": "src/com/android/settings/slim/QsSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-04-25T02:48:59Z",
+      "side": 1,
+      "message": "Remove lines 58 to 60 and line 67",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 50
+      },
+      "revId": "f2b88ffe3c7a870049895b06a26ee26d8e3be762",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

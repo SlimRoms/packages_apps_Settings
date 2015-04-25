@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a202591_299e5557",
+        "filename": "src/com/android/settings/slim/QsSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-04-25T03:54:56Z",
+      "side": 1,
+      "message": "IF I understand this I change that 1 to a 0 and should be off by default.",
+      "range": {
+        "startLine": 60,
+        "startChar": 62,
+        "endLine": 60,
+        "endChar": 63
+      },
+      "revId": "0ba9c11acb9d2252b6b658dc946951b5eb5a3da1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

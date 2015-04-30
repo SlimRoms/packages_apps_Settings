@@ -304,7 +304,11 @@ public class SettingsActivity extends Activity
             AppNotificationSettings.class.getName(),
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
-            ApnSettings.class.getName()
+            ApnSettings.class.getName(),
+            com.android.settings.slim.ButtonSettings.class.getName(),
+            com.android.settings.slim.AospNavbarSettings.class.getName(),
+            com.android.settings.slim.NxSettings.class.getName(),
+            com.android.settings.slim.NavigationSettings.class.getName()
     };
 
 

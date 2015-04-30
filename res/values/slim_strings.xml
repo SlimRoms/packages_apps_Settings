@@ -558,5 +558,159 @@
 
     <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
+    <!-- misc -->
+    <string name="info_pref_note_title">Note</string>
 
+    <!-- Navigation Bar -->
+    <string name="navigation_navbar_settings">Navigation bar settings</string>
+    <string name="navigation_nx_settings">NX settings</string>
+    <string name="navigation_button_settings">Button settings</string>
+    <string name="navigation_buttons">Buttons</string>
+    <string name="navbar_interface_title">Interface</string>
+    <string name="navbar_size">Bar size</string>
+    <string name="navbar_mode">Navigation mode</string>
+    <string name="navigationbar_settings_title">Navigation bar</string>
+    <string name="aosp_navigation_bar">Navigation bar</string>
+    <string name="navigationbar_settings_summary">Customize navigation style and behavior</string>
+    <string name="navbar_general_title">Advanced</string>
+    <string name="navigation_bar_left_title">Left-handed mode</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+
+    <!-- Hardware key device force showing navigation bar -->
+    <string name="navigation_bar_force_title">Use navigation bar</string>
+    <string name="force_navbar_key_disable_unsupported">Hardware buttons will continue to function while navigation bar is showing</string>
+
+    <!-- Actions dialog and default task values set in ActionPreference xml-->
+    <string name="lockscreen_choose_action_title">Choose action</string>
+    <string name="profile_applist_title">Apps</string>
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom app</string>
+    <string name="select_custom_activity_title">Select custom activity</string>    
+    <string name="actions_system_action">Select system shortcut</string>
+    <string name="action_entry_default_action">Default settings</string>
+    <string name="action_entry_select_app">Select Application</string>
+
+    <string name="action_value_default_action">default</string>
+    <string name="action_value_select_app">app</string>
+    <string name="action_value_back">task_back</string>
+    <string name="action_value_home">task_home</string>
+    <string name="action_value_search_assist">task_assist</string>
+    <string name="action_value_recent_apps">task_recents</string>
+    <string name="action_value_voice_search">task_voice_search</string>
+    <string name="action_value_menu">task_menu</string>
+
+    <!-- Softkeys -->
+    <string name="interface_navigation">Navigation</string>
+    <string name="interface_navbar">Navigation bar</string>
+    <string name="interface_navbar_appearance">Navigation bar appearance</string>
+    <string name="softkey_settings_title">Softkeys</string>
+    <string name="softkey_settings_summary">Set long press actions</string>
+    <string name="style_navbar_softkey">Navigation bar and softkeys</string>
+    <string name="softkey_longpress_title">Long press actions</string>
+    <string name="softkey_longpress_summary">Set long press action</string>
+    <string name="softkey_back">Back</string>
+    <string name="softkey_home">Home</string>
+    <string name="softkey_recent">Overview</string>
+    <string name="softkey_menu">Menu</string>
+    <string name="softkey_back_observed_uri">softkey_longpress_back</string>
+    <string name="softkey_home_observed_uri">softkey_longpress_home</string>
+    <string name="softkey_recent_observed_uri">softkey_longpress_recent</string>
+    <string name="softkey_menu_observed_uri">softkey_longpress_menu</string>
+    <string name="softkey_back_dt_observed_uri">softkey_doubletap_back</string>
+    <string name="softkey_home_dt_observed_uri">softkey_doubletap_home</string>
+    <string name="softkey_recent_dt_observed_uri">softkey_doubletap_recent</string>
+    <string name="softkey_menu_dt_observed_uri">softkey_doubletap_menu</string>
+    <string name="softkey_longpress_timeout_uri">softkey_longpress_timeout</string>
+    <string name="softkey_doubletap_title">Double tap actions</string>
+    <string name="softkey_persist_menu_title">Force show menu key</string>
+    <string name="softkey_persist_menu_summary">Menu key always shows, except in lockscreen</string>
+
+    <!-- NX -->
+    <string name="nx_interface">NX Gesture Interface</string>
+    <string name="nx_enable_title">Enable NX</string>
+    <string name="nx_disabled_notice">Navigation bar becomes a smart, fast, lightweight, and configurable gesture input interface</string>
+    <string name="nx_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment set the desired assignment first</string>
+    <string name="nx_split_bar_policy">When only a right or left action is assigned the action applies to the full bar</string>
+    <string name="nx_def_summary">No action set</string>
+    <string name="nx_swipe_actions">Swipe gestures</string>
+    <string name="nx_tap_actions">Tap gestures</string>
+    <string name="nx_short_swipe_right">Right short swipe</string>
+    <string name="nx_short_swipe_left">Left short swipe</string>
+    <string name="nx_long_swipe_right">Right long swipe</string>
+    <string name="nx_long_swipe_left">Left long swipe</string>
+    <string name="nx_single_tap">Single tap right</string>
+    <string name="nx_double_tap">Double tap right</string>
+    <string name="nx_long_press">Long press right</string>
+    <string name="nx_single_left_tap">Single tap left</string>
+    <string name="nx_double_left_tap">Double tap left</string>
+    <string name="nx_long_left_press">Long press left</string>
+    <string name="long_swipe_portrait_title">Portrait</string>
+    <string name="long_swipe_landscape_title">Landscape</string>
+    <string name="right_swipe_title">Right swipe</string>
+    <string name="left_swipe_title">Left swipe</string>
+    <string name="up_swipe_title">Up swipe</string>
+    <string name="down_swipe_title">Down swipe</string>
+    <string name="long_swipe_reset">Reset</string>
+    <string name="nx_advanced">Advanced</string>
+    <string name="nx_long_swipe_title">Long swipe threshold</string>
+    <string name="nx_long_swipe_summary">Fine tune long swipe thresholds based on a percentage of NX interface width or height</string>
+    <string name="nx_trails_enable_title">Enable gesture trails</string>
+    <string name="nx_appearance">Appearance</string>
+    <string name="nx_show_logo_title">Show NX logo</string>
+    <string name="nx_animate_logo_title">Animate logo</string>
+    <string name="nx_animate_logo_summary">Logo animates on touch events</string>
+    <string name="nx_show_ripple_title">Show ripple</string>
+    <string name="nx_show_ripple_summary">Ripple effect on touch events</string>
+    <string name="nx_show_pulse_title">Show Pulse</string>
+    <string name="nx_show_pulse_summary">NX shows bar visualization when music plays</string>
+    <string name="nx_longpress_timeout_label_left">Less delay</string>
+    <string name="nx_longpress_timeout_label_right">More delay</string>
+    <string name="nx_longpress_title">Long press delay</string>
+    <string name="nx_longpress_summary">Increase or decrease the time it takes to execute a long press</string>
+
+    <!-- NX action uris -->
+    <string name="nx_short_swipe_right_uri">nx_short_fling_right</string>
+    <string name="nx_short_swipe_left_uri">nx_short_fling_left</string>
+    <string name="nx_long_swipe_right_uri">nx_long_fling_right</string>
+    <string name="nx_long_swipe_left_uri">nx_long_fling_left</string>
+    <string name="nx_single_tap_uri">nx_singletap_right</string>
+    <string name="nx_double_tap_uri">nx_doubletap_right</string>
+    <string name="nx_long_press_uri">nx_longpress_right</string>
+    <string name="nx_single_left_tap_uri">nx_singletap_left</string>
+    <string name="nx_double_left_tap_uri">nx_doubletap_left</string>
+    <string name="nx_long_left_press_uri">nx_longpress_left</string>
+
+    <!-- Buttons -->
+    <string name="button_pref_title">Buttons</string>
+    <string name="hardware_keys_power_key_title">Power button</string>
+    <string name="hardware_keys_home_key_title">Home button</string>
+    <string name="hardware_keys_menu_key_title">Menu button</string>
+    <string name="hardware_keys_assist_key_title">Search button</string>
+    <string name="hardware_keys_appswitch_key_title">Overview button</string>
+    <string name="hardware_keys_back_key_title">Back button</string>
+    <string name="hardware_keys_short_press_title">Short press action</string>
+    <string name="hardware_keys_long_press_title">Long press action</string>
+    <string name="hardware_keys_double_tap_title">Double tap action</string>
+    <string name="hardware_keys_double_tap_summary">Set double press action</string>
+    <string name="hardware_keys_single_tap_summary">Set single press action</string>
+    <string name="hardkey_back_long_press_uri">hardware_button_back_longpress</string>
+    <string name="hardkey_back_double_tap_uri">hardware_button_back_doubletap</string>
+    <string name="hardkey_home_long_press_uri">hardware_button_home_longpress</string>
+    <string name="hardkey_home_double_tap_uri">hardware_button_home_doubletap</string>
+    <string name="hardkey_app_switch_long_press_uri">hardware_button_recent_longpress</string>
+    <string name="hardkey_app_switch_double_tap_uri">hardware_button_recent_doubletap</string>
+    <string name="hardkey_app_switch_single_tap_uri">hardware_button_recent_singletap</string>
+    <string name="hardkey_menu_long_press_uri">hardware_button_menu_longpress</string>
+    <string name="hardkey_menu_double_tap_uri">hardware_button_menu_doubletap</string>
+    <string name="hardkey_menu_single_tap_uri">hardware_button_menu_singletap</string>
+    <string name="hardkey_assist_long_press_uri">hardware_button_assist_longpress</string>
+    <string name="hardkey_assist_double_tap_uri">hardware_button_assist_doubletap</string>
+    <string name="hardkey_assist_single_tap_uri">hardware_button_assist_singletap</string>
+
+    <!-- Navbar height -->
+    <string name="navigation_bar_size_title">Bar size</string>
+    <string name="portrait_title">Portrait height</string>
+    <string name="land_vert_title">Landscape width</string>
+    <string name="land_hor_title">Landscape height</string>    
+    <string name="positive_done">Done</string>
 </resources>

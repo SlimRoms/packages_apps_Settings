@@ -83,7 +83,14 @@
                 android:title="@string/interface_settings_title"
                 />
 
-    </dashboard-category>
+        <!-- Navigation bar -->
+        <dashboard-tile
+            android:id="@+id/navigation_bar_settings"
+            android:fragment="com.android.settings.slim.NavigationSettings"
+            android:icon="@drawable/ic_settings_navigation"
+            android:title="@string/navigationbar_settings_title"
+        />
+</dashboard-category>
 
     <!-- DEVICE -->
     <dashboard-category

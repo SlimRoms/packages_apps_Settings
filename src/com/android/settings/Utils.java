@@ -75,6 +75,7 @@ import com.android.settings.UserSpinnerAdapter.UserDetails;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardTile;
 import com.android.settings.drawable.CircleFramedDrawable;
+import com.android.settings.slim.ButtonSettings;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -1183,5 +1184,4 @@ public final class Utils {
         }
         return null;
     }
-
 }

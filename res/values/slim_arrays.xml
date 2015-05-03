@@ -27,6 +27,18 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="su_indicator_entries">
+        <item>@string/su_indicator_icon</item>
+        <item>@string/su_indicator_notification</item>
+        <item>@string/su_indicator_none</item>
+    </string-array>
+
+    <string-array name="su_indicator_values">
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
+    </string-array>
+
     <!-- App ops, extension of AOSP app_ops_summaries and app_ops_labels -->
     <string-array name="app_ops_summaries_cm" translatable="false">
         <item>@string/app_ops_summaries_coarse_location</item>

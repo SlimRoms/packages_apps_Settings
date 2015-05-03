@@ -203,6 +203,7 @@
     <!-- Slim settings screens -->
     <string name="header_category_personalization">Personalization</string>
     <string name="interface_settings_title">Interface</string>
+    <string name="slim_center_title">SlimCenter</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -537,5 +538,12 @@
 
     <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
+
+    <!-- SU indicator -->
+    <string name="su_indicator_title">Superuser indicator</string>
+    <string name="su_indicator_summary">Superuser indicator when su session is active</string>
+    <string name="su_indicator_icon">Statusbar Icon</string>
+    <string name="su_indicator_notification">Notification</string>
+    <string name="su_indicator_none">No indicator</string>
 
 </resources>

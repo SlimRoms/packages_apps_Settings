@@ -68,6 +68,14 @@
         android:entries="@array/root_access_entries"
         android:entryValues="@array/root_access_values" />
 
+    <ListPreference
+        android:key="su_indicator"
+        android:title="@string/su_indicator_title"
+        android:summary="@string/su_indicator_summary"
+        android:defaultValue="1"
+        android:entries="@array/su_indicator_entries"
+        android:entryValues="@array/su_indicator_values" />
+
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
 

@@ -74,7 +74,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_DEVICE_MODEL = "device_model";
-    private static final String KEY_DEVICE_PROCESSOR = "device_processor";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
@@ -105,7 +104,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_SLIM_BUILD_DATE, "ro.build.date");
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
-        setStringSummary(KEY_DEVICE_PROCESSOR, getDeviceProcessorInfo());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
@@ -516,81 +514,38 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     private String getCPUInfo() {
         String result = null;
-
-        try {
-            /* The expected /proc/cpuinfo output is as follows:
-             * Processor    : ARMv7 Processor rev 2 (v7l)
-             * BogoMIPS    : 272.62
-             *
-             * This needs updating, since
-             *
-             * Hammerhead output :
-             * Processor   : ARMv7 Processor rev 0 (v7l)
-             * processor   : 0
-             * BogoMIPS    : xxx
-             *
-             * Shamu output :
-             * processor   : 0
-             * model name  : ARMv7 Processor rev 1 (v7l)
-             * BogoMIPS    : xxx
-             *
-             * Continue reading the file until running into a line starting
-             * with either "model name" or "Processor" to meet both
-             */
-
-            BufferedReader reader = new BufferedReader(new FileReader(FILENAME_PROC_CPUINFO), 256);
-
-            String Line = reader.readLine();
-
-            while (Line != null) {
-                if (Line.indexOf("model name") == -1 &&
-                    Line.indexOf("Processor" ) == -1    ) {
-                    Line = reader.readLine();
-                } else {
-                    result = Line.split(":")[1].trim();
-                    break;
-                }
-            }
-
-            reader.close();
-
-        } catch (IOException e) {}
-
-        return result;
-    }
-
-    /**
-     * Returns the Hardware value in /proc/cpuinfo, else returns "Unknown".
-     * @return a string that describes the processor
-     */
-    private static String getDeviceProcessorInfo() {
-        // Hardware : XYZ
+        String hardware = null;
+        String model = null;
         final String PROC_HARDWARE_REGEX = "Hardware\\s*:\\s*(.*)$"; /* hardware string */
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(FILENAME_PROC_CPUINFO));
-            String cpuinfo;
+            BufferedReader reader = new BufferedReader(new FileReader(FILENAME_PROC_CPUINFO), 256);
+            String Line = reader.readLine();
 
-            try {
-                while (null != (cpuinfo = reader.readLine())) {
-                    if (cpuinfo.startsWith("Hardware")) {
-                        Matcher m = Pattern.compile(PROC_HARDWARE_REGEX).matcher(cpuinfo);
-                        if (m.matches()) {
-                            return m.group(1);
-                        }
+            while (Line != null && (hardware == null || model == null)) {
+                if (hardware == null && Line.startsWith("Hardware")) {
+                    Matcher m = Pattern.compile(PROC_HARDWARE_REGEX).matcher(Line);
+                    if (m.matches()) {
+                        hardware = m.group(1);
                     }
+                } else if (model == null &&
+                        (Line.indexOf("model name") != -1 || Line.indexOf("Processor" ) != -1)) {
+                    model = Line.split(":")[1].trim();
                 }
-                return "Unknown";
-            } finally {
-                reader.close();
+                Line = reader.readLine();
             }
-        } catch (IOException e) {
-            Log.e(LOG_TAG,
-                "IO Exception when getting cpuinfo for Device Info screen",
-                e);
+            reader.close();
+        } catch (IOException e) {}
 
-            return "Unknown";
+        if (hardware != null || model != null){
+            result  = (hardware != null) ? hardware : "";
+            result += (hardware != null && model != null) ? "\n" : "";
+            result += (model != null) ? model : "";
+        } else {
+            result = "Unknown";
         }
+
+        return result;
     }
 }
 

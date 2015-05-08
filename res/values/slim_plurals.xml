@@ -15,8 +15,14 @@
         <item quantity="one">once</item>
         <item quantity="other">%d times</item>
     </plurals>
+
     <plurals name="qs_tiles_summary">
         <item quantity="one">1 tile configured</item>
         <item quantity="other">%d tiles configured</item>
     </plurals>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+
 </resources>

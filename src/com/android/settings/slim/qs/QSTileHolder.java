@@ -131,7 +131,7 @@ public class QSTileHolder {
                 break;
             case QSConstants.TILE_SYNC:
                 resourceName = "ic_qs_sync_on";
-                stringId = R.string.qs_sync_tile;
+                stringId = R.string.qs_tile_sync;
                 break;
             case QSConstants.TILE_SCREEN_TIMEOUT:
                 resourceName = "ic_qs_screen_timeout_vector";
@@ -147,7 +147,7 @@ public class QSTileHolder {
                 break;
             case QSConstants.TILE_AMBIENT_DISPLAY:
                 resourceName = "ic_qs_ambientdisplay_on";
-                stringId = R.string.qs_ambient_display;
+                stringId = R.string.qs_tile_ambient_display;
                 break;
             default:
                 return null;

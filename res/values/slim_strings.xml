@@ -626,30 +626,30 @@
     <string name="qs_action_add">Add</string>
     <string name="qs_action_no_more_tiles">No more tiles available</string>
 
-    <string name="qs_tile_wifi">Wi\u2011Fi</string>
-    <string name="qs_tile_bluetooth">Bluetooth</string>
-    <string name="qs_tile_display_inversion">Color inversion</string>
-    <string name="qs_tile_cellular_data">Data connection</string>
+    <string name="qs_tile_adb_over_network">ADB over network</string>
     <string name="qs_tile_airplane_mode">Airplane mode</string>
+    <string name="qs_tile_ambient_display">Ambient Display</string>
+    <string name="qs_tile_bluetooth">Bluetooth</string>
+    <string name="qs_tile_cast_screen">Cast screen</string>
+    <string name="qs_tile_cellular_data">Data connection</string>
+    <string name="qs_tile_compass">Compass</string>
+    <string name="qs_tile_display_inversion">Color inversion</string>
     <string name="qs_tile_display_rotation">Rotation</string>
     <string name="qs_tile_flashlight">Flashlight</string>
-    <string name="qs_tile_location">Location</string>
-    <string name="qs_tile_cast_screen">Cast screen</string>
     <string name="qs_tile_hotspot">Hotspot</string>
-    <string name="qs_tile_adb_over_network">ADB over network</string>
-    <string name="qs_tile_profiles">System profiles</string>
-    <string name="qs_tile_performance">Performance</string>
-    <string name="qs_tile_nfc">NFC</string>
-    <string name="qs_tile_compass">Compass</string>
+    <string name="qs_tile_location">Location</string>
     <string name="qs_tile_lockscreen">Lockscreen</string>
     <string name="qs_tile_lte">LTE</string>
-    <string name="qs_tile_visualizer" translatable="false">AudioFX</string>
+    <string name="qs_tile_nfc">NFC</string>
+    <string name="qs_tile_profiles">System profiles</string>
+    <string name="qs_tile_performance">Performance</string>
+    <string name="qs_tile_reboot">Reboot</string>
+    <string name="qs_tile_sync">Sync</string>
     <string name="qs_tile_screen_timeout">Screen timeout</string>
     <string name="qs_tile_usb_tether">USB tethering</string>
     <string name="qs_tile_visualizer">AudioFX</string>
-    <string name="qs_tile_reboot">Reboot</string>
-    <string name="qs_sync_tile">Sync</string>
-    <string name="qs_ambient_display">Ambient Display</string>
+    <string name="qs_tile_wifi">Wi\u2011Fi</string>
+
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
     <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>

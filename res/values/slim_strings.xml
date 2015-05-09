@@ -447,6 +447,57 @@
     <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
     <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
 
+    <!-- Quick Settings: Tiles  -->
+    <string name="qs_category_title">Quick Settings panel</string>
+    <string name="title_qs_tiles">QS Tiles</string>
+    <string name="title_qs_general">QS General</string>
+
+    <string name="qs_brightness_slider_title">Show brightness slider</string>
+
+    <string name="qs_order_title">Select and order tiles</string>
+    <string name="add_qs">Add new tile</string>
+
+    <string name="qs_action_delete">Delete</string>
+    <string name="qs_action_add">Add</string>
+    <string name="qs_action_no_more_tiles">No more tiles available</string>
+
+    <string name="qs_tile_adb_over_network">ADB over network</string>
+    <string name="qs_tile_airplane_mode">Airplane mode</string>
+    <string name="qs_tile_ambient_display">Ambient Display</string>
+    <string name="qs_tile_bluetooth">Bluetooth</string>
+    <string name="qs_tile_cast_screen">Cast screen</string>
+    <string name="qs_tile_cellular_data">Data connection</string>
+    <string name="qs_tile_compass">Compass</string>
+    <string name="qs_tile_display_inversion">Color inversion</string>
+    <string name="qs_tile_display_rotation">Rotation</string>
+    <string name="qs_tile_flashlight">Flashlight</string>
+    <string name="qs_tile_hotspot">Hotspot</string>
+    <string name="qs_tile_location">Location</string>
+    <string name="qs_tile_lockscreen">Lockscreen</string>
+    <string name="qs_tile_lte">LTE</string>
+    <string name="qs_tile_nfc">NFC</string>
+    <string name="qs_tile_profiles">System profiles</string>
+    <string name="qs_tile_performance">Performance</string>
+    <string name="qs_tile_reboot">Reboot</string>
+    <string name="qs_tile_sync">Sync</string>
+    <string name="qs_tile_screen_timeout">Screen timeout</string>
+    <string name="qs_tile_usb_tether">USB tethering</string>
+    <string name="qs_tile_visualizer">AudioFX</string>
+    <string name="qs_tile_wifi">Wi\u2011Fi</string>
+
+    <string name="qs_main_tiles_title">Enlarge first row</string>
+    <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
+    <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>
+    <string name="qs_advanced_location_title">Advanced location settings</string>
+    <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
+
+    <!-- QuickSettings: Tiles: 4 columns -->
+    <string name="qs_four_columns_title">Show four tiles per row</string>
+
+    <!-- QuickSettings: Tiles: haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+
     <!-- Swap Volume Buttons -->
     <string name="swap_volume_buttons_title">Reorient</string>
     <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
@@ -611,56 +662,5 @@
     <string name="adb_over_network_summary">Enable TCP/IP debugging over network interfaces (Wi\u2011Fi, USB networks). This setting is reset on reboot</string>
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
-
-    <!-- Quick Settings -->
-    <string name="qs_category_title">Quick Settings panel</string>
-    <string name="title_qs_tiles">QS Tiles</string>
-    <string name="title_qs_general">QS General</string>
-
-    <string name="qs_brightness_slider_title">Show brightness slider</string>
-
-    <string name="qs_order_title">Select and order tiles</string>
-    <string name="add_qs">Add new tile</string>
-
-    <string name="qs_action_delete">Delete</string>
-    <string name="qs_action_add">Add</string>
-    <string name="qs_action_no_more_tiles">No more tiles available</string>
-
-    <string name="qs_tile_wifi">Wi\u2011Fi</string>
-    <string name="qs_tile_bluetooth">Bluetooth</string>
-    <string name="qs_tile_display_inversion">Color inversion</string>
-    <string name="qs_tile_cellular_data">Data connection</string>
-    <string name="qs_tile_airplane_mode">Airplane mode</string>
-    <string name="qs_tile_display_rotation">Rotation</string>
-    <string name="qs_tile_flashlight">Flashlight</string>
-    <string name="qs_tile_location">Location</string>
-    <string name="qs_tile_cast_screen">Cast screen</string>
-    <string name="qs_tile_hotspot">Hotspot</string>
-    <string name="qs_tile_adb_over_network">ADB over network</string>
-    <string name="qs_tile_profiles">System profiles</string>
-    <string name="qs_tile_performance">Performance</string>
-    <string name="qs_tile_nfc">NFC</string>
-    <string name="qs_tile_compass">Compass</string>
-    <string name="qs_tile_lockscreen">Lockscreen</string>
-    <string name="qs_tile_lte">LTE</string>
-    <string name="qs_tile_visualizer" translatable="false">AudioFX</string>
-    <string name="qs_tile_screen_timeout">Screen timeout</string>
-    <string name="qs_tile_usb_tether">USB tethering</string>
-    <string name="qs_tile_visualizer">AudioFX</string>
-    <string name="qs_tile_reboot">Reboot</string>
-    <string name="qs_sync_tile">Sync</string>
-    <string name="qs_ambient_display">Ambient Display</string>
-    <string name="qs_main_tiles_title">Enlarge first row</string>
-    <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
-    <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>
-    <string name="qs_advanced_location_title">Advanced location settings</string>
-    <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
-
-    <!-- QuickSettings 4 columns -->
-    <string name="qs_four_columns_title">Show four tiles per row</string>
-
-    <!-- QuickSettings haptic feedback -->
-    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
-    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 
 </resources>

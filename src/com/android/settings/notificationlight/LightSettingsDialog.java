@@ -78,6 +78,8 @@ public class LightSettingsDialog extends AlertDialog implements
     private int mLedLastSpeedOn;
     private int mLedLastSpeedOff;
 
+    private boolean mMultiColor = false;
+
     /**
      * @param context
      * @param initialColor
@@ -164,8 +166,7 @@ public class LightSettingsDialog extends AlertDialog implements
         setView(layout);
         setTitle(R.string.edit_light_settings);
 
-        if (!getContext().getResources().getBoolean(
-                com.android.internal.R.bool.config_multiColorNotificationLed)) {
+        if (mMultiColor) {
             mColorPicker.setVisibility(View.GONE);
             mColorPanel.setVisibility(View.GONE);
             mLightsDialogDivider.setVisibility(View.GONE);
@@ -173,6 +174,10 @@ public class LightSettingsDialog extends AlertDialog implements
 
         mReadyForLed = true;
         updateLed();
+    }
+
+    public void setMultiColorLed(boolean b) {
+        mMultiColor = b;
     }
 
     private AdapterView.OnItemSelectedListener mPulseSelectionListener =

@@ -57,12 +57,15 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
             // Low, Medium and full color preferences
             mLowColorPref = (ApplicationLightPreference) prefSet.findPreference(LOW_COLOR_PREF);
+            mLowColorPref.setMultiColorLed(true);
             mLowColorPref.setOnPreferenceChangeListener(this);
 
             mMediumColorPref = (ApplicationLightPreference) prefSet.findPreference(MEDIUM_COLOR_PREF);
+            mMediumColorPref.setMultiColorLed(true);
             mMediumColorPref.setOnPreferenceChangeListener(this);
 
             mFullColorPref = (ApplicationLightPreference) prefSet.findPreference(FULL_COLOR_PREF);
+            mFullColorPref.setMultiColorLed(true);
             mFullColorPref.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(prefSet.findPreference("colors_list"));

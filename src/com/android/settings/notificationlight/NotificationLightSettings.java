@@ -123,6 +123,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         mCustomEnabledPref.setOnPreferenceChangeListener(this);
 
         mDefaultPref = (ApplicationLightPreference) findPreference(DEFAULT_PREF);
+        mDefaultPref.setMultiColorLed(mMultiColorNotificationLed);
         mDefaultPref.setOnPreferenceChangeListener(this);
 
         // Missed call and Voicemail preferences should only show on devices with a voice capabilities
@@ -256,6 +257,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                     pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));
                     pref.setIcon(info.applicationInfo.loadIcon(mPackageManager));
                     pref.setPersistent(false);
+                    pref.setMultiColorLed(mMultiColorNotificationLed);
                     pref.setOnPreferenceChangeListener(this);
 
                     mApplicationPrefList.addPreference(pref);

@@ -49,6 +49,9 @@ public class ApplicationLightPreference extends DialogPreference {
 
     private Resources mResources;
 
+    // Multi color led
+    private boolean mMultiColor = false;
+
     /**
      * @param context
      * @param attrs
@@ -111,6 +114,10 @@ public class ApplicationLightPreference extends DialogPreference {
         }
     }
 
+    public void setMultiColorLed(boolean b) {
+        mMultiColor = b;
+    }
+
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
@@ -124,7 +131,7 @@ public class ApplicationLightPreference extends DialogPreference {
         TextView tView = (TextView) view.findViewById(android.R.id.summary);
         tView.setVisibility(View.GONE);
 
-        if (!mResources.getBoolean(com.android.internal.R.bool.config_multiColorNotificationLed)) {
+        if (mMultiColor) {
             mLightColorView.setVisibility(View.GONE);
         }
 
@@ -182,6 +189,8 @@ public class ApplicationLightPreference extends DialogPreference {
             public void onClick(DialogInterface dialog, int which) {
             }
         });
+
+        d.setMultiColorLed(mMultiColor);
 
         return d;
     }

@@ -158,12 +158,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 currentDensity = defaultDensity;
             }
 
-            int factor = defaultDensity >= 480 ? 40 : 20;
-            int minimumDensity = defaultDensity - 4 * factor;
+            int factor = defaultDensity >= 480 ? 20 : 10;
+            int minimumDensity = defaultDensity - 6 * factor;
             int currentIndex = -1;
-            String[] densityEntries = new String[7];
-            String[] densityValues = new String[7];
-            for (int idx = 0; idx < 7; ++idx) {
+            String[] densityEntries = new String[13];
+            String[] densityValues = new String[13];
+            for (int idx = 0; idx < 13; ++idx) {
                 int val = minimumDensity + factor * idx;
                 int valueFormatResId = val == defaultDensity
                         ? R.string.lcd_density_default_value_format

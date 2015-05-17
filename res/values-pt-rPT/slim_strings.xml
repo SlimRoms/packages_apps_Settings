@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Restaurar</string>
+  <string name="attention">Atenção</string>
+  <string name="enabled">Ativado</string>
+  <string name="default_string">Predefinido</string>
+  <string name="reset_message">Repor definições originais?</string>
   <string name="app_security_title">Segurança das aplicações</string>
   <string name="privacy_guard_dlg_title">Ativar a Proteção da Privacidade?</string>
   <string name="privacy_guard_default_title">Ativar por defeito</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Desconhecida</string>
   <string name="build_date">Data de compilação</string>
   <string name="build_date_default">Desconhecida</string>
-  <string name="cpu_info">Processador</string>
   <string name="mem_info">Memória</string>
   <string name="root_access">Acesso root</string>
   <string name="root_access_warning_title">Permitir acesso root?</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Música - reproduzir/pausar</string>
   <string name="shortcut_action_media_previous">Música - faixa anterior</string>
   <string name="shortcut_action_wake_device">Acordar o dispositivo</string>
+  <string name="shortcut_action_ring_vib">Tocar/Vibrar</string>
+  <string name="shortcut_action_ring_silent">Tocar/Silêncio</string>
+  <string name="shortcut_action_ring_vib_silent">Tocar/Vibrar/Silêncio</string>
   <string name="shortcut_action_longpress">Toque longo:</string>
   <string name="shortcut_action_select_action_longpress">Escolha ação de toque longo:</string>
   <string name="shortcut_action_select_action">Escolha a ação:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">botão</string>
   <string name="shortcut_action_help_app">aplicação</string>
   <string name="shortcut_action_help_icon">, enquanto selecionar o ícone, aparecerão as opções de personalização</string>
-  <string name="shortcut_action_help_main">Para adicionar um %1$s, selecione o ícone Adicionar.  Quando adicionado um %1$s, ao selecionar a linha poderá mudar o %2$s\n\nPara eliminar um %1$s, deslize a linha na horizontal à esquerda ou à direita.  Para reordenar um %1$s na lista arraste-o na vertical pressionando o ícone à sua esquerda.\n\nPara limpar e redefinir aos valores de origem, selecione o ícone de Restaurar.</string>
   <string name="shortcut_action_help_delete_last_entry">Remover todos os %1$s na lista irá desativar o recurso inteiramente.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Remover todos os %1$s na lista desativará a segunda camada da PIE.</string>
   <string name="shortcuts_applications">Aplicações</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Desbloquear</string>
   <string name="unlock_quick_unlock_control_title">Desbloqueio rápido</string>
   <string name="unlock_quick_unlock_control_summary">Desbloquear automaticamente quando o PIN/senha correto é inserido</string>
+  <string name="shortcut_action_back">Para trás</string>
+  <string name="shortcut_action_app">Aplicação personalizada</string>
+  <string name="shortcut_action_home">Início</string>
+  <string name="shortcut_action_ime">Abrir alternador de IME</string>
+  <string name="shortcut_action_power_menu">Menu de energia</string>
+  <string name="shortcut_action_recent">Recentes</string>
+  <string name="shortcut_action_ring_vib">Tocar/Vibrar</string>
+  <string name="shortcut_action_ring_silent">Tocar/Silêncio</string>
+  <string name="shortcut_action_ring_vib_silent">Tocar/Vibrar/Silêncio</string>
+  <string name="shortcut_action_power">Desligar o ecrã</string>
+  <string name="shortcut_action_search">Pesquisar na aplicação</string>
+  <string name="shortcut_action_none">Nenhum</string>
 </resources>

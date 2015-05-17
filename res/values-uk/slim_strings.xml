@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Скинути</string>
+  <string name="attention">Увага</string>
+  <string name="enabled">Увімкнено</string>
+  <string name="default_string">Типово</string>
+  <string name="reset_message">Скинути всі записи до типових?</string>
   <string name="app_security_title">Безпека програм</string>
   <string name="privacy_guard_dlg_title">Увімкнути Сторожа Приватності?</string>
   <string name="privacy_guard_default_title">За замовчуванням увімкнено</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Невідомо</string>
   <string name="build_date">Дата збірки</string>
   <string name="build_date_default">Невідомо</string>
-  <string name="cpu_info">Процесор</string>
   <string name="mem_info">Пам’ять</string>
   <string name="root_access">Root доступ</string>
   <string name="root_access_warning_title">Дозволити root доступ?</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Музика - грати/пауза</string>
   <string name="shortcut_action_media_previous">Музика - попередній трек</string>
   <string name="shortcut_action_wake_device">Розбудити пристрій</string>
+  <string name="shortcut_action_ring_vib">Звук/Вібро</string>
+  <string name="shortcut_action_ring_silent">Звук/Беззвучний</string>
+  <string name="shortcut_action_ring_vib_silent">Звук/Вібро/Беззвучний</string>
   <string name="shortcut_action_longpress">Тривале натискання:</string>
   <string name="shortcut_action_select_action_longpress">Виберіть дію для тривалого натискання:</string>
   <string name="shortcut_action_select_action">Виберіть дію:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">кнопка</string>
   <string name="shortcut_action_help_app">додаток</string>
   <string name="shortcut_action_help_icon">, вибір значка виведе параметри персоналізації</string>
-  <string name="shortcut_action_help_main">Щоб додати %1$s, виберіть піктограму Додати. Після того, як %1$s додано, вибраний рядок змінить ціль%2$s\n\nЩоб видалити %1$s, проведіть пальцем по рядку горизонтально вправи чи вліво.  Змініть порядок %1$s в списку, пересунувши вертикально якір вліво.\n\nЩоб очистити значення, або скинути по замовчуванням - виберіть піктограму Скинути.</string>
   <string name="shortcut_action_help_delete_last_entry">Видалення кожного %1$s в списку повністю виключить функцію.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Видалення кожного %1$s в списку повністю вимкне другий шар pie.</string>
   <string name="shortcuts_applications">Програми</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Розблокувати</string>
   <string name="unlock_quick_unlock_control_title">Швидке розблокування</string>
   <string name="unlock_quick_unlock_control_summary">Автоматичне розблокування при введенні правильного пароля чи PIN-коду</string>
+  <string name="shortcut_action_back">Назад</string>
+  <string name="shortcut_action_app">Користувацька програма</string>
+  <string name="shortcut_action_home">Додому</string>
+  <string name="shortcut_action_ime">Відкрити перемикач IME</string>
+  <string name="shortcut_action_power_menu">Меню живлення</string>
+  <string name="shortcut_action_recent">Нещодавні</string>
+  <string name="shortcut_action_ring_vib">Звук/Вібро</string>
+  <string name="shortcut_action_ring_silent">Звук/Беззвучний</string>
+  <string name="shortcut_action_ring_vib_silent">Звук/Вібро/Беззвучний</string>
+  <string name="shortcut_action_power">Вимкнути екран</string>
+  <string name="shortcut_action_search">Пошук у програмі</string>
+  <string name="shortcut_action_none">Нічого</string>
 </resources>

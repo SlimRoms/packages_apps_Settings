@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Poništi</string>
+  <string name="attention">Pažnja</string>
+  <string name="enabled">Omogućeno</string>
+  <string name="default_string">Zadano</string>
+  <string name="reset_message">Poništiti sve unose na zadano?</string>
   <string name="app_security_title">Sigurnost aplikacija</string>
   <string name="privacy_guard_dlg_title">Omogućiti Nadzor Privatnosti?</string>
   <string name="privacy_guard_default_title">Standardno aktivirano</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Nepoznata</string>
   <string name="build_date">Datum programiranja</string>
   <string name="build_date_default">Nepoznat</string>
-  <string name="cpu_info">CPU</string>
   <string name="mem_info">Radna memorija</string>
   <string name="root_access">Root pristup</string>
   <string name="root_access_warning_title">Dopustiti root pristup?</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Glazba - reprodukcija/pauza</string>
   <string name="shortcut_action_media_previous">Glazba - prethodni komad</string>
   <string name="shortcut_action_wake_device">Probuditi uređaj</string>
+  <string name="shortcut_action_ring_vib">Zvonjenje/Vibracija</string>
+  <string name="shortcut_action_ring_silent">Zvonjenje/Bešumno</string>
+  <string name="shortcut_action_ring_vib_silent">Zvonjenje/Vibracija/Bešumno</string>
   <string name="shortcut_action_longpress">Dugi dodir:</string>
   <string name="shortcut_action_select_action_longpress">Izaberite radnju za dugi dodir:</string>
   <string name="shortcut_action_select_action">Odaberite radnju:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">tipka</string>
   <string name="shortcut_action_help_app">aplikacija</string>
   <string name="shortcut_action_help_icon">, dok će odabir ikone prikazati mogućnosti prilagodbe</string>
-  <string name="shortcut_action_help_main">Da biste dodali %1$s, odaberite \"Dodaj ikonu\". Kad %1$s bude dodan/a, odabir stupca će promijeniti cilj%2$s\n\nDa biste odstranili %1$s, odgurnite taj stupac ulijevo ili udesno. Za premjestiti %1$s, promijenite vertikalni položaj sidra na lijevoj strani.\n\nBrisanje ili vraćanje na prvotne postavke: izaberite opciju poništavanja.</string>
   <string name="shortcut_action_help_delete_last_entry">Uklanjanje svake %1$s na popisu će u potpunosti onemogućiti značajku.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Otklanjanje svake %1$s s popisa će deaktivirati u potpunosti drugu PIE-razinu.</string>
   <string name="shortcuts_applications">Aplikacije</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Otključavanje</string>
   <string name="unlock_quick_unlock_control_title">Brzo otključavanje</string>
   <string name="unlock_quick_unlock_control_summary">Automatski otključaj po ispravnom unosu PIN-a ili lozinke</string>
+  <string name="shortcut_action_back">Natrag</string>
+  <string name="shortcut_action_app">Prilagođena aplikacija</string>
+  <string name="shortcut_action_home">Početna</string>
+  <string name="shortcut_action_ime">Otvori prebacivač metode unosa</string>
+  <string name="shortcut_action_power_menu">Meni isključivanja</string>
+  <string name="shortcut_action_recent">Nedavno</string>
+  <string name="shortcut_action_ring_vib">Zvonjenje/Vibracija</string>
+  <string name="shortcut_action_ring_silent">Zvonjenje/Bešumno</string>
+  <string name="shortcut_action_ring_vib_silent">Zvonjenje/Vibracija/Bešumno</string>
+  <string name="shortcut_action_power">Isključiti ekran</string>
+  <string name="shortcut_action_search">Pretraživanje u aplikaciji</string>
+  <string name="shortcut_action_none">Nijedan</string>
 </resources>

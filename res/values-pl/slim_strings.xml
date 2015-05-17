@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Resetuj</string>
+  <string name="attention">Uwaga</string>
+  <string name="enabled">Włączono</string>
+  <string name="default_string">Domyślnie</string>
+  <string name="reset_message">Przywrócić wartości domyślne?</string>
   <string name="app_security_title">Zabezpieczenia aplikacji</string>
   <string name="privacy_guard_dlg_title">Włącz kontrolę prywatności?</string>
   <string name="privacy_guard_default_title">Domyślnie włączona</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Nieznana</string>
   <string name="build_date">Data kompilacji</string>
   <string name="build_date_default">Nieznana</string>
-  <string name="cpu_info">CPU</string>
   <string name="mem_info">Pamięć</string>
   <string name="root_access">Dostęp do roota</string>
   <string name="root_access_warning_title">Przyznać dostęp do roota?</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Muzyka - odtwórz/wstrzymaj</string>
   <string name="shortcut_action_media_previous">Muzyka - poprzedni utwór</string>
   <string name="shortcut_action_wake_device">Wybudź urządzenie</string>
+  <string name="shortcut_action_ring_vib">Dzwonek/Wibracja</string>
+  <string name="shortcut_action_ring_silent">Dzwonek/Wyciszony</string>
+  <string name="shortcut_action_ring_vib_silent">Dzwonek/Wibracja/Wyciszony</string>
   <string name="shortcut_action_longpress">Długie naciśnięcie:</string>
   <string name="shortcut_action_select_action_longpress">Wybierz akcję długiego naciśnięcia:</string>
   <string name="shortcut_action_select_action">Wybierz akcję:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">przycisk</string>
   <string name="shortcut_action_help_app">aplikacja</string>
   <string name="shortcut_action_help_icon">, wybierając ikonę wyświetlisz opcję dostosowywania</string>
-  <string name="shortcut_action_help_main">Aby dodać %1$s, naciśnij przycisk Dodaj.  Kiedy %1$s zostanie dodany, wybranie wiersza zmieni jego wartość%2$s\n\nAby usunąć %1$s, przesuń wiersz poziomo w lewo lub prawo.  Aby zmienić kolejność %1$s przeciągnij pionowo za uchwyt po lewej stronie.\n\nAby przywrócić domyślne wpisy, naciśnij ikonę Przywróć.</string>
   <string name="shortcut_action_help_delete_last_entry">Kiedy usuniesz każdy %1$s na liście, całkowicie wyłączysz tą funkcję.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Kiedy usuniesz każdy %1$s na liście, wyłączysz drugą warstwę Pie całkowicie.</string>
   <string name="shortcuts_applications">Aplikacje</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Odblokuj</string>
   <string name="unlock_quick_unlock_control_title">Szybkie odblokowanie</string>
   <string name="unlock_quick_unlock_control_summary">Odblokuj automatycznie kiedy zostanie podany prawidłowy PIN/hasło</string>
+  <string name="shortcut_action_back">Wstecz</string>
+  <string name="shortcut_action_app">Inna aplikacja</string>
+  <string name="shortcut_action_home">Ekran domowy</string>
+  <string name="shortcut_action_ime">Otwórz okno zmiany metod wprowadzania</string>
+  <string name="shortcut_action_power_menu">Menu zasilania</string>
+  <string name="shortcut_action_recent">Ostatnie</string>
+  <string name="shortcut_action_ring_vib">Dzwonek/Wibracja</string>
+  <string name="shortcut_action_ring_silent">Dzwonek/Wyciszony</string>
+  <string name="shortcut_action_ring_vib_silent">Dzwonek/Wibracja/Wyciszony</string>
+  <string name="shortcut_action_power">Wyłącz ekran</string>
+  <string name="shortcut_action_search">Szukaj w aplikacji</string>
+  <string name="shortcut_action_none">Żaden</string>
 </resources>

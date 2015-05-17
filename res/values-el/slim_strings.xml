@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Επαναφορά</string>
+  <string name="attention">Προσοχή</string>
+  <string name="enabled">Ενεργοποιήθηκε</string>
+  <string name="default_string">Προεπιλογή</string>
+  <string name="reset_message">Επαναφορά όλων των καταχωρήσεων στις προεπιλογές;</string>
   <string name="app_security_title">Ασφάλεια εφαρμογών</string>
   <string name="privacy_guard_dlg_title">Ενεργοποίηση της Προστασίας Απορρήτου;</string>
   <string name="privacy_guard_default_title">Ενεργοποιημένο από προεπιλογή</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Άγνωστο</string>
   <string name="build_date">Ημερομηνία έκδοσης</string>
   <string name="build_date_default">Άγνωστο</string>
-  <string name="cpu_info">Επεξεργαστής</string>
   <string name="mem_info">Μνήμη</string>
   <string name="root_access">Πρόσβαση root</string>
   <string name="root_access_warning_title">Να επιτρέπεται η πρόσβαση root;</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Μουσική - αναπαραγωγή/παύση</string>
   <string name="shortcut_action_media_previous">Μουσική - προηγούμενο κομμάτι</string>
   <string name="shortcut_action_wake_device">Αφύπνιση συσκευής</string>
+  <string name="shortcut_action_ring_vib">Ήχος/Δόνηση</string>
+  <string name="shortcut_action_ring_silent">Ήχος/Αθόρυβο</string>
+  <string name="shortcut_action_ring_vib_silent">Ήχος/Δόνηση/Σιωπηλό</string>
   <string name="shortcut_action_longpress">Παρατεταμένο πάτημα:</string>
   <string name="shortcut_action_select_action_longpress">Επιλέξτε ενέργεια παρατεταμένου πατήματος:</string>
   <string name="shortcut_action_select_action">Επιλέξτε ενέργεια:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">κουμπί</string>
   <string name="shortcut_action_help_app">εφαρμογή</string>
   <string name="shortcut_action_help_icon">, ενώ επιλέγοντας το εικονίδιο θα φέρει επάνω τις επιλογές προσαρμογής</string>
-  <string name="shortcut_action_help_main">Για να προσθέσετε ένα %1$s, επιλέξτε το εικονίδιο Προσθήκη.  Μόλις προστεθεί ένα %1$s, επιλέγοντας την σειρά θα αλλάξει τον στόχο%2$s\n\nΓια να αφαιρέσετε ένα %1$s, περάστε στη σειρά οριζοντίως προς τα αριστερά ή προς τα δεξιά.  Αναδιάταξη μιας %1$s στη λίστα κάθετα σύροντας στα αριστερά.\n\nΓια να καταργήσετε ή να επαναφέρετε τις προεπιλεγμένες ρυθμίσεις, επιλέξτε το εικονίδιο Επαναφορά.</string>
   <string name="shortcut_action_help_delete_last_entry">Αφαίρεση κάθε %1$s στη λίστα θα απενεργοποιήσει το χαρακτηριστικό εξ ολοκλήρου.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Αφαίρεση κάθε %1$s στη λίστα θα απενεργοποιήσετε το δεύτερο στρώμα τού pie εξ ολοκλήρου.</string>
   <string name="shortcuts_applications">Εφαρμογές</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Ξεκλείδωμα</string>
   <string name="unlock_quick_unlock_control_title">Γρήγορο ξεκλείδωμα</string>
   <string name="unlock_quick_unlock_control_summary">Αυτόματο ξεκλείδωμα όταν δωθεί το σωστό PIN ή ο σωστός κωδικός</string>
+  <string name="shortcut_action_back">Πίσω</string>
+  <string name="shortcut_action_app">Προσαρμοσμένη εφαρμογή</string>
+  <string name="shortcut_action_home">Αρχική Σελίδα</string>
+  <string name="shortcut_action_ime">Εναλλαγή μεθόδων εισόδου</string>
+  <string name="shortcut_action_power_menu">Μενού πλήκτρου απενεργοποίησης</string>
+  <string name="shortcut_action_recent">Πρόσφατα</string>
+  <string name="shortcut_action_ring_vib">Ήχος/Δόνηση</string>
+  <string name="shortcut_action_ring_silent">Ήχος/Αθόρυβο</string>
+  <string name="shortcut_action_ring_vib_silent">Ήχος/Δόνηση/Σιωπηλό</string>
+  <string name="shortcut_action_power">Απενεργοποιημένη οθόνη</string>
+  <string name="shortcut_action_search">Αναζήτηση σε εφαρμογή</string>
+  <string name="shortcut_action_none">Κανένα</string>
 </resources>

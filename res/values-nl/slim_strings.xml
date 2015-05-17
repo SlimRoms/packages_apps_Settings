@@ -12,6 +12,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ok">OK</string>
+  <string name="reset">Reset</string>
+  <string name="attention">Attentie</string>
+  <string name="enabled">Ingeschakeld</string>
+  <string name="default_string">Standaard</string>
+  <string name="reset_message">Alles terugzetten naar standaard?</string>
   <string name="app_security_title">App-beveiliging</string>
   <string name="privacy_guard_dlg_title">Privacy Guard inschakelen?</string>
   <string name="privacy_guard_default_title">Standaard ingeschakeld</string>
@@ -25,7 +31,6 @@
   <string name="slim_version_default">Onbekend</string>
   <string name="build_date">Compileerdatum</string>
   <string name="build_date_default">Onbekend</string>
-  <string name="cpu_info">CPU</string>
   <string name="mem_info">Geheugen</string>
   <string name="root_access">Root-toegang</string>
   <string name="root_access_warning_title">Root-toegang toestaan?</string>
@@ -334,6 +339,9 @@
   <string name="shortcut_action_media_play_pause">Muziek - afspelen/pauzeren</string>
   <string name="shortcut_action_media_previous">Muziek - vorig nummer</string>
   <string name="shortcut_action_wake_device">Apparaat ontwaken</string>
+  <string name="shortcut_action_ring_vib">Geluid/Vib</string>
+  <string name="shortcut_action_ring_silent">Geluid/Stil</string>
+  <string name="shortcut_action_ring_vib_silent">Geluid/Vib/Stil</string>
   <string name="shortcut_action_longpress">Langdrukken:</string>
   <string name="shortcut_action_select_action_longpress">Kies langdrukken actie:</string>
   <string name="shortcut_action_select_action">Kies actie:</string>
@@ -351,7 +359,6 @@
   <string name="shortcut_action_help_button">knop</string>
   <string name="shortcut_action_help_app">app</string>
   <string name="shortcut_action_help_icon">, terwijl het icoon selecteren aanpassingsopties zal tonen</string>
-  <string name="shortcut_action_help_main">Om een %1$s toe te voegen, selecteer het Toevoegen icoon. Als een %1$s eenmaal is toegevoegd, zal de rij selecteren het doel veranderen %2$s\n\nOm een %1$s te verwijderen, veeg naar links of rechts op een rij. Herplaats een %1$s in de lijst door het anker links verticaal te verslepen.\n\nOm te wissen of standaarden te herstellen, kies het Reset icoon.</string>
   <string name="shortcut_action_help_delete_last_entry">Elke %1$s verwijderen uit de lijst zal de functie volledig uitschakelen.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Elke %1$s verwijderen uit de lijst zal de tweede PIE volledig uitschakelen.</string>
   <string name="shortcuts_applications">Applicaties</string>
@@ -415,4 +422,16 @@
   <string name="shortcuts_icon_picker_unlock">Ontgrendelen</string>
   <string name="unlock_quick_unlock_control_title">Snel ontgrendelen</string>
   <string name="unlock_quick_unlock_control_summary">Automatisch ontgrendelen als uw pincode/wachtwoord correct is ingevoerd</string>
+  <string name="shortcut_action_back">Terug</string>
+  <string name="shortcut_action_app">Aangepaste app</string>
+  <string name="shortcut_action_home">Home</string>
+  <string name="shortcut_action_ime">Invoermethode wisselen</string>
+  <string name="shortcut_action_power_menu">Power Menu</string>
+  <string name="shortcut_action_recent">Recent gebruikt</string>
+  <string name="shortcut_action_ring_vib">Geluid/Vib</string>
+  <string name="shortcut_action_ring_silent">Geluid/Stil</string>
+  <string name="shortcut_action_ring_vib_silent">Geluid/Vib/Stil</string>
+  <string name="shortcut_action_power">Scherm uit</string>
+  <string name="shortcut_action_search">Zoeken in app</string>
+  <string name="shortcut_action_none">Geen</string>
 </resources>

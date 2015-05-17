@@ -216,6 +216,8 @@ public class ActionListViewSettings extends ListFragment implements
         File folder = new File(Environment.getExternalStorageDirectory() + File.separator +
                 ".slim" + File.separator + "icons");
 
+        folder.mkdirs();
+
         mImageTmp = new File(folder.toString()
                 + File.separator + "shortcut.tmp");
 

@@ -29,4 +29,9 @@
         android:fragment="com.android.settings.slim.NavbarSettings"
         android:title="@string/navigation_bar" />
 
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.slim.PieControl"
+        android:title="@string/pie_control_title" />
+
 </PreferenceScreen>

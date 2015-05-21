@@ -2134,6 +2134,20 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
 
+        <!-- Expanded desktop settings activity. -->
+        <activity android:name="Settings$ExpandedDesktopSettingsActivity"
+                android:label="@string/power_menu_expanded_desktop"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/interface_settings" />
+        </activity>
+
         <receiver android:name=".bluetooth.BluetoothDiscoverableTimeoutReceiver">
             <intent-filter>
                 <action android:name="android.bluetooth.intent.DISCOVERABLE_TIMEOUT" />

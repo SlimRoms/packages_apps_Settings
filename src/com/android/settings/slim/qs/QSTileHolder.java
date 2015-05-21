@@ -157,6 +157,10 @@ public class QSTileHolder {
                 resourceName ="ic_livedisplay_day";
                 stringId = R.string.live_display_title;
                 break;
+            case QSConstants.TILE_EXPANDED_DESKTOP:
+                resourceName = "ic_qs_expanded_desktop";
+                stringId = R.string.qs_expanded_desktop_tile;
+                break;
             default:
                 return null;
         }

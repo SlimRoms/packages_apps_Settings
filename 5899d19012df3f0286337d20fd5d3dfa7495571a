@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa3479d7_55793e92",
+        "filename": "res/values/dimens.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2015-05-21T21:04:48Z",
+      "side": 1,
+      "message": "to slim_dimens.xml",
+      "revId": "5899d19012df3f0286337d20fd5d3dfa7495571a",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

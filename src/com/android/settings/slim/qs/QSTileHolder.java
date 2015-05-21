@@ -149,6 +149,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_ambientdisplay_on";
                 stringId = R.string.qs_ambient_display;
                 break;
+            case QSConstants.TILE_EXPANDED_DESKTOP:
+                resourceName = "ic_qs_expanded_desktop";
+                stringId = R.string.qs_expanded_desktop_tile;
+                break;
             default:
                 return null;
         }

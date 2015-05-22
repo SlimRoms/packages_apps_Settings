@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa3479d7_d8d9e584",
+        "filename": "src/com/android/settings/CreateSlimShortcut.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-05-22T20:16:42Z",
+      "side": 1,
+      "message": "date",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "79254c245900b5e0a45cb2a5992154a785e34028",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_b8e62143",
+        "filename": "src/com/android/settings/slim/SlimActionShortcut.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-05-22T20:16:42Z",
+      "side": 1,
+      "message": "date",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "79254c245900b5e0a45cb2a5992154a785e34028",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

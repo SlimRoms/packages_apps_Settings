@@ -300,8 +300,6 @@
   <string name="status_bar_toggle_info">Η αυτόματη φωτεινότητα είναι ενεργή</string>
   <string name="double_tap_to_sleep_title">Διπλό πάτημα για αναστολή</string>
   <string name="double_tap_to_sleep_summary">Διπλό χτύπημα στην γραμμή κατάστασης για μετάβαση στη συσκευής σε αναμονή</string>
-  <string name="qs_title">Γρήγορες ρυθμίσεις</string>
-  <string name="title_quick_pulldown">Γρήγορο τράβηγμα προς τα κάτω</string>
   <string name="summary_quick_pulldown">Τραβώντας προς τα κάτω την %1$s άκρη της μπάρας κατάστασης εμφανίζονται οι γρήγορες ρυθμίσεις</string>
   <string name="quick_pulldown_off">Κλειστό</string>
   <string name="quick_pulldown_left">Αριστερά</string>

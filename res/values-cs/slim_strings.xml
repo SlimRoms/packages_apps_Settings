@@ -346,8 +346,6 @@
   <string name="status_bar_battery_percentage_text_next">Vedle ikony</string>
   <string name="double_tap_to_sleep_title">Uspat dvojitým poklepáním</string>
   <string name="double_tap_to_sleep_summary">Dvojklepněte na stavový řádek pro uspání zařízení</string>
-  <string name="qs_title">Rychlé nastavení</string>
-  <string name="title_quick_pulldown">Rychlé vysunutí nabídky</string>
   <string name="summary_quick_pulldown">%1$s okraj stavové lišty umožňuje rychlé vysunutí nabídky nastavení</string>
   <string name="quick_pulldown_off">Vypnuto</string>
   <string name="quick_pulldown_left">Levý</string>

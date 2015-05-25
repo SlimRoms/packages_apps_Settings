@@ -300,8 +300,6 @@
   <string name="status_bar_toggle_info">Automatyczna kontrola jasności jest włączona</string>
   <string name="double_tap_to_sleep_title">Usypianie urządzenia podwójnym tapnięciem na pasku statusu</string>
   <string name="double_tap_to_sleep_summary">Dwukrotnie tapnij na pasku statusu w celu przejścia urządzenia w tryb czuwania</string>
-  <string name="qs_title">Szybkie ustawienia</string>
-  <string name="title_quick_pulldown">Szybkie wysuwanie</string>
   <string name="summary_quick_pulldown">%1$s strona paska powiadomień wysunie szybkie ustawienia</string>
   <string name="quick_pulldown_off">Wyłączone</string>
   <string name="quick_pulldown_left">Lewa</string>

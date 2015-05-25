@@ -339,8 +339,6 @@
   <string name="status_bar_battery_percentage_text_next">Junto al icono</string>
   <string name="double_tap_to_sleep_title">Doble toque para bloquear</string>
   <string name="double_tap_to_sleep_summary">Poner el dispositivo a dormir mediante un doble toque sobre la barra de estado</string>
-  <string name="qs_title">Ajustes rápidos</string>
-  <string name="title_quick_pulldown">Desplegado rápido</string>
   <string name="summary_quick_pulldown">Desplegar el panel de ajustes rápidos desde la %1$s de la barra de estado</string>
   <string name="quick_pulldown_off">Deshabilitado</string>
   <string name="quick_pulldown_left">Izquierda</string>

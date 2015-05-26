@@ -831,6 +831,7 @@
 
     <string-array name="heads_up_time_out_entries">
         <item>@string/heads_up_time_out_never</item>
+        <item>@string/heads_up_time_out_2sec</item>
         <item>@string/heads_up_time_out_4sec</item>
         <item>@string/heads_up_time_out_6sec</item>
         <item>@string/heads_up_time_out_8sec</item>
@@ -839,6 +840,7 @@
 
     <string-array name="heads_up_time_out_values" translatable="false">
         <item>0</item>
+        <item>2000</item>
         <item>4000</item>
         <item>6000</item>
         <item>8000</item>

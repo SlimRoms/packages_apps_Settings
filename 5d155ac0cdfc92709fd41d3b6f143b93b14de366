@@ -341,6 +341,23 @@
     },
     {
       "key": {
+        "uuid": "da3975d1_b4acee8d",
+        "filename": "src/com/android/settings/notification/OtherSoundSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T22:18:49Z",
+      "side": 1,
+      "message": "import android.hardware.CmHardwareManager;",
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da3975d1_340fdee3",
         "filename": "src/com/android/settings/notification/OtherSoundSettings.java",
         "patchSetId": 11
@@ -375,6 +392,23 @@
       "writtenOn": "2015-05-27T21:50:43Z",
       "side": 1,
       "message": "pointless blank line",
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_d49f724f",
+        "filename": "src/com/android/settings/notification/OtherSoundSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T22:18:49Z",
+      "side": 1,
+      "message": "CmHardwareManager cmHardwareManager \u003d\n                (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);\n        if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {\n            Preference preference \u003d vibrate.findPreference(KEY_VIBRATION_INTENSITY);\n            if (preference !\u003d null) {\n                vibrate.removePreference(preference);\n            }\n        }",
       "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false

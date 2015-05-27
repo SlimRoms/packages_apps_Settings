@@ -20,127 +20,121 @@
         settings:keywords="@string/keywords_display">
 
         <PreferenceScreen
-                android:key="brightness"
-                android:title="@string/brightness"
-                settings:keywords="@string/keywords_display_brightness_level">
-            <intent android:action="android.intent.action.SHOW_BRIGHTNESS_DIALOG" />
+            android:key="brightness"
+            android:title="@string/brightness"
+            settings:keywords="@string/keywords_display_brightness_level">
+                <intent
+                    android:action="android.intent.action.SHOW_BRIGHTNESS_DIALOG" />
         </PreferenceScreen>
 
         <SwitchPreference
-                android:key="auto_brightness"
-                android:title="@string/auto_brightness_title"
-                settings:keywords="@string/keywords_display_auto_brightness"
-                android:summary="@string/auto_brightness_summary"
-                android:persistent="false" />
+            android:key="auto_brightness"
+            android:title="@string/auto_brightness_title"
+            settings:keywords="@string/keywords_display_auto_brightness"
+            android:summary="@string/auto_brightness_summary"
+            android:persistent="false" />
 
         <!-- LiveDisplay -->
         <PreferenceScreen
-                android:key="live_display"
-                android:title="@string/live_display_title"
-                android:summary="@string/live_display_summary"
-                android:fragment="com.android.settings.livedisplay.LiveDisplay" />
-
-        <PreferenceScreen
-                android:key="wallpaper"
-                android:title="@string/wallpaper_settings_title"
-                settings:keywords="@string/keywords_display_wallpaper"
-                android:fragment="com.android.settings.WallpaperTypeSettings" />
+            android:key="live_display"
+            android:title="@string/live_display_title"
+            android:summary="@string/live_display_summary"
+            android:fragment="com.android.settings.livedisplay.LiveDisplay" />
 
         <ListPreference
-                android:key="screen_timeout"
-                android:title="@string/screen_timeout"
-                android:summary="@string/screen_timeout_summary"
-                android:persistent="false"
-                android:entries="@array/screen_timeout_entries"
-                android:entryValues="@array/screen_timeout_values" />
+            android:key="screen_timeout"
+            android:title="@string/screen_timeout"
+            android:summary="@string/screen_timeout_summary"
+            android:persistent="false"
+            android:entries="@array/screen_timeout_entries"
+            android:entryValues="@array/screen_timeout_values" />
 
         <PreferenceScreen
-                android:key="screensaver"
-                android:title="@string/screensaver_settings_title"
-                android:fragment="com.android.settings.DreamSettings" />
+            android:key="screensaver"
+            android:title="@string/screensaver_settings_title"
+            android:fragment="com.android.settings.DreamSettings" />
 
         <ListPreference
-                android:key="lcd_density"
-                android:title="@string/lcd_density"
-                android:persistent="false" />
+            android:key="lcd_density"
+            android:title="@string/lcd_density"
+            android:persistent="false" />
 
         <SwitchPreference
-                android:key="lift_to_wake"
-                android:title="@string/lift_to_wake_title"
-                android:persistent="false" />
+            android:key="lift_to_wake"
+            android:title="@string/lift_to_wake_title"
+            android:persistent="false" />
 
         <com.android.settings.WarnedListPreference
-                android:key="font_size"
-                android:title="@string/title_font_size"
-                settings:keywords="@string/keywords_display_font_size"
-                android:summary="@string/summary_font_size"
-                android:entries="@array/entries_font_size"
-                android:entryValues="@array/entryvalues_font_size"
-                android:dialogTitle="@string/dialog_title_font_size" />
+            android:key="font_size"
+            android:title="@string/title_font_size"
+            settings:keywords="@string/keywords_display_font_size"
+            android:summary="@string/summary_font_size"
+            android:entries="@array/entries_font_size"
+            android:entryValues="@array/entryvalues_font_size"
+            android:dialogTitle="@string/dialog_title_font_size" />
 
         <PreferenceScreen
-                android:key="display_rotation"
-                android:fragment="com.android.settings.slim.DisplayRotation"
-                android:title="@string/display_rotation_title" />
+            android:key="display_rotation"
+            android:fragment="com.android.settings.slim.DisplayRotation"
+            android:title="@string/display_rotation_title" />
 
         <PreferenceScreen
-                android:key="wifi_display"
-                android:title="@string/wifi_display_settings_title"
-                settings:keywords="@string/keywords_display_cast_screen"
-                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+            android:key="wifi_display"
+            android:title="@string/wifi_display_settings_title"
+            settings:keywords="@string/keywords_display_cast_screen"
+            android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
-        <PreferenceCategory
-                android:key="advanced_display_prefs"
-                android:title="@string/advanced_settings">
+    <PreferenceCategory
+        android:key="advanced_display_prefs"
+        android:title="@string/advanced_settings">
 
-                <SwitchPreference
-                    android:key="double_tap_wake_gesture"
-                    android:title="@string/double_tap_to_wake_title" />
+        <SwitchPreference
+            android:key="double_tap_wake_gesture"
+            android:title="@string/double_tap_to_wake_title" />
 
         </PreferenceCategory>
 
-         <PreferenceCategory
-             android:key="category_wakeup_options"
-             android:title="@string/display_category_wakeup_options_title" >
+    <PreferenceCategory
+         android:key="category_wakeup_options"
+         android:title="@string/display_category_wakeup_options_title" >
 
-            <SwitchPreference
-                android:key="pref_volume_wake"
-                android:title="@string/pref_volume_wake_title"
-                android:summary="@string/pref_volume_wake_summary"
-                android:defaultValue="false"
-                android:persistent="false" />
+        <SwitchPreference
+            android:key="pref_volume_wake"
+            android:title="@string/pref_volume_wake_title"
+            android:summary="@string/pref_volume_wake_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
 
-            <SwitchPreference
-                android:key="wakeup_when_plugged_unplugged"
-                android:title="@string/wakeup_when_plugged_unplugged_title"
-                android:summary="@string/wakeup_when_plugged_unplugged_summary"
-                android:defaultValue="true"
-                android:persistent="false" />
+        <SwitchPreference
+            android:key="wakeup_when_plugged_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true"
+            android:persistent="false" />
 
-            <com.android.settings.slim.SystemSettingSwitchPreference
-                    android:key="proximity_on_wake"
-                    android:title="@string/proximity_wake_title"
-                    android:summary="@string/proximity_wake_summary"
-                    android:defaultValue="true" />
+        <com.android.settings.slim.SystemSettingSwitchPreference
+            android:key="proximity_on_wake"
+            android:title="@string/proximity_wake_title"
+            android:summary="@string/proximity_wake_summary"
+            android:defaultValue="true" />
 
-         </PreferenceCategory>
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:key="category_doze_options"
-            android:title="@string/display_category_doze_options_title" >
+    <PreferenceCategory
+        android:key="category_doze_options"
+        android:title="@string/display_category_doze_options_title" >
 
-            <SwitchPreference
-                    android:key="doze"
-                    android:title="@string/doze_title"
-                    android:summary="@string/doze_summary"
-                    android:persistent="false" />
+        <SwitchPreference
+            android:key="doze"
+            android:title="@string/doze_title"
+            android:summary="@string/doze_summary"
+            android:persistent="false" />
 
-            <PreferenceScreen
-                android:fragment="com.android.settings.slim.fragments.DozeSettingsFragment"
-                android:key="advanced_doze_options"
-                android:title="@string/doze_settings_title"
-                android:dependency="doze" />
+        <PreferenceScreen
+            android:fragment="com.android.settings.slim.fragments.DozeSettingsFragment"
+            android:key="advanced_doze_options"
+            android:title="@string/doze_settings_title"
+            android:dependency="doze" />
 
-        </PreferenceCategory>
-
+    </PreferenceCategory>
 </PreferenceScreen>

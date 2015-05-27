@@ -300,8 +300,6 @@
   <string name="status_bar_toggle_info">Automatische helderheid is ingeschakeld</string>
   <string name="double_tap_to_sleep_title">Dubbel tikken voor slaapstand</string>
   <string name="double_tap_to_sleep_summary">Dubbel tikken op de status balk om toetsen in slaapstand te zetten</string>
-  <string name="qs_title">Snelle instellingen</string>
-  <string name="title_quick_pulldown">Snel openen</string>
   <string name="summary_quick_pulldown">%1$s van statusbalk opent Snelle Instellingen</string>
   <string name="quick_pulldown_off">Uit</string>
   <string name="quick_pulldown_left">Links</string>

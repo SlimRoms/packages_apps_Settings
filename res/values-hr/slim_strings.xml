@@ -300,8 +300,6 @@
   <string name="status_bar_toggle_info">Automatska svjetlina je aktivirana</string>
   <string name="double_tap_to_sleep_title">Dvaput dodirni za modus mirovanja</string>
   <string name="double_tap_to_sleep_summary">Dodirnite dvaput statusnu površinu da uređaj pređe u stanje mirovanja</string>
-  <string name="qs_title">Brze postavke</string>
-  <string name="title_quick_pulldown">Brzo otklapanje</string>
   <string name="summary_quick_pulldown">%1$s rub statusnog polja otklapa Brze Postavke</string>
   <string name="quick_pulldown_off">Isklj.</string>
   <string name="quick_pulldown_left">Lijevo</string>

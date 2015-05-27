@@ -1,0 +1,636 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da3975d1_7437a6b1",
+        "filename": "res/values/attrs.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 49
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_543ca293",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_34411e0c",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 43
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_14461a24",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 37
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_f44a7626",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 41
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_d447721c",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 42
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_b454eeca",
+        "filename": "res/xml/livedisplay.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove advanced",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 42
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_745e86eb",
+        "filename": "src/com/android/settings/CustomScreenColor.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "line to long",
+      "range": {
+        "startLine": 618,
+        "startChar": 0,
+        "endLine": 618,
+        "endChar": 105
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_546382b1",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove all these lines",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 105,
+        "endChar": 68
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_3458fef9",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "pointless blank lines",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 291,
+        "endChar": 0
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_145dfae9",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "don\u0027t add pointless lines",
+      "range": {
+        "startLine": 678,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 0
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_d46e5296",
+        "filename": "src/com/android/settings/deviceinfo/Status.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "change to getSerialNumber();",
+      "range": {
+        "startLine": 385,
+        "startChar": 24,
+        "endLine": 385,
+        "endChar": 36
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_f4715678",
+        "filename": "src/com/android/settings/deviceinfo/Status.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "actually use this.",
+      "range": {
+        "startLine": 684,
+        "startChar": 0,
+        "endLine": 684,
+        "endChar": 38
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_9468ca88",
+        "filename": "src/com/android/settings/notification/NotificationSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "pointless blank line",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 0
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_740566c1",
+        "filename": "src/com/android/settings/notification/NotificationSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "pointless blank line",
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_340fdee3",
+        "filename": "src/com/android/settings/notification/OtherSoundSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "why is there no other code for this? should remove preference if not supported",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 80
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_540a62d3",
+        "filename": "src/com/android/settings/notification/OtherSoundSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "pointless blank line",
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_1414daf3",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "none of these are used",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 24
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_94ffaaaa",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_b402aeb2",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_d4f532cc",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 54
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_f4f836c6",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 53
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_742c464b",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 22
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_543142a1",
+        "filename": "src/com/android/settings/slim/BootReceiver.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_3426be69",
+        "filename": "src/com/android/settings/slim/HardwareKeysSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 43,
+        "startChar": 1,
+        "endLine": 43,
+        "endChar": 24
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_142bba31",
+        "filename": "src/com/android/settings/slim/HardwareKeysSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove. will add once the other commit is merged",
+      "range": {
+        "startLine": 408,
+        "startChar": 8,
+        "endLine": 410,
+        "endChar": 88
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_f41f1608",
+        "filename": "src/com/android/settings/slim/HardwareKeysSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 419,
+        "startChar": 0,
+        "endLine": 419,
+        "endChar": 53
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da3975d1_d41c1216",
+        "filename": "src/com/android/settings/slim/HardwareKeysSettings.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2015-05-27T21:50:43Z",
+      "side": 1,
+      "message": "same. remove",
+      "range": {
+        "startLine": 422,
+        "startChar": 0,
+        "endLine": 433,
+        "endChar": 11
+      },
+      "revId": "5d155ac0cdfc92709fd41d3b6f143b93b14de366",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

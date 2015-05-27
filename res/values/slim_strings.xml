@@ -540,6 +540,7 @@
     <string name="shortcut_action_lastapp">Last app</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_smart">Smart pulldown</string>
     <string name="shortcut_action_torch">Flashlight</string>
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>

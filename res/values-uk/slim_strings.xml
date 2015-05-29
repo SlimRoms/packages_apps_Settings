@@ -300,8 +300,6 @@
   <string name="status_bar_toggle_info">Недоступно при включеному авторегулюванні яскравості</string>
   <string name="double_tap_to_sleep_title">Вимикати екран при подвійному натисканні</string>
   <string name="double_tap_to_sleep_summary">Двічі торкніться рядка стану або кнопки розблокування екрану, щоб перевести пристрій в режим сну</string>
-  <string name="qs_title">Швидкі налаштування</string>
-  <string name="title_quick_pulldown">Швидкий доступ</string>
   <string name="summary_quick_pulldown">%1$s край рядка сповіщень при опусканні вниз відкриває Швидкі Налаштування</string>
   <string name="quick_pulldown_off">Вимкн.</string>
   <string name="quick_pulldown_left">Лівий</string>

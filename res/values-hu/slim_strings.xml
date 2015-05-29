@@ -347,8 +347,6 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="status_bar_battery_percentage_text_next">Az ikon mellet</string>
   <string name="double_tap_to_sleep_title">Alvás dupla érintésre</string>
   <string name="double_tap_to_sleep_summary">érintsd meg kétszer az állapotsávot az alvó állapothoz</string>
-  <string name="qs_title">Gyors beállítások</string>
-  <string name="title_quick_pulldown">Gyors legördülő</string>
   <string name="summary_quick_pulldown">Gyors beállítások megjelenítése az állapotsáv %1$s oldalán történő lehúzásakor</string>
   <string name="quick_pulldown_off">Kikapcsolva</string>
   <string name="quick_pulldown_left">Bal oldal</string>

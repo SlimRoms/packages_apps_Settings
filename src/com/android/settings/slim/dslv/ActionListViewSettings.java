@@ -653,7 +653,13 @@ public class ActionListViewSettings extends ListFragment implements
             if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
                     getItem(position).getClickAction().startsWith("**")) || (iconUri != null
                     && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER))) {
-                if (d != null) d.setTint(getResources().getColor(R.color.dslv_icon_dark));
+                if (d != null) {
+                    if (d instanceof VectorDrawable) {
+                        // vector setTint here
+                    } else {
+                        d.setTint(getResources().getColor(R.color.dslv_icon_dark));
+                    }
+                }
             }
             holder.iconView.setImageDrawable(d);
 

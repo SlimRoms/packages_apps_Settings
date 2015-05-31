@@ -28,4 +28,9 @@
         android:key="storage_external"
         android:title="@string/storage_external_title" />
 
+    <PreferenceScreen
+        android:key="recent_panel"
+        android:fragment="com.android.settings.slim.RecentPanel"
+        android:title="@string/recent_panel_category" />
+
 </PreferenceScreen>

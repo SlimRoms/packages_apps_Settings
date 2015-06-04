@@ -105,6 +105,7 @@ public class InputMethodsSettings extends SettingsPreferenceFragment implements
         mShowEnterKey.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
         mShowEnterKey.setOnPreferenceChangeListener(this);
+
     }
 
     public void updateRotationTimeout(int timeout) {

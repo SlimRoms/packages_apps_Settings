@@ -47,6 +47,12 @@
                 android:key="advanced_cat"
                 android:title="@string/advanced_settings">
 
+            <SwitchPreference
+                    android:key="status_bar_ime_arrows"
+                    android:title="@string/show_ime_arrows_title"
+                    android:summary="@string/show_ime_arrows_summary"
+                    android:persistent="false" />
+
             <ListPreference
                     android:key="pref_navbar_menu_display"
                     android:entries="@array/pref_menu_display_entries"

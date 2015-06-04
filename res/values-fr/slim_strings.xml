@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Gestes écran éteint</string>
   <string name="lcd_density">Densité de l\'écran</string>
   <string name="dialog_title_lcd_density">Densité LCD</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (par défaut)</string>
+  <string name="lcd_density_value_format">%1$d DPI (par défaut: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (par défaut)</string>
   <string name="restarting_ui">Redémarrage IU\u2026</string>
   <string name="su_indicator_title">Indicateur de super-utilisateur</string>
   <string name="su_indicator_summary">Indicateur de super-utilisateur lorsque les droits SU sont utilisés</string>

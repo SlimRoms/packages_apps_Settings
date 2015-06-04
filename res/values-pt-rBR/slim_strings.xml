@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Gestos com tela desligada</string>
   <string name="lcd_density">Densidade do LCD</string>
   <string name="dialog_title_lcd_density">Densidade do LCD</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (padrão)</string>
+  <string name="lcd_density_value_format">%1$d DPI (padrão: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (padrão)</string>
   <string name="restarting_ui">Reiniciando UI\u2026</string>
   <string name="su_indicator_title">Indicador de superusuário</string>
   <string name="su_indicator_summary">Indicador de superusuário quando uma sessão de su estiver ativa</string>

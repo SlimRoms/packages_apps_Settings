@@ -532,8 +532,8 @@
   <string name="unlock_quick_unlock_control_summary">Odblokuj automatycznie kiedy zostanie podany prawidłowy PIN/hasło</string>
   <string name="bluetooth_accept_all_files">Akceptuj wszystkie typy plików</string>
   <string name="screen_off_gesture_settings_title">Gesty na wyłączonym ekranie</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (domyślnie)</string>
+  <string name="lcd_density_value_format">%1$d DPI (Domyślnie: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (domyślnie)</string>
   <string name="su_indicator_icon">Ikona paska stanu</string>
   <string name="su_indicator_notification">Powiadomienie</string>
   <string name="su_indicator_none">Brak wskaźnika</string>

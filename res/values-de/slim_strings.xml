@@ -522,8 +522,8 @@
   <string name="bluetooth_accept_all_files">Alle Dateiformate akzeptieren</string>
   <string name="screen_off_gesture_settings_title">»Bildschirm aus«-Gesten</string>
   <string name="dialog_title_lcd_density">LCD Pixeldichte</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (Standard)</string>
+  <string name="lcd_density_value_format">%1$d DPI (Standard: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (Standard)</string>
   <string name="restarting_ui">UI wird neu gestartet\u2026</string>
   <string name="su_indicator_title">Superuser-Indikator</string>
   <string name="su_indicator_summary">Super-User-Anzeige wenn eine Su-Sitzung aktiv ist</string>

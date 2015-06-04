@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
   <string name="lcd_density">Плотность LCD</string>
   <string name="dialog_title_lcd_density">Плотность LCD</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (по умолчанию)</string>
+  <string name="lcd_density_value_format">%1$d DPI (по умолчанию %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (по умолчанию)</string>
   <string name="restarting_ui">Перезапуск UI\u2026</string>
   <string name="su_indicator_title">Значок суперпользователя</string>
   <string name="su_indicator_summary">Значок суперпользователя при активной сессии SU</string>

@@ -883,4 +883,7 @@
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
+    <!-- SlimCenter -->
+    <string name="slim_center_title">SlimCenter</string>
+
 </resources>

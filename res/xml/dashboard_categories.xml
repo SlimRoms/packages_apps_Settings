@@ -91,6 +91,17 @@
                 android:title="@string/navigation_settings_title"
                 />
 
+        <!-- SlimCenter -->
+        <dashboard-tile
+               android:id="@+id/slim_center"
+               android:title="@string/slim_center_title"
+               android:icon="@drawable/ic_slim_logo">
+               <intent
+                       android:action="android.intent.action.MAIN"
+                       android:targetPackage="com.slim.center"
+                       android:targetClass="com.slim.center.SlimCenter" />
+        </dashboard-tile>
+
     </dashboard-category>
 
     <!-- DEVICE -->

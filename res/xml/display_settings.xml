@@ -19,6 +19,12 @@
         android:title="@string/display_settings"
         settings:keywords="@string/keywords_display">
 
+        <EditTextPreference
+                android:key="lcd_density"
+                android:title="@string/lcd_density"
+                android:inputType="number"
+                android:persistent="false" />
+
         <PreferenceScreen
                 android:key="brightness"
                 android:title="@string/brightness"

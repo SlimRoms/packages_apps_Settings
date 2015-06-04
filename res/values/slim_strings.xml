@@ -1421,4 +1421,7 @@
     <!-- Lock screen rotation -->
     <string name="display_lockscreen_rotation_title">Lock screen</string>
 
+    <!-- SlimCenter -->
+    <string name="slim_center_title">SlimCenter</string>
+
 </resources>

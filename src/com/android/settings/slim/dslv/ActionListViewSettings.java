@@ -154,9 +154,12 @@ public class ActionListViewSettings extends ListFragment implements
             public void remove(int which) {
                 ActionConfig item = mActionConfigsAdapter.getItem(which);
                 mActionConfigsAdapter.remove(item);
-                if (!ActionChecker.containsAction(mActivity, item, ActionConstants.ACTION_BACK)
+                if (!ActionChecker.containsAction(
+                            item, ActionConstants.ACTION_BACK)
                         || !ActionChecker.containsAction(
-                        mActivity, item, ActionConstants.ACTION_HOME)) {
+                            item, ActionConstants.ACTION_HOME)
+                        || !ActionChecker.containsAction(
+                            item, ActionConstants.ACTION_RECENTS)) {
                     mActionConfigsAdapter.insert(item, which);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
@@ -415,6 +418,18 @@ public class ActionListViewSettings extends ListFragment implements
         }
 
         ActionConfig actionConfig = mActionConfigsAdapter.getItem(which);
+
+        if (!longpress) {
+            if (!ActionChecker.containsAction(
+                        actionConfig, ActionConstants.ACTION_BACK)
+                    || !ActionChecker.containsAction(
+                        actionConfig, ActionConstants.ACTION_HOME)
+                    || !ActionChecker.containsAction(
+                        actionConfig, ActionConstants.ACTION_RECENTS)) {
+                return;
+            }
+        }
+
         mActionConfigsAdapter.remove(actionConfig);
 
         if (!longpress) {

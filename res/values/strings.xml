@@ -6179,5 +6179,22 @@
    <string name="imei_information_title">IMEI information</string>
    <string name="imei_information_summary">IMEI relative information</string>
    <string name="slot_number">(Slot<xliff:g id="slot_num">%1$d</xliff:g>)</string>
-
+	<!--Kernel auditor-->
+   <string name="kernel_tuner_title">KernelAdiutor</string>
+<!--Nombre categoria nueva-->
+<string name="header_category_personalizacion">Personalizacion</string>
+<string name="nr_mod_version">Version NuclearSlim</string>
+<string name="nr_mod_default">NuclearMod V1.0</string>
+<string name="wakelock_blocker_title">Wakelock blocker</string>
+<string name="wakelock_blocker_summary">Block system wakelocks</string>
+<string name="wakelock_blocker_save">Save</string>
+<string name="wakelock_list_header">Available wakelocks</string>
+<string name="wakelock_blocker_reload">Reload</string>
+<string name="wakelock_blocker_warning_title">Proceed with caution</string>
+<string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+<string name="nuclear_settings_title">SETTINGS</string>
+<string name="nuclear_cat_title">Rendimiento</string>
+<string name="nuclear_settings_title">Ajustes Nuclear</string>
+<string name="nuclear_cat_privacy_title">Privacidad</string>
+<string name="nuclear_perso_title">Personalización</string>
 </resources>

@@ -37,7 +37,7 @@
   <string name="privacy_guard_advanced_settings_title">Avanzado</string>
   <string name="privacy_guard_notification_title">Notificación</string>
   <string name="privacy_guard_notifiation_summary">Mostrar notificación con Protección de Privacidad activa.</string>
-  <string name="slim_version_title">Versión NuclearSlim</string>
+  <string name="slim_version_title">Versión SLIM</string>
   <string name="slim_version_default">Desconocido</string>
   <string name="build_date">Fecha de compilación</string>
   <string name="build_date_default">Desconocido</string>

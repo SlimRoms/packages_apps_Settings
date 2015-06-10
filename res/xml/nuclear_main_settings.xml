@@ -63,6 +63,18 @@
                
 	</PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="app_security"
+        android:title="@string/app_security_title">
+
+         <Preference
+            android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+            android:key="privacy_guard_manager"
+     android:icon="@drawable/ic_settings_privacy"
+            android:title="@string/privacy_guard_manager_title" />
+
+    </PreferenceCategory>
+
 
        
 </PreferenceScreen>

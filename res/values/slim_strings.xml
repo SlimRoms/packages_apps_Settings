@@ -51,7 +51,7 @@
     <string name="privacy_guard_notifiation_summary">Show notification if privacy guard is active.</string>
 
     <!-- About phone screen, Slim version -->
-    <string name="slim_version_title">NuclearSlim version</string>
+    <string name="slim_version_title">Slim version</string>
     <string name="slim_version_default">Unknown</string>
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
@@ -836,7 +836,7 @@
     <string name="heads_up_time_out_never">Never</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">NuclearSlimPIE</string>
+    <string name="pie_control_title">SlimPIE</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>

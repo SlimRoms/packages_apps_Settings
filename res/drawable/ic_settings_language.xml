@@ -24,7 +24,7 @@
         <path
             android:pathData="M0 0h24v24H0z" />
         <path
-            android:fillColor="#009587"
+            android:fillColor="?android:attr/colorAccent"
             android:pathData="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2
 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84 .63 3.37 1.91 4.33
 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76

@@ -21,7 +21,7 @@
     android:viewportHeight="24">
 
     <path
-        android:fillColor="#009587"
+        android:fillColor="?android:attr/colorAccent"
         android:pathData="M6.44 0.87512c-0.98-0.05-1.84 0.83998-1.69 1.82 0.01 6.36-0.01 12.72 0.01 19.08
 0.11 0.97 1.16 1.46 2.05 1.35 3.64-0.01 7.28 0.01 10.93-0.01 0.91-0.04 1.65-0.91
 1.51-1.81 0-6.36

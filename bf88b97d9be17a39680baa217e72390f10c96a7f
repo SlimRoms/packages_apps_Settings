@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_88d30b38",
+        "filename": "res/anim/floating_action_button_elevation.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-12T21:04:34Z",
+      "side": 1,
+      "message": "copyright",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 69
+      },
+      "revId": "bf88b97d9be17a39680baa217e72390f10c96a7f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_68d8df53",
+        "filename": "res/drawable/fab_accent.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-12T21:04:34Z",
+      "side": 1,
+      "message": "copyright",
+      "range": {
+        "startLine": 1,
+        "startChar": 20,
+        "endLine": 1,
+        "endChar": 28
+      },
+      "revId": "bf88b97d9be17a39680baa217e72390f10c96a7f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_48dd2342",
+        "filename": "res/values/styles.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-12T21:04:34Z",
+      "side": 1,
+      "message": "slim_styles.xml",
+      "range": {
+        "startLine": 349,
+        "startChar": 0,
+        "endLine": 349,
+        "endChar": 41
+      },
+      "revId": "bf88b97d9be17a39680baa217e72390f10c96a7f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

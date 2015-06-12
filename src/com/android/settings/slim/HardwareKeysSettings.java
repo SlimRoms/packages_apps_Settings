@@ -29,6 +29,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.hardware.CmHardwareManager;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -93,6 +94,9 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String KEYS_APP_SWITCH_PRESS = "keys_app_switch_press";
     private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
     private static final String KEYS_APP_SWITCH_DOUBLE_TAP = "keys_app_switch_double_tap";
+
+    // used for holding button brightness while keys are disabled
+    private static final String HW_KEY_BUTTON_BACKLIGHT = "hw_key_button_backlight";
 
     private static final int DLG_SHOW_WARNING_DIALOG = 0;
     private static final int DLG_SHOW_ACTION_DIALOG  = 1;
@@ -414,11 +418,27 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static void writeDisableHwKeys(Context context, boolean enabled) {
         SharedPreferences preferences =
                 context.getSharedPreferences("hw_key_settings", Activity.MODE_PRIVATE);
+
+        int defaultBrightness = context.getResources().getInteger(
+                com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
+
         preferences.edit().putBoolean(KEY_ENABLE_HW_KEYS, enabled).commit();
 
         CmHardwareManager cmHardwareManager =
                 (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
         cmHardwareManager.set(CmHardwareManager.FEATURE_KEY_DISABLE, enabled);
+
+        if (!enabled) {
+            int oldBright = preferences.getInt(HW_KEY_BUTTON_BACKLIGHT, defaultBrightness);
+            Settings.System.putIntForUser(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, oldBright, UserHandle.USER_CURRENT);
+        } else {
+            int currentBrightness = Settings.System.getIntForUser(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, defaultBrightness, UserHandle.USER_CURRENT);
+            preferences.edit().putInt(HW_KEY_BUTTON_BACKLIGHT, currentBrightness);
+            Settings.System.putIntForUser(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, 0, UserHandle.USER_CURRENT);
+        }
     }
 
     @Override

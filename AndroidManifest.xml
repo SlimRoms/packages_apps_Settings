@@ -2205,7 +2205,9 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sim_settings" />
         </activity>
-
+  <activity android:name=".nuclear.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".nuclear.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
                 android:label="@string/sim_settings_title"

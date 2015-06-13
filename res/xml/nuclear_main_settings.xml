@@ -37,6 +37,14 @@
 
     </PreferenceScreen>
 
+    <PreferenceScreen
+    	android:key="gesture_anywhere"
+    	android:fragment="com.android.settings.nuclear.gestureanywhere.GestureAnywhereSettings"
+	    android:title="@string/gesture_anywhere_title" >
+
+    </PreferenceScreen>
+
+
 
 	</PreferenceCategory>
 

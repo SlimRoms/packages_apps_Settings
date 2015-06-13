@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_e39f504f",
+        "filename": "res/values/slim_strings.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2015-06-13T10:30:06Z",
+      "side": 1,
+      "message": "\"SlimRecents\" instead? I thought it\u0027s an own name like \"SlimCenter\" or \"SlimLauncher\" isn\u0027t it?",
+      "range": {
+        "startLine": 889,
+        "startChar": 42,
+        "endLine": 889,
+        "endChar": 54
+      },
+      "revId": "180579b879507ee16e4ed3277ae92abaa865b6a5",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

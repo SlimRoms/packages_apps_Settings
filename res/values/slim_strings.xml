@@ -708,9 +708,6 @@
 
     <!-- Hardware keys -->
     <string name="button_keys_title">Hardware Buttons</string>
-    <string name="keys_bindings_title">Key actions</string>
-    <string name="keys_enable_custom_title">Enable custom actions</string>
-    <string name="keys_enable_custom_summary">Enable custom hardware key actions</string>
     <string name="keys_back_press_title">Back key</string>
     <string name="keys_back_long_press_title">Back key (long press)</string>
     <string name="keys_back_double_tap_title">Back key (double tap)</string>

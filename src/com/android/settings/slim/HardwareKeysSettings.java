@@ -73,8 +73,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
-    private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
-    private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
     private static final String KEYS_BACK_LONG_PRESS = "keys_back_long_press";
     private static final String KEYS_BACK_DOUBLE_TAP = "keys_back_double_tap";
@@ -111,7 +109,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
 
     private SwitchPreference mEnableHwKeys;
 
-    private SwitchPreference mEnableCustomBindings;
     private Preference mBackPressAction;
     private Preference mBackLongPressAction;
     private Preference mBackDoubleTapAction;
@@ -358,12 +355,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
             prefs.removePreference(keysAppSwitchCategory);
         }
 
-        boolean enableHardwareRebind = Settings.System.getInt(getContentResolver(),
-                Settings.System.HARDWARE_KEY_REBINDING, 0) == 1;
-        mEnableCustomBindings = (SwitchPreference) findPreference(KEYS_ENABLE_CUSTOM);
-        mEnableCustomBindings.setChecked(enableHardwareRebind);
-        mEnableCustomBindings.setOnPreferenceChangeListener(this);
-
         // Handle warning dialog.
         SharedPreferences preferences =
                 getActivity().getSharedPreferences("hw_key_settings", Activity.MODE_PRIVATE);
@@ -492,20 +483,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (!mCheckPreferences) {
-            return false;
-        }
-        if (preference == mEnableCustomBindings) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEY_REBINDING,
-                    value ? 1 : 0);
-            return true;
-        }
-        return false;
-    }
-
     private boolean hasHomeKey() {
         Iterator<String> nextAction = mKeySettings.values().iterator();
         while (nextAction.hasNext()){
@@ -524,8 +501,6 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
                 settingsKey, null);
             }
         }
-        Settings.System.putInt(getContentResolver(),
-                Settings.System.HARDWARE_KEY_REBINDING, 1);
         reloadSettings();
     }
 

@@ -29,17 +29,6 @@
         android:persistent="false" />
 
         <PreferenceCategory
-            android:key="keys_cat"
-            android:title="@string/keys_bindings_title" >
-
-            <SwitchPreference
-                android:key="enable_hardware_rebind"
-                android:title="@string/keys_enable_custom_title"
-                android:summary="@string/keys_enable_custom_summary" />
-
-        </PreferenceCategory>
-
-        <PreferenceCategory
             android:key="button_keys_back"
             android:title="@string/keys_back_press_title" >
 

@@ -74,7 +74,7 @@
     <color name="theme_primary_dark">#ff21272b</color>
     <color name="theme_accent">#ff009688</color>
 
-    <color name="dashboard_background_color">#ffe1e1e0</color>
+    <color name="dashboard_background_color">#ffffff</color>
     <color name="switchbar_background_color">#ff37474f</color>
     <color name="switch_accent_color">#ff7fcac3</color>
 
@@ -84,5 +84,8 @@
     <!-- DSLV colors -->
     <color name="dslv_icon_dark">#ff009688</color>
     <color name="dslv_float_cackground_color">#ffe1e1e0</color>
+
+        <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
 
 </resources>

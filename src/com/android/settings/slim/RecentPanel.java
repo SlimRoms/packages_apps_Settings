@@ -71,17 +71,32 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
             "recent_card_bg_color";
     private static final String RECENT_CARD_TEXT_COLOR =
             "recent_card_text_color";
+<<<<<<< HEAD
+=======
+    private static final String RECENTS_SHOW_HIDE_SEARCH_BAR =
+            "recents_show_hide_search_bar";
+ 
+>>>>>>> 37ad4a3... AddSlimRecent
 
     private SwitchPreference mUseSlimRecents;
     private SwitchPreference mShowRunningTasks;
     private SlimSeekBarPreference mMaxApps;
     private SwitchPreference mRecentsShowTopmost;
     private SwitchPreference mRecentPanelLeftyMode;
+<<<<<<< HEAD
     private SlimSeekBarPreference mRecentPanelScale;
+=======
+    private ListPreference mRecentPanelScale;
+>>>>>>> 37ad4a3... AddSlimRecent
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
     private ColorPickerPreference mRecentCardTextColor;
+<<<<<<< HEAD
+=======
+    private SwitchPreference mDisableStockSearch;
+
+>>>>>>> 37ad4a3... AddSlimRecent
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
@@ -97,6 +112,10 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         if (preference == mUseSlimRecents) {
             Settings.System.putInt(getContentResolver(), Settings.System.USE_SLIM_RECENTS,
                     ((Boolean) newValue) ? 1 : 0);
+<<<<<<< HEAD
+=======
+            updateRecentsPreferences((Boolean) newValue);
+>>>>>>> 37ad4a3... AddSlimRecent
             return true;
         } else if (preference == mShowRunningTasks) {
             Settings.System.putInt(getContentResolver(), Settings.System.RECENT_SHOW_RUNNING_TASKS,
@@ -161,15 +180,33 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
                     Settings.System.RECENT_PANEL_SHOW_TOPMOST,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
+<<<<<<< HEAD
         } else if (preference == mMaxApps) {
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
                 Settings.System.RECENTS_MAX_APPS, value);
+=======
+              } else if (preference == mDisableStockSearch) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENTS_SHOW_HIDE_SEARCH_BAR,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mMaxApps) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.RECENTS_MAX_APPS, Integer.valueOf(String.valueOf(newValue)));
+>>>>>>> 37ad4a3... AddSlimRecent
             return true;
         }
         return false;
     }
 
+<<<<<<< HEAD
+=======
+ private void updateRecentsPreferences(boolean show) {
+        mDisableStockSearch.setEnabled(!show);
+    }
+
+>>>>>>> 37ad4a3... AddSlimRecent
     @Override
     public void onResume() {
         super.onResume();
@@ -229,7 +266,11 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
 
         final int recentScale = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_SCALE_FACTOR, 100);
+<<<<<<< HEAD
         mRecentPanelScale.setInitValue(recentScale - 60);
+=======
+        mRecentPanelScale.setValue(recentScale + "");
+>>>>>>> 37ad4a3... AddSlimRecent
 
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
@@ -237,7 +278,14 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
     }
 
     private void initializeAllPreferences() {
+<<<<<<< HEAD
         mUseSlimRecents = (SwitchPreference) findPreference(USE_SLIM_RECENTS);
+=======
+         boolean useSlimRecents = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.USE_SLIM_RECENTS, 0) == 1;
+              mUseSlimRecents = (SwitchPreference) findPreference(USE_SLIM_RECENTS);
+        mUseSlimRecents.setChecked(useSlimRecents);
+>>>>>>> 37ad4a3... AddSlimRecent
         mUseSlimRecents.setOnPreferenceChangeListener(this);
 
         mShowRunningTasks = (SwitchPreference) findPreference(ONLY_SHOW_RUNNING_TASKS);
@@ -245,12 +293,27 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
 
         mMaxApps = (SlimSeekBarPreference) findPreference(RECENTS_MAX_APPS);
         mMaxApps.setOnPreferenceChangeListener(this);
+<<<<<<< HEAD
         mMaxApps.minimumValue(5);
         mMaxApps.setInitValue(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.RECENTS_MAX_APPS, ActivityManager.getMaxRecentTasksStatic(),
                 UserHandle.USER_CURRENT) - 5);
         mMaxApps.disablePercentageValue(true);
 
+=======
+        mMaxApps.setInitValue(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.RECENTS_MAX_APPS, ActivityManager.getMaxRecentTasksStatic(),
+                UserHandle.USER_CURRENT));
+        mMaxApps.disablePercentageValue(true);
+
+          boolean enableDisableStockSearch = Settings.System.getInt(getContentResolver(),
+                                      Settings.System.RECENTS_SHOW_HIDE_SEARCH_BAR, 0) == 1;
+        mDisableStockSearch = (SwitchPreference) findPreference(RECENTS_SHOW_HIDE_SEARCH_BAR);
+        mDisableStockSearch.setChecked(enableDisableStockSearch);
+        mDisableStockSearch.setOnPreferenceChangeListener(this);
+
+
+>>>>>>> 37ad4a3... AddSlimRecent
         // Recent panel background color
         mRecentPanelBgColor =
                 (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
@@ -307,6 +370,7 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
 
         mRecentPanelScale =
+<<<<<<< HEAD
                 (SlimSeekBarPreference) findPreference(RECENT_PANEL_SCALE);
         mRecentPanelScale.setInterval(5);
         mRecentPanelScale.setDefault(100);
@@ -314,10 +378,19 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         mRecentPanelScale.setOnPreferenceChangeListener(this);
         mRecentPanelScale.setInitValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_SCALE_FACTOR, 100) - 60);
+=======
+                (ListPreference) findPreference(RECENT_PANEL_SCALE);
+        mRecentPanelScale.setOnPreferenceChangeListener(this);
+>>>>>>> 37ad4a3... AddSlimRecent
 
         mRecentPanelExpandedMode =
                 (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
         mRecentPanelExpandedMode.setOnPreferenceChangeListener(this);
+<<<<<<< HEAD
+=======
+        updateRecentsPreferences(useSlimRecents);
+
+>>>>>>> 37ad4a3... AddSlimRecent
     }
 
 }

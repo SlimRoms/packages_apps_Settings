@@ -535,6 +535,29 @@
                 android:resource="@id/language_settings" />
         </activity>
 
+<!-- Nuclear Settings -->
+        <activity android:name="Settings$MainSettingsActivity"
+             android:label="@string/nuclear_settings_title"
+             android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.nuclear.MainSettings" />
+        </activity>
+
+        <activity
+        
+             android:name=".nuclear.MainSettings" />
+
+<activity
+            android:name=".aicp.WakeLockBlocker"
+            android:label="@string/wakelock_blocker_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="LanguageSettings"
                 android:label="@string/language_keyboard_settings_title"
@@ -2182,7 +2205,9 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sim_settings" />
         </activity>
-
+  <activity android:name=".nuclear.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".nuclear.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
                 android:label="@string/sim_settings_title"

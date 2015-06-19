@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (C) 2014 Resurrection Remix
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/nuclear_settings_title" >
+         
+    <PreferenceCategory
+        android:title="@string/nuclear_perso_title">
+        <!-- Interface -->
+        <PreferenceScreen
+                android:id="@+id/interface_settings"
+                android:icon="@drawable/ic_settings_interface"
+                android:fragment="com.android.settings.slim.InterfaceSettings"
+                android:title="@string/interface_settings_title">
+         </PreferenceScreen>
+
+
+        <!-- Navigation -->
+        <PreferenceScreen
+                android:id="@+id/navigation_settings"
+                android:icon="@drawable/ic_settings_navigation"
+                android:fragment="com.android.settings.slim.NavigationSettings"
+                android:title="@string/navigation_settings_title">
+
+    </PreferenceScreen>
+
+    <PreferenceScreen
+    	android:key="gesture_anywhere"
+    	android:fragment="com.android.settings.nuclear.gestureanywhere.GestureAnywhereSettings"
+	    android:title="@string/gesture_anywhere_title" >
+
+    </PreferenceScreen>
+
+
+
+	</PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="@string/nuclear_cat_title">
+        
+         <PreferenceScreen
+                	android:id="@+id/wakelock_blocker"
+        android:fragment="com.android.settings.aicp.WakeLockBlocker"
+        android:title="@string/wakelock_blocker_title" 	   
+        android:icon="@drawable/ic_settings_security"
+                />  
+
+
+         <PreferenceScreen
+       	android:title="@string/kernel_tuner_title"
+    	android:icon="@drawable/ic_settings_performance">
+        	<intent android:targetPackage="com.grarak.kerneladiutor"
+   		  android:action="android.intent.action.MAIN"
+             	android:targetClass="com.grarak.kerneladiutor.MainActivity" >
+        	</intent>  
+         </PreferenceScreen>
+               
+	</PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="app_security"
+        android:title="@string/app_security_title">
+
+         <Preference
+            android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+            android:key="privacy_guard_manager"
+     android:icon="@drawable/ic_settings_privacy"
+            android:title="@string/privacy_guard_manager_title" />
+
+    </PreferenceCategory>
+
+
+       
+</PreferenceScreen>

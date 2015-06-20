@@ -6181,6 +6181,8 @@
    <string name="slot_number">(Slot<xliff:g id="slot_num">%1$d</xliff:g>)</string>
 	<!--Kernel auditor-->
    <string name="kernel_tuner_title">KernelAdiutor</string>
+   <!--layers-->
+   <string name="bitsyko_layers_str">Layers</string>
 <!--Nombre categoria nueva-->
 <string name="header_category_personalizacion">Personalizacion</string>
 <string name="nr_mod_version">Version NuclearSlim</string>

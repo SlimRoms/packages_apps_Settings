@@ -83,7 +83,12 @@
                 android:title="@string/nuclear_settings_title"
                 android:fragment="com.android.settings.nuclear.MainSettings"
                 android:icon="@drawable/ic_nuclear"
-                />  
+                /> 
+        <dashboard-tile  
+		android:icon="@drawable/ic_bitsyko_layers" 
+                android:title="@string/bitsyko_layers_str">
+            <intent android:targetPackage="com.lovejoy777.rroandlayersmanager" android:action="android.intent.action.MAIN" android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+        </dashboard-tile> 
 
         </dashboard-category>
 

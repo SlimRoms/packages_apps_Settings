@@ -2136,6 +2136,9 @@
                 android:value="true" />
         </activity>
 
+ <activity android:name=".nuclear.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".nuclear.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        
         <activity android:name=".cyanogenmod.PrivacySettings" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />

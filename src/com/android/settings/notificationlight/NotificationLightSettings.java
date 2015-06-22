@@ -132,9 +132,11 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
             removePreference("phone_list");
         } else {
             mCallPref = (ApplicationLightPreference) findPreference(MISSED_CALL_PREF);
+            mCallPref.setMultiColorLed(mMultiColorNotificationLed);
             mCallPref.setOnPreferenceChangeListener(this);
 
             mVoicemailPref = (ApplicationLightPreference) findPreference(VOICEMAIL_PREF);
+            mVoicemailPref.setMultiColorLed(mMultiColorNotificationLed);
             mVoicemailPref.setOnPreferenceChangeListener(this);
         }
 

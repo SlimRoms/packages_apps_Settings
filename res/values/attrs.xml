@@ -139,4 +139,23 @@
         <attr name="useDefaultController" format="boolean" />
     </declare-styleable>
 
+ <!--<declare-styleable name="SeekBarPreference">
+        <attr name="interval" format="integer" />
+        <attr name="min" format="integer" />
+        <attr name="unitsLeft" format="string" />
+        <attr name="unitsRight" format="string" />
+    </declare-styleable>-->
+
+     <declare-styleable name="SeekBarPreference">
+        <attr name="netMin" format="integer" />
+        <attr name="netUnitsLeft" format="string" />
+        <attr name="netUnitsRight" format="string" />
+     </declare-styleable>
+
+<!--    <declare-styleable name="IntervalSeekBar">
+         <attr name="min" format="float" />
+       <attr name="max" format="float" />
+        <attr name="defaultValue" format="float" />
+        <attr name="digits" format="integer" />
+    </declare-styleable>-->
 </resources>

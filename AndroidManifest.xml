@@ -97,9 +97,6 @@
             android:screenOrientation="nosensor">
         </activity>
 
-        <!-- Settings -->
-
-
         <activity android:name="Settings"
                 android:taskAffinity="com.android.settings"
                 android:label="@string/settings_label_launcher"

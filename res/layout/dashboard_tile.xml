@@ -50,6 +50,7 @@
                           android:layout_height="wrap_content"
                           android:singleLine="true"
                           android:textAppearance="@style/TextAppearance.TileTitle"
+                          android:textColor="@color/theme_accent"
                           android:ellipsize="marquee"
                           android:fadingEdge="horizontal" />
 
@@ -59,7 +60,7 @@
                           android:layout_below="@id/title"
                           android:layout_alignStart="@android:id/title"
                           android:textAppearance="@style/TextAppearance.Small"
-                          android:textColor="?android:attr/textColorSecondary" />
+                          android:textColor="@color/theme_accent" />
 
             </RelativeLayout>
 

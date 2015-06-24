@@ -63,6 +63,6 @@
         android:layout_height="30dip"
         android:layout_marginEnd="8dip"
         android:layout_gravity="center_vertical"
-        android:scaleType="centerInside"
+        android:scaleType="center"
         android:contentDescription="@null" />
 </GridLayout>

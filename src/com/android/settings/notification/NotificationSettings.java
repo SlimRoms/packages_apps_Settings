@@ -78,6 +78,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
+    private static final String KEY_USE_NON_INTRUSIVE_CALL = "use_non_intrusive_call";
 
     // Notification and Battery Light
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
@@ -101,6 +102,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private Preference mPhoneRingtonePreference;
     private Preference mNotificationRingtonePreference;
     private TwoStatePreference mVibrateWhenRinging;
+    private TwoStatePreference mUseNonIntrusiveCall;
     private DropDownPreference mLockscreen;
     private Preference mNotificationAccess;
     private boolean mSecure;
@@ -150,6 +152,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 findPreference(KEY_NOTIFICATION);
         initPulse(notification);
         initLockscreenNotifications(notification);
+        initNonIntrusiveCall(notification);
 
         mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);
         refreshNotificationListeners();
@@ -445,6 +448,35 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             parent.removePreference(parent.findPreference(KEY_BATTERY_LIGHT));
         }
+    }
+
+    // === Non-intrusive InCall UI ===
+
+    private void initNonIntrusiveCall(PreferenceCategory parent) {
+        mUseNonIntrusiveCall = 
+           (TwoStatePreference) parent.findPreference(KEY_USE_NON_INTRUSIVE_CALL);
+        if (mUseNonIntrusiveCall == null) {
+            Log.i(TAG, "Preference not found: " + KEY_USE_NON_INTRUSIVE_CALL);
+            return;
+        }
+
+        mUseNonIntrusiveCall.setPersistent(false);
+        updateNonIntrusiveCall();
+        mUseNonIntrusiveCall.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                final boolean val = (Boolean) newValue;
+                return Settings.System.putInt(getContentResolver(),
+                        Settings.System.USE_NON_INTRUSIVE_CALL,
+                        val ? 1 : 0);
+            }
+        });
+    }
+
+    private void updateNonIntrusiveCall() {
+        if (mUseNonIntrusiveCall == null) return;
+        mUseNonIntrusiveCall.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.USE_NON_INTRUSIVE_CALL, 1) != 0);
     }
 
     // === Lockscreen (public / private) notifications ===

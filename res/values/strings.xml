@@ -5816,6 +5816,9 @@
     <!-- Sound & notification > Sound section: Title for the option managing whether or not to vibrate when ringing. [CHAR LIMIT=30] -->
     <string name="vibrate_when_ringing_title">Also vibrate for calls</string>
 
+    <!-- Sound & notification > Sound section: Title for the option managing whether or not to use non-intrusive incall UI. [CHAR LIMIT=30] -->
+    <string name="use_non_intrusive_call_title">Non-intrusive incoming calls</string>
+
     <!-- Sound & notification: Notification section header [CHAR LIMIT=30] -->
     <string name="notification_section_header">Notification</string>
 

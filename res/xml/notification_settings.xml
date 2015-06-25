@@ -97,6 +97,12 @@
         android:key="notification"
         android:title="@string/notification_section_header" >
 
+        <!-- Non intrusive call ui -->
+        <SwitchPreference
+                android:key="use_non_intrusive_call"
+                android:title="@string/use_non_intrusive_call_title"
+                android:persistent="false" />
+
         <!-- Pulse notification light -->
         <PreferenceScreen
                 android:key="notification_light"

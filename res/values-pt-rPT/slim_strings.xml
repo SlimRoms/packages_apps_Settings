@@ -430,6 +430,7 @@
   <string name="shortcut_action_ring_vib">Tocar/Vibrar</string>
   <string name="shortcut_action_ring_silent">Tocar/Silêncio</string>
   <string name="shortcut_action_ring_vib_silent">Tocar/Vibrar/Silêncio</string>
+  <string name="shortcut_action_torch">Lanterna</string>
   <string name="shortcut_action_camera">Câmara</string>
   <string name="shortcut_action_media_next">Música - próxima faixa</string>
   <string name="shortcut_action_media_play_pause">Música - reproduzir/pausar</string>
@@ -438,6 +439,7 @@
   <string name="shortcut_action_kill">Fechar a aplicação</string>
   <string name="shortcut_action_screenshot">Captura de ecrã</string>
   <string name="shortcut_action_lastapp">Última aplicação</string>
+  <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_notifications">Notificações</string>
   <string name="shortcut_action_qs">Painel de definições rápidas</string>
   <string name="shortcut_action_torch">Lanterna</string>
@@ -560,7 +562,22 @@
   <string name="adb_over_network_warning">AVISO: Quando ADB sobre rede estiver ativado, o seu telefone fica desprotegido e pode facilitar invasões em todas as redes conectadas, incluindo rede de dados GSM! \n\nUsar esta funcionalidade apenas quando estiver conectado a redes fiáveis.\n\nQuer mesmo ativar esta função?</string>
   <string name="display_category_doze_options_title">Opções de visualização de ambiente (repouso)</string>
   <string name="doze_settings_title">Opções avançadas de repouso</string>
+  <string name="doze_timeout_title">Tempo limite do Doze</string>
   <string name="doze_timeout_summary">Tempo em que o ecrã fica a piscar a notificação</string>
+  <string name="doze_trigger_pickup_title">Ativação do gesto de apanhar</string>
+  <string name="doze_trigger_pickup_summary_on">O piscar do Doze será acionado por eventos do sensor do gesto de apanhar</string>
+  <string name="doze_trigger_pickup_summary_off">O gesto de apanhar não será utilizado pelo sensor como mecanismo de ativação</string>
+  <string name="doze_trigger_sigmotion_title">Ativador de movimento significativo</string>
+  <string name="doze_trigger_sigmotion_summary_on">O piscar do Doze será acionado por eventos do sensor de movimento significativo</string>
+  <string name="doze_trigger_sigmotion_summary_off">O sensor de movimento significativo não será utilizado como um mecanismo de ativação</string>
+  <string name="doze_trigger_notification_title">Ativador de notificação</string>
+  <string name="doze_trigger_notification_summary_on">O piscar do Doze sera ativado por notificações</string>
+  <string name="doze_trigger_notification_summary_off">Notificações não serão utilizadas como um ativador</string>
+  <string name="doze_schedule_title">Agenda do Doze</string>
+  <string name="doze_schedule_summary_on">Intervalos de repetição predefinidos para o Doze (normalmente [1s, 10s, 30 anos, anos 60, 120s]) serão usados (padrão)</string>
+  <string name="doze_schedule_summary_off">Doze terá apenas um único impulso por notificação</string>
+  <string name="doze_brightness_title">Nível de brilho do Doze</string>
+  <string name="doze_brightness_summary">Nível de brilho do ecrã de impulso do Doze (% do brilho máximo permitido)</string>
   <string name="navigation_settings_options_title">Opções de navegação</string>
   <string name="button_keys_title">Botões de hardware</string>
   <string name="keys_bindings_title">Ações dos botões</string>
@@ -594,7 +611,6 @@
   <string name="shortcut_action_home">Início</string>
   <string name="shortcut_action_kill">Fechar a aplicação</string>
   <string name="shortcut_action_lastapp">Última aplicação</string>
-  <string name="shortcut_action_navbar">Barra de navegação</string>
   <string name="shortcut_action_notifications">Notificações</string>
   <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_ime">Abrir alternador de IME</string>
@@ -725,4 +741,118 @@
   <string name="pie_trigger_warning">No mínimo um dos principais pontos de ativação  (inferior, esquerda ou direita) precisa ser ativado.</string>
   <string name="pie_disable_ime_triggers_title">Reduzir tamanho do ponto de ativação no teclado</string>
   <string name="pie_disable_ime_triggers_summary">Reduz o tamanho do ponto de ativação esquerdo e direito, se o teclado estiver ativo</string>
+  <string name="recent_panel_category">Painel de aplicaçoes recentes</string>
+  <string name="show_running_tasks_title">Mostrar apenas aplicações em execução</string>
+  <string name="recents_max_apps_title">Máximo de aplicações permitidas</string>
+  <string name="recent_panel_scale_title">Tamanho</string>
+  <string name="recent_panel_expanded_mode_title">Modo expandido</string>
+  <string name="recent_panel_expanded_mode_summary">Modo de visualização expandida de tarefas recentes</string>
+  <string name="recent_panel_expanded_mode_auto">Auto (padrão)</string>
+  <string name="recent_panel_expanded_mode_always">Sempre</string>
+  <string name="recent_panel_expanded_mode_never">Nunca</string>
+  <string name="recent_panel_show_topmost_title">Mostrar tarefa corrente</string>
+  <string name="recent_panel_show_topmost_summary">Não eliminar a tarefa corrente no modo de exibição de aplicações recentes</string>
+  <string name="recent_panel_bg_color_title">Cor de fundo do painel</string>
+  <string name="recent_card_bg_color_title">Cor de fundo do cartão</string>
+  <string name="recent_card_text_color_title">Cor do texto do cartão</string>
+  <string name="recent_panel_lefty_mode_title">Mostrar na borda esquerda</string>
+  <string name="recent_panel_lefty_mode_summary">Mostrar painel de aplicações recentes na borda esquerda</string>
+  <string name="button_backlight_title">Luz de fundo</string>
+  <string name="button_backlight_enabled">Iluminar os botões</string>
+  <string name="keyboard_backlight_enabled">Iluminar o teclado</string>
+  <string name="button_backlight_seekbar_title">Brilho dos botões</string>
+  <string name="keyboard_backlight_seekbar_title">Brilho do teclado</string>
+  <string name="backlight_timeout_title">Tempo limite de iluminação</string>
+  <string name="backlight_timeout_unlimited">Não desligar</string>
+  <string name="backlight_summary_disabled">Desativado</string>
+  <string name="backlight_summary_enabled_with_timeout">Ativo por <xliff:g id="timeout">%s</xliff:g></string>
+  <string name="backlight_summary_enabled">Ativado</string>
+  <string name="double_tap_to_wake_title">Duplo toque para ligar o ecrã</string>
+  <string name="enable_navkeys_title">Ativar os botões físicos</string>
+  <string name="double_tap_to_sleep_title">Toque duplo para desligar o ecrã</string>
+  <string name="double_tap_to_sleep_summary">Dê um toque duplo na barra de estado para desligar o ecrã</string>
+  <string name="adaptive_backlight_title">Luz de fundo adaptativa</string>
+  <string name="adaptive_backlight_summary">Variar de forma inteligente a luz de fundo do ecrã para ajudar a maximizar a vida da bateria mantendo a usabilidade</string>
+  <string name="sunlight_enhancement_title">Melhoramento do ecrã na luz solar</string>
+  <string name="sunlight_enhancement_summary">Aumentar a luminosidade e legibilidade do ecrã sob intensa luz solar</string>
+  <string name="color_enhancement_title">Realce de cor</string>
+  <string name="color_enhancement_summary">Realçar dinamicamente a cor do ecrã</string>
+  <string name="vibrator_intensity_title">Intensidade de vibração</string>
+  <string name="vibrator_warning">Valores superiores a %1$d não são recomendados</string>
+  <string name="color_calibration_title">Calibração de cores</string>
+  <string name="color_calibration_summary">Calibrar as cores do ecrã</string>
+  <string name="color_red_title">Vermelho</string>
+  <string name="color_green_title">Verde</string>
+  <string name="color_blue_title">Azul</string>
+  <string name="gamma_tuning_title_head">Calibração de gama</string>
+  <string name="gamma_tuning_summary_head">Ajustar valores gama</string>
+  <string name="gamma_tuning_control_set_header">Grupo <xliff:g id="index">%d</xliff:g></string>
+  <string name="gamma_tuning_contrast">Contraste</string>
+  <string name="gamma_tuning_brightness">Brilho</string>
+  <string name="gamma_tuning_saturation">Saturação</string>
+  <string name="headset_connect_player_title">Iniciar a aplicação de música</string>
+  <string name="headset_connect_player_summary">Iniciar a aplicação de música padrão quando o auricular for ligado</string>
+  <string name="auto_brightness_reset_button">Restaurar</string>
+  <string name="live_display_summary">Otimizar o ecrã com base na hora do dia e condições ambientais para melhorar  legibilidade e reduzir a fadiga ocular</string>
+  <string name="live_display_mode">Modo de visualização</string>
+  <string name="live_display_color_temperature_title">Temperatura de cor</string>
+  <string name="live_display_color_temperature_summary">Dia: <xliff:g id="day_temperature">%1$d</xliff:g>K  Noite: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+  <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+  <string name="live_display_day">Dia</string>
+  <string name="live_display_night">Noite</string>
+  <string name="live_display_outdoor_mode_title">Modo ao ar livre automático</string>
+  <string name="live_display_outdoor_mode_summary">Aumentar o brilho e saturação automaticamente sob luz solar brilhante</string>
+  <string name="live_display_low_power_title">Reduzir o consumo de energia</string>
+  <string name="live_display_low_power_summary">Ajustar a exposição para menor consumo de energia sem degradação</string>
+  <string name="live_display_enhance_color_title">Realçar cores</string>
+  <string name="live_display_enhance_color_summary">Melhorar a intensidade da cor dos tons de pele, cenário e outras imagens</string>
+  <string name="category_calibration">Calibragem</string>
+  <string name="screencolor">Cor do ecrã</string>
+  <string name="screencolor_summary">Ajustar o tom, saturação, contraste ou intensidade do ecrã</string>
+  <string name="custom_screencolor">Cor personalizada do ecrã</string>
+  <string name="screencolor_save">Guardar</string>
+  <string name="screencolor_cancel">Cancelar</string>
+  <string name="restore_preview">Visualizar imagem predefinida</string>
+  <string name="selectnewfile_menu">Visualizar nova imagem da galeria</string>
+  <string name="selectfile_menu">Visualizar imagem da galeria</string>
+  <string name="restore_default_str">Restaurar</string>
+  <string name="hue_str">Tonalidade: <xliff:g id="hue_value">%1$s</xliff:g></string>
+  <string name="saturation_str">Saturação: <xliff:g id="saturation_value">%1$s</xliff:g></string>
+  <string name="contrast_str">Contraste: <xliff:g id="contrast_value">%1$s</xliff:g></string>
+  <string name="intensity_str">Intensidade: <xliff:g id="intensity_str_value">%1$s</xliff:g></string>
+  <string name="screen_color_setting_standard">Padrão</string>
+  <string name="screen_color_setting_vivid">Brilhante</string>
+  <string name="screen_color_setting_custom">Personalizada</string>
+  <string name="settings_reset_button">Restaurar</string>
+  <string name="high_touch_sensitivity_title">Alta sensibilidade do toque</string>
+  <string name="high_touch_sensitivity_summary">Aumentar a sensibilidade do ecrã para ser manuseado quando estiver a utilizar luvas</string>
+  <string name="touchscreen_hovering_title">Pairar no ecrã</string>
+  <string name="touchscreen_hovering_summary">Permite que passe sobre o ecrã como um rato em navegadores da internet, áreas de trabalho remotas, etc</string>
+  <string name="blacklist_title">Lista negra</string>
+  <string name="blacklist_edit_dialog_title">Editar item da lista negra</string>
+  <string name="blacklist_prefs">Definições</string>
+  <string name="blacklist_button_delete">Eliminar</string>
+  <string name="blacklist_empty_text">Não tem números na lista negra. Adicione um número ao tocar no botão Adicionar (+).</string>
+  <string name="blacklist_disabled_empty_text">Para colocar na lista negra chamadas e/ou mensagens de certos números, tem que ativar a opção lista negra.</string>
+  <string name="blacklist_summary_disabled">Desativado</string>
+  <string name="blacklist_summary">Chamadas e mensagens recebidas de números de telefone na lista negra serão bloqueadas</string>
+  <string name="blacklist_notify">Mostrar notificação</string>
+  <string name="blacklist_private_numbers_title">Números privados</string>
+  <string name="blacklist_private_numbers_summary_disabled">Não bloquear chamadas de números privados</string>
+  <string name="blacklist_private_numbers_summary">Bloquear <xliff:g id="type">%s</xliff:g> recebidas de números privados</string>
+  <string name="blacklist_unknown_numbers_title">Números desconhecidos</string>
+  <string name="blacklist_unknown_numbers_summary_disabled">Não bloquear chamadas ou mensagens de números que não estejam na lista de contactos</string>
+  <string name="blacklist_unknown_numbers_summary">Bloquear <xliff:g id="type">%s</xliff:g> recebidas de números que não estejam na lista de contactos</string>
+  <string name="blacklist_summary_type_calls_only">chamadas</string>
+  <string name="blacklist_summary_type_messages_only">mensagens</string>
+  <string name="blacklist_summary_type_calls_and_messages">chamadas e mensagens</string>
+  <string name="blacklist_regex_title">Utilizar caracteres especiais</string>
+  <string name="blacklist_regex_summary">Use . como um joker e * para repetição. Por exemplo, 123.* bloqueia números que começam com 123 e .*123.* bloqueia números contendo 123</string>
+  <string name="blacklist_policy_block_calls">Bloquear chamadas recebidas</string>
+  <string name="blacklist_policy_block_messages">Bloquear mensagens recebidas</string>
+  <string name="blacklist_bad_number_add">Não é possível adicionar um número inválido à lista negra</string>
+  <string name="add_blacklist_number">Adicionar número</string>
+  <string name="remove_blacklist_number_title">Remover número</string>
+  <string name="remove_blacklist_entry">Quer remover este registo da lista negra?</string>
+  <string name="select_contact">Selecionar contacto</string>
 </resources>

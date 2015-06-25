@@ -13,15 +13,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="backlight_timeout_time">
-    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> segundo</item>
-    <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segundos</item>
+    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> secondo</item>
+    <item quantity="other"><xliff:g id="seconds">%d</xliff:g> secondi</item>
   </plurals>
   <plurals name="app_ops_count">
-    <item quantity="one">uma vez</item>
-    <item quantity="other">%d vezes</item>
+    <item quantity="one">una volta</item>
+    <item quantity="other">%d volte</item>
   </plurals>
   <plurals name="qs_tiles_summary">
-    <item quantity="one">1 botão configurado</item>
-    <item quantity="other">%d botões configurados</item>
+    <item quantity="one">1 tile configurato</item>
+    <item quantity="other">%d tile configurati</item>
   </plurals>
 </resources>

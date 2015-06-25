@@ -482,4 +482,6 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="shortcut_action_power">Képernyő ki</string>
   <string name="shortcut_action_search">Keresés alkalmazáson belül</string>
   <string name="shortcut_action_none">Nincs</string>
+  <string name="double_tap_to_sleep_title">Alvás dupla érintésre</string>
+  <string name="double_tap_to_sleep_summary">érintsd meg kétszer az állapotsávot az alvó állapothoz</string>
 </resources>

@@ -430,6 +430,7 @@
   <string name="shortcut_action_ring_vib">Dzwonek/Wibracja</string>
   <string name="shortcut_action_ring_silent">Dzwonek/Wyciszony</string>
   <string name="shortcut_action_ring_vib_silent">Dzwonek/Wibracja/Wyciszony</string>
+  <string name="shortcut_action_torch">Latarka</string>
   <string name="shortcut_action_camera">Aparat</string>
   <string name="shortcut_action_media_next">Muzyka - następny utwór</string>
   <string name="shortcut_action_media_play_pause">Muzyka - odtwórz/wstrzymaj</string>
@@ -438,6 +439,7 @@
   <string name="shortcut_action_kill">Zabij aplikację</string>
   <string name="shortcut_action_screenshot">Zrzut ekranu</string>
   <string name="shortcut_action_lastapp">Ostatnia aplikacja</string>
+  <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_notifications">Powiadomienia</string>
   <string name="shortcut_action_qs">Panel szybkich ustawień</string>
   <string name="shortcut_action_torch">Latarka</string>
@@ -532,13 +534,19 @@
   <string name="unlock_quick_unlock_control_summary">Odblokuj automatycznie kiedy zostanie podany prawidłowy PIN/hasło</string>
   <string name="bluetooth_accept_all_files">Akceptuj wszystkie typy plików</string>
   <string name="screen_off_gesture_settings_title">Gesty na wyłączonym ekranie</string>
+  <string name="lcd_density">Gęstość LCD</string>
+  <string name="dialog_title_lcd_density">Gęstość LCD</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (domyślnie)</string>
+  <string name="restarting_ui">Restart UI\u2026</string>
+  <string name="su_indicator_title">Wskaźnik Superuser</string>
+  <string name="su_indicator_summary">Wskaźnik Superuser, kiedy sesja su jest aktywna</string>
   <string name="su_indicator_icon">Ikona paska stanu</string>
   <string name="su_indicator_notification">Powiadomienie</string>
   <string name="su_indicator_none">Brak wskaźnika</string>
   <string name="lockscreen_shortcuts_title">Skróty</string>
   <string name="lockscreen_shortcuts_summary">Zobacz lub zmień skróty ekranu blokady</string>
+  <string name="lockscreen_shorcuts_launch_type_title">Rodzaj dotknięcia skrótu</string>
   <string name="lockscreen_shortcuts_single_tap">Naciśnij</string>
   <string name="lockscreen_shortcuts_double_tap">Dwukrotne naciśnięcie</string>
   <string name="lockscreen_shortcuts_longpress">Długie naciśnięcie</string>
@@ -553,8 +561,24 @@
   <string name="adb_over_network_summary">Włącz debugowanie TCP/IP przez sieci (Wi\u2011Fi, USB networks). To ustawienie jest kasowane przy każdym uruchomieniu</string>
   <string name="adb_over_network_warning">UWAGA: Kiedy ADB przez sieć jest włączone, Twój telefon jest podatny na włamania ze wszystkich połączonych sieci, nawet GSM!
     \n\nUżywaj tej opcji tylko w zaufanych sieciach.\n\nCzy na pewno chcesz włączyć tą funkcję?</string>
+  <string name="display_category_doze_options_title">Opcje sprytnego ekranu</string>
+  <string name="doze_settings_title">Zaawansowane opcje drzemki</string>
+  <string name="doze_timeout_title">Drzemka limitu czasu powiadomień</string>
   <string name="doze_timeout_summary">Czas przez jaki ekran pozostaje włączony po otrzymaniu powiadomienia</string>
   <string name="doze_trigger_pickup_title">Gest podnoszenia</string>
+  <string name="doze_trigger_pickup_summary_on">Drzemka impulsu powiadomień aktywuje się poprzez gest podczas podnoszenia</string>
+  <string name="doze_trigger_pickup_summary_off">Czujnik gestu nie będzie wykorzystywany jako mechanizm uruchamiający</string>
+  <string name="doze_trigger_sigmotion_title">Znaczący ruch uruchamiający</string>
+  <string name="doze_trigger_sigmotion_summary_on">Impulsy powiadomień będą uruchamiane przez znaczące akcje czujnika ruchu</string>
+  <string name="doze_trigger_sigmotion_summary_off">Czujnik znaczącego ruchu nie będzie wykorzystywany jako mechanizm uruchamiający</string>
+  <string name="doze_trigger_notification_title">Uruchamianie powiadomieniami</string>
+  <string name="doze_trigger_notification_summary_on">Impulsy powiadomień będą uruchamiane przez powiadomienia</string>
+  <string name="doze_trigger_notification_summary_off">Powiadomienia nie będą wykorzystywane do uruchamiania</string>
+  <string name="doze_schedule_title">Harmonogram drzemki</string>
+  <string name="doze_schedule_summary_on">Predefiniowane powtórki interwałów drzemki (normalnie [1s,10s,30s,60s,120s]) użyte będzie (domyślne)</string>
+  <string name="doze_schedule_summary_off">Drzemka da impuls tylko raz dla powiadomienia</string>
+  <string name="doze_brightness_title">Poziom jasności dla drzemki</string>
+  <string name="doze_brightness_summary">Poziom jasności dla impulsów ekranu drzemki (% maksymalnej dozwolonej jasności)</string>
   <string name="navigation_settings_options_title">Opcje paska nawigacji</string>
   <string name="button_keys_title">Przyciski sprzętowe</string>
   <string name="keys_bindings_title">Działanie przycisków</string>
@@ -588,7 +612,6 @@
   <string name="shortcut_action_home">Ekran domowy</string>
   <string name="shortcut_action_kill">Zabij aplikację</string>
   <string name="shortcut_action_lastapp">Ostatnia aplikacja</string>
-  <string name="shortcut_action_navbar">Pasek nawigacji</string>
   <string name="shortcut_action_notifications">Powiadomienia</string>
   <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_ime">Otwórz okno zmiany metod wprowadzania</string>
@@ -719,4 +742,6 @@
   <string name="pie_trigger_warning">Minimalnie jeden główny aktywator (na dole, po lewej lub prawej stronie) musi być włączony.</string>
   <string name="pie_disable_ime_triggers_title">Zmniejsz obszar aktywacji przy włączonej klawiaturze</string>
   <string name="pie_disable_ime_triggers_summary">Zmniejsza obszar aktywacji z lewej i prawej strony jeśli klawiatura jest włączona</string>
+  <string name="double_tap_to_sleep_title">Usypianie urządzenia podwójnym tapnięciem na pasku statusu</string>
+  <string name="double_tap_to_sleep_summary">Dwukrotnie tapnij na pasku statusu w celu przejścia urządzenia w tryb czuwania</string>
 </resources>

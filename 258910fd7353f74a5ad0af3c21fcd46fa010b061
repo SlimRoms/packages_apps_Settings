@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_2e266769",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-27T14:01:03Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 197,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 0
+      },
+      "revId": "258910fd7353f74a5ad0af3c21fcd46fa010b061",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_0e2bab31",
+        "filename": "res/drawable/ic_settings_performance.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-27T14:01:03Z",
+      "side": 1,
+      "message": "Licensing?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 38
+      },
+      "revId": "258910fd7353f74a5ad0af3c21fcd46fa010b061",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_ee1f3f08",
+        "filename": "src/com/android/settings/slim/PerformanceSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-06-27T14:01:03Z",
+      "side": 1,
+      "message": "should be shorter",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 101
+      },
+      "revId": "258910fd7353f74a5ad0af3c21fcd46fa010b061",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

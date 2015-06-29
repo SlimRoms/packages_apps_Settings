@@ -826,6 +826,8 @@
 
     <!-- Heads up -->
     <string name="heads_up_title">Heads up notification</string>
+    <string name="heads_up_global_switch_title">Show notifications as heads up</string>
+    <string name="heads_up_global_switch_summary">When enabled, uses per app setting to show notifications as headsup.\nWhen disabled, notifications are never shown as heads up, including non-intrusive call notification.</string>
     <string name="app_notification_enable_heads_up_title">Show heads up</string>
     <string name="app_notification_enable_heads_up_summary">Show notifications from this app as heads up</string>
     <string name="heads_up_snooze_title">Snooze timer</string>

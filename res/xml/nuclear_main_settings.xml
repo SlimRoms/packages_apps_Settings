@@ -60,11 +60,11 @@
 
 
          <PreferenceScreen
-       	android:title="@string/kernel_tuner_title"
+       	android:title="@string/synapse_title"
     	android:icon="@drawable/ic_settings_performance">
-        	<intent android:targetPackage="com.grarak.kerneladiutor"
+        	<intent android:targetPackage="com.af.synapse"
    		  android:action="android.intent.action.MAIN"
-             	android:targetClass="com.grarak.kerneladiutor.MainActivity" >
+             	android:targetClass="com.af.synapse.MainActivity" >
         	</intent>  
          </PreferenceScreen>
                

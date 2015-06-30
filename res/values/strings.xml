@@ -6179,8 +6179,8 @@
    <string name="imei_information_title">IMEI information</string>
    <string name="imei_information_summary">IMEI relative information</string>
    <string name="slot_number">(Slot<xliff:g id="slot_num">%1$d</xliff:g>)</string>
-	<!--Kernel auditor-->
-   <string name="kernel_tuner_title">KernelAdiutor</string>
+	<!--Synapse-->
+   <string name="synapse_title">Synapse</string>
    <!--layers-->
    <string name="bitsyko_layers_str">Layers</string>
 <!--Nombre categoria nueva-->
@@ -6259,6 +6259,9 @@
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="profile_applist_title">Applications</string>
     <string name="rr_gesture_title">Gestures</string>
+
+<!--Nombre categoria nueva-->
+<string name="category_vibration">Hardware</string>
 
 
 </resources>

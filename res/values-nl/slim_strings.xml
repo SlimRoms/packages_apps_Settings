@@ -432,4 +432,6 @@
   <string name="shortcut_action_power">Scherm uit</string>
   <string name="shortcut_action_search">Zoeken in app</string>
   <string name="shortcut_action_none">Geen</string>
+  <string name="double_tap_to_sleep_title">Dubbel tikken voor slaapstand</string>
+  <string name="double_tap_to_sleep_summary">Dubbel tikken op de status balk om toetsen in slaapstand te zetten</string>
 </resources>

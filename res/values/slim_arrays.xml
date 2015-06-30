@@ -288,6 +288,71 @@
         <item>5000</item>
     </string-array>
 
+    <!-- Slim Actions For Shortcuts -->
+    <string-array name="shortcut_action_launcher_entries">
+        <item>@string/shortcut_action_home</item>
+        <item>@string/shortcut_action_back</item>
+        <item>@string/shortcut_action_search</item>
+        <item>@string/shortcut_action_voice_search</item>
+        <item>@string/shortcut_action_menu</item>
+        <item>@string/shortcut_action_menu_big</item>
+        <item>@string/shortcut_action_power</item>
+        <item>@string/shortcut_action_notifications</item>
+        <item>@string/shortcut_action_settings_panel</item>
+        <item>@string/shortcut_action_recents</item>
+        <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_ime</item>
+        <item>@string/shortcut_action_lastapp</item>
+        <item>@string/shortcut_action_kill</item>
+        <item>@string/shortcut_action_assist</item>
+        <item>@string/shortcut_action_ring_vib</item>
+        <item>@string/shortcut_action_ring_silent</item>
+        <item>@string/shortcut_action_ring_vib_silent</item>
+        <item>@string/shortcut_action_power_menu</item>
+        <item>@string/shortcut_action_torch</item>
+        <item>@string/shortcut_action_expanded_desktop</item>
+        <item>@string/shortcut_action_theme_switch</item>
+        <item>@string/shortcut_action_pie</item>
+        <item>@string/shortcut_action_nav_bar</item>
+        <item>@string/shortcut_action_camera</item>
+        <item>@string/shortcut_action_media_previous</item>
+        <item>@string/shortcut_action_media_next</item>
+        <item>@string/shortcut_action_media_play_pause</item>
+        <item>@string/shortcut_action_wake_device</item>
+    </string-array>
+
+    <string-array name="shortcut_action_launcher_values" translatable="false">
+        <item>**home**</item>
+        <item>**back**</item>
+        <item>**search**</item>
+        <item>**voice_search**</item>
+        <item>**menu**</item>
+        <item>**menu_big**</item>
+        <item>**power**</item>
+        <item>**notifications**</item>
+        <item>**settings_panel**</item>
+        <item>**recents**</item>
+        <item>**screenshot**</item>
+        <item>**ime**</item>
+        <item>**lastapp**</item>
+        <item>**kill**</item>
+        <item>**assist**</item>
+        <item>**ring_vib**</item>
+        <item>**ring_silent**</item>
+        <item>**ring_vib_silent**</item>
+        <item>**power_menu**</item>
+        <item>**torch**</item>
+        <item>**expanded_desktop**</item>
+        <item>**theme_switch**</item>
+        <item>**pie**</item>
+        <item>**nav_bar**</item>
+        <item>**camera**</item>
+        <item>**media_previous**</item>
+        <item>**media_next**</item>
+        <item>**media_play_pause**</item>
+        <item>**wake_device**</item>
+    </string-array>
+
     <string-array name="clock_style_entries" translatable="false">
         <item>@string/right_clock</item>
         <item>@string/center_clock</item>
@@ -883,6 +948,7 @@
         <item>1</item>
     </string-array>
 
+
  <!-- Network Traffic Display States -->
     <string-array name="show_network_traffic_state_entries" translatable="false">
         <item>@string/show_network_traffic_disable</item>
@@ -929,4 +995,17 @@
         <item>Vivid</item>
         <item>Custom</item>
     </string-array>
+    <!-- Expanded Desktop -->
+    <string-array name="expanded_desktop_entries" translatable="false">
+        <item>@string/expanded_hide_both</item>
+        <item>@string/expanded_hide_status</item>
+        <item>@string/expanded_hide_navigation</item>
+    </string-array>
+
+    <string-array name="expanded_desktop_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

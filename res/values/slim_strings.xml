@@ -50,6 +50,9 @@
     <string name="privacy_guard_notification_title">Notification</string>
     <string name="privacy_guard_notifiation_summary">Show notification if privacy guard is active.</string>
 
+    <!-- Slim Shortcuts -->
+    <string name="slim_shortcut_picker">Slim Actions</string>
+
     <!-- About phone screen, Slim version -->
     <string name="slim_version_title">NuclearSlim version</string>
     <string name="slim_version_default">Unknown</string>
@@ -490,6 +493,7 @@
     <string name="qs_tile_visualizer">AudioFX</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
     <string name="qs_tile_screenshot">Screenshot</string>
+    <string name="qs_expanded_desktop_tile">Expanded desktop</string>
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
@@ -532,6 +536,7 @@
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_camera">Camera</string>
     <string name="shortcut_action_media_next">Music - next track</string>
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
@@ -568,6 +573,7 @@
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
+    <string name="shortcut_action_pie">Pie controls</string>
 
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
@@ -743,14 +749,16 @@
     <string name="shortcut_action_home">Home</string>
     <string name="shortcut_action_kill">Kill app</string>
     <string name="shortcut_action_lastapp">Last app</string>
-    <string name="shortcut_action_navbar">Navigation bar</string>
+    <string name="shortcut_action_nav_bar">Navigation bar</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_menu_big">Menu</string>
     <string name="shortcut_action_ime">Open IME Switcher</string>
     <string name="shortcut_action_power_menu">Power menu</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_settings_panel">Settings panel</string>
     <string name="shortcut_action_smart">Smart pulldown</string>
     <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_recents">Recents</string>
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
@@ -1045,8 +1053,7 @@
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
     <string name="show_network_traffic_state">Status bar traffic monitor</string>
@@ -1072,24 +1079,25 @@
  
 
 
-</resources>
-=======
-=======
->>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
+
+
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
     <string name="expanded_hide_status">Hide status bar</string>
     <string name="expanded_hide_navigation">Hide navigation bar</string>
     <string name="expanded_hide_both">Hide both</string>
-    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set "Enabled for all" to the off position</string>
+    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \'Enabled for all\' to the off position</string>
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
-    <string name="expanded_user_configurable">User configurable</string>
+    <string name="expanded_desktop_style">Expanded desktop style</string>
+    <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
+    <string name="expanded_desktop_title">Expanded desktop options</string>
 
-<<<<<<< HEAD
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
+
 </resources>
->>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
-=======
-</resources>
->>>>>>> f4f62ac... Settings: Bringup expanded desktop and implement per-user configuration.
+

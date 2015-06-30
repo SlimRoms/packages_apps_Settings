@@ -432,4 +432,6 @@
   <string name="shortcut_action_power">Isključiti ekran</string>
   <string name="shortcut_action_search">Pretraživanje u aplikaciji</string>
   <string name="shortcut_action_none">Nijedan</string>
+  <string name="double_tap_to_sleep_title">Dvaput dodirni za modus mirovanja</string>
+  <string name="double_tap_to_sleep_summary">Dodirnite dvaput statusnu površinu da uređaj pređe u stanje mirovanja</string>
 </resources>

@@ -430,6 +430,7 @@
   <string name="shortcut_action_ring_vib">Звонок/Вибро</string>
   <string name="shortcut_action_ring_silent">Звонок/Без звука</string>
   <string name="shortcut_action_ring_vib_silent">Звонок/Вибрация/Без звука</string>
+  <string name="shortcut_action_torch">Фонарик</string>
   <string name="shortcut_action_camera">Камера</string>
   <string name="shortcut_action_media_next">Музыка - следующий трек</string>
   <string name="shortcut_action_media_play_pause">Музыка - играть/пауза</string>
@@ -438,6 +439,7 @@
   <string name="shortcut_action_kill">Завершить приложение</string>
   <string name="shortcut_action_screenshot">Снимок экрана</string>
   <string name="shortcut_action_lastapp">Предыдущее приложение</string>
+  <string name="shortcut_action_menu_big">Меню</string>
   <string name="shortcut_action_notifications">Уведомления</string>
   <string name="shortcut_action_qs">Панель быстрых настроек</string>
   <string name="shortcut_action_torch">Фонарик</string>
@@ -609,7 +611,6 @@
   <string name="shortcut_action_home">Домой</string>
   <string name="shortcut_action_kill">Завершить приложение</string>
   <string name="shortcut_action_lastapp">Предыдущее приложение</string>
-  <string name="shortcut_action_navbar">Панель навигации</string>
   <string name="shortcut_action_notifications">Уведомления</string>
   <string name="shortcut_action_menu_big">Меню</string>
   <string name="shortcut_action_ime">Выбор способа ввода</string>
@@ -740,4 +741,6 @@
   <string name="pie_trigger_warning">Должна быть включена как минимум одна основная точка привязки (внизу, слева или справа).</string>
   <string name="pie_disable_ime_triggers_title">Отключить срабатывание на клавиатуре</string>
   <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
+  <string name="double_tap_to_sleep_title">Выключение экрана двойным нажатием</string>
+  <string name="double_tap_to_sleep_summary">Дважды коснитесь строки состояния, чтобы перевести устройство в спящий режим</string>
 </resources>

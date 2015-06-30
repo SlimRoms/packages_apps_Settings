@@ -24,6 +24,7 @@
   <string name="default_string">Default</string>
   <string name="choose_app">Seleziona l\'applicazione</string>
   <string name="reset_message">Reimpostare tutte le voci a default?</string>
+  <string name="additional_options_title">Opzioni aggiuntive</string>
   <string name="app_security_title">Sicurezza applicazioni</string>
   <string name="privacy_guard_switch_label">Attiva Privacy Guard</string>
   <string name="privacy_guard_dlg_title">Attivare Privacy Guard?</string>
@@ -353,6 +354,8 @@
   <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
   <string name="double_tap_to_sleep_title">Doppio-tocco per sospendere</string>
   <string name="double_tap_to_sleep_summary">Tocca due volte la barra di stato per spegnere lo schermo</string>
+  <string name="qs_title">Impostazioni rapide</string>
+  <string name="quick_pulldown_title">Comparsa rapida</string>
   <string name="summary_quick_pulldown">L\'angolo a %1$s della barra di stato mostra i Quick Settings</string>
   <string name="quick_pulldown_off">Off</string>
   <string name="quick_pulldown_left">Sinistra</string>
@@ -366,6 +369,8 @@
   <string name="block_on_secure_keyguard_title">Disabilita nella schermata di blocco</string>
   <string name="block_on_secure_keyguard_summary">Disattiva i quick settings nella schermata di blocco sicura.</string>
   <string name="qs_category_title">Pannello impostazioni rapide</string>
+  <string name="qs_tiles_title">Piastrelle Impostazioni rapide</string>
+  <string name="qs_general_title">Comportamento generale</string>
   <string name="qs_brightness_slider_title">Visualizza lo slider della luminosità</string>
   <string name="qs_order_title">Seleziona e ordina le piastrelle</string>
   <string name="add_qs">Aggiungi nuova piastrella</string>
@@ -374,6 +379,7 @@
   <string name="qs_action_no_more_tiles">Nessuna ulteriore piastrella disponibile</string>
   <string name="qs_tile_adb_over_network">ADB su rete</string>
   <string name="qs_tile_airplane_mode">Modalità aereo</string>
+  <string name="qs_tile_ambient_display">Ambient Display</string>
   <string name="qs_tile_bluetooth">Bluetooth</string>
   <string name="qs_tile_cast_screen">Trasmetti schermo</string>
   <string name="qs_tile_cellular_data">Connessione dati</string>
@@ -390,8 +396,10 @@
   <string name="qs_tile_performance">Prestazioni</string>
   <string name="qs_tile_reboot">Riavvio</string>
   <string name="qs_tile_screen_timeout">Sospensione schermo</string>
+  <string name="qs_tile_sync">Sincronizza</string>
   <string name="qs_tile_usb_tether">Condivisione dati USB</string>
   <string name="qs_tile_wifi">Wi\u2011Fi</string>
+  <string name="qs_tile_screenshot">Cattura schermata</string>
   <string name="qs_main_tiles_title">Ingrandisci la prima riga</string>
   <string name="qs_main_tiles_summary_on">Due piastrelle principali sulla prima riga</string>
   <string name="qs_main_tiles_summary_off">Tre o quattro piastrelle su ogni riga</string>
@@ -422,6 +430,7 @@
   <string name="shortcut_action_ring_vib">Suoneria/Vibrazione</string>
   <string name="shortcut_action_ring_silent">Suoneria/Silenzioso</string>
   <string name="shortcut_action_ring_vib_silent">Suoneria/Vibrazione/Silenzioso</string>
+  <string name="shortcut_action_torch">Torcia</string>
   <string name="shortcut_action_camera">Fotocamera</string>
   <string name="shortcut_action_media_next">Musica - traccia successiva</string>
   <string name="shortcut_action_media_play_pause">Musica - play/pausa</string>
@@ -430,6 +439,7 @@
   <string name="shortcut_action_kill">Termina applicazione</string>
   <string name="shortcut_action_screenshot">Cattura schermata</string>
   <string name="shortcut_action_lastapp">Ultima applicazione</string>
+  <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_notifications">Notifiche</string>
   <string name="shortcut_action_qs">Pannello Impostazioni rapide</string>
   <string name="shortcut_action_torch">Torcia</string>
@@ -519,6 +529,7 @@
   <string name="shortcuts_icon_picker_tv">TV</string>
   <string name="shortcuts_icon_picker_twitter">Twitter</string>
   <string name="shortcuts_icon_picker_unlock">Sblocco</string>
+  <string name="navigation_bar_warning_no_navigation_present">Nessuna modalità di navigazione è attiva. Disattivarle tutte renderà il telefono inutilizzabile. Vuoi attivare almeno la Slim Pie?</string>
   <string name="unlock_quick_unlock_control_title">Sblocco rapido</string>
   <string name="unlock_quick_unlock_control_summary">Sblocca automaticamente quando sono inseriti il PIN o la password corretti</string>
   <string name="bluetooth_accept_all_files">Accetta tutti i tipi di file</string>
@@ -600,7 +611,6 @@
   <string name="shortcut_action_home">Home</string>
   <string name="shortcut_action_kill">Termina applicazione</string>
   <string name="shortcut_action_lastapp">Ultima applicazione</string>
-  <string name="shortcut_action_navbar">Barra di navigazione</string>
   <string name="shortcut_action_notifications">Notifiche</string>
   <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_ime">Apri selettore IME</string>
@@ -665,4 +675,47 @@
   <string name="nav_button_color_mode_summary">Cambia la modalità colore dei tasti della barra di navigazione</string>
   <string name="navigation_bar_glow_tint_title">Colore del bagliore</string>
   <string name="status_bar_show_network_activity_title">Frecce Attività di rete</string>
+  <string name="heads_up_title">Notifiche heads up</string>
+  <string name="app_notification_enable_heads_up_title">Mostra heads up</string>
+  <string name="app_notification_enable_heads_up_summary">Mostra le notifiche di questa app come heads up</string>
+  <string name="heads_up_snooze_title">Timer di posticipo</string>
+  <string name="heads_up_snooze_summary">Se il tasto di posticipo viene premuto, disabilita le notifiche in primo piano per <xliff:g id="number">%d</xliff:g> minuti</string>
+  <string name="heads_up_snooze_disabled_summary">Il timer di posticipo è disabilitato</string>
+  <string name="heads_up_snooze_3min">3 minuti</string>
+  <string name="heads_up_snooze_5min">5 minuti</string>
+  <string name="heads_up_snooze_10min">10 minuti</string>
+  <string name="heads_up_snooze_15min">15 minuti</string>
+  <string name="heads_up_snooze_20min">20 minuti</string>
+  <string name="heads_up_time_out_title">Tempo di visualizzazione</string>
+  <string name="heads_up_time_out_summary">Le notifiche heads up verranno mostrate per <xliff:g id="number">%d</xliff:g> secondi</string>
+  <string name="heads_up_time_out_never_summary">Le notifiche heads up verranno mostrate finchè non saranno chiuse</string>
+  <string name="heads_up_time_out_4sec">4 secondi</string>
+  <string name="heads_up_time_out_6sec">6 secondi</string>
+  <string name="heads_up_time_out_8sec">8 secondi</string>
+  <string name="heads_up_time_out_10sec">10 secondi</string>
+  <string name="heads_up_time_out_never">Mai</string>
+  <string name="pie_control_title">SlimPIE</string>
+  <string name="pie_control_summary">Abilita i controlli Pie</string>
+  <string name="pie_control_size">Dimensioni Pie</string>
+  <string name="pie_control_trigger_positions">Opzioni di attivazione</string>
+  <string name="pie_control_trigger_left">Attiva dal bordo sinistro dello schermo</string>
+  <string name="pie_control_trigger_bottom">Attiva dal bordo inferiore dello schermo</string>
+  <string name="pie_control_trigger_right">Attiva dal bordo destro dello schermo</string>
+  <string name="pie_control_trigger_top">Attiva dal bordo superiore dello schermo</string>
+  <string name="pie_control_trigger_top_summary">La parte alta della Pie non mostra né le informazioni di stato né l\'orologio</string>
+  <string name="pie_button_style">Stile dei pulsanti</string>
+  <string name="pie_button_color_title">Colore dei pulsanti</string>
+  <string name="pie_button_alpha_title">Trasparenza dei pulsanti</string>
+  <string name="pie_button_outline_color_title">Colore del contorno</string>
+  <string name="pie_button_pressed_color_title">Colore del pulsante premuto</string>
+  <string name="pie_button_long_pressed_color_title">Colore del pulsante premuto a lungo</string>
+  <string name="pie_button_pressed_alpha_title">Trasparenza del pulsante premuto</string>
+  <string name="pie_icon_style">Stile dell\'icona</string>
+  <string name="pie_icon_color_title">Colore dell\'icona</string>
+  <string name="pie_icon_color_mode_title">Modalità colore dell\'icona</string>
+  <string name="pie_icon_color_mode_dialog_title">Colora</string>
+  <string name="pie_icon_color_mode_summary">Cambia la modalità colore dell\'icona</string>
+  <string name="pie_trigger_note_title">Nota</string>
+  <string name="double_tap_to_sleep_title">Doppio-tocco per sospendere</string>
+  <string name="double_tap_to_sleep_summary">Tocca due volte la barra di stato per spegnere lo schermo</string>
 </resources>

@@ -432,4 +432,6 @@
   <string name="shortcut_action_power">Απενεργοποιημένη οθόνη</string>
   <string name="shortcut_action_search">Αναζήτηση σε εφαρμογή</string>
   <string name="shortcut_action_none">Κανένα</string>
+  <string name="double_tap_to_sleep_title">Διπλό πάτημα για αναστολή</string>
+  <string name="double_tap_to_sleep_summary">Διπλό χτύπημα στην γραμμή κατάστασης για μετάβαση στη συσκευής σε αναμονή</string>
 </resources>

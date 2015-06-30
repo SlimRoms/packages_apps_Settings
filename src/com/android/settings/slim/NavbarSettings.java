@@ -49,6 +49,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_BUTTON = "navbar_button_settings";
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+    private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
 
     private static final int DLG_NAVIGATION_WARNING = 0;
 
@@ -60,6 +61,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     SwitchPreference mNavigationBarCanMove;
     PreferenceScreen mButtonPreference;
     PreferenceScreen mStyleDimenPreference;
+    SwitchPreference mStatusBarImeArrows;
 
     private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler());
     private final class SettingsObserver extends ContentObserver {
@@ -109,6 +111,10 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             prefs.removePreference(mNavigationBarCanMove);
             mNavigationBarCanMove = null;
         }
+
+        mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
+        mStatusBarImeArrows.setOnPreferenceChangeListener(this);
+
         updateSettings();
     }
 
@@ -130,6 +136,10 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
         }
+
+        mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
+
         updateNavbarPreferences(enableNavigationBar);
     }
 
@@ -143,6 +153,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         }
         mMenuDisplayLocation.setEnabled(show
             && mNavBarMenuDisplayValue != 1);
+        mStatusBarImeArrows.setEnabled(show);
     }
 
     @Override
@@ -172,6 +183,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE,
                     ((Boolean) newValue) ? 0 : 1);
+            return true;
+        } else if (preference == mStatusBarImeArrows) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         }
         return false;

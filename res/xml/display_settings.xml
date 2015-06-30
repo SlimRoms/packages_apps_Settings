@@ -143,6 +143,7 @@
 </PreferenceCategory>
 <!--
 
+
          <PreferenceCategory
                 android:key="advanced_display_prefs"
                 android:title="@string/advanced_settings">
@@ -194,3 +195,5 @@
         </PreferenceCategory>
 -->
 </PreferenceScreen>
+
+

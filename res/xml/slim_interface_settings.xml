@@ -34,6 +34,7 @@
         android:fragment="com.android.settings.slim.RecentPanel"
         android:title="@string/recent_panel_category" />
 
+
       <!--   <PreferenceScreen
             android:key="network_traffic_state"
             android:fragment="com.android.settings.simpleaosp.NetworkTraffic"
@@ -85,5 +86,11 @@
             android:persistent="false" />
 
     </PreferenceCategory>
+
+
+    <PreferenceScreen
+        android:key="expanded_desktop"
+        android:title="@string/power_menu_expanded_desktop"
+        android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
 
 </PreferenceScreen>

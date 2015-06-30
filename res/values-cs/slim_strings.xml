@@ -430,6 +430,7 @@
   <string name="shortcut_action_ring_vib">Vyzv/Vib</string>
   <string name="shortcut_action_ring_silent">Vyzv/Tichý</string>
   <string name="shortcut_action_ring_vib_silent">Vyzv/Vib/Tichý</string>
+  <string name="shortcut_action_torch">Svítilna</string>
   <string name="shortcut_action_camera">Fotoaparát</string>
   <string name="shortcut_action_media_next">Hudba - další stopa</string>
   <string name="shortcut_action_media_play_pause">Hudba - přehrát/pozastavit</string>
@@ -438,6 +439,7 @@
   <string name="shortcut_action_kill">Ukončit aplikaci</string>
   <string name="shortcut_action_screenshot">Snímek obrazovky</string>
   <string name="shortcut_action_lastapp">Poslední aplikace</string>
+  <string name="shortcut_action_menu_big">Nabídka</string>
   <string name="shortcut_action_notifications">Oznámení</string>
   <string name="shortcut_action_qs">Panel rychlého nastavení</string>
   <string name="shortcut_action_torch">Svítilna</string>
@@ -609,7 +611,6 @@
   <string name="shortcut_action_home">Domů</string>
   <string name="shortcut_action_kill">Ukončit aplikaci</string>
   <string name="shortcut_action_lastapp">Poslední aplikace</string>
-  <string name="shortcut_action_navbar">Navigační lišta</string>
   <string name="shortcut_action_notifications">Oznámení</string>
   <string name="shortcut_action_menu_big">Nabídka</string>
   <string name="shortcut_action_ime">Přepínač vstupní metody</string>
@@ -740,4 +741,6 @@
   <string name="pie_trigger_warning">Musí být povolena minimálně jedna aktivační hrana (dole, nalevo nebo napravo).</string>
   <string name="pie_disable_ime_triggers_title">Zmenšit velikost aktivace při klávesnici</string>
   <string name="pie_disable_ime_triggers_summary">Zmenší velikost levé a pravé aktivační zóny, je-li přítomna klávesnice</string>
+  <string name="double_tap_to_sleep_title">Uspat dvojitým poklepáním</string>
+  <string name="double_tap_to_sleep_summary">Dvojklepněte na stavový řádek pro uspání zařízení</string>
 </resources>

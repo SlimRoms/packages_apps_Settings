@@ -432,4 +432,6 @@
   <string name="shortcut_action_power">Вимкнути екран</string>
   <string name="shortcut_action_search">Пошук у програмі</string>
   <string name="shortcut_action_none">Нічого</string>
+  <string name="double_tap_to_sleep_title">Вимикати екран при подвійному натисканні</string>
+  <string name="double_tap_to_sleep_summary">Двічі торкніться рядка стану або кнопки розблокування екрану, щоб перевести пристрій в режим сну</string>
 </resources>

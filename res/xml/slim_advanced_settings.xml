@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Chandra Poerwanto
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/advanced_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="root_category"
+        android:title="@string/root_category_title">
+
+        <PreferenceScreen
+            android:key="key_supersu"
+            android:title="@string/supersu_title"
+            android:summary="@string/root_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="tweak_category"
+        android:title="@string/tweak_category_title">
+
+        <PreferenceScreen
+            android:key="key_kernel_adiutor"
+            android:title="@string/kernel_adiutor_title"
+            android:summary="@string/kernel_adiutor_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.grarak.kerneladiutor"
+                android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="key_viper4android"
+            android:title="@string/viper4android_title"
+            android:summary="@string/viper4android_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.vipercn.viper4android_v2"
+                android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="key_maxxaudiofx"
+            android:title="@string/maxxaudiofx_title"
+            android:summary="@string/maxxaudiofx_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyngn.maxxaudio"
+                android:targetClass="com.cyngn.maxxaudio.activity.ActivityMusic" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="theme_category"
+        android:title="@string/theme_category_title">
+
+        <PreferenceScreen
+            android:key="key_layers_manager"
+            android:title="@string/layers_manager_title"
+            android:summary="@string/layers_manager_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.lovejoy777.rroandlayersmanager"
+                android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="key_layers_backup"
+            android:title="@string/layers_backup_title"
+            android:summary="@string/layers_backup_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.kantjer.xda.layers"
+                android:targetClass="net.dinglisch.android.tasker.Kid" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_category"
+        android:title="@string/misc_category_title">
+
+        <PreferenceScreen
+            android:key="screen_recorder"
+            android:title="@string/screen_recorder_title"
+            android:summary="@string/screen_recorder_summary"
+            android:fragment="com.android.settings.slim.ScreenRecorderSettings" >
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="key_bug_report"
+            android:title="@string/bug_report_title"
+            android:summary="@string/bug_report_summary" >
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="key_changelog"
+            android:title="@string/changelog_title"
+            android:summary="@string/changelog_summary"
+            android:fragment="com.android.settings.slim.fragment.BuildChangelogFragment" >
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -558,6 +558,8 @@
     <string name="shortcut_action_sound">Sound</string>
     <string name="shortcut_action_users">Users</string>
     <string name="shortcut_action_lockdown">Lock now</string>
+    <string name="shortcut_action_screenrecord">Screen recorder</string>
+
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -852,6 +854,145 @@
     <string name="heads_up_time_out_10sec">10 seconds</string>
     <string name="heads_up_time_out_never">Never</string>
 
+    <!-- SlimOTA -->
+    <string name="slimota_title">SlimOTA</string>
+
+    <!-- Advanced settings  -->
+    <string name="advanced_settings_title">Advanced</string>
+    <string name="tweak_category_title">Tweak</string>
+    <string name="root_category_title">Root</string>
+    <string name="misc_category_title">Miscellaneous</string>
+    <string name="theme_category_title">Theme</string>
+    <string name="supersu_title">SuperSU</string>
+    <string name="kernel_adiutor_title">Kernel Adiutor</string>
+    <string name="kernel_adiutor_summary">Tweak kernel parameters. Warning! This may cause instability!</string>
+    <string name="viper4android_title">Viper4Android</string>
+    <string name="viper4android_summary">Tweak audio settings</string>
+    <string name="maxxaudiofx_title">MaxxAudioFX</string>
+    <string name="maxxaudiofx_summary">Tweak audio settings</string>
+    <string name="root_summary">Manage apps root permission</string>
+    <string name="screen_recorder_title">Screen recorder</string>
+    <string name="screen_recorder_summary">Adjust screen recorder settings</string>
+    <string name="bug_report_title">Bug report</string>
+    <string name="bug_report_summary">Create bug report which includes logcat, last_kmsg and dmesg</string>
+    <string name="bug_report_success">Bug report created in /sdcard/Bugreport</string>
+    <string name="bug_report_failed">Bug report creation failed</string>
+    <string name="changelog_title">Build changelog</string>
+    <string name="changelog_summary">A full changelog of the current build</string>
+    <string name="no_changelog_summary">No changelog</string>
+    <string name="layers_manager_title">Layers manager</string>
+    <string name="layers_manager_summary">An easy way to manage layers</string>
+    <string name="layers_backup_title">Layers backup</string>
+    <string name="layers_backup_summary">Create backup script for layers to survive a dirty flash</string>
+
+    <!--- Advanced Settings -->
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings_summary">Enable more settings options</string>
+
+    <!-- Backlight brightness settings screen -->
+    <string name="adaptive_backlight_title">Adaptive backlight</string>
+    <string name="adaptive_backlight_summary">Dynamically adjust the brightness of the display\'s backlight to maximize battery life while maintaining usability</string>
+
+    <!-- Sunlight readability enhancement screen -->
+    <string name="sunlight_enhancement_title">Sunlight enhancement</string>
+    <string name="sunlight_enhancement_summary">Enhance display brightness and readability under bright sunlight</string>
+
+    <!-- Color enhancement settings screen -->
+    <string name="color_enhancement_title">Color enhancement</string>
+    <string name="color_enhancement_summary">Dynamically enhance the color of the display</string>
+
+    <!-- Hardware tunables - Vibrator intensity -->
+    <string name="vibrator_intensity_title">Vibrator intensity</string>
+    <string name="vibrator_warning">Values higher than %1$d are not recommended</string>
+
+    <!-- Hardware tunables - Color calibration -->
+    <string name="color_calibration_title">Color calibration</string>
+    <string name="color_calibration_summary">Calibrate on-screen colors</string>
+    <string name="color_red_title">Red</string>
+    <string name="color_green_title">Green</string>
+    <string name="color_blue_title">Blue</string>
+
+    <!-- Hardware tunables - Gamma calibration -->
+    <string name="gamma_tuning_title_head">Gamma calibration</string>
+    <string name="gamma_tuning_summary_head">Tweak gamma values</string>
+    <string name="gamma_tuning_control_set_header">Group <xliff:g id="index">%d</xliff:g></string> <!-- used if no name provided by overlay -->
+    <string name="gamma_tuning_contrast">Contrast</string>
+    <string name="gamma_tuning_brightness">Brightness</string>
+    <string name="gamma_tuning_saturation">Saturation</string>
+
+    <string name="auto_brightness_reset_button">Reset</string>
+
+    <!-- Display settings.  Screen color. -->
+    <string name="screencolor">Screen color</string>
+    <string name="screencolor_summary">Tune screen Hue, Saturation, Contrast and Intensity</string>
+    <string name="custom_screencolor">Custom screen color</string>
+    <string name="screencolor_save">Save</string>
+    <string name="screencolor_cancel">Cancel</string>
+    <string name="previous_str">Previous</string>
+    <string name="new_str">New</string>
+    <string name="restore_preview">View default picture</string>
+    <string name="selectnewfile_menu">View new picture from Gallery</string>
+    <string name="selectfile_menu">View picture from Gallery</string>
+    <string name="restore_default_str">Reset</string>
+    <string name="hue_str">Hue: <xliff:g id="hue_value">%1$s</xliff:g></string>
+    <string name="saturation_str">Saturation: <xliff:g id="saturation_value">%1$s</xliff:g></string>
+    <string name="contrast_str">Contrast: <xliff:g id="contrast_value">%1$s</xliff:g></string>
+    <string name="intensity_str">Intensity: <xliff:g id="intensity_str_value">%1$s</xliff:g></string>
+
+    <!-- Font size sample text. This needs to be a very short string, as it is shown in
+         multiple font sizes in a limited amount of space. -->
+    <string name="font_size_sample">Sample</string>
+
+    <!-- LiveDisplay -->
+    <string name="category_calibration">Calibration</string>
+    <string name="settings_reset_button">Reset</string>
+    <string name="live_display_title" translatable="false">LiveDisplay</string>
+    <string name="live_display_summary">Optimize your screen based on time of day and ambient conditions to improve readibility and reduce eyestrain</string>
+    <string name="live_display_mode">Display mode</string>
+    <string name="live_display_color_temperature_title">Color temperature</string>
+    <string name="live_display_color_temperature_summary">Day: <xliff:g id="day_temperature">%1$d</xliff:g>K  Night: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+    <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+    <string name="live_display_day">Day</string>
+    <string name="live_display_night">Night</string>
+    <string name="live_display_outdoor_mode_title">Automatic outdoor mode</string>
+    <string name="live_display_outdoor_mode_summary">Increase brightness and saturation automatically under bright sunlight</string>
+    <string name="live_display_low_power_title">Reduce power consumption</string>
+    <string name="live_display_low_power_summary">Adjust display for lowest power consumption without degradation</string>
+    <string name="live_display_enhance_color_title">Enhance colors</string>
+    <string name="live_display_enhance_color_summary">Improve color vibrance of flesh tones, scenery, and other images</string>
+
+    <!-- Slim Shortcuts -->
+    <string name="slim_shortcut_picker">Slim Actions</string>
+
+    <!-- Hardware buttons - General -->
+    <string name="general_title">General</string>
+    <string name="disable_hwbuttons_title">Disable hardware buttons</string>
+    <string name="disable_hwbuttons_summary">Disable hardware buttons and enable navigation bar</string>
+
+    <!-- Overflow button -->
+    <string name="keys_overflow_title">Overflow button</string>
+    <string name="keys_overflow_toast">The action overflow button may not be visible or hidden until apps are restarted</string>
+    <string name="overflow_auto_detect">Auto detect</string>
+    <string name="overflow_show">Show</string>
+    <string name="overflow_hide">Hide</string>
+
+    <!-- Hardware keys backlight -->
+    <string name="button_backlight_title">Backlight</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
+    <string name="button_backlight_seekbar_title">Button brightness</string>
+    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Enabled</string>
+
+
     <!-- Pie Control -->
     <string name="pie_control_title">NuclearSlimPIE</string>
     <string name="pie_control_summary">Enable pie controls</string>
@@ -1084,10 +1225,6 @@
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
  
-
-
-
-
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
@@ -1101,10 +1238,44 @@
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
     <string name="expanded_desktop_title">Expanded desktop options</string>
 
-
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Chamber of secrets</string>
     <string name="chamber_toast">The chamber of secrets has opened</string>
+
+    <!-- Screen recorder -->
+    <string name="screen_recorder_video_dimensions_title">Video size</string>
+    <string name="screen_recorder_video_bitrate_title">Bitrate</string>
+    <string name="screen_recorder_record_audio_title">External audio</string>
+    <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400">240x400</string>
+    <string name="screen_recorder_size_360x640">360x640</string>
+    <string name="screen_recorder_size_480x800">480x800</string>
+    <string name="screen_recorder_size_480x854">480x854</string>
+    <string name="screen_recorder_size_540x960">540x960</string>
+    <string name="screen_recorder_size_600x1024">600x1024</string>
+    <string name="screen_recorder_size_720x1280">720x1280</string>
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
+    <string name="screen_recorder_bitrate_100000">100000</string>
+    <string name="screen_recorder_bitrate_250000">250000</string>
+    <string name="screen_recorder_bitrate_500000">500000</string>
+    <string name="screen_recorder_bitrate_1000000">1000000</string>
+    <string name="screen_recorder_bitrate_2000000">2000000</string>
+    <string name="screen_recorder_bitrate_3000000">3000000</string>
+    <string name="screen_recorder_bitrate_4000000">4000000</string>
+    <string name="screen_recorder_bitrate_5000000">5000000</string>
+    <string name="screen_recorder_bitrate_10000000">10000000</string>
+    <string name="screen_recorder_bitrate_20000000">20000000</string>
 
 </resources>
 

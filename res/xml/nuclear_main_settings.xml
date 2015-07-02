@@ -77,11 +77,23 @@
          <Preference
             android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
             android:key="privacy_guard_manager"
-     android:icon="@drawable/ic_settings_privacy"
+            android:icon="@drawable/ic_settings_privacy"
             android:title="@string/privacy_guard_manager_title" />
 
     </PreferenceCategory>
 
 
-       
+    <PreferenceCategory
+        android:key="misc_category"
+        android:title="@string/misc_category_title">
+
+        <PreferenceScreen
+            android:key="screen_recorder"
+            android:title="@string/screen_recorder_title"
+            android:icon="@drawable/ic_lock_screen_record"
+            android:fragment="com.android.settings.slim.ScreenRecorderSettings" >
+        </PreferenceScreen>
+
+   </PreferenceCategory>
+
 </PreferenceScreen>

@@ -1276,6 +1276,10 @@
     <string name="screen_recorder_bitrate_5000000">5000000</string>
     <string name="screen_recorder_bitrate_10000000">10000000</string>
     <string name="screen_recorder_bitrate_20000000">20000000</string>
+ <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Link ring and notification volumes</string>
+    <string name="notification_volume_option_title">Notification volume</string>
+
 
 </resources>
 

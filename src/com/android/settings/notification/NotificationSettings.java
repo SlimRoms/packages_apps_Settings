@@ -76,6 +76,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private static final String KEY_NOTIFICATION = "notification";
     private static final String KEY_LOCK_SCREEN_NOTIFICATIONS = "lock_screen_notifications";
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
+    private static final String PREF_HEADS_UP_GLOBAL_SWITCH = "heads_up_global_switch";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
 
@@ -108,6 +109,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private ComponentName mSuppressor;
     private int mRingerMode = -1;
 
+    private ListPreference mHeadsUpGlobalSwitch;
     private ListPreference mHeadsUpSnoozeTime;
     private ListPreference mHeadsUpTimeOut;
 
@@ -200,6 +202,22 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
 
+        mHeadsUpGlobalSwitch = (ListPreference) findPreference(PREF_HEADS_UP_GLOBAL_SWITCH);
+        mHeadsUpGlobalSwitch.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                int headsUpGlobalSwitch = Integer.valueOf((String) newValue);
+                updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
+                return Settings.System.putInt(getContentResolver(),
+                        Settings.System.HEADS_UP_GLOBAL_SWITCH,
+                        headsUpGlobalSwitch);
+            }
+        });
+        final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
+        mHeadsUpGlobalSwitch.setValue(String.valueOf(headsUpGlobalSwitch));
+        updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
+
     }
 
     @Override
@@ -222,6 +240,30 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         mVolumeCallback.stopSample();
         mSettingsObserver.register(false);
         mReceiver.register(false);
+    }
+
+    private void updateHeadsUpGlobalSwitchSummary(int value) {
+        String summary;
+        switch (value) {
+            case 0:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_disabled);
+                        mHeadsUpSnoozeTime.setEnabled(false);
+                        mHeadsUpTimeOut.setEnabled(false);
+                        break;
+            case 1:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_perapp);
+                        mHeadsUpSnoozeTime.setEnabled(true);
+                        mHeadsUpTimeOut.setEnabled(true);
+                        break;
+            case 2:     summary = getResources().getString(
+                                    R.string.heads_up_global_switch_summary_forced);
+                        mHeadsUpSnoozeTime.setEnabled(true);
+                        mHeadsUpTimeOut.setEnabled(true);
+                        break;
+            default:    summary = "";
+                        break;
+        }
+        mHeadsUpGlobalSwitch.setSummary(summary);
     }
 
     private void updateHeadsUpSnoozeTimeSummary(int value) {

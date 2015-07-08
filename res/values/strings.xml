@@ -6394,4 +6394,10 @@
     <string name="chamber_title">Chamber of secrets</string>
     <string name="chamber_toast">The chamber of secrets has opened</string>
 
+
+<!--animaciones-->
+    <string name="nuclear_animaciones_settings">Animaciones</string>
+    <string name="animaciones_settings_title">Animacion toast</string>
+
+
 </resources>

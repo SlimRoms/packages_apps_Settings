@@ -571,6 +571,24 @@
         
              android:name=".nuclear.MainSettings" />
 
+             <!--animaciones-->
+
+             <!-- Nuclear Settings -->
+        <activity android:name="Settings$MainSettingsActivity"
+             android:label="@string/animaciones_settings_title"
+             android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.nuclear.animaciones.animaciones" />
+        </activity>
+
+        <activity
+        
+             android:name=".nuclear.animaciones.animaciones" />
+
 <activity
             android:name=".aicp.WakeLockBlocker"
             android:label="@string/wakelock_blocker_title" >
@@ -2145,6 +2163,30 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/notification_settings" />
         </activity>
+
+
+
+       <!-- Telo -->
+        <activity android:name=".telokang.activedisplay.ActiveDisplaySettings" /> 
+   
+        <activity android:name=".telokang.teloradio.TeloRadioSettings"
+            android:label="@string/telo_radio_settings_title"
+            android:launchMode="singleTask" 
+            android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <receiver android:name=".telokang.teloradio.TeloRadioBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        
 
         <!-- Show regulatory info (from settings item or dialing "*#07#") -->
         <activity android:name="RegulatoryInfoDisplayActivity"

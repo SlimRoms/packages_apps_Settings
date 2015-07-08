@@ -74,7 +74,7 @@
 
     </PreferenceCategory>            
 
-    <PreferenceCategory
+   <!-- <PreferenceCategory
         android:key="telo_radio_info"
         android:title="@string/telo_radio_info_category" >
            
@@ -83,6 +83,6 @@
 		android:title="@string/telo_radio_info_title"
 		android:summary="@string/telo_radio_info_summary" />
 
-    </PreferenceCategory>    
+    </PreferenceCategory>    -->
             
 </PreferenceScreen>

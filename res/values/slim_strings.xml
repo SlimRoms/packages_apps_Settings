@@ -409,6 +409,8 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
+    <string name="status_bar_ticker_title">Notification Ticker</string>
+    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
@@ -548,6 +550,7 @@
     <string name="shortcut_action_menu_big">Menu Big</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_smart">Smart pulldown</string>
     <string name="shortcut_action_torch">Flashlight</string>
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
@@ -1233,6 +1236,7 @@
     <string name="expanded_hide_navigation">Hide navigation bar</string>
     <string name="expanded_hide_both">Hide both</string>
     <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \'Enabled for all\' to the off position</string>
+     
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_desktop_style">Expanded desktop style</string>
@@ -1298,35 +1302,11 @@
     <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
     <string name="toast_Translucent_animation">Translucent animation</string>
 
- 
-    <!-- Telo Radio -->
-    <string name="telo_radio_settings_title">Connection manager</string>
-    <string name="telo_radio_enable_title">Enable manager</string>
-    <string name="telo_radio_enable_summary_on">Manager enabled connections.</string>
-    <string name="telo_radio_enable_summary_off">Manager connections disabled.</string>
-
-    <string name="telo_radio_options_category">Configuration Options</string>
-    <string name="telo_radio_lte_title">Use LTE</string>
-    <string name="telo_radio_lte_summary">Select this option if you use LTE (4G).</string>
-    <string name="telo_radio_2g_wifi_title">2G with Wi-Fi</string>
-    <string name="telo_radio_2g_wifi_title_summary">When connected to a Wi-Fi network to pass data to 2G.</string>
+  <!-- Unaccounted and overcounted battery stats -->
+    <string name="show_unac_and_overcounted_stats_title">Show unaccounted/overcounted stats</string>
+    <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
     
-    <string name="telo_radio_2g_screenoff_category">Options with the screen off </string>
-    <string name="telo_radio_2g_screenoff_title">2G with screen off</string>
-    <string name="telo_radio_2g_screenoff_summary">The device will switch to 2G when the screen is off after a while.</string>
-    <string name="telo_radio_2g_screenoff_timeout_title">Time to switch to 2G</string>
-    <string name="telo_radio_2g_3min">3 minutes</string>
-    <string name="telo_radio_2g_5min">5 minutes</string>
-    <string name="telo_radio_2g_10min">10 minutes</string>
-    <string name="telo_radio_2g_15min">15 minutes</string>
-    <string name="telo_radio_2g_20min">20 minutes</string>
-    <string name="telo_radio_go_3g_unlock_title">3G to unlock</string>
-    <string name="telo_radio_go_3g_unlock_summary">He switched to 3G to unlock the device, if this option is selected you switched to 3G when you turn the device screen.</string>
-    
-    <string name="telo_radio_info_category">Information TeloRadio</string>    
-    <string name="telo_radio_info_title">About the Connection Manager</string>
-    <string name="telo_radio_info_summary">The connection manager TeloRadio &#169; is a feature created by Telo (TeloKang ROM) Android Inc. Original Idea atl4ntis (Cataclysm ROM).</string>
- 
 
 </resources>
+
 

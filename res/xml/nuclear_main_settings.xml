@@ -76,11 +76,7 @@
          </PreferenceScreen>
 
 
-         <PreferenceScreen
-             android:id="@+id/telo_radio_settings"
-        android:fragment="com.android.settings.telokang.teloradio.TeloRadioSettings"
-        android:title="@string/telo_radio_settings_title"
-        android:icon="@drawable/ic_settings_teloradio" />
+
                
 	</PreferenceCategory>
 

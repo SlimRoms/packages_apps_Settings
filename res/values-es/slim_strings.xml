@@ -856,33 +856,5 @@
   <string name="remove_blacklist_entry">¿Quieres borrar el registro de la lista negra?</string>
   <string name="select_contact">Selecciona contacto</string>
  
-    <!-- Telo Radio -->
-    <string name="telo_radio_settings_title">Gestor de conexiones</string>
-    <string name="telo_radio_enable_title">Habilitar gestor</string>
-    <string name="telo_radio_enable_summary_on">Gestor de conexiones habilitado.</string>
-    <string name="telo_radio_enable_summary_off">Gestor de conexiones deshabilitado.</string>
-
-    <string name="telo_radio_options_category">Opciones de configuración</string>
-    <string name="telo_radio_lte_title">Utilizar LTE</string>
-    <string name="telo_radio_lte_summary">Selecciona esta opción si haces uso de LTE (4G).</string>
-    <string name="telo_radio_2g_wifi_title">2G con Wi-Fi</string>
-    <string name="telo_radio_2g_wifi_title_summary">Cuando estés conectado a una red Wi-Fi los datos pasaran a 2G.</string>
-    
-    <string name="telo_radio_2g_screenoff_category">Opciones con la pantalla apagada</string>
-    <string name="telo_radio_2g_screenoff_title">2G con la pantalla apagada</string>
-    <string name="telo_radio_2g_screenoff_summary">El dispositivo cambiara a 2G cuando la pantalla este apagada después de un tiempo.</string>
-    <string name="telo_radio_2g_screenoff_timeout_title">Tiempo para cambiar a 2G</string>
-    <string name="telo_radio_2g_3min">3 minutos</string>
-    <string name="telo_radio_2g_5min">5 minutos</string>
-    <string name="telo_radio_2g_10min">10 minutos</string>
-    <string name="telo_radio_2g_15min">15 minutos</string>
-    <string name="telo_radio_2g_20min">20 minutos</string>
-    <string name="telo_radio_go_3g_unlock_title">3G al desbloquear</string>
-    <string name="telo_radio_go_3g_unlock_summary">Se cambiara a 3G al desbloquear el dispositivo, si no se selecciona esta opción se cambiara a 3G al encender la pantalla del dispositivo.</string>
-    
-    <string name="telo_radio_info_category">Información sobre TeloRadio</string>    
-    <string name="telo_radio_info_title">Acerca del gestor de conexiones</string>
-    <string name="telo_radio_info_summary">El gestor de conexiones TeloRadio &#169; es una característica creada por Telo (TeloKang ROM) para Android Inc. Idea original de atl4ntis (Cataclysm ROM).</string>
-
-
+   
 </resources>

@@ -2166,27 +2166,7 @@
 
 
 
-       <!-- Telo -->
-        <activity android:name=".telokang.activedisplay.ActiveDisplaySettings" /> 
-   
-        <activity android:name=".telokang.teloradio.TeloRadioSettings"
-            android:label="@string/telo_radio_settings_title"
-            android:launchMode="singleTask" 
-            android:process="com.android.phone">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        
-        <receiver android:name=".telokang.teloradio.TeloRadioBoot">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
-        </receiver>
-        
+       
 
         <!-- Show regulatory info (from settings item or dialing "*#07#") -->
         <activity android:name="RegulatoryInfoDisplayActivity"

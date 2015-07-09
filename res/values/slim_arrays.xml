@@ -299,6 +299,7 @@
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_settings_panel</item>
+        <item>@string/shortcut_action_smart</item>
         <item>@string/shortcut_action_recents</item>
         <item>@string/shortcut_action_screenshot</item>
         <item>@string/shortcut_action_ime</item>
@@ -331,6 +332,7 @@
         <item>**power**</item>
         <item>**notifications**</item>
         <item>**settings_panel**</item>
+        <item>**smart_pulldown**</item>
         <item>**recents**</item>
         <item>**screenshot**</item>
         <item>**ime**</item>
@@ -634,6 +636,7 @@
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_qs</item>
+        <item>@string/shortcut_action_smart</item>
         <item>@string/shortcut_action_recent</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
@@ -653,6 +656,7 @@
         <item>**ime**</item>
         <item>**power_menu**</item>
         <item>**settings_panel**</item>
+        <item>**smart_pulldown**</item>
         <item>**recents**</item>
         <item>**power**</item>
         <item>**screenshot**</item>
@@ -844,6 +848,8 @@
         <item>8000</item>
         <item>10000</item>
     </string-array>
+
+    
 
     <!-- HW Key Rebinding -->
     <string-array name="shortcut_action_hwkey_entries">
@@ -1143,19 +1149,5 @@
     </string-array>
 
 
-    <string-array name="telo_radio_2g_screenoff_values" translatable="false">
-        <item>180000</item>
-        <item>300000</item>
-        <item>600000</item>
-        <item>900000</item>
-        <item>1200000</item>
-    </string-array>
- 
-    <string-array name="telo_radio_2g_screenoff_entries" translatable="false">
-        <item>@string/telo_radio_2g_3min</item>
-        <item>@string/telo_radio_2g_5min</item>
-        <item>@string/telo_radio_2g_10min</item>
-        <item>@string/telo_radio_2g_15min</item>
-        <item>@string/telo_radio_2g_20min</item>
-    </string-array>
+    
 </resources>

@@ -59,6 +59,7 @@
                 android:title="@string/screensaver_settings_title"
                 android:fragment="com.android.settings.DreamSettings" />
 
+
         <ListPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"

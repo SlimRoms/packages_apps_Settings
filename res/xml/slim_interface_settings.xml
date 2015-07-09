@@ -39,12 +39,12 @@
         android:title="@string/power_menu_expanded_desktop"
         android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
 
-        <ListPreference
+     <!--     <ListPreference
                 android:key="toast_animation"
                 android:title="@string/toast_animation_title"
                 android:entries="@array/toast_animation_entries"
                 android:entryValues="@array/toast_animation_values"
-                android:persistent="false" />
+                android:persistent="false" />-->
 
       <!--   <PreferenceScreen
             android:key="network_traffic_state"

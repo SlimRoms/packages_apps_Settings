@@ -52,6 +52,22 @@
             android:entries="@array/wifi_frequency_band_entries"
             android:entryValues="@array/wifi_frequency_band_values" />
 
+    <ListPreference
+            android:key="country_code"
+            android:title="@string/wifi_country_code_title"
+            android:summary="@string/wifi_country_code_summary"
+            android:persistent="false"
+            android:entries="@array/wifi_country_code_entries"
+            android:entryValues="@array/wifi_country_code_values" />
+
+    <ListPreference
+            android:key="country_override"
+            android:title="@string/wifi_country_override_title"
+            android:summary="@string/wifi_country_override_summary"
+            android:persistent="false"
+            android:entries="@array/wifi_country_override_entries"
+            android:entryValues="@array/wifi_country_override_values" />
+
     <Preference
             android:key="install_credentials"
             android:title="@string/wifi_install_credentials"

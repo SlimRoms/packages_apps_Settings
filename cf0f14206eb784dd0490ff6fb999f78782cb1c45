@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a5c5d37_871666f0",
+        "filename": "src/com/android/settings/slim/NavbarSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2015-07-14T23:33:34Z",
+      "side": 1,
+      "message": "Rather : DIM_NAV_BUTTONS_ALPHA ;)",
+      "range": {
+        "startLine": 178,
+        "startChar": 36,
+        "endLine": 178,
+        "endChar": 51
+      },
+      "revId": "cf0f14206eb784dd0490ff6fb999f78782cb1c45",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

@@ -33,6 +33,7 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
+import android.provider.Settings.Secure;
 
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.Action;
@@ -57,6 +58,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String DIM_NAV_BUTTONS_ALPHA = "dim_nav_buttons_alpha";
     private static final String DIM_NAV_BUTTONS_ANIMATE = "dim_nav_buttons_animate";
     private static final String DIM_NAV_BUTTONS_ANIMATE_DURATION = "dim_nav_buttons_animate_duration";
+    private static final String SEARCH_PANEL_ENABLED = "search_panel_enabled";
+    private static final String PREF_RING = "navigation_bar_ring";
 
     private static final int DLG_NAVIGATION_WARNING = 0;
 
@@ -75,6 +78,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     SlimSeekBarPreference mDimNavButtonsAlpha;
     SwitchPreference mDimNavButtonsAnimate;
     SlimSeekBarPreference mDimNavButtonsAnimateDuration;
+    SwitchPreference mSearchPanelEnabled;
+    PreferenceScreen mRingPreference;
 
     private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler());
     private final class SettingsObserver extends ContentObserver {
@@ -158,6 +163,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mDimNavButtonsAnimateDuration.multiplyValue(100);
         mDimNavButtonsAnimateDuration.setOnPreferenceChangeListener(this);
 
+        mSearchPanelEnabled = (SwitchPreference) findPreference(SEARCH_PANEL_ENABLED);
+        mSearchPanelEnabled.setOnPreferenceChangeListener(this);
+
+        mRingPreference = (PreferenceScreen) findPreference(PREF_RING);
+
         updateSettings();
     }
 
@@ -218,6 +228,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             mDimNavButtonsAnimateDuration.setInitValue((animateDuration / 100) - 1);
         }
 
+        mSearchPanelEnabled.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.Secure.SEARCH_PANEL_ENABLED, 0) == 1);
+
         updateNavbarPreferences(enableNavigationBar);
     }
 
@@ -232,12 +245,16 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mMenuDisplayLocation.setEnabled(show
             && mNavBarMenuDisplayValue != 1);
         mStatusBarImeArrows.setEnabled(show);
+
         mDimNavButtons.setEnabled(show);
         mDimNavButtonsTouchAnywhere.setEnabled(show);
         mDimNavButtonsTimeout.setEnabled(show);
         mDimNavButtonsAlpha.setEnabled(show);
         mDimNavButtonsAnimate.setEnabled(show);
         mDimNavButtonsAnimateDuration.setEnabled(show);
+
+        mSearchPanelEnabled.setEnabled(show);
+        mRingPreference.setEnabled(show);
     }
 
     @Override
@@ -300,6 +317,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.DIM_NAV_BUTTONS_ANIMATE_DURATION,
                 Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mSearchPanelEnabled) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.Secure.SEARCH_PANEL_ENABLED,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         }
         return false;

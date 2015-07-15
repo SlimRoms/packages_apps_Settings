@@ -31,6 +31,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SecureSettingSwitchPreference;
 import android.provider.Settings;
 
 import com.android.internal.util.slim.DeviceUtils;
@@ -50,6 +51,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
     private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
+    private static final String SEARCH_PANEL_ENABLED = "search_panel_enabled";
+    private static final String PREF_RING = "navigation_bar_ring";
 
     private static final int DLG_NAVIGATION_WARNING = 0;
 
@@ -62,6 +65,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     PreferenceScreen mButtonPreference;
     PreferenceScreen mStyleDimenPreference;
     SwitchPreference mStatusBarImeArrows;
+    SecureSettingSwitchPreference mSearchPanelEnabled;
+    PreferenceScreen mRingPreference;
 
     private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler());
     private final class SettingsObserver extends ContentObserver {
@@ -115,6 +120,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
         mStatusBarImeArrows.setOnPreferenceChangeListener(this);
 
+        mSearchPanelEnabled = (SecureSettingSwitchPreference) findPreference(SEARCH_PANEL_ENABLED);
+        mSearchPanelEnabled.setOnPreferenceChangeListener(this);
+
+        mRingPreference = (PreferenceScreen) findPreference(PREF_RING);
+
         updateSettings();
     }
 
@@ -140,6 +150,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
 
+        mSearchPanelEnabled.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SEARCH_PANEL_ENABLED, 0) == 1);
+
         updateNavbarPreferences(enableNavigationBar);
     }
 
@@ -154,6 +167,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mMenuDisplayLocation.setEnabled(show
             && mNavBarMenuDisplayValue != 1);
         mStatusBarImeArrows.setEnabled(show);
+        mSearchPanelEnabled.setEnabled(show);
+        mRingPreference.setEnabled(show);
     }
 
     @Override
@@ -187,6 +202,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mStatusBarImeArrows) {
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_IME_ARROWS,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mSearchPanelEnabled) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.SEARCH_PANEL_ENABLED,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
         }

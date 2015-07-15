@@ -75,6 +75,24 @@
         </PreferenceCategory>
 
         <PreferenceCategory
+                android:key="navring_cat"
+                android:title="@string/navigation_ring_title">
+
+            <com.android.settings.slim.SecureSettingSwitchPreference
+                android:key="search_panel_enabled"
+                android:title="@string/navigation_ring_enable_title"
+                android:defaultValue="true" />
+
+            <PreferenceScreen
+                android:key="navigation_bar_ring"
+                android:fragment="com.android.settings.slim.NavRing"
+                android:summary="@string/navigation_ring_summary"
+                android:title="@string/navigation_ring_customize"
+                android:dependency="search_panel_enabled" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
                 android:key="dim_nav_buttons_cat"
                 android:title="@string/dim_nav_buttons_category">
 

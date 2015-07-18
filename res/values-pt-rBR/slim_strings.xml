@@ -339,6 +339,8 @@
   <string name="clock_date_style_uppercase">Maiúsculas</string>
   <string name="clock_date_format_custom">Formato personalizado java</string>
   <string name="status_bar_clock_style_reset_message">Resetar a cor do relógio?</string>
+  <string name="status_bar_ticker_title">Ticker de notificação</string>
+  <string name="status_bar_ticker_summary">Animação do texto de notificação na barra de status</string>
   <string name="status_bar_toggle_brightness">Controle do brilho da tela</string>
   <string name="status_bar_toggle_brightness_summary">Permite ajustar o brilho deslizando o dedo sobre a barra de status</string>
   <string name="status_bar_toggle_info">Brilho automático está ativado</string>
@@ -382,7 +384,7 @@
   <string name="qs_action_no_more_tiles">Não há mais botões disponíveis</string>
   <string name="qs_tile_adb_over_network">ADB sobre rede</string>
   <string name="qs_tile_airplane_mode">Modo avião</string>
-  <string name="qs_tile_ambient_display">Ambient Display</string>
+  <string name="qs_tile_ambient_display">Tela Ambiente</string>
   <string name="qs_tile_bluetooth">Bluetooth</string>
   <string name="qs_tile_cast_screen">Transmitir tela</string>
   <string name="qs_tile_cellular_data">Conexão de dados</string>
@@ -446,6 +448,7 @@
   <string name="shortcut_action_menu_big">Menu</string>
   <string name="shortcut_action_notifications">Notificações</string>
   <string name="shortcut_action_qs">Painel de configurações rápidas</string>
+  <string name="shortcut_action_smart">Smart pulldown</string>
   <string name="shortcut_action_torch">Lanterna</string>
   <string name="shortcut_action_ring_vib">Tocar/Vibrar</string>
   <string name="shortcut_action_ring_silent">Tocar/Silencioso</string>
@@ -566,24 +569,24 @@
   <string name="adb_over_network_summary">Ativar a depuração TCP/IP sobre as interfaces de rede (Wi-Fi, USB). Esta configuração é perdida ao reiniciar</string>
   <string name="adb_over_network_warning">Aviso: Quando ADB sobre rede é ativado, o seu telefone fica desprotegido e pode facilitar invasões de intrusos  pelas redes conectadas, incluindo rede de dados GSM!
     \n\nUse esta funcionalidade apenas quando estiver conectado a redes confiáveis.\n\nVocê quer mesmo ativar esta função?</string>
-  <string name="display_category_doze_options_title">Opções do Ambient display (doze)</string>
-  <string name="doze_settings_title">Doze: Opções avançadas</string>
-  <string name="doze_timeout_title">Doze: Tempo limite do pulso</string>
+  <string name="display_category_doze_options_title">Tela Ambiente: Opções</string>
+  <string name="doze_settings_title">Tela Ambiente: Opções avançadas</string>
+  <string name="doze_timeout_title">Tempo limite do pulso</string>
   <string name="doze_timeout_summary">Tempo que a tela permanecerá ligada ao receber notificações</string>
-  <string name="doze_trigger_pickup_title">Ativar a tela ao se levantar o dispositivo</string>
-  <string name="doze_trigger_pickup_summary_on">A tela será ativada ao levantar o dispositivo</string>
-  <string name="doze_trigger_pickup_summary_off">A tela não será ativada ao levantar o dispositivo</string>
+  <string name="doze_trigger_pickup_title">Ativação do gesto de apanhar o dispositivo</string>
+  <string name="doze_trigger_pickup_summary_on">A pulsação da tela ambiente será acionada por gestos de apanhar o dispositivo </string>
+  <string name="doze_trigger_pickup_summary_off">O gesto de apanhar o dispositivo não será utilizado como mecanismo de ativação</string>
   <string name="doze_trigger_sigmotion_title">Ativar a tela quando o dispositivo for movimentado</string>
-  <string name="doze_trigger_sigmotion_summary_on">A tela será ativada ao se movimentar significativamente o dispositivo</string>
+  <string name="doze_trigger_sigmotion_summary_on">A pulsação da tela ambiente será acionada por eventos de movimento significativo do sensor</string>
   <string name="doze_trigger_sigmotion_summary_off">A tela não será ativada ao se movimentar significativamente o dispositivo</string>
   <string name="doze_trigger_notification_title">Disparador de notificação</string>
-  <string name="doze_trigger_notification_summary_on">O pulso Doze será ativado via notificações</string>
+  <string name="doze_trigger_notification_summary_on">A pulsação da tela ambiente será acionada por notificações</string>
   <string name="doze_trigger_notification_summary_off">Notificações não serão utilizadas como um gatilho para o Doze</string>
-  <string name="doze_schedule_title">Doze: Agendamento</string>
-  <string name="doze_schedule_summary_on">Doze: Valores pré-definidos de intervalos de repetição (normalmente [1s, 10s, 30s, 60s, 120s]) serão usados (padrão)</string>
-  <string name="doze_schedule_summary_off">Doze pulsará apenas uma vez por notificação</string>
-  <string name="doze_brightness_title">Doze: Nível do brilho</string>
-  <string name="doze_brightness_summary">Doze: Nível de brilho da tela (% do máximo brilho permitido)</string>
+  <string name="doze_schedule_title">Repetir a programação</string>
+  <string name="doze_schedule_summary_on">Intervalos de repetição predefinidos da tela ambiente (normalmente [1s,10s,30s,60s,120s]) serão usados (padrão)</string>
+  <string name="doze_schedule_summary_off">Tela ambiente somente pulsará uma vez por notificação/ativação</string>
+  <string name="doze_brightness_title">Nível de luminosidade da tela ambiente</string>
+  <string name="doze_brightness_summary">Nível de brilho da pulsação da tela ambiente (% do máximo brilho permitido)</string>
   <string name="navigation_settings_options_title">Opções de navegação</string>
   <string name="button_keys_title">Botões físicos</string>
   <string name="keys_bindings_title">Ações das teclas</string>
@@ -685,8 +688,17 @@
   <string name="navigation_bar_glow_tint_title">Cor do brilho do botão</string>
   <string name="status_bar_show_network_activity_title">Setas de atividade de rede</string>
   <string name="heads_up_title">Notificações heads up</string>
+  <string name="heads_up_global_switch_title">Modo de notificações heads-up</string>
+  <string name="heads_up_global_switch_summary_disabled">Notificações heads-up estão desativadas</string>
+  <string name="heads_up_global_switch_summary_perapp">Notificações heads-up estão ativadas/desativadas por app</string>
+  <string name="heads_up_global_switch_summary_forced">Notificações heads-up estão ativadas forçosamente para todas as aplicações</string>
+  <string name="heads_up_global_switch_disabled">Nunca mostrar notificações heads-up</string>
+  <string name="heads_up_global_switch_perapp">Mostrar notificações heads-up  por app</string>
+  <string name="heads_up_global_switch_forced">Sempre mostrar notificações heads-up</string>
   <string name="app_notification_enable_heads_up_title">Mostrar notificações heads up</string>
   <string name="app_notification_enable_heads_up_summary">Mostrar notificações deste aplicativo como heads-up</string>
+  <string name="app_notification_enable_heads_up_global_disabled_summary">Notificações heads-up estão no momento globalmente desativadas nas configurações de notificação</string>
+  <string name="app_notification_enable_heads_up_global_forced_summary">Notificações heads-up estão no momento globalmente ativadas nas configurações de notificação</string>
   <string name="heads_up_snooze_title">Timer da soneca</string>
   <string name="heads_up_snooze_summary">Desabilitar heads up por <xliff:g id="number">%d</xliff:g> minutos se o botão soneca for pressionado</string>
   <string name="heads_up_snooze_disabled_summary">Timer da soneca está desativado</string>
@@ -698,6 +710,7 @@
   <string name="heads_up_time_out_title">Tempo limite</string>
   <string name="heads_up_time_out_summary">Notificações heads up aparecerão por <xliff:g id="number">%d</xliff:g> segundos</string>
   <string name="heads_up_time_out_never_summary">Notificações heads up serão exibidas até que sejam descartadas</string>
+  <string name="heads_up_time_out_2sec">2 segundos</string>
   <string name="heads_up_time_out_4sec">4 segundos</string>
   <string name="heads_up_time_out_6sec">6 segundos</string>
   <string name="heads_up_time_out_8sec">8 segundos</string>
@@ -878,4 +891,15 @@
   <string name="expanded_desktop_title">Opções da área de trabalho expandida</string>
   <string name="chamber_title">Câmara dos segredos</string>
   <string name="chamber_toast">A câmara dos segredos foi aberta</string>
+  <string name="show_unac_and_overcounted_stats_title">Mostrar estatísticas ignoradas/superestimadas</string>
+  <string name="show_unac_and_overcounted_stats_summary">Mostrar nas estatísticas da bateria os usos ignorados/superestimados.</string>
+  <string name="title_tile_performance_profile">Perfil de desempenho</string>
+  <string name="performance_settings_title">Desempenho</string>
+  <string name="perf_profile_title">Perfil</string>
+  <string name="performance_settings_warning_title">Proceder com cautela</string>
+  <string name="performance_settings_warning">Estas definições são experimentais e quaisquer alterações feitas poderão causar instabilidade, falhas de sistema, perda de dados ou falha no equipamento.\n\nPedimos que não nos enviem relatórios de erros se alguma destas definições forem  alteradas.</string>
+  <string name="performance_set_on_boot">Definir na inicialização</string>
+  <string name="performance_set_on_boot_summary">Restaurar configurações na inicialização</string>
+  <string name="autoperf_title">Ativar perfis por aplicativo</string>
+  <string name="autoperf_summary">Escolher automaticamente um perfil de desempenho apropriado para vários aplicativos</string>
 </resources>

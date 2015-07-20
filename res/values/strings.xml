@@ -6180,4 +6180,10 @@
    <string name="imei_information_summary">IMEI relative information</string>
    <string name="slot_number">(Slot<xliff:g id="slot_num">%1$d</xliff:g>)</string>
 
+    <!--- Sms security limit -->
+    <string name="app_security_title">App security</string>
+    <string name="sms_security_check_limit_title">SMS message limit</string>
+    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
+    <string name="sms_security_check_limit_default">30 (Default)</string>
+
 </resources>

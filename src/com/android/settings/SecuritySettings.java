@@ -111,6 +111,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
     private static final String KEY_TRUST_AGENT = "trust_agent";
     private static final String KEY_SCREEN_PINNING = "screen_pinning_settings";
+    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = { KEY_LOCK_AFTER_TIMEOUT,
@@ -146,6 +147,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private ListPreference mAdvancedReboot;
     private SwitchPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
+    private ListPreference mSmsSecurityCheck;
 
     private boolean mIsPrimary;
 
@@ -221,6 +223,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
+
         // Add package manager to check if features are available
         PackageManager pm = getActivity().getPackageManager();
 

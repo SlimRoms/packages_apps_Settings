@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a5c5d37_30412e0c",
+        "filename": "res/values/slim_arrays.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 1000083
+      },
+      "writtenOn": "2015-07-22T01:51:44Z",
+      "side": 1,
+      "message": "it seems to be **settings_panel** in slim 5.1",
+      "range": {
+        "startLine": 878,
+        "startChar": 14,
+        "endLine": 878,
+        "endChar": 31
+      },
+      "revId": "b7739d90caade00c88f0d984885640bc566f37ce",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

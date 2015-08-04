@@ -564,9 +564,13 @@
     Diese Einstellung wird nach einem Neustart automatisch zurückgesetzt</string>
   <string name="adb_over_network_warning">ACHTUNG: Wenn Sie ADB über Netzwerk aktivieren, ist ihr Telefon für Zugriffe aus allen verbundenen Netzwerken offen, auch aus dem mobilen Datennetzwerk!
     \n\nAktivieren Sie diese Funktion nur, wenn Sie mit einem sicheren Netzwerk verbunden sind.\n\nWollen Sie diese Funktion wirklich aktivieren?</string>
+  <string name="display_category_doze_options_title">Ambient-Display-Einstellungen</string>
+  <string name="doze_settings_title">Erweiterte Ambient-Display-Einstelllungen</string>
   <string name="doze_timeout_summary">Zeitdauer, die der Bildschirm bei Benachrichtigungen anbleibt</string>
   <string name="doze_trigger_notification_title">Auslöser für Benachrichtigungen</string>
   <string name="doze_trigger_notification_summary_off">Benachrichtigungen werden nicht als Auslöser genutzt</string>
+  <string name="doze_schedule_title">Wiederholungsmuster</string>
+  <string name="doze_schedule_summary_on">Es werden vordefinierte Intervalle (normalerweise [1 s, 10 s, 30 s, 60 s, 120 s]) für wiederholtes Einschalten des Displays verwendet (Standard)</string>
   <string name="navigation_settings_options_title">Navigation-Einstellungen</string>
   <string name="button_keys_title">Hardware-Tasten</string>
   <string name="keys_bindings_title">Tastenbelegung</string>
@@ -606,6 +610,7 @@
   <string name="shortcut_action_ime">Eingabemethoden öffnen</string>
   <string name="shortcut_action_power_menu">Power Menü</string>
   <string name="shortcut_action_qs">Schnelleinstellungen</string>
+  <string name="shortcut_action_settings_panel">Einstellungen</string>
   <string name="shortcut_action_smart">Intelligent Aufklappen</string>
   <string name="shortcut_action_recent">Anwendungsverlauf</string>
   <string name="shortcut_action_recents">Anwendungsverlauf</string>
@@ -656,6 +661,10 @@
   <string name="navbar_cat">Navigationsleiste</string>
   <string name="navbar_dimensions_reset_message">Alle Abmessungen auf Standardwerte zurücksetzen?</string>
   <string name="navbar_button_style_reset_message">Alle Eingaben zum Aussehen auf Standardwerte zurücksetzen?</string>
+  <string name="dim_nav_buttons_category">SlimDim</string>
+  <string name="dim_nav_buttons_touch_anywhere_title">Alle Bildschirmberührungen registrieren</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_on">Jede Bildschirmberührung macht das Dimmen der Schalter rückgängig.</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_off">Nur Berührungen der Navigationsleiste machen das Dimmen der Schalter rückgängig.</string>
   <string name="nav_bar_button_style">Tastenlayout</string>
   <string name="nav_bar_button_style_summary">Navigationsleisten-Tasten-Design ändern</string>
   <string name="button_transparency_title">Tastentransparenz</string>
@@ -666,8 +675,17 @@
   <string name="navigation_bar_glow_tint_title">Leuchtfarbe der Navigationsleiste</string>
   <string name="status_bar_show_network_activity_title">Netzwerk-Aktivität-Pfeile</string>
   <string name="heads_up_title">Heads-Up Benachrichtigung</string>
+  <string name="heads_up_global_switch_title">Heads-up-Benachrichtigungsmodus</string>
+  <string name="heads_up_global_switch_summary_disabled">Heads-up-Benachrichtigungen sind deaktiviert</string>
+  <string name="heads_up_global_switch_summary_perapp">Heads-up Benachrichtigungen sind anwendungsabhängig de-/aktiviert</string>
+  <string name="heads_up_global_switch_summary_forced">Heads-up-Benachrichtigungen sind für alle Anwendungen zwingend aktiviert</string>
+  <string name="heads_up_global_switch_disabled">Heads-up-Benachrichtigungen nie anzeigen</string>
+  <string name="heads_up_global_switch_perapp">Heads-up-Benachrichtigungen anwendungsabhängig anzeigen</string>
+  <string name="heads_up_global_switch_forced">Heads-up-Benachrichtigungen immer anzeigen</string>
   <string name="app_notification_enable_heads_up_title">Heads-Up anzeigen</string>
   <string name="app_notification_enable_heads_up_summary">Benachrichtigungen von dieser App als Heads-Up anzeigen</string>
+  <string name="app_notification_enable_heads_up_global_disabled_summary">Heads-ups sind in den Benachrichtigungseinstellungen momentan generell deaktiviert</string>
+  <string name="app_notification_enable_heads_up_global_forced_summary">Heads-ups sind in den Benachrichtigungseinstellungen momentan generell aktiviert</string>
   <string name="heads_up_snooze_title">Snooze-Timer</string>
   <string name="heads_up_snooze_summary">Wenn die Snooze-Taste gedrückt wird, Heads-Up für <xliff:g id="number">%d</xliff:g> Minuten deaktivieren</string>
   <string name="heads_up_snooze_disabled_summary">Snooze-Timer ist deaktiviert</string>
@@ -720,6 +738,7 @@
   <string name="pie_show_text_title">Status und Uhr anzeigen</string>
   <string name="pie_show_text_summary">Geräteinformationen, Zeit und Datum anzeigen</string>
   <string name="pie_show_background_title">Hintergrund anzeigen</string>
+  <string name="pie_show_background_summary">Hintergrund im PIE aktivieren</string>
   <string name="pie_button">Tasten</string>
   <string name="pie_button_second_layer">Zweite Tastenreihe</string>
   <string name="pie_button_second_layer_summary">Tasten in der zweiten PIE-Reihe ändern</string>
@@ -739,7 +758,8 @@
   <string name="recent_panel_expanded_mode_auto">Auto (Standard)</string>
   <string name="recent_panel_expanded_mode_always">Immer</string>
   <string name="recent_panel_expanded_mode_never">Nie</string>
-  <string name="recent_panel_show_topmost_summary">Aktuell verwendete App in den Verlauf einschließen</string>
+  <string name="recent_panel_show_topmost_title">Laufende App anzeigen</string>
+  <string name="recent_panel_show_topmost_summary">Aktuell verwendete App in Letzte-Apps-Ansicht einschließen</string>
   <string name="recent_card_bg_color_title">Hintergrundfarbe der Karte</string>
   <string name="recent_card_text_color_title">Textfarbe der Karte</string>
   <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
@@ -758,7 +778,9 @@
   <string name="double_tap_to_sleep_title">Ruhezustand durch doppeltes Tippen</string>
   <string name="double_tap_to_sleep_summary">Zweimal die Statusleiste antippen, versetzt das Gerät in den Ruhezustand</string>
   <string name="adaptive_backlight_title">Adaptive Beleuchtung</string>
+  <string name="adaptive_backlight_summary">Die Hintergrundbeleuchtung des Bildschirms dynamisch regeln, um bei gleichbleibender Benutzerfreundlichkeit die Akkulaufzeit zu verbessern</string>
   <string name="sunlight_enhancement_title">Verbesserung bei Sonnenlicht</string>
+  <string name="sunlight_enhancement_summary">Bildschirm-Helligkeit und Ablesbarkeit unter grellem Sonnenlicht verbessern</string>
   <string name="color_enhancement_title">Farbverbesserung</string>
   <string name="color_enhancement_summary">Farbdarstellung des Displays dynamisch verbessern</string>
   <string name="vibrator_intensity_title">Vibrationsstärke</string>
@@ -778,6 +800,7 @@
   <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
   <string name="auto_brightness_reset_button">Zurücksetzen</string>
   <string name="live_display_summary">Optimieren Sie Ihren Bildschirm je nach Tageszeit und Lichtverhältnissen, um die Lesbarkeit zu verbessern und einer Ermüdung der Augen vorzubeugen.</string>
+  <string name="live_display_mode">Anzeigemodus</string>
   <string name="live_display_color_temperature_title">Farbtemperatur</string>
   <string name="live_display_color_temperature_summary">Tag: <xliff:g id="day_temperature">%1$d</xliff:g>K  Nacht: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
   <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
@@ -786,6 +809,7 @@
   <string name="live_display_outdoor_mode_summary">Helligkeit und Sättigung unter grellem Sonnenlicht automatisch erhöhen</string>
   <string name="live_display_low_power_title">Stromverbrauch reduzieren</string>
   <string name="live_display_enhance_color_title">Farben verbessern</string>
+  <string name="live_display_enhance_color_summary">Farbdynamik von Hauttönen, Landschaftsaufnahmen und anderen Bildelementen verbessern</string>
   <string name="category_calibration">Kalibrierung</string>
   <string name="screencolor">Bildschirmfarbe</string>
   <string name="screencolor_summary">Bildschirmfarbton, -sättigung, -kontrast und -helligkeit verändern</string>
@@ -825,6 +849,7 @@
   <string name="blacklist_summary_type_messages_only">Nachrichten</string>
   <string name="blacklist_summary_type_calls_and_messages">Anrufe und Nachrichten</string>
   <string name="blacklist_regex_title">Platzhalter verwenden</string>
+  <string name="blacklist_regex_summary">Verwenden Sie einen Punkt als Platzhalter und den Stern für Wiederholungen.\nBeispielsweise würde 123.* alle Nummern, die mit 123 beginnen, und .*123.* alle Nummern, die 123 enthalten, abweisen.</string>
   <string name="blacklist_policy_block_calls">Eingehende Anrufe abweisen</string>
   <string name="blacklist_policy_block_messages">Eingehende Nachrichten abweisen</string>
   <string name="blacklist_bad_number_add">Die Nummer konnte nicht zur Sperrliste hinzugefügt werden, da sie ungültig ist</string>
@@ -837,14 +862,20 @@
   <string name="expanded_hide_status">Statusleiste ausblenden</string>
   <string name="expanded_hide_navigation">Navigationsleiste ausblenden</string>
   <string name="expanded_hide_both">Beides ausblenden</string>
+  <string name="expanded_nothing_to_show">Schalten Sie \"Immer aktiviert\" aus, wenn der erweiterte Desktop anwendungsabhängig eingestellt werden soll.</string>
+  <string name="expanded_desktop_state">Status des erweiterten Desktop</string>
+  <string name="expanded_enabled_for_all">Immer aktiviert</string>
   <string name="expanded_desktop_style">Aussehen des erweiterten Desktops</string>
   <string name="expanded_desktop_style_description">Standardaussehen des erweiterten Desktop wählen</string>
   <string name="expanded_desktop_title">Optionen des erweiterten Desktops</string>
+  <string name="chamber_title">Geheimkammer</string>
+  <string name="chamber_toast">Die Geheimkammer ist geöffnet</string>
   <string name="show_unac_and_overcounted_stats_title">Nicht zuweisbaren Akku-Verbrauch anzeigen</string>
   <string name="show_unac_and_overcounted_stats_summary">In der Verbrauchsstatistik nicht direkt zuweisbare Akku-Nutzung anzeigen.</string>
   <string name="title_tile_performance_profile">Leistungsprofil</string>
   <string name="performance_settings_title">Leistung</string>
   <string name="perf_profile_title">Profil</string>
   <string name="performance_set_on_boot_summary">Einstellungen beim Booten wiederherstellen</string>
+  <string name="autoperf_title">Anwendungsabhängige Profile aktivieren</string>
   <string name="autoperf_summary">Für einige Apps automatisch ein passendes Leistungsprofil auswählen</string>
 </resources>

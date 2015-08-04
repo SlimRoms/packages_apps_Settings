@@ -339,6 +339,8 @@
   <string name="clock_date_style_uppercase">Majuscules</string>
   <string name="clock_date_format_custom">Format personnalisé</string>
   <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge ?</string>
+  <string name="status_bar_ticker_title">Notifications dynamiques</string>
+  <string name="status_bar_ticker_summary">Animation du texte des notifications dans la barre d\'état</string>
   <string name="status_bar_toggle_brightness">Contrôle de la luminosité</string>
   <string name="status_bar_toggle_brightness_summary">Ajuster le niveau de luminosité en glissant le doigt sur la barre d\'état</string>
   <string name="status_bar_toggle_info">La luminosité automatique est activée</string>
@@ -566,13 +568,24 @@
   <string name="adb_over_network">ADB par réseau</string>
   <string name="adb_over_network_summary">Activer le débogage TCP/IP sur toutes les interfaces réseaux (réseaux USB, Wi-Fi et Bluetooth). Ce paramètre est réinitialisé au redémarrage.</string>
   <string name="adb_over_network_warning">ATTENTION : Lorsque cette fonction est activée, votre appareil est ouvert aux intrusions sur tous les réseaux connectés, y compris via le réseau mobile\u00A0!\n\nN\'utilisez cette fonctionnalité que sur des réseaux de confiance.\n\nContinuer\u00A0?</string>
+  <string name="display_category_doze_options_title">Options de l\'affichage en mode Veille</string>
+  <string name="doze_settings_title">Options avancées de l\'affichage</string>
+  <string name="doze_timeout_title">Durée d\'activation de l\'impulsion</string>
   <string name="doze_timeout_summary">Durée d\'activation de l\'écran lors de la réception de notification</string>
   <string name="doze_trigger_pickup_title">Détection de geste déclencheur</string>
+  <string name="doze_trigger_pickup_summary_on">L\'impulsion sera déclenchée par la détection d\'un mouvement de l\'appareil</string>
   <string name="doze_trigger_pickup_summary_off">La détection d\'un mouvement de l\'appareil ne servira pas au déclenchement</string>
   <string name="doze_trigger_sigmotion_title">Déclenchement par mouvement important</string>
+  <string name="doze_trigger_sigmotion_summary_on">L\'impulsion sera déclenchée par des mouvements importants</string>
   <string name="doze_trigger_sigmotion_summary_off">L\'impulsion ne sera pas déclenchée par des mouvements importants</string>
   <string name="doze_trigger_notification_title">Déclencheur de notification</string>
+  <string name="doze_trigger_notification_summary_on">L\'impulsion sera déclenchée par les notifications</string>
   <string name="doze_trigger_notification_summary_off">L\'impulsion ne sera pas déclenchée par les notifications</string>
+  <string name="doze_schedule_title">Répétition de l\'impulsion</string>
+  <string name="doze_schedule_summary_on">L\'intervalle prédéfini des répétitions sera utilisé: [1s, 10s, 30s, 60s, 120s] (Par défaut)</string>
+  <string name="doze_schedule_summary_off">La répétition ne sera pas utilisée</string>
+  <string name="doze_brightness_title">Niveau de luminosité de l\'affichage en mode Veille</string>
+  <string name="doze_brightness_summary">Luminosité de l\'affichage en mode Veille (% de la luminosité maximale)</string>
   <string name="navigation_settings_options_title">Options de navigation</string>
   <string name="button_keys_title">Boutons physiques</string>
   <string name="keys_bindings_title">Actions des touches</string>
@@ -664,6 +677,9 @@
   <string name="navbar_cat">Barre de navigation</string>
   <string name="navbar_dimensions_reset_message">Réinitialiser toutes les dimensions ?</string>
   <string name="navbar_button_style_reset_message">Réinitialiser toutes les entrées de style par défaut ?</string>
+  <string name="dim_nav_buttons_category">SlimDim</string>
+  <string name="dim_nav_buttons_animate_duration_title">Durée de l\'animation</string>
+  <string name="dim_nav_buttons_animate_duration_summary">Durée (en millisecondes) de l\'animation</string>
   <string name="nav_bar_button_style">Style des boutons</string>
   <string name="nav_bar_button_style_summary">Modifier le style des boutons de navigation</string>
   <string name="button_transparency_title">Transparence des boutons</string>
@@ -674,8 +690,17 @@
   <string name="navigation_bar_glow_tint_title">Couleur de la lueur</string>
   <string name="status_bar_show_network_activity_title">Flèches d\'activité réseau</string>
   <string name="heads_up_title">Notification flottante</string>
+  <string name="heads_up_global_switch_title">Notifications flottantes</string>
+  <string name="heads_up_global_switch_summary_disabled">Les notifications flottantes sont désactivées</string>
+  <string name="heads_up_global_switch_summary_perapp">Les notifications flottantes sont activées pour les applications choisies</string>
+  <string name="heads_up_global_switch_summary_forced">Les notifications flottantes sont activées pour toutes les applications</string>
+  <string name="heads_up_global_switch_disabled">Désactivées</string>
+  <string name="heads_up_global_switch_perapp">Activées pour les appli. choisies</string>
+  <string name="heads_up_global_switch_forced">Activées pour toutes les appli.</string>
   <string name="app_notification_enable_heads_up_title">Mode flottant</string>
   <string name="app_notification_enable_heads_up_summary">Afficher les notifications de cette application sous forme de notifications flottantes</string>
+  <string name="app_notification_enable_heads_up_global_disabled_summary">Les notifications flottantes sont actuellement désactivées dans les paramètres des notifications</string>
+  <string name="app_notification_enable_heads_up_global_forced_summary">Les notifications flottantes sont actuellement activées de force dans les paramètres des notifications</string>
   <string name="heads_up_snooze_title">Temps de désactivation</string>
   <string name="heads_up_snooze_summary">Un appui sur le bouton d\'arrêt des répétitions désactive les notifications flottantes pendant <xliff:g id="number">%d</xliff:g> minutes</string>
   <string name="heads_up_snooze_disabled_summary">Ne pas afficher le bouton</string>
@@ -687,6 +712,7 @@
   <string name="heads_up_time_out_title">Durée d\'affichage</string>
   <string name="heads_up_time_out_summary">Les notifications flottantes seront affichées pendant <xliff:g id="number">%d</xliff:g> secondes</string>
   <string name="heads_up_time_out_never_summary">Les notifications flottantes seront affichées jusqu\'à suppression</string>
+  <string name="heads_up_time_out_2sec">2 secondes</string>
   <string name="heads_up_time_out_4sec">4 secondes</string>
   <string name="heads_up_time_out_6sec">6 secondes</string>
   <string name="heads_up_time_out_8sec">8 secondes</string>
@@ -796,6 +822,7 @@
   <string name="live_display_mode">Mode d\'affichage</string>
   <string name="live_display_color_temperature_title">Température des couleurs</string>
   <string name="live_display_color_temperature_summary">Jour: <xliff:g id="day_temperature">%1$d</xliff:g>K  Nuit: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+  <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
   <string name="live_display_day">Jour</string>
   <string name="live_display_night">Nuit</string>
   <string name="live_display_outdoor_mode_title">Mode extérieur automatique</string>
@@ -864,4 +891,15 @@
   <string name="expanded_desktop_title">Options du bureau étendu</string>
   <string name="chamber_title">Chambre des Secrets</string>
   <string name="chamber_toast">La chambre des secrets est ouverte</string>
+  <string name="show_unac_and_overcounted_stats_title">Afficher les statistiques ignorées/surestimées</string>
+  <string name="show_unac_and_overcounted_stats_summary">Afficher dans les statistiques de batterie les usages ignorés et surestimés sous le nom \"Divers\".</string>
+  <string name="title_tile_performance_profile">Profil de performance</string>
+  <string name="performance_settings_title">Performance</string>
+  <string name="perf_profile_title">Profil</string>
+  <string name="performance_settings_warning_title">Procéder avec prudence</string>
+  <string name="performance_settings_warning">Ces paramètres sont expérimentaux et toutes les modifications appliquées sont susceptibles de provoquer des instabilités,  des plantages, des pertes de données ou de la casse matériel.\n\n Nous vous demandons de ne pas déposer de rapports de bugs si les valeurs de certains paramètres ont été modifiées.</string>
+  <string name="performance_set_on_boot">Définir au démarrage</string>
+  <string name="performance_set_on_boot_summary">Définir les paramètres à chaque démarrage</string>
+  <string name="autoperf_title">Activer les profils par application</string>
+  <string name="autoperf_summary">Choisir automatiquement le profil de performance le plus approprié pour les différentes applications</string>
 </resources>

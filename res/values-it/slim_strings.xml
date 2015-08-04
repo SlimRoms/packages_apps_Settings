@@ -339,6 +339,7 @@
   <string name="clock_date_style_uppercase">Maiuscolo</string>
   <string name="clock_date_format_custom">Formato java personalizzato</string>
   <string name="status_bar_clock_style_reset_message">Resettare i colori dell\'orologio?</string>
+  <string name="status_bar_ticker_summary">Animazione del testo della notifica nella barra di stato</string>
   <string name="status_bar_toggle_brightness">Controllo luminosità</string>
   <string name="status_bar_toggle_brightness_summary">Modifica la luminosità effettuando uno slide sulla barra di stato</string>
   <string name="status_bar_toggle_info">É attiva la luminosità adattiva</string>
@@ -566,6 +567,8 @@
   <string name="adb_over_network">ADB su rete</string>
   <string name="adb_over_network_summary">Attiva il debug TCP/IP su rete (Wi\u2011Fi, reti USB). Questa impostazione viene reimpostata al riavvio</string>
   <string name="adb_over_network_warning">ATTENZIONE: Quando ADB su rete è attivo, il tuo telefono è esposto ad intrusioni tramite tutte le reti connesse, incluse quella GSM!\n\nUsa questa funzione solo su reti sicure.\n\nVuoi veramente attivare questa funzione?</string>
+  <string name="display_category_doze_options_title">Opzioni Ambient Display</string>
+  <string name="doze_settings_title">Opzioni avanzate Ambient Display</string>
   <string name="doze_timeout_summary">Imposta il tempo in cui lo schermo deve rimanere accesso durante le notifiche</string>
   <string name="doze_trigger_pickup_title">Risveglia il dispositivo quando viene sollevato</string>
   <string name="doze_trigger_pickup_summary_off">Lo schermo non si riattiva quando il dispositivo viene sollevato</string>
@@ -573,6 +576,7 @@
   <string name="doze_trigger_sigmotion_summary_off">Lo schermo non si riattiva quando il dispositivo viene mosso significativamente</string>
   <string name="doze_trigger_notification_title">Trigger di Notifica</string>
   <string name="doze_trigger_notification_summary_off">Le notifiche non riattiveranno lo schermo</string>
+  <string name="doze_schedule_title">Ripeti azione pianificata</string>
   <string name="navigation_settings_options_title">Opzioni di navigazione</string>
   <string name="button_keys_title">Pulsanti hardware</string>
   <string name="keys_bindings_title">Azioni dei tasti</string>
@@ -674,6 +678,10 @@
   <string name="navigation_bar_glow_tint_title">Colore del bagliore</string>
   <string name="status_bar_show_network_activity_title">Frecce Attività di rete</string>
   <string name="heads_up_title">Notifiche heads up</string>
+  <string name="heads_up_global_switch_title">Modalità notifiche Heads up</string>
+  <string name="heads_up_global_switch_summary_disabled">Le notifiche Heads up sono disabilitate</string>
+  <string name="heads_up_global_switch_disabled">Non mostrare mai alcuna notifica Heads up</string>
+  <string name="heads_up_global_switch_forced">Mostra sempre le notifiche Heads up</string>
   <string name="app_notification_enable_heads_up_title">Mostra heads up</string>
   <string name="app_notification_enable_heads_up_summary">Mostra le notifiche di questa app come heads up</string>
   <string name="heads_up_snooze_title">Timer di posticipo</string>
@@ -687,6 +695,7 @@
   <string name="heads_up_time_out_title">Tempo di visualizzazione</string>
   <string name="heads_up_time_out_summary">Le notifiche heads up verranno mostrate per <xliff:g id="number">%d</xliff:g> secondi</string>
   <string name="heads_up_time_out_never_summary">Le notifiche heads up verranno mostrate finchè non saranno chiuse</string>
+  <string name="heads_up_time_out_2sec">2 secondi</string>
   <string name="heads_up_time_out_4sec">4 secondi</string>
   <string name="heads_up_time_out_6sec">6 secondi</string>
   <string name="heads_up_time_out_8sec">8 secondi</string>
@@ -867,4 +876,13 @@
   <string name="expanded_desktop_title">Impostazioni Desktop esteso</string>
   <string name="chamber_title">Camera dei segreti</string>
   <string name="chamber_toast">La camera dei segreti è aperta</string>
+  <string name="title_tile_performance_profile">Profilo prestazioni</string>
+  <string name="performance_settings_title">Prestazioni</string>
+  <string name="perf_profile_title">Profilo</string>
+  <string name="performance_settings_warning_title">Procedi con cautela</string>
+  <string name="performance_settings_warning">Queste impostazioni sono sperimentali e qualsiasi loro cambiamento potrebbe causare instabilità, crash, perdita di dati e danni all\'hardware.\n\nNon inviare segnalazioni di bug se una qualsiasi di queste impostazioni è stata modificata.</string>
+  <string name="performance_set_on_boot">Applica all\'avvio</string>
+  <string name="performance_set_on_boot_summary">Ripristina le impostazioni all\'avvio</string>
+  <string name="autoperf_title">Attiva profili specifici per l\'applicazione</string>
+  <string name="autoperf_summary">Scegli automaticamente un profilo adeguato per le varie applicazioni</string>
 </resources>

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a51691d_5a0a85d3",
+        "filename": "src/com/android/settings/deviceinfo/Status.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-08-10T15:53:54Z",
+      "side": 1,
+      "message": "Why add this here when we have the same method in line 704?",
+      "range": {
+        "startLine": 445,
+        "startChar": 1,
+        "endLine": 451,
+        "endChar": 5
+      },
+      "revId": "1287ed445ef59c9abcaffc16d8437d284575fe0d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

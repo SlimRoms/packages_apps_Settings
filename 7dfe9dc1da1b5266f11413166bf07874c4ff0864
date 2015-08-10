@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a51691d_3a26a969",
+        "filename": "src/com/android/settings/DataUsageSummary.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-08-10T15:54:08Z",
+      "side": 0,
+      "message": "Should be done as well in WirelessSettings.java or not but probably means dup",
+      "range": {
+        "startLine": 589,
+        "startChar": 0,
+        "endLine": 589,
+        "endChar": 63
+      },
+      "revId": "7dfe9dc1da1b5266f11413166bf07874c4ff0864",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

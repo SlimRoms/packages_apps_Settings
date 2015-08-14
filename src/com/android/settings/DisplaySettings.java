@@ -275,6 +275,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (advancedPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
             prefSet.removePreference(advancedPrefs);
             mTapToWake = null;
+        } else {
+            if (mTapToWake != null) {
+                mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
+            }
         }
 
         boolean proximityCheckOnWait = getResources().getBoolean(
@@ -485,9 +489,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        if (mTapToWake != null) {
-            mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
-        }
         updateState();
         getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
@@ -539,6 +540,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0);
             mDozePreference.setChecked(value != 0);
         }
+
+        // Update tap-to-wake if it is available.
+        if (mTapToWake != null) {
+            mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
+        }
+
     }
 
     private void updateScreenSaverSummary() {

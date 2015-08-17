@@ -242,18 +242,7 @@ public class PrivacyGuardManager extends Fragment
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // on click change the privacy guard status for this item
-        final AppInfo app = (AppInfo) parent.getItemAtPosition(position);
-
-        app.privacyGuardEnabled = !app.privacyGuardEnabled;
-        mAppOps.setPrivacyGuardSettingForPackage(app.uid, app.packageName, app.privacyGuardEnabled);
-
-        mAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        // on long click open app details window
+        // on click open app details window
         final AppInfo app = (AppInfo) parent.getItemAtPosition(position);
 
         Bundle args = new Bundle();
@@ -262,6 +251,18 @@ public class PrivacyGuardManager extends Fragment
         SubSettings ssa = (SubSettings) getActivity();
         ssa.startPreferencePanel(AppOpsDetails.class.getName(), args,
                 R.string.privacy_guard_manager_title, null, this, 2);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        // on long click change the privacy guard status for this item
+        final AppInfo app = (AppInfo) parent.getItemAtPosition(position);
+
+        app.privacyGuardEnabled = !app.privacyGuardEnabled;
+        mAppOps.setPrivacyGuardSettingForPackage(app.uid, app.packageName, app.privacyGuardEnabled);
+
+        mAdapter.notifyDataSetChanged();
+
         return true;
     }
 

@@ -1415,4 +1415,7 @@
     <!-- Whether the dots will be drawn when using the lockscreen pattern -->
     <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
 
+    <!-- Lock screen rotation -->
+    <string name="display_lockscreen_rotation_title">Lock screen</string>
+
 </resources>

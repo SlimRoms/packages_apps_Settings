@@ -36,12 +36,14 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
     private static final String TAG = "DisplayRotation";
 
     private static final String KEY_ACCELEROMETER = "accelerometer";
+    private static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
     private static final String ROTATION_0_PREF = "display_rotation_0";
     private static final String ROTATION_90_PREF = "display_rotation_90";
     private static final String ROTATION_180_PREF = "display_rotation_180";
     private static final String ROTATION_270_PREF = "display_rotation_270";
 
     private SwitchPreference mAccelerometer;
+    private SwitchPreference mLockScreenRotationPref;
     private SwitchPreference mRotation0Pref;
     private SwitchPreference mRotation90Pref;
     private SwitchPreference mRotation180Pref;
@@ -71,10 +73,18 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
         mAccelerometer.setPersistent(false);
         mAccelerometer.setOnPreferenceChangeListener(this);
 
+        mLockScreenRotationPref = (SwitchPreference) prefSet.findPreference(LOCKSCREEN_ROTATION);
         mRotation0Pref = (SwitchPreference) prefSet.findPreference(ROTATION_0_PREF);
         mRotation90Pref = (SwitchPreference) prefSet.findPreference(ROTATION_90_PREF);
         mRotation180Pref = (SwitchPreference) prefSet.findPreference(ROTATION_180_PREF);
         mRotation270Pref = (SwitchPreference) prefSet.findPreference(ROTATION_270_PREF);
+
+        boolean configEnableLockRotation = getResources().
+                        getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation);
+        boolean lockScreenRotationEnabled = Settings.System.getInt(getContentResolver(),
+                        Settings.System.LOCKSCREEN_ROTATION, configEnableLockRotation ? 1 : 0) != 0;
+
+        mLockScreenRotationPref.setChecked(lockScreenRotationEnabled);
 
         int mode = Settings.System.getInt(getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION_ANGLES,
@@ -85,6 +95,7 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
         mRotation180Pref.setChecked((mode & ROTATION_180_MODE) != 0);
         mRotation270Pref.setChecked((mode & ROTATION_270_MODE) != 0);
 
+        mLockScreenRotationPref.setOnPreferenceChangeListener(this);
         mRotation0Pref.setOnPreferenceChangeListener(this);
         mRotation90Pref.setOnPreferenceChangeListener(this);
         mRotation180Pref.setOnPreferenceChangeListener(this);
@@ -148,6 +159,10 @@ public class DisplayRotation extends SettingsPreferenceFragment implements OnPre
             }
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, mode);
+            return true;
+        } else if (preference == mLockScreenRotationPref) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ROTATION, ((Boolean) objValue) ? 1 : 0);
             return true;
         }
         return false;

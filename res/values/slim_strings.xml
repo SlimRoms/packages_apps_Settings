@@ -1396,4 +1396,7 @@
     <!-- WiFi auto-configure priorities -->
     <string name="wifi_auto_config_priorities">Automatic priority</string>
 
+    <!-- Lock screen rotation -->
+    <string name="display_lockscreen_rotation_title">Lock screen</string>
+
 </resources>

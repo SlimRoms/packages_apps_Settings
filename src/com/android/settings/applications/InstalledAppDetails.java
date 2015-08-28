@@ -590,6 +590,16 @@ public class InstalledAppDetails extends Fragment
         TextView packageName = (TextView) appSnippet.findViewById(R.id.app_pkgname);
         packageName.setText(mAppEntry.info.packageName);
         packageName.setVisibility(View.VISIBLE);
+        // Set application package path.
+        TextView packagePath = (TextView) appSnippet.findViewById(R.id.app_pkgpath);
+	ApplicationInfo mApplicationInfo = null;
+        try {
+            mApplicationInfo = mPm.getApplicationInfo(mAppEntry.info.packageName, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        packagePath.setText(mApplicationInfo.publicSourceDir);
+        packagePath.setVisibility(View.VISIBLE);
         // Version number of application
         mAppVersion = (TextView) appSnippet.findViewById(R.id.app_size);
 

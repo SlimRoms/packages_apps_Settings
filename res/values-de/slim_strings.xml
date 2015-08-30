@@ -663,8 +663,8 @@
   <string name="navbar_button_style_reset_message">Alle Eingaben zum Aussehen auf Standardwerte zurücksetzen?</string>
   <string name="dim_nav_buttons_category">SlimDim</string>
   <string name="dim_nav_buttons_touch_anywhere_title">Alle Bildschirmberührungen registrieren</string>
-  <string name="dim_nav_buttons_touch_anywhere_summary_on">Jede Bildschirmberührung macht das Dimmen der Schalter rückgängig.</string>
-  <string name="dim_nav_buttons_touch_anywhere_summary_off">Nur Berührungen der Navigationsleiste machen das Dimmen der Schalter rückgängig.</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_on">Jede Bildschirmberührung macht das Dimmen der Tasten rückgängig.</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_off">Nur Berührungen der Navigationsleiste machen das Dimmen der Tasten rückgängig.</string>
   <string name="nav_bar_button_style">Tastenlayout</string>
   <string name="nav_bar_button_style_summary">Navigationsleisten-Tasten-Design ändern</string>
   <string name="button_transparency_title">Tastentransparenz</string>

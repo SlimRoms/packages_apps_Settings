@@ -570,6 +570,7 @@
   <string name="adb_over_network_warning">AVISO: Quando ADB sobre rede estiver ativado, o seu telefone fica desprotegido e pode facilitar invasões em todas as redes conectadas, incluindo rede de dados GSM! \n\nUsar esta funcionalidade apenas quando estiver conectado a redes fiáveis.\n\nQuer mesmo ativar esta função?</string>
   <string name="display_category_doze_options_title">Opções da visualização de ambiente</string>
   <string name="doze_settings_title">Opções avançadas da visualização de ambiente</string>
+  <string name="doze_timeout_title">Tempo limite do LED</string>
   <string name="doze_timeout_summary">Tempo em que o ecrã fica a piscar a notificação</string>
   <string name="doze_trigger_pickup_title">Ativação do gesto de apanhar</string>
   <string name="doze_trigger_pickup_summary_off">O gesto de apanhar não será utilizado pelo sensor como mecanismo de ativação</string>
@@ -578,6 +579,7 @@
   <string name="doze_trigger_notification_title">Ativador de notificação</string>
   <string name="doze_trigger_notification_summary_off">Notificações não serão utilizadas como um ativador</string>
   <string name="doze_schedule_title">Repetir a programação</string>
+  <string name="doze_schedule_summary_on">O intervalo de repetição predefinido da visualização de ambiente será utilizado (normalmente [1s,10s,30s,60s,120s])</string>
   <string name="doze_brightness_title">Nível de luminosidade da visualização de ambiente</string>
   <string name="navigation_settings_options_title">Opções de navegação</string>
   <string name="button_keys_title">Botões de hardware</string>
@@ -670,6 +672,16 @@
   <string name="navbar_cat">Barra de navegação</string>
   <string name="navbar_dimensions_reset_message">Redefinir todas as entradas de dimensões para o padrão?</string>
   <string name="navbar_button_style_reset_message">Redefinir todas as entradas de estilo para o padrão?</string>
+  <string name="dim_nav_buttons_category">SlimDim</string>
+  <string name="dim_nav_buttons_title">Escurecer os botões após inatividade</string>
+  <string name="dim_nav_buttons_summary">Escurecer os botões da barra de navegação após ficar sem interagir durante um determinado tempo</string>
+  <string name="dim_nav_buttons_timeout_title">Tempo de espera antes do escurecimento</string>
+  <string name="dim_nav_buttons_timeout_summary">Tempo (em mili-segundos) a aguardar antes do escurecimento dos botões</string>
+  <string name="dim_nav_buttons_alpha_title">Escurecimento</string>
+  <string name="dim_nav_buttons_alpha_summary">Valor de escurecimento dos botões</string>
+  <string name="dim_nav_buttons_animate_title">Animação de escurecimento</string>
+  <string name="dim_nav_buttons_animate_duration_title">Duração da animação</string>
+  <string name="dim_nav_buttons_animate_duration_summary">Duração (em mili-segundos) da animação</string>
   <string name="nav_bar_button_style">Estilo do botão</string>
   <string name="nav_bar_button_style_summary">Alterar o estilo do botão da barra de navegação</string>
   <string name="button_transparency_title">Transparência dos botões</string>

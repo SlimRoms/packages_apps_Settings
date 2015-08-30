@@ -26,8 +26,8 @@
   <string name="reset_message">¿Restablecer todo a los valores por defecto?</string>
   <string name="additional_options_title">Opciones adicionales</string>
   <string name="app_security_title">Seguridad de aplicaciones</string>
-  <string name="privacy_guard_switch_label">Habilitar Protección de Privacidad</string>
-  <string name="privacy_guard_dlg_title">¿Habilitar la Protección de Privacidad?</string>
+  <string name="privacy_guard_switch_label">Activar la Protección de Privacidad</string>
+  <string name="privacy_guard_dlg_title">¿Activar la Protección de Privacidad?</string>
   <string name="privacy_guard_dlg_text">Cuando la Protección de Privacidad está habilitada, la aplicación no podrá acceder a datos personales como contactos, mensajes, localización e histórico de llamadas.</string>
   <string name="privacy_guard_dlg_system_app_text">Al activar la Protección de Privacidad para una aplicación incorporada, la aplicación no podrá acceder o datos de carácter personal. Esto puede causar fallos en otras aplicaciones.</string>
   <string name="privacy_guard_default_title">Habilitado por defecto</string>
@@ -250,7 +250,7 @@
   <string name="keyboard_rotation_toggle_title">Rotación automática del teclado</string>
   <string name="keyboard_rotation_toggle_summary">Forzar la rotación automática del teclado al mostrarlo</string>
   <string name="keyboard_rotation_timeout_title">Tiempo de espera de la rotación automática</string>
-  <string name="keyboard_rotation_timeout_summary">Deshabilitar el sensor de rotación automática <xliff:g id="rotate_timeout">%1$s</xliff:g> segundos después de que se oculte el teclado</string>
+  <string name="keyboard_rotation_timeout_summary">Desactivar el sensor de rotación automática <xliff:g id="rotate_timeout">%1$s</xliff:g> segundos después de que se oculte el teclado</string>
   <string name="keyboard_rotation_dialog">Esta característica fuerza la rotación automática temporalmente mientras el teclado se muestra. No tiene efecto cuando la rotación automática ya está habilitada.</string>
   <string name="show_enter_key_title">Mostrar la tecla Intro</string>
   <string name="show_enter_key_summary">Mostrar la tecla Intro en lugar de la tecla de emoticonos</string>
@@ -266,7 +266,7 @@
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
   <string name="app_notification_show_on_keyguard_title">Mostrar en la pantalla de bloqueo</string>
   <string name="app_notification_show_on_keyguard_summary">Mostrar las notificaciones de esta aplicación en la pantalla de bloqueo</string>
-  <string name="app_notification_no_ongoing_on_keyguard_title">Deshabilitar en la pantalla de bloqueo</string>
+  <string name="app_notification_no_ongoing_on_keyguard_title">Desactivar en la pantalla de bloqueo</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">No mostrar notificaciones de esta aplicación en la pantalla de bloqueo</string>
   <string name="adb_notify">Notificación del modo de depuración USB</string>
   <string name="adb_notify_summary">Mostrar una notificación cuando el dispositivo está conectado en modo depuración USB</string>
@@ -393,7 +393,7 @@
   <string name="qs_tile_display_rotation">Rotación</string>
   <string name="qs_tile_flashlight">Linterna</string>
   <string name="qs_tile_hotspot">Hotspot</string>
-  <string name="qs_tile_location">Ubicación</string>
+  <string name="qs_tile_location">Localización</string>
   <string name="qs_tile_lockscreen">Pantalla de bloqueo</string>
   <string name="qs_tile_lte">LTE</string>
   <string name="qs_tile_nfc">NFC</string>
@@ -410,7 +410,7 @@
   <string name="qs_main_tiles_summary_on">Dos interruptores en la primera fila</string>
   <string name="qs_main_tiles_summary_off">Tres o cuatro interruptores en cada fila</string>
   <string name="qs_advanced_location_title">Configuración avanzada de la localización</string>
-  <string name="qs_advanced_location_summary">Habilitar la configuración avanzada de la localización en los ajustes rápidos</string>
+  <string name="qs_advanced_location_summary">Activar la configuración avanzada de la localización en los ajustes rápidos</string>
   <string name="qs_four_columns_title">Mostrar cuatro interruptores por fila</string>
   <string name="quick_settings_vibrate_title">Vibrar al tocar</string>
   <string name="quick_settings_vibrate_summary">Vibrar al tocar los interruptores</string>
@@ -464,7 +464,7 @@
   <string name="shortcut_action_warning">Atención</string>
   <string name="shortcut_action_warning_message">No es posible eliminar la última entrada</string>
   <string name="shortcut_action_required_warning_message">No es posible borrar botones necesarios</string>
-  <string name="shortcut_action_disable_message">Deshabilitado\nAñade una entrada para habilitar esta característica</string>
+  <string name="shortcut_action_disable_message">Desactivado\nAñade una entrada para activar esta característica</string>
   <string name="shortcut_image_not_valid">La aplicación seleccionada no tiene un icono válido o no soporta el recorte de la imagen. Usa otra aplicación.</string>
   <string name="shortcut_duplicate_entry">La acción seleccionada no puede añadirse dos veces</string>
   <string name="shortcut_action_help_shortcut">acceso directo</string>
@@ -472,8 +472,8 @@
   <string name="shortcut_action_help_app">aplicación</string>
   <string name="shortcut_action_help_icon">, mientras mantengas pulsado el icono se mostrarán las opciones de personalización</string>
   <string name="shortcut_action_help_main">Para añadir un %1$s, toca el icono Añadir. Una vez añadido %1$s, seleccionando la fila cambiará el destino%2$s\n\nPara borrar un %1$s, desliza la fila horizontalmente a la izquierda o a la derecha.  Ordena un %1$s en la lista arrastrando verticalmente el marcador de la izquierda.\n\nPara restablecer a los valores predeterminados pulsa el icono Restablecer.</string>
-  <string name="shortcut_action_help_delete_last_entry">Borrando cada %1$s en la lista, se deshabilitará esta característica por completo</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Borrando cada %1$s en la lista, se deshabilitará totalmente la segunda fila de PIE</string>
+  <string name="shortcut_action_help_delete_last_entry">Borrando cada %1$s en la lista, se desactivará completamente esta característica</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Borrando cada %1$s en la lista, se desactivará totalmente la segunda fila de PIE</string>
   <string name="shortcut_action_pie">Controles PIE</string>
   <string name="icon_color_mode_all_icons">Todos los iconos</string>
   <string name="icon_color_mode_system_icons">Iconos de sistema</string>
@@ -564,7 +564,7 @@
   <string name="lock_numpad_random_always">Siempre</string>
   <string name="lock_numpad_random_on_request">Bajo petición</string>
   <string name="enable_adb_cm">Depuración de Android</string>
-  <string name="enable_adb_summary_cm">Habilitar la interfaz Android Debug Bridge (ADB)</string>
+  <string name="enable_adb_summary_cm">Activar la interfaz Android Debug Bridge (ADB)</string>
   <string name="adb_over_network">ADB sobre red</string>
   <string name="adb_over_network_summary">Activa la depuración TCP/IP sobre las interfaces de red (Wi\u2011Fi, redes USB).
 Esta configuración se restablecerá al reiniciar el dispositivo</string>
@@ -663,8 +663,8 @@ Esta configuración se restablecerá al reiniciar el dispositivo</string>
   <string name="summary_pref_menu_location">¿Dónde mostrar los botones de menú?</string>
   <string name="title_pref_menu_display">Visibilidad del menú</string>
   <string name="summary_pref_menu_display">¿Cómo y cuándo deben aparecer los botones de menú?</string>
-  <string name="navbar_enable_bar">Habilitar la barra de navegación</string>
-  <string name="navbar_enable_bar_summary">Habilitar la barra de navegación</string>
+  <string name="navbar_enable_bar">Barra de navegación activa</string>
+  <string name="navbar_enable_bar_summary">Activar la barra de navegación</string>
   <string name="navigation_bar_height_title">Altura de la barra de navegación</string>
   <string name="navigation_bar_height_summary">Altura de la barra de navegación en modo vertical.</string>
   <string name="navigation_bar_height_landscape_title">Altura de la barra de navegación en modo horizontal</string>
@@ -714,7 +714,7 @@ Esta configuración se restablecerá al reiniciar el dispositivo</string>
   <string name="app_notification_enable_heads_up_global_disabled_summary">Notificaciones de advertencia desactivadas globalmente en los ajustes de notificación</string>
   <string name="app_notification_enable_heads_up_global_forced_summary">Notificaciones de advertencia activadas globalmente en los ajustes de notificación</string>
   <string name="heads_up_snooze_title">Temporizador de reposo</string>
-  <string name="heads_up_snooze_summary">Al tocar el botón de reposo se deshabilitarán las notificaciones Heads up durante <xliff:g id="number">%d</xliff:g> minutos</string>
+  <string name="heads_up_snooze_summary">Desactivar las notificaciones de advertencia durante <xliff:g id="number">%d</xliff:g> minutos al tocar el botón de reposo</string>
   <string name="heads_up_snooze_disabled_summary">Temporizador de reposo deshabilitado</string>
   <string name="heads_up_snooze_3min">3 minutos</string>
   <string name="heads_up_snooze_5min">5 minutos</string>
@@ -731,7 +731,7 @@ Esta configuración se restablecerá al reiniciar el dispositivo</string>
   <string name="heads_up_time_out_10sec">10 segundos</string>
   <string name="heads_up_time_out_never">Nunca</string>
   <string name="pie_control_title">Controles PIE</string>
-  <string name="pie_control_summary">Habilitar los controles PIE</string>
+  <string name="pie_control_summary">Activar los controles PIE</string>
   <string name="pie_control_size">Tamaño del control PIE</string>
   <string name="pie_control_trigger_positions">Posición en dónde mostrarse</string>
   <string name="pie_control_trigger_left">En el borde izquierdo</string>
@@ -767,13 +767,13 @@ Esta configuración se restablecerá al reiniciar el dispositivo</string>
   <string name="pie_show_text_title">Mostrar estado y reloj</string>
   <string name="pie_show_text_summary">Mostrar la información del estado del teléfono, la hora y la fecha</string>
   <string name="pie_show_background_title">Mostrar fondo</string>
-  <string name="pie_show_background_summary">Habilitar el fondo de pantalla del control PIE</string>
+  <string name="pie_show_background_summary">Activar el fondo de pantalla del control PIE</string>
   <string name="pie_button">Botones</string>
   <string name="pie_button_second_layer">Segunda fila de botones</string>
   <string name="pie_button_second_layer_summary">Cambiar los botones de la segunda fila</string>
   <string name="pie_button_style_summary">Cambiar el estilo de los botones</string>
   <string name="pie_style_reset_message">¿Restablecer valores de estilo predeterminados?</string>
-  <string name="pie_warning_no_navigation_present">No hay otro método de navegación habilitado. Deshabilitando los controles PIE puedes dejar el dispositivo inusable. ¿Habilitar la barra de navegación en su lugar?</string>
+  <string name="pie_warning_no_navigation_present">No hay otro método de control disponible. Desactivando el control PIE puedes dejar el dispositivo inusable. ¿Activar la barra de navegación en su lugar?</string>
   <string name="pie_trigger_warning">Al menos uno de los bordes principales (inferior, izquierdo o derecho) debe estar habilitado.</string>
   <string name="pie_disable_ime_triggers_title">Reducir el tamaño con el teclado</string>
   <string name="pie_disable_ime_triggers_summary">Reducir el tamaño del control en la izquierda y derecha si el teclado está activo en pantalla</string>
@@ -805,7 +805,7 @@ Esta configuración se restablecerá al reiniciar el dispositivo</string>
   <string name="backlight_summary_enabled_with_timeout">Habilitado <xliff:g id="timeout">%s</xliff:g></string>
   <string name="backlight_summary_enabled">Habilitado</string>
   <string name="double_tap_to_wake_title">Doble toque para encender la pantalla</string>
-  <string name="enable_navkeys_title">Habilitar botones hardware</string>
+  <string name="enable_navkeys_title">Activar los botones físicos</string>
   <string name="double_tap_to_sleep_title">Doble toque para bloquear</string>
   <string name="double_tap_to_sleep_summary">Dormir el dispositivo mediante un doble toque sobre la barra de estado</string>
   <string name="adaptive_backlight_title">Retroiluminación adaptable</string>

@@ -117,6 +117,12 @@
                 android:title="@string/slim_version_title"
                 android:summary="@string/slim_version_default"/>
 
+        <!-- Slim firmware builder -->
+        <Preference android:key="slim_builder"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/slim_builder_title"
+                android:summary="@string/slim_builder_default"/>
+        
         <!-- Build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"

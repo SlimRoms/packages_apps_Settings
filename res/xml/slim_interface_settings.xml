@@ -30,6 +30,13 @@
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
+            android:key="key_appsidebar"
+            android:title="@string/appsidebar_title">
+            <intent
+                android:action="com.slim.appsidebar.SETTINGS"/>
+    </PreferenceScreen>
+
+    <PreferenceScreen
         android:key="recent_panel"
         android:fragment="com.android.settings.slim.RecentPanel"
         android:title="@string/recent_panel_category" />

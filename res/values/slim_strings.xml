@@ -1396,4 +1396,6 @@
     <!-- WiFi auto-configure priorities -->
     <string name="wifi_auto_config_priorities">Automatic priority</string>
 
+    <string name="appsidebar_title">Slim App Sidebar</string>
+
 </resources>

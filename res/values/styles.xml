@@ -330,6 +330,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextAppearance.CategoryTitleText" parent="@android:style/TextAppearance.Material.Small">
+        <item name="android:textColor">@color/dashboard_category_title_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextAppearance.TileTitle" parent="@android:style/TextAppearance.Material.Medium">
     </style>
 
@@ -343,6 +348,6 @@
     </style>
 
     <style name="Widget.TimePicker" parent="@*android:style/Widget.Material.Light.TimePicker">
-        <item name="@android:numbersBackgroundColor">@android:color/white</item>
+        <item name="@android:numbersBackgroundColor">@color/background_color_white</item>
     </style>
 </resources>

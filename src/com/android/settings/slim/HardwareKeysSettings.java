@@ -94,9 +94,10 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
     private static final String KEYS_APP_SWITCH_DOUBLE_TAP = "keys_app_switch_double_tap";
 
-    private static final int DLG_SHOW_WARNING_DIALOG = 0;
-    private static final int DLG_SHOW_ACTION_DIALOG  = 1;
-    private static final int DLG_RESET_TO_DEFAULT    = 2;
+    private static final int DLG_HOME_WARNING_DIALOG = 0;
+    private static final int DLG_BACK_WARNING_DIALOG = 1;
+    private static final int DLG_SHOW_ACTION_DIALOG  = 2;
+    private static final int DLG_RESET_TO_DEFAULT    = 3;
 
     private static final int MENU_RESET = Menu.FIRST;
 
@@ -367,13 +368,22 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         // Handle warning dialog.
         SharedPreferences preferences =
                 getActivity().getSharedPreferences("hw_key_settings", Activity.MODE_PRIVATE);
-        if (hasHomeKey && !hasHomeKey() && !preferences.getBoolean("no_home_action", false)) {
+        if ((hasHomeKey && !hasHomeKey() && !preferences.getBoolean("no_home_action", false))) {
             preferences.edit()
                     .putBoolean("no_home_action", true).commit();
-            showDialogInner(DLG_SHOW_WARNING_DIALOG, null, 0);
+            showDialogInner(DLG_HOME_WARNING_DIALOG, null, 0);
         } else if (hasHomeKey()) {
             preferences.edit()
                     .putBoolean("no_home_action", false).commit();
+        }
+
+        if ((hasBackKey && !hasBackKey() && !preferences.getBoolean("no_back_action", false))) {
+            preferences.edit()
+                    .putBoolean("no_back_action", true).commit();
+            showDialogInner(DLG_BACK_WARNING_DIALOG, null, 0);
+        } else if (hasBackKey()) {
+            preferences.edit()
+                    .putBoolean("no_back_action", false).commit();
         }
 
         mCheckPreferences = true;
@@ -508,9 +518,20 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
 
     private boolean hasHomeKey() {
         Iterator<String> nextAction = mKeySettings.values().iterator();
-        while (nextAction.hasNext()){
+        while (nextAction.hasNext()) {
             String action = nextAction.next();
             if (action != null && action.equals(ActionConstants.ACTION_HOME)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean hasBackKey() {
+        Iterator<String> nextAction = mKeySettings.values().iterator();
+        while(nextAction.hasNext()) {
+            String action = nextAction.next();
+            if (action != null && action.equals(ActionConstants.ACTION_BACK)) {
                 return true;
             }
         }
@@ -618,10 +639,17 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
             final String settingsKey = getArguments().getString("settingsKey");
             int dialogTitle = getArguments().getInt("dialogTitle");
             switch (id) {
-                case DLG_SHOW_WARNING_DIALOG:
+                case DLG_HOME_WARNING_DIALOG:
+                case DLG_BACK_WARNING_DIALOG:
+                    int msg;
+                    if (id == DLG_HOME_WARNING_DIALOG) {
+                        msg = R.string.no_home_key;
+                    } else {
+                        msg = R.string.no_back_key;
+                    }
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.attention)
-                    .setMessage(R.string.no_home_key)
+                    .setMessage(msg)
                     .setPositiveButton(R.string.dlg_ok, null)
                     .create();
                 case DLG_SHOW_ACTION_DIALOG:

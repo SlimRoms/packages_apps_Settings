@@ -85,6 +85,8 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int DLG_DELETION_NOT_ALLOWED = 2;
     private static final int DLG_SHOW_HELP_SCREEN     = 3;
     private static final int DLG_RESET_TO_DEFAULT     = 4;
+    private static final int DLG_HOME_WARNING_DIALOG  = 5;
+    private static final int DLG_BACK_WARNING_DIALOG  = 6;
 
     private static final int MENU_HELP = Menu.FIRST;
     private static final int MENU_ADD = MENU_HELP + 1;
@@ -154,15 +156,17 @@ public class ActionListViewSettings extends ListFragment implements
             public void remove(int which) {
                 ActionConfig item = mActionConfigsAdapter.getItem(which);
                 mActionConfigsAdapter.remove(item);
-                if (!ActionChecker.containsAction(mActivity, item, ActionConstants.ACTION_BACK)
-                        || !ActionChecker.containsAction(
-                        mActivity, item, ActionConstants.ACTION_HOME)) {
-                    mActionConfigsAdapter.insert(item, which);
-                    showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
-                } else if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
+                if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
                     mActionConfigsAdapter.add(item);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else {
+                    if (!ActionChecker.containsAction(
+                            mActivity, item, ActionConstants.ACTION_BACK)) {
+                        showDialogInner(DLG_BACK_WARNING_DIALOG, 0, false, false);
+                    } else if (!ActionChecker.containsAction(
+                            mActivity, item, ActionConstants.ACTION_HOME)) {
+                        showDialogInner(DLG_HOME_WARNING_DIALOG, 0, false, false);
+                    }
                     setConfig(mActionConfigs, false);
                     deleteIconFileIfPresent(item, true);
                     if (mActionConfigs.size() == 0) {
@@ -247,6 +251,13 @@ public class ActionListViewSettings extends ListFragment implements
                         mPendingNewAction = false;
                         mPicker.pickShortcut(getId());
                     }
+                }
+                if (!ActionChecker.containsAction(mActivity, mActionConfigs.get(arg2),
+                        ActionConstants.ACTION_BACK)) {
+                    showDialogInner(DLG_BACK_WARNING_DIALOG, 0, false, false);
+                } else if (!ActionChecker.containsAction(
+                        mActivity, mActionConfigs.get(arg2), ActionConstants.ACTION_HOME)) {
+                    showDialogInner(DLG_HOME_WARNING_DIALOG, 0, false, false);
                 }
             }
         });
@@ -929,6 +940,19 @@ public class ActionListViewSettings extends ListFragment implements
                             }
                         }
                     })
+                    .create();
+                case DLG_HOME_WARNING_DIALOG:
+                case DLG_BACK_WARNING_DIALOG:
+                    int msg;
+                    if (id == DLG_HOME_WARNING_DIALOG) {
+                        msg = R.string.no_home_key;
+                    } else {
+                        msg = R.string.no_back_key;
+                    }
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(msg)
+                    .setPositiveButton(R.string.dlg_ok, null)
                     .create();
             }
             throw new IllegalArgumentException("unknown id " + id);

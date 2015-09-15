@@ -231,6 +231,11 @@ public class ActionListViewSettings extends ListFragment implements
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                     long arg3) {
+                if (!ActionChecker.containsAction(mActivity, mActionConfigs.get(arg2),
+                        ActionConstants.ACTION_BACK) || !ActionChecker.containsAction(
+                        mActivity, mActionConfigs.get(arg2), ActionConstants.ACTION_HOME)) {
+                    return;
+                }
                 if (mUseFullAppsOnly) {
                     if (mPicker != null) {
                         mPendingIndex = arg2;
@@ -412,7 +417,7 @@ public class ActionListViewSettings extends ListFragment implements
 
         if (!longpress && checkForDuplicateMainNavActions(action)) {
             return;
-        }
+        }   
 
         ActionConfig actionConfig = mActionConfigsAdapter.getItem(which);
         mActionConfigsAdapter.remove(actionConfig);

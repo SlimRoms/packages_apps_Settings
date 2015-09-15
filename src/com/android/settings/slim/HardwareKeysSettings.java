@@ -367,13 +367,22 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         // Handle warning dialog.
         SharedPreferences preferences =
                 getActivity().getSharedPreferences("hw_key_settings", Activity.MODE_PRIVATE);
-        if (hasHomeKey && !hasHomeKey() && !preferences.getBoolean("no_home_action", false)) {
+        if ((hasHomeKey && !hasHomeKey() && !preferences.getBoolean("no_home_action", false))) {
             preferences.edit()
                     .putBoolean("no_home_action", true).commit();
             showDialogInner(DLG_SHOW_WARNING_DIALOG, null, 0);
         } else if (hasHomeKey()) {
             preferences.edit()
                     .putBoolean("no_home_action", false).commit();
+        }
+
+        if ((hasBackKey && !hasBackKey() && !preferences.getBoolean("no_back_action", false))) {
+            preferences.edit()
+                    .putBoolean("no_back_action", true).commit();
+            showDialogInner(DLG_SHOW_WARNING_DIALOG, null, 0);
+        } else if (hasBackKey()) {
+            preferences.edit()
+                    .putBoolean("no_back_action", false).commit();
         }
 
         mCheckPreferences = true;
@@ -508,9 +517,20 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
 
     private boolean hasHomeKey() {
         Iterator<String> nextAction = mKeySettings.values().iterator();
-        while (nextAction.hasNext()){
+        while (nextAction.hasNext()) {
             String action = nextAction.next();
             if (action != null && action.equals(ActionConstants.ACTION_HOME)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean hasBackKey() {
+        Iterator<String> nextAction = mKeySettings.values().iterator();
+        while(nextAction.hasNext()) {
+            String action = nextAction.next();
+            if (action != null && action.equals(ActionConstants.ACTION_BACK)) {
                 return true;
             }
         }

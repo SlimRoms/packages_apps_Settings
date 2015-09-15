@@ -85,6 +85,7 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int DLG_DELETION_NOT_ALLOWED = 2;
     private static final int DLG_SHOW_HELP_SCREEN     = 3;
     private static final int DLG_RESET_TO_DEFAULT     = 4;
+    private static final int DLG_SHOW_WARNING_DIALOG  = 5;
 
     private static final int MENU_HELP = Menu.FIRST;
     private static final int MENU_ADD = MENU_HELP + 1;
@@ -157,8 +158,7 @@ public class ActionListViewSettings extends ListFragment implements
                 if (!ActionChecker.containsAction(mActivity, item, ActionConstants.ACTION_BACK)
                         || !ActionChecker.containsAction(
                         mActivity, item, ActionConstants.ACTION_HOME)) {
-                    mActionConfigsAdapter.insert(item, which);
-                    showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
+                    showDialogInner(DLG_SHOW_WARNING_DIALOG, 0, false, false);
                 } else if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
                     mActionConfigsAdapter.add(item);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
@@ -231,6 +231,11 @@ public class ActionListViewSettings extends ListFragment implements
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                     long arg3) {
+                if (!ActionChecker.containsAction(mActivity, mActionConfigs.get(arg2),
+                        ActionConstants.ACTION_BACK) || !ActionChecker.containsAction(
+                        mActivity, mActionConfigs.get(arg2), ActionConstants.ACTION_HOME)) {
+                    return;
+                }
                 if (mUseFullAppsOnly) {
                     if (mPicker != null) {
                         mPendingIndex = arg2;
@@ -412,7 +417,7 @@ public class ActionListViewSettings extends ListFragment implements
 
         if (!longpress && checkForDuplicateMainNavActions(action)) {
             return;
-        }
+        }   
 
         ActionConfig actionConfig = mActionConfigsAdapter.getItem(which);
         mActionConfigsAdapter.remove(actionConfig);
@@ -929,6 +934,12 @@ public class ActionListViewSettings extends ListFragment implements
                             }
                         }
                     })
+                    .create();
+                case DLG_SHOW_WARNING_DIALOG:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(R.string.no_home_key)
+                    .setPositiveButton(R.string.dlg_ok, null)
                     .create();
             }
             throw new IllegalArgumentException("unknown id " + id);

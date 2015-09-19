@@ -24,7 +24,7 @@ import com.android.settings.search.Indexable;
 
 import static android.provider.Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED;
 import static android.provider.Settings.Secure.CAMERA_GESTURE_DISABLED;
-import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
+import static android.provider.Settimport android.os.UserHandle;ings.Secure.DOUBLE_TAP_TO_WAKE;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 import static android.provider.Settings.Secure.WAKE_GESTURE_ENABLED;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
@@ -51,6 +51,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -138,37 +139,41 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         if (mLcdDensityPreference != null) {
-            int defaultDensity = getDefaultDensity();
-            int currentDensity = getCurrentDensity();
-            if (currentDensity < 10 || currentDensity >= 1000) {
-                // Unsupported value, force default
-                currentDensity = defaultDensity;
-            }
-
-            int factor = defaultDensity >= 480 ? 40 : 20;
-            int minimumDensity = defaultDensity - 4 * factor;
-            int currentIndex = -1;
-            String[] densityEntries = new String[7];
-            String[] densityValues = new String[7];
-            for (int idx = 0; idx < 7; ++idx) {
-                int val = minimumDensity + factor * idx;
-                int valueFormatResId = val == defaultDensity
-                        ? R.string.lcd_density_default_value_format
-                        : R.string.lcd_density_value_format;
-
-                densityEntries[idx] = getString(valueFormatResId, val);
-                densityValues[idx] = Integer.toString(val);
-                if (currentDensity == val) {
-                    currentIndex = idx;
+            if (UserHandle.myUserId() != UserHandle.USER_OWNER) {
+                getPreferenceScreen().removePreference(mLcdDensityPreference);
+            } else {
+                int defaultDensity = getDefaultDensity();
+                int currentDensity = getCurrentDensity();
+                if (currentDensity < 10 || currentDensity >= 1000) {
+                    // Unsupported value, force default
+                    currentDensity = defaultDensity;
                 }
+
+                int factor = defaultDensity >= 480 ? 40 : 20;
+                int minimumDensity = defaultDensity - 4 * factor;
+                int currentIndex = -1;
+                String[] densityEntries = new String[7];
+                String[] densityValues = new String[7];
+                for (int idx = 0; idx < 7; ++idx) {
+                    int val = minimumDensity + factor * idx;
+                    int valueFormatResId = val == defaultDensity
+                            ? R.string.lcd_density_default_value_format
+                            : R.string.lcd_density_value_format;
+
+                    densityEntries[idx] = getString(valueFormatResId, val);
+                    densityValues[idx] = Integer.toString(val);
+                    if (currentDensity == val) {
+                        currentIndex = idx;
+                    }
+                }
+                mLcdDensityPreference.setEntries(densityEntries);
+                mLcdDensityPreference.setEntryValues(densityValues);
+                if (currentIndex != -1) {
+                    mLcdDensityPreference.setValueIndex(currentIndex);
+                }
+                mLcdDensityPreference.setOnPreferenceChangeListener(this);
+                updateLcdDensityPreferenceDescription(currentDensity);
             }
-            mLcdDensityPreference.setEntries(densityEntries);
-            mLcdDensityPreference.setEntryValues(densityValues);
-            if (currentIndex != -1) {
-                mLcdDensityPreference.setValueIndex(currentIndex);
-            }
-            mLcdDensityPreference.setOnPreferenceChangeListener(this);
-            updateLcdDensityPreferenceDescription(currentDensity);
         }
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);

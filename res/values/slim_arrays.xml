@@ -314,9 +314,6 @@
         <item>@string/shortcut_action_pie</item>
         <item>@string/shortcut_action_nav_bar</item>
         <item>@string/shortcut_action_camera</item>
-        <item>@string/shortcut_action_media_previous</item>
-        <item>@string/shortcut_action_media_next</item>
-        <item>@string/shortcut_action_media_play_pause</item>
     </string-array>
 
     <string-array name="shortcut_action_launcher_values" translatable="false">
@@ -344,9 +341,6 @@
         <item>**pie**</item>
         <item>**nav_bar**</item>
         <item>**camera**</item>
-        <item>**media_previous**</item>
-        <item>**media_next**</item>
-        <item>**media_play_pause**</item>
     </string-array>
 
     <string-array name="clock_style_entries" translatable="false">

@@ -295,7 +295,6 @@
         <item>@string/shortcut_action_search</item>
         <item>@string/shortcut_action_voice_search</item>
         <item>@string/shortcut_action_menu</item>
-        <item>@string/shortcut_action_menu_big</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_settings_panel</item>
@@ -326,7 +325,6 @@
         <item>**back**</item>
         <item>**search**</item>
         <item>**voice_search**</item>
-        <item>**menu**</item>
         <item>**menu_big**</item>
         <item>**power**</item>
         <item>**notifications**</item>

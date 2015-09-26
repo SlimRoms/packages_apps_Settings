@@ -62,7 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private int mbatteryStyle;
     private int mbatteryShowPercent;
-    private SwitchPreference mNetworkArrows;
+    //private SwitchPreference mNetworkArrows;
     private SwitchPreference mTicker;
 
     @Override
@@ -112,13 +112,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(String.valueOf(mbatteryStyle));
 
-        mNetworkArrows = (SwitchPreference) findPreference(KEY_STATUS_BAR_NETWORK_ARROWS);
+        /* mNetworkArrows = (SwitchPreference) findPreference(KEY_STATUS_BAR_NETWORK_ARROWS);
         mNetworkArrows.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
             Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0) == 1);
         mNetworkArrows.setOnPreferenceChangeListener(this);
         int networkArrows = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0);
-        updateNetworkArrowsSummary(networkArrows);
+        updateNetworkArrowsSummary(networkArrows); */
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -148,7 +148,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                     (Boolean) newValue ? 1 : 0);
             return true;
-        } else if (preference == mNetworkArrows) {
+        } /*else if (preference == mNetworkArrows) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY,
                     ((Boolean) newValue) ? 1 : 0);
@@ -156,7 +156,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0);
             updateNetworkArrowsSummary(networkArrows);
             return true;
-        }
+        }*/
         return false;
     }
 
@@ -188,12 +188,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
     }
 
-    private void updateNetworkArrowsSummary(int value) {
+    /*private void updateNetworkArrowsSummary(int value) {
         String summary = value != 0
                 ? getResources().getString(R.string.enabled)
                 : getResources().getString(R.string.disabled);
         mNetworkArrows.setSummary(summary);
-    }
+    }*/
 
     private void updateClockStyleDescription() {
         if (mClockStyle == null) {

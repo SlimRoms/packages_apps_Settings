@@ -868,6 +868,7 @@
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_torch</item>
         <item>@string/shortcut_action_expanded_desktop</item>
+        <item>@string/shortcut_action_tasker</item>
     </string-array>
 
     <string-array name="shortcut_action_navring_values" translatable="false">
@@ -889,6 +890,7 @@
         <item>**power_menu**</item>
         <item>**torch**</item>
         <item>**expanded_desktop**</item>
+        <item>**tasker**</item>
     </string-array>
 
     <!-- HW Key Rebinding -->

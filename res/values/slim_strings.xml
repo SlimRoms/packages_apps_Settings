@@ -786,6 +786,7 @@
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_tasker">Tasker</string>
 
     <string name="navigation_settings_title">Navigation</string>
 

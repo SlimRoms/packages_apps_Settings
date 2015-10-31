@@ -44,4 +44,7 @@
     <!-- Config to enable/disable ppp number in APN editor -->
     <bool name="config_ppp_enabled">false</bool>
 
+    <!-- DDS Switch setting -->
+    <bool name="config_dds_switch_alert_dialog_supported" translatable="false">false</bool>
+
 </resources>

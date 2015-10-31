@@ -480,7 +480,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
 
             // Disable manual provisioning option to user when
             // device is in Airplane mode.
-            if (isAirplaneModeOn()) {
+            if (isAirplaneModeOn() || (!isCurrentSubValid())) {
                 mSwitch.setEnabled(false);
             } else {
                 mSwitch.setEnabled(true);
@@ -522,17 +522,11 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         private boolean isCurrentSubValid() {
             boolean isSubValid = false;
             if (hasCard()) {
-                List<SubscriptionInfo> sirList =
-                        mSubscriptionManager.getActiveSubscriptionInfoList();
-                if (sirList != null ) {
-                    for (SubscriptionInfo sir : sirList) {
-                        if (sir != null && mSlotId == sir.getSimSlotIndex()) {
-                            mSir = sir;
-                            break;
-                        }
-                    }
-                    if (mSir != null &&
-                            SubscriptionManager.isValidSubscriptionId(mSir.getSubscriptionId()) &&
+                SubscriptionInfo sir = mSubscriptionManager.
+                        getActiveSubscriptionInfoForSimSlotIndex(mSlotId);
+                if (sir != null ) {
+                    mSir = sir;
+                    if (SubscriptionManager.isValidSubscriptionId(mSir.getSubscriptionId()) &&
                             mSir.getSimSlotIndex() >= 0 &&
                             getProvisionStatus(mSir.getSimSlotIndex()) >= 0) {
                         isSubValid = true;

@@ -1286,14 +1286,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- dm plmn that need to be hidden -->
-    <string-array name="hidedm_plmn_list">
-        <item>46000</item>
-        <item>46002</item>
-        <item>46003</item>
-        <item>46007</item>
-    </string-array>
-
     <!-- supl plmn list that need to be hidden -->
     <string-array name="hidesupl_plmn_list">
         <item>46001</item>
@@ -1323,6 +1315,24 @@
         <item>30</item>
         <item>60</item>
         <item>90</item>
+    </string-array>
+
+    <!-- Possible values for user theme in Display Settings.
+         Do not translate. -->
+    <string-array name="night_mode_entries" translatable="false">
+        <!-- Do not translate. -->
+        <item>@string/night_mode_no</item>
+        <!-- Do not translate. -->
+        <item>@string/night_mode_yes</item>
+    </string-array>
+
+    <!-- These values should match up with the MODE_NIGHT constants in UiModeManager.
+         Do not translate. -->
+    <string-array name="night_mode_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
     </string-array>
 
 </resources>

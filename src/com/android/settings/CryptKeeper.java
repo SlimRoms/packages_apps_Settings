@@ -208,7 +208,7 @@ public class CryptKeeper extends Activity implements TextView.OnEditorActionList
                 hide(R.id.lockPattern);
                 hide(R.id.owner_info);
                 hide(R.id.emergencyCallButton);
-            } else if (failedAttempts == MAX_FAILED_ATTEMPTS) {
+            } else if (failedAttempts >= MAX_FAILED_ATTEMPTS) {
                 // Factory reset the device.
                 if(mMdtpActivated){
                     Log.d(TAG,

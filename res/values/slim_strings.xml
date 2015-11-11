@@ -32,7 +32,7 @@
     <string name="app_ops_permissions_always_ask">Always ask</string>
 
     <!-- Privacy Settings Header item -->
-    <string name="privacy_settings_title">Privacy</string>
+    <string name="privacy_settings_pacrom_title">Privacy</string>
     <!-- Privacy Guard -->
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>
     <string name="privacy_guard_dlg_title">Enable Privacy Guard?</string>

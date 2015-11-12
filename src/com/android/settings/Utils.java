@@ -93,6 +93,7 @@ import com.android.settings.dashboard.DashboardTile;
 import com.android.settings.drawable.CircleFramedDrawable;
 import com.android.settingslib.applications.ApplicationsState;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -721,7 +722,10 @@ public final class Utils {
         if (BluetoothSettings.class.getName().equals(fragmentName)) {
             intent.setClass(context, SubSettings.BluetoothSubSettings.class);
             intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_AS_SUBSETTING, true);
-         } else {
+         } else if(SavedAccessPointsWifiSettings.class.getName().equals(fragmentName)) {
+            intent.setClass(context, SubSettings.SavedAccessPointsSubSettings.class);
+            intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_AS_SUBSETTING, true);
+        }else {
              intent.setClass(context, SubSettings.class);
          }
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, fragmentName);

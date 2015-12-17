@@ -156,6 +156,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         mContext.unregisterReceiver(mReceiver);
         Log.d(TAG,"on onDestroy");
         super.onDestroy();
+        clearAllPendingDialogs();
     }
 
     private final SubscriptionManager.OnSubscriptionsChangedListener mOnSubscriptionsChangeListener
@@ -271,6 +272,16 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         simPref.setEnabled(allPhoneAccounts.size() > 1);
     }
 
+    private void clearAllPendingDialogs() {
+        for (int i = 0; i < mSimCards.getPreferenceCount(); ++i) {
+            Preference pref = mSimCards.getPreference(i);
+            if (pref instanceof SimEnablerPreference) {
+                // Calling cleanUp() here to dismiss/cleanup any pending dialog exists.
+                ((SimEnablerPreference)pref).cleanUpPendingDialogs();
+            }
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -285,14 +296,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         super.onPause();
         mSubscriptionManager.removeOnSubscriptionsChangedListener(mOnSubscriptionsChangeListener);
         unRegisterPhoneStateListener();
-
-        for (int i = 0; i < mSimCards.getPreferenceCount(); ++i) {
-            Preference pref = mSimCards.getPreference(i);
-            if (pref instanceof SimEnablerPreference) {
-                // Calling cleanUp() here to dismiss/cleanup any pending dialog exists.
-                ((SimEnablerPreference)pref).cleanUpPendingDialogs();
-            }
-        }
+        clearAllPendingDialogs();
     }
 
     @Override
@@ -679,8 +683,8 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
 
             String title = mSir == null ? "SUB" : mSir.getDisplayName().toString();
             // Confirm only one AlertDialog instance to show.
-            dismissDialog(sAlertDialog);
-            dismissDialog(sProgressDialog);
+            sAlertDialog = dismissDialog(sAlertDialog);
+            sProgressDialog = dismissDialog(sProgressDialog);
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle(title);
@@ -749,7 +753,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
 
             String msg = mContext.getString(mIsChecked ? R.string.sim_enabler_enabling
                     : R.string.sim_enabler_disabling);
-            dismissDialog(sProgressDialog);
+            sProgressDialog = dismissDialog(sProgressDialog);
             sProgressDialog = new ProgressDialog(mContext);
             sProgressDialog.setIndeterminate(true);
             sProgressDialog.setTitle(title);
@@ -761,16 +765,21 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             sendMessage(EVT_PROGRESS_DLG_TIME_OUT, mHandler, PROGRESS_DLG_TIME_OUT);
         }
 
-        private void dismissDialog(Dialog dialog) {
+        /**
+         * Dismiss dialog that is showing
+         * @param dialog Dialog that is showing
+         * @return null sets Dialog to null in cases of x = f(x)
+        */
+        private <E extends Dialog> E dismissDialog(E dialog) {
             if((dialog != null) && (dialog.isShowing())) {
                 dialog.dismiss();
-                dialog = null;
             }
+            return null;
         }
 
         public void cleanUpPendingDialogs() {
-            dismissDialog(sProgressDialog);
-            dismissDialog(sAlertDialog);
+            sProgressDialog = dismissDialog(sProgressDialog);
+            sAlertDialog = dismissDialog(sAlertDialog);
         }
 
         private DialogInterface.OnClickListener mDialogClickListener = new DialogInterface
@@ -826,7 +835,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
 
                         case EVT_PROGRESS_DLG_TIME_OUT:
                             logd("EVT_PROGRESS_DLG_TIME_OUT");
-                            dismissDialog(sProgressDialog);
+                            sProgressDialog = dismissDialog(sProgressDialog);
                             // Must update UI when time out
                             update();
                             break;

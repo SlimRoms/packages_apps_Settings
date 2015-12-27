@@ -26,6 +26,9 @@ import android.os.UserHandle;
 import android.preference.SeekBarVolumizer;
 import android.provider.SearchIndexableResource;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.TwoStatePreference;
 import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -40,19 +43,36 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import slim.preference.IncreasingRingVolumePreference;
+import slim.provider.SlimSettings;
+
 public class SoundSettings extends DashboardFragment {
     private static final String TAG = "SoundSettings";
 
     private static final String KEY_CELL_BROADCAST_SETTINGS = "cell_broadcast_settings";
+    private static final String KEY_INCREASING_RING_VOLUME = "increasing_ring_volume";
+
     private static final String SELECTED_PREFERENCE_KEY = "selected_preference";
     private static final int REQUEST_CODE = 200;
 
     private static final int SAMPLE_CUTOFF = 2000;  // manually cap sample playback at 2 seconds
 
     private final VolumePreferenceCallback mVolumeCallback = new VolumePreferenceCallback();
+    private final IncreasingRingVolumePreference.Callback mIncreasingRingVolumeCallback =
+            new IncreasingRingVolumePreference.Callback() {
+        @Override
+        public void onStartingSample() {
+            mVolumeCallback.stopSample();
+            mHandler.removeMessages(H.STOP_SAMPLE);
+            mHandler.sendEmptyMessageDelayed(H.STOP_SAMPLE, SAMPLE_CUTOFF);
+        }
+    };
+
     private final H mHandler = new H();
 
     private RingtonePreference mRequestPreference;
+    private TwoStatePreference mIncreasingRing;
+    private IncreasingRingVolumePreference mIncreasingRingVolume;
 
     @Override
     public void onAttach(Context context) {
@@ -74,6 +94,9 @@ public class SoundSettings extends DashboardFragment {
                 mRequestPreference = (RingtonePreference) findPreference(selectedPreference);
             }
         }
+        if (mIncreasingRingVolume != null) {
+            initIncreasingRing();
+        }
     }
 
     @Override
@@ -85,6 +108,14 @@ public class SoundSettings extends DashboardFragment {
     public void onPause() {
         super.onPause();
         mVolumeCallback.stopSample();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mIncreasingRingVolume != null) {
+            mIncreasingRingVolume.onActivityStop();
+        }
     }
 
     @Override
@@ -143,6 +174,9 @@ public class SoundSettings extends DashboardFragment {
             if (mCurrent != null && mCurrent != sbv) {
                 mCurrent.stopSample();
             }
+            if (mIncreasingRingVolume != null) {
+                mIncreasingRingVolume.stopSample();
+            }
             mCurrent = sbv;
             if (mCurrent != null) {
                 mHandler.removeMessages(H.STOP_SAMPLE);
@@ -158,6 +192,9 @@ public class SoundSettings extends DashboardFragment {
         public void stopSample() {
             if (mCurrent != null) {
                 mCurrent.stopSample();
+            }
+            if (mIncreasingRingVolume != null) {
+                mIncreasingRingVolume.stopSample();
             }
         }
     }
@@ -177,6 +214,9 @@ public class SoundSettings extends DashboardFragment {
             switch (msg.what) {
                 case STOP_SAMPLE:
                     mVolumeCallback.stopSample();
+                    if (mIncreasingRingVolume != null) {
+                        mIncreasingRingVolume.stopSample();
+                    }
                     break;
             }
         }

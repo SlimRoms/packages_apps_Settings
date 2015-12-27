@@ -16,6 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+                  xmlns:slim="http://schemas.android.com/apk/res/slim"
         android:title="@string/sound_settings"
         android:key="sound_settings"
         settings:keywords="@string/keywords_sounds">
@@ -49,7 +50,16 @@
                 android:key="vibrate_when_ringing"
                 android:title="@string/vibrate_when_ringing_title" />
 
+        <!-- Increasing ringtone -->
+        <PreferenceScreen
+            android:key="@org.slim.framework:string/increasing_ring_volume_options"
+            android:title="@org.slim.framework:string/sound_category_increasing_ring_volume_title">
 
+            <intent android:action="com.slim.settings.action.INCREASING_RING_SETTINGS"
+                android:targetPackage="com.slim.settings"
+                android:targetClass="com.slim.settings.activities.IncreasingRingSettingsActivity"/>
+        </PreferenceScreen>
+ 
         <!-- Interruptions -->
         <com.android.settingslib.RestrictedPreference
                 android:key="zen_mode"

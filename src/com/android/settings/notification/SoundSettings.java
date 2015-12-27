@@ -47,6 +47,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.TwoStatePreference;
 import android.text.TextUtils;
 import android.util.Log;
@@ -99,6 +100,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
     private static final int SAMPLE_CUTOFF = 2000;  // manually cap sample playback at 2 seconds
 
     private final VolumePreferenceCallback mVolumeCallback = new VolumePreferenceCallback();
+
     private final H mHandler = new H();
     private final SettingsObserver mSettingsObserver = new SettingsObserver();
     private final Receiver mReceiver = new Receiver();
@@ -200,7 +202,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
         for (VolumeSeekBarPreference volumePref : mVolumePrefs) {
             volumePref.onActivityResume();
         }
-
         final EnforcedAdmin admin = RestrictedLockUtils.checkIfRestrictionEnforced(mContext,
                 UserManager.DISALLOW_ADJUST_VOLUME, UserHandle.myUserId());
         final boolean hasBaseRestriction = RestrictedLockUtils.hasBaseUserRestriction(mContext,
@@ -231,6 +232,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
         mVolumeCallback.stopSample();
         mSettingsObserver.register(false);
         mReceiver.register(false);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     @Override

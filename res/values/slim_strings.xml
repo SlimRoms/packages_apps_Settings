@@ -24,5 +24,4 @@
     <!-- Doze options -->
     <string name="display_category_doze_options_title">Ambient display (doze) options</string>
     <string name="doze_settings_title">Advanced doze options</string>
-
 </resources>

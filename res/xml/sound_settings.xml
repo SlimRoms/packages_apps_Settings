@@ -16,6 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+                  xmlns:slim="http://schemas.android.com/apk/res/slim"
         android:title="@string/sound_settings"
         android:key="sound_settings"
         settings:keywords="@string/keywords_sounds">
@@ -49,7 +50,17 @@
                 android:key="vibrate_when_ringing"
                 android:title="@string/vibrate_when_ringing_title" />
 
+        <!-- Increasing ring -->
+        <SlimSwitchPreference
+                android:key="increasing_ring"
+                android:title="@*slim:string/increasing_ring_volume_option_title" />
 
+        <!-- Increasing ring volume -->
+        <com.slim.preference.IncreasingRingVolumePreference
+                android:key="increasing_ring_volume"
+                android:icon="@*slim:drawable/ring_notif_increasing"
+                android:dependency="increasing_ring" />
+ 
         <!-- Interruptions -->
         <com.android.settingslib.RestrictedPreference
                 android:key="zen_mode"

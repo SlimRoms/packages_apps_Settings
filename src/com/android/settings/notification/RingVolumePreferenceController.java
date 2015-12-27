@@ -38,10 +38,14 @@ import com.android.settings.notification.VolumeSeekBarPreference.Callback;
 
 import java.util.Objects;
 
+import slim.preference.IncreasingRingVolumePreference;
+import slim.provider.SlimSettings;
+
 public class RingVolumePreferenceController extends VolumeSeekBarPreferenceController {
 
     private static final String TAG = "RingVolumeController";
     private static final String KEY_RING_VOLUME = "ring_volume";
+    private static final String KEY_INCREASING_RING_VOLUME = "increasing_ring_volume";
 
     private AudioManager mAudioManager;
     private Vibrator mVibrator;
@@ -74,6 +78,10 @@ public class RingVolumePreferenceController extends VolumeSeekBarPreferenceContr
         mReceiver.register(true);
         updateEffectsSuppressor();
         updatePreferenceIcon();
+        if (mIncreasingRingVolume != null) {
+            mIncreasingRingVolume.onActivityResume();
+        }
+
     }
 
     @Override
@@ -92,6 +100,28 @@ public class RingVolumePreferenceController extends VolumeSeekBarPreferenceContr
         return Utils.isVoiceCapable(mContext) && !mHelper.isSingleVolume();
     }
 
+   // === Increasing ringtone ===
+
+    private void initIncreasingRing() {
+        PreferenceScreen root = getPreferenceScreen();
+        mIncreasingRing = (TwoStatePreference)
+                root.findPreference(SlimSettings.System.INCREASING_RING);
+        mIncreasingRingVolume = (IncreasingRingVolumePreference)
+                root.findPreference(KEY_INCREASING_RING_VOLUME);
+
+        if (mIncreasingRing == null || mIncreasingRingVolume == null || !mVoiceCapable) {
+            if (mIncreasingRing != null) {
+                root.removePreference(mIncreasingRing);
+                mIncreasingRing = null;
+            }
+            if (mIncreasingRingVolume != null) {
+                root.removePreference(mIncreasingRingVolume);
+                mIncreasingRingVolume = null;
+            }
+        } else {
+            mIncreasingRingVolume.setCallback(mIncreasingRingVolumeCallback);
+        }
+    }
     @Override
     public int getAudioStream() {
         return AudioManager.STREAM_RING;

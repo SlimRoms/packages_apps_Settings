@@ -18,7 +18,7 @@
   <string name="ok">OK</string>
   <string name="reset">Visszaállítás</string>
   <string name="attention">Figyelmeztetés</string>
-  <string name="enabled">Engedélyez</string>
+  <string name="enabled">Engedélyezve</string>
   <string name="disabled">Tiltva</string>
   <string name="default_string">Alapértelmezett</string>
   <string name="additional_options_title">További beállítások</string>
@@ -84,6 +84,9 @@
   <string name="battery_light_full_color_title">Teljesen feltöltve</string>
   <string name="app_security_title">Alkalmazás biztonság</string>
   <string name="privacy_guard_dlg_title">Engedélyezed a Privacy Guard-ot?</string>
+  <string name="privacy_guard_enable_dlg_text">Ha a Privacy Guard engedélyezve van,%s az alkalmazás nem lesz képes hozzáférni a személyes adatokhoz, névjegyekhez, üzenetekhez, hívás naplókhoz.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Ha engedélyezed a Privacy Guard-ot a beépített alkalmazáshoz az nem lesz képes hozzáférni a személyes adatokhoz, mint például névjegyek, üzenetek vagy hívás naplók.
+Ez hibákat okozhat némelyik alkalmazásnál.%s.</string>
   <string name="privacy_guard_default_title">Alapértelmezés szerint</string>
   <string name="privacy_guard_default_summary">Nem engedi hozzáférni a személyes adatokhoz alapértelmezetten az újonnan telepített alklamzásoknak</string>
   <string name="privacy_guard_notification_title">Értesítés</string>
@@ -184,6 +187,7 @@
   <string name="camera_sounds_summary">Engedélyezi a kamera zárhangot</string>
   <string name="camera_sound_warning_dialog_text">Kamera zárhang tiltása egyes területeken tiltott! Kérjük ellenőrizze a jogszabályokat az Ön országában</string>
   <string name="safe_headset_volume_title">Biztonsági fejhallgató hangerő</string>
+  <string name="safe_headset_volume_summary">Túl magas hangerő megakadályozása fülhallgató csatlakoztatásakor</string>
   <string name="safe_headset_volume_warning_dialog_text">Hosszú ideig hangos zenét hallgatva halláskárosodást okozhat. Óvatosan tiltsa le.</string>
   <string name="display_category_animation_options_title">Animáció opciók</string>
   <string name="system_power_crt_mode_title">CRT animáció </string>
@@ -505,6 +509,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="summary_pref_menu_display">Hogyan és mikor akarod a menüt megjeleníteni?</string>
   <string name="navbar_enable_bar">Navigációs sáv engedélyezése</string>
   <string name="navbar_enable_bar_summary">Engedélyezi a navigációs sávot</string>
+  <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
   <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
   <string name="navigation_bar_height_landscape_title">Navigációs sáv fekvő mód</string>
   <string name="navigation_bar_height_landscape_summary">Navigációs sáv magassága fekvőhelyzetben.</string>
@@ -678,6 +683,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lockscreen_misc_color_summary">a fennmaradó elemek színe</string>
   <string name="lockscreen_widgets_title">Modulok</string>
   <string name="lockscreen_allow_all_title">Minden widget engedélyezése</string>
+  <string name="lockscreen_allow_all_warning">Vannak olyan widgetek,amik nem úgy viselkednek,ahogy elvárható,ha kihelyezed őket a zárképernyőre.Más widgetek kiadhatnak rólad személyes adatokat,annak aki hozzáfér a készülékhez.Kérjük tartsd ezeket szem előtt,mielőtt folytatod.</string>
   <string name="lockscreen_camera_widget_title">Kamera modul engedélyezése</string>
   <string name="lockscreen_camera_widget_summary">Mutassa a biztonsági kamera modult a zárképernyőn</string>
   <string name="lockscreen_maximize_widgets_title">Kezdő oldal maximumon</string>
@@ -686,11 +692,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="lockscreen_disable_hints_summary">Tiltja a fénylő keretet ami a modulok körül van álló helyzetben</string>
   <string name="lockscreen_use_widget_container_carousel_title">Engedélyezi állóhelyzetben a forgást</string>
   <string name="lockscreen_use_widget_container_carousel_summary">Forgó animáció használata állóhelyzetben a zárképernyő váltás közben</string>
+  <string name="lockscreen_widget_frame_title">widget keretek letiltása</string>
+  <string name="lockscreen_widget_frame_summary">widget háttér keretek letiltása</string>
   <string name="lock_numpad_random_title">Változtasd meg a PIN pad számait</string>
   <string name="lock_numpad_random_dialog_title">PIN pad véletlenszerű sorrendje</string>
   <string name="lock_numpad_random_off">Tiltva</string>
   <string name="lock_numpad_random_always">Mindig</string>
   <string name="lock_numpad_random_on_request">Kérésre</string>
+  <string name="shake_to_secure_title">képernyő zár aktiválása rázással</string>
+  <string name="shake_to_secure_dlg_title">VIGYÁZAT:</string>
+  <string name="shake_all">Rázza bármely irányban</string>
+  <string name="shake_horizontal">Vízszintesen rázza</string>
+  <string name="shake_vertical">Rázza függőlegesen</string>
   <string name="lock_before_unlock_title">Csúszka mutatása biztonsági zárképernyő előtt</string>
   <string name="lock_before_unlock_summary">A biztonsági zárképernyő használata előtt mutassa a csúszkát</string>
   <string name="lock_pattern_size_3">3x3</string>

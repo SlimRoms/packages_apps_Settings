@@ -15,19 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="ok">OK</string>
-  <string name="reset">Visszaállítás</string>
-  <string name="attention">Figyelmeztetés</string>
-  <string name="enabled">Engedélyez</string>
-  <string name="disabled">Tiltva</string>
-  <string name="default_string">Alapértelmezett</string>
-  <string name="additional_options_title">További beállítások</string>
-  <string name="reset_message">Mindent visszaállítasz alaphelyzetbe?</string>
-  <string name="style_title">Stílus</string>
-  <string name="add">Hozzáadás</string>
-  <string name="sunday">vasárnap</string>
-  <string name="monday">Hétfő</string>
-  <string name="tuesday">Kedd</string>
   <string name="wednesday">szerda</string>
   <string name="thursday">csütörtök</string>
   <string name="friday">péntek</string>
@@ -84,6 +71,9 @@
   <string name="battery_light_full_color_title">Teljesen feltöltve</string>
   <string name="app_security_title">Alkalmazás biztonság</string>
   <string name="privacy_guard_dlg_title">Engedélyezed a Privacy Guard-ot?</string>
+  <string name="privacy_guard_enable_dlg_text">Ha a Privacy Guard engedélyezve van,%s az alkalmazás nem lesz képes hozzáférni a személyes adatokhoz, névjegyekhez, üzenetekhez, hívás naplókhoz.</string>
+  <string name="privacy_guard_enable_dlg_system_app_text">Ha engedélyezed a Privacy Guard-ot a beépített alkalmazáshoz az nem lesz képes hozzáférni a személyes adatokhoz, mint például névjegyek, üzenetek vagy hívás naplók.
+Ez hibákat okozhat némelyik alkalmazásnál.%s</string>
   <string name="privacy_guard_default_title">Alapértelmezés szerint</string>
   <string name="privacy_guard_default_summary">Nem engedi hozzáférni a személyes adatokhoz alapértelmezetten az újonnan telepített alklamzásoknak</string>
   <string name="privacy_guard_notification_title">Értesítés</string>
@@ -506,6 +496,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="summary_pref_menu_display">Hogyan és mikor akarod a menüt megjeleníteni?</string>
   <string name="navbar_enable_bar">Navigációs sáv engedélyezése</string>
   <string name="navbar_enable_bar_summary">Engedélyezi a navigációs sávot</string>
+  <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
   <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
   <string name="navigation_bar_height_landscape_title">Navigációs sáv fekvő mód</string>
   <string name="navigation_bar_height_landscape_summary">Navigációs sáv magassága fekvőhelyzetben.</string>
@@ -742,6 +733,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="title_tile_sleep">Alvó állapot</string>
   <string name="title_tile_location">Hely</string>
   <string name="title_tile_torch">Zseblámpa</string>
+  <string name="title_tile_lockscreen">Zárképernyő</string>
   <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Mobil adat</string>
   <string name="title_tile_autorotate">Tájolás</string>
@@ -879,6 +871,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="keys_action_double">Dupla kattintás</string>
   <string name="no_home_key">Nem jelöltél ki  \"Kezdőlap\" műveletet!\n\nKészülék használhatatlanná válhat!</string>
   <string name="button_backlight_title">Háttérvilágítás</string>
+  <string name="button_backlight_seekbar_title">Gombok fényereje</string>
   <string name="keyboard_backlight_seekbar_title">Billentyűzet fényereje</string>
   <string name="backlight_timeout_title">Megvilágítás ideje</string>
   <string name="backlight_timeout_unlimited">Ne kapcsoljon ki</string>
@@ -933,6 +926,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="usb_mass_storage_summary">USB háttértár engedélyezése</string>
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Pie vezérlés engedélyezése</string>
+  <string name="pie_control_size">PIE méret</string>
   <string name="pie_control_trigger_positions">Programindító opciók</string>
   <string name="pie_control_trigger_left">Programindító képernyő bal szélén</string>
   <string name="pie_control_trigger_bottom">Programindító képernyő alsó szélén</string>
@@ -999,6 +993,37 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
   <string name="recent_panel_expanded_mode_always">Mindig</string>
   <string name="recent_panel_expanded_mode_never">Soha</string>
   <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
+  <string name="recent_card_text_color_title">Kártya szövegszíne</string>
   <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
+  <string name="app_moving_enable">Alkalmazás mozgatás engedélyezése</string>
+  <string name="app_moving_disable">Alkalmazás mozgatás letiltása</string>
   <string name="app_moving_reboot_title">Újraindítja most?</string>
+  <string name="app_moving_reboot_now_button">Újraindítás most</string>
+  <string name="app_moving_reboot_later_button">Újraindítás később</string>
+  <string name="heads_up_title">Lebegő értesítés</string>
+  <string name="heads_up_expanded_title">Mindig kiterjesztve</string>
+  <string name="heads_up_show_updates_title">Frissítések megjelenítése</string>
+  <string name="heads_up_snooze_title">Szundi időzítő</string>
+  <string name="heads_up_snooze_summary">Lebegő értesítések kikapcsolása <xliff:g id="number">%d</xliff:g> percre a szundi gomb érintése esetén</string>
+  <string name="heads_up_snooze_disabled_summary">Szundi időzítő letiltva</string>
+  <string name="heads_up_snooze_3min">3 perc</string>
+  <string name="heads_up_snooze_5min">5 perc</string>
+  <string name="heads_up_snooze_10min">10 perc</string>
+  <string name="heads_up_snooze_15min">15 perc</string>
+  <string name="heads_up_snooze_20min">20 perc</string>
+  <string name="heads_up_time_out_title">Időtúllépés</string>
+  <string name="heads_up_time_out_summary">A lebegő értesítés <xliff:g id="number">%d</xliff:g> másodpercig fog megjelenni</string>
+  <string name="heads_up_time_out_never_summary">A lebegő értesítés az elutasításig folyamatosan megjelenik</string>
+  <string name="heads_up_time_out_4sec">4 másodperc</string>
+  <string name="heads_up_time_out_6sec">6 másodperc</string>
+  <string name="heads_up_time_out_8sec">8 másodperc</string>
+  <string name="heads_up_time_out_10sec">10 másodperc</string>
+  <string name="heads_up_time_out_never">Soha</string>
+  <string name="heads_up_switch_label">Lebegő értesítések engedélyezése</string>
+  <string name="heads_up_bg_color_title">Háttérszín</string>
+  <string name="heads_up_text_color_title">Szöveg színe</string>
+  <string name="reset_default_message">Alapértelmezett visszaállítása</string>
+  <string name="screen_off_gesture_settings_title">Képernyő kikapcsolás gesztusok</string>
+  <string name="proximity_wake_title">Véletlen ébresztés megakadályozása</string>
+  <string name="proximity_wake_summary">Közelség érzékelő ellenőrzése a képernyő felébresztése előtt</string>
 </resources>

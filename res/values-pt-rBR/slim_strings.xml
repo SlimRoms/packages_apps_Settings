@@ -733,7 +733,7 @@ Opções adicionais estão disponíveis ao pressionar continuamente uma linha. A
   <string name="tile_picker_title">Botões e layout</string>
   <string name="tile_picker_summary">Ver, selecionar ou alterar os botões exibidos</string>
   <string name="tile_choose_title">Escolher um botão</string>
-  <string name="title_tile_airplane">Mode avião</string>
+  <string name="title_tile_airplane">Modo avião</string>
   <string name="title_tile_battery">Bateria</string>
   <string name="title_tile_bluetooth">Bluetooth</string>
   <string name="title_tile_brightness">Brilho</string>
@@ -1059,5 +1059,5 @@ Opções adicionais estão disponíveis ao pressionar continuamente uma linha. A
   <string name="reset_default_message">Resetar ao padrão</string>
   <string name="screen_off_gesture_settings_title">Gestos com tela desligada</string>
   <string name="proximity_wake_title">Impedir que a tela se ligue acidentalmente</string>
-  <string name="proximity_wake_summary">Verifique o sensor de proximidade antes de despertar a tela</string>
+  <string name="proximity_wake_summary">Verificar o sensor de proximidade antes de despertar a tela</string>
 </resources>

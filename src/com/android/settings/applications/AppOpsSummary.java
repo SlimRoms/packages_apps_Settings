@@ -63,6 +63,7 @@ public class AppOpsSummary extends InstrumentedFragment {
     CharSequence[] mPageNames;
 
     int mCurPos;
+    int mPositionOffset;
 
     @Override
     protected int getMetricsCategory() {
@@ -79,12 +80,12 @@ public class AppOpsSummary extends InstrumentedFragment {
 
         @Override
         public Fragment getItem(int position) {
-            return new AppOpsCategory(mPageTemplates[position]);
+            return new AppOpsCategory(mPageTemplates[mPositionOffset + position]);
         }
 
         @Override
         public int getCount() {
-            return mPageTemplates.length;
+            return mPageNames.length;
         }
 
         @Override
@@ -133,15 +134,27 @@ public class AppOpsSummary extends InstrumentedFragment {
 
         mPageNames = getResources().getTextArray(R.array.app_ops_categories_cm);
 
+<<<<<<< HEAD
+=======
+        mPositionOffset = 0;
+
+        int specificTab = -1;
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            specificTab = Arrays.asList(mPageNames).indexOf(bundle.getString("appops_tab", ""));
+            if (specificTab >= 0) {
+                mPageNames = Arrays.copyOfRange(mPageNames, specificTab, specificTab + 1);
+                mPositionOffset = specificTab;
+            }
+        }
+
+>>>>>>> 48afc16... Settings: Show only one tab on PrivacyGuard direct access
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
         mAdapter = new MyPagerAdapter(getChildFragmentManager(),
                 filterTemplates(AppOpsState.ALL_TEMPLATES));
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOnPageChangeListener(mAdapter);
         PagerTabStrip tabs = (PagerTabStrip) rootView.findViewById(R.id.tabs);
-
-        // HACK - https://code.google.com/p/android/issues/detail?id=213359
-        ((ViewPager.LayoutParams)tabs.getLayoutParams()).isDecor = true;
 
         Resources.Theme theme = tabs.getContext().getTheme();
         TypedValue typedValue = new TypedValue();

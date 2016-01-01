@@ -212,4 +212,7 @@
     <string name="root_access_adb">ADB only</string>
     <string name="root_access_all">Apps and ADB</string>
 
+    <!-- Memory -->
+    <string name="memory_startup_apps_title">Apps started on boot</string>
+
 </resources>

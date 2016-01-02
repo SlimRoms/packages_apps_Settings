@@ -117,6 +117,7 @@ import com.android.settings.search.Index;
 import com.android.settings.privacyguard.PrivacyGuardPrefs;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
+import com.android.settings.slim.NavigationSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wfd.WifiDisplaySettings;
@@ -279,6 +280,7 @@ public class SettingsActivity extends Activity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
+            R.id.navigation_settings,
             R.id.dashboard,
     };
 
@@ -355,6 +357,7 @@ public class SettingsActivity extends Activity
             ProcessStatsSummary.class.getName(),
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
+            NavigationSettings.class.getName(),
     };
 
 
@@ -1266,6 +1269,12 @@ public class SettingsActivity extends Activity
                     }
                 } else if (id == R.id.home_settings) {
                     if (!updateHomeSettingTiles(tile)) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.navigation_settings) {
+                    int deviceKeys = getResources().getInteger(
+                            com.android.internal.R.integer.config_deviceHardwareKeys);
+                    if (deviceKeys == 0) {
                         removeTile = true;
                     }
                 } else if (id == R.id.user_settings) {

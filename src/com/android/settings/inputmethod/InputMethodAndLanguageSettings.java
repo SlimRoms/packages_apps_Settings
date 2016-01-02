@@ -84,6 +84,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private static final String KEY_INPUT_METHOD_SELECTOR = "input_method_selector";
     private static final String KEY_USER_DICTIONARY_SETTINGS = "key_user_dictionary_settings";
     private static final String KEY_PREVIOUSLY_ENABLED_SUBTYPES = "previously_enabled_subtypes";
+    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
     // false: on ICS or later
     private static final boolean SHOW_INPUT_METHOD_SWITCHER_SETTINGS = false;
 
@@ -147,6 +148,14 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                 "keyboard_settings_category");
         mGameControllerCategory = (PreferenceCategory)findPreference(
                 "game_controller_settings_category");
+
+        // Hide Hardware Keys menu if device doesn't have any
+        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
+        int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (deviceKeys == 0 && hardwareKeys != null) {
+            getPreferenceScreen().removePreference(hardwareKeys);
+        }
 
         final Intent startingIntent = activity.getIntent();
         // Filter out irrelevant features if invoked from IME settings button.

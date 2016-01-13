@@ -7953,4 +7953,6 @@
     <!-- Trigger Carrier Provisioning [CHAR LIMIT=NONE] -->
     <string name="trigger_carrier_provisioning">Trigger Carrier Provisioning</string>
 
+    <string name="lte_data_and_voice_calling_enabled">LTE data and Voice Calling (IMS/VoLTE) service enabled </string>
+    <string name="lte_data_service_enabled">LTE data service enabled </string>
 </resources>

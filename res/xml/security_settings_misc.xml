@@ -42,9 +42,23 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:key="device_admin_category"
-            android:title="@string/device_admin_title"
+    <PreferenceCategory android:key="power_menu_category"
+            android:title="@string/power_menu_category_title"
             android:persistent="false">
+
+        <PreferenceScreen
+            android:key="global_menu_settings"
+            android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+            android:title="@string/power_menu_title"
+            android:summary="@string/power_menu_summary">
+                <extra android:name="actionMode" android:value="5" />
+                <extra android:name="maxAllowedActions" android:value="6" />
+                <extra android:name="disableLongpress" android:value="true" />
+                <extra android:name="disableDeleteLastEntry" android:value="true" />
+                <extra android:name="actionValues" android:value="shortcut_action_power_menu_values" />
+                <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
+                <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PowerMenuFragment" />
+        </PreferenceScreen>
 
         <ListPreference
             android:key="advanced_reboot"
@@ -54,6 +68,12 @@
             android:entryValues="@array/advanced_reboot_values"
             android:summary="@string/advanced_reboot_summary"
             android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="device_admin_category"
+            android:title="@string/device_admin_title"
+            android:persistent="false">
 
         <Preference android:key="manage_device_admin"
                 android:title="@string/manage_device_admin"

@@ -242,13 +242,24 @@
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
     <string name="expanded_desktop_title">Expanded desktop options</string>
 
+    <!-- Global menu actions -->
+    <string name="power_menu_category_title">Power menu</string>
+    <string name="power_menu_title">Menu entries</string>
+    <string name="power_menu_summary">Configure the entries to show in power menu (up to 6)</string>
+    <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_power_off">Power off</string>
+    <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_sound">Sound</string>
+    <string name="shortcut_action_users">Users</string>
+    <string name="shortcut_action_lockdown">Lock now</string>
+
     <!-- Advanced reboot options -->
-    <string name="advanced_reboot_title">Advanced reboot</string>
-    <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
+    <string name="advanced_reboot_title">Reboot options (recovery / bootloader)</string>
+    <string name="advanced_reboot_summary">Prompt for rebooting into recovery and bootloader when selecting reboot</string>
     <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
-    <string name="advanced_reboot_disabled">Disable</string>
-    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
-    <string name="advanced_reboot_show_always">Show always</string>
+    <string name="advanced_reboot_disabled">Never show</string>
+    <string name="advanced_reboot_hide_on_keyguard">Only when device is unlocked</string>
+    <string name="advanced_reboot_show_always">Always show</string>
 
     <!-- SlimActions -->
     <string name="shortcut_action_none">None</string>

@@ -42,6 +42,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_BUTTON_STYLE = "nav_bar_button_style";
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+    private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
 
     private int mNavBarMenuDisplayValue;
 
@@ -52,6 +53,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     PreferenceScreen mButtonPreference;
     PreferenceScreen mButtonStylePreference;
     PreferenceScreen mStyleDimenPreference;
+    SwitchPreference mStatusBarImeArrows;
 
     @Override
     protected int getMetricsCategory() {
@@ -97,6 +99,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 DeviceUtils.isPhone(getActivity()) ? 1 : 0) == 0);
         mNavigationBarCanMove.setOnPreferenceChangeListener(this);
 
+        mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
+        mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
+        mStatusBarImeArrows.setOnPreferenceChangeListener(this);
+
         updateNavbarPreferences(enableNavigationBar);
     }
 
@@ -108,6 +115,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mNavigationBarCanMove.setEnabled(show);
         mMenuDisplayLocation.setEnabled(show
             && mNavBarMenuDisplayValue != 1);
+        mStatusBarImeArrows.setEnabled(show);
     }
 
     @Override
@@ -132,6 +140,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE,
                     ((Boolean) newValue) ? 0 : 1);
+            return true;
+        } else if (preference == mStatusBarImeArrows) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         }
         return false;

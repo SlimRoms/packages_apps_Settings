@@ -110,14 +110,27 @@
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
         <PreferenceCategory
+            android:key="category_wakeup_options"
+            android:title="@string/display_category_wakeup_options_title" >
+
+            <SwitchPreference
+                android:key="wakeup_when_plugged_unplugged"
+                android:title="@string/wakeup_when_plugged_unplugged_title"
+                android:summary="@string/wakeup_when_plugged_unplugged_summary"
+                android:defaultValue="true"
+                android:persistent="false" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:key="category_doze_options"
             android:title="@string/display_category_doze_options_title" >
 
             <SwitchPreference
-                    android:key="doze"
-                    android:title="@string/doze_title"
-                    android:summary="@string/doze_summary"
-                    android:persistent="false" />
+                android:key="doze"
+                android:title="@string/doze_title"
+                android:summary="@string/doze_summary"
+                android:persistent="false" />
 
             <PreferenceScreen
                 android:fragment="com.android.settings.slim.fragments.DozeSettingsFragment"

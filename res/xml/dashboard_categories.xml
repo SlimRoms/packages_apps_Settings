@@ -122,7 +122,7 @@
                 android:id="@+id/navigation_settings"
                 android:icon="@drawable/ic_settings_navigation"
                 android:fragment="com.android.settings.slim.NavigationSettings"
-                android:title="@string/navigation_settings_title"
+                android:title="@string/navigation_settings_category"
                 />
 
         <!-- Application Settings -->

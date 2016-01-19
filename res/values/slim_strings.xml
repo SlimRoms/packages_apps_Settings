@@ -228,6 +228,11 @@
     <string name="restarting_ui">Restarting UI\u2026</string>
     <string name="lcd_density_prompt_message">Some apps may not function at non-standard dpi.\n\nThis will restart your phone.</string>
 
+    <!-- Wakeup options -->
+    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+
     <!-- Doze options -->
     <string name="display_category_doze_options_title">Ambient display (doze) options</string>
     <string name="doze_settings_title">Advanced doze options</string>

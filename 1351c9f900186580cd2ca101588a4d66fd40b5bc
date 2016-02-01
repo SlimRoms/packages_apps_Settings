@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a7fa997_b945fbb4",
+        "filename": "res/values/slim_arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-02-01T19:29:01Z",
+      "side": 1,
+      "message": "app_ops_categories_slim",
+      "range": {
+        "startLine": 20,
+        "startChar": 24,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "1351c9f900186580cd2ca101588a4d66fd40b5bc",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

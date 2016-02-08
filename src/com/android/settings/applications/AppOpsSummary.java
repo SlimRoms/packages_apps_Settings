@@ -164,6 +164,10 @@ public class AppOpsSummary extends InstrumentedFragment {
 
         mActivity = getActivity();
 
+        // temporary workaround for PagerTabStrip bug
+        mViewPager.setCurrentItem(1);
+        mViewPager.setCurrentItem(0);
+
         return rootView;
     }
 

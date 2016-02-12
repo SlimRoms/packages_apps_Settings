@@ -87,7 +87,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
-    private static final String KEY_DOZE = "doze";
     private static final String KEY_TAP_TO_WAKE = "tap_to_wake";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
@@ -100,17 +99,23 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private WarnedListPreference mFontSizePref;
 
+    private static final String KEY_DOZE_CATEGORY = "category_doze_options";
+    private static final String KEY_DOZE = "doze";
+    private static final String KEY_ADVANCED_DOZE_OPTIONS = "advanced_doze_options";
+
     private final Configuration mCurConfig = new Configuration();
     private ListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
     private Preference mScreenSaverPreference;
     private SwitchPreference mLiftToWakePreference;
-    private SwitchPreference mDozePreference;
     private SwitchPreference mTapToWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
     private SwitchPreference mCameraDoubleTapPowerGesturePreference;
     private ListPreference mLcdDensityPreference;
+    private PreferenceCategory mDozeCategory;
+    private SwitchPreference mDozePreference;
+    private PreferenceScreen mAdvancedDozeOptions;
 
     @Override
     protected int getMetricsCategory() {
@@ -197,11 +202,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             removePreference(KEY_LIFT_TO_WAKE);
         }
 
+        mDozeCategory = (PreferenceCategory) findPreference(KEY_DOZE_CATEGORY);
         if (isDozeAvailable(activity)) {
+            // Doze master switch
             mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
             mDozePreference.setOnPreferenceChangeListener(this);
         } else {
-            removePreference(KEY_DOZE);
+            prefSet.removePreference(mDozeCategory);
         }
 
         if (isTapToWakeAvailable(getResources())) {
@@ -695,6 +702,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!isDozeAvailable(context)) {
                         result.add(KEY_DOZE);
+                        result.add(KEY_ADVANCED_DOZE_OPTIONS);
                     }
                     if (!RotationPolicy.isRotationLockToggleVisible(context)) {
                         result.add(KEY_AUTO_ROTATE);

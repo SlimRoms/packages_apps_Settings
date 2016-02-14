@@ -53,6 +53,7 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE_TRIGGER_NOTIFICATION = "doze_trigger_notification";
     private static final String KEY_DOZE_SCHEDULE = "doze_schedule";
     private static final String KEY_DOZE_BRIGHTNESS = "doze_brightness";
+    private static final String KEY_DOZE_WAKEUP_DOUBLETAP = "doze_wakeup_doubletap";
 
     private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
 
@@ -62,6 +63,7 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
     private SwitchPreference mDozeTriggerNotification;
     private SwitchPreference mDozeSchedule;
     private SlimSeekBarPreference mDozeBrightness;
+    private SwitchPreference mDozeWakeupDoubleTap;
 
     private float mBrightnessScale;
     private float mDefaultBrightnessScale;
@@ -121,6 +123,10 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
         mDozeBrightness.setInterval(1);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
+        // Double-tap to wake from doze
+        mDozeWakeupDoubleTap = (SwitchPreference) findPreference(KEY_DOZE_WAKEUP_DOUBLETAP);
+        mDozeWakeupDoubleTap.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(false);
     }
 
@@ -155,6 +161,11 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
             float valNav = Float.parseFloat((String) newValue);
             SlimSettings.System.putFloat(getContentResolver(),
                     SlimSettings.System.DOZE_BRIGHTNESS, valNav / 100);
+        }
+        if (preference == mDozeWakeupDoubleTap) {
+            boolean value = (Boolean) newValue;
+            SlimSettings.System.putInt(getContentResolver(),
+                    SlimSettings.System.DOZE_WAKEUP_DOUBLETAP, value ? 1 : 0);
         }
         return true;
     }
@@ -199,6 +210,11 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
             mBrightnessScale = SlimSettings.System.getFloat(getContentResolver(),
                     SlimSettings.System.DOZE_BRIGHTNESS, mDefaultBrightnessScale);
             mDozeBrightness.setInitValue((int) (mBrightnessScale * 100));
+        }
+        if (mDozeWakeupDoubleTap != null) {
+            int value = SlimSettings.System.getInt(getContentResolver(),
+                    SlimSettings.System.DOZE_WAKEUP_DOUBLETAP, 0);
+            mDozeWakeupDoubleTap.setChecked(value != 0);
         }
     }
 

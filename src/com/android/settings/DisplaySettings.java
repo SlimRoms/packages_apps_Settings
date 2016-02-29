@@ -76,6 +76,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slim.provider.SlimSettings;
+
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
     private static final String TAG = "DisplaySettings";
@@ -95,6 +97,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_GESTURE = "camera_gesture";
     private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE
             = "camera_double_tap_power_gesture";
+<<<<<<< HEAD
+=======
+    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
+    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+
+    private static final String ROTATION_LOCKSCREEN = "Lockscreen";
+    private static final String ROTATION_ANGLE_0 = "0";
+    private static final String ROTATION_ANGLE_90 = "90";
+    private static final String ROTATION_ANGLE_180 = "180";
+    private static final String ROTATION_ANGLE_270 = "270";
+>>>>>>> c18cfac... [2/2] Settings: Add ProximityWake
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -281,6 +295,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             final int currentNightMode = uiManager.getNightMode();
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
+        }
+
+        boolean proximityCheckOnWait = getResources().getBoolean(
+                com.android.internal.R.bool.config_proximityCheckOnWake);
+        if (!proximityCheckOnWait) {
+            mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_WAKE));
+            SlimSettings.System.putInt(resolver, SlimSettings.System.PROXIMITY_ON_WAKE, 0);
         }
     }
 

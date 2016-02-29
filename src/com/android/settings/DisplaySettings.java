@@ -99,6 +99,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             = "camera_double_tap_power_gesture";
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
+    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -124,6 +125,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mDozeCategory;
     private SwitchPreference mDozePreference;
     private PreferenceScreen mAdvancedDozeOptions;
+    private SwitchPreference mProximityCheckOnWakePreference;
 
     @Override
     protected int getMetricsCategory() {
@@ -303,6 +305,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWakeUpWhenPluggedOrUnplugged.setChecked(SlimSettings.System.getInt(resolver,
                         SlimSettings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
             mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
+        }
+
+        mProximityCheckOnWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
+        boolean proximityCheckOnWake = getResources().getBoolean(
+                com.android.internal.R.bool.config_proximityCheckOnWake);
+        if (!proximityCheckOnWake) {
+            if (mProximityCheckOnWakePreference != null) {
+                mWakeUpOptions.removePreference(mProximityCheckOnWakePreference);
+            }
+            SlimSettings.System.putInt(resolver, SlimSettings.System.PROXIMITY_ON_WAKE, 0);
         }
 
     }

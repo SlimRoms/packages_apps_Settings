@@ -387,7 +387,7 @@
     <string name="keys_action_double">Double tap</string>
     <string name="no_home_key">You have no button assigned any more to the \"Home\" action!\n\nThis can make your device unusable!</string>
     <string name="no_back_key">You have no button assigned any more to the \"Back\" action!\n\nThis can make your device unusable!</string>
-    <string name="reassign_home_key">Reassigning "Home" button or longpress "Home" is not permitted !\n\nThis would make your device unusable!</string>
+    <string name="reassign_home_key">Reassigning "Home" button is not permitted !\n\nThis would make your device unusable!</string>
     <string name="reassign_back_key">Reassigning "Back" button is not permitted !\n\nThis would make your device unusable!</string>
     <string name="remove_home_key">You may not remove the "Home" button action,\nit has been readded as last entry!\n\nThis would make your device unusable!</string>
     <string name="remove_back_key">You may not remove the "Back" button action,\nit has been readded as last entry!\n\nThis can make your device unusable!</string>
@@ -418,6 +418,7 @@
     <string name="shortcut_action_theme_switch">Theme switcher</string>
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_voice_search">Voice search</string>
+    <string name="shortcut_action_nowontap">Google Now / Now on Tap</string>
     <string name="shortcut_action_none">None</string>
 
     <!-- Icon color options -->

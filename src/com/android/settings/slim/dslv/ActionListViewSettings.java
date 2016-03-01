@@ -278,13 +278,7 @@ public class ActionListViewSettings extends ListFragment implements
                             mPicker.pickShortcut(getId(), true);
                         }
                     } else if (!mUseAppPickerOnly) {
-                        ActionConfig actionConfig = mActionConfigsAdapter.getItem(arg2);
-                        if (ActionConstants.ACTION_HOME.equals(actionConfig.getClickAction())) {
-                            // Do not allow to change longpress action on Home
-                            showDialogInner(DLG_HOME_REASSIGN_DIALOG, 0, false, false);
-                        } else {
-                            showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, true, false);
-                        }
+                        showDialogInner(DLG_SHOW_ACTION_DIALOG, arg2, true, false);
                     } else {
                         if (mPicker != null) {
                             mPendingIndex = arg2;

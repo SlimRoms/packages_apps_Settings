@@ -16,6 +16,7 @@
 
 package com.android.settings.applications;
 
+import android.app.AppOpsManager;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.AsyncTaskLoader;
@@ -31,10 +32,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Spinner;
 
 import java.util.List;
 
@@ -53,6 +56,8 @@ public class AppOpsCategory extends ListFragment implements
     AppListAdapter mAdapter;
 
     String mCurrentPkgName;
+
+    private static boolean sSuOnly;
 
     public AppOpsCategory() {
     }
@@ -247,6 +252,7 @@ public class AppOpsCategory extends ListFragment implements
         private final Resources mResources;
         private final LayoutInflater mInflater;
         private final AppOpsState mState;
+        private final AppOpsManager mAppOps;
 
         List<AppOpEntry> mList;
 
@@ -254,6 +260,7 @@ public class AppOpsCategory extends ListFragment implements
             mResources = context.getResources();
             mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             mState = state;
+            mAppOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
         }
 
         public void setData(List<AppOpEntry> data) {
@@ -288,13 +295,45 @@ public class AppOpsCategory extends ListFragment implements
                 view = convertView;
             }
 
-            AppOpEntry item = getItem(position);
+            final AppOpEntry item = getItem(position);
             ((ImageView)view.findViewById(R.id.app_icon)).setImageDrawable(
                     item.getAppEntry().getIcon());
             ((TextView)view.findViewById(R.id.app_name)).setText(item.getAppEntry().getLabel());
             ((TextView)view.findViewById(R.id.op_name)).setText(item.getSummaryText(mState));
             ((TextView)view.findViewById(R.id.op_time)).setText(
                     item.getTimeText(mResources, false));
+            view.findViewById(R.id.op_time).setVisibility(sSuOnly ? 
+View.GONE : View.VISIBLE);
+
+            Spinner sp = (Spinner) view.findViewById(R.id.spinnerWidget);
+            sp.setVisibility(sSuOnly ? View.VISIBLE : View.GONE);
+
+            final AppOpsManager.OpEntry firstOp = item.getOpEntry(0);
+
+            final int switchOp = AppOpsManager.opToSwitch(firstOp.getOp());
+            int mode = mAppOps.checkOp(switchOp, item.getPackageOps().getUid(),
+                    item.getPackageOps().getPackageName());
+            sp.setSelection(AppOpsDetails.modeToPosition(mode));
+                sp.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+                    boolean firstMode = true;
+
+                    @Override
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView,
+                            int position, long id) {
+                        if (firstMode) {
+                            firstMode = false;
+                            return;
+                        }
+                        mAppOps.setMode(switchOp, item.getPackageOps().getUid(),
+                                item.getPackageOps().getPackageName(),
+                                AppOpsDetails.positionToMode(position));
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parentView) {
+                        // Do nothing
+                    }
+                });
 
             return view;
         }
@@ -340,7 +379,7 @@ public class AppOpsCategory extends ListFragment implements
     
     @Override public void onListItemClick(ListView l, View v, int position, long id) {
         AppOpEntry entry = mAdapter.getItem(position);
-        if (entry != null) {
+        if (entry != null && !sSuOnly) {
             mCurrentPkgName = entry.getAppEntry().getApplicationInfo().packageName;
             startApplicationDetailsActivity();
         }
@@ -351,6 +390,12 @@ public class AppOpsCategory extends ListFragment implements
         AppOpsState.OpsTemplate template = null;
         if (fargs != null) {
             template = (AppOpsState.OpsTemplate)fargs.getParcelable("template");
+            if (fargs.getBoolean("suTemplate")) {
+                template = AppOpsState.SU_TEMPLATE;
+                sSuOnly = true;
+            } else {
+                sSuOnly = false;
+            }
         }
         return new AppListLoader(getActivity(), mState, template);
     }

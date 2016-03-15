@@ -62,11 +62,11 @@ public class AppOpsDetails extends InstrumentedFragment {
     private View mRootView;
     private LinearLayout mOperationsSection;
 
-    private final int MODE_ALLOWED = 0;
-    private final int MODE_IGNORED = 1;
-    private final int MODE_ASK     = 2;
+    protected static final int MODE_ALLOWED = 0;
+    protected static final int MODE_IGNORED = 1;
+    protected static final int MODE_ASK     = 2;
 
-    private int modeToPosition (int mode) {
+    protected static int modeToPosition (int mode) {
         switch(mode) {
         case AppOpsManager.MODE_ALLOWED:
             return MODE_ALLOWED;
@@ -79,7 +79,7 @@ public class AppOpsDetails extends InstrumentedFragment {
         return MODE_IGNORED;
     }
 
-    private int positionToMode (int position) {
+    protected static int positionToMode (int position) {
         switch(position) {
         case MODE_ALLOWED:
             return AppOpsManager.MODE_ALLOWED;

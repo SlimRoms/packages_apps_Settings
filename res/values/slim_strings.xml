@@ -220,4 +220,7 @@
     <string name="slim_version_title">Slim version</string>
     <string name="slim_version_default">Unknown</string>
 
+    <!-- Superuser derived from privacy guard -->
+    <string name="superuser_title">Superuser</string>
+
 </resources>

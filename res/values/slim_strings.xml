@@ -216,4 +216,7 @@
     <!-- Memory -->
     <string name="memory_startup_apps_title">Apps started on boot</string>
 
+    <!-- Superuser derived from privacy guard -->
+    <string name="superuser_title">Superuser</string>
+
 </resources>

@@ -67,6 +67,14 @@
         android:entries="@array/root_access_entries"
         android:entryValues="@array/root_access_values" />
 
+    <PreferenceScreen
+        android:key="root_control"
+        android:title="@string/superuser_title"
+        android:fragment="com.android.settings.applications.AppOpsCategory">
+        <extra android:name="suTemplate" android:value="true" />
+    </PreferenceScreen>
+
+
     <com.android.settings.ColorModePreference
         android:key="color_mode"
         android:title="@string/picture_color_mode"

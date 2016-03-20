@@ -239,6 +239,23 @@
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 
+    <!-- Hardware keys and lights -->
+    <string name="hardware_keys_enable_title">Enable hardware keys</string>
+    <string name="hardware_keys_enable_summary">Enable/disable hardware keys</string>
+    <string name="hardware_keys_lights_enable_title">Hardware key lights settings</string>
+
+    <!-- Key backlight -->
+    <string name="settings_reset_button">Reset</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
+    <string name="button_backlight_seekbar_title">Button brightness</string>
+    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Enabled</string>
+
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Prevent accidental wake up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>

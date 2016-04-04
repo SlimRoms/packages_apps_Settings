@@ -47,4 +47,7 @@
     <!-- DDS Switch setting -->
     <bool name="config_dds_switch_alert_dialog_supported" translatable="false">false</bool>
 
+    <!-- When true enable color temperature setting. -->
+    <bool name="config_enableColorTemperature">false</bool>
+
 </resources>

@@ -6,6 +6,10 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4 android-support-v13 jsr305
 
 LOCAL_MODULE_TAGS := optional
 
+## Slim framework
+LOCAL_JAVA_LIBRARIES += \
+        org.slim.framework
+
 LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
         src/com/android/settings/EventLogTags.logtags

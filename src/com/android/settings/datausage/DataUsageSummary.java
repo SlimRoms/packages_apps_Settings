@@ -18,6 +18,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ActivityNotFoundException;
 import android.net.ConnectivityManager;
 import android.net.INetworkStatsSession;
 import android.net.NetworkTemplate;
@@ -38,6 +39,7 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.text.style.RelativeSizeSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -135,6 +137,17 @@ public class DataUsageSummary extends DataUsageBase implements Indexable, DataUs
             inflater.inflate(R.menu.data_usage, menu);
         }
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        final Context context = getActivity();
+        final MenuItem networkaccess = menu.findItem(R.id.data_usage_menu_app_network_access);
+        if (context.getResources().getBoolean(R.bool.config_app_network_access_enabled)) {
+            networkaccess.setVisible(true);
+        } else {
+            networkaccess.setVisible(false);
+        }
     }
 
     @Override

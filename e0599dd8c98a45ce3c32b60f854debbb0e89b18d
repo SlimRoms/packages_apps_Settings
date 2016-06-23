@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ace114c_f31fff07",
+        "filename": "res/xml/navbar_button_style.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-06-23T22:53:16Z",
+      "side": 1,
+      "message": "Probably should be \norg.slim.preference.colorpicker.ColorPickerPreference ??",
+      "range": {
+        "startLine": 26,
+        "startChar": 7,
+        "endLine": 26,
+        "endChar": 68
+      },
+      "revId": "e0599dd8c98a45ce3c32b60f854debbb0e89b18d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ace114c_532b7330",
+        "filename": "res/xml/navbar_button_style.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-06-23T22:53:16Z",
+      "side": 1,
+      "message": "Causes FC\nFATAL EXCEPTION: main\nProcess: com.android.settings, PID: 7297\njava.lang.RuntimeException: Unable to start activity ComponentInfo{com.android.settings/com.android.settings.SubSettings}: android.view.InflateException: Binary XML file line #26: Error inflating class net.margaritov.preference.colorpicker.ColorPickerPreference",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "e0599dd8c98a45ce3c32b60f854debbb0e89b18d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ace114c_3326e769",
+        "filename": "src/com/android/settings/slim/NavBarButtonStyle.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-06-23T22:53:16Z",
+      "side": 1,
+      "message": "It seems this isn\u0027t working properly. When I tap reset the dialog that comes up says \n\"res/layout-sw600dp-v13/confirm_lock_password.xml\"\n\"res/layout/app_ops_item_xml\"",
+      "range": {
+        "startLine": 148,
+        "startChar": 29,
+        "endLine": 148,
+        "endChar": 71
+      },
+      "revId": "e0599dd8c98a45ce3c32b60f854debbb0e89b18d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

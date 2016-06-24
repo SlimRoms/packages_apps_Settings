@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3ace114c_d31c43c4",
+        "filename": "res/xml/navbar_button_style.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000111
+      },
+      "writtenOn": "2016-06-24T15:07:42Z",
+      "side": 1,
+      "message": "what about  using org.slim.preference.colorpicker.ColorPickerPreference as  described here?: https://review.slimroms.org/#/c/16947/2/src/org/slim/preference/colorpicker/ColorPickerDialog.java",
+      "parentUuid": "3ace114c_532b7330",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "e0599dd8c98a45ce3c32b60f854debbb0e89b18d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ace114c_3326e769",
         "filename": "src/com/android/settings/slim/NavBarButtonStyle.java",
         "patchSetId": 7

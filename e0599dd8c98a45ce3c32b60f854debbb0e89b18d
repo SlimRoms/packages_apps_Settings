@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3ace114c_53e29304",
+        "filename": "res/xml/navbar_button_style.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-06-24T01:09:27Z",
+      "side": 1,
+      "message": "This did not solve the fc :\u003c",
+      "parentUuid": "3ace114c_f31fff07",
+      "range": {
+        "startLine": 26,
+        "startChar": 7,
+        "endLine": 26,
+        "endChar": 68
+      },
+      "revId": "e0599dd8c98a45ce3c32b60f854debbb0e89b18d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ace114c_532b7330",
         "filename": "res/xml/navbar_button_style.xml",
         "patchSetId": 7

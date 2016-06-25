@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ace114c_56aa81d5",
+        "filename": "src/com/android/settings/slim/NavbarSettings.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2016-06-25T14:56:51Z",
+      "side": 1,
+      "message": "FCs... Should be a different preference name but I have no time atm to dig...",
+      "revId": "2238a73348918db9a748e69ffba4ee1f45961e2c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

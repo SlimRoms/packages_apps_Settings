@@ -97,9 +97,9 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, org.slim.framework.internal.R.string.reset)
+        menu.add(0, MENU_RESET, 0, org.slim.framework.R.string.reset)
                 // use the reset settings icon
-                .setIcon(org.slim.framework.internal.R.drawable.ic_settings_reset)
+                .setIcon(org.slim.framework.R.drawable.ic_settings_reset)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
@@ -116,7 +116,7 @@ public class NavbarStyleDimenSettings extends SettingsPreferenceFragment impleme
 
     private void resetToDefault() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
-        alertDialog.setTitle(org.slim.framework.internal.R.string.reset);
+        alertDialog.setTitle(org.slim.framework.R.string.reset);
         alertDialog.setMessage(R.string.navbar_dimensions_reset_message);
         alertDialog.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {

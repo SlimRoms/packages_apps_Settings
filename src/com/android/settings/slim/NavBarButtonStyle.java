@@ -87,7 +87,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.white);
-            mNavigationBarButtonColor.setSummary(getResources().getString(org.slim.framework.internal.R.string.default_string));
+            mNavigationBarButtonColor.setSummary(getResources().getString(org.slim.framework.R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
             mNavigationBarButtonColor.setSummary(hexColor);
@@ -101,7 +101,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.white);
-            mNavigationBarGlowColor.setSummary(getResources().getString(org.slim.framework.internal.R.string.default_string));
+            mNavigationBarGlowColor.setSummary(getResources().getString(org.slim.framework.R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
             mNavigationBarGlowColor.setSummary(hexColor);
@@ -126,9 +126,9 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, org.slim.framework.internal.R.string.reset)
+        menu.add(0, MENU_RESET, 0, org.slim.framework.R.string.reset)
                 // use the reset settings icon
-                .setIcon(org.slim.framework.internal.R.drawable.ic_settings_reset)
+                .setIcon(org.slim.framework.R.drawable.ic_settings_reset)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 

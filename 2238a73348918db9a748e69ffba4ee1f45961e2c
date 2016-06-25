@@ -16,6 +16,24 @@
       "revId": "2238a73348918db9a748e69ffba4ee1f45961e2c",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ace114c_16acf9ec",
+        "filename": "src/com/android/settings/slim/NavbarSettings.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2016-06-25T15:38:44Z",
+      "side": 1,
+      "message": "import org.slim.provider.SlimSettingsKeys;\n\nseems missing",
+      "parentUuid": "3ace114c_56aa81d5",
+      "revId": "2238a73348918db9a748e69ffba4ee1f45961e2c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
     }
   ]
 }

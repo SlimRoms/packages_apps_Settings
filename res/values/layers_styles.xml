@@ -17,4 +17,24 @@
 <resources>
    <!-- Unlink this dialog from framework -->
    <style name="Theme.Material.Light.Dialog.NoActionBar" parent="@android:style/Theme.Material.Light.Dialog.NoActionBar" />
+  <!-- Dashboard Styles:
+   *** android:background - will change the background of said style.
+   *** android:textColorPrimary - will change the title text color.
+   *** android:colorAccent - will change the dashboard tile icon tint. 
+  -->
+   <style name="Dashboard">
+   <!--<item name="android:background">#HEX</item>-->
+   </style>
+   <style name="DashboardContainer">
+   <!--<item name="android:background">#HEX</item>-->
+   </style>
+   <style name="DashboardCategory">
+   <!--<item name="android:background">#HEX</item>-->
+   <!--<item name="android:textColorPrimary">#HEX</item>-->
+   </style>
+   <style name="DashboardTile">
+   <!--<item name="android:background">#HEX</item>-->
+   <!--<item name="android:textColorPrimary">#HEX</item>-->
+   <!--<item name="android:colorAccent">#HEX</item>-->
+   </style>
 </resources>

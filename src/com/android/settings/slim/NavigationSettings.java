@@ -28,8 +28,11 @@ import org.slim.provider.SlimSettings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 public class NavigationSettings extends SettingsPreferenceFragment {
+
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     @Override
     protected int getMetricsCategory() {
@@ -41,6 +44,9 @@ public class NavigationSettings extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.slim_navigation_settings);
+
+        Utils.updatePreferenceToSpecificActivityOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS,0);
     }
 
 }

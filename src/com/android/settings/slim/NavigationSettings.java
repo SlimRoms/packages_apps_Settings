@@ -33,6 +33,7 @@ import com.android.settings.Utils;
 public class NavigationSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     @Override
     protected int getMetricsCategory() {
@@ -52,6 +53,9 @@ public class NavigationSettings extends SettingsPreferenceFragment {
         if (deviceKeys == 0 && hardwareKeys != null) {
             getPreferenceScreen().removePreference(hardwareKeys);
         }
+
+        Utils.updatePreferenceToSpecificActivityOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS,0);
     }
 
 }

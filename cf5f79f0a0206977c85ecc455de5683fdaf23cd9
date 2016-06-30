@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ace114c_829bc3c8",
+        "filename": "src/com/android/settings/slim/NavigationSettings.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2016-06-30T12:33:19Z",
+      "side": 1,
+      "message": "public static NavigationSettings newInstance() {\n        NavigationSettings navigationFragment \u003d new NavigationSettings();\n        return navigationFragment;\n    }",
+      "revId": "cf5f79f0a0206977c85ecc455de5683fdaf23cd9",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

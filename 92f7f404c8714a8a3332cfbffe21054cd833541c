@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ace114c_8263c319",
+        "filename": "res/xml/hardwarekeys_settings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-07-01T23:18:16Z",
+      "side": 1,
+      "message": "update",
+      "range": {
+        "startLine": 2,
+        "startChar": 5,
+        "endLine": 2,
+        "endChar": 45
+      },
+      "revId": "92f7f404c8714a8a3332cfbffe21054cd833541c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ace114c_a2683ff6",
+        "filename": "src/com/android/settings/slim/HardwareKeysSettings.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-07-01T23:18:16Z",
+      "side": 1,
+      "message": "to long",
+      "range": {
+        "startLine": 472,
+        "startChar": 12,
+        "endLine": 472,
+        "endChar": 104
+      },
+      "revId": "92f7f404c8714a8a3332cfbffe21054cd833541c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

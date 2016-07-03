@@ -178,6 +178,14 @@
                 android:id="@+id/manufacturer_settings"
                 android:fragment="com.android.settings.WirelessSettings">
             <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
+
+       <!-- Device Settings hook -->
+        <dashboard-tile
+                android:id="@+id/advanced_options_settings"
+                android:fragment="com.android.settings.slim.AdvancedSettings"
+                android:icon="@drawable/ic_settings_advanced"
+                android:title="@string/advanced_options_settings_title" />
+
         </dashboard-tile>
 
     </dashboard-category>

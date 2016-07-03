@@ -116,6 +116,7 @@ import com.android.settings.search.DynamicIndexableContentMonitor;
 import com.android.settings.search.Index;
 import com.android.settings.privacyguard.PrivacyGuardPrefs;
 import com.android.settings.sim.SimSettings;
+import com.android.settings.slim.AdvancedSettings;
 import com.android.settings.slim.InterfaceSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.slim.NavigationSettings;
@@ -360,6 +361,7 @@ public class SettingsActivity extends Activity
             WriteSettingsDetails.class.getName(),
             NavigationSettings.class.getName(),
             InterfaceSettings.class.getName(),
+            AdvancedSettings.class.getName(),
     };
 
 

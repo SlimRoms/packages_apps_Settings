@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ace114c_3dfeb06c",
+        "filename": "src/com/android/settings/location/LocationSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2016-07-05T19:36:20Z",
+      "side": 1,
+      "message": "spaces please :D",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 1
+      },
+      "revId": "9de9e6ba526097465ddd0aa9361e92ddcbe7f98d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

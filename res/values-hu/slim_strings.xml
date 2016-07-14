@@ -12,7 +12,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Privacy Settings Header item -->
   <string name="privacy_settings_cyanogenmod_title">Adatvédelem</string>
+  <!-- General strings -->
   <string name="ok">Ok</string>
   <string name="reset">Törlés</string>
   <string name="help">Segítség</string>
@@ -25,6 +27,7 @@
   <string name="choose_app">Alkalmazás választás</string>
   <string name="reset_message">Mindent visszaállítasz alaphelyzetbe?</string>
   <string name="additional_options_title">További beállítások</string>
+  <!-- Privacy Guard -->
   <string name="app_security_title">Alkalmazásbiztonság</string>
   <string name="privacy_guard_switch_label">Engedélyezed a Privacy Guard-ot</string>
   <string name="privacy_guard_dlg_title">Adatvédelem engedélyezése?</string>
@@ -44,13 +47,25 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="privacy_guard_advanced_settings_title">Speciális beállítások</string>
   <string name="privacy_guard_notification_title">Értesítés</string>
   <string name="privacy_guard_notifiation_summary">Mutassa az értesítést, ha a privacy guard aktív.</string>
+  <!-- Slim Shortcuts -->
   <string name="slim_shortcut_picker">Slim Műveletek</string>
+  <!-- About device screen, Slim version -->
   <string name="slim_version_title">Slim verzió</string>
   <string name="slim_version_default">Ismeretlen</string>
+  <!-- About device screen, build date of ROM -->
   <string name="build_date">Készítés dátuma</string>
   <string name="build_date_default">Ismeretlen</string>
+  <!-- About device screen, CPU and RAM info. -->
   <string name="processor_info">Processor info</string>
   <string name="mem_info">Memória</string>
+  <!-- About device screen, developer settings -->
+  <plurals name="show_dev_countdown_slim">
+    <item quantity="one">Ön <xliff:g id="step_count">%1$d</xliff:g> lépésre van attól, hogy engedélyezze a fejlesztői beállításokat.</item>
+    <item quantity="other">Ön <xliff:g id="step_count">%1$d</xliff:g> lépésre van attól, hogy engedélyezze a fejlesztői beállításokat.</item>
+  </plurals>
+  <string name="show_dev_on_slim">Sikeresen engedélyezted a fejlesztői beállításokat!</string>
+  <string name="show_dev_already_slim">Nincs rá szükség, már korábban engedélyezted a fejlesztői beállításokat.</string>
+  <!-- Setting checkbox title for root access -->
   <string name="root_access">Root hozzáférés</string>
   <string name="root_access_warning_title">Engedélyezed a root hozzáférést?</string>
   <string name="root_access_warning_message">Alkalmazások root hozzáférésének engedélyezése nagyon veszélyes és veszélyezteti a rendszer biztonságát!</string>
@@ -58,6 +73,7 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="root_access_apps">Csak alkalmazások</string>
   <string name="root_access_adb">Csak ADB</string>
   <string name="root_access_all">Alkalmazások és ADB</string>
+  <!-- App ops -->
   <string name="app_ops_summaries_coarse_location">pontatlan hely</string>
   <string name="app_ops_summaries_fine_location">pontos hely</string>
   <string name="app_ops_summaries_gps">GPS</string>
@@ -172,6 +188,7 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="app_ops_labels_data_change">Adatmódosítás</string>
   <string name="app_ops_labels_wake_up">felébresztés</string>
   <string name="app_ops_labels_su">Root hozzáférés</string>
+  <!-- App ops categories -->
   <string name="app_ops_categories_location">Hely</string>
   <string name="app_ops_categories_personal">Személyes</string>
   <string name="app_ops_categories_messaging">Üzenet</string>
@@ -179,31 +196,38 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="app_ops_categories_device">Eszköz</string>
   <string name="app_ops_categories_bootup">Rendszer indítás</string>
   <string name="app_ops_categories_su">Superuser</string>
+  <!-- App ops detail -->
   <string name="app_ops_entry_summary"><xliff:g id="op">%1$s </xliff:g> (használt <xliff:g id="count">%2$s </xliff:g>)</string>
   <string name="app_ops_allowed_count">Engedélyezett <xliff:g id="count" example="2 times">%s </xliff:g></string>
   <string name="app_ops_ignored_count">Elutasított <xliff:g id="count" példa="2 times">%s </xliff:g></string>
   <string name="app_ops_both_count">Engedélyezett <xliff:g id="count">%1$s </xliff:g>, <xliff:g id="count">%2$s </xliff:g> megtagadva</string>
+  <!-- App ops menu options -->
   <string name="app_ops_show_user_apps">Mutasd a felhasználói alkalmazásokat</string>
   <string name="app_ops_show_system_apps">Mutasd a beépített alkalmazásokat</string>
   <string name="app_ops_reset_counters">Számlálók törlése</string>
   <string name="app_ops_reset_confirm_title">Erősítse meg a Számlálók törlését</string>
   <string name="app_ops_reset_confirm_mesg">Biztosan alaphelyzetbe állítja a számlálókat?</string>
+  <!-- General strings -->
   <string name="ok">Ok</string>
   <string name="reset">Törlés</string>
   <string name="attention">Figyelem</string>
   <string name="enabled">Engedélyezve</string>
   <string name="default_string">Alapértelmezett</string>
   <string name="reset_message">Mindent visszaállítasz alaphelyzetbe?</string>
+  <!-- Slim settings screens -->
   <string name="header_category_personalization">Személyre szabás</string>
   <string name="interface_settings_title">Interfész</string>
   <string name="navigation_settings_title">Navigáció</string>
+  <!-- Color Picker -->
   <string name="dialog_color_picker">Szín választó</string>
   <string name="press_color_to_apply">Nyomj egy színre az alkalmazásához</string>
   <string name="hex">Hex:</string>
   <string name="hex_hint">#ff000000</string>
   <string name="set">Beállít</string>
   <string name="color_default">Alapértelmezett</string>
+  <!-- Advanced, Device specific (DeviceParts) settings  -->
   <string name="device_settings_title">Eszköz</string>
+  <!-- Display : Rotation -->
   <string name="display_rotation_title">Forgatás</string>
   <string name="display_rotation_disabled">Tiltva</string>
   <string name="display_rotation_unit">fok</string>
@@ -212,14 +236,18 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="display_rotation_90_title">90 fok</string>
   <string name="display_rotation_180_title">180 fok</string>
   <string name="display_rotation_270_title">270 fok</string>
+  <!-- Sound settings -->
   <string name="advanced_sound_title">Speciális beállítások</string>
   <string name="sound_title">Hang</string>
+  <!-- Camera sound switch -->
   <string name="camera_sounds_title">Kamera zárhang</string>
   <string name="camera_sounds_summary">Engedélyezi a kamera zárhangot</string>
   <string name="camera_sound_warning_dialog_text">Kamera zárhang tiltása egyes területeken tiltott! Kérjük ellenőrizze a jogszabályokat az Ön országában</string>
+  <!-- Safe headset volume restore checkbox -->
   <string name="safe_headset_volume_title">Biztonsági fejhallgató hangerő</string>
   <string name="safe_headset_volume_summary">Túl magas hangerő megakadályozása fülhallgató csatlakoztatásakor</string>
   <string name="safe_headset_volume_warning_dialog_text">A hosszú ideig nagy hangerőn való zenehallgatás károsíthatja a hallását. Óvatosan kapcsolja ki.</string>
+  <!-- Less Notification sounds -->
   <string name="notifications_category_title">Értesítések</string>
   <string name="less_notification_sounds_title">Kevésbé gyakori értesítési hangok</string>
   <string name="less_notification_sounds_summary">Korlátozza az értesítési hangokat alkalmazásonként beállított időtartam alatt</string>
@@ -233,15 +261,20 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="less_notification_sounds_1m">1 perc</string>
   <string name="less_notification_sounds_2m">2 perc</string>
   <string name="less_notification_sounds_5m">5 perc</string>
+  <!-- Volume Keys Media Control -->
   <string name="volume_keys_control_media_stream">Média vezérlés</string>
   <string name="volume_keys_control_media_stream_summary">Hangerő gombokkal vezérli a média hangerejét</string>
+  <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
   <string name="debug_LAN_category">LAN Beállítások</string>
+  <!-- Hostname setting -->
   <string name="device_hostname">Eszköz neve</string>
+  <!-- Wakeup options -->
   <string name="display_category_wakeup_options_title">Felébresztési opciók</string>
   <string name="pref_volume_wake_title">Hangerő gombra felébreszt</string>
   <string name="pref_volume_wake_summary">Nyomd meg a hangerő fel/le gombot a felébresztéshez</string>
   <string name="wakeup_when_plugged_unplugged_title">Töltésre felébred</string>
   <string name="wakeup_when_plugged_unplugged_summary">Készülék felébred ha a töltőt csatlakoztatod/lecsatlakoztatod.</string>
+  <!-- Keyboard and Input ASS methods  -->
   <string name="title_keyboard_input">Speciális beállítások</string>
   <string name="disable_fullscreen_keyboard_title">Teljes képernyős billentyűzet letiltása</string>
   <string name="disable_fullscreen_keyboard_summary">Fekvő módban nem takarja el az egész képernyőt a billentyűzet</string>
@@ -260,6 +293,7 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="show_ime_arrows_title">Nyílbillentyűk megjelenítése gépelés közben</string>
   <string name="show_ime_arrows_summary">Megjeleníti a bal és a jobb kurzor gombot a navigációs sávon gépelés közben.
 Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a menü gombokat.</string>
+  <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Speciális újraindítás</string>
   <string name="advanced_reboot_summary">Kikapcsolási menü tartalmazza az újraindítás recovery és bootloader opciókat</string>
   <string name="advanced_reboot_dialog_title">Haladó újarindítási menü</string>
@@ -270,14 +304,18 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="app_notification_show_on_keyguard_summary">alkalmazás értesítések megjelenítése a zárképrnyőn</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">folyamatban levő értesítések tiltása a zárképernyőn</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">Ennek az alkalmazásnak az értesítései soha nem látszanak a zárképernyőn</string>
+  <!-- Setting checkbox summary for displaying USB debugging notification -->
   <string name="adb_notify">USB hibakeresés értesítései</string>
   <string name="adb_notify_summary">Értesítések megjelenítése USB hibakereső módban való csatlakozáskor</string>
+  <!-- USB and storage settings -->
+  <!-- Notification light dialogs -->
   <string name="edit_light_settings">Fény beállítások szerkesztése</string>
   <string name="pulse_speed_title">Impulzus hossza és sebessége</string>
   <string name="default_time">Normál</string>
   <string name="custom_time">Egyéni</string>
   <string name="dialog_delete_title">Törlés</string>
   <string name="dialog_delete_message">Eltávolítod a kiválasztott elemet?</string>
+  <!-- Values for the notification light pulse spinners -->
   <string name="pulse_length_always_on">Mindig bekapcsolva</string>
   <string name="pulse_length_very_short">Nagyon rövid</string>
   <string name="pulse_length_short">Rövid</string>
@@ -289,12 +327,14 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="pulse_speed_normal">Normál</string>
   <string name="pulse_speed_slow">Lassú</string>
   <string name="pulse_speed_very_slow">Nagyon lassú</string>
+  <!-- Battery light settings -->
   <string name="battery_light_title">Akkumulátor fény</string>
   <string name="battery_low_pulse_title">Villog, ha az akkumulátor töltöttsége alacsony</string>
   <string name="battery_light_list_title">Színek</string>
   <string name="battery_light_low_color_title">Alacsony akkumulátor szint</string>
   <string name="battery_light_medium_color_title">Töltés</string>
   <string name="battery_light_full_color_title">Teljesen feltöltve</string>
+  <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Értesítési fény</string>
   <string name="notification_light_general_title">Általános</string>
   <string name="notification_light_applist_title">Alkalmazások</string>
@@ -306,9 +346,11 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="profiles_add">Hozzáadás</string>
   <string name="profile_choose_app">Válasszon alkalmazást</string>
   <string name="profile_reset_title">Visszaállítás</string>
+  <!-- Status bar -->
   <string name="status_bar_title">Állapot sáv</string>
   <string name="status_bar_style_title">Stílus</string>
   <string name="status_bar_options_title">beállítások</string>
+  <!-- Status bar | Clock -->
   <string name="status_bar_clock">Óra és dátum</string>
   <string name="status_bar_clock_title">Óra és dátum stílusa</string>
   <string name="clock_title_enable">Igazítás</string>
@@ -323,10 +365,12 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="enable_clock_weekday_summary">Rövidített nap kijelzés az óra előtt</string>
   <string name="right_clock">Óra jobb oldalt</string>
   <string name="center_clock">Óra középen</string>
+  <string name="left_clock">Óra bal oldalon</string>
   <string name="dont_show">Ne mutassa</string>
   <string name="clock_date_display">Dátum</string>
   <string name="clock_date_display_summary">Egyéni dátum kijelzése az óra előtt</string>
   <string name="clock_date_style">Dátum stílus</string>
+  <string name="clock_date_position">Dátum pozíció</string>
   <string name="clock_date_format">Dátum formátum</string>
   <string name="clock_date_string_edittext_title">Add meg a dátum formátumot, pl. MM/dd/yy</string>
   <string name="clock_date_string_edittext_summary">Formátum megadása</string>
@@ -336,6 +380,8 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="clock_date_display_none">Ne mutassa</string>
   <string name="clock_date_display_small">Kis betű méret</string>
   <string name="clock_date_display_normal">Normál betű méret</string>
+  <string name="clock_date_right">órától jobbra</string>
+  <string name="clock_date_left">órától balra</string>
   <string name="clock_date_style_normal">Normál</string>
   <string name="clock_date_style_lowercase">Kisbetűs</string>
   <string name="clock_date_style_uppercase">Nagybetűs</string>
@@ -346,7 +392,9 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="status_bar_toggle_brightness">Fényerő vezérlés</string>
   <string name="status_bar_toggle_brightness_summary">Állítsa be a fényerőt az állapot sávon csúsztatással</string>
   <string name="status_bar_toggle_info">Automatikus fényerő engedélyezve</string>
+  <!-- Status bar - Battery Options -->
   <string name="battery_icon_options_title">Akkumulátor ikon-beállítások</string>
+  <!-- Status bar - Battery Style -->
   <string name="status_bar_battery_style_title">Akkumulátor állapot stílus</string>
   <string name="status_bar_battery_style_circle">Kör</string>
   <string name="status_bar_battery_style_dotted_circle">Pontozott kör</string>
@@ -354,19 +402,23 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="status_bar_battery_style_hidden">Rejtett</string>
   <string name="status_bar_battery_style_icon_portrait">Ikon portré</string>
   <string name="status_bar_battery_style_icon_landscape">Ikon fekvő</string>
+  <!-- Status bar - Battery percentage -->
   <string name="status_bar_battery_percentage_title">mutasd az akkumulátor százalékot</string>
   <string name="status_bar_battery_percentage_dialog_title">Akkumulátor százalék</string>
   <string name="status_bar_battery_percentage_default">Rejtett (alapértelmezett)</string>
   <string name="status_bar_battery_percentage_text_inside">Az ikon belsejében</string>
   <string name="status_bar_battery_percentage_text_next">Az ikon mellet</string>
+  <!-- tap-to-sleep -->
   <string name="double_tap_to_sleep_title">Alvás dupla érintésre</string>
   <string name="double_tap_to_sleep_summary">érintsd meg kétszer az állapotsávot az alvó állapothoz</string>
+  <!-- QuickSettings: Quick Pulldown -->
   <string name="qs_title">Gyorsbeállítások</string>
   <string name="quick_pulldown_title">Gyors legördülő</string>
   <string name="summary_quick_pulldown">Gyors beállítások megjelenítése az állapotsáv %1$s oldalán történő lehúzásakor</string>
   <string name="quick_pulldown_off">Kikapcsolva</string>
   <string name="quick_pulldown_left">Bal oldal</string>
   <string name="quick_pulldown_right">Jobb oldal</string>
+  <!-- QuickSettings: Smart Pulldown -->
   <string name="smart_pulldown_title">Intelligens legördülő</string>
   <string name="smart_pulldown_summary">Nyissa meg a gyors beállításokat amikor %1$s értesítés van </string>
   <string name="smart_pulldown_off">Kikapcsolva</string>
@@ -375,6 +427,7 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="smart_pulldown_all">nem elmozdítható vagy állandó</string>
   <string name="block_on_secure_keyguard_title">Letiltás a zárképernyőn</string>
   <string name="block_on_secure_keyguard_summary">gyors beállítások tiltása a képernyőzáron.</string>
+  <!-- Quick Settings: Tiles  -->
   <string name="qs_category_title">Gyorsbeállítások panel</string>
   <string name="qs_tiles_title">QS csempék</string>
   <string name="qs_general_title">QS általános</string>
@@ -408,18 +461,24 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="qs_tile_wifi">Wi\u2011Fi</string>
   <string name="qs_tile_screenshot">Képernyőkép</string>
   <string name="qs_expanded_desktop_tile">Kiterjesztett képernyő</string>
+  <string name="qs_tile_notifications">Értesítések</string>
   <string name="qs_main_tiles_title">Első sor nagyítása</string>
   <string name="qs_main_tiles_summary_on">Az első sorban csak két  csempe</string>
   <string name="qs_main_tiles_summary_off">Három vagy négy csempe minden sorban</string>
   <string name="qs_advanced_location_title">Speciális helymeghatározási beállítások</string>
   <string name="qs_advanced_location_summary">Engedélyezi a helymeghatározás speciális beállításat a Gyors beállításokban</string>
+  <!-- QuickSettings: Tiles: 4 columns -->
   <string name="qs_four_columns_title">Soronként négy csempe megjelenítése</string>
+  <!-- QuickSettings: Tiles: haptic feedback -->
   <string name="quick_settings_vibrate_title">Érintésre rezeg</string>
   <string name="quick_settings_vibrate_summary">Csempék érintésekor rezeg</string>
+  <!-- Swap Volume Buttons -->
   <string name="swap_volume_buttons_title">Fordítsa el</string>
   <string name="swap_volume_buttons_summary">Hangerő gombok felcserélése a képernyő forgatásakor</string>
+  <!-- Proximity wake -->
   <string name="proximity_wake_title">Véletlen ébresztés megakadályozása</string>
   <string name="proximity_wake_summary">Közelség érzékelő ellenőrzése a képernyő felébresztése előtt</string>
+  <!-- MediaScanner behavior on boot -->
   <string name="options_settings_title">Opciók</string>
   <string name="media_scanner_on_boot_title">MediaScanner viselkedése indulásnál</string>
   <string name="media_scanner_on_boot_enabled">Média keresés</string>
@@ -540,38 +599,61 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="shortcuts_icon_picker_twitter">Twitter</string>
   <string name="shortcuts_icon_picker_unlock">Feloldás</string>
   <string name="navigation_bar_warning_no_navigation_present">Nincs más vezérlő engedélyezve. A navigációs sáv kikapcsolása egy használhatatlan eszközt eredményezhet. Szeretné engedélyezni a Pie vezérlést helyette?</string>
+  <!--Quick unlock -->
   <string name="unlock_quick_unlock_control_title">Gyors feloldás</string>
   <string name="unlock_quick_unlock_control_summary">Automatikus feloldás a helyes jelszó/PIN kód beütése után</string>
+  <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
   <string name="bluetooth_accept_all_files">Minden fájltípus elfogadása</string>
+  <!-- Device specific settings -->
   <string name="screen_off_gesture_settings_title">Képernyő kikapcsolás gesztusok</string>
+  <!-- Display & Lights screen, setting options for LCD density -->
   <string name="lcd_density">LCD-sűrűség</string>
   <string name="dialog_title_lcd_density">LCD-sűrűség</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (alapértelmezett)</string>
   <string name="restarting_ui">Felhasználói felület újraindítása\u2026</string>
+  <!-- SU indicator -->
   <string name="su_indicator_title">Superuser indikátor</string>
   <string name="su_indicator_summary">Superuser indikátor, amikor su munkamenet aktív</string>
   <string name="su_indicator_icon">Állapotsor ikon</string>
   <string name="su_indicator_notification">Értesítés</string>
   <string name="su_indicator_none">Nincs indikátor</string>
+  <!-- Lockscreen Shortcuts -->
   <string name="lockscreen_shortcuts_title">Parancsikonok</string>
   <string name="lockscreen_shortcuts_summary">Nézd meg vagy módosítsd a zárképernyő parancsikonokat</string>
   <string name="lockscreen_shorcuts_launch_type_title">Parancsikonra kattintás típusa</string>
   <string name="lockscreen_shortcuts_single_tap">Kattintás</string>
   <string name="lockscreen_shortcuts_double_tap">Dupla érintés</string>
   <string name="lockscreen_shortcuts_longpress">Hosszan nyomás</string>
+  <!-- Lockscreen pin shuffle -->
   <string name="lock_numpad_random_title">PIN pad számok sorrendjének módosítása</string>
   <string name="lock_numpad_random_dialog_title">PIN pad véletlenszerű sorrendje</string>
   <string name="lock_numpad_random_off">Kikapcsolva</string>
   <string name="lock_numpad_random_always">Mindíg</string>
   <string name="lock_numpad_random_on_request">Kérésre</string>
+  <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
   <string name="enable_adb_cm">Android hibakeresés</string>
+  <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
   <string name="enable_adb_summary_cm">Android Debug Bridge (adb) interfész engedélyezés</string>
+  <!-- Android debugging over WiFi -->
   <string name="adb_over_network">ADB hálózaton keresztül</string>
   <string name="adb_over_network_summary">Engedélyezi a TCP/IP hibakeresést hálózati eszközön keresztül (Wi\u2011Fi, USB hálózatok). Újraindítás után alaphelyzetbe áll vissza</string>
+  <!-- Warning for Adb over Network -->
   <string name="adb_over_network_warning">VIGYÁZAT: Ha a funkció engedélyezve van, az eszköz nyitva áll bármilyen behatolásra az összes kapcsolódó hálózaton keresztül!\n\nCsak biztonságos hálózatra csatlakozva érdemes engedélyezni.\n\nBiztosan engedélyezni szeretné?</string>
+  <!-- Ambient display options -->
   <string name="display_category_doze_options_title">Ambient display beállítások</string>
   <string name="doze_settings_title">Speciális Ambient display beállítások</string>
+  <string name="doze_timeout_title">Környezeti kijelző időtúllépése</string>
+  <string name="doze_timeout_summary">Az az idő, amíg a képernyő bekapcsolva marad az értesítési impulzusra</string>
+  <string name="doze_schedule_title">Ütemezés ismétlés</string>
+  <string name="doze_schedule_summary_off">Környezeti kijelző csak egyszer villan egy értesítésre/kiváltóra</string>
+  <string name="doze_brightness_title">Környezeti kijelző fényerő szint</string>
+  <string name="doze_brightness_summary">Környezeti kijelző impulzus fényerő szintje (a maximálisan engedélyezett %-a)</string>
+  <!-- Navigation settings -->
+  <string name="navigation_settings_options_title">Navigációs beállítások</string>
+  <!-- Hardware keys -->
+  <string name="button_keys_title">Hardver gombok</string>
+  <string name="keys_bindings_title">Gomb műveletek</string>
   <string name="keys_enable_custom_title">Egyéni művelet engedélyezése</string>
   <string name="keys_enable_custom_summary">Hardveres gombokhoz egyéni műveletek engedélyezése</string>
   <string name="keys_back_press_title">Vissza gomb</string>
@@ -596,6 +678,8 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="keys_action_long">Hosszan nyomás</string>
   <string name="keys_action_double">Dupla érintés</string>
   <string name="no_home_key">Nincs  művelet rendelve a Home gombhoz!\n\nEz használhatatlanná teheti az eszközt!</string>
+  <string name="no_back_key">Nem jelölt ki gombot a \"Vissza\" művelethez!\n\nKészüléke használhatatlanná válhat!</string>
+  <!-- Button shorcut actions -->
   <string name="shortcut_action_back">Vissza</string>
   <string name="shortcut_action_app">Egyéni alkalmazás</string>
   <string name="shortcut_action_expanded_desktop">Kiterjesztett képernyő</string>
@@ -624,6 +708,7 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="shortcut_action_voice_search">Hangalapú keresés</string>
   <string name="shortcut_action_none">Nincs</string>
   <string name="navigation_settings_title">Navigáció</string>
+  <!-- Navigation bar -->
   <string name="navigation_bar_size_42_dp_default">42 dp (alapértelmezett)</string>
   <string name="navigation_bar_size_36_dp">36 dp</string>
   <string name="navigation_bar_size_30_dp">30 dp</string>
@@ -634,10 +719,89 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="navigation_bar_size_42_dp">42 dp</string>
   <string name="navigation_bar_size_0_dp">0 dp (kikapcsolva)</string>
   <string name="navigation_menu_right">Jobb</string>
+  <string name="navigation_menu_left">Bal oldalon</string>
+  <string name="navigation_menu_both">Mind két oldalon</string>
+  <string name="navigation_menu_default_jb_behavior">Mutassa kérésre (alapértelmezett)</string>
+  <string name="navigation_menu_never_show">Soha ne mutassa</string>
+  <string name="navigation_menu_always_show">Mindig mutassa</string>
+  <string name="navigation_bar">Navigációs sáv</string>
+  <string name="navbar_button_cat">Navigációs sáv gombok</string>
+  <string name="title_pref_menu_location">Menü helye</string>
+  <string name="summary_pref_menu_location">Hol akarod megjeleníteni a menü gombot?</string>
+  <string name="title_pref_menu_display">Menü gomb láthatósága</string>
+  <string name="summary_pref_menu_display">Hogyan és mikor akarod a menüt megjeleníteni?</string>
+  <string name="navbar_enable_bar">Navigációs sáv engedélyezése</string>
+  <string name="navbar_enable_bar_summary">Engedélyezi a navigációs sávot</string>
+  <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
+  <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
+  <string name="navigation_bar_height_landscape_title">Navigációs sáv magassága fekvőhelyzetben</string>
+  <string name="navigation_bar_height_landscape_summary">Navigációs sáv magassága fekvőhelyzetben.</string>
+  <string name="navigation_bar_width_title">Navigációs sáv szélessége</string>
+  <string name="navigation_bar_width_summary">Navigációs sáv magassága ha oldalt helyezkedik el.</string>
+  <string name="navbar_can_move">Navigációs sáv elhelyezkedése fekvő módban</string>
+  <string name="navbar_can_move_summary">Mutassa a navigációs sávot fekvő módban alul</string>
+  <string name="navbar_style_dimen_title">Méretek</string>
+  <string name="navbar_button_title">Gombok</string>
+  <string name="navbar_cat">Navigációs sáv</string>
+  <string name="navbar_dimensions_reset_message">Az összes méretet visszaállítod alaphelyzetbe?</string>
+  <string name="navbar_button_style_reset_message">Visszaállítod az összes stílus beállítást alapértelmezettre?</string>
+  <!-- SlimDim -->
+  <string name="dim_nav_buttons_category">SlimDim</string>
+  <string name="dim_nav_buttons_title">Gombok halványítása inaktivitás után</string>
+  <string name="dim_nav_buttons_summary">Navigációs gombok halványítása miután egy megadott ideig nem használtad/érintetted</string>
+  <string name="dim_nav_buttons_timeout_title">Halványítás előtti időkorlát</string>
+  <string name="dim_nav_buttons_timeout_summary">Idő (ezredmásodpercben), amíg várjon, mielőtt halványítaná a gombokat</string>
+  <string name="dim_nav_buttons_alpha_title">Halványítás alfa</string>
+  <string name="dim_nav_buttons_alpha_summary">Gombok halványításának alfa értéke</string>
+  <string name="dim_nav_buttons_animate_title">Halványítási animáció</string>
+  <string name="dim_nav_buttons_animate_summary">Alfa halványítás animálása</string>
+  <string name="dim_nav_buttons_animate_duration_title">Animáció hossza</string>
+  <string name="dim_nav_buttons_animate_duration_summary">Alfa animáció időtartama (ezredmásodpercben)</string>
+  <string name="dim_nav_buttons_touch_anywhere_title">Érintések figyelése az egész képernyőn</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_on">Bárhol megérintve a képernyőt megszünteti a gombok halványítását</string>
+  <string name="dim_nav_buttons_touch_anywhere_summary_off">Csak a navigációs sáv megérintése szünteti meg a gombok halványítását</string>
+  <!-- Navigation bar button style -->
+  <string name="nav_bar_button_style">Gombok stílusa</string>
+  <string name="nav_bar_button_style_summary">Navigációs sáv gombok stílusának módosítása</string>
+  <string name="button_transparency_title">Gombok áttetszősége</string>
+  <string name="navigation_bar_icon_tint_title">Gombok színe</string>
+  <string name="nav_button_color_mode_title">Színmód</string>
+  <string name="nav_button_color_mode_dialog_title">Színezés</string>
+  <string name="nav_button_color_mode_summary">Navigációs sáv gomb színmódjának módosítása</string>
+  <string name="navigation_bar_glow_tint_title">Gomb ragyogás színe</string>
+  <!-- Data activity icons -->
+  <string name="status_bar_show_network_activity_title">Hálózati tevékenység nyilak</string>
+  <!-- Heads up -->
+  <string name="heads_up_title">Lebegő értesítések</string>
+  <string name="heads_up_global_switch_title">Lebegő értesítések mód</string>
+  <string name="heads_up_global_switch_summary_disabled">Lebegő értesítések letiltva</string>
+  <string name="heads_up_global_switch_summary_perapp">Lebegő értesítések alkalmazásonként vannak engedélyezve/tiltva</string>
+  <string name="heads_up_global_switch_summary_forced">Lebegő értesítések kényszerítetten engedélyezve van az összes alkalmazásra</string>
+  <string name="heads_up_global_switch_disabled">Soha ne jelenjen meg lebegő értesítés</string>
+  <string name="heads_up_global_switch_perapp">Lebegő értesítések megjelenítése alkalmazás alapon</string>
+  <string name="heads_up_global_switch_forced">Mindig jelenjen meg a lebegő értesítés</string>
+  <string name="app_notification_enable_heads_up_title">Lebegő értesítések megjelenítése</string>
+  <string name="app_notification_enable_heads_up_summary">Az alkalmazáshoz tartozó értesítések megjelenítése lebegő értesítésként</string>
+  <string name="app_notification_enable_heads_up_global_disabled_summary">Lebegő értesítések jelenleg az értesítési beállításokban globálisan le van tiltva</string>
+  <string name="app_notification_enable_heads_up_global_forced_summary">Lebegő értesítések jelenleg az értesítési beállításokban globálisan engedélyezve van</string>
+  <string name="heads_up_snooze_title">Szundi időzítő</string>
+  <string name="heads_up_snooze_summary">Lebegő értesítések kikapcsolása <xliff:g id="number">%d</xliff:g> percre a szundi gomb érintése esetén</string>
+  <string name="heads_up_snooze_disabled_summary">Szundi időzítő letiltva</string>
+  <string name="heads_up_snooze_3min">3 perc</string>
+  <string name="heads_up_snooze_5min">5 perc</string>
+  <string name="heads_up_snooze_10min">10 perc</string>
+  <string name="heads_up_snooze_15min">15 perc</string>
+  <string name="heads_up_snooze_20min">20 perc</string>
+  <string name="heads_up_time_out_title">Időkorlát</string>
+  <string name="heads_up_time_out_summary">A lebegő értesítés <xliff:g id="number">%d</xliff:g> másodpercig fog megjelenni</string>
+  <string name="heads_up_time_out_never_summary">A lebegő értesítés az elutasításig folyamatosan megjelenik</string>
+  <string name="heads_up_time_out_2sec">2 mp</string>
+  <string name="heads_up_time_out_4sec">4 mp</string>
   <string name="heads_up_time_out_6sec">6 másodperc</string>
   <string name="heads_up_time_out_8sec">8 másodperc</string>
   <string name="heads_up_time_out_10sec">10 másodperc</string>
   <string name="heads_up_time_out_never">Soha</string>
+  <!-- Pie Control -->
   <string name="pie_control_title">SlimPIE</string>
   <string name="pie_control_summary">Pie vezérlők engedélyezése</string>
   <string name="pie_control_size">Navigáció sáv mérete</string>
@@ -684,11 +848,75 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="pie_warning_no_navigation_present">Nincs más vezérlő engedélyezve. A Pie kikapcsolása egy használhatatlan eszközt eredményezhet. Szeretné engedélyezni a navigációs sávot helyette?</string>
   <string name="pie_trigger_warning">Minimum egy  programindítót (alul, bal vagy jobb) engedélyezned kell.</string>
   <string name="pie_disable_ime_triggers_title">Aktiváló méretének csökkentése billentyűzet esetén</string>
+  <string name="pie_disable_ime_triggers_summary">A jobb és a bal oldali aktiváló méretét csökkenti, ha a billentyűzet aktív</string>
+  <!-- Recent panel -->
+  <string name="recent_panel_category">Alkalmazás előzmények panel</string>
+  <string name="use_slim_recents_title">SlimRecents</string>
+  <string name="show_running_tasks_title">Csak a futó alkalmazások megjelenítése</string>
+  <string name="recents_max_apps_title">Maximum engedélyezett alkalmazások</string>
+  <string name="recent_panel_scale_title">Méret</string>
+  <string name="recent_panel_expanded_mode_title">Kiterjesztett mód</string>
+  <string name="recent_panel_expanded_mode_summary">Kibővített előnézet a előzmények panelon</string>
+  <string name="recent_panel_expanded_mode_auto">Automatikus (alapértelmezett)</string>
+  <string name="recent_panel_expanded_mode_always">Mindíg</string>
+  <string name="recent_panel_expanded_mode_never">Soha</string>
+  <string name="recent_panel_show_topmost_title">Legmagasabb tevékenység megjelenítése</string>
+  <string name="recent_panel_show_topmost_summary">Ne zárja ki a legmagasabb tevékenységet az előzmények nézetben</string>
+  <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
+  <string name="recent_card_bg_color_title">Kártya háttérszíne</string>
+  <string name="recent_card_text_color_title">Kártya szövegszíne</string>
+  <!-- ATTENTION: RTL languages need to replace left with right -->
+  <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
+  <string name="recent_panel_lefty_mode_summary">Az előzmények panelt a bal oldalon jelenítse meg</string>
+  <!-- Key backlight -->
+  <string name="button_backlight_title">Háttérvilágítás</string>
+  <string name="button_backlight_enabled">Gombok háttérvilágítása</string>
+  <string name="keyboard_backlight_enabled">Billentyűzet háttérvilágítása</string>
+  <string name="button_backlight_seekbar_title">Gombok fényereje</string>
+  <string name="keyboard_backlight_seekbar_title">Billentyűzet fényereje</string>
+  <string name="backlight_timeout_title">Megvilágítás ideje</string>
+  <string name="backlight_timeout_unlimited">Ne kapcsoljon ki</string>
+  <string name="backlight_summary_disabled">Letiltva</string>
+  <string name="backlight_summary_enabled_with_timeout">Engedélyezve: <xliff:g id="timeout">%s</xliff:g></string>
+  <string name="backlight_summary_enabled">Engedélyezve</string>
+  <!--- Tap To Wake -->
+  <string name="double_tap_to_wake_title">Felébresztés dupla érintésre</string>
+  <!-- Buttons -->
+  <string name="enable_navkeys_title">Engedélyezi a hardware gombokat</string>
+  <!-- tap-to-sleep -->
   <string name="double_tap_to_sleep_title">Alvás dupla érintésre</string>
   <string name="double_tap_to_sleep_summary">érintsd meg kétszer az állapotsávot az alvó állapothoz</string>
+  <!-- Backlight brightness settings screen -->
+  <string name="adaptive_backlight_title">Adaptív háttérvilágítás</string>
+  <string name="adaptive_backlight_summary">Intelligens módon változtatja a háttérvilágítás fényerejét az akkumulátor élettartamának növelése érdekében</string>
+  <!-- Sunlight readability enhancement screen -->
+  <string name="sunlight_enhancement_title">Javítás erős napfényben</string>
+  <string name="sunlight_enhancement_summary">Növeli a kijelző fényerejét és az olvashatóságot erős napfény esetén</string>
+  <!-- Color enhancement settings screen -->
+  <string name="color_enhancement_title">Színek javítása</string>
+  <string name="color_enhancement_summary">Dinamikusan javítja a kijelző színét</string>
+  <!-- Hardware tunables - Vibrator intensity -->
+  <string name="vibrator_intensity_title">Rezgés erőssége</string>
+  <string name="vibrator_warning">Nem ajánlott %1$d értéknél nagyobbra állítani</string>
+  <!-- Hardware tunables - Color calibration -->
+  <string name="color_calibration_title">Színkalibrálás</string>
+  <string name="color_calibration_summary">Képernyőn megjelenő színek kalibrálása</string>
+  <string name="color_red_title">Vörös</string>
+  <string name="color_green_title">Zöld</string>
+  <string name="color_blue_title">Kék</string>
+  <!-- Hardware tunables - Gamma calibration -->
+  <string name="gamma_tuning_title_head">Gamma kalibrálás</string>
+  <string name="gamma_tuning_summary_head">Gamma értékek finomhangolása</string>
+  <string name="gamma_tuning_control_set_header">Csoport <xliff:g id="index">%d</xliff:g></string>
+  <!-- used if no name provided by overlay -->
+  <string name="gamma_tuning_contrast">Kontraszt</string>
+  <string name="gamma_tuning_brightness">Fényerő</string>
+  <string name="gamma_tuning_saturation">Telítettség</string>
+  <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Zenelejátszó indítása csatlakoztatáskor</string>
   <string name="headset_connect_player_summary">Alapértelmezett zenelejátszó elindítása fejhallgató csatlakoztatásakor</string>
   <string name="auto_brightness_reset_button">Visszaállít</string>
+  <!-- LiveDisplay -->
   <string name="live_display_summary">Optimalizálja a képernyőt a napszaktól és a környezeti feltételektől függően és javítja az olvashatóságot,kíméli a szemet</string>
   <string name="live_display_mode">Megjelenítési mód</string>
   <string name="live_display_color_temperature_title">Színhőmérséklet</string>
@@ -701,7 +929,9 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="live_display_low_power_title">Csökkentse az energiafogyasztást</string>
   <string name="live_display_low_power_summary">Állítsa kijelzőt a legkisebb energiafogyasztásra, minőségromlás nélkül</string>
   <string name="live_display_enhance_color_title">Színek élénkítése</string>
+  <string name="live_display_enhance_color_summary">Bőrszín tónusainak, tájképek, és egyéb képek színdinamikájának javítása</string>
   <string name="category_calibration">Kalibrálás</string>
+  <!-- Display settings.  Screen color. -->
   <string name="screencolor">Képernyő szín</string>
   <string name="screencolor_summary">Képernyő színárnyalat, színtelítettség, kontraszt, vagy intenzitás hangolása</string>
   <string name="custom_screencolor">Egyéni képernyő színek</string>
@@ -719,8 +949,13 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="screen_color_setting_vivid">Élénk</string>
   <string name="screen_color_setting_custom">Egyéni</string>
   <string name="settings_reset_button">Visszaállitás</string>
+  <!-- High touch sensitivity -->
   <string name="high_touch_sensitivity_title">Magas érintési érzékenység</string>
   <string name="high_touch_sensitivity_summary">Érintőképernyő érzékenységének növelése, így kesztyű viselése esetén is használható</string>
+  <!-- Touchscreen hovering -->
+  <string name="touchscreen_hovering_title">Lebegő érintés</string>
+  <string name="touchscreen_hovering_summary">Engedélyezi a lebegéssel való vezérlést, mint egy egérrel a böngészőknél, távoli asztaloknál, stb.</string>
+  <!-- Blacklist preferences -->
   <string name="blacklist_title">Feketelista</string>
   <string name="blacklist_edit_dialog_title">Feketelista szerkesztése</string>
   <string name="blacklist_prefs">Beállítások</string>
@@ -733,4 +968,319 @@ Hosszan nyomva navigálhat fel és le.Felülbírálja az IME váltót és a men�
   <string name="blacklist_private_numbers_title">Rejtett számok</string>
   <string name="blacklist_private_numbers_summary_disabled">Ne blokkolja a rejtett számról érkező hívásokat</string>
   <string name="blacklist_private_numbers_summary">Blokkolja a bejövő hívásokat <xliff:g id="type">%s</xliff:g> rejtett számokról</string>
+  <string name="blacklist_unknown_numbers_title">Ismeretlen számok</string>
+  <string name="blacklist_unknown_numbers_summary_disabled">Ne blokkolja az ismeretlen számról érkező hívásokat vagy üzeneteket</string>
+  <string name="blacklist_unknown_numbers_summary">Ismeretlen számról érkező <xliff:g id="type">%s</xliff:g> blokkolása</string>
+  <string name="blacklist_summary_type_calls_only">hívások</string>
+  <string name="blacklist_summary_type_messages_only">üzenetek</string>
+  <string name="blacklist_summary_type_calls_and_messages">hívások és üzenetek</string>
+  <string name="blacklist_regex_title">Helyettesítő karakterek használata</string>
+  <string name="blacklist_regex_summary">Használja a \".\"-ot egy szám, a \"*\"-ot pedig több szám helyettesítésére. Példa: a 123.* blokkolja a 123-mal kezdődő számokat, a .*123.* pedig a 123-at tartalmazó számokat</string>
+  <string name="blacklist_policy_block_calls">Bejövő hívások blokkolása</string>
+  <string name="blacklist_policy_block_messages">Bejövő üzenetek blokkolása</string>
+  <string name="blacklist_bad_number_add">Nem adható hozzá érvénytelen szám a tiltólistához</string>
+  <!-- Blacklist management -->
+  <string name="add_blacklist_number">Szám hozzáadása</string>
+  <string name="remove_blacklist_number_title">Szám eltávolítása</string>
+  <string name="remove_blacklist_entry">Biztosan eltávolítja a tiltólistáról?</string>
+  <string name="select_contact">Válasszon kapcsolatot</string>
+  <!-- Expanded Desktop -->
+  <string name="power_menu_expanded_desktop">Kiterjesztet képernyő</string>
+  <string name="expanded_hide_nothing">Egyiket se rejtse el</string>
+  <string name="expanded_hide_status">Állapotsor elrejtése</string>
+  <string name="expanded_hide_navigation">Navigációs sáv elrejtése</string>
+  <string name="expanded_hide_both">Mindkettő elrejtése</string>
+  <string name="expanded_nothing_to_show">Egy kiterjesztett állapotra vonatkozó egyedi alkalmazásonkénti beállítás hozzáadásához az \"Összesre engedélyezve\" beállítást kapcsolja ki</string>
+  <string name="expanded_desktop_state">Kiterjesztett állapot</string>
+  <string name="expanded_enabled_for_all">Összesre engedélyezve</string>
+  <string name="expanded_desktop_style">Kiterjesztett asztal stílusa</string>
+  <string name="expanded_desktop_style_description">Válasszon egy alapértelmezett kiterjesztett asztal stílust</string>
+  <string name="expanded_desktop_title">Kiterjesztett asztal beállítások</string>
+  <!-- Chamber of Secrets -->
+  <string name="chamber_title">Titkok Kamrája</string>
+  <string name="chamber_toast">A Titkok kamrája nyítva van</string>
+  <!-- Unaccounted and overcounted battery stats -->
+  <string name="show_unac_and_overcounted_stats_title">Megmagyarázhatatlan és magas akkumulátor statisztika</string>
+  <string name="show_unac_and_overcounted_stats_summary">Megmagyarázhatatlan és túlzott akkumulátorhasználat megmutatása.</string>
+  <!-- Performance settings -->
+  <string name="title_tile_performance_profile">Teljesítmény profil</string>
+  <string name="performance_settings_title">Teljesítmény</string>
+  <!-- Performance Settings : Performance profile settings -->
+  <string name="perf_profile_title">Profil</string>
+  <!-- Performance Settings : Warning dialog -->
+  <string name="performance_settings_warning_title">Járjon el körültekintően</string>
+  <string name="performance_settings_warning">Ezek a beállítások kísérleti jelleggel szerepelnek itt. Bármilyen változtatás a készülék instabilitásához, meghibásodásához, vagy adatvesztéshez vezethet.\n\nKérünk, hogy ne küldjön hibajelentést, amennyiben módosítja a rendszer alapértelmezett beállításait.</string>
+  <!-- Performance Settings : Set on boot option -->
+  <string name="performance_set_on_boot">Alkalmazza rendszer indításkor</string>
+  <string name="performance_set_on_boot_summary">Állítsa vissza a beállításokat rendszerindításkor</string>
+  <!-- Automatic performance profiles -->
+  <string name="autoperf_title">Alkalmazásonkénti profilválasztás engedélyezése</string>
+  <string name="autoperf_summary">Automatikus teljesítményprofil választás a különböző alkalmazások számára</string>
+  <!-- Navigation Ring Targets -->
+  <string name="navigation_ring_title">Navigációs gyűrű hivatkozások</string>
+  <string name="navigation_ring_enable_title">Navigációs gyűrű engedélyezése</string>
+  <string name="navigation_ring_customize">Navigációs gyűrű testreszabása</string>
+  <string name="navigation_ring_summary">Navigációs gyűrű célok viselkedésének beállítása</string>
+  <string name="navigation_ring_message">Érintse meg a szerkesztés ikont a navigációs gyűrű módosításához.\n\nVálasszon célt a viselkedés konfigurálásához.\n\nÉrintse meg az elfogad ikont a változtatások mentéséhez, vagy a visszaállítás ikont az alaphelyzetbe állításhoz.</string>
+  <string name="navigation_bar_title">Gombok és elrendezés</string>
+  <string name="navigation_bar_help_text">Kezdéshez érintse meg a feloldó ikont a navigációs sáv szerkesztésének engedélyezéséhez.\n\nMegérinthet egy ikont a parancsikon módosításához, vagy nyomja meg hosszan az ikont az újrarendezéshez.\n\nÉrintse meg a mentést a módosítások mentéséhez, vagy a visszaállítást az alapértékek visszaállításához.</string>
+  <string name="navigation_restore_button_text">Alapértelmezés\nvisszaállítása</string>
+  <string name="navigation_edit_button_text">Szerkesztés</string>
+  <string name="navigation_save_button_text">Mentés</string>
+  <string name="navigation_bar_reset_message">Törli a jelenlegi beállításokat és visszaállítja az alaphelyzetet?</string>
+  <!-- Sound & notification > Other sounds: Title for the option enabling sound on volume slide adjust. [CHAR LIMIT=30] -->
+  <string name="volume_adjust_sound_title">Hangerőszabályzó csúszka hang</string>
+  <string name="zen_mode_none_category">Megszakítások nélkül</string>
+  <string name="zen_mode_alarms">Riasztások engedélyezése</string>
+  <!-- Linked / unlinked notification volume -->
+  <string name="link_volume_option_title">Csengő és értesítési hangok összekötése</string>
+  <string name="notification_volume_option_title">Értesítési hangerő</string>
+  <string name="ring_notification_volume_option_tile">Csengő és értesítési hangerő</string>
+  <!-- Zen Mode -->
+  <string name="zen_mode_none_category">Megszakítások nélkül</string>
+  <string name="allow_lights_title">Értesítési fények engedélyezése</string>
+  <!-- Increasing ring tone volume -->
+  <string name="increasing_ring_volume_option_title">Emelkedő csengőhang</string>
+  <string name="increasing_ring_min_volume_title">Kezdeti hangerő</string>
+  <string name="increasing_ring_ramp_up_time_title">Felfutási idő</string>
+  <!-- WiFi country code -->
+  <string name="wifi_country_summary_prefix">Ország beállítva erre:</string>
+  <string name="wifi_country_summary_suffix">\n(Ennek megváltoztatása illegális egyes területeken, ellenőrizze a vonatkozó helyi törvényeket)</string>
+  <string name="wifi_country_code_title">Wi\u2011Fi ország kód</string>
+  <string name="wifi_country_code_summary">Automatikus ország szerinti Wi\u2011Fi csatorna kiválasztás elérhető\n(Ennek megváltoztatása illegális egyes területeken, ellenőrizze a vonatkozó helyi törvényeket)</string>
+  <string name="wifi_country_code_error">Wi\u2011Fi országkód nem állítható be !</string>
+  <!-- WiFi country override -->
+  <string name="wifi_country_override_title">Wi\u2011Fi ország felülbírálása</string>
+  <string name="wifi_country_override_summary">Automatikus mód beállítva az országra a mobil hálózat MMC alapján (gyári viselkedés)\n(Ennek megváltoztatása illegális egyes területeken, ellenőrizze a vonatkozó helyi törvényeket)</string>
+  <string name="wifi_country_override_error">Wi\u2011Fi ország felülbírálását nem sikerült beállítani !</string>
+  <string name="wifi_country_mcc">automatikus mód a mobil hálózat MMC alapján (gyári viselkedés)</string>
+  <string name="wifi_country_af">Afganisztán</string>
+  <string name="wifi_country_al">Albánia</string>
+  <string name="wifi_country_dz">Algéria</string>
+  <string name="wifi_country_as">Amerikai Szamoa</string>
+  <string name="wifi_country_ad">Andorra</string>
+  <string name="wifi_country_ao">Angola</string>
+  <string name="wifi_country_ai">Anguilla</string>
+  <string name="wifi_country_ag">Antigua és Barbuda</string>
+  <string name="wifi_country_ar">Argentína</string>
+  <string name="wifi_country_am">Örményország</string>
+  <string name="wifi_country_aw">Aruba</string>
+  <string name="wifi_country_au">Ausztrália</string>
+  <string name="wifi_country_at">Ausztria</string>
+  <string name="wifi_country_az">Azerbajdzsán</string>
+  <string name="wifi_country_bs">Bahama-szigetek</string>
+  <string name="wifi_country_bh">Bahrein</string>
+  <string name="wifi_country_bd">Banglades</string>
+  <string name="wifi_country_bb">Barbados</string>
+  <string name="wifi_country_by">Fehéroroszország</string>
+  <string name="wifi_country_be">Belgium</string>
+  <string name="wifi_country_bz">Belize</string>
+  <string name="wifi_country_bj">Benin</string>
+  <string name="wifi_country_bm">Bermuda</string>
+  <string name="wifi_country_bt">Bhután</string>
+  <string name="wifi_country_bo">Bolívia</string>
+  <string name="wifi_country_ba">Bosznia-Hercegovina</string>
+  <string name="wifi_country_bw">Botswana</string>
+  <string name="wifi_country_br">Brazilia</string>
+  <string name="wifi_country_vg">Brit Virgin-szigetek</string>
+  <string name="wifi_country_bn">Brunei</string>
+  <string name="wifi_country_bg">Bulgária</string>
+  <string name="wifi_country_bf">Burkina Faso</string>
+  <string name="wifi_country_bi">Burundi</string>
+  <string name="wifi_country_kh">Kambodzsa</string>
+  <string name="wifi_country_cm">Kamerun</string>
+  <string name="wifi_country_ca">Kanada</string>
+  <string name="wifi_country_cv">Zöld-foki Köztársaság</string>
+  <string name="wifi_country_ky">Kajmán-szigetek</string>
+  <string name="wifi_country_cf">Közép-afrikai Köztársaság</string>
+  <string name="wifi_country_td">Csád</string>
+  <string name="wifi_country_cl">Chile</string>
+  <string name="wifi_country_cn">Kína</string>
+  <string name="wifi_country_co">Kolumbia</string>
+  <string name="wifi_country_km">Comore-szigetek</string>
+  <string name="wifi_country_cg">Kongó</string>
+  <string name="wifi_country_ck">Cook-szigetek</string>
+  <string name="wifi_country_cr">Costa Rica</string>
+  <string name="wifi_country_hr">Horvátország</string>
+  <string name="wifi_country_cu">Kuba</string>
+  <string name="wifi_country_cy">Ciprus</string>
+  <string name="wifi_country_cz">Csehország</string>
+  <string name="wifi_country_dk">Dánia</string>
+  <string name="wifi_country_dj">Dzsibuti</string>
+  <string name="wifi_country_dm">Dominika</string>
+  <string name="wifi_country_do">Dominikai Köztársaság</string>
+  <string name="wifi_country_ec">Ecuador</string>
+  <string name="wifi_country_eg">Egyiptom</string>
+  <string name="wifi_country_sv">El Salvador</string>
+  <string name="wifi_country_gq">Egyenlítői-Guinea</string>
+  <string name="wifi_country_er">Eritrea</string>
+  <string name="wifi_country_ee">Észtország</string>
+  <string name="wifi_country_et">Etiópia</string>
+  <string name="wifi_country_fk">Falkland-szigetek</string>
+  <string name="wifi_country_fo">Feröer-szigetek</string>
+  <string name="wifi_country_fj">Fidzsi-szigetek</string>
+  <string name="wifi_country_fi">Finnország</string>
+  <string name="wifi_country_fr">Franciaország</string>
+  <string name="wifi_country_gf">Francia Guyana</string>
+  <string name="wifi_country_pf">Francia Polinézia</string>
+  <string name="wifi_country_ga">Gaboni Köztársaság</string>
+  <string name="wifi_country_gm">Gambia</string>
+  <string name="wifi_country_ge">Grúzia</string>
+  <string name="wifi_country_de">Németország</string>
+  <string name="wifi_country_gh">Ghána</string>
+  <string name="wifi_country_gi">Gibraltár</string>
+  <string name="wifi_country_gr">Görögország</string>
+  <string name="wifi_country_gl">Grönland</string>
+  <string name="wifi_country_gd">Grenada</string>
+  <string name="wifi_country_gp">Guadeloupe</string>
+  <string name="wifi_country_gu">Guam</string>
+  <string name="wifi_country_gt">Guatemala</string>
+  <string name="wifi_country_gn">Guinea</string>
+  <string name="wifi_country_gw">Bissau-Guinea</string>
+  <string name="wifi_country_gy">Guyana</string>
+  <string name="wifi_country_ht">Haiti</string>
+  <string name="wifi_country_hn">Honduras</string>
+  <string name="wifi_country_hk">Hongkong</string>
+  <string name="wifi_country_hu">Magyarország</string>
+  <string name="wifi_country_is">Izland</string>
+  <string name="wifi_country_in">India</string>
+  <string name="wifi_country_in">India</string>
+  <string name="wifi_country_id">Indonézia</string>
+  <string name="wifi_country_ir">Irán</string>
+  <string name="wifi_country_iq">Irak</string>
+  <string name="wifi_country_ie">Írország</string>
+  <string name="wifi_country_il">Izrael</string>
+  <string name="wifi_country_it">Olaszország</string>
+  <string name="wifi_country_ci">Elefántcsontpart</string>
+  <string name="wifi_country_jm">Jamaica</string>
+  <string name="wifi_country_jp">Japán</string>
+  <string name="wifi_country_jo">Jordánia</string>
+  <string name="wifi_country_kz">Kazahsztán</string>
+  <string name="wifi_country_ke">Kenya</string>
+  <string name="wifi_country_ki">Kiribati</string>
+  <string name="wifi_country_kr">Korea (Dél)</string>
+  <string name="wifi_country_kp">Korea (Észak)</string>
+  <string name="wifi_country_kw">Kuvait</string>
+  <string name="wifi_country_kg">Kirgizisztán</string>
+  <string name="wifi_country_la">Laosz</string>
+  <string name="wifi_country_lv">Lettország</string>
+  <string name="wifi_country_lb">Libanon</string>
+  <string name="wifi_country_ls">Lesotho</string>
+  <string name="wifi_country_lr">Libéria</string>
+  <string name="wifi_country_ly">Líbia</string>
+  <string name="wifi_country_li">Liechtenstein</string>
+  <string name="wifi_country_lt">Litvánia</string>
+  <string name="wifi_country_lu">Luxemburg</string>
+  <string name="wifi_country_mo">Makaó</string>
+  <string name="wifi_country_mg">Madagaszkár</string>
+  <string name="wifi_country_mw">Malawi</string>
+  <string name="wifi_country_my">Malajzia</string>
+  <string name="wifi_country_mv">Maldív-szigetek</string>
+  <string name="wifi_country_ml">Mali</string>
+  <string name="wifi_country_mt">Málta</string>
+  <string name="wifi_country_mh">Marshall-szigetek</string>
+  <string name="wifi_country_mr">Mauritánia</string>
+  <string name="wifi_country_mu">Mauritius</string>
+  <string name="wifi_country_mx">Mexikó</string>
+  <string name="wifi_country_fm">Mikronézia</string>
+  <string name="wifi_country_md">Moldova</string>
+  <string name="wifi_country_mc">Monaco</string>
+  <string name="wifi_country_mn">Mongólia</string>
+  <string name="wifi_country_me">Montenegró</string>
+  <string name="wifi_country_ms">Montserrat</string>
+  <string name="wifi_country_ma">Marokkó</string>
+  <string name="wifi_country_mz">Mozambik</string>
+  <string name="wifi_country_mm">Mianmar</string>
+  <string name="wifi_country_na">Namíbia</string>
+  <string name="wifi_country_nr">Nauru</string>
+  <string name="wifi_country_np">Nepál</string>
+  <string name="wifi_country_nl">Hollandia</string>
+  <string name="wifi_country_ai">Anguilla</string>
+  <string name="wifi_country_nc">Új-Kaledónia</string>
+  <string name="wifi_country_nz">Új-Zéland</string>
+  <string name="wifi_country_ni">Nicaragua</string>
+  <string name="wifi_country_ne">Niger</string>
+  <string name="wifi_country_ng">Nigéria</string>
+  <string name="wifi_country_mp">Északi-Mariana-szigetek</string>
+  <string name="wifi_country_no">Norvégia</string>
+  <string name="wifi_country_om">Omán</string>
+  <string name="wifi_country_pk">Pakisztán</string>
+  <string name="wifi_country_pw">Palau</string>
+  <string name="wifi_country_ps">Palesztina</string>
+  <string name="wifi_country_pa">Panama</string>
+  <string name="wifi_country_pg">Pápua Új-Guinea</string>
+  <string name="wifi_country_py">Paraguay</string>
+  <string name="wifi_country_pe">Peru</string>
+  <string name="wifi_country_ph">Fülöp-szigetek</string>
+  <string name="wifi_country_pl">Lengyelország</string>
+  <string name="wifi_country_pt">Portugália</string>
+  <string name="wifi_country_pr">Puerto Rico</string>
+  <string name="wifi_country_qa">Katar</string>
+  <string name="wifi_country_re">Réunion</string>
+  <string name="wifi_country_ro">Románia</string>
+  <string name="wifi_country_ru">Orosz Föderáció</string>
+  <string name="wifi_country_rw">Ruanda</string>
+  <string name="wifi_country_kn">Saint Christopher és Nevis Államszövetség</string>
+  <string name="wifi_country_lc">Saint Lucia</string>
+  <string name="wifi_country_pm">Saint-Pierre és Miquelon</string>
+  <string name="wifi_country_vc">Saint Vincent és a Grenadine-szigetek</string>
+  <string name="wifi_country_ws">Szamoa</string>
+  <string name="wifi_country_sm">San Marino</string>
+  <string name="wifi_country_st">São Tomé és Príncipe</string>
+  <string name="wifi_country_sa">Szaúd-Arábia</string>
+  <string name="wifi_country_sn">Szenegál</string>
+  <string name="wifi_country_rs">Szerbia és Montenegró</string>
+  <string name="wifi_country_sc">Seychelle-szigetek</string>
+  <string name="wifi_country_sl">Sierra Leone</string>
+  <string name="wifi_country_sg">Szingapúr</string>
+  <string name="wifi_country_sk">Szlovák Köztársaság</string>
+  <string name="wifi_country_si">Szlovénia</string>
+  <string name="wifi_country_sb">Salamon-szigetek</string>
+  <string name="wifi_country_so">Szomália</string>
+  <string name="wifi_country_za">Dél-afrikai Köztársaság</string>
+  <string name="wifi_country_es">Spanyolország</string>
+  <string name="wifi_country_lk">Srí Lanka</string>
+  <string name="wifi_country_sd">Szudán</string>
+  <string name="wifi_country_sr">Suriname</string>
+  <string name="wifi_country_sz">Szváziföld</string>
+  <string name="wifi_country_se">Svédország</string>
+  <string name="wifi_country_ch">Svájc</string>
+  <string name="wifi_country_sy">Szíria</string>
+  <string name="wifi_country_tw">Tajvan</string>
+  <string name="wifi_country_tj">Tádzsikisztán</string>
+  <string name="wifi_country_tz">Tanzánia</string>
+  <string name="wifi_country_th">Thaiföld</string>
+  <string name="wifi_country_tl">Kelet-Timor</string>
+  <string name="wifi_country_tg">Togói Köztársaság</string>
+  <string name="wifi_country_to">Tonga</string>
+  <string name="wifi_country_tt">Trinidad és Tobago</string>
+  <string name="wifi_country_tn">Tunézia</string>
+  <string name="wifi_country_tr">Törökország</string>
+  <string name="wifi_country_tm">Türkmenisztán</string>
+  <string name="wifi_country_tc">Turks- és Caicos-szigetek</string>
+  <string name="wifi_country_ug">Uganda</string>
+  <string name="wifi_country_ua">Ukrajna</string>
+  <string name="wifi_country_ae">Egyesült Arab Emírségek</string>
+  <string name="wifi_country_gb">Egyesült Királyság</string>
+  <string name="wifi_country_us">Amerikai Egyesült Államok</string>
+  <string name="wifi_country_vi">Amerikai Virgin-szigetek</string>
+  <string name="wifi_country_uy">Uruguay</string>
+  <string name="wifi_country_uz">Üzbegisztán</string>
+  <string name="wifi_country_vu">Vanuatu</string>
+  <string name="wifi_country_va">Vatikáni Városállam</string>
+  <string name="wifi_country_ve">Venezuela</string>
+  <string name="wifi_country_vn">Vietnam</string>
+  <string name="wifi_country_wf">Wallis és Futuna</string>
+  <string name="wifi_country_ye">Jemen</string>
+  <string name="wifi_country_mk">Jugoszlávia (egykori)</string>
+  <string name="wifi_country_zm">Zambia</string>
+  <string name="wifi_country_zw">Zimbabwe</string>
+  <!-- WiFi auto-configure priorities -->
+  <string name="wifi_auto_config_priorities">Automatikus prioritás</string>
+  <!-- Sizes for pattern lockscreen -->
+  <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+  <string name="lockpattern_settings_enable_error_path_title">Hibás minta megjelenítése</string>
+  <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+  <string name="lockpattern_settings_enable_dots_title">Feloldási pontok megjelenítése</string>
+  <!-- Lock screen rotation -->
 </resources>

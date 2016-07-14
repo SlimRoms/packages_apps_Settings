@@ -12,7 +12,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Privacy Settings Header item -->
   <string name="privacy_settings_cyanogenmod_title">Vie privée</string>
+  <!-- General strings -->
   <string name="ok">Ok</string>
   <string name="reset">Réinitialiser</string>
   <string name="help">Aide</string>
@@ -25,6 +27,7 @@
   <string name="choose_app">Choisir une application</string>
   <string name="reset_message">Rétablir les valeurs par défaut ?</string>
   <string name="additional_options_title">Paramètres supplémentaires</string>
+  <!-- Privacy Guard -->
   <string name="app_security_title">Sécurité des applications</string>
   <string name="privacy_guard_switch_label">Activer la protection des données</string>
   <string name="privacy_guard_dlg_title">Activer la protection des données ?</string>
@@ -43,13 +46,25 @@
   <string name="privacy_guard_advanced_settings_title">Paramètres avancés</string>
   <string name="privacy_guard_notification_title">Notification</string>
   <string name="privacy_guard_notifiation_summary">Afficher une notification lorsque la protection des données est active.</string>
+  <!-- Slim Shortcuts -->
   <string name="slim_shortcut_picker">Actions Slim</string>
+  <!-- About device screen, Slim version -->
   <string name="slim_version_title">Version Slim</string>
   <string name="slim_version_default">Inconnu</string>
+  <!-- About device screen, build date of ROM -->
   <string name="build_date">Date de compilation</string>
   <string name="build_date_default">Inconnu</string>
+  <!-- About device screen, CPU and RAM info. -->
   <string name="processor_info">Processeur</string>
   <string name="mem_info">Mémoire</string>
+  <!-- About device screen, developer settings -->
+  <plurals name="show_dev_countdown_slim">
+    <item quantity="one">Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étape de l\'activation des options de développeur.</item>
+    <item quantity="other">Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'activation des options de développeur.</item>
+  </plurals>
+  <string name="show_dev_on_slim">Mode développeur activé !</string>
+  <string name="show_dev_already_slim">Le mode développeur a déjà été activé.</string>
+  <!-- Setting checkbox title for root access -->
   <string name="root_access">Accès root</string>
   <string name="root_access_warning_title">Autoriser l\'accès root ?</string>
   <string name="root_access_warning_message">Autoriser l\'accès root aux applications est très dangereux et peut compromettre la sécurité de votre système !</string>
@@ -57,6 +72,7 @@
   <string name="root_access_apps">Applications uniquement</string>
   <string name="root_access_adb">ADB uniquement</string>
   <string name="root_access_all">Applications et ADB</string>
+  <!-- App ops -->
   <string name="app_ops_summaries_coarse_location">localisation approximative</string>
   <string name="app_ops_summaries_fine_location">localisation précise</string>
   <string name="app_ops_summaries_gps">GPS</string>
@@ -171,6 +187,7 @@
   <string name="app_ops_labels_data_change">Changement des données</string>
   <string name="app_ops_labels_wake_up">Réveil</string>
   <string name="app_ops_labels_su">Accès root</string>
+  <!-- App ops categories -->
   <string name="app_ops_categories_location">Localisation</string>
   <string name="app_ops_categories_personal">Personnel</string>
   <string name="app_ops_categories_messaging">Messagerie</string>
@@ -178,31 +195,38 @@
   <string name="app_ops_categories_device">Appareil</string>
   <string name="app_ops_categories_bootup">Démarrage</string>
   <string name="app_ops_categories_su">Super-utilisateur</string>
+  <!-- App ops detail -->
   <string name="app_ops_entry_summary"><xliff:g id="op">%1$s </xliff:g> (a utilisé <xliff:g id="count">%2$s </xliff:g>)</string>
   <string name="app_ops_allowed_count">Autorisé <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_ignored_count">Refusé <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_both_count">Autorisé <xliff:g id="count">%1$s</xliff:g>, refusé <xliff:g id="count">%2$s</xliff:g></string>
+  <!-- App ops menu options -->
   <string name="app_ops_show_user_apps">Montrer les applications utilisateur</string>
   <string name="app_ops_show_system_apps">Montrer les applications préinstallées</string>
   <string name="app_ops_reset_counters">Autoriser/refuser la remise à zéro des compteurs</string>
   <string name="app_ops_reset_confirm_title">Confirmer la réinitialisation des compteurs</string>
   <string name="app_ops_reset_confirm_mesg">Êtes-vous sûr de vouloir réinitialiser les compteurs ?</string>
+  <!-- General strings -->
   <string name="ok">Ok</string>
   <string name="reset">Réinitialiser</string>
   <string name="attention">Attention</string>
   <string name="enabled">Activé</string>
   <string name="default_string">Par défaut</string>
   <string name="reset_message">Rétablir les valeurs par défaut ?</string>
+  <!-- Slim settings screens -->
   <string name="header_category_personalization">Personnalisation</string>
   <string name="interface_settings_title">Interface</string>
   <string name="navigation_settings_title">Navigation</string>
+  <!-- Color Picker -->
   <string name="dialog_color_picker">Sélecteur de couleur</string>
   <string name="press_color_to_apply">Appuyer sur la couleur pour l\'appliquer</string>
   <string name="hex">Hex :</string>
   <string name="hex_hint">#ff000000</string>
   <string name="set">Définir</string>
   <string name="color_default">Par défaut</string>
+  <!-- Advanced, Device specific (DeviceParts) settings  -->
   <string name="device_settings_title">Appareil</string>
+  <!-- Display : Rotation -->
   <string name="display_rotation_title">Rotation</string>
   <string name="display_rotation_disabled">Désactivé</string>
   <string name="display_rotation_unit">degré(s)</string>
@@ -211,14 +235,18 @@
   <string name="display_rotation_90_title">90 degrés</string>
   <string name="display_rotation_180_title">180 degrés</string>
   <string name="display_rotation_270_title">270 degrés</string>
+  <!-- Sound settings -->
   <string name="advanced_sound_title">Options avancées</string>
   <string name="sound_title">Son</string>
+  <!-- Camera sound switch -->
   <string name="camera_sounds_title">Son de l\'appareil photo</string>
   <string name="camera_sounds_summary">Activer le son de l\'obturateur de l\'appareil photo</string>
   <string name="camera_sound_warning_dialog_text">Désactiver le son de l\'obturateur est illégal dans certains pays ! Merci de vous conformer aux lois de votre pays</string>
+  <!-- Safe headset volume restore checkbox -->
   <string name="safe_headset_volume_title">Volume sécurisé</string>
   <string name="safe_headset_volume_summary">Empêcher un volume trop important du son lorsqu\'un périphérique audio est branché</string>
   <string name="safe_headset_volume_warning_dialog_text">L\'écoute prolongée à volume élevé peut endommager votre audition. Désactiver avec précaution.</string>
+  <!-- Less Notification sounds -->
   <string name="notifications_category_title">Notifications</string>
   <string name="less_notification_sounds_title">Réduire le nombre de sons de notifications</string>
   <string name="less_notification_sounds_summary">Limiter le nombre de sons des notifications émises de chaque application à une fois par période définie</string>
@@ -232,15 +260,20 @@
   <string name="less_notification_sounds_1m">1 minute</string>
   <string name="less_notification_sounds_2m">2 minutes</string>
   <string name="less_notification_sounds_5m">5 minutes</string>
+  <!-- Volume Keys Media Control -->
   <string name="volume_keys_control_media_stream">Contrôle des médias</string>
   <string name="volume_keys_control_media_stream_summary">Contrôler le volume des médias plutôt que des notifications via les touches de volume</string>
+  <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
   <string name="debug_LAN_category">Paramètres LAN</string>
+  <!-- Hostname setting -->
   <string name="device_hostname">Nom d\'hôte de l\'appareil</string>
+  <!-- Wakeup options -->
   <string name="display_category_wakeup_options_title">Options de réveil</string>
   <string name="pref_volume_wake_title">Réveil par les boutons de volume</string>
   <string name="pref_volume_wake_summary">Activer l\'écran si les boutons de volume haut ou bas sont appuyés</string>
   <string name="wakeup_when_plugged_unplugged_title">Réveil par la mise en charge</string>
   <string name="wakeup_when_plugged_unplugged_summary">Activer l\'écran si un chargeur est branché ou débranché</string>
+  <!-- Keyboard and Input ASS methods  -->
   <string name="title_keyboard_input">Options avancées</string>
   <string name="disable_fullscreen_keyboard_title">Désactiver le clavier plein écran</string>
   <string name="disable_fullscreen_keyboard_summary">Le clavier en mode paysage ne remplira jamais la totalité de l\'écran</string>
@@ -258,6 +291,7 @@
   <string name="ime_switcher_notify_summary">Afficher un raccourci pour accéder au sélecteur de mode de saisie</string>
   <string name="show_ime_arrows_title">Afficher les flèches lors de la frappe</string>
   <string name="show_ime_arrows_summary">Afficher des flèches de chaque côté de la barre de navigation permettant de faire bouger le curseur lors d\'une saisie. Un appui long permet de naviguer vers le haut/bas.</string>
+  <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Redémarrage avancé</string>
   <string name="advanced_reboot_summary">Inclure dans le menu marche/arrêt la possibilité de redémarrer dans le mode Récupération et le Bootloader</string>
   <string name="advanced_reboot_dialog_title">Menu Redémarrage avancé</string>
@@ -268,14 +302,18 @@
   <string name="app_notification_show_on_keyguard_summary">Afficher les notifications de cette application sur l\'écran de verrouillage</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Bloquer les notif. en cours sur l\'écran de verrouillage</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">Ne jamais afficher les notifications en cours de cette application sur l\'écran de verrouillage</string>
+  <!-- Setting checkbox summary for displaying USB debugging notification -->
   <string name="adb_notify">Notification de débogage USB</string>
   <string name="adb_notify_summary">Afficher une notification lorsque le débogage USB est actif</string>
+  <!-- USB and storage settings -->
+  <!-- Notification light dialogs -->
   <string name="edit_light_settings">Paramètres du voyant</string>
   <string name="pulse_speed_title">Vitesse et durée d\'impulsion</string>
   <string name="default_time">Normal</string>
   <string name="custom_time">Personnalisé</string>
   <string name="dialog_delete_title">Supprimer</string>
   <string name="dialog_delete_message">Supprimer l\'élément sélectionné ?</string>
+  <!-- Values for the notification light pulse spinners -->
   <string name="pulse_length_always_on">Permanente</string>
   <string name="pulse_length_very_short">Très court</string>
   <string name="pulse_length_short">Court</string>
@@ -287,12 +325,14 @@
   <string name="pulse_speed_normal">Normal</string>
   <string name="pulse_speed_slow">Lent</string>
   <string name="pulse_speed_very_slow">Très lent</string>
+  <!-- Battery light settings -->
   <string name="battery_light_title">Voyant de batterie</string>
   <string name="battery_low_pulse_title">Clignoter si batterie faible</string>
   <string name="battery_light_list_title">Couleurs</string>
   <string name="battery_light_low_color_title">Batterie faible</string>
   <string name="battery_light_medium_color_title">Batterie en charge</string>
   <string name="battery_light_full_color_title">Batterie chargée</string>
+  <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Voyant de notification</string>
   <string name="notification_light_general_title">Général</string>
   <string name="notification_light_applist_title">Applications</string>
@@ -304,9 +344,11 @@
   <string name="profiles_add">Ajouter</string>
   <string name="profile_choose_app">Choisissez une application</string>
   <string name="profile_reset_title">Réinitialiser</string>
+  <!-- Status bar -->
   <string name="status_bar_title">Barre d\'état</string>
   <string name="status_bar_style_title">Style</string>
   <string name="status_bar_options_title">Options</string>
+  <!-- Status bar | Clock -->
   <string name="status_bar_clock">Date et heure</string>
   <string name="status_bar_clock_title">Style de la date et de l\'heure</string>
   <string name="clock_title_enable">Alignement</string>
@@ -348,7 +390,9 @@
   <string name="status_bar_toggle_brightness">Contrôle de la luminosité</string>
   <string name="status_bar_toggle_brightness_summary">Ajuster le niveau de luminosité en glissant le doigt sur la barre d\'état</string>
   <string name="status_bar_toggle_info">La luminosité automatique est activée</string>
+  <!-- Status bar - Battery Options -->
   <string name="battery_icon_options_title">Options de l\'icône de batterie</string>
+  <!-- Status bar - Battery Style -->
   <string name="status_bar_battery_style_title">Icône de batterie</string>
   <string name="status_bar_battery_style_circle">Cercle</string>
   <string name="status_bar_battery_style_dotted_circle">Cercle en pointillé</string>
@@ -356,19 +400,23 @@
   <string name="status_bar_battery_style_hidden">Masqué</string>
   <string name="status_bar_battery_style_icon_portrait">Icône vertical</string>
   <string name="status_bar_battery_style_icon_landscape">Icône horizontal</string>
+  <!-- Status bar - Battery percentage -->
   <string name="status_bar_battery_percentage_title">Pourcentage de batterie</string>
   <string name="status_bar_battery_percentage_dialog_title">Pourcentage</string>
   <string name="status_bar_battery_percentage_default">Masqué (par défaut)</string>
   <string name="status_bar_battery_percentage_text_inside">Dans l\'icône</string>
   <string name="status_bar_battery_percentage_text_next">À côté de l\'icône</string>
+  <!-- tap-to-sleep -->
   <string name="double_tap_to_sleep_title">Double appui pour mettre en veille</string>
   <string name="double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
+  <!-- QuickSettings: Quick Pulldown -->
   <string name="qs_title">Paramètres rapides</string>
   <string name="quick_pulldown_title">Déroulement rapide</string>
   <string name="summary_quick_pulldown">Glisser sur le côté %1$s de la barre d\'état va afficher les paramètres rapides</string>
   <string name="quick_pulldown_off">Désactivé</string>
   <string name="quick_pulldown_left">gauche</string>
   <string name="quick_pulldown_right">droit</string>
+  <!-- QuickSettings: Smart Pulldown -->
   <string name="smart_pulldown_title">Déroulement intelligent</string>
   <string name="smart_pulldown_summary">Ouvrir les paramètres rapides lorsqu\'il n\'y a pas de notifications %1$s</string>
   <string name="smart_pulldown_off">Désactivé</string>
@@ -377,6 +425,7 @@
   <string name="smart_pulldown_all">Amovible ou persistante</string>
   <string name="block_on_secure_keyguard_title">Désactiver sur l\'écran de verrouillage</string>
   <string name="block_on_secure_keyguard_summary">Désactiver les paramètres rapides sur l\'écran de verrouillage.</string>
+  <!-- Quick Settings: Tiles  -->
   <string name="qs_category_title">Panneau des paramètres rapides</string>
   <string name="qs_tiles_title">Paramètres des tuiles</string>
   <string name="qs_general_title">Paramètres généraux</string>
@@ -416,13 +465,18 @@
   <string name="qs_main_tiles_summary_off">Trois ou quatre tuiles sur chaque ligne</string>
   <string name="qs_advanced_location_title">Paramètres avancés de localisation</string>
   <string name="qs_advanced_location_summary">Activer les paramètres avancés de la localisation dans les paramètres rapides</string>
+  <!-- QuickSettings: Tiles: 4 columns -->
   <string name="qs_four_columns_title">Afficher quatre tuiles par ligne</string>
+  <!-- QuickSettings: Tiles: haptic feedback -->
   <string name="quick_settings_vibrate_title">Vibrer au toucher</string>
   <string name="quick_settings_vibrate_summary">Vibrer à l\'appui des tuiles</string>
+  <!-- Swap Volume Buttons -->
   <string name="swap_volume_buttons_title">Réorienter</string>
   <string name="swap_volume_buttons_summary">Permuter les boutons de volume lorsque l\'écran est tourné</string>
+  <!-- Proximity wake -->
   <string name="proximity_wake_title">Empêcher un réveil involontaire</string>
   <string name="proximity_wake_summary">Vérifier le capteur de proximité avant d\'allumer l\'écran</string>
+  <!-- MediaScanner behavior on boot -->
   <string name="options_settings_title">Options</string>
   <string name="media_scanner_on_boot_title">Scan des médias au démarrage</string>
   <string name="media_scanner_on_boot_enabled">Activé</string>
@@ -543,36 +597,48 @@
   <string name="shortcuts_icon_picker_twitter">Twitter</string>
   <string name="shortcuts_icon_picker_unlock">Déverrouiller</string>
   <string name="navigation_bar_warning_no_navigation_present">Aucun autre moyen de navigation n\'est activé. Désactiver la barre de navigation peut rendre votre appareil inutilisable. Voulez-vous activer le SlimPie ?</string>
+  <!--Quick unlock -->
   <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
   <string name="unlock_quick_unlock_control_summary">Déverrouiller automatiquement l\'appareil lorsque le PIN / mot de passe correct est entré</string>
+  <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
   <string name="bluetooth_accept_all_files">Autoriser tout type de fichier</string>
+  <!-- Device specific settings -->
   <string name="screen_off_gesture_settings_title">Gestes écran éteint</string>
+  <!-- Display & Lights screen, setting options for LCD density -->
   <string name="lcd_density">Densité de l\'écran</string>
   <string name="dialog_title_lcd_density">Densité LCD</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (par défaut)</string>
   <string name="restarting_ui">Redémarrage IU\u2026</string>
+  <!-- SU indicator -->
   <string name="su_indicator_title">Indicateur de super-utilisateur</string>
   <string name="su_indicator_summary">Indicateur de super-utilisateur lorsque les droits SU sont utilisés</string>
   <string name="su_indicator_icon">Icône dans la barre d\'état</string>
   <string name="su_indicator_notification">Notification</string>
   <string name="su_indicator_none">Pas d\'indicateur</string>
+  <!-- Lockscreen Shortcuts -->
   <string name="lockscreen_shortcuts_title">Raccourcis</string>
   <string name="lockscreen_shortcuts_summary">Voir ou modifier les raccourcis</string>
   <string name="lockscreen_shorcuts_launch_type_title">Type d\'appui du raccourci</string>
   <string name="lockscreen_shortcuts_single_tap">Appui simple</string>
   <string name="lockscreen_shortcuts_double_tap">Appui double</string>
   <string name="lockscreen_shortcuts_longpress">Appui long</string>
+  <!-- Lockscreen pin shuffle -->
   <string name="lock_numpad_random_title">Clavier PIN mélangé</string>
   <string name="lock_numpad_random_dialog_title">Mélanger les chiffres du clavier</string>
   <string name="lock_numpad_random_off">Désactivé</string>
   <string name="lock_numpad_random_always">Toujours</string>
   <string name="lock_numpad_random_on_request">Sur demande</string>
+  <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
   <string name="enable_adb_cm">Débogage Android</string>
+  <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
   <string name="enable_adb_summary_cm">Activer l\'interface Android Debug Bridge (ADB)</string>
+  <!-- Android debugging over WiFi -->
   <string name="adb_over_network">ADB par réseau</string>
   <string name="adb_over_network_summary">Activer le débogage TCP/IP sur toutes les interfaces réseaux (réseaux USB, Wi-Fi et Bluetooth). Ce paramètre est réinitialisé au redémarrage.</string>
+  <!-- Warning for Adb over Network -->
   <string name="adb_over_network_warning">ATTENTION : Lorsque cette fonction est activée, votre appareil est ouvert aux intrusions sur tous les réseaux connectés, y compris via le réseau mobile\u00A0!\n\nN\'utilisez cette fonctionnalité que sur des réseaux de confiance.\n\nContinuer\u00A0?</string>
+  <!-- Ambient display options -->
   <string name="display_category_doze_options_title">Options de l\'affichage en mode Veille</string>
   <string name="doze_settings_title">Options avancées de l\'affichage</string>
   <string name="doze_timeout_title">Durée d\'activation de l\'impulsion</string>
@@ -591,7 +657,9 @@
   <string name="doze_schedule_summary_off">La répétition ne sera pas utilisée</string>
   <string name="doze_brightness_title">Niveau de luminosité de l\'affichage en mode Veille</string>
   <string name="doze_brightness_summary">Luminosité de l\'affichage en mode Veille (% de la luminosité maximale)</string>
+  <!-- Navigation settings -->
   <string name="navigation_settings_options_title">Options de navigation</string>
+  <!-- Hardware keys -->
   <string name="button_keys_title">Boutons physiques</string>
   <string name="keys_bindings_title">Actions des touches</string>
   <string name="keys_enable_custom_title">Actions personnalisées</string>
@@ -618,6 +686,7 @@
   <string name="keys_action_long">Appui long</string>
   <string name="keys_action_double">Appui double</string>
   <string name="no_home_key">Vous n\'avez aucun bouton assigné à l\'action \"Accueil\" !\n\nCela peut rendre votre appareil inutilisable!</string>
+  <!-- Button shorcut actions -->
   <string name="shortcut_action_back">Retour</string>
   <string name="shortcut_action_app">Application perso.</string>
   <string name="shortcut_action_expanded_desktop">Bureau étendu</string>
@@ -646,6 +715,7 @@
   <string name="shortcut_action_voice_search">Recherche vocale</string>
   <string name="shortcut_action_none">Rien</string>
   <string name="navigation_settings_title">Navigation</string>
+  <!-- Navigation bar -->
   <string name="navigation_bar_size_42_dp_default">42 dp (Par défaut)</string>
   <string name="navigation_bar_size_36_dp">36 dp</string>
   <string name="navigation_bar_size_30_dp">30 dp</string>
@@ -682,6 +752,7 @@
   <string name="navbar_cat">Barre de navigation</string>
   <string name="navbar_dimensions_reset_message">Réinitialiser toutes les dimensions ?</string>
   <string name="navbar_button_style_reset_message">Réinitialiser toutes les entrées de style par défaut ?</string>
+  <!-- SlimDim -->
   <string name="dim_nav_buttons_category">SlimDim</string>
   <string name="dim_nav_buttons_title">Estomper les boutons après inactivité</string>
   <string name="dim_nav_buttons_summary">Estomper les boutons de la barre de navigation après un temps définit d\'inactivité sur la barre de navigation</string>
@@ -696,6 +767,7 @@
   <string name="dim_nav_buttons_touch_anywhere_title">Prendre en compte tout l\'écran</string>
   <string name="dim_nav_buttons_touch_anywhere_summary_on">Un appui n\'importe où sur l\'écran empêchera l\'estompage des boutons</string>
   <string name="dim_nav_buttons_touch_anywhere_summary_off">Seul un appui dans la barre de navigation empêchera l\'estompage de l\'écran</string>
+  <!-- Navigation bar button style -->
   <string name="nav_bar_button_style">Style des boutons</string>
   <string name="nav_bar_button_style_summary">Modifier le style des boutons de navigation</string>
   <string name="button_transparency_title">Transparence des boutons</string>
@@ -704,7 +776,9 @@
   <string name="nav_button_color_mode_dialog_title">Colorer</string>
   <string name="nav_button_color_mode_summary">Changer le mode de coloration des boutons de la barre de navigation</string>
   <string name="navigation_bar_glow_tint_title">Couleur de la lueur</string>
+  <!-- Data activity icons -->
   <string name="status_bar_show_network_activity_title">Flèches d\'activité réseau</string>
+  <!-- Heads up -->
   <string name="heads_up_title">Notification flottante</string>
   <string name="heads_up_global_switch_title">Notifications flottantes</string>
   <string name="heads_up_global_switch_summary_disabled">Les notifications flottantes sont désactivées</string>
@@ -734,6 +808,7 @@
   <string name="heads_up_time_out_8sec">8 secondes</string>
   <string name="heads_up_time_out_10sec">10 secondes</string>
   <string name="heads_up_time_out_never">Jamais</string>
+  <!-- Pie Control -->
   <string name="pie_control_title">SlimPie</string>
   <string name="pie_control_summary">Activer le contrôle via le Pie</string>
   <string name="pie_control_size">Taille du Pie</string>
@@ -781,6 +856,7 @@
   <string name="pie_trigger_warning">Au moins l\'un des déclencheurs (bas, gauche ou droit) doit être activé.</string>
   <string name="pie_disable_ime_triggers_title">Réduction des déclencheurs sur le clavier</string>
   <string name="pie_disable_ime_triggers_summary">Réduit la taille des déclencheurs droit et gauche si le clavier est actif</string>
+  <!-- Recent panel -->
   <string name="recent_panel_category">Panneau d\'applications récentes</string>
   <string name="use_slim_recents_title">SlimRecents</string>
   <string name="show_running_tasks_title">Afficher les appli. en cours d\'exécution</string>
@@ -796,8 +872,10 @@
   <string name="recent_panel_bg_color_title">Couleur du panneau</string>
   <string name="recent_card_bg_color_title">Couleur des cartes</string>
   <string name="recent_card_text_color_title">Couleur du texte</string>
+  <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Afficher du côté gauche</string>
   <string name="recent_panel_lefty_mode_summary">Affiche le panneau d\'applications récentes sur le coté gauche de l\'écran</string>
+  <!-- Key backlight -->
   <string name="button_backlight_title">Rétroéclairage</string>
   <string name="button_backlight_enabled">Activé pour les boutons</string>
   <string name="keyboard_backlight_enabled">Activé pour le clavier</string>
@@ -808,32 +886,44 @@
   <string name="backlight_summary_disabled">Désactivé</string>
   <string name="backlight_summary_enabled_with_timeout">Activé pour <xliff:g id="timeout">%s</xliff:g></string>
   <string name="backlight_summary_enabled">Activé</string>
+  <!--- Tap To Wake -->
   <string name="double_tap_to_wake_title">Double appui pour réveiller</string>
+  <!-- Buttons -->
   <string name="enable_navkeys_title">Active les boutons hardware</string>
+  <!-- tap-to-sleep -->
   <string name="double_tap_to_sleep_title">Double appui pour mettre en veille</string>
   <string name="double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
+  <!-- Backlight brightness settings screen -->
   <string name="adaptive_backlight_title">Rétroéclairage adaptatif</string>
   <string name="adaptive_backlight_summary">Ajuster dynamiquement la luminosité du rétroéclairage de l\'écran pour maximiser l\'autonomie tout en conservant une bonne lisibilité</string>
+  <!-- Sunlight readability enhancement screen -->
   <string name="sunlight_enhancement_title">Amélioration en plein soleil</string>
   <string name="sunlight_enhancement_summary">Augmenter la luminosité de l\'affichage et la lisibilité en plein soleil</string>
+  <!-- Color enhancement settings screen -->
   <string name="color_enhancement_title">Amélioration des couleurs</string>
   <string name="color_enhancement_summary">Améliorer dynamiquement la couleur d\'affichage</string>
+  <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Intensité du vibreur</string>
   <string name="vibrator_warning">Les valeurs supérieures à %1$d ne sont pas recommandées</string>
+  <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Étalonnage des couleurs</string>
   <string name="color_calibration_summary">Calibrer les couleurs de l\'écran</string>
   <string name="color_red_title">Rouge</string>
   <string name="color_green_title">Vert</string>
   <string name="color_blue_title">Bleu</string>
+  <!-- Hardware tunables - Gamma calibration -->
   <string name="gamma_tuning_title_head">Calibration gamma</string>
   <string name="gamma_tuning_summary_head">Modifier les valeurs de gamma</string>
   <string name="gamma_tuning_control_set_header">Groupe <xliff:g id="index">%d</xliff:g></string>
+  <!-- used if no name provided by overlay -->
   <string name="gamma_tuning_contrast">Contraste</string>
   <string name="gamma_tuning_brightness">Luminosité</string>
   <string name="gamma_tuning_saturation">Saturation</string>
+  <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Lancer le lecteur de musique</string>
   <string name="headset_connect_player_summary">Lancer le lecteur de musique par défaut au branchement d\'un périphérique audio</string>
   <string name="auto_brightness_reset_button">Réinitialiser</string>
+  <!-- LiveDisplay -->
   <string name="live_display_summary">Optimiser votre écran en fonction de l\'heure et des conditions ambiantes pour améliorer la lisibilité et réduire la fatigue oculaire</string>
   <string name="live_display_mode">Mode d\'affichage</string>
   <string name="live_display_color_temperature_title">Température des couleurs</string>
@@ -848,6 +938,7 @@
   <string name="live_display_enhance_color_title">Améliorer les couleurs</string>
   <string name="live_display_enhance_color_summary">Améliorer l\'éclat de la couleur des tons chair, paysages et autres images</string>
   <string name="category_calibration">Calibration</string>
+  <!-- Display settings.  Screen color. -->
   <string name="screencolor">Couleur de l\'écran</string>
   <string name="screencolor_summary">Régler la teinte, la saturation, le contraste ou l\'intensité de l\'écran</string>
   <string name="custom_screencolor">Couleur d\'écran personnalisée</string>
@@ -865,8 +956,12 @@
   <string name="screen_color_setting_vivid">Vives</string>
   <string name="screen_color_setting_custom">Personnalisé</string>
   <string name="settings_reset_button">Réinitialiser</string>
+  <!-- High touch sensitivity -->
   <string name="high_touch_sensitivity_title">Haute sensibilité tactile</string>
   <string name="high_touch_sensitivity_summary">Augmenter la sensibilité de l\'écran permettant ainsi le port de gants</string>
+  <!-- Touchscreen hovering -->
+  <string name="touchscreen_hovering_summary">Permet d\'utiliser l\'écran comme une souris dans le navigateur internet, en bureau distant, etc</string>
+  <!-- Blacklist preferences -->
   <string name="blacklist_title">Liste noire</string>
   <string name="blacklist_edit_dialog_title">Éditer la liste noire</string>
   <string name="blacklist_prefs">Paramètres</string>
@@ -890,10 +985,12 @@
   <string name="blacklist_policy_block_calls">Bloquer les appels entrants</string>
   <string name="blacklist_policy_block_messages">Bloquer les messages entrants</string>
   <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro non-valide à la liste noire</string>
+  <!-- Blacklist management -->
   <string name="add_blacklist_number">Ajouter un numéro</string>
   <string name="remove_blacklist_number_title">Supprimer un numéro</string>
   <string name="remove_blacklist_entry">Voulez-vous supprimer cette entrée de la liste noire ?</string>
   <string name="select_contact">Sélectionner un contact</string>
+  <!-- Expanded Desktop -->
   <string name="power_menu_expanded_desktop">Bureau étendu</string>
   <string name="expanded_hide_nothing">Ne rien masquer</string>
   <string name="expanded_hide_status">Masquer la barre d\'état</string>
@@ -905,19 +1002,27 @@
   <string name="expanded_desktop_style">Style de bureau étendu</string>
   <string name="expanded_desktop_style_description">Choisir un mode de bureau étendu par défaut</string>
   <string name="expanded_desktop_title">Options du bureau étendu</string>
+  <!-- Chamber of Secrets -->
   <string name="chamber_title">Chambre des Secrets</string>
   <string name="chamber_toast">La chambre des secrets est ouverte</string>
+  <!-- Unaccounted and overcounted battery stats -->
   <string name="show_unac_and_overcounted_stats_title">Afficher les statistiques ignorées/surestimées</string>
   <string name="show_unac_and_overcounted_stats_summary">Afficher dans les statistiques de batterie les usages ignorés et surestimés sous le nom \"Divers\".</string>
+  <!-- Performance settings -->
   <string name="title_tile_performance_profile">Profil de performance</string>
   <string name="performance_settings_title">Performance</string>
+  <!-- Performance Settings : Performance profile settings -->
   <string name="perf_profile_title">Profil</string>
+  <!-- Performance Settings : Warning dialog -->
   <string name="performance_settings_warning_title">Procéder avec prudence</string>
   <string name="performance_settings_warning">Ces paramètres sont expérimentaux et toutes les modifications appliquées sont susceptibles de provoquer des instabilités,  des plantages, des pertes de données ou de la casse matériel.\n\n Nous vous demandons de ne pas déposer de rapports de bugs si les valeurs de certains paramètres ont été modifiées.</string>
+  <!-- Performance Settings : Set on boot option -->
   <string name="performance_set_on_boot">Définir au démarrage</string>
   <string name="performance_set_on_boot_summary">Définir les paramètres à chaque démarrage</string>
+  <!-- Automatic performance profiles -->
   <string name="autoperf_title">Activer les profils par application</string>
   <string name="autoperf_summary">Choisir automatiquement le profil de performance le plus approprié pour les différentes applications</string>
+  <!-- Navigation Ring Targets -->
   <string name="navigation_ring_title">Raccourcis de l\'anneau de navigation</string>
   <string name="navigation_ring_enable_title">Activer l\'anneau de navigation</string>
   <string name="navigation_ring_customize">Actions des cibles</string>
@@ -929,36 +1034,55 @@
   <string name="navigation_edit_button_text">Éditer</string>
   <string name="navigation_save_button_text">Enregistrer</string>
   <string name="navigation_bar_reset_message">Supprimer les paramètres actuels et restaurer la disposition par défaut ?</string>
+  <!-- Sound & notification > Other sounds: Title for the option enabling sound on volume slide adjust. [CHAR LIMIT=30] -->
   <string name="volume_adjust_sound_title">Son des touches de volumes</string>
   <string name="zen_mode_none_category">Sans interruptions</string>
   <string name="zen_mode_alarms">Autoriser les alarmes</string>
+  <!-- Linked / unlinked notification volume -->
   <string name="link_volume_option_title">Lier le volume de sonnerie et de notif.</string>
   <string name="notification_volume_option_title">Volume des notifications</string>
   <string name="ring_notification_volume_option_tile">Volume de la sonnerie et des notifications</string>
+  <!-- Zen Mode -->
   <string name="zen_mode_none_category">Sans interruptions</string>
   <string name="allow_lights_title">Autoriser la LED de notif.</string>
+  <!-- Increasing ring tone volume -->
   <string name="increasing_ring_volume_option_title">Sonnerie progressive</string>
   <string name="increasing_ring_min_volume_title">Volume de démarrage</string>
   <string name="increasing_ring_ramp_up_time_title">Durée de progression</string>
+  <!-- WiFi country code -->
   <string name="wifi_country_summary_prefix">Pays sélectionné:</string>
   <string name="wifi_country_summary_suffix">\n(Changer ceci est illégal dans certains lieux, vérifier la législation locale)</string>
+  <!-- WiFi country override -->
   <string name="wifi_country_af">Afghanistan</string>
   <string name="wifi_country_al">Albanie</string>
   <string name="wifi_country_dz">Algérie</string>
+  <string name="wifi_country_as">Samoa Américaines</string>
   <string name="wifi_country_ad">Andorre</string>
   <string name="wifi_country_ao">Angola</string>
+  <string name="wifi_country_ai">Anguilla</string>
+  <string name="wifi_country_ag">Antigua et Barbuda</string>
+  <string name="wifi_country_ar">Argentine</string>
   <string name="wifi_country_am">Arménie</string>
   <string name="wifi_country_aw">Aruba</string>
   <string name="wifi_country_au">Australie</string>
   <string name="wifi_country_at">Autriche</string>
+  <string name="wifi_country_az">République d\'Azerbaïdjan</string>
   <string name="wifi_country_bs">Bahamas</string>
+  <string name="wifi_country_bh">Bahreïn</string>
   <string name="wifi_country_bd">Bangladesh</string>
+  <string name="wifi_country_bb">Les Barbades</string>
   <string name="wifi_country_by">Biélorussie</string>
   <string name="wifi_country_be">Belgique</string>
+  <string name="wifi_country_bz">Belize</string>
+  <string name="wifi_country_bj">Bénin</string>
   <string name="wifi_country_bm">Bermudes</string>
+  <string name="wifi_country_bt">Bhoutan</string>
   <string name="wifi_country_bo">Bolivie</string>
   <string name="wifi_country_ba">Bosnie-Herzégovine</string>
+  <string name="wifi_country_bw">Botswana</string>
   <string name="wifi_country_br">Brésil</string>
+  <string name="wifi_country_vg">Îles Vierges britanniques</string>
+  <string name="wifi_country_bn">Brunei</string>
   <string name="wifi_country_bg">Bulgarie</string>
   <string name="wifi_country_bf">Burkina Faso</string>
   <string name="wifi_country_bi">Burundi</string>
@@ -967,10 +1091,12 @@
   <string name="wifi_country_ca">Canada</string>
   <string name="wifi_country_cv">Cap-Vert</string>
   <string name="wifi_country_ky">Îles Caïmans</string>
+  <string name="wifi_country_cf">République Centre-Africaine</string>
   <string name="wifi_country_td">Tchad</string>
   <string name="wifi_country_cl">Chili</string>
   <string name="wifi_country_cn">Chine</string>
   <string name="wifi_country_co">Colombie</string>
+  <string name="wifi_country_km">Les Comores</string>
   <string name="wifi_country_cg">Congo</string>
   <string name="wifi_country_ck">Îles Cook</string>
   <string name="wifi_country_cr">Costa Rica</string>
@@ -980,27 +1106,36 @@
   <string name="wifi_country_cz">Republique Tchèque</string>
   <string name="wifi_country_dk">Danemark</string>
   <string name="wifi_country_dj">Djibouti</string>
+  <string name="wifi_country_dm">République Dominicaine</string>
   <string name="wifi_country_do">République Dominicaine</string>
   <string name="wifi_country_ec">Équateur</string>
   <string name="wifi_country_eg">Égypte</string>
+  <string name="wifi_country_sv">Salvador</string>
   <string name="wifi_country_gq">Guinée Équatoriale</string>
+  <string name="wifi_country_er">Érythrée</string>
   <string name="wifi_country_ee">Estonie</string>
   <string name="wifi_country_et">Éthiopie</string>
+  <string name="wifi_country_fk">Îles Falkland</string>
+  <string name="wifi_country_fo">Iles Féroé</string>
+  <string name="wifi_country_fj">Fidji</string>
   <string name="wifi_country_fi">Finlande</string>
   <string name="wifi_country_fr">France</string>
   <string name="wifi_country_gf">Guyane française</string>
   <string name="wifi_country_pf">Polynésie Française</string>
   <string name="wifi_country_ga">République du Gabon</string>
+  <string name="wifi_country_gm">Gambie</string>
   <string name="wifi_country_ge">Géorgie</string>
   <string name="wifi_country_de">Allemagne</string>
   <string name="wifi_country_gh">Ghana</string>
   <string name="wifi_country_gi">Gibraltar</string>
   <string name="wifi_country_gr">Grèce</string>
   <string name="wifi_country_gl">Groenland</string>
+  <string name="wifi_country_gd">Grenade</string>
   <string name="wifi_country_gp">Guadeloupe</string>
   <string name="wifi_country_gu">Guam</string>
   <string name="wifi_country_gt">Guatémala</string>
   <string name="wifi_country_gn">Guinée</string>
+  <string name="wifi_country_gw">Guinée Bissau</string>
   <string name="wifi_country_gy">Guyane</string>
   <string name="wifi_country_ht">Haïti</string>
   <string name="wifi_country_hn">Honduras</string>
@@ -1021,40 +1156,58 @@
   <string name="wifi_country_jo">Jordanie</string>
   <string name="wifi_country_kz">Kazakhstan</string>
   <string name="wifi_country_ke">Kenya</string>
+  <string name="wifi_country_ki">Kiribati</string>
   <string name="wifi_country_kr">Corée (du Sud)</string>
   <string name="wifi_country_kp">Corée (du Nord)</string>
   <string name="wifi_country_kw">Koweït</string>
+  <string name="wifi_country_kg">République Kirghize</string>
   <string name="wifi_country_la">Laos</string>
   <string name="wifi_country_lv">Lettonie</string>
   <string name="wifi_country_lb">Liban</string>
+  <string name="wifi_country_ls">Lesotho</string>
+  <string name="wifi_country_lr">Libéria</string>
   <string name="wifi_country_ly">Libye</string>
   <string name="wifi_country_li">Liechtenstein</string>
   <string name="wifi_country_lt">Lituanie</string>
   <string name="wifi_country_lu">Luxembourg</string>
+  <string name="wifi_country_mo">Macao</string>
   <string name="wifi_country_mg">Madagascar</string>
   <string name="wifi_country_mw">Malawi</string>
   <string name="wifi_country_my">Malaisie</string>
   <string name="wifi_country_mv">Maldives</string>
   <string name="wifi_country_ml">Mali</string>
   <string name="wifi_country_mt">Malte</string>
+  <string name="wifi_country_mh">Îles Marshall</string>
+  <string name="wifi_country_mr">Mauritanie</string>
+  <string name="wifi_country_mu">Île Maurice</string>
   <string name="wifi_country_mx">Mexique</string>
+  <string name="wifi_country_fm">Micronésie</string>
+  <string name="wifi_country_md">Moldavie</string>
   <string name="wifi_country_mc">Monaco</string>
   <string name="wifi_country_mn">Mongolie</string>
   <string name="wifi_country_me">Monténégro</string>
+  <string name="wifi_country_ms">Montserrat</string>
   <string name="wifi_country_ma">Maroc</string>
   <string name="wifi_country_mz">Mozambique</string>
+  <string name="wifi_country_mm">Myanmar</string>
   <string name="wifi_country_na">Namibie</string>
+  <string name="wifi_country_nr">Nauru</string>
   <string name="wifi_country_np">Népal</string>
   <string name="wifi_country_nl">Pays-Bas</string>
+  <string name="wifi_country_ai">Anguilla</string>
   <string name="wifi_country_nc">Nouvelle-Calédonie</string>
   <string name="wifi_country_nz">Nouvelle-Zélande</string>
   <string name="wifi_country_ni">Nicaragua</string>
   <string name="wifi_country_ne">Niger</string>
   <string name="wifi_country_ng">Nigéria</string>
+  <string name="wifi_country_mp">Îles Mariannes du Nord</string>
   <string name="wifi_country_no">Norvège</string>
+  <string name="wifi_country_om">Oman</string>
   <string name="wifi_country_pk">Pakistan</string>
+  <string name="wifi_country_pw">République des Palaos</string>
   <string name="wifi_country_ps">Palestine</string>
   <string name="wifi_country_pa">Panama</string>
+  <string name="wifi_country_pg">Papouasie Nouvelle-Guinée</string>
   <string name="wifi_country_py">Paraguay</string>
   <string name="wifi_country_pe">Pérou</string>
   <string name="wifi_country_ph">Philippines</string>
@@ -1062,9 +1215,12 @@
   <string name="wifi_country_pt">Portugal</string>
   <string name="wifi_country_pr">Porto Rico</string>
   <string name="wifi_country_qa">Qatar</string>
+  <string name="wifi_country_re">La Réunion</string>
   <string name="wifi_country_ro">Roumanie</string>
   <string name="wifi_country_ru">Russie (Féd. de)</string>
   <string name="wifi_country_rw">Rwanda</string>
+  <string name="wifi_country_kn">Saint Kitts et Nevis</string>
+  <string name="wifi_country_lc">Sainte Lucie</string>
   <string name="wifi_country_pm">Saint-Pierre-et-Miquelon</string>
   <string name="wifi_country_sa">Arabie Saoudite</string>
   <string name="wifi_country_sn">Sénégal</string>
@@ -1100,5 +1256,10 @@
   <string name="wifi_country_mk">Yougoslavie (ancienne)</string>
   <string name="wifi_country_zm">Zambie</string>
   <string name="wifi_country_zw">Zimbabwe</string>
+  <!-- WiFi auto-configure priorities -->
   <string name="wifi_auto_config_priorities">Priorité automatique</string>
+  <!-- Sizes for pattern lockscreen -->
+  <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+  <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+  <!-- Lock screen rotation -->
 </resources>

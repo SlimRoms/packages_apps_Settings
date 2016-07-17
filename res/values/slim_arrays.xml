@@ -25,6 +25,10 @@
         <item>@string/app_ops_categories_su</item>
     </string-array>
 
+    <string-array name="app_ops_categories_slim_su" translatable="false">
+        <item>@string/app_ops_categories_su</item>
+    </string-array>
+
     <!-- User display names for app ops codes - extension of AOSP -->
     <string-array name="app_ops_summaries_cm" translatable="false">
         <item>@string/app_ops_summaries_coarse_location</item>

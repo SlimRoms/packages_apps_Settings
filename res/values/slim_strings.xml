@@ -254,4 +254,7 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on secure lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <!-- Show superuser settings -->
+    <string name="superuser_settings_title">Superuser</string>
+
 </resources>

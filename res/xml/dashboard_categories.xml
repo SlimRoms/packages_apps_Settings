@@ -256,6 +256,16 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
+        <!-- Superuser -->
+        <dashboard-tile
+                android:id="@+id/superuser_settings"
+                android:title="@string/superuser_settings_title"
+                android:fragment="com.android.settings.applications.AppOpsSummary"
+                android:icon="@drawable/ic_settings_supersu" >
+                <extra android:name="superuserOnly" android:value="1" />
+                <!--extra android:name="appops_tab" android:value="@string/app_ops_categories_su" /-->
+        </dashboard-tile>
+
         <!-- About Device -->
         <dashboard-tile
                 android:id="@+id/about_settings"

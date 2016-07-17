@@ -235,6 +235,10 @@ public class AppOpsState {
             MEDIA_TEMPLATE, DEVICE_TEMPLATE, BOOTUP_TEMPLATE, SU_TEMPLATE
     };
 
+    public static final OpsTemplate[] SU_ONLY_TEMPLATES = new OpsTemplate[] {
+            SU_TEMPLATE
+    };
+
     /**
      * This class holds the per-item data in our Loader.
      */

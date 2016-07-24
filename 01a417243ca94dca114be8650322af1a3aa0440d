@@ -70,6 +70,30 @@
       "revId": "01a417243ca94dca114be8650322af1a3aa0440d",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_8ebd3b05",
+        "filename": "res/xml/slim_interface_settings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2016-07-24T12:51:35Z",
+      "side": 1,
+      "message": "lol the whitespace disappears if you turn off the setting in Gerrit... :p",
+      "parentUuid": "1acb0d3e_cec34389",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 2
+      },
+      "revId": "01a417243ca94dca114be8650322af1a3aa0440d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
     }
   ]
 }

@@ -20,6 +20,16 @@
     android:title="@string/status_bar_title">
 
     <PreferenceCategory
+            android:title="@string/status_bar_style_title">
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.slim.StatusBarClockStyle"
+            android:key="clock_style_pref"
+            android:title="@string/status_bar_clock" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:title="@string/battery_icon_options_title">
 
         <ListPreference

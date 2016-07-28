@@ -16,13 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Slim settings screens -->
-    <string name="navigation_settings_title">Navigation</string>
+    <!-- Slim Settings Screens -->
     <string name="header_category_personalization">Personalization</string>
-    <string name="interface_settings_title">Interface</string>
 
-    <!-- Navigation settings -->
-    <string name="navigation_settings_options_title">Navigation options</string>
+    <!-- Doze options -->
+    <string name="display_category_doze_options_title">Ambient display (doze) options</string>
 
     <!-- Names of categories of app ops tabs - extension of AOSP -->
     <string name="app_ops_categories_location">Location</string>
@@ -245,28 +243,9 @@
     <string name="proximity_wake_title">Prevent accidental wake up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
-    <!-- Doze options -->
-    <string name="display_category_doze_options_title">Ambient display (doze) options</string>
-    <string name="doze_settings_title">Advanced doze options</string>
-    <string name="doze_timeout_title">Doze pulse timeout</string>
-    <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
-    <string name="doze_trigger_pickup_title">Pick up gesture trigger</string>
-    <string name="doze_trigger_pickup_summary_on">Doze pulse will be triggered by pick up gesture sensor events</string>
-    <string name="doze_trigger_pickup_summary_off">Pick up gesture sensor will not be utilized as a triggering mechanism</string>
-    <string name="doze_trigger_sigmotion_title">Significant motion trigger</string>
-    <string name="doze_trigger_sigmotion_summary_on">Doze pulse will be triggered by significant motion sensor events</string>
-    <string name="doze_trigger_sigmotion_summary_off">Significant motion sensor will not be utilized as a triggering mechanism</string>
-    <string name="doze_trigger_notification_title">Notification trigger</string>
-    <string name="doze_trigger_notification_summary_on">Doze pulse will be triggered by notifications</string>
-    <string name="doze_trigger_notification_summary_off">Notifications will not be utilized as a trigger</string>
-    <string name="doze_schedule_title">Doze schedule</string>
-    <string name="doze_schedule_summary_on">Predefined doze repeat intervals (normally [1s,10s,30s,60s,120s]) will be used (default)</string>
-    <string name="doze_schedule_summary_off">Doze will only pulse once per notification</string>
-    <string name="doze_brightness_title">Doze brightness level</string>
-    <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
-    <string name="doze_wakeup_doubletap_title">Double-tap to wake on doze</string>
-    <string name="doze_wakeup_doubletap_summary_on">Require a double-tap to wake the device on a doze pulse screen</string>
-    <string name="doze_wakeup_doubletap_summary_off">Require a single-tap to wake the device on a doze pulse screen (default)</string>
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
 
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Advanced reboot</string>
@@ -274,183 +253,5 @@
     <string name="advanced_reboot_disabled">Disable</string>
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
-
-    <!-- Hardware keys -->
-    <string name="button_keys_title">Hardware Buttons</string>
-    <string name="keys_bindings_title">Key actions</string>
-    <string name="keys_enable_custom_title">Enable custom actions</string>
-    <string name="keys_enable_custom_summary">Enable custom hardware key actions</string>
-    <string name="keys_back_press_title">Back key</string>
-    <string name="keys_back_long_press_title">Back key (long press)</string>
-    <string name="keys_back_double_tap_title">Back key (double tap)</string>
-    <string name="keys_home_press_title">Home key</string>
-    <string name="keys_home_long_press_title">Home key (long press)</string>
-    <string name="keys_home_double_tap_title">Home key (double tap)</string>
-    <string name="keys_menu_press_title">Menu key</string>
-    <string name="keys_menu_long_press_title">Menu key (long press)</string>
-    <string name="keys_menu_double_tap_title">Menu key (double tap)</string>
-    <string name="keys_assist_press_title">Search key</string>
-    <string name="keys_assist_long_press_title">Search key (long press)</string>
-    <string name="keys_assist_double_tap_title">Search key (double tap)</string>
-    <string name="keys_app_switch_press_title">App switch key</string>
-    <string name="keys_app_switch_long_press_title">App switch key (long press)</string>
-    <string name="keys_app_switch_double_tap_title">App switch key (double tap)</string>
-    <string name="keys_camera_press_title">Camera key</string>
-    <string name="keys_camera_long_press_title">Camera key (long press)</string>
-    <string name="keys_camera_double_tap_title">Camera key (double tap)</string>
-    <string name="keys_action_normal">Normal press</string>
-    <string name="keys_action_long">Long press</string>
-    <string name="keys_action_double">Double tap</string>
-    <string name="no_home_key">You have no button assigned any more to the \"Home\" action!\n\nThis can make your device unusable!</string>
-
-    <!-- Slim Shortcuts -->
-    <string name="slim_shortcut_picker">Slim Actions</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-
-    <!-- Chamber of Secrets -->
-    <string name="chamber_title">Chamber of secrets</string>
-    <string name="chamber_toast">The chamber of secrets has opened</string>
-
-    <!-- Device specific settings -->
-    <string name="screen_off_gesture_settings_title">Screen off gestures</string>
-
-    <!-- Status bar -->
-    <string name="status_bar_title">Statusbar</string>
-    <string name="status_bar_style_title">Statusbar style</string>
-
-    <!-- Status bar - Battery Options -->
-    <string name="battery_icon_options_title">Battery icon options</string>
-
-    <!-- Status bar - Battery Style -->
-    <string name="status_bar_battery_style_title">Battery status style</string>
-    <string name="status_bar_battery_style_circle">Circle</string>
-    <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
-    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
-
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Show battery percentage</string>
-    <string name="status_bar_battery_percentage_dialog_title">Battery percentage</string>
-    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
-    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
-
-    <!-- Navigation bar -->
-    <string name="navigation_bar">Navigation bar</string>
-    <string name="navigation_settings_category">Navigation</string>
-    <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
-    <string name="navigation_bar_size_36_dp">36 dp</string>
-    <string name="navigation_bar_size_30_dp">30 dp</string>
-    <string name="navigation_bar_size_24_dp">24 dp</string>
-    <string name="navigation_bar_size_48_dp_default">48 dp (default)</string>
-    <string name="navigation_bar_size_44_dp">44 dp</string>
-    <string name="navigation_bar_size_40_dp">40 dp</string>
-    <string name="navigation_bar_size_42_dp">42 dp</string>
-    <string name="navigation_bar_size_0_dp">0 dp (off)</string>
-    <string name="navigation_menu_right">Right</string>
-    <string name="navigation_menu_left">Left</string>
-    <string name="navigation_menu_both">Both</string>
-    <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
-    <string name="navigation_menu_never_show">Never show</string>
-    <string name="navigation_menu_always_show">Always show</string>
-    <string name="navbar_button_cat">Navigation bar buttons</string>
-    <string name="title_pref_menu_location">Menu location</string>
-    <string name="summary_pref_menu_location">Where do you want the menu buttons to appear?</string>
-    <string name="title_pref_menu_display">Menu visibility</string>
-    <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
-    <string name="navbar_enable_bar">Enable navigation bar</string>
-    <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
-    <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
-    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation bar height while in landscape.</string>
-    <string name="navigation_bar_width_title">Navigation bar width</string>
-    <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
-    <string name="navbar_can_move">Show landscape</string>
-    <string name="navbar_can_move_summary">Shows navigation bar in landscape on the bottom</string>
-    <string name="navbar_style_dimen_title">Dimensions</string>
-    <string name="navbar_style_dimen_summary">Change navigation bar height</string>
-    <string name="navbar_button_title">Buttons</string>
-    <string name="navbar_button_summary">Configure the buttons to show on navigation bar</string>
-    <string name="navbar_cat">Navigation bar</string>
-    <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
-    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
-
-    <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style">Button style</string>
-    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
-    <string name="button_transparency_title">Button transparency</string>
-    <string name="navigation_bar_icon_tint_title">Button color</string>
-    <string name="nav_button_color_mode_title">Color mode</string>
-    <string name="nav_button_color_mode_dialog_title">Colorize</string>
-    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
-    <string name="navigation_bar_glow_tint_title">Button glow color</string>
-
-    <!-- Icon color options -->
-    <string name="icon_color_mode_all_icons">All icons</string>
-    <string name="icon_color_mode_system_icons">System icons</string>
-    <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
-
-    <!-- Recent panel -->
-    <string name="recent_panel_category">Recent apps panel</string>
-    <string name="use_slim_recents_title">Slim recents</string>
-    <string name="show_running_tasks_title">Only show running apps</string>
-    <string name="recents_max_apps_title">Max allowed apps</string>
-    <string name="recent_panel_scale_title">Size</string>
-    <string name="recent_panel_expanded_mode_title">Expanded mode</string>
-    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
-    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
-    <string name="recent_panel_expanded_mode_always">Always</string>
-    <string name="recent_panel_expanded_mode_never">Never</string>
-    <string name="recent_panel_show_topmost_title">Show topmost task</string>
-    <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
-    <string name="recent_panel_bg_color_title">Panel background color</string>
-    <string name="recent_card_bg_color_title">Card background color</string>
-    <string name="recent_card_text_color_title">Card text color</string>
-
-    <!-- ATTENTION: RTL languages need to replace left with right -->
-    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
-    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
-
-    <!-- Clock & Date options -->
-    <string name="status_bar_clock">Clock and date appearance</string>
-    <string name="status_bar_clock_title">Clock and date style</string>
-    <string name="clock_title_enable">Alignment</string>
-    <string name="clock_enabled">Enabled</string>
-    <string name="clock_disabled">Disabled</string>
-    <string name="clock_color_title">Color</string>
-    <string name="status_bar_clock_style_reset">Reset color</string>
-    <string name="status_bar_show_clock_title">Show clock and date</string>
-    <string name="status_bar_clock_color_override">Use custom color</string>
-    <string name="status_bar_am_pm_title">AM/PM</string>
-    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
-    <string name="left_clock">Left clock</string>
-    <string name="dont_show">Don\'t show</string>
-    <string name="clock_date_display">Date</string>
-    <string name="clock_date_display_summary">Display custom date before the clock</string>
-    <string name="clock_date_style">Date style</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
-    <string name="clock_date_string_edittext_summary">Enter string</string>
-    <string name="am_pm_clock_normal">Normal font size</string>
-    <string name="am_pm_clock_small">Small font size</string>
-    <string name="am_pm_clock_none">Don\'t show</string>
-    <string name="clock_date_display_none">Don\'t show</string>
-    <string name="clock_date_display_small">Small font size</string>
-    <string name="clock_date_display_normal">Normal font size</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Lowercase</string>
-    <string name="clock_date_style_uppercase">Uppercase</string>
-    <string name="clock_date_format_custom">Custom java format</string>
-    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
 </resources>

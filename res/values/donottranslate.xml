@@ -37,4 +37,5 @@
     <string name="category_key_device">com.android.settings.category.device</string>
     <string name="category_key_personal">com.android.settings.category.personal</string>
     <string name="category_key_system">com.android.settings.category.system</string>
+    <string name="category_key_personalization">com.android.settings.category.personalization</string>
 </resources>

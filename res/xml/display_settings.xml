@@ -119,7 +119,7 @@
                 android:defaultValue="true"
                 android:persistent="false" />
 
-            <com.android.settings.slim.SlimSystemSettingSwitchPreference
+            <org.slim.preference.SlimSystemSettingSwitchPreference
                 android:key="proximity_on_wake"
                 android:title="@string/proximity_wake_title"
                 android:summary="@string/proximity_wake_summary"
@@ -140,8 +140,9 @@
             <PreferenceScreen
                 android:fragment="com.android.settings.slim.fragments.DozeSettingsFragment"
                 android:key="advanced_doze_options"
-                android:title="@string/doze_settings_title"
-                android:dependency="doze" />
+                android:dependency="doze">
+                <intent android:action="com.slim.settings.action.DOZE_SETTINGS" />
+            </PreferenceScreen>
 
          </PreferenceCategory>
 

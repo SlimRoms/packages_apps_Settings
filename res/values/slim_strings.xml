@@ -254,4 +254,10 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <!-- Volume keys wake and music control -->
+    <string name="volume_key_wake_device_title">Volume keys wake</string>
+    <string name="volume_key_wake_device_summary">Pressing either volume button will wake your device</string>
+    <string name="volume_key_music_controls_title">Volume keys playback control</string>
+    <string name="volume_key_music_controls_summary">When the screen is off, long pressing the volume buttons will seek music tracks</string>
+
 </resources>

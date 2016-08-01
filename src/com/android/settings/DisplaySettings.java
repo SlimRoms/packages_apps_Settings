@@ -100,6 +100,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_VOLUME_WAKE_DEVICE = "volume_key_wake_device";
+    private static final String KEY_VOLUME_MUSIC_CONTROLS = "volume_key_music_controls";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -126,6 +128,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mDozePreference;
     private PreferenceScreen mAdvancedDozeOptions;
     private SwitchPreference mProximityCheckOnWakePreference;
+    private SwitchPreference mVolumeKeyWakeScreen;
+    private SwitchPreference mVolumeKeyMusicControls;
 
     @Override
     protected int getMetricsCategory() {
@@ -316,6 +320,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
             SlimSettings.System.putInt(resolver, SlimSettings.System.PROXIMITY_ON_WAKE, 0);
         }
+
+        mVolumeKeyWakeScreen = (SwitchPreference) findPreference(KEY_VOLUME_WAKE_DEVICE);
+        mVolumeKeyWakeScreen.setOnPreferenceChangeListener(this);
+        mVolumeKeyWakeScreen.setChecked(SlimSettings.System.getInt(getContentResolver(),
+                SlimSettings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+
+        mVolumeKeyMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+        mVolumeKeyMusicControls.setOnPreferenceChangeListener(this);
+        mVolumeKeyMusicControls.setChecked(SlimSettings.System.getInt(getContentResolver(),
+                SlimSettings.System.VOLBTN_MUSIC_CONTROLS, 0) == 1);
 
     }
 
@@ -672,6 +686,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
             SlimSettings.System.putInt(getContentResolver(),
                     SlimSettings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    (Boolean) objValue ? 1 : 0);
+        }
+
+        if (KEY_VOLUME_WAKE_DEVICE.equals(key)) {
+            SlimSettings.System.putInt(getContentResolver(),
+                    SlimSettings.System.VOLUME_WAKE_SCREEN,
+                    (Boolean) objValue ? 1 : 0);
+        }
+
+        if (KEY_VOLUME_MUSIC_CONTROLS.equals(key)) {
+            SlimSettings.System.putInt(getContentResolver(),
+                    SlimSettings.System.VOLBTN_MUSIC_CONTROLS,
                     (Boolean) objValue ? 1 : 0);
         }
 

@@ -125,6 +125,20 @@
                 android:summary="@string/proximity_wake_summary"
                 android:defaultValue="true" />
 
+            <org.slim.preference.SlimSystemSettingSwitchPreference
+                android:key="volume_key_wake_device"
+                android:title="@string/volume_key_wake_device_title"
+                android:summary="@string/volume_key_wake_device_summary"
+                android:disableDependentsState="true"
+                android:defaultValue="false" />
+
+            <org.slim.preference.SlimSystemSettingSwitchPreference
+                android:key="volume_key_music_controls"
+                android:title="@string/volume_key_music_controls_title"
+                android:summary="@string/volume_key_music_controls_summary"
+                android:dependency="volume_key_wake_device"
+                android:defaultValue="true" />
+
         </PreferenceCategory>
 
         <PreferenceCategory

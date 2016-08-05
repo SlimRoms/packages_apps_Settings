@@ -140,8 +140,9 @@
             <PreferenceScreen
                 android:fragment="com.android.settings.slim.fragments.DozeSettingsFragment"
                 android:key="advanced_doze_options"
+                android:title="@string/doze_settings_title"
                 android:dependency="doze">
-                <intent android:action="com.slim.settings.action.DOZE_SETTINGS" />
+                <intent android:action="org.slim.settings.action.DOZE_SETTINGS" />
             </PreferenceScreen>
 
          </PreferenceCategory>

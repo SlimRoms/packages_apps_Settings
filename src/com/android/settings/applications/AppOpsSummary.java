@@ -134,10 +134,16 @@ public class AppOpsSummary extends InstrumentedFragment {
 
         mPageNames = getResources().getTextArray(R.array.app_ops_categories_cm);
 
-        int defaultTab = -1;
+        mPositionOffset = 0;
+
+        int specificTab = -1;
         Bundle bundle = getArguments();
         if (bundle != null) {
-            defaultTab = Arrays.asList(mPageNames).indexOf(bundle.getString("appops_tab", ""));
+            specificTab = Arrays.asList(mPageNames).indexOf(bundle.getString("appops_tab", ""));
+            if (specificTab >= 0) {
+                mPageNames = Arrays.copyOfRange(mPageNames, specificTab, specificTab + 1);
+                mPositionOffset = specificTab;
+            }
         }
 
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);

@@ -124,7 +124,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mLcdDensityPreference;
     private PreferenceCategory mDozeCategory;
     private SwitchPreference mDozePreference;
-    private PreferenceScreen mAdvancedDozeOptions;
     private SwitchPreference mProximityCheckOnWakePreference;
 
     @Override
@@ -219,6 +218,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             // Doze master switch
             mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
             mDozePreference.setOnPreferenceChangeListener(this);
+            Utils.updatePreferenceToSpecificActivityOrRemove(getActivity(), prefSet,
+                    KEY_ADVANCED_DOZE_OPTIONS, 1);
         } else {
             prefSet.removePreference(mDozeCategory);
         }

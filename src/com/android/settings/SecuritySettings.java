@@ -38,6 +38,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
@@ -212,6 +213,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (mIsPrimary) {
             // App security settings
             addPreferencesFromResource(R.xml.security_settings_app_slim);
+
+            // remove privacy guard if not enabled
+            if (!PreferenceManager.getDefaultSharedPreferences(getActivity())
+                    .getBoolean("privacy_guard_enable", false)) {
+                root.removePreference(findPreference("privacy_guard_manager"));
+            }
         }
 
         // Add options for lock/unlock screen

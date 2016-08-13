@@ -61,7 +61,10 @@ public class AdvancedAppSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.advanced_apps);
 
         Preference permissions = getPreferenceScreen().findPreference(KEY_APP_PERM);
-        permissions.setIntent(new Intent(Intent.ACTION_MANAGE_PERMISSIONS));
+
+        Intent intent = new Intent(Intent.ACTION_MANAGE_PERMISSIONS);
+        intent.setPackage("com.slim.permissionhandler");
+        permissions.setIntent(intent);
 
         ApplicationsState applicationsState = ApplicationsState.getInstance(
                 getActivity().getApplication());

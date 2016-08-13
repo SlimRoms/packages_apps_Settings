@@ -54,6 +54,11 @@
         android:title="@string/oem_unlock_enable"
         android:summary="@string/oem_unlock_enable_summary"/>
 
+    <SwitchPreference
+        android:key="privacy_guard_enable"
+        android:title="@string/privacy_guard_enable_title"
+        android:summary="@string/privacy_guard_enable_summary" />
+
     <PreferenceScreen
         android:key="running_apps"
         android:title="@string/runningservices_settings_title"

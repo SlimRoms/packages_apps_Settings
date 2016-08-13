@@ -257,4 +257,8 @@
     <!-- Show superuser settings -->
     <string name="superuser_settings_title">Superuser</string>
 
+    <!-- Privacy guard enable switch -->
+    <string name="privacy_guard_enable_title">Enable Privacy Guard Manager</string>
+    <string name="privacy_guard_enable_summary">Show Privacy Guard Manager in Security Settings.</string>
+
 </resources>

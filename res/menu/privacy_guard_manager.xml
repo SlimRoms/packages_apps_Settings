@@ -17,7 +17,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/reset"
           android:showAsAction="always"
-          android:icon="@*android:drawable/ic_menu_refresh"
+          android:icon="@*org.slim.framework:drawable/ic_settings_reset"
           android:title="@string/privacy_guard_reset_title" />
     <item android:id="@+id/show_system_apps"
           android:title="@string/privacy_guard_manager_show_system_apps"

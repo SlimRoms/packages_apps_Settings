@@ -132,23 +132,31 @@ public class AppOpsSummary extends InstrumentedFragment {
         mContentContainer = container;
         mRootView = rootView;
 
-        mPageNames = getResources().getTextArray(R.array.app_ops_categories_slim);
+        Boolean mSuperuserOnly = getArguments().getInt("superuserOnly", 0) == 1;
+        String defaultTabName = getArguments().getString("appops_tab", "");
+
+        mPageNames = mSuperuserOnly ?
+                getResources().getTextArray(R.array.app_ops_categories_slim_su)
+                : getResources().getTextArray(R.array.app_ops_categories_slim);
 
         int defaultTab = -1;
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            defaultTab = Arrays.asList(mPageNames).indexOf(bundle.getString("appops_tab", ""));
+        if (defaultTabName != "") {
+            defaultTab = Arrays.asList(mPageNames).indexOf(defaultTabName);
         }
 
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
         mAdapter = new MyPagerAdapter(getChildFragmentManager(),
-                filterTemplates(AppOpsState.ALL_TEMPLATES));
+                filterTemplates(mSuperuserOnly ?
+                        AppOpsState.SU_ONLY_TEMPLATES : AppOpsState.ALL_TEMPLATES));
         mViewPager.setAdapter(mAdapter);
         if (defaultTab >= 0) {
             mViewPager.setCurrentItem(defaultTab);
         }
         mViewPager.setOnPageChangeListener(mAdapter);
         PagerTabStrip tabs = (PagerTabStrip) rootView.findViewById(R.id.tabs);
+        if (mSuperuserOnly) {
+            tabs.setVisibility(View.GONE);
+        }
 
         Resources.Theme theme = tabs.getContext().getTheme();
         TypedValue typedValue = new TypedValue();

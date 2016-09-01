@@ -70,6 +70,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final int ACTION_KILL_APP = 11;
     private static final int ACTION_LAST_APP = 12;
     private static final int ACTION_CUSTOM_APP = 13;
+    private static final int ACTION_WIDGETS = 14;
+    private static final int ACTION_QUICKSETTINGS = 15;
     private static final int ACTION_CAMERA = 16;
 
     // Masks for checking presence of hardware keys.

@@ -761,6 +761,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!isCameraDoubleTapPowerGestureAvailable(context.getResources())) {
                         result.add(KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE);
                     }
+                    if (!context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_proximityCheckOnWake)) {
+                        result.add(KEY_PROXIMITY_WAKE);
+                    }
                     return result;
                 }
             };

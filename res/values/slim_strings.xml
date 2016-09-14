@@ -25,4 +25,9 @@
     <string name="slim_version_title">Slim version</string>
     <string name="slim_version_default">Unknown</string>
 
+    <!-- Reset battery stats -->
+    <string name="ok">Okay</string>
+    <string name="menu_stats_reset">Reset stats</string>
+    <string name="reset_stats_msg">Battery history stats are going to be reset</string>
+
 </resources>

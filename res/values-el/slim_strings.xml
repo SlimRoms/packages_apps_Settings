@@ -137,6 +137,7 @@
   <string name="advanced_reboot_title">Προηγμένη επανεκκίνηση</string>
   <string name="advanced_reboot_dialog_title">Προηγμένο μενού επανεκκίνησης</string>
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
-  <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη σε ασφαλές οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

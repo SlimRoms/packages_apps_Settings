@@ -233,6 +233,7 @@
   <string name="advanced_reboot_title">Reinicio avançado</string>
   <string name="advanced_reboot_dialog_title">Menu de reinicialização avançado</string>
   <string name="advanced_reboot_disabled">Desativar</string>
-  <string name="advanced_reboot_hide_on_keyguard">Esconder no ecrã de bloqueio protegido</string>
   <string name="advanced_reboot_show_always">Mostrar sempre</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

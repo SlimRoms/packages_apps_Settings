@@ -149,6 +149,7 @@
   <string name="app_ops_labels_make_call">Anruf tätigen</string>
   <string name="app_ops_labels_use_fingerprint">Fingerabdruck nutzen</string>
   <string name="app_ops_labels_use_body_sensors">Körper-Sensoren verwenden</string>
+  <string name="app_ops_labels_mock_location">Standort abrufen</string>
   <string name="app_ops_labels_read_external_storage">Externen Speicher lesen</string>
   <string name="app_ops_labels_write_external_storage">Externen Speicher beschreiben</string>
   <string name="app_ops_labels_turn_screen_on">Bildschirm einschalten</string>
@@ -215,10 +216,15 @@
   <string name="proximity_wake_title">Unbeabsichtigtes Aufwecken verhindern</string>
   <string name="proximity_wake_summary">Vor Einschalten des Bildschirms Näherungssensor überprüfen</string>
   <!-- Chamber of Secrets -->
+  <string name="chamber_title">Geheimkammer</string>
+  <string name="chamber_toast">Die Geheimkammer ist geöffnet</string>
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Erweitertes Neustartmenü</string>
   <string name="advanced_reboot_dialog_title">Erweitertes Neustartmenü</string>
   <string name="advanced_reboot_disabled">Deaktivieren</string>
   <string name="advanced_reboot_hide_on_keyguard">Auf gesichertem Sperrbildschirm verbergen</string>
   <string name="advanced_reboot_show_always">Immer anzeigen</string>
+  <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Superuser</string>
+  <!-- Privacy guard enable switch -->
 </resources>

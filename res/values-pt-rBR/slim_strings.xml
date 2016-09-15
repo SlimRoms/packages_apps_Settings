@@ -237,4 +237,9 @@
   <string name="advanced_reboot_disabled">Desativar</string>
   <string name="advanced_reboot_hide_on_keyguard">Esconder na tela de bloqueio protegida</string>
   <string name="advanced_reboot_show_always">Mostrar sempre</string>
+  <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Superusuário</string>
+  <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Ativar Gerenciador de Proteção à Privacidade</string>
+  <string name="privacy_guard_enable_summary">Mostrar Gerenciador de Proteção à Privacidade nas Configurações de Segurança.</string>
 </resources>

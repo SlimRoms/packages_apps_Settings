@@ -162,6 +162,7 @@
   <string name="advanced_reboot_title">Redémarrage avancé</string>
   <string name="advanced_reboot_dialog_title">Menu Redémarrage avancé</string>
   <string name="advanced_reboot_disabled">Désactiver</string>
-  <string name="advanced_reboot_hide_on_keyguard">Masquer sur écran verrouillé</string>
   <string name="advanced_reboot_show_always">Toujours afficher</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

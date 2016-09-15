@@ -137,6 +137,7 @@
   <string name="advanced_reboot_title">Geavanceerd herstarten</string>
   <string name="advanced_reboot_dialog_title">Menu voor geavanceerd opstarten</string>
   <string name="advanced_reboot_disabled">Uitschakelen</string>
-  <string name="advanced_reboot_hide_on_keyguard">Verberg op beveiligd lockscreen</string>
   <string name="advanced_reboot_show_always">Altijd tonen</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

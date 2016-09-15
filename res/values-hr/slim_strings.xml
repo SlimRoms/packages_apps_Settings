@@ -137,6 +137,7 @@
   <string name="advanced_reboot_title">Opcije ponovnog pokretanja sustava</string>
   <string name="advanced_reboot_dialog_title">Proširene opcije Menija ponovnog pokretanja</string>
   <string name="advanced_reboot_disabled">Onemogući</string>
-  <string name="advanced_reboot_hide_on_keyguard">Sakrij pri kodiranom zaključanom zaslonu</string>
   <string name="advanced_reboot_show_always">Uvijek pokaži</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

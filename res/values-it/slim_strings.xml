@@ -162,6 +162,7 @@
   <string name="advanced_reboot_title">Riavvio avanzato</string>
   <string name="advanced_reboot_dialog_title">Menu riavvio avanzato</string>
   <string name="advanced_reboot_disabled">Disattivato</string>
-  <string name="advanced_reboot_hide_on_keyguard">Nascondi con schermata di blocco protetta</string>
   <string name="advanced_reboot_show_always">Mostra sempre</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

@@ -162,6 +162,7 @@
   <string name="advanced_reboot_title">Rozšířený restart</string>
   <string name="advanced_reboot_dialog_title">Nabídka rozšířeného restartu</string>
   <string name="advanced_reboot_disabled">Nezobrazovat</string>
-  <string name="advanced_reboot_hide_on_keyguard">Skrýt na zabezpečené obrazovce</string>
   <string name="advanced_reboot_show_always">Vždy zobrazit</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

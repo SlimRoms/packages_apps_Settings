@@ -162,6 +162,7 @@
   <string name="advanced_reboot_title">Варианты перезагрузки</string>
   <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
   <string name="advanced_reboot_disabled">Отключить</string>
-  <string name="advanced_reboot_hide_on_keyguard">Скрывать на защищенном экране блокировки</string>
   <string name="advanced_reboot_show_always">Показывать всегда</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

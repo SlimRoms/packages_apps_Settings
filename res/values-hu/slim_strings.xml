@@ -163,6 +163,7 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="advanced_reboot_title">Speciális újraindítás</string>
   <string name="advanced_reboot_dialog_title">Haladó újarindítási menü</string>
   <string name="advanced_reboot_disabled">Tiltva</string>
-  <string name="advanced_reboot_hide_on_keyguard">elrejti a biztosított zárképernyőn</string>
   <string name="advanced_reboot_show_always">Mindig mutassa</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

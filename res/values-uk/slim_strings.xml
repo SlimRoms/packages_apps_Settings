@@ -137,6 +137,7 @@
   <string name="advanced_reboot_title">Розширене перезавантаження</string>
   <string name="advanced_reboot_dialog_title">Розширене меню перезавантаження</string>
   <string name="advanced_reboot_disabled">Вимкнути</string>
-  <string name="advanced_reboot_hide_on_keyguard">Приховувати на захищеному екрані блокування</string>
   <string name="advanced_reboot_show_always">Завжди показувати</string>
+  <!-- Show superuser settings -->
+  <!-- Privacy guard enable switch -->
 </resources>

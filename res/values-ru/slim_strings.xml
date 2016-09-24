@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Slim Settings Screens -->
+  <string name="header_category_personalization">Персонализация</string>
   <!-- Doze options -->
+  <string name="display_category_doze_options_title">Настройки Ambient display</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <string name="app_ops_categories_location">Местоположение</string>
   <string name="app_ops_categories_personal">Личные данные</string>
@@ -37,6 +39,8 @@
   <string name="app_ops_summaries_modify_call_log">изменение журнала вызовов</string>
   <string name="app_ops_summaries_read_calendar">чтение данных календаря</string>
   <string name="app_ops_summaries_modify_calendar">изменение календаря</string>
+  <string name="app_ops_summaries_wifi_scan">Сканирование Wi-Fi</string>
+  <string name="app_ops_summaries_notification">Вывод обычного/всплывающего уведомления</string>
   <string name="app_ops_summaries_cell_scan">поиск мобильных сетей</string>
   <string name="app_ops_summaries_call_phone">телефонный звонок</string>
   <string name="app_ops_summaries_read_sms">чтение SMS</string>
@@ -68,10 +72,36 @@
   <string name="app_ops_summaries_keep_awake">активный режим</string>
   <string name="app_ops_summaries_monitor_location">отслеживание местоположения</string>
   <string name="app_ops_summaries_monitor_high_power_location">отслеживание высокоточного местоположения</string>
+  <string name="app_ops_summaries_get_usage_stats">Получение статистики использования</string>
   <string name="app_ops_summaries_mute_unmute_microphone">вкл/выкл микрофон</string>
   <string name="app_ops_summaries_toast_window">всплывающее уведомление</string>
   <string name="app_ops_summaries_project_media">проект медиа</string>
+  <string name="app_ops_summaries_activate_vpn">Активация VPN</string>
+  <string name="app_ops_summaries_write_wallpaper">Запись обоев</string>
+  <string name="app_ops_summaries_assist_structure">Помощь в структуре</string>
+  <string name="app_ops_summaries_assist_screenshot">Помощь в скриншоте</string>
+  <string name="app_ops_summaries_read_phone_state">Чтение состояние телефона</string>
+  <string name="app_ops_summaries_add_voicemail">Добавление голосового сообщения</string>
+  <string name="app_ops_summaries_use_sip">Использование SIP</string>
+  <string name="app_ops_summaries_make_call">Осуществление вызова</string>
+  <string name="app_ops_summaries_use_fingerprint">Использование отпечатка пальца</string>
+  <string name="app_ops_summaries_use_body_sensors">Использование датчиков тела</string>
+  <string name="app_ops_summaries_read_cell_broadcasts">Чтение информации о сети</string>
+  <string name="app_ops_summaries_mock_location">Фиктивное местоположение</string>
+  <string name="app_ops_summaries_read_external_storage">Чтение внешнего носителя</string>
+  <string name="app_ops_summaries_write_external_storage">Запись на внешний носитель</string>
+  <string name="app_ops_summaries_turn_screen_on">Включение экрана</string>
+  <string name="app_ops_summaries_get_accounts">Получение аккаунтов</string>
+  <string name="app_ops_summaries_toggle_wifi">Переключение Wi-Fi</string>
+  <string name="app_ops_summaries_toggle_bluetooth">Переключение Bluetooth</string>
+  <string name="app_ops_summaries_start_at_boot">Запуск при загрузке</string>
+  <string name="app_ops_summaries_toggle_nfc">Переключение NFC</string>
+  <string name="app_ops_summaries_toggle_mobile_data">Переключение передачи мобильных данных</string>
+  <string name="app_ops_summaries_superuser">Суперпользователь</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_coarse_location">Приблизительное местоположение</string>
+  <string name="app_ops_labels_fine_location">Точное местоположение</string>
+  <string name="app_ops_labels_gps">GPS</string>
   <string name="app_ops_labels_vibrate">Вибрация</string>
   <string name="app_ops_labels_read_contacts">Чтение контактов</string>
   <string name="app_ops_labels_modify_contacts">Изменение контактов</string>
@@ -79,10 +109,19 @@
   <string name="app_ops_labels_modify_call_log">Изменение журнала вызовов</string>
   <string name="app_ops_labels_read_calendar">Чтение данных календаря</string>
   <string name="app_ops_labels_modify_calendar">Изменение календаря</string>
+  <string name="app_ops_labels_wifi_scan">Сканирование Wi-Fi</string>
+  <string name="app_ops_labels_notification">Вывод обычного/всплывающего уведомления</string>
+  <string name="app_ops_labels_cell_scan">Сканирование сети</string>
   <string name="app_ops_labels_call_phone">Телефонный звонок</string>
+  <string name="app_ops_labels_read_sms">Чтение СМС</string>
+  <string name="app_ops_labels_write_sms">Создание СМС</string>
   <string name="app_ops_labels_receive_sms">Получение SMS</string>
+  <string name="app_ops_labels_receive_emergency_sms">Получение экстренных СМС</string>
   <string name="app_ops_labels_receive_mms">Получение MMS</string>
+  <string name="app_ops_labels_receive_wap_push">Получение сообщений WAP-push</string>
   <string name="app_ops_labels_send_sms">Отправка SMS</string>
+  <string name="app_ops_labels_read_icc_sms">Чтение СМС с SIM-карты</string>
+  <string name="app_ops_labels_write_icc_sms">Запись СМС на SIM-карту</string>
   <string name="app_ops_labels_modify_settings">Изменение настроек</string>
   <string name="app_ops_labels_draw_on_top">Отображение поверх других элементов</string>
   <string name="app_ops_labels_access_notifications">Доступ к уведомлениям</string>
@@ -101,11 +140,38 @@
   <string name="app_ops_labels_notification_volume">Громкость уведомлений</string>
   <string name="app_ops_labels_bluetooth_volume">Громкость Bluetooth-устройств</string>
   <string name="app_ops_labels_keep_awake">Активный режим</string>
+  <string name="app_ops_labels_monitor_location">Отслеживание местоположения</string>
+  <string name="app_ops_labels_monitor_high_power_location">Высокоточное отслеживание местоположения</string>
+  <string name="app_ops_labels_get_usage_stats">Получение статистики использования</string>
   <string name="app_ops_labels_mute_unmute_microphone">Отключение/включение микрофона</string>
   <string name="app_ops_labels_toast_window">Всплывающее уведомление</string>
   <string name="app_ops_labels_project_media">Проект медиа</string>
   <string name="app_ops_labels_activate_vpn">Активация VPN</string>
+  <string name="app_ops_labels_write_wallpaper">Запись обоев</string>
+  <string name="app_ops_labels_assist_structure">Помощь в структуре</string>
+  <string name="app_ops_labels_assist_screenshot">Помощь в снимке экрана</string>
+  <string name="app_ops_labels_read_phone_state">Чтение состояния телефона</string>
+  <string name="app_ops_labels_add_voicemail">Добавление голосовых сообщений</string>
+  <string name="app_ops_labels_use_sip">Использование SIP</string>
+  <string name="app_ops_labels_make_call">Осуществление вызова</string>
+  <string name="app_ops_labels_use_fingerprint">Использование отпечатка пальца</string>
+  <string name="app_ops_labels_use_body_sensors">Использование датчиков тела</string>
+  <string name="app_ops_labels_read_cell_broadcasts">Чтение информации о сети</string>
+  <string name="app_ops_labels_mock_location">Фиктивное местоположение</string>
+  <string name="app_ops_labels_read_external_storage">Чтение внешнего накопителя</string>
+  <string name="app_ops_labels_write_external_storage">Запись на внешний накопитель</string>
+  <string name="app_ops_labels_turn_screen_on">Включение экрана</string>
+  <string name="app_ops_labels_get_accounts">Получение учёных записей</string>
+  <string name="app_ops_labels_change_wifi">Переключение Wi-Fi</string>
+  <string name="app_ops_labels_toggle_bluetooth">Переключение Bluetooth</string>
+  <string name="app_ops_labels_start_at_boot">Запуск при загрузке</string>
+  <string name="app_ops_labels_toggle_nfc">Переключение NFC</string>
+  <string name="app_ops_labels_toggle_mobile_data">Переключение передачи мобильных данных</string>
+  <string name="app_ops_labels_superuser">Root-доступ</string>
   <!-- App ops permissions -->
+  <string name="app_ops_permissions_allowed">Разрешено</string>
+  <string name="app_ops_permissions_ignored">Игнорировать</string>
+  <string name="app_ops_permissions_always_ask">Всегда спрашивать</string>
   <!-- App ops detail -->
   <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (использовалось <xliff:g id="count">%2$s</xliff:g>)</string>
   <string name="app_ops_allowed_count">Разрешено <xliff:g id="count" example="2 times">%s</xliff:g></string>
@@ -118,6 +184,7 @@
   <string name="app_ops_reset_confirm_title">Подтвердите сброс счетчиков</string>
   <string name="app_ops_reset_confirm_mesg">Вы уверены, что хотите сбросить счетчики?</string>
   <!-- Privacy Settings Header item -->
+  <string name="privacy_settings_title">Конфиденциальность</string>
   <!-- Privacy Guard -->
   <string name="privacy_guard_switch_label">Включить защиту личных данных</string>
   <string name="privacy_guard_dlg_title">Включить защиту личных данных?</string>
@@ -137,11 +204,13 @@
   <!-- Setting checkbox title for root access -->
   <string name="root_access">Права суперпользователя</string>
   <string name="root_access_warning_title">Предоставить права Суперпользователя?</string>
+  <string name="root_access_warning_message">Использование приложениями прав суперпользователя может быть крайне опасным и ставит под угрозу безопасность вашего устройства!</string>
   <string name="root_access_none">Отключено</string>
   <string name="root_access_apps">Только приложения</string>
   <string name="root_access_adb">Только ADB</string>
   <string name="root_access_all">Приложения и ADB</string>
   <!-- Memory -->
+  <string name="memory_startup_apps_title">Старт приложений при загрузке</string>
   <!-- About phone screen, Slim version -->
   <string name="slim_version_title">Версия Slim</string>
   <string name="slim_version_default">Неизвестно</string>
@@ -151,18 +220,26 @@
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (по умолчанию)</string>
   <string name="restarting_ui">Перезапуск UI\u2026</string>
+  <string name="lcd_density_prompt_message">Некоторые приложения могут не работать на другом значении dpi. Телефон будет перезагружен.</string>
   <!-- Wakeup options -->
   <string name="display_category_wakeup_options_title">Настройки пробуждения</string>
   <string name="wakeup_when_plugged_unplugged_title">Будить при зарядке</string>
   <string name="wakeup_when_plugged_unplugged_summary">Подключение/отключение зарядного устройства пробуждает телефон.</string>
   <!-- Proximity wake -->
+  <string name="proximity_wake_title">Предотвращать случайное включение</string>
   <string name="proximity_wake_summary">Проверять датчик приближения перед включением экрана</string>
   <!-- Chamber of Secrets -->
+  <string name="chamber_title">Тайная комната</string>
+  <string name="chamber_toast">Тайная комната снова открыта</string>
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Варианты перезагрузки</string>
   <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
   <string name="advanced_reboot_disabled">Отключить</string>
+  <string name="advanced_reboot_hide_on_keyguard">Скрыть на экране безопасной блокировки</string>
   <string name="advanced_reboot_show_always">Показывать всегда</string>
   <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Суперпользователь</string>
   <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Включить менеджер защиты личных данных</string>
+  <string name="privacy_guard_enable_summary">Показывать менеджер защиты личных данных в настройках безопасности.</string>
 </resources>

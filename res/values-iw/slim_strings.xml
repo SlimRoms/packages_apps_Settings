@@ -17,23 +17,132 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Slim Settings Screens -->
+  <string name="header_category_personalization">התאמה אישית</string>
   <!-- Doze options -->
   <!-- Names of categories of app ops tabs - extension of AOSP -->
+  <string name="app_ops_categories_location">מיקום</string>
+  <string name="app_ops_categories_personal">אישי</string>
+  <string name="app_ops_categories_messaging">הודעות</string>
+  <string name="app_ops_categories_media">מדיה</string>
+  <string name="app_ops_categories_device">מכשיר</string>
+  <string name="app_ops_categories_bootup">אתחול</string>
+  <string name="app_ops_categories_su">Superuser</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_summaries_coarse_location">מיקום גס</string>
+  <string name="app_ops_summaries_fine_location">מיקום מדויק</string>
+  <string name="app_ops_summaries_gps">GPS</string>
+  <string name="app_ops_summaries_vibrate">רטט</string>
+  <string name="app_ops_summaries_read_contacts">לקרוא את אנשי הקשר</string>
+  <string name="app_ops_summaries_modify_contacts">לשנות את אנשי הקשר</string>
+  <string name="app_ops_summaries_read_call_log">קריאת יומן שיחות</string>
+  <string name="app_ops_summaries_modify_call_log">לשנות את יומן השיחות</string>
+  <string name="app_ops_summaries_read_calendar">לקרוא את לוח השנה</string>
+  <string name="app_ops_summaries_modify_calendar">לשנות את לוח השנה</string>
+  <string name="app_ops_summaries_wifi_scan">‏סריקת Wi-Fi</string>
+  <string name="app_ops_summaries_notification">התראה/הודעה קופצת</string>
+  <string name="app_ops_summaries_cell_scan">סריקת תאים</string>
+  <string name="app_ops_summaries_call_phone">חייג לטלפון</string>
+  <string name="app_ops_summaries_read_sms">קרא SMS</string>
+  <string name="app_ops_summaries_write_sms">כתוב SMS</string>
+  <string name="app_ops_summaries_receive_sms">קבל SMS</string>
+  <string name="app_ops_summaries_receive_emergency_sms">‏קבל SMS חירום</string>
+  <string name="app_ops_summaries_receive_mms">קבל MMS</string>
+  <string name="app_ops_summaries_receive_wap_push">קבל WAP</string>
+  <string name="app_ops_summaries_send_sms">שלח SMS</string>
+  <string name="app_ops_summaries_read_icc_sms">‏קרא ICC SMS</string>
+  <string name="app_ops_summaries_write_icc_sms">‏כתוב ICC SMS</string>
+  <string name="app_ops_summaries_modify_settings">שנה הגדרות</string>
+  <string name="app_ops_summaries_draw_on_top">צייר מעל</string>
+  <string name="app_ops_summaries_access_notifications">גישה להתראות</string>
+  <string name="app_ops_summaries_camera">מצלמה</string>
+  <string name="app_ops_summaries_record_audio">הקלטת קול</string>
+  <string name="app_ops_summaries_media_buttons">כפתורי מדיה</string>
+  <string name="app_ops_summaries_audio_focus">מיקוד אודיו</string>
+  <string name="app_ops_summaries_keep_awake">הישאר ער</string>
+  <string name="app_ops_summaries_toast_window">הצג התראות קופצות</string>
+  <string name="app_ops_summaries_superuser">גישת root</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_fine_location">מיקום מדויק</string>
+  <string name="app_ops_labels_gps">GPS</string>
+  <string name="app_ops_labels_vibrate">רטט</string>
+  <string name="app_ops_labels_read_contacts">לקרוא את אנשי הקשר</string>
+  <string name="app_ops_labels_modify_contacts">לשנות את אנשי הקשר</string>
+  <string name="app_ops_labels_read_call_log">לקרוא את יומן השיחות</string>
+  <string name="app_ops_labels_modify_call_log">לשנות את יומן השיחות</string>
+  <string name="app_ops_labels_read_calendar">לקרוא את לוח השנה</string>
+  <string name="app_ops_labels_modify_calendar">לשנות את לוח השנה</string>
+  <string name="app_ops_labels_call_phone">חייג לטלפון</string>
+  <string name="app_ops_labels_receive_sms">קבלת SMS</string>
+  <string name="app_ops_labels_receive_mms">קבלת MMS</string>
+  <string name="app_ops_labels_send_sms">שליחת SMS</string>
+  <string name="app_ops_labels_modify_settings">שינוי הגדרות</string>
+  <string name="app_ops_labels_draw_on_top">הצג עליון</string>
+  <string name="app_ops_labels_access_notifications">גישה להתראות</string>
+  <string name="app_ops_labels_camera">מצלמה</string>
+  <string name="app_ops_labels_record_audio">הקלטת אודיו</string>
+  <string name="app_ops_labels_play_audio">השמע אודיו</string>
+  <string name="app_ops_labels_read_clipboard">קרא תוכן לוח ההעתקה</string>
+  <string name="app_ops_labels_modify_clipboard">שינוי תוכן לוח ההעתקה</string>
+  <string name="app_ops_labels_media_buttons">כפתורי מדיה</string>
+  <string name="app_ops_labels_audio_focus">מיקוד שמע</string>
+  <string name="app_ops_labels_master_volume">עוצמת קול ראשית</string>
+  <string name="app_ops_labels_voice_volume">עוצמת קול דיבור</string>
+  <string name="app_ops_labels_ring_volume">עוצמת קול צלצול</string>
+  <string name="app_ops_labels_media_volume">עוצמת קול מדיה</string>
+  <string name="app_ops_labels_alarm_volume">עוצמת שעון מעורר</string>
+  <string name="app_ops_labels_notification_volume">עוצמת קול של התראות</string>
+  <string name="app_ops_labels_bluetooth_volume">עוצמת קול של Bluetooth</string>
+  <string name="app_ops_labels_keep_awake">הישאר פעיל</string>
+  <string name="app_ops_labels_mute_unmute_microphone">השתק/בטל השתקת מיקרופון</string>
+  <string name="app_ops_labels_toast_window">הצג התראות קופצות</string>
+  <string name="app_ops_labels_project_media">הקרן מדיה</string>
+  <string name="app_ops_labels_activate_vpn">הפעל VPN</string>
+  <string name="app_ops_labels_superuser">גישת root</string>
   <!-- App ops permissions -->
   <!-- App ops detail -->
   <!-- App ops menu options -->
+  <string name="app_ops_show_user_apps">הצג יישומי משתמש</string>
+  <string name="app_ops_show_system_apps">הצג יישומים מובנים</string>
   <!-- Privacy Settings Header item -->
   <!-- Privacy Guard -->
+  <string name="privacy_guard_switch_label">אפשר שומר פרטיות</string>
+  <string name="privacy_guard_dlg_title">לאפשר את שומר הפרטיות?</string>
+  <string name="privacy_guard_dlg_text">כאשר שומר הפרטיות מאופשר, היישום לא יוכל לגשת למידע אישי כמו אנשי קשר, הודעות, מיקום או יומן שיחות.</string>
+  <string name="privacy_guard_dlg_system_app_text">בעת הפעלת שומר הפרטיות עבור יישום מובנה, היישום לא יוכל לגשת או לספק מידע אישי. זה עלול לגרום ליישומים להתנהגות בלתי צפויה.</string>
+  <string name="privacy_guard_default_title">מאופשר כברירת מחדל</string>
+  <string name="privacy_guard_default_summary">אפשר כברירת מחדל עבור יישומים חדשים</string>
+  <string name="privacy_guard_manager_title">שומר הפרטיות</string>
+  <string name="privacy_guard_manager_summary">נהל/י יישומים בעלי גישה למידע האישי שלך</string>
+  <string name="privacy_guard_no_user_apps">אין יישומים מותקנים</string>
+  <string name="privacy_guard_help_title">עזרה</string>
+  <string name="privacy_guard_reset_title">הפעלה מחדש</string>
+  <string name="privacy_guard_reset_text">לאפס הרשאות?</string>
+  <string name="privacy_guard_help_text">בחלון זה באפשרותך לבחור עבור אילו יישומים שומר הפרטיות יהיה פעיל ע\"י לחיצה עליהם. היישומים הנבחרים לא יוכלו לגשת למידע אישי כמו אנשי קשר, הודעות ויומני שיחות. לחיצה ארוכה על רשומת יישום תפתח את מסך פרטי היישום.\n\nיישומים מובנים אינם מוצגים כברירת מחדל, אך ניתן להציגם על ידי בחירה באפשרות המתאימה מהתפריט.</string>
+  <string name="privacy_guard_manager_show_system_apps">הצג יישומים מובנים</string>
+  <string name="privacy_guard_advanced_settings_title">הגדרות מתקדמות</string>
   <!-- Setting checkbox title for root access -->
+  <string name="root_access">הרשאות מנהל</string>
+  <string name="root_access_warning_title">האם לאפשר הרשאות מנהל?</string>
+  <string name="root_access_none">מנוטרל</string>
+  <string name="root_access_apps">יישומים בלבד</string>
+  <string name="root_access_adb">ADB בלבד</string>
+  <string name="root_access_all">יישומים ו-ADB</string>
   <!-- Memory -->
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">גרסת Slim</string>
+  <string name="slim_version_default">לא ידוע</string>
   <!-- Display & Lights screen, setting options for LCD density -->
   <!-- Wakeup options -->
+  <string name="display_category_wakeup_options_title">אפשרויות התעוררות</string>
+  <string name="wakeup_when_plugged_unplugged_title">התעוררות בעת טעינה</string>
+  <string name="wakeup_when_plugged_unplugged_summary">הער מכשיר כאשר המטען מחובר/מנותק.</string>
   <!-- Proximity wake -->
   <!-- Chamber of Secrets -->
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">תפריט אתחול מתקדם</string>
+  <string name="advanced_reboot_dialog_title">תפריט אתחול מתקדם</string>
+  <string name="advanced_reboot_disabled">מושבת</string>
+  <string name="advanced_reboot_show_always">הצג תמיד</string>
   <!-- Show superuser settings -->
   <!-- Privacy guard enable switch -->
 </resources>

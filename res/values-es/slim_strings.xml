@@ -19,6 +19,7 @@
   <!-- Slim Settings Screens -->
   <string name="header_category_personalization">Personalización</string>
   <!-- Doze options -->
+  <string name="display_category_doze_options_title">Opciones de Pantalla ambiente(doze)</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <string name="app_ops_categories_location">Localización</string>
   <string name="app_ops_categories_personal">Personal</string>
@@ -77,7 +78,30 @@
   <string name="app_ops_summaries_project_media">Proyecto multimedia</string>
   <string name="app_ops_summaries_activate_vpn">activar VPN</string>
   <string name="app_ops_summaries_write_wallpaper">establecer fondo de pantalla</string>
+  <string name="app_ops_summaries_assist_structure">Ayuda en la estructura</string>
+  <string name="app_ops_summaries_assist_screenshot">Ayuda en la captura de pantalla</string>
+  <string name="app_ops_summaries_read_phone_state">Leer el estado del teléfono</string>
+  <string name="app_ops_summaries_add_voicemail">Añadir correo de voz</string>
+  <string name="app_ops_summaries_use_sip">Utilizar SIP</string>
+  <string name="app_ops_summaries_make_call">Hacer una llamada</string>
+  <string name="app_ops_summaries_use_fingerprint">Utilizar el sensor de huella</string>
+  <string name="app_ops_summaries_use_body_sensors">Utilizar los sensores de cuerpo</string>
+  <string name="app_ops_summaries_read_cell_broadcasts">Leer difusión de celdas</string>
+  <string name="app_ops_summaries_mock_location">Ubicación falsa</string>
+  <string name="app_ops_summaries_read_external_storage">Leer una tarjeta externa</string>
+  <string name="app_ops_summaries_write_external_storage">Escribir en una tarjeta externa</string>
+  <string name="app_ops_summaries_turn_screen_on">encender la pantalla</string>
+  <string name="app_ops_summaries_get_accounts">Obtener cuentas</string>
+  <string name="app_ops_summaries_toggle_wifi">Wi-Fi</string>
+  <string name="app_ops_summaries_toggle_bluetooth">Bluetooth</string>
+  <string name="app_ops_summaries_start_at_boot">Ejecutar al arrancar</string>
+  <string name="app_ops_summaries_toggle_nfc">NFC</string>
+  <string name="app_ops_summaries_toggle_mobile_data">Datos móviles</string>
+  <string name="app_ops_summaries_superuser">Acceso root</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_coarse_location">Ubicación aproximada</string>
+  <string name="app_ops_labels_fine_location">Ubicación fina</string>
+  <string name="app_ops_labels_gps">GPS</string>
   <string name="app_ops_labels_vibrate">Vibración</string>
   <string name="app_ops_labels_read_contacts">Leer los contactos</string>
   <string name="app_ops_labels_modify_contacts">Modificar los contactos</string>
@@ -85,10 +109,19 @@
   <string name="app_ops_labels_modify_call_log">Modificar el registro de llamadas</string>
   <string name="app_ops_labels_read_calendar">Leer el calendario</string>
   <string name="app_ops_labels_modify_calendar">Modificar el calendario</string>
+  <string name="app_ops_labels_wifi_scan">Escaneo Wi-Fi</string>
+  <string name="app_ops_labels_notification">Notificaciones</string>
+  <string name="app_ops_labels_cell_scan">Escanear celdas</string>
   <string name="app_ops_labels_call_phone">Llamada de teléfono</string>
+  <string name="app_ops_labels_read_sms">Leer SMS</string>
+  <string name="app_ops_labels_write_sms">Escribir SMS</string>
   <string name="app_ops_labels_receive_sms">Recibir SMS</string>
+  <string name="app_ops_labels_receive_emergency_sms">Recibir mensajes de emergencia</string>
   <string name="app_ops_labels_receive_mms">Recibir MMS</string>
+  <string name="app_ops_labels_receive_wap_push">Recibir WAP</string>
   <string name="app_ops_labels_send_sms">Enviar SMS</string>
+  <string name="app_ops_labels_read_icc_sms">Leer SMS ICC</string>
+  <string name="app_ops_labels_write_icc_sms">Escribir mensajes ICC</string>
   <string name="app_ops_labels_modify_settings">Modificar los ajustes del sistema</string>
   <string name="app_ops_labels_draw_on_top">Mostrar encima</string>
   <string name="app_ops_labels_access_notifications">Acceder a las notificaciones</string>
@@ -107,10 +140,33 @@
   <string name="app_ops_labels_notification_volume">Volumen de notificación</string>
   <string name="app_ops_labels_bluetooth_volume">Volumen de Bluetooth</string>
   <string name="app_ops_labels_keep_awake">Mantener despierto</string>
+  <string name="app_ops_labels_monitor_location">Ubicación del monitor</string>
+  <string name="app_ops_labels_monitor_high_power_location">Ubicación del monitor de alta potencia</string>
+  <string name="app_ops_labels_get_usage_stats">obtener estadísticas de uso de la aplicación</string>
   <string name="app_ops_labels_mute_unmute_microphone">Activar/desactivar el micrófono</string>
   <string name="app_ops_labels_toast_window">Ventana emergente</string>
   <string name="app_ops_labels_project_media">Proyecto multimedia</string>
   <string name="app_ops_labels_activate_vpn">Activar VPN</string>
+  <string name="app_ops_labels_write_wallpaper">Utilizar fondo de pantalla</string>
+  <string name="app_ops_labels_assist_structure">Ayuda en la estructura</string>
+  <string name="app_ops_labels_assist_screenshot">Ayuda en la captura de pantalla</string>
+  <string name="app_ops_labels_read_phone_state">Leer el estado del teléfono</string>
+  <string name="app_ops_labels_add_voicemail">Añadir correo de voz</string>
+  <string name="app_ops_labels_use_sip">Utilizar SIP</string>
+  <string name="app_ops_labels_make_call">Realizar llamada</string>
+  <string name="app_ops_labels_use_fingerprint">Utilizar sensor de huella</string>
+  <string name="app_ops_labels_use_body_sensors">Utilizar sensores de cuerpo</string>
+  <string name="app_ops_labels_read_cell_broadcasts">Leer transmisiones de celdas</string>
+  <string name="app_ops_labels_mock_location">Ubicación falsa</string>
+  <string name="app_ops_labels_read_external_storage">Leer una tarjeta externa</string>
+  <string name="app_ops_labels_write_external_storage">Escribir en una tarjeta externa</string>
+  <string name="app_ops_labels_turn_screen_on">Encender pantalla</string>
+  <string name="app_ops_labels_get_accounts">Obtener cuentas</string>
+  <string name="app_ops_labels_change_wifi">Wi-Fi</string>
+  <string name="app_ops_labels_toggle_bluetooth">Bluetooth</string>
+  <string name="app_ops_labels_start_at_boot">Ejecutar al iniciar</string>
+  <string name="app_ops_labels_toggle_nfc">NFC</string>
+  <string name="app_ops_labels_toggle_mobile_data">Datos móviles</string>
   <string name="app_ops_labels_superuser">Acceso Superusuario (Root)</string>
   <!-- App ops permissions -->
   <string name="app_ops_permissions_allowed">Autorizado</string>
@@ -179,7 +235,11 @@
   <string name="advanced_reboot_title">Reinicio avanzado</string>
   <string name="advanced_reboot_dialog_title">Menú de reinicio avanzado</string>
   <string name="advanced_reboot_disabled">Deshabilitado</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ocultar en la pantalla de bloqueo</string>
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
   <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Superusuario</string>
   <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Activar la Protección de Privacidad</string>
+  <string name="privacy_guard_enable_summary">Mostrar el administrador de protección de privacidad en los ajustes de seguridad.</string>
 </resources>

@@ -19,21 +19,149 @@
   <!-- Slim Settings Screens -->
   <!-- Doze options -->
   <!-- Names of categories of app ops tabs - extension of AOSP -->
+  <string name="app_ops_categories_location">Locație</string>
+  <string name="app_ops_categories_personal">Personal</string>
+  <string name="app_ops_categories_messaging">Mesajerie</string>
+  <string name="app_ops_categories_media">Media</string>
+  <string name="app_ops_categories_device">Dispozitiv</string>
+  <string name="app_ops_categories_bootup">Bootup</string>
+  <string name="app_ops_categories_su">Superutilizator</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_summaries_coarse_location">locație aproximativă</string>
+  <string name="app_ops_summaries_fine_location">locație exactă</string>
+  <string name="app_ops_summaries_gps">GPS</string>
+  <string name="app_ops_summaries_vibrate">vibrează</string>
+  <string name="app_ops_summaries_read_contacts">Citiţi contactele</string>
+  <string name="app_ops_summaries_modify_contacts">modifică contactele</string>
+  <string name="app_ops_summaries_read_call_log">citește jurnalul de apeluri</string>
+  <string name="app_ops_summaries_modify_call_log">modificaţi jurnalul de apeluri</string>
+  <string name="app_ops_summaries_read_calendar">Citiţi calendar</string>
+  <string name="app_ops_summaries_modify_calendar">modifică calendarul</string>
+  <string name="app_ops_summaries_cell_scan">scanare celulă</string>
+  <string name="app_ops_summaries_call_phone">Apelați telefonul</string>
+  <string name="app_ops_summaries_read_sms">Citiţi SMS-uri</string>
+  <string name="app_ops_summaries_write_sms">scrieţi SMS</string>
+  <string name="app_ops_summaries_receive_sms">Primiţi SMS</string>
+  <string name="app_ops_summaries_receive_emergency_sms">primţi SMS de urgență</string>
+  <string name="app_ops_summaries_receive_mms">Primiţi MMS</string>
+  <string name="app_ops_summaries_receive_wap_push">primiţi apăsare WAP</string>
+  <string name="app_ops_summaries_send_sms">Trimiteţi SMS</string>
+  <string name="app_ops_summaries_read_icc_sms">citiţi ICC SMS</string>
+  <string name="app_ops_summaries_write_icc_sms">scrieţi ICC SMS</string>
+  <string name="app_ops_summaries_modify_settings">Modificaţi setările</string>
+  <string name="app_ops_summaries_draw_on_top">gliseaza in partea de sus</string>
+  <string name="app_ops_summaries_access_notifications">Acces notificări</string>
+  <string name="app_ops_summaries_camera">aparat de fotografiat</string>
+  <string name="app_ops_summaries_record_audio">înregistrare audio</string>
+  <string name="app_ops_summaries_play_audio">Redare audio</string>
+  <string name="app_ops_summaries_read_clipboard">Citește clipboard</string>
+  <string name="app_ops_summaries_modify_clipboard">Modifică clipboard</string>
+  <string name="app_ops_summaries_media_buttons">Butoane media</string>
+  <string name="app_ops_summaries_audio_focus">Focalizare audio</string>
+  <string name="app_ops_summaries_master_volume">Volum principal</string>
+  <string name="app_ops_summaries_voice_volume">Volum voce</string>
+  <string name="app_ops_summaries_ring_volume">Volum sonerie</string>
+  <string name="app_ops_summaries_media_volume">Volum Media</string>
+  <string name="app_ops_summaries_alarm_volume">Volum alarmă</string>
+  <string name="app_ops_summaries_notification_volume">Volum notificare</string>
+  <string name="app_ops_summaries_bluetooth_volume">Volum Bluetooth</string>
+  <string name="app_ops_summaries_keep_awake">Ţine treaz</string>
+  <string name="app_ops_summaries_monitor_location">monitorizează locația</string>
+  <string name="app_ops_summaries_monitor_high_power_location">monitorizează locația de putere mare</string>
+  <string name="app_ops_summaries_mute_unmute_microphone">dezactivează/activează microfon</string>
+  <string name="app_ops_summaries_toast_window">Afişare mesaje temporare</string>
+  <string name="app_ops_summaries_project_media">Proiect media</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_vibrate">Vibrare</string>
+  <string name="app_ops_labels_read_contacts">Citiţi contactele</string>
+  <string name="app_ops_labels_modify_contacts">Modificaţi contactele</string>
+  <string name="app_ops_labels_read_call_log">Citiţi jurnalul de apeluri</string>
+  <string name="app_ops_labels_modify_call_log">Modificaţi jurnalul de apeluri</string>
+  <string name="app_ops_labels_read_calendar">Citiţi calendarul</string>
+  <string name="app_ops_labels_modify_calendar">Modificaţi calendarul</string>
+  <string name="app_ops_labels_call_phone">Apelați telefonul</string>
+  <string name="app_ops_labels_receive_sms">Primește SMS</string>
+  <string name="app_ops_labels_receive_mms">Primește MMS</string>
+  <string name="app_ops_labels_send_sms">Trimite SMS</string>
+  <string name="app_ops_labels_modify_settings">Modifică setările</string>
+  <string name="app_ops_labels_draw_on_top">Trage peste</string>
+  <string name="app_ops_labels_access_notifications">Accesare notificări</string>
+  <string name="app_ops_labels_camera">Aparat de fotografiat</string>
+  <string name="app_ops_labels_record_audio">înregistrare audio</string>
+  <string name="app_ops_labels_play_audio">Redare audio</string>
+  <string name="app_ops_labels_read_clipboard">Citește clipboard</string>
+  <string name="app_ops_labels_modify_clipboard">Modifică clipboard</string>
+  <string name="app_ops_labels_media_buttons">Butoane media</string>
+  <string name="app_ops_labels_audio_focus">Focalizare audio</string>
+  <string name="app_ops_labels_master_volume">Volum principal</string>
+  <string name="app_ops_labels_voice_volume">Volum voce</string>
+  <string name="app_ops_labels_ring_volume">Volum sonerie</string>
+  <string name="app_ops_labels_media_volume">Volum Media</string>
+  <string name="app_ops_labels_alarm_volume">Volum alarmă</string>
+  <string name="app_ops_labels_notification_volume">Volum notificare</string>
+  <string name="app_ops_labels_bluetooth_volume">Volum Bluetooth</string>
+  <string name="app_ops_labels_keep_awake">Ţine treaz</string>
+  <string name="app_ops_labels_mute_unmute_microphone">Dezactivează/activează microfon</string>
+  <string name="app_ops_labels_toast_window">Afişare mesaje temporare</string>
+  <string name="app_ops_labels_project_media">Proiectaţi media</string>
+  <string name="app_ops_labels_activate_vpn">Activaţi VPN</string>
   <!-- App ops permissions -->
   <!-- App ops detail -->
+  <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (folosit <xliff:g id="count">%2$s</xliff:g>)</string>
+  <string name="app_ops_allowed_count">Permis <xliff:g id="count" example="2 times">%s</xliff:g></string>
+  <string name="app_ops_ignored_count">Respins <xliff:g id="count" example="2 times">%s</xliff:g></string>
+  <string name="app_ops_both_count">Permis <xliff:g id="count">%1$s</xliff:g>, respins <xliff:g id="count">%2$s</xliff:g></string>
   <!-- App ops menu options -->
+  <string name="app_ops_show_user_apps">Arată aplicațiile utilizatorului</string>
+  <string name="app_ops_show_system_apps">Arată aplicațiile preinstalate</string>
+  <string name="app_ops_reset_counters">Resetare contoare permite/refuză</string>
+  <string name="app_ops_reset_confirm_title">Confirmați resetarea contoarelor</string>
+  <string name="app_ops_reset_confirm_mesg">Sunteţi sigur că doriţi să resetaţi contoarele?</string>
   <!-- Privacy Settings Header item -->
   <!-- Privacy Guard -->
+  <string name="privacy_guard_switch_label">Activați Gardian Intimitate</string>
+  <string name="privacy_guard_dlg_title">Activați Gardian Intimitate?</string>
+  <string name="privacy_guard_dlg_text">Când Gardianul de Intimitate este activat, o aplicație nu poate obține accesul la datele personale cum ar fi contactele, mesajele sau jurnalul de apeluri.</string>
+  <string name="privacy_guard_dlg_system_app_text">Când Gardianul de Intimitate este activat pentru o aplicație preinstalată, aplicația nu va putea accesa sau furniza date personale. Acest lucru poate cauza funcționarea eronată a altor aplicații.</string>
+  <string name="privacy_guard_default_title">Activat în mod implicit</string>
+  <string name="privacy_guard_default_summary">Activat în mod implicit pentru aplicațiile nou-instalate</string>
+  <string name="privacy_guard_manager_title">Gardian Intimitate</string>
+  <string name="privacy_guard_manager_summary">Gestionează care aplicație are acces la datele dvs personale</string>
+  <string name="privacy_guard_no_user_apps">Nu există aplicații instalate</string>
+  <string name="privacy_guard_help_title">Ghid Utilizator</string>
+  <string name="privacy_guard_reset_title">Resetaţi</string>
+  <string name="privacy_guard_reset_text">Resetați permisiunile?</string>
+  <string name="privacy_guard_help_text">În acest ecran, prin simpla apăsare pe aplicații, Gardianul de intimitate vă permite să alegeți pentru care dintre ele este activ. Aplicațiile selectate nu vor putea accesa datele dvs personale cum ar fi contactele, mesajele sau jurnalele de apeluri. Prin apăsarea lungă va apare un ecran cu detalii pentru acea aplicație.\n\nAplicațiile preinstalate nu vor fi afișate în mod implicit, dar pot fi dezvăluite prin selectarea opțiunii corespunzătoare din meniu.</string>
+  <string name="privacy_guard_manager_show_system_apps">Arată aplicațiile preinstalate</string>
+  <string name="privacy_guard_advanced_settings_title">Setări Avansate</string>
   <!-- Setting checkbox title for root access -->
+  <string name="root_access">Acces root</string>
+  <string name="root_access_warning_title">Permiteți acces root?</string>
+  <string name="root_access_none">Dezactivat</string>
+  <string name="root_access_apps">Numai aplicații</string>
+  <string name="root_access_adb">Numai ADB</string>
+  <string name="root_access_all">Aplicații și ADB</string>
   <!-- Memory -->
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Versiune Slim</string>
+  <string name="slim_version_default">Necunoscut</string>
   <!-- Display & Lights screen, setting options for LCD density -->
+  <string name="lcd_density">Densitate LCD</string>
+  <string name="dialog_title_lcd_density">Densitate LCD</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (implicit)</string>
+  <string name="restarting_ui">Repornirea UI\u2026</string>
   <!-- Wakeup options -->
+  <string name="display_category_wakeup_options_title">Opţiuni trezire</string>
+  <string name="wakeup_when_plugged_unplugged_title">Trezire la încărcare</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Trezirea telefonului atunci când încărcătorul este conectat/deconectat.</string>
   <!-- Proximity wake -->
   <!-- Chamber of Secrets -->
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Repornire avansată</string>
+  <string name="advanced_reboot_dialog_title">Meniul avansat reboot</string>
+  <string name="advanced_reboot_disabled">Dezactivaţi</string>
+  <string name="advanced_reboot_show_always">Afișează întotdeauna</string>
   <!-- Show superuser settings -->
   <!-- Privacy guard enable switch -->
 </resources>

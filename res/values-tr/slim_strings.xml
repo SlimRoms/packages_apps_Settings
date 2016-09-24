@@ -18,22 +18,223 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Slim Settings Screens -->
   <!-- Doze options -->
+  <string name="display_category_doze_options_title">Ortam ekranı (doze) seçenekleri</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
+  <string name="app_ops_categories_location">Konum</string>
+  <string name="app_ops_categories_personal">Kişisel</string>
+  <string name="app_ops_categories_messaging">Mesajlaşma</string>
+  <string name="app_ops_categories_media">Medya</string>
+  <string name="app_ops_categories_device">Cihaz</string>
+  <string name="app_ops_categories_bootup">Açılış</string>
+  <string name="app_ops_categories_su">Yetkili kullanıcı</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_summaries_coarse_location">kaba konum</string>
+  <string name="app_ops_summaries_fine_location">iyi konum</string>
+  <string name="app_ops_summaries_gps">GPS</string>
+  <string name="app_ops_summaries_vibrate">titreşim</string>
+  <string name="app_ops_summaries_read_contacts">kişileri oku</string>
+  <string name="app_ops_summaries_modify_contacts">kişileri düzenle</string>
+  <string name="app_ops_summaries_read_call_log">arama kaydını oku</string>
+  <string name="app_ops_summaries_modify_call_log">arama kaydını düzenle</string>
+  <string name="app_ops_summaries_read_calendar">takvimi oku</string>
+  <string name="app_ops_summaries_modify_calendar">takvimi düzenle</string>
+  <string name="app_ops_summaries_wifi_scan">Kablosuz ağ tarama</string>
+  <string name="app_ops_summaries_notification">bildirim/tost</string>
+  <string name="app_ops_summaries_cell_scan">hücre tarama</string>
+  <string name="app_ops_summaries_call_phone">arama yap</string>
+  <string name="app_ops_summaries_read_sms">SMS oku</string>
+  <string name="app_ops_summaries_write_sms">SMS yaz</string>
+  <string name="app_ops_summaries_receive_sms">SMS al</string>
+  <string name="app_ops_summaries_receive_emergency_sms">Acil durum SMSi al</string>
+  <string name="app_ops_summaries_receive_mms">MMS alma</string>
+  <string name="app_ops_summaries_receive_wap_push">WAP push al</string>
+  <string name="app_ops_summaries_send_sms">SMS gönder</string>
+  <string name="app_ops_summaries_read_icc_sms">ICC SMS oku</string>
+  <string name="app_ops_summaries_write_icc_sms">ICC SMS yaz</string>
+  <string name="app_ops_summaries_modify_settings">ayarları değiştir</string>
+  <string name="app_ops_summaries_draw_on_top">en üstte görüntüle</string>
+  <string name="app_ops_summaries_access_notifications">bildirimlere erişme</string>
+  <string name="app_ops_summaries_camera">kamera</string>
+  <string name="app_ops_summaries_record_audio">Ses kaydet</string>
+  <string name="app_ops_summaries_play_audio">ses oynatma</string>
+  <string name="app_ops_summaries_read_clipboard">panoyu oku</string>
+  <string name="app_ops_summaries_modify_clipboard">panoyu düzenleme</string>
+  <string name="app_ops_summaries_media_buttons">ortam butonları</string>
+  <string name="app_ops_summaries_audio_focus">ses odağı</string>
+  <string name="app_ops_summaries_master_volume">Ana ses</string>
+  <string name="app_ops_summaries_voice_volume">konuşma sesi</string>
+  <string name="app_ops_summaries_ring_volume">çalma sesi</string>
+  <string name="app_ops_summaries_media_volume">ortam sesi</string>
+  <string name="app_ops_summaries_alarm_volume">alarm sesi</string>
+  <string name="app_ops_summaries_notification_volume">bildirim sesi</string>
+  <string name="app_ops_summaries_bluetooth_volume">Bluetooth Sesi</string>
+  <string name="app_ops_summaries_keep_awake">uyanık tut</string>
+  <string name="app_ops_summaries_monitor_location">konumu izle</string>
+  <string name="app_ops_summaries_monitor_high_power_location">yüksek güç konumu izle</string>
+  <string name="app_ops_summaries_get_usage_stats">kullanım istatistiklerini al</string>
+  <string name="app_ops_summaries_mute_unmute_microphone">Mikrofonu sessiz/sesli yap</string>
+  <string name="app_ops_summaries_toast_window">toast\'ları görüntüle</string>
+  <string name="app_ops_summaries_project_media">medyayı yansıt</string>
+  <string name="app_ops_summaries_activate_vpn">VPN\'yi etkinleştir</string>
+  <string name="app_ops_summaries_write_wallpaper">duvar kağıdını ayarla</string>
+  <string name="app_ops_summaries_assist_structure">yardımcı yapısı</string>
+  <string name="app_ops_summaries_assist_screenshot">ekran görüntüsü yardımcısı</string>
+  <string name="app_ops_summaries_read_phone_state">telefon durumunu oku</string>
+  <string name="app_ops_summaries_add_voicemail">sesli mesaj ekle</string>
+  <string name="app_ops_summaries_use_sip">SIP kullan</string>
+  <string name="app_ops_summaries_make_call">arama yap</string>
+  <string name="app_ops_summaries_use_fingerprint">parmak izi kullan</string>
+  <string name="app_ops_summaries_use_body_sensors">vücut sensörleri kullan</string>
+  <string name="app_ops_summaries_read_cell_broadcasts">hücre yayınları oku</string>
+  <string name="app_ops_summaries_mock_location">sahte konum</string>
+  <string name="app_ops_summaries_read_external_storage">harici depolamayı oku</string>
+  <string name="app_ops_summaries_write_external_storage">harici depolamaya yaz</string>
+  <string name="app_ops_summaries_turn_screen_on">ekranı Aç</string>
+  <string name="app_ops_summaries_get_accounts">hesapları al</string>
+  <string name="app_ops_summaries_toggle_wifi">WiFi aç-kapat</string>
+  <string name="app_ops_summaries_toggle_bluetooth">bluetooth\'u aç-kapat</string>
+  <string name="app_ops_summaries_start_at_boot">açılışta başlat</string>
+  <string name="app_ops_summaries_toggle_nfc">NFC aç-kapat</string>
+  <string name="app_ops_summaries_toggle_mobile_data">mobil veriyi aç-kapat</string>
+  <string name="app_ops_summaries_superuser">root erişimi</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_coarse_location">Yaklaşık konum</string>
+  <string name="app_ops_labels_fine_location">Kesin konum</string>
+  <string name="app_ops_labels_gps">GPS</string>
+  <string name="app_ops_labels_vibrate">Titreşim</string>
+  <string name="app_ops_labels_read_contacts">Kişileri oku</string>
+  <string name="app_ops_labels_modify_contacts">Kişileri düzenle</string>
+  <string name="app_ops_labels_read_call_log">Arama kaydını oku</string>
+  <string name="app_ops_labels_modify_call_log">Arama kaydını düzenle</string>
+  <string name="app_ops_labels_read_calendar">Takvimi oku</string>
+  <string name="app_ops_labels_modify_calendar">Takvimi düzenle</string>
+  <string name="app_ops_labels_wifi_scan">Kablosuz ağ tarama</string>
+  <string name="app_ops_labels_notification">Bildirim/tost</string>
+  <string name="app_ops_labels_cell_scan">Hücre tarama</string>
+  <string name="app_ops_labels_call_phone">arama yap</string>
+  <string name="app_ops_labels_read_sms">SMS oku</string>
+  <string name="app_ops_labels_write_sms">SMS yaz</string>
+  <string name="app_ops_labels_receive_sms">SMS/MMS al</string>
+  <string name="app_ops_labels_receive_emergency_sms">Acil durum SMSi al</string>
+  <string name="app_ops_labels_receive_mms">MMS al</string>
+  <string name="app_ops_labels_receive_wap_push">WAP push al</string>
+  <string name="app_ops_labels_send_sms">SMS gönder</string>
+  <string name="app_ops_labels_read_icc_sms">ICC SMS oku</string>
+  <string name="app_ops_labels_write_icc_sms">ICC SMS yaz</string>
+  <string name="app_ops_labels_modify_settings">Ayarları değiştir</string>
+  <string name="app_ops_labels_draw_on_top">en üstte görüntüle</string>
+  <string name="app_ops_labels_access_notifications">Bildirimlere eriş</string>
+  <string name="app_ops_labels_camera">Kamera</string>
+  <string name="app_ops_labels_record_audio">Sesi kaydet</string>
+  <string name="app_ops_labels_play_audio">Ses çal</string>
+  <string name="app_ops_labels_read_clipboard">Panoyu oku</string>
+  <string name="app_ops_labels_modify_clipboard">panoyu düzenle</string>
+  <string name="app_ops_labels_media_buttons">Medya tuşları</string>
+  <string name="app_ops_labels_audio_focus">Ses odakla</string>
+  <string name="app_ops_labels_master_volume">Ana Ses Seviyesi</string>
+  <string name="app_ops_labels_voice_volume">Konuşma sesi</string>
+  <string name="app_ops_labels_ring_volume">Zil sesi</string>
+  <string name="app_ops_labels_media_volume">Ortam sesi</string>
+  <string name="app_ops_labels_alarm_volume">Alarm sesi</string>
+  <string name="app_ops_labels_notification_volume">Bildirim sesi</string>
+  <string name="app_ops_labels_bluetooth_volume">Bluetooth Sesi</string>
+  <string name="app_ops_labels_keep_awake">Uyanık tut</string>
+  <string name="app_ops_labels_monitor_location">Konumu izle</string>
+  <string name="app_ops_labels_monitor_high_power_location">Yüksek güç konumu izle</string>
+  <string name="app_ops_labels_get_usage_stats">Kullanım istatistiklerini al</string>
+  <string name="app_ops_labels_mute_unmute_microphone">Mikrofonu sessiz/sesli yap</string>
+  <string name="app_ops_labels_toast_window">toast\'ları görüntüle</string>
+  <string name="app_ops_labels_project_media">Medyayı yansıt</string>
+  <string name="app_ops_labels_activate_vpn">VPN\'yi etkinleştir</string>
+  <string name="app_ops_labels_write_wallpaper">Duvar kağıdını ayarla</string>
+  <string name="app_ops_labels_assist_structure">Yardımcı yapısı</string>
+  <string name="app_ops_labels_assist_screenshot">Ekran görüntüsü yardımcısı</string>
+  <string name="app_ops_labels_read_phone_state">Telefon durumunu oku</string>
+  <string name="app_ops_labels_add_voicemail">Sesli mesaj ekle</string>
+  <string name="app_ops_labels_use_sip">SIP kullan</string>
+  <string name="app_ops_labels_make_call">Arama yap</string>
+  <string name="app_ops_labels_use_fingerprint">Parmak izi kullan</string>
+  <string name="app_ops_labels_use_body_sensors">Vücut sensörleri kullan</string>
+  <string name="app_ops_labels_read_cell_broadcasts">Hücre yayınları oku</string>
+  <string name="app_ops_labels_mock_location">Sahte konum</string>
+  <string name="app_ops_labels_read_external_storage">Harici depolamayı oku</string>
+  <string name="app_ops_labels_write_external_storage">Harici depolamaya yaz</string>
+  <string name="app_ops_labels_turn_screen_on">Ekranı Aç</string>
+  <string name="app_ops_labels_get_accounts">Hesapları al</string>
+  <string name="app_ops_labels_change_wifi">Wi-Fi aç kapat</string>
+  <string name="app_ops_labels_toggle_bluetooth">Bluetooth\'u aç-kapat</string>
+  <string name="app_ops_labels_start_at_boot">Açılışta başlat</string>
+  <string name="app_ops_labels_toggle_nfc">NFC aç-kapat</string>
+  <string name="app_ops_labels_toggle_mobile_data">Mobil veriyi aç-kapat</string>
+  <string name="app_ops_labels_superuser">Root erişimi</string>
   <!-- App ops permissions -->
+  <string name="app_ops_permissions_allowed">İzin Verilen</string>
+  <string name="app_ops_permissions_ignored">Görmezden gelindi</string>
+  <string name="app_ops_permissions_always_ask">Her zaman sor</string>
   <!-- App ops detail -->
+  <string name="app_ops_entry_summary"><xliff:g id="op">%1$s </xliff:g> (kullanılan <xliff:g id="count">%2$s </xliff:g>)</string>
+  <string name="app_ops_allowed_count"><xliff:g id="count" example="2 times">%s</xliff:g> izin verildi</string>
+  <string name="app_ops_ignored_count"><xliff:g id="count" example="2 times">%s</xliff:g> reddedildi</string>
+  <string name="app_ops_both_count"><xliff:g id="count">%1$s</xliff:g>, denied <xliff:g id="count">%2$s</xliff:g> izin verildi </string>
   <!-- App ops menu options -->
+  <string name="app_ops_show_user_apps">Kullanıcı uygulamalarını göster</string>
+  <string name="app_ops_show_system_apps">Yerleşik uygulamaları göster</string>
+  <string name="app_ops_reset_counters">İzin ver/reddet sayaçlarını sıfırla</string>
+  <string name="app_ops_reset_confirm_title">Sayaçları Sıfırla Onayla</string>
+  <string name="app_ops_reset_confirm_mesg">Sayaçları sıfırlamak istediğinizden emin misiniz ?</string>
   <!-- Privacy Settings Header item -->
+  <string name="privacy_settings_title">Gizlilik</string>
   <!-- Privacy Guard -->
+  <string name="privacy_guard_switch_label">Gizlilik Korumasını Etkinleştir</string>
+  <string name="privacy_guard_dlg_title">Gizlilik Koruması Etkinleştirilsin mi?</string>
+  <string name="privacy_guard_dlg_text">Gizlilik Koruması aktif olduğunda uygulama, kişileriniz, mesajlarınız ya da arama kayıtlarınız gibi kişisel bilgilere erişemeyecek.</string>
+  <string name="privacy_guard_dlg_system_app_text">Gizlilik Koruması dahili bir uygulama için etkinleştirildiğinde bu uygulama kişisel verilere erişemeyecek ve kişisel veri sağlayamacak. Bu diğer uygulamaların istenmeyen şekilde davranmasına sebep olabilir.</string>
+  <string name="privacy_guard_default_title">Varsayılan olarak etkin</string>
+  <string name="privacy_guard_default_summary">Yeni yüklenen uygulamalar için Gizlilik Koruması\'nı varsayılan olarak aktifleştir</string>
+  <string name="privacy_guard_manager_title">Gizlilik Koruması</string>
+  <string name="privacy_guard_manager_summary">Hangi uygulamaların kişisel verilerinize erişebileceğini yönetin</string>
+  <string name="privacy_guard_no_user_apps">Yüklü uygulama yok</string>
+  <string name="privacy_guard_help_title">Yardım</string>
+  <string name="privacy_guard_reset_title">Sıfırla</string>
+  <string name="privacy_guard_reset_text">İzinleri sıfırla?</string>
+  <string name="privacy_guard_help_text">Bu ekranda Gizlilik Korumasının hangi uygulamalarda aktif olacağını basitçe dokunarak seçebilirsiniz. Seçili uygulamalar kişiler, mesajlar veya arama kaydı gibi kişisel bilgilerinize ulaşamayacaklar. Ögelere uzun dokunarak o uygulamalar için uygulama detayları penceresini açabilirsiniz.\n\nÖnyüklü uygulamalar varsayılan olarak gösterilmez ancak ilgili menü seçeneğiyle görüntülenebilirler.</string>
+  <string name="privacy_guard_manager_show_system_apps">Yerleşik uygulamaları göster</string>
+  <string name="privacy_guard_advanced_settings_title">Gelişmiş</string>
   <!-- Setting checkbox title for root access -->
+  <string name="root_access">Root yetkisi</string>
+  <string name="root_access_warning_title">Root yetkisine izin verilsin mi?</string>
+  <string name="root_access_warning_message">Root erişimine izin vermek çok tehlikelidir ve sisteminizin güvenliğini tehlikeye atabilir!</string>
+  <string name="root_access_none">Devre Dışı</string>
+  <string name="root_access_apps">Sadece Uygulamalar</string>
+  <string name="root_access_adb">Sadece ADB</string>
+  <string name="root_access_all">Uygulama ve ADB</string>
   <!-- Memory -->
+  <string name="memory_startup_apps_title">Açılışta başlatılan uygulamalar</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim Sürümü</string>
+  <string name="slim_version_default">Bilinmeyen</string>
   <!-- Display & Lights screen, setting options for LCD density -->
+  <string name="lcd_density">LCD yoğunluğu</string>
+  <string name="dialog_title_lcd_density">LCD yoğunluğu</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (varsayılan)</string>
+  <string name="restarting_ui">UI\u2026 yeniden başlatılıyor</string>
+  <string name="lcd_density_prompt_message">Bazı uygulamalar standart dışı DPI\'lerde çalışmayabilir.\n\nBu telefonunuzu yeniden başlatacaktır.</string>
   <!-- Wakeup options -->
+  <string name="display_category_wakeup_options_title">Uyandırma seçenekleri</string>
+  <string name="wakeup_when_plugged_unplugged_title">Şarja takılınca uyan</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Aygıtınız şarja takıldığında veya çıkartıldığında uyandırılır.</string>
   <!-- Proximity wake -->
+  <string name="proximity_wake_title">Yanlış uyandırmaları önle</string>
+  <string name="proximity_wake_summary">Ekranı uyandırmadan önce yakınlık sensörü kontrolü</string>
   <!-- Chamber of Secrets -->
+  <string name="chamber_title">Sırlar Odası</string>
+  <string name="chamber_toast">Sırlar Odası açıldı</string>
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Gelişmiş yeniden başlatma</string>
+  <string name="advanced_reboot_dialog_title">Gelişmiş yeniden başlatma menüsü</string>
+  <string name="advanced_reboot_disabled">devre dışı bırak</string>
+  <string name="advanced_reboot_show_always">Her zaman göster</string>
   <!-- Show superuser settings -->
   <!-- Privacy guard enable switch -->
 </resources>

@@ -19,6 +19,7 @@
   <!-- Slim Settings Screens -->
   <string name="header_category_personalization">Personalisierung</string>
   <!-- Doze options -->
+  <string name="display_category_doze_options_title">Ambient-Display- (Halbschlaf-) Einstellungen</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <string name="app_ops_categories_location">Standort</string>
   <string name="app_ops_categories_personal">Persönliches</string>
@@ -77,16 +78,20 @@
   <string name="app_ops_summaries_project_media">auf Medien zugreifen</string>
   <string name="app_ops_summaries_activate_vpn">VPN aktivieren</string>
   <string name="app_ops_summaries_write_wallpaper">Hintergrund festlegen</string>
+  <string name="app_ops_summaries_assist_structure">Assist-Struktur</string>
+  <string name="app_ops_summaries_assist_screenshot">Assist-Bildschirmfoto</string>
   <string name="app_ops_summaries_read_phone_state">Telefonstatus abfragen</string>
   <string name="app_ops_summaries_add_voicemail">Mailbox-Nachrichten hinzufügen</string>
   <string name="app_ops_summaries_use_sip">SIP verwenden</string>
   <string name="app_ops_summaries_make_call">Anruf tätigen</string>
   <string name="app_ops_summaries_use_fingerprint">Fingerabdruck nutzen</string>
   <string name="app_ops_summaries_use_body_sensors">Körper-Sensoren verwenden</string>
+  <string name="app_ops_summaries_read_cell_broadcasts">Cell Broadcast-Nachrichten lesen</string>
   <string name="app_ops_summaries_mock_location">Standort abrufen</string>
   <string name="app_ops_summaries_read_external_storage">Externen Speicher lesen</string>
   <string name="app_ops_summaries_write_external_storage">Externen Speicher beschreiben</string>
   <string name="app_ops_summaries_turn_screen_on">Bildschirm einschalten</string>
+  <string name="app_ops_summaries_get_accounts">Kontenliste einlesen</string>
   <string name="app_ops_summaries_toggle_wifi">WLAN ein-/ausschalten</string>
   <string name="app_ops_summaries_toggle_bluetooth">Bluetooth ein-/ausschalten</string>
   <string name="app_ops_summaries_start_at_boot">Beim Hochfahren starten</string>
@@ -143,18 +148,23 @@
   <string name="app_ops_labels_project_media">Medienzugriff</string>
   <string name="app_ops_labels_activate_vpn">VPN aktivieren</string>
   <string name="app_ops_labels_write_wallpaper">Hintergrund festlegen</string>
+  <string name="app_ops_labels_assist_structure">Assist-Struktur</string>
+  <string name="app_ops_labels_assist_screenshot">Assist-Bildschirmfoto</string>
   <string name="app_ops_labels_read_phone_state">Telefonstatus abfragen</string>
   <string name="app_ops_labels_add_voicemail">Mailbox-Nachrichten hinzufügen</string>
   <string name="app_ops_labels_use_sip">SIP verwenden</string>
   <string name="app_ops_labels_make_call">Anruf tätigen</string>
   <string name="app_ops_labels_use_fingerprint">Fingerabdruck nutzen</string>
   <string name="app_ops_labels_use_body_sensors">Körper-Sensoren verwenden</string>
+  <string name="app_ops_labels_read_cell_broadcasts">Cell Broadcast-Nachrichten lesen</string>
   <string name="app_ops_labels_mock_location">Standort abrufen</string>
   <string name="app_ops_labels_read_external_storage">Externen Speicher lesen</string>
   <string name="app_ops_labels_write_external_storage">Externen Speicher beschreiben</string>
   <string name="app_ops_labels_turn_screen_on">Bildschirm einschalten</string>
+  <string name="app_ops_labels_get_accounts">Kontenliste einlesen</string>
   <string name="app_ops_labels_change_wifi">WLAN ein-/ausschalten</string>
   <string name="app_ops_labels_toggle_bluetooth">Bluetooth ein-/ausschalten</string>
+  <string name="app_ops_labels_start_at_boot">Beim Hochfahren starten</string>
   <string name="app_ops_labels_toggle_nfc">NFC ein-/ausschalten</string>
   <string name="app_ops_labels_toggle_mobile_data">Mobile Daten ein-/ausschalten</string>
   <string name="app_ops_labels_superuser">Root-Zugriff</string>
@@ -194,11 +204,13 @@
   <!-- Setting checkbox title for root access -->
   <string name="root_access">Root-Zugriff</string>
   <string name="root_access_warning_title">Root-Zugriff erlauben?</string>
+  <string name="root_access_warning_message">Apps den Root-Zugriff zu ermöglichen kann gefährlich sein und die Sicherheit des Gerätes beeinträchtigen!</string>
   <string name="root_access_none">Deaktiviert</string>
   <string name="root_access_apps">Nur Apps</string>
   <string name="root_access_adb">Nur ADB</string>
   <string name="root_access_all">Apps und ADB</string>
   <!-- Memory -->
+  <string name="memory_startup_apps_title">Apps, die beim Hochfahren starten</string>
   <!-- About phone screen, Slim version -->
   <string name="slim_version_title">Slim-Version</string>
   <string name="slim_version_default">Unbekannt</string>
@@ -208,6 +220,7 @@
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (Standard)</string>
   <string name="restarting_ui">UI wird neu gestartet\u2026</string>
+  <string name="lcd_density_prompt_message">Einige Anwendungen funktionieren möglicherweise nicht bei veränderter Dpi.\n\n Dies startet Ihr Telefon neu.</string>
   <!-- Wakeup options -->
   <string name="display_category_wakeup_options_title">Weckmöglichkeiten</string>
   <string name="wakeup_when_plugged_unplugged_title">Wecken bei Aufladung</string>
@@ -227,4 +240,6 @@
   <!-- Show superuser settings -->
   <string name="superuser_settings_title">Superuser</string>
   <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Privacy Guard Manager aktivieren</string>
+  <string name="privacy_guard_enable_summary">Privacy Guard Manager in den Sicherheitseinstellungen anzeigen.</string>
 </resources>

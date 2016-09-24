@@ -20,7 +20,6 @@
   <!-- Doze options -->
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <!-- User display names for app ops codes - extension of AOSP -->
-  <string name="app_ops_summaries_gps">GPS</string>
   <!-- User display names for app ops codes - extension of AOSP -->
   <!-- App ops permissions -->
   <!-- App ops detail -->
@@ -28,11 +27,8 @@
   <!-- Privacy Settings Header item -->
   <!-- Privacy Guard -->
   <!-- Setting checkbox title for root access -->
-  <string name="root_access">Root достъп</string>
-  <string name="root_access_warning_title">Позволи root достъп?</string>
   <!-- Memory -->
   <!-- About phone screen, Slim version -->
-  <string name="slim_version_default">Неизвестен</string>
   <!-- Display & Lights screen, setting options for LCD density -->
   <!-- Wakeup options -->
   <!-- Proximity wake -->

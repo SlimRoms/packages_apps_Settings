@@ -56,7 +56,7 @@ public class UsbModeChooserActivity extends Activity {
 
         mLayoutInflater = LayoutInflater.from(this);
 
-        mDialog = new AlertDialog.Builder(this)
+        mDialog = new AlertDialog.Builder(this, AlertDialog.THEME_MATERIAL_DAYNIGHT)
                 .setTitle(R.string.usb_use)
                 .setView(R.layout.usb_dialog_container)
                 .setOnDismissListener(new DialogInterface.OnDismissListener() {

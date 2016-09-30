@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="?android:attr/textColorAlertDialogListItem"
+        android:textColor="?android:attr/textColorPrimary"
         android:gravity="center_vertical"
         android:paddingStart="20dp"
         android:paddingEnd="?android:attr/dialogPreferredPadding"

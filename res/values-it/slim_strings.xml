@@ -155,7 +155,7 @@
   <string name="app_ops_labels_use_sip">Utilizza SIP</string>
   <string name="app_ops_labels_make_call">Effettua chiamata</string>
   <string name="app_ops_labels_use_fingerprint">Utilizza l\'impronta digitale</string>
-  <string name="app_ops_labels_use_body_sensors">Uta i sensori del corpo</string>
+  <string name="app_ops_labels_use_body_sensors">Usa i sensori del corpo</string>
   <string name="app_ops_labels_read_cell_broadcasts">Leggere le trasmissioni delle cellule</string>
   <string name="app_ops_labels_mock_location">Accesso alla posizione</string>
   <string name="app_ops_labels_read_external_storage">Leggi memoria esterna</string>

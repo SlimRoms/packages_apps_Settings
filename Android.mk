@@ -1,7 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_JAVA_LIBRARIES := bouncycastle core-oj telephony-common ims-common
+LOCAL_JAVA_LIBRARIES := bouncycastle core-oj telephony-common ims-common org.slim.framework
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v13 \
@@ -9,7 +9,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-appcompat \
     android-support-v14-preference \
-    jsr305
+    jsr305 \
+    slim-preference
 
 LOCAL_MODULE_TAGS := optional
 

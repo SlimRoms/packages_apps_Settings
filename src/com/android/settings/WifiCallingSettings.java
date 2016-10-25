@@ -256,7 +256,7 @@ public class WifiCallingSettings extends SettingsPreferenceFragment
         mButtonWfcMode.setEnabled(wfcEnabled);
 
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
-        if (wfcEnabled && ImsManager.displayWfcMode(context, false)) {
+        if (wfcEnabled) {
             preferenceScreen.addPreference(mButtonWfcMode);
         } else {
             preferenceScreen.removePreference(mButtonWfcMode);

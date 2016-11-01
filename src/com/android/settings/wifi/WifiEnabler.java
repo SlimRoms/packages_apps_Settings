@@ -234,58 +234,8 @@ public class WifiEnabler implements SwitchBar.OnSwitchChangeListener  {
         }
 
         // Disable tethering if enabling Wifi
-        if (!mWifiManager.getWifiStaSapConcurrency()) {
-            if (mayDisableTethering(isChecked)) {
-                if (mContext.getResources().getBoolean(
-                        R.bool.config_show_dialog_open_wifi_when_tethering_open)) {
-                    LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(
-                            Context.LAYOUT_INFLATER_SERVICE);
-                    View showAgainView = inflater.inflate(R.layout.not_show_again, null);
-                    mNotShowAgainCheckbox = (CheckBox)showAgainView.findViewById(R.id.check);
-                    final SharedPreferences sharedpreferences = mContext.getSharedPreferences(
-                            MY_PREF_FILE, Context.MODE_PRIVATE);
-                    boolean showAgain = sharedpreferences.getBoolean(
-                            KEY_TURN_OFF_WIFI_SHOW_AGAIN, true);
-
-                    if (!showAgain) {
-                        mWifiManager.setWifiApEnabled(null, false);
-                        MetricsLogger.action(mContext,
-                                isChecked ? MetricsEvent.ACTION_WIFI_ON :
-                                MetricsEvent.ACTION_WIFI_OFF);
-                        if (!mWifiManager.setWifiEnabled(isChecked)) {
-                            // Error
-                            mSwitchBar.setEnabled(true);
-                            Toast.makeText(mContext, R.string.wifi_error,
-                                   Toast.LENGTH_SHORT).show();
-                        }
-                        return;
-                    }
-
-                    AlertDialog.Builder alert = new AlertDialog.Builder(mContext)
-                            .setTitle(R.string.turn_on_wifi_dialog_title)
-                            .setMessage(R.string.turn_on_wifi_dialog_text)
-                            .setView(showAgainView)
-                            .setPositiveButton(R.string.okay,
-                                    new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                 Editor editor = sharedpreferences.edit();
-                                 editor.putBoolean(KEY_TURN_OFF_WIFI_SHOW_AGAIN,
-                                          !mNotShowAgainCheckbox.isChecked());
-                                 editor.commit();
-                            }
-                    });
-                    alert.setCancelable(false);
-                    alert.show();
-                }
-                mWifiManager.setWifiApEnabled(null, false);
-                if (!mWifiManager.setWifiEnabled(isChecked)) {
-                    // Error
-                    mSwitchBar.setEnabled(true);
-                    Toast.makeText(mContext, R.string.wifi_error, Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
+        if (mayDisableTethering(isChecked)) {
+            mWifiManager.setWifiApEnabled(null, false);
         }
         if (!mWifiManager.setWifiEnabled(isChecked)) {
             // Error

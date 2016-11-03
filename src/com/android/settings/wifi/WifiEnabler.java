@@ -16,15 +16,10 @@
 
 package com.android.settings.wifi;
 
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.net.NetworkInfo;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
@@ -34,11 +29,8 @@ import android.os.Message;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
-import android.widget.CheckBox;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -50,11 +42,10 @@ import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import com.android.settingslib.WirelessUtils;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import android.util.Log;
+
 public class WifiEnabler implements SwitchBar.OnSwitchChangeListener  {
     private Context mContext;
     private SwitchBar mSwitchBar;
-    private static CheckBox mNotShowAgainCheckbox;
     private boolean mListeningToOnSwitchChange = false;
     private AtomicBoolean mConnected = new AtomicBoolean(false);
 
@@ -84,8 +75,6 @@ public class WifiEnabler implements SwitchBar.OnSwitchChangeListener  {
 
     private static final String EVENT_DATA_IS_WIFI_ON = "is_wifi_on";
     private static final int EVENT_UPDATE_INDEX = 0;
-    public static final String MY_PREF_FILE = "MY_PERFS";
-    public static final String KEY_TURN_OFF_WIFI_SHOW_AGAIN = "TurnOffWifiShowAgain";
 
     private Handler mHandler = new Handler() {
         @Override

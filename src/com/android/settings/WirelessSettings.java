@@ -91,6 +91,8 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
     private static final int MANAGE_MOBILE_PLAN_DIALOG_ID = 1;
     private static final String SAVED_MANAGE_MOBILE_PLAN_MSG = "mManageMobilePlanMessage";
 
+    private PreferenceScreen mButtonWfc;
+
     /**
      * Invoked on each preference click in this hierarchy, overrides
      * PreferenceFragment's implementation.  Used to make sure we track the
@@ -237,14 +239,6 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
 
         mButtonWfc = (PreferenceScreen) findPreference(KEY_WFC_SETTINGS);
 
-        if (mEnhancedWFCSettingsEnabled) {
-            //bind WFC service
-            final Intent intentWfc = new Intent();
-            intentWfc.setAction("com.qualcomm.qti.wfcservice.IWFCService");
-            intentWfc.setPackage("com.qualcomm.qti.wfcservice");
-            activity.bindService(intentWfc, mConnection, Context.BIND_AUTO_CREATE);
-        }
-
         String toggleable = Settings.Global.getString(activity.getContentResolver(),
                 Settings.Global.AIRPLANE_MODE_TOGGLEABLE_RADIOS);
 
@@ -340,12 +334,6 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
             Preference p = findPreference(KEY_TETHER_SETTINGS);
             p.setTitle(com.android.settingslib.Utils.getTetheringLabel(cm));
 
-            if (this.getResources().getBoolean(
-                    R.bool.config_tethering_settings_display_summary_Tmobile)){
-                RestrictedPreference rp = (RestrictedPreference) p;
-                rp.useAdminDisabledSummary(false);
-                p.setSummary(R.string.tethering_settings_summary);
-            }
             // Grey out if provisioning is not available.
             p.setEnabled(!TetherSettings
                     .isProvisioningNeededButUnavailable(getActivity()));
@@ -372,6 +360,7 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         if (ImsManager.isWfcEnabledByPlatform(context) &&
                 ImsManager.isWfcProvisionedOnDevice(context)) {
             getPreferenceScreen().addPreference(mButtonWfc);
+
             mButtonWfc.setSummary(WifiCallingSettings.getWfcModeSummary(
                     context, ImsManager.getWfcMode(context)));
         } else {

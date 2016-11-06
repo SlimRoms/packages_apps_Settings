@@ -112,10 +112,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     public void setCategoriesAndSuggestions(List<DashboardCategory> categories,
             List<Tile> suggestions) {
         mSuggestions = suggestions;
-        recountItems();
-    }
-
-    public void setCategories(List<DashboardCategory> categories) {
         mCategories = categories;
 
         // TODO: Better place for tinting?

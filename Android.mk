@@ -22,6 +22,12 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     jsr305 \
     settings-logtags
 
+## Slim framework
+LOCAL_JAVA_LIBRARIES += \
+        org.slim.framework
+LOCAL_STATIC_JAVA_LIBRARIES += \
+        slim-preference
+
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := \

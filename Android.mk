@@ -25,7 +25,6 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-recyclerview \
     android-support-v7-preference \
     android-support-v7-appcompat \
-    android-support-v14-preference
 
 LOCAL_JAVA_LIBRARIES := \
     bouncycastle \
@@ -36,6 +35,12 @@ LOCAL_JAVA_LIBRARIES := \
 LOCAL_STATIC_JAVA_LIBRARIES := \
     jsr305 \
     settings-logtags
+
+## Slim framework
+LOCAL_JAVA_LIBRARIES += \
+        org.slim.framework
+LOCAL_STATIC_JAVA_LIBRARIES += \
+        slim-preference
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

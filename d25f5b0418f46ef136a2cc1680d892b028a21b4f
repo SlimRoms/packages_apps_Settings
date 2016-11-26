@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aade967_4c0513c1",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-11-26T20:22:35Z",
+      "side": 1,
+      "message": "## Slim framework\nLOCAL_JAVA_LIBRARIES +\u003d \\\n        org.slim.framework\n\nLOCAL_STATIC_JAVA_LIBRARIES +\u003d \\\n        slim-preference",
+      "revId": "d25f5b0418f46ef136a2cc1680d892b028a21b4f",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

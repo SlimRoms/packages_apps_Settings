@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aade967_efc0717e",
+        "filename": "res/xml/display_settings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000131
+      },
+      "writtenOn": "2016-11-28T20:18:07Z",
+      "side": 1,
+      "message": "tabs are evil",
+      "revId": "3f7ec874377c3857caba14156e79a58d32210ee2",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

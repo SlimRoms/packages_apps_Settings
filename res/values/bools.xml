@@ -4,9 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-  
+
           http://www.apache.org/licenses/LICENSE-2.0
-  
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,8 @@
 <resources>
     <!-- Whether or not the dock settings are to be displayed for this device when docked -->
     <bool name="has_dock_settings">false</bool>
+    <!-- Whether there is a boot sounds checkbox -->
+    <bool name="has_boot_sounds">false</bool>
     <!-- Whether there is a silent mode checkbox  -->
     <bool name="has_silent_mode">true</bool>
     <!-- Whether the DEPRECATED power control widget is enabled for this
@@ -33,11 +35,17 @@
     <!-- Whether to show a preference item for the manual in About phone -->
     <bool name="config_show_manual">false</bool>
 
+    <!-- only one provider that matches,flag show one email -->
+    <bool name="config_show_email">true</bool>
+
     <!-- Whether to show a preference item for regulatory information in About phone -->
     <bool name="config_show_regulatory_info">false</bool>
 
     <!-- Whether to show a preference item for mobile plan -->
-    <bool name="config_show_mobile_plan">true</bool>
+    <bool name="config_show_mobile_plan">false</bool>
+
+    <!-- Whether to add AGPS parameter settings -->
+    <bool name="config_agps_enabled">false</bool>
 
     <!-- Whether none security option is hide or not  (country specific). -->
     <bool name="config_hide_none_security_option">false</bool>
@@ -75,6 +83,9 @@
     <!-- Whether to enable data usage selection -->
     <bool name="config_data_usage_selection">false</bool>
 
+    <!-- Whether to enable app network access control -->
+    <bool name="config_app_network_access_enabled">false</bool>
+
     <!-- Whether to hide ims apn -->
     <bool name="config_hide_ims_apns">false</bool>
     <!-- Whether to hide dm apn for carrier -->
@@ -83,8 +94,6 @@
     <bool name="config_hidesupl_enable">false</bool>
     <!-- Whether to hide mms apn-->
     <bool name="config_hide_mms_enable">false</bool>
-    <!--Whether the storage manager exists. -->
-    <bool name="config_has_storage_manager">false</bool>
 
     <!--Whether help links are defined. -->
     <bool name="config_has_help">false</bool>

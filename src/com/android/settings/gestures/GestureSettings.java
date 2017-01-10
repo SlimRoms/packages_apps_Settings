@@ -183,9 +183,17 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         return MetricsEvent.SETTINGS_GESTURES;
     }
 
-    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) {
-        return res.getBoolean(
+    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) {        
+        boolean googleGestureEnabled = res.getBoolean(
                 com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
+        if (googleGestureEnabled)
+            return true;
+
+        // if Google gesture is not supported, maybe Slim one is?
+        boolean configSet = res.getInteger(
+                com.android.internal.R.integer.config_cameraLaunchGestureSensorType) != -1;
+        return configSet &&
+                !SystemProperties.getBoolean("gesture.disable_camera_launch", false);
     }
 
     private static boolean isSystemUINavigationAvailable(Context context) {

@@ -133,7 +133,7 @@
         </activity>
 
         <activity android:name=".Settings$PersonalizationSettings"
-            android:label="@*org.slim.framework:string/settings_header_category_personalization">
+            android:label="@*slim:string/settings_header_category_personalization">
             <intent-filter android:priority="4">
                 <action android:name="com.android.settings.category.personalization" />
                 <category android:name="android.intent.category.DEFAULT" />

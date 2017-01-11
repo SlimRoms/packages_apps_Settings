@@ -16,7 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        xmlns:slim="http://schemas.android.com/apk/res/org.slim.framework"
+        xmlns:slim="http://schemas.android.com/apk/res/slim"
         android:title="@string/security_settings_title">
 
     <PreferenceCategory android:key="sim_lock"
@@ -47,7 +47,7 @@
             android:title="@string/device_admin_title"
             android:persistent="false">
 
-        <org.slim.preference.SlimListPreference
+        <slim.preference.SlimListPreference
             android:key="advanced_reboot"
             android:title="@string/advanced_reboot_title"
             android:dialogTitle="@string/advanced_reboot_dialog_title"

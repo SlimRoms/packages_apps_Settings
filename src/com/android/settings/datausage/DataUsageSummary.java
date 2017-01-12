@@ -147,6 +147,19 @@ public class DataUsageSummary extends DataUsageBase implements Indexable, DataUs
                 startActivity(intent);
                 return true;
             }
+            case R.id.data_usage_menu_app_network_access: {
+                try {
+                    Intent intent = new Intent();
+                    intent.setClassName(
+                            "com.qualcomm.qti.appnetaccess",
+                            "com.qualcomm.qti.appnetaccess.NetworkControl");
+                    intent.setAction("android.intent.networkcontrol");
+                    startActivity(intent);
+                } catch (ActivityNotFoundException ex) {
+                    Log.d(TAG, "activity NetworkControl not found");
+                }
+                return true;
+            }
         }
         return false;
     }

@@ -115,6 +115,35 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         return super.onPreferenceTreeClick(preference);
     }
 
+    /**
+     * check whether NetworkSetting apk exist in system, if yes, return true, else
+     * return false.
+     */
+    private boolean isNetworkSettingsApkAvailable() {
+
+            // check whether the target handler exist in system
+            Intent intent = new Intent("org.codeaurora.settings.NETWORK_OPERATOR_SETTINGS_ASYNC");
+            List<ResolveInfo> list = mPm.queryIntentActivities(intent, 0);
+            for (ResolveInfo resolveInfo : list){
+                // check is it installed in system.img, exclude the application
+                // installed by user
+                if ((resolveInfo.activityInfo.applicationInfo.flags &
+                        ApplicationInfo.FLAG_SYSTEM) != 0) {
+                    return true;
+                }
+            }
+        return false;
+    }
+
+    public void onMobileNetworkSettingsClick() {
+        log("onMobileNetworkSettingsClick:");
+        final Intent intent = new Intent(Intent.ACTION_MAIN);
+        log("qti MobileNetworkSettings Enabled");
+        // prepare intent to start qti MobileNetworkSettings activity
+        intent.setComponent(new ComponentName("com.qualcomm.qti.networksetting",
+               "com.qualcomm.qti.networksetting.MobileNetworkSettings"));
+        startActivity(intent);
+    }
     private String mManageMobilePlanMessage;
     public void onManageMobilePlanClick() {
         log("onManageMobilePlanClick:");
@@ -295,6 +324,8 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
                         UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS, UserHandle.myUserId())) {
             removePreference(KEY_MOBILE_NETWORK_SETTINGS);
             removePreference(KEY_MANAGE_MOBILE_PLAN);
+        } else {
+            mIsNetworkSettingsAvailable = isNetworkSettingsApkAvailable();
         }
         // Remove Mobile Network Settings and Manage Mobile Plan
         // if config_show_mobile_plan sets false.

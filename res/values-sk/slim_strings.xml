@@ -17,23 +17,229 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Slim Settings Screens -->
+  <string name="header_category_personalization">Personalizácia</string>
   <!-- Doze options -->
+  <string name="display_category_doze_options_title">Nastavenia ambientneho zobrazenia</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
+  <string name="app_ops_categories_location">Poloha</string>
+  <string name="app_ops_categories_personal">Osobné</string>
+  <string name="app_ops_categories_messaging">Odosielanie správ</string>
+  <string name="app_ops_categories_media">Média</string>
+  <string name="app_ops_categories_device">Zariadenie</string>
+  <string name="app_ops_categories_bootup">Pri štarte</string>
+  <string name="app_ops_categories_su">Superuser</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_summaries_coarse_location">približná poloha</string>
+  <string name="app_ops_summaries_fine_location">presná poloha</string>
+  <string name="app_ops_summaries_gps">GPS</string>
+  <string name="app_ops_summaries_vibrate">vibrovať</string>
+  <string name="app_ops_summaries_read_contacts">čítať kontakty</string>
+  <string name="app_ops_summaries_modify_contacts">upraviť kontakty</string>
+  <string name="app_ops_summaries_read_call_log">čítať údaje z denníka hovorov</string>
+  <string name="app_ops_summaries_modify_call_log">upraviť denník hovorov</string>
+  <string name="app_ops_summaries_read_calendar">čítať údaje z kalendára</string>
+  <string name="app_ops_summaries_modify_calendar">upraviť údaje v kalendári</string>
+  <string name="app_ops_summaries_wifi_scan">Prehľadávať siete Wi-Fi</string>
+  <string name="app_ops_summaries_notification">oznámenia/upozornenie</string>
+  <string name="app_ops_summaries_cell_scan">čítať bunky GSM</string>
+  <string name="app_ops_summaries_call_phone">telefonovať</string>
+  <string name="app_ops_summaries_read_sms">čítať SMS</string>
+  <string name="app_ops_summaries_write_sms">vytvárať SMS</string>
+  <string name="app_ops_summaries_receive_sms">prijímať SMS</string>
+  <string name="app_ops_summaries_receive_emergency_sms">prijímať núdzové SMS</string>
+  <string name="app_ops_summaries_receive_mms">prijímať MMS</string>
+  <string name="app_ops_summaries_receive_wap_push">prijímať WAP správy</string>
+  <string name="app_ops_summaries_send_sms">posielať SMS</string>
+  <string name="app_ops_summaries_read_icc_sms">čítať ICC SMS</string>
+  <string name="app_ops_summaries_write_icc_sms">vytvárať ICC SMS</string>
+  <string name="app_ops_summaries_modify_settings">upravovať nastavenia</string>
+  <string name="app_ops_summaries_draw_on_top">vykresliť do najvyššej vrstvy</string>
+  <string name="app_ops_summaries_access_notifications">pristupovať k oznámeniam</string>
+  <string name="app_ops_summaries_camera">fotoaparát</string>
+  <string name="app_ops_summaries_record_audio">nahrať zvuk</string>
+  <string name="app_ops_summaries_play_audio">prehrávať zvuk</string>
+  <string name="app_ops_summaries_read_clipboard">čítať údaje zo schránky</string>
+  <string name="app_ops_summaries_modify_clipboard">upravovať údaje v schránke</string>
+  <string name="app_ops_summaries_media_buttons">tlačidlá médií</string>
+  <string name="app_ops_summaries_audio_focus">ovládať zvuk</string>
+  <string name="app_ops_summaries_master_volume">hlavná hlasitosť</string>
+  <string name="app_ops_summaries_voice_volume">hlasitosť hovoru</string>
+  <string name="app_ops_summaries_ring_volume">hlasitosť zvonenia</string>
+  <string name="app_ops_summaries_media_volume">hlasitosť médií</string>
+  <string name="app_ops_summaries_alarm_volume">hlasitosť budíka</string>
+  <string name="app_ops_summaries_notification_volume">hlasitosť oznámenia</string>
+  <string name="app_ops_summaries_bluetooth_volume">hlasitosť Bluetooth</string>
+  <string name="app_ops_summaries_keep_awake">zakázať režim spánku</string>
+  <string name="app_ops_summaries_monitor_location">sledovať polohu</string>
+  <string name="app_ops_summaries_monitor_high_power_location">sledovať polohu v režime vysokej spotreby</string>
+  <string name="app_ops_summaries_get_usage_stats">získať štatistiky používania aplikácií</string>
+  <string name="app_ops_summaries_mute_unmute_microphone">vypnoúť/zapnoúť mikrofón</string>
+  <string name="app_ops_summaries_toast_window">zobraziť vyskakovacie upozornenia</string>
+  <string name="app_ops_summaries_project_media">ovládať project média</string>
+  <string name="app_ops_summaries_activate_vpn">aktivovať VPN</string>
+  <string name="app_ops_summaries_write_wallpaper">nastaviť tapetu</string>
+  <string name="app_ops_summaries_assist_structure">používať pomocné štruktúry</string>
+  <string name="app_ops_summaries_assist_screenshot">pomocná snímka obrazovky</string>
+  <string name="app_ops_summaries_read_phone_state">získať prístup ku stavu telefónu</string>
+  <string name="app_ops_summaries_add_voicemail">pridať hlasovú poštu</string>
+  <string name="app_ops_summaries_use_sip">použiť SIP</string>
+  <string name="app_ops_summaries_make_call">zavolať</string>
+  <string name="app_ops_summaries_use_fingerprint">použil snímač odtlačkov prstov</string>
+  <string name="app_ops_summaries_use_body_sensors">používať telové senzory</string>
+  <string name="app_ops_summaries_read_cell_broadcasts">čítať dáta buniek GSM</string>
+  <string name="app_ops_summaries_mock_location">fix polohy</string>
+  <string name="app_ops_summaries_read_external_storage">čítať externé úložisko</string>
+  <string name="app_ops_summaries_write_external_storage">zapisovať na externé úložisko</string>
+  <string name="app_ops_summaries_turn_screen_on">zapnúť obrazovku</string>
+  <string name="app_ops_summaries_get_accounts">získať účty</string>
+  <string name="app_ops_summaries_toggle_wifi">prepínač Wi-Fi</string>
+  <string name="app_ops_summaries_toggle_bluetooth">prepínač Bluetooth</string>
+  <string name="app_ops_summaries_start_at_boot">spustiť pri štarte</string>
+  <string name="app_ops_summaries_toggle_nfc">prepnúť NFC</string>
+  <string name="app_ops_summaries_toggle_mobile_data">prepnúť mobilné dáta</string>
+  <string name="app_ops_summaries_superuser">root prístup</string>
   <!-- User display names for app ops codes - extension of AOSP -->
+  <string name="app_ops_labels_coarse_location">Približná poloha</string>
+  <string name="app_ops_labels_fine_location">Presná poloha</string>
+  <string name="app_ops_labels_gps">GPS</string>
+  <string name="app_ops_labels_vibrate">Vibrácie</string>
+  <string name="app_ops_labels_read_contacts">Čítať údaje z kontaktov</string>
+  <string name="app_ops_labels_modify_contacts">Upraviť kontakty</string>
+  <string name="app_ops_labels_read_call_log">Čítať denník hovorov</string>
+  <string name="app_ops_labels_modify_call_log">Upraviť denník hovorov</string>
+  <string name="app_ops_labels_read_calendar">Čítať údaje z kalendára</string>
+  <string name="app_ops_labels_modify_calendar">Upraviť údaje v kalendári</string>
+  <string name="app_ops_labels_wifi_scan">Prehľadávať siete Wi-Fi</string>
+  <string name="app_ops_labels_notification">Oznámenia/Upozornenie</string>
+  <string name="app_ops_labels_cell_scan">Čítať bunky GSM</string>
+  <string name="app_ops_labels_call_phone">Telefonovať</string>
+  <string name="app_ops_labels_read_sms">Čítať SMS</string>
+  <string name="app_ops_labels_write_sms">Vytvárať SMS</string>
+  <string name="app_ops_labels_receive_sms">Prijímať SMS</string>
+  <string name="app_ops_labels_receive_emergency_sms">Prijímať núdzové SMS</string>
+  <string name="app_ops_labels_receive_mms">Prijímať MMS</string>
+  <string name="app_ops_labels_receive_wap_push">Prijímať WAP správy</string>
+  <string name="app_ops_labels_send_sms">Odoslať SMS</string>
+  <string name="app_ops_labels_read_icc_sms">Čítať ICC SMS</string>
+  <string name="app_ops_labels_write_icc_sms">Vytvárať ICC SMS</string>
+  <string name="app_ops_labels_modify_settings">Upravovať nastavenia</string>
+  <string name="app_ops_labels_draw_on_top">Vykresliť do najvyššej vrstvy</string>
+  <string name="app_ops_labels_access_notifications">Pristupovať k oznámeniam</string>
+  <string name="app_ops_labels_camera">Fotoaparát</string>
+  <string name="app_ops_labels_record_audio">Záznam zvuku</string>
+  <string name="app_ops_labels_play_audio">Prehrať zvuk</string>
+  <string name="app_ops_labels_read_clipboard">Čítať údaje zo schránky</string>
+  <string name="app_ops_labels_modify_clipboard">Upravovať údaje v schránke</string>
+  <string name="app_ops_labels_media_buttons">Tlačidlá médií</string>
+  <string name="app_ops_labels_audio_focus">Ovládať zvuk</string>
+  <string name="app_ops_labels_master_volume">Hlavná hlasitosť</string>
+  <string name="app_ops_labels_voice_volume">Hlasitosť hovoru</string>
+  <string name="app_ops_labels_ring_volume">Hlasitosť zvonenia</string>
+  <string name="app_ops_labels_media_volume">Hlasitosť médií</string>
+  <string name="app_ops_labels_alarm_volume">Hlasitosť budíka</string>
+  <string name="app_ops_labels_notification_volume">Hlasitosť oznámení</string>
+  <string name="app_ops_labels_bluetooth_volume">Hlasitosť Bluetooth</string>
+  <string name="app_ops_labels_keep_awake">Zabrániť zariadeniu prejsť do režimu spánku</string>
+  <string name="app_ops_labels_monitor_location">Sledovať polohu</string>
+  <string name="app_ops_labels_monitor_high_power_location">Sledovať polohu v režime vysokej spotreby</string>
+  <string name="app_ops_labels_get_usage_stats">Získať štatistiky používania aplikácií</string>
+  <string name="app_ops_labels_mute_unmute_microphone">Vypnoúť/zapnúť mikrofón</string>
+  <string name="app_ops_labels_toast_window">Zobraziť vyskakovacie upozornenia</string>
+  <string name="app_ops_labels_project_media">Premietať médiá</string>
+  <string name="app_ops_labels_activate_vpn">Aktivovať VPN</string>
+  <string name="app_ops_labels_write_wallpaper">Nastaviť tapetu</string>
+  <string name="app_ops_labels_assist_structure">Používať pomocné štruktúry</string>
+  <string name="app_ops_labels_assist_screenshot">Pomocná snímka obrazovky</string>
+  <string name="app_ops_labels_read_phone_state">Získať prístup ku stavu telefónu</string>
+  <string name="app_ops_labels_add_voicemail">Pridať hlasovú poštu</string>
+  <string name="app_ops_labels_use_sip">Použiť SIP</string>
+  <string name="app_ops_labels_make_call">Zavolať</string>
+  <string name="app_ops_labels_use_fingerprint">Použiť snímač odtlačkov prstov</string>
+  <string name="app_ops_labels_use_body_sensors">Použiť telové senzory</string>
+  <string name="app_ops_labels_read_cell_broadcasts">Čítať dáta buniek GSM</string>
+  <string name="app_ops_labels_mock_location">Fix polohy</string>
+  <string name="app_ops_labels_read_external_storage">Čítať externé úložisko</string>
+  <string name="app_ops_labels_write_external_storage">Zapisovať na externé úložisko</string>
+  <string name="app_ops_labels_turn_screen_on">Zapnúť obrazovku</string>
+  <string name="app_ops_labels_get_accounts">Získať účty</string>
+  <string name="app_ops_labels_change_wifi">Prepínač Wi-Fi</string>
+  <string name="app_ops_labels_toggle_bluetooth">Prepínač Bluetooth</string>
+  <string name="app_ops_labels_start_at_boot">Spustiť pri štarte</string>
+  <string name="app_ops_labels_toggle_nfc">Prepnúť NFC</string>
+  <string name="app_ops_labels_toggle_mobile_data">Prepnúť mobilné dáta</string>
+  <string name="app_ops_labels_superuser">Root prístup</string>
   <!-- App ops permissions -->
+  <string name="app_ops_permissions_allowed">Povolené</string>
+  <string name="app_ops_permissions_ignored">Ignorované</string>
+  <string name="app_ops_permissions_always_ask">Vždy sa spýtať</string>
   <!-- App ops detail -->
+  <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (použité <xliff:g id="count">%2$s</xliff:g>)</string>
+  <string name="app_ops_allowed_count">Povolené <xliff:g id="count" example="2 times">%s</xliff:g></string>
+  <string name="app_ops_ignored_count">Zakázané <xliff:g id="count" example="2 times">%s</xliff:g></string>
+  <string name="app_ops_both_count">Povolené <xliff:g id="count">%1$s</xliff:g>, zakázané <xliff:g id="count">%2$s</xliff:g></string>
   <!-- App ops menu options -->
+  <string name="app_ops_show_user_apps">Zobraziť používateľské aplikácie</string>
+  <string name="app_ops_show_system_apps">Zobraziť systémové aplikácie</string>
+  <string name="app_ops_reset_counters">Vynulovať počítadá povoliť/zakázať</string>
+  <string name="app_ops_reset_confirm_title">Potvrdiť vynulovanie počítadiel</string>
+  <string name="app_ops_reset_confirm_mesg">Naozaj chcete vynulovať počítadlá?</string>
   <!-- Privacy Settings Header item -->
+  <string name="privacy_settings_title">Súkromie</string>
   <!-- Privacy Guard -->
+  <string name="privacy_guard_switch_label">Povoliť Ochranu súkromia</string>
+  <string name="privacy_guard_dlg_title">Povoliť Ochranu súkromia?</string>
+  <string name="privacy_guard_dlg_text">Keď je povolená Ochrana súkromia, aplikácie nebudú môcť pristupovať k osobným údajom ako sú kontakty, správy alebo denníky hovorov.</string>
+  <string name="privacy_guard_dlg_system_app_text">Keď je povolená Ochrana súkromia pre vstavanú aplikáciu, nebude jej umožnené pristupovať alebo poskytovať osobné údaje. To môže spôsobiť nesprávne fungovanie iných aplikácií.</string>
+  <string name="privacy_guard_default_title">Povolené predvolene</string>
+  <string name="privacy_guard_default_summary">Predvolene povoliť pre novonainštalované aplikácie</string>
+  <string name="privacy_guard_manager_title">Ochrana súkromia</string>
+  <string name="privacy_guard_manager_summary">Spravovať, ktoré aplikácie majú prístup k vašim osobným údajom</string>
+  <string name="privacy_guard_no_user_apps">Žiadne aplikácie nie sú nainštalované</string>
+  <string name="privacy_guard_help_title">Nápoveda</string>
+  <string name="privacy_guard_reset_title">Resetovať</string>
+  <string name="privacy_guard_reset_text">Resetovať povolenia?</string>
+  <string name="privacy_guard_help_text">Na tejto obrazovke môžete jednoduchým kliknutím vybrať, pre ktoré aplikácie bude Ochrana súkromia aktívna. Vybraným aplikáciám nebude umožnený prístup k vašim osobným údajom ako sú kontakty, správy alebo denníky hovorov. Dlhým kliknutím na položku sa otvorí obrazovka s podrobnosťami o danej aplikácii.\n\nPredvolene nie sú zobrazené vstavané aplikácie. Ak ich chcete zobraziť, vyberte príslušnú možnosť v ponuke.</string>
+  <string name="privacy_guard_manager_show_system_apps">Zobraziť systémové aplikácie</string>
+  <string name="privacy_guard_advanced_settings_title">Pokročilé</string>
   <!-- Setting checkbox title for root access -->
+  <string name="root_access">Root prístup</string>
+  <string name="root_access_warning_title">Povoliť root prístup?</string>
+  <string name="root_access_warning_message">Povolenie aplikáciám žiadať o root prístup je veľmi nebezpečné a môže ohroziť bezpečnosť vášho systému!</string>
+  <string name="root_access_none">Vypnuté</string>
+  <string name="root_access_apps">Len aplikácie</string>
+  <string name="root_access_adb">Len ADB</string>
+  <string name="root_access_all">Aplikácie a ADB</string>
   <!-- Memory -->
+  <string name="memory_startup_apps_title">Aplikácie spúšťané pri štarte</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim verzia</string>
+  <string name="slim_version_default">Neznáme</string>
   <!-- Display & Lights screen, setting options for LCD density -->
+  <string name="lcd_density">LCD hustota</string>
+  <string name="dialog_title_lcd_density">LCD hustota</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (predvolené)</string>
+  <string name="restarting_ui">Reštartovanie UI\u2026</string>
+  <string name="lcd_density_prompt_message">Niektoré aplikácie nemusia fungovať s neštandardným dpi.\n\nTo reštartuje telefón.</string>
   <!-- Wakeup options -->
+  <string name="display_category_wakeup_options_title">Možnosti prebudenia</string>
+  <string name="wakeup_when_plugged_unplugged_title">Prebudiť pri nabíjaní</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Prebudiť pri pripojení/odpojení nabíjačky.</string>
   <!-- Proximity wake -->
+  <string name="proximity_wake_title">Zabrániť nechcenému prebudeniu</string>
+  <string name="proximity_wake_summary">Kontrolovať snímač priblíženia pre zabránenie nechcenému prebudeniu</string>
   <!-- Chamber of Secrets -->
+  <string name="chamber_title">Tajomná komnata</string>
+  <string name="chamber_toast">Tajomná komnata bola otvorená</string>
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Rozšírený reštart</string>
+  <string name="advanced_reboot_dialog_title">Rozšírená ponuka reštartovania</string>
+  <string name="advanced_reboot_disabled">Vypnuté</string>
+  <string name="advanced_reboot_hide_on_keyguard">Zakázať na obrazovke uzamknutia</string>
+  <string name="advanced_reboot_show_always">Vždy zobraziť</string>
   <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Superuser</string>
   <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Povoliť Ochranu súkromia</string>
+  <string name="privacy_guard_enable_summary">Zobraziť správcu ochrany súkromia v nastavení zabezpečenia.</string>
 </resources>

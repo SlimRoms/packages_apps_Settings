@@ -235,7 +235,11 @@
   <string name="advanced_reboot_title">Προηγμένη επανεκκίνηση</string>
   <string name="advanced_reboot_dialog_title">Προηγμένο μενού επανεκκίνησης</string>
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
+  <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη σε ασφαλή οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
   <!-- Show superuser settings -->
+  <string name="superuser_settings_title">Υπερχρήστης</string>
   <!-- Privacy guard enable switch -->
+  <string name="privacy_guard_enable_title">Eνεργοποίηση του Διαχειριστή Προστασίας Απόρρητου</string>
+  <string name="privacy_guard_enable_summary">Εμφάνιση του Διαχειριστή Προστασίας Απόρρητου στις Ρυθμίσεις Ασφάλειας.</string>
 </resources>

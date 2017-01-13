@@ -77,7 +77,7 @@
   <string name="app_ops_summaries_toast_window">всплывающее уведомление</string>
   <string name="app_ops_summaries_project_media">проект медиа</string>
   <string name="app_ops_summaries_activate_vpn">Активация VPN</string>
-  <string name="app_ops_summaries_write_wallpaper">Запись обоев</string>
+  <string name="app_ops_summaries_write_wallpaper">установить обои</string>
   <string name="app_ops_summaries_assist_structure">Помощь в структуре</string>
   <string name="app_ops_summaries_assist_screenshot">Помощь в скриншоте</string>
   <string name="app_ops_summaries_read_phone_state">Чтение состояние телефона</string>

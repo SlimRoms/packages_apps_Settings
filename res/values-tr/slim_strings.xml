@@ -17,6 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Slim Settings Screens -->
+  <string name="header_category_personalization">Kişiselleştirme</string>
   <!-- Doze options -->
   <string name="display_category_doze_options_title">Ortam ekranı (doze) seçenekleri</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->

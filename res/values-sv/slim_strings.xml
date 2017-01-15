@@ -14,8 +14,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
-  <string name="advanced_reboot_title">Riavvio avanzato</string>
-  <string name="advanced_reboot_dialog_title">Menu riavvio avanzato</string>
-  <string name="advanced_reboot_disabled">Disattivato</string>
-  <string name="advanced_reboot_show_always">Mostra sempre</string>
+  <string name="advanced_reboot_title">Avancerad omstart</string>
+  <string name="advanced_reboot_dialog_title">Avancerad omstartsmeny</string>
+  <string name="advanced_reboot_disabled">Inaktivera</string>
+  <string name="advanced_reboot_show_always">Visa alltid</string>
 </resources>

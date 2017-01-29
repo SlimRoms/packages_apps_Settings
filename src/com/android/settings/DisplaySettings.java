@@ -93,6 +93,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String SHOW_NETWORK_NAME_MODE = "show_network_name_mode";
     private static final int SHOW_NETWORK_NAME_ON = 1;
     private static final int SHOW_NETWORK_NAME_OFF = 0;
+    private static final String PREF_KEY_DOUBLE_TAP_POWER = "gesture_double_tap_power"; //temp
 
     private Preference mFontSizePref;
 
@@ -119,6 +120,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
+
+        // Double tap power for camera - temp
+        if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
+            int cameraDisabled = Secure.getInt(
+                    getContentResolver(), Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
+            addPreference(PREF_KEY_DOUBLE_TAP_POWER, cameraDisabled == 0);
+        } else {
+            removePreference(PREF_KEY_DOUBLE_TAP_POWER);
+        }
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null

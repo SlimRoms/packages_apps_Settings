@@ -27,13 +27,6 @@
         settings:preview="@drawable/gesture_fingerprint_swipe"/>
 
     <com.android.settings.gestures.GesturePreference
-        android:key="gesture_double_tap_power"
-        android:title="@string/double_tap_power_for_camera_title"
-        android:summary="@string/double_tap_power_for_camera_summary"
-        settings:animation="@raw/gesture_double_tap"
-        settings:preview="@drawable/gesture_double_tap"/>
-
-    <com.android.settings.gestures.GesturePreference
         android:key="gesture_double_twist"
         android:title="@string/double_twist_for_camera_mode_title"
         android:summary="@string/double_twist_for_camera_mode_summary"

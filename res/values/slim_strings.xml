@@ -21,4 +21,8 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <!-- Doze options -->
+    <string name="display_category_doze_options_title">Ambient display (doze) options</string>
+    <string name="doze_settings_title">Advanced doze options</string>
+
 </resources>

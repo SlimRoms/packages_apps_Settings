@@ -51,14 +51,10 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "GestureSettings";
     private static final String PREF_KEY_DOUBLE_TWIST = "gesture_double_twist";
-    private static final String PREF_KEY_PICK_UP = "gesture_pick_up";
     private static final String PREF_KEY_SWIPE_DOWN_FINGERPRINT = "gesture_swipe_down_fingerprint";
-    private static final String PREF_KEY_DOUBLE_TAP_SCREEN = "gesture_double_tap_screen";
     private static final String DEBUG_DOZE_COMPONENT = "debug.doze.component";
 
     private List<GesturePreference> mPreferences;
-
-    private AmbientDisplayConfiguration mAmbientConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,21 +62,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.gesture_settings);
         Context context = getActivity();
         mPreferences = new ArrayList();
-
-        // Ambient Display
-        mAmbientConfig = new AmbientDisplayConfiguration(context);
-        if (mAmbientConfig.pulseOnPickupAvailable()) {
-            boolean pickup = mAmbientConfig.pulseOnPickupEnabled(UserHandle.myUserId());
-            addPreference(PREF_KEY_PICK_UP, pickup);
-        } else {
-            removePreference(PREF_KEY_PICK_UP);
-        }
-        if (mAmbientConfig.pulseOnDoubleTapAvailable()) {
-            boolean doubleTap = mAmbientConfig.pulseOnDoubleTapEnabled(UserHandle.myUserId());
-            addPreference(PREF_KEY_DOUBLE_TAP_SCREEN, doubleTap);
-        } else {
-            removePreference(PREF_KEY_DOUBLE_TAP_SCREEN);
-        }
 
         // Fingerprint slide for notifications
         if (isSystemUINavigationAvailable(context)) {
@@ -146,11 +127,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (boolean) newValue;
         String key = preference.getKey();
-        if (PREF_KEY_PICK_UP.equals(key)) {
-            Secure.putInt(getContentResolver(), Secure.DOZE_PULSE_ON_PICK_UP, enabled ? 1 : 0);
-        } else if (PREF_KEY_DOUBLE_TAP_SCREEN.equals(key)) {
-            Secure.putInt(getContentResolver(), Secure.DOZE_PULSE_ON_DOUBLE_TAP, enabled ? 1 : 0);
-        } else if (PREF_KEY_SWIPE_DOWN_FINGERPRINT.equals(key)) {
+        if (PREF_KEY_SWIPE_DOWN_FINGERPRINT.equals(key)) {
             Secure.putInt(getContentResolver(),
                     Secure.SYSTEM_NAVIGATION_KEYS_ENABLED, enabled ? 1 : 0);
         } else if (PREF_KEY_DOUBLE_TWIST.equals(key)) {
@@ -226,14 +203,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
             @Override
             public List<String> getNonIndexableKeys(Context context) {
                 ArrayList<String> result = new ArrayList<String>();
-                AmbientDisplayConfiguration ambientConfig
-                        = new AmbientDisplayConfiguration(context);
-                if (!ambientConfig.pulseOnPickupAvailable()) {
-                    result.add(PREF_KEY_PICK_UP);
-                }
-                if (!ambientConfig.pulseOnDoubleTapAvailable()) {
-                    result.add(PREF_KEY_DOUBLE_TAP_SCREEN);
-                }
                 if (!isSystemUINavigationAvailable(context)) {
                     result.add(PREF_KEY_SWIPE_DOWN_FINGERPRINT);
                 }

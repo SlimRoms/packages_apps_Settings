@@ -40,18 +40,4 @@
         settings:animation="@raw/gesture_twist"
         settings:preview="@drawable/gesture_twist"/>
 
-    <com.android.settings.gestures.GesturePreference
-        android:key="gesture_double_tap_screen"
-        android:title="@string/ambient_display_title"
-        android:summary="@string/ambient_display_summary"
-        settings:animation="@raw/gesture_ambient_tap"
-        settings:preview="@drawable/gesture_ambient_tap"/>
-
-    <com.android.settings.gestures.GesturePreference
-        android:key="gesture_pick_up"
-        android:title="@string/ambient_display_pickup_title"
-        android:summary="@string/ambient_display_pickup_summary"
-        settings:animation="@raw/gesture_ambient_lift"
-        settings:preview="@drawable/gesture_ambient_lift"/>
-
 </PreferenceScreen>

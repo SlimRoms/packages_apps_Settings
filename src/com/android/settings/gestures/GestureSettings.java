@@ -50,7 +50,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "GestureSettings";
-    private static final String PREF_KEY_DOUBLE_TAP_POWER = "gesture_double_tap_power";
     private static final String PREF_KEY_DOUBLE_TWIST = "gesture_double_twist";
     private static final String PREF_KEY_PICK_UP = "gesture_pick_up";
     private static final String PREF_KEY_SWIPE_DOWN_FINGERPRINT = "gesture_swipe_down_fingerprint";
@@ -67,15 +66,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.gesture_settings);
         Context context = getActivity();
         mPreferences = new ArrayList();
-
-        // Double tap power for camera
-        if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
-            int cameraDisabled = Secure.getInt(
-                    getContentResolver(), Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
-            addPreference(PREF_KEY_DOUBLE_TAP_POWER, cameraDisabled == 0);
-        } else {
-            removePreference(PREF_KEY_DOUBLE_TAP_POWER);
-        }
 
         // Ambient Display
         mAmbientConfig = new AmbientDisplayConfiguration(context);
@@ -156,10 +146,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (boolean) newValue;
         String key = preference.getKey();
-        if (PREF_KEY_DOUBLE_TAP_POWER.equals(key)) {
-            Secure.putInt(getContentResolver(),
-                    Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, enabled ? 0 : 1);
-        } else if (PREF_KEY_PICK_UP.equals(key)) {
+        if (PREF_KEY_PICK_UP.equals(key)) {
             Secure.putInt(getContentResolver(), Secure.DOZE_PULSE_ON_PICK_UP, enabled ? 1 : 0);
         } else if (PREF_KEY_DOUBLE_TAP_SCREEN.equals(key)) {
             Secure.putInt(getContentResolver(), Secure.DOZE_PULSE_ON_DOUBLE_TAP, enabled ? 1 : 0);
@@ -181,11 +168,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.SETTINGS_GESTURES;
-    }
-
-    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) {
-        return res.getBoolean(
-                com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
     }
 
     private static boolean isSystemUINavigationAvailable(Context context) {
@@ -246,9 +228,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                 ArrayList<String> result = new ArrayList<String>();
                 AmbientDisplayConfiguration ambientConfig
                         = new AmbientDisplayConfiguration(context);
-                if (!isCameraDoubleTapPowerGestureAvailable(context.getResources())) {
-                    result.add(PREF_KEY_DOUBLE_TAP_POWER);
-                }
                 if (!ambientConfig.pulseOnPickupAvailable()) {
                     result.add(PREF_KEY_PICK_UP);
                 }

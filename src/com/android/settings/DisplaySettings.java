@@ -36,6 +36,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.provider.Settings.Secure;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.DropDownPreference;
 import android.support.v7.preference.ListPreference;
@@ -93,6 +94,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String SHOW_NETWORK_NAME_MODE = "show_network_name_mode";
     private static final int SHOW_NETWORK_NAME_ON = 1;
     private static final int SHOW_NETWORK_NAME_OFF = 0;
+    private static final String PREF_KEY_DOUBLE_TAP_POWER = "gesture_double_tap_power"; //temp
 
     private Preference mFontSizePref;
 
@@ -119,6 +121,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
+
+        // Double tap power for camera - temp
+        if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
+            int cameraDisabled = Settings.Secure.getInt(
+                    getContentResolver(), Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
+            if (cameraDisabled == 0) {
+                mCameraDoubleTapPowerGesturePreference = (SwitchPreference) findPreference(PREF_KEY_DOUBLE_TAP_POWER);
+                mCameraDoubleTapPowerGesturePreference.setOnPreferenceChangeListener(this);
+            } else {
+            removePreference(PREF_KEY_DOUBLE_TAP_POWER);
+            }
+        }
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -287,6 +301,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return res.getBoolean(com.android.internal.R.bool.config_supportDoubleTapWake);
     }
 
+    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) { //temp
+        return res.getBoolean(
+                com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
+    }
+
     private static boolean isAutomaticBrightnessAvailable(Resources res) {
         return res.getBoolean(com.android.internal.R.bool.config_automatic_brightness_available);
     }
@@ -417,6 +436,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
+        if (PREF_KEY_DOUBLE_TAP_POWER.equals(key)) { //temp
+            boolean enabled = (Boolean) objValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, enabled ? 0 : 1);
+        }
         if (KEY_SCREEN_TIMEOUT.equals(key)) {
             try {
                 int value = Integer.parseInt((String) objValue);
@@ -544,6 +568,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
+                    if (!isCameraDoubleTapPowerGestureAvailable(context.getResources())) {
+                        result.add(PREF_KEY_DOUBLE_TAP_POWER);
+                    }
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_dreamsSupported)) {
                         result.add(KEY_SCREEN_SAVER);

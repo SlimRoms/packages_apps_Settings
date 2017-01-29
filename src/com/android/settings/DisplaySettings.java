@@ -93,6 +93,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String SHOW_NETWORK_NAME_MODE = "show_network_name_mode";
     private static final int SHOW_NETWORK_NAME_ON = 1;
     private static final int SHOW_NETWORK_NAME_OFF = 0;
+    private static final String PREF_KEY_DOUBLE_TAP_POWER = "gesture_double_tap_power"; //temp
 
     private Preference mFontSizePref;
 
@@ -119,6 +120,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
+
+        // Double tap power for camera - temp
+        if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
+            int cameraDisabled = Settings.Secure.getInt(
+                    getContentResolver(), Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
+            addPreference(PREF_KEY_DOUBLE_TAP_POWER, cameraDisabled == 0);
+        } else {
+            removePreference(PREF_KEY_DOUBLE_TAP_POWER);
+        }
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -287,6 +297,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return res.getBoolean(com.android.internal.R.bool.config_supportDoubleTapWake);
     }
 
+    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) { //temp
+        return res.getBoolean(
+                com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
+    }
+
     private static boolean isAutomaticBrightnessAvailable(Resources res) {
         return res.getBoolean(com.android.internal.R.bool.config_automatic_brightness_available);
     }
@@ -417,6 +432,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
+        if (PREF_KEY_DOUBLE_TAP_POWER.equals(key)) { //temp
+            Secure.putInt(getContentResolver(),
+                    Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, enabled ? 0 : 1);
+        }
         if (KEY_SCREEN_TIMEOUT.equals(key)) {
             try {
                 int value = Integer.parseInt((String) objValue);

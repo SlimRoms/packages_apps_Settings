@@ -75,7 +75,7 @@
                 android:summary="@string/camera_gesture_desc" />
 
         <SwitchPreference
-                android:key="camera_double_tap_power_gesture"
+                android:key="gesture_double_tap_power"
                 android:title="@string/camera_double_tap_power_gesture_title"
                 android:summary="@string/camera_double_tap_power_gesture_desc" />
 

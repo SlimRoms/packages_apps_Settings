@@ -126,4 +126,26 @@
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
+        <PreferenceCategory
+            android:key="category_doze_options"
+            android:title="@string/display_category_doze_options_title" >
+
+            <SwitchPreference
+                    android:key="doze"
+                    android:title="@string/doze_title"
+                    android:summary="@string/doze_summary"
+                    android:persistent="false" />
+
+            <PreferenceScreen
+                android:key="advanced_doze_options"
+                android:title="@string/doze_settings_title"
+                android:dependency="doze" >
+                <intent
+                    android:action="com.slim.settings.action.DOZE_SETTINGS"
+                    android:targetPackage="com.slim.settings"
+                    android:targetClass="com.slim.settings.activities.DozeSettingsActivity" />
+            </PreferenceScreen>
+
+        </PreferenceCategory>
+
 </PreferenceScreen>

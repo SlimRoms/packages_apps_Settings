@@ -67,6 +67,24 @@
     },
     {
       "key": {
+        "uuid": "5aaae553_a7e61943",
+        "filename": "res/xml/display_settings.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-01-30T17:55:55Z",
+      "side": 1,
+      "message": "Yeah if you have camera gestures enabled, which we don\u0027t have exposed (yet)...",
+      "parentUuid": "5aaae553_c78c7582",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aaae553_87875d61",
         "filename": "src/com/android/settings/DisplaySettings.java",
         "patchSetId": 12

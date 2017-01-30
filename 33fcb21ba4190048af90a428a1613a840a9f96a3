@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5aaae553_e795f188",
+        "filename": "res/xml/display_settings.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-01-30T17:40:34Z",
+      "side": 1,
+      "message": "Don\u0027t need to",
+      "parentUuid": "5aaae553_c7b55532",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 64
+      },
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aaae553_87875d61",
         "filename": "src/com/android/settings/DisplaySettings.java",
         "patchSetId": 12

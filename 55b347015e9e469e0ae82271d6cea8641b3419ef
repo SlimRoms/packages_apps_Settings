@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_84c19be6",
+        "filename": "src/com/android/settings/applications/AppOpsSummary.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T03:20:15Z",
+      "side": 1,
+      "message": "Add\nimport java.util.Arrays;",
+      "revId": "55b347015e9e469e0ae82271d6cea8641b3419ef",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

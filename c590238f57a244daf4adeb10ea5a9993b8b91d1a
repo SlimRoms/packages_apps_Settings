@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_6774a19c",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T15:40:06Z",
+      "side": 1,
+      "message": "for sake of testing remove this",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 130,
+        "endChar": 38
+      },
+      "revId": "c590238f57a244daf4adeb10ea5a9993b8b91d1a",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_87799d95",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T15:40:06Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 133,
+        "startChar": 12,
+        "endLine": 133,
+        "endChar": 13
+      },
+      "revId": "c590238f57a244daf4adeb10ea5a9993b8b91d1a",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_276ea9ca",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T15:40:06Z",
+      "side": 1,
+      "message": "boolean configSet \u003d res.getInteger(\n                com.android.internal.R.integer.config_cameraDoubleTapPowerGestureEnabled) !\u003d -1;\n        return configSet \u0026\u0026\n                !SystemProperties.getBoolean(\"gesture.disable_camera_launch\", false);",
+      "range": {
+        "startLine": 306,
+        "startChar": 8,
+        "endLine": 307,
+        "endChar": 87
+      },
+      "revId": "c590238f57a244daf4adeb10ea5a9993b8b91d1a",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

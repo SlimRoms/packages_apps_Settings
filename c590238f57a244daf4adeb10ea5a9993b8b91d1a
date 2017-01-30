@@ -68,6 +68,29 @@
       "revId": "c590238f57a244daf4adeb10ea5a9993b8b91d1a",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_e76731e9",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T15:52:36Z",
+      "side": 1,
+      "message": "Settings.Secure.putInt(getContentResolver(), \n                    Settings.Secure.putInt(getContentResolver(),CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,\n                    value ? 0 : 1 /* Backwards because setting is for disabling */);",
+      "range": {
+        "startLine": 484,
+        "startChar": 12,
+        "endLine": 486,
+        "endChar": 86
+      },
+      "revId": "c590238f57a244daf4adeb10ea5a9993b8b91d1a",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
     }
   ]
 }

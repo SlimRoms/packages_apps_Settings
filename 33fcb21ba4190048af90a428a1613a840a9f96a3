@@ -102,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "5aaae553_e7dc1177",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-01-30T17:55:09Z",
+      "side": 1,
+      "message": "yeah that is different - it\u0027s the twist thing",
+      "parentUuid": "5aaae553_a78ff974",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aaae553_277c6972",
         "filename": "src/com/android/settings/DisplaySettings.java",
         "patchSetId": 12

@@ -22,6 +22,40 @@
       "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_87875d61",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-01-30T17:39:52Z",
+      "side": 1,
+      "message": "This removed the code that removes the camera gesture pref...",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_277c6972",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-01-30T17:39:52Z",
+      "side": 1,
+      "message": "Commenting this out removed the checking code for camera gesture which removes it if disabled. :)",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
     }
   ]
 }

@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "5aaae553_c78c7582",
+        "filename": "res/xml/display_settings.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T17:43:49Z",
+      "side": 1,
+      "message": "i suslect this somehow turned in tk the wrist gesture",
+      "parentUuid": "5aaae553_e795f188",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aaae553_87875d61",
         "filename": "src/com/android/settings/DisplaySettings.java",
         "patchSetId": 12
@@ -60,6 +78,24 @@
       "writtenOn": "2017-01-30T17:39:52Z",
       "side": 1,
       "message": "This removed the code that removes the camera gesture pref...",
+      "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_a78ff974",
+        "filename": "src/com/android/settings/DisplaySettings.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-01-30T17:43:49Z",
+      "side": 1,
+      "message": "does it matter as thst is replaced by new check on line 126",
+      "parentUuid": "",
       "revId": "33fcb21ba4190048af90a428a1613a840a9f96a3",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false

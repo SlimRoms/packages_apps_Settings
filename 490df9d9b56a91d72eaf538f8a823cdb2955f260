@@ -16,6 +16,24 @@
       "revId": "490df9d9b56a91d72eaf538f8a823cdb2955f260",
       "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_3d355a46",
+        "filename": "res/values/slim_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2017-02-02T22:16:00Z",
+      "side": 1,
+      "message": "Think they\u0027re needed to show the entries in display settings...",
+      "parentUuid": "5aaae553_9dbb2ec4",
+      "revId": "490df9d9b56a91d72eaf538f8a823cdb2955f260",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
     }
   ]
 }

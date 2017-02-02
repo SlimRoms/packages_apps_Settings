@@ -134,7 +134,7 @@
 
         <PreferenceCategory
             android:key="category_doze_options"
-            android:title="@string/display_category_doze_options_title" >
+            android:title="@*slim:string/display_category_doze_options_title" >
 
             <SwitchPreference
                     android:key="doze"
@@ -144,7 +144,7 @@
 
             <PreferenceScreen
                 android:key="advanced_doze_options"
-                android:title="@string/doze_settings_title"
+                android:title="@*slim:string/doze_settings_title"
                 android:dependency="doze" >
                 <intent
                     android:action="com.slim.settings.action.DOZE_SETTINGS"

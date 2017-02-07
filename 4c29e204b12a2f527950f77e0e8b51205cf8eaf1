@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_98a01cf6",
+        "filename": "res/xml/sound_settings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000053
+      },
+      "writtenOn": "2017-02-07T03:48:52Z",
+      "side": 1,
+      "message": "slim.preference instead of com.slim.preference",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 59
+      },
+      "revId": "4c29e204b12a2f527950f77e0e8b51205cf8eaf1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

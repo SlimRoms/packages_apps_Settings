@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_1602bc3e",
+        "filename": "res/values/slim_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-02-15T14:24:39Z",
+      "side": 0,
+      "message": "No need to mess with new lines here",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "ddbec591f2f91f11f86fce7135eec53e728d6d7d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_36ffb836",
+        "filename": "res/xml/sound_settings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-02-15T14:24:39Z",
+      "side": 0,
+      "message": "No need to mess with aosp format",
+      "revId": "ddbec591f2f91f11f86fce7135eec53e728d6d7d",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

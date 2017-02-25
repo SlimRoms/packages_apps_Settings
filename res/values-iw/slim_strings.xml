@@ -13,9 +13,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">תפריט אתחול מתקדם</string>
   <string name="advanced_reboot_dialog_title">תפריט אתחול מתקדם</string>
   <string name="advanced_reboot_disabled">מושבת</string>
   <string name="advanced_reboot_show_always">הצג תמיד</string>
+
+   <!-- Force authorize substratum packages -->
+   <string name="force_authorize_substratum_packages_title">Force authorize every theme app</string>
+   <string name="force_authorize_substratum_packages_summary">Allow theme apps from unknown sources</string>
+
 </resources>

@@ -35,7 +35,7 @@ import com.android.settings.R;
 public class AppOpsSummary extends InstrumentedFragment {
     // layout inflater object used to inflate views
     private LayoutInflater mInflater;
-    
+
     private ViewGroup mContentContainer;
     private View mRootView;
     private ViewPager mViewPager;

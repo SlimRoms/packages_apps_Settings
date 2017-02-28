@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">進階重新啟動</string>
+  <string name="advanced_reboot_summary">在電源選單中包含重新啟動至 Recovery 和 Bootloader 的選項</string>
   <string name="advanced_reboot_dialog_title">進階重新啟動選單</string>
   <string name="advanced_reboot_disabled">停用</string>
+  <string name="advanced_reboot_hide_on_keyguard">在鎖定畫面上隱藏</string>
   <string name="advanced_reboot_show_always">一律顯示</string>
 </resources>

@@ -14,4 +14,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">راه اندازی مجدد پیشرفته</string>
+  <string name="advanced_reboot_summary">شامل گزینه ای در منوی پاور برای راه اندازی مجددجهت ورود به ریکاوری و بوتلودر</string>
+  <string name="advanced_reboot_dialog_title">منوی راه اندازی مجدد پیشرفته</string>
+  <string name="advanced_reboot_disabled">غیرفعال</string>
+  <string name="advanced_reboot_hide_on_keyguard">مخفی کردن در صفحه قفل شده</string>
+  <string name="advanced_reboot_show_always">نمایش همیشگی</string>
 </resources>

@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">高级重启</string>
+  <string name="advanced_reboot_summary">在电源菜单中加入选项以重启至恢复模式或引导模式</string>
   <string name="advanced_reboot_dialog_title">高级重启菜单</string>
   <string name="advanced_reboot_disabled">禁用</string>
+  <string name="advanced_reboot_hide_on_keyguard">在锁屏界面隐藏</string>
   <string name="advanced_reboot_show_always">始终显示</string>
 </resources>

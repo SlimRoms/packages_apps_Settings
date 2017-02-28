@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Варианты перезагрузки</string>
+  <string name="advanced_reboot_summary">Включить расширенное меню перезагрузки</string>
   <string name="advanced_reboot_dialog_title">Расширенное меню перезагрузки</string>
   <string name="advanced_reboot_disabled">Отключить</string>
+  <string name="advanced_reboot_hide_on_keyguard">Скрыть на экране блокировки</string>
   <string name="advanced_reboot_show_always">Показывать всегда</string>
 </resources>

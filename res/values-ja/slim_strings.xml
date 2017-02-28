@@ -14,4 +14,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">高度な再起動</string>
+  <string name="advanced_reboot_summary">リカバリやブートローダーのオプションを電源メニューの[再起動]に含めます</string>
+  <string name="advanced_reboot_dialog_title">高度な再起動メニュー</string>
+  <string name="advanced_reboot_disabled">無効</string>
+  <string name="advanced_reboot_hide_on_keyguard">ロック画面では表示しない</string>
+  <string name="advanced_reboot_show_always">常に表示</string>
 </resources>

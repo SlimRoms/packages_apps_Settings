@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Reinicio avanzado</string>
+  <string name="advanced_reboot_summary">Incluir opciones para reiniciar en modo Recovery y Bootloader en el menú de apagado</string>
   <string name="advanced_reboot_dialog_title">Menú de reinicio avanzado</string>
   <string name="advanced_reboot_disabled">Deshabilitado</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ocultar en la pantalla de bloqueo</string>
   <string name="advanced_reboot_show_always">Mostrar siempre</string>
 </resources>

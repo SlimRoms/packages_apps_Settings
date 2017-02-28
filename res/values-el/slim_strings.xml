@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Προηγμένη επανεκκίνηση</string>
+  <string name="advanced_reboot_summary">Να συμπεριμβληθούν επιλογές στο μενού ενέργειας για επανεκκίνηση σε recovery και bootloader</string>
   <string name="advanced_reboot_dialog_title">Προηγμένο μενού επανεκκίνησης</string>
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
+  <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη στην οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
 </resources>

@@ -14,4 +14,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Edistynyt uudelleenkäynnistys</string>
+  <string name="advanced_reboot_summary">Lisää käynnistysvalikkoon vaihtoehdot käynnistämiseen palautus- ja bootloader tilassa</string>
+  <string name="advanced_reboot_dialog_title">Edistynyt uudelleenkäynnistys</string>
+  <string name="advanced_reboot_disabled">Poista käytöstä</string>
+  <string name="advanced_reboot_hide_on_keyguard">Piilota lukitusnäytöltä</string>
+  <string name="advanced_reboot_show_always">Näytä aina</string>
 </resources>

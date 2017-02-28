@@ -15,7 +15,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Gelişmiş yeniden başlatma</string>
+  <string name="advanced_reboot_summary">Kurtarma ve bootloader yeniden başlatma kapatma menüsünde gösterilir</string>
   <string name="advanced_reboot_dialog_title">Gelişmiş yeniden başlatma menüsü</string>
   <string name="advanced_reboot_disabled">devre dışı bırak</string>
+  <string name="advanced_reboot_hide_on_keyguard">Kilit ekranında gizle</string>
   <string name="advanced_reboot_show_always">Her zaman göster</string>
 </resources>

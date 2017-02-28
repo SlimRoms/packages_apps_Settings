@@ -14,4 +14,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Mulai ulang lanjutan</string>
+  <string name="advanced_reboot_dialog_title">Menu mulai ulang lanjutan</string>
+  <string name="advanced_reboot_disabled">Nonaktif</string>
+  <string name="advanced_reboot_hide_on_keyguard">Sembunyikan pada kunci layar</string>
+  <string name="advanced_reboot_show_always">Tampilkan selalu</string>
 </resources>

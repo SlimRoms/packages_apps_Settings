@@ -96,6 +96,12 @@
                         android:data="https://source.android.com/security/bulletin/" />
         </PreferenceScreen>
 
+        <!-- Slim firmware version -->
+        <Preference android:key="slim_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/slim_version_title"
+                android:summary="@string/slim_version_default"/>
+
         <!-- Device FCC equipment id -->
         <com.android.settings.DividerPreference
                 android:key="fcc_equipment_id"

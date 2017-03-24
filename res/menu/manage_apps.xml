@@ -30,6 +30,14 @@
         android:title="@string/menu_hide_system"
         android:showAsAction="never" />
     <item
+        android:id="@+id/show_overlays"
+        android:title="@string/menu_show_overlays"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/hide_overlays"
+        android:title="@string/menu_hide_overlays"
+        android:showAsAction="never" />
+    <item
         android:id="@+id/sort_order_alpha"
         android:title="@string/sort_order_alpha"
         android:showAsAction="never" />

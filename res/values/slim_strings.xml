@@ -21,4 +21,7 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <string name="menu_show_overlays">Show overlays"</string>
+    <string name="menu_hide_overlays">Hide overlays"</string>
+
 </resources>

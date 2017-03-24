@@ -107,6 +107,7 @@ public class ManageApplications extends InstrumentedFragment
 
     private static final String EXTRA_SORT_ORDER = "sortOrder";
     private static final String EXTRA_SHOW_SYSTEM = "showSystem";
+    private static final String EXTRA_SHOW_OVERLAYS = "showOverlays";
     private static final String EXTRA_HAS_ENTRIES = "hasEntries";
     private static final String EXTRA_HAS_BRIDGE = "hasBridge";
 
@@ -186,6 +187,9 @@ public class ManageApplications extends InstrumentedFragment
 
     // whether showing system apps.
     private boolean mShowSystem;
+
+    // whether showing overlays
+    private boolean mShowOverlays;
 
     private ApplicationsState mApplicationsState;
 
@@ -276,6 +280,7 @@ public class ManageApplications extends InstrumentedFragment
         if (savedInstanceState != null) {
             mSortOrder = savedInstanceState.getInt(EXTRA_SORT_ORDER, mSortOrder);
             mShowSystem = savedInstanceState.getBoolean(EXTRA_SHOW_SYSTEM, mShowSystem);
+            mShowOverlays = savedInstanceState.getBoolean(EXTRA_SHOW_OVERLAYS, mShowOverlays);
         }
 
         mInvalidSizeStr = getActivity().getText(R.string.invalid_size_value);
@@ -440,6 +445,7 @@ public class ManageApplications extends InstrumentedFragment
         mResetAppsHelper.onSaveInstanceState(outState);
         outState.putInt(EXTRA_SORT_ORDER, mSortOrder);
         outState.putBoolean(EXTRA_SHOW_SYSTEM, mShowSystem);
+        outState.putBoolean(EXTRA_SHOW_OVERLAYS, mShowOverlays);
         outState.putBoolean(EXTRA_HAS_ENTRIES, mApplications.mHasReceivedLoadEntries);
         outState.putBoolean(EXTRA_HAS_BRIDGE, mApplications.mHasReceivedBridgeCallback);
     }
@@ -558,6 +564,11 @@ public class ManageApplications extends InstrumentedFragment
                 && mListType != LIST_TYPE_HIGH_POWER);
         mOptionsMenu.findItem(R.id.hide_system).setVisible(mShowSystem
                 && mListType != LIST_TYPE_HIGH_POWER);
+
+        mOptionsMenu.findItem(R.id.show_overlays).setVisible(!mShowOverlays
+                && mListType != LIST_TYPE_HIGH_POWER);
+        mOptionsMenu.findItem(R.id.hide_overlays).setVisible(mShowOverlays
+                && mListType != LIST_TYPE_HIGH_POWER);
     }
 
     @Override
@@ -575,6 +586,11 @@ public class ManageApplications extends InstrumentedFragment
             case R.id.show_system:
             case R.id.hide_system:
                 mShowSystem = !mShowSystem;
+                mApplications.rebuild(false);
+                break;
+            case R.id.show_overlays:
+            case R.id.hide_overlays:
+                mShowOverlays = !mShowOverlays;
                 mApplications.rebuild(false);
                 break;
             case R.id.reset_app_preferences:
@@ -868,6 +884,10 @@ public class ManageApplications extends InstrumentedFragment
             if (!mManageApplications.mShowSystem) {
                 filterObj = new CompoundFilter(filterObj,
                         ApplicationsState.FILTER_DOWNLOADED_AND_LAUNCHER);
+            }
+            if (!mManageApplications.mShowOverlays) {
+                filterObj = new CompoundFilter(filterObj,
+                        ApplicationsState.FILTER_OVERLAYS);
             }
             switch (mLastSortMode) {
                 case R.id.sort_order_size:

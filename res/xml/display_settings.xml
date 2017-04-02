@@ -120,6 +120,12 @@
                 android:summary="%s"
                 android:title="@string/display_vr_pref_title" />
 
+        <slim.preference.SlimSwitchPreference
+                android:key="proximity_on_wake"
+                android:title="@*slim:string/proximity_wake_title"
+                android:summary="@*slim:string/proximity_wake_summary"
+                android:defaultValue="false" />
+
         <PreferenceCategory
             android:key="category_doze_options"
             android:title="@*slim:string/display_category_doze_options_title" >

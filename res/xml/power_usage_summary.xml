@@ -23,6 +23,10 @@
             android:title="@string/battery_saver"
             android:fragment="com.android.settings.fuelgauge.BatterySaverSettings" />
 
+        <slim.preference.SlimPreference>
+            <intent android:action="slim.settings.BATTERY_LIGHT_SETTINGS" />
+        </slim.preference.SlimPreference>
+
         <com.android.settings.fuelgauge.BatteryHistoryPreference
             android:key="battery_history" />
 

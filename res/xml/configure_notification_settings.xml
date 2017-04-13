@@ -20,9 +20,9 @@
         android:key="configure_notification_settings" >
 
     <!-- Pulse notification light -->
-    <SwitchPreference
-            android:key="notification_pulse"
-            android:title="@string/notification_pulse_title" />
+    <slim.preference.SlimPreference>
+        <intent android:action="slim.settings.NOTIFICATION_LIGHT_SETTINGS" />
+    </slim.preference.SlimPreference>
 
     <!-- When device is locked -->
     <com.android.settings.notification.RestrictedDropDownPreference

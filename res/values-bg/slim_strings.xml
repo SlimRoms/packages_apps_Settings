@@ -14,4 +14,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Разширено рестартиране</string>
+  <string name="advanced_reboot_summary">Включи в менюто за рестартиране опции за режими на възстановяване и буутлоудър</string>
+  <string name="advanced_reboot_dialog_title">Меню за разширено рестартиране</string>
+  <string name="advanced_reboot_disabled">Деактивирай</string>
+  <string name="advanced_reboot_hide_on_keyguard">Скрий при заключен екран</string>
+  <string name="advanced_reboot_show_always">Показвай винаги</string>
+  <!-- About phone screen, Slim version -->
 </resources>

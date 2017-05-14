@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Khởi động lại Nâng cao</string>
   <string name="advanced_reboot_disabled">Tắt</string>
   <string name="advanced_reboot_show_always">Luôn hiện</string>
+  <!-- About phone screen, Slim version -->
 </resources>

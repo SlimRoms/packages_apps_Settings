@@ -19,4 +19,5 @@
   <string name="advanced_reboot_disabled">Nonaktif</string>
   <string name="advanced_reboot_hide_on_keyguard">Sembunyikan pada kunci layar</string>
   <string name="advanced_reboot_show_always">Tampilkan selalu</string>
+  <!-- About phone screen, Slim version -->
 </resources>

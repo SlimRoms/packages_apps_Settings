@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Menu de reinicialização avançado</string>
   <string name="advanced_reboot_disabled">Desativar</string>
   <string name="advanced_reboot_show_always">Mostrar sempre</string>
+  <!-- About phone screen, Slim version -->
 </resources>

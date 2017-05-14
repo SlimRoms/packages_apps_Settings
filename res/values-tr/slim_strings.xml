@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">devre dışı bırak</string>
   <string name="advanced_reboot_hide_on_keyguard">Kilit ekranında gizle</string>
   <string name="advanced_reboot_show_always">Her zaman göster</string>
+  <!-- About phone screen, Slim version -->
 </resources>

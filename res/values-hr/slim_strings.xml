@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Proširene opcije Menija ponovnog pokretanja</string>
   <string name="advanced_reboot_disabled">Onemogući</string>
   <string name="advanced_reboot_show_always">Uvijek pokaži</string>
+  <!-- About phone screen, Slim version -->
 </resources>

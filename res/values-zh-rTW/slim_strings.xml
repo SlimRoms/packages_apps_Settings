@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">停用</string>
   <string name="advanced_reboot_hide_on_keyguard">在鎖定畫面上隱藏</string>
   <string name="advanced_reboot_show_always">一律顯示</string>
+  <!-- About phone screen, Slim version -->
 </resources>

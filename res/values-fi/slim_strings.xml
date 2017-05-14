@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">Poista käytöstä</string>
   <string name="advanced_reboot_hide_on_keyguard">Piilota lukitusnäytöltä</string>
   <string name="advanced_reboot_show_always">Näytä aina</string>
+  <!-- About phone screen, Slim version -->
 </resources>

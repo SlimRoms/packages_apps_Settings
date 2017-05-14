@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Meniul avansat reboot</string>
   <string name="advanced_reboot_disabled">Dezactivaţi</string>
   <string name="advanced_reboot_show_always">Afișează întotdeauna</string>
+  <!-- About phone screen, Slim version -->
 </resources>

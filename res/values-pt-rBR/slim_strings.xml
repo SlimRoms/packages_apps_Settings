@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">Desativar</string>
   <string name="advanced_reboot_hide_on_keyguard">Ocultar na tela de bloqueio</string>
   <string name="advanced_reboot_show_always">Mostrar sempre</string>
+  <!-- About phone screen, Slim version -->
 </resources>

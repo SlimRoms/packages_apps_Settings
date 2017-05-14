@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">Tiltva</string>
   <string name="advanced_reboot_hide_on_keyguard">Rejtve a zárképernyőn</string>
   <string name="advanced_reboot_show_always">Mindig mutassa</string>
+  <!-- About phone screen, Slim version -->
 </resources>

@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">다시 시작 고급 메뉴</string>
   <string name="advanced_reboot_disabled">사용 안함</string>
   <string name="advanced_reboot_show_always">항상 표시</string>
+  <!-- About phone screen, Slim version -->
 </resources>

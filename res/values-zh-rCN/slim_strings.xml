@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">禁用</string>
   <string name="advanced_reboot_hide_on_keyguard">在锁屏界面隐藏</string>
   <string name="advanced_reboot_show_always">始终显示</string>
+  <!-- About phone screen, Slim version -->
 </resources>

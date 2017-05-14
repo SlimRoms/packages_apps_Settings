@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">無効</string>
   <string name="advanced_reboot_hide_on_keyguard">ロック画面では表示しない</string>
   <string name="advanced_reboot_show_always">常に表示</string>
+  <!-- About phone screen, Slim version -->
 </resources>

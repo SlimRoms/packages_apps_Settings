@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Menu voor geavanceerd opstarten</string>
   <string name="advanced_reboot_disabled">Uitschakelen</string>
   <string name="advanced_reboot_show_always">Altijd tonen</string>
+  <!-- About phone screen, Slim version -->
 </resources>

@@ -20,4 +20,5 @@
   <string name="advanced_reboot_disabled">Απενεργοποίηση</string>
   <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη στην οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
+  <!-- About phone screen, Slim version -->
 </resources>

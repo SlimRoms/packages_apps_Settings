@@ -18,4 +18,5 @@
   <string name="advanced_reboot_dialog_title">Avancerad omstartsmeny</string>
   <string name="advanced_reboot_disabled">Inaktivera</string>
   <string name="advanced_reboot_show_always">Visa alltid</string>
+  <!-- About phone screen, Slim version -->
 </resources>

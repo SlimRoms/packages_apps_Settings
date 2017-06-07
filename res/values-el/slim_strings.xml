@@ -21,4 +21,6 @@
   <string name="advanced_reboot_hide_on_keyguard">Απόκρυψη στην οθόνη κλειδώματος</string>
   <string name="advanced_reboot_show_always">Εμφάνιση πάντα</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Έκδοση Slim</string>
+  <string name="slim_version_default">Άγνωστο</string>
 </resources>

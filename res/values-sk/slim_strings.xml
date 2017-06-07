@@ -21,4 +21,6 @@
   <string name="advanced_reboot_hide_on_keyguard">Skryť na obrazovke uzamknutia</string>
   <string name="advanced_reboot_show_always">Vždy zobraziť</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim verzia</string>
+  <string name="slim_version_default">Neznáma</string>
 </resources>

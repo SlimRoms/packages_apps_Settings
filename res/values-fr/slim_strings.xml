@@ -21,4 +21,6 @@
   <string name="advanced_reboot_hide_on_keyguard">Masquer sur l’écran de verrouillage</string>
   <string name="advanced_reboot_show_always">Toujours afficher</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim version</string>
+  <string name="slim_version_default">Inconnu</string>
 </resources>

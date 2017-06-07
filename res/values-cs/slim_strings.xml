@@ -21,4 +21,6 @@
   <string name="advanced_reboot_hide_on_keyguard">Skrýt na zamykací obrazovce</string>
   <string name="advanced_reboot_show_always">Vždy zobrazit</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim verze</string>
+  <string name="slim_version_default">Neznámá</string>
 </resources>

@@ -19,4 +19,5 @@
   <string name="advanced_reboot_disabled">Desactivat</string>
   <string name="advanced_reboot_show_always">Mostra sempre</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

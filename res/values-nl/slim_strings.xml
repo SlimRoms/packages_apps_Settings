@@ -19,4 +19,5 @@
   <string name="advanced_reboot_disabled">Uitschakelen</string>
   <string name="advanced_reboot_show_always">Altijd tonen</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

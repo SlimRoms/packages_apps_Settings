@@ -21,4 +21,5 @@
   <string name="advanced_reboot_hide_on_keyguard">مخفی کردن در صفحه قفل شده</string>
   <string name="advanced_reboot_show_always">نمایش همیشگی</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

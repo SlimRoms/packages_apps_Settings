@@ -19,4 +19,5 @@
   <string name="advanced_reboot_disabled">사용 안함</string>
   <string name="advanced_reboot_show_always">항상 표시</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

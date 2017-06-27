@@ -21,4 +21,5 @@
   <string name="advanced_reboot_hide_on_keyguard">Auf Sperrbildschirm verbergen</string>
   <string name="advanced_reboot_show_always">Immer anzeigen</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

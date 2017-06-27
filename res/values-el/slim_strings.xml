@@ -23,4 +23,5 @@
   <!-- About phone screen, Slim version -->
   <string name="slim_version_title">Έκδοση Slim</string>
   <string name="slim_version_default">Άγνωστο</string>
+  <!-- Reset battery stats -->
 </resources>

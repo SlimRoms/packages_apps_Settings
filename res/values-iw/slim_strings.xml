@@ -19,4 +19,5 @@
   <string name="advanced_reboot_disabled">מושבת</string>
   <string name="advanced_reboot_show_always">הצג תמיד</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

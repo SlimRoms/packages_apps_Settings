@@ -20,4 +20,5 @@
   <string name="advanced_reboot_hide_on_keyguard">Приховати на екрані блокування</string>
   <string name="advanced_reboot_show_always">Завжди показувати</string>
   <!-- About phone screen, Slim version -->
+  <!-- Reset battery stats -->
 </resources>

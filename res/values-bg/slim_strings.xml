@@ -21,4 +21,7 @@
   <string name="advanced_reboot_hide_on_keyguard">Скрий при заключен екран</string>
   <string name="advanced_reboot_show_always">Показвай винаги</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim версия</string>
+  <string name="slim_version_default">Неизвестна</string>
+  <!-- Reset battery stats -->
 </resources>

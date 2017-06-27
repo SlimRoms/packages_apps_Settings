@@ -23,4 +23,5 @@
   <!-- About phone screen, Slim version -->
   <string name="slim_version_title">Slim version</string>
   <string name="slim_version_default">Inconnu</string>
+  <!-- Reset battery stats -->
 </resources>

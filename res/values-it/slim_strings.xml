@@ -21,4 +21,7 @@
   <string name="advanced_reboot_hide_on_keyguard">Nascondi nella schermata di blocco</string>
   <string name="advanced_reboot_show_always">Mostra sempre</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Versione Slim</string>
+  <string name="slim_version_default">Sconosciuto</string>
+  <!-- Reset battery stats -->
 </resources>

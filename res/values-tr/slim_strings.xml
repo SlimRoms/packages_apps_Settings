@@ -21,4 +21,7 @@
   <string name="advanced_reboot_hide_on_keyguard">Kilit ekranında gizle</string>
   <string name="advanced_reboot_show_always">Her zaman göster</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim sürümü</string>
+  <string name="slim_version_default">Bilinmiyor</string>
+  <!-- Reset battery stats -->
 </resources>

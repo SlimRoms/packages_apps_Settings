@@ -21,5 +21,10 @@
   <string name="advanced_reboot_hide_on_keyguard">Скрыть на экране блокировки</string>
   <string name="advanced_reboot_show_always">Показывать всегда</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Версия Slim</string>
+  <string name="slim_version_default">Неизвестно</string>
   <!-- Reset battery stats -->
+  <string name="ok">Хорошо</string>
+  <string name="menu_stats_reset">Сбросить статистику</string>
+  <string name="reset_stats_msg">История использования батареи будет сброшена</string>
 </resources>

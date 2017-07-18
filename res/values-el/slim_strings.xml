@@ -24,4 +24,7 @@
   <string name="slim_version_title">Έκδοση Slim</string>
   <string name="slim_version_default">Άγνωστο</string>
   <!-- Reset battery stats -->
+  <string name="ok">Εντάξει</string>
+  <string name="menu_stats_reset">Επαναφορά στατιστικών</string>
+  <string name="reset_stats_msg">Το ιστορικό στατιστικών μπαταρίας θα επαναφερθεί</string>
 </resources>

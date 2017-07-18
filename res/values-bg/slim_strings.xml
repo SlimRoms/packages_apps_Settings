@@ -24,4 +24,7 @@
   <string name="slim_version_title">Slim версия</string>
   <string name="slim_version_default">Неизвестна</string>
   <!-- Reset battery stats -->
+  <string name="ok">Добре</string>
+  <string name="menu_stats_reset">Изчисти статистика</string>
+  <string name="reset_stats_msg">Историята за използване на батерията ще бъде изчистена</string>
 </resources>

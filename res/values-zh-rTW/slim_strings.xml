@@ -24,4 +24,7 @@
   <string name="slim_version_title">Slim 版本</string>
   <string name="slim_version_default">未知</string>
   <!-- Reset battery stats -->
+  <string name="ok">確定</string>
+  <string name="menu_stats_reset">重設統計數據</string>
+  <string name="reset_stats_msg">電池統計數據將會重設</string>
 </resources>

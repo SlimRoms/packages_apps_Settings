@@ -24,4 +24,7 @@
   <string name="slim_version_title">Slim verzia</string>
   <string name="slim_version_default">Neznáma</string>
   <!-- Reset battery stats -->
+  <string name="ok">V poriadku</string>
+  <string name="menu_stats_reset">Resetovať štatistiky</string>
+  <string name="reset_stats_msg">Chystáte sa obnoviť históriu štatistiky batérie</string>
 </resources>

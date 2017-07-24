@@ -326,6 +326,18 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
 
         final boolean adminDisallowedTetherConfig = RestrictedLockUtils.checkIfRestrictionEnforced(
                 activity, UserManager.DISALLOW_CONFIG_TETHERING, UserHandle.myUserId()) != null;
+
+        Log.w("TetherDebug", "WirelessSettings.java : adminDisallowedTetherConfig = "
+                + (adminDisallowedTetherConfig ? "true" : "false"));
+
+        Log.w("TetherDebug", "WirelessSettings.java : cm.isTetheringSupported() = "
+                + (cm.isTetheringSupported() ? "true" : "false"));
+
+        Log.w("TetherDebug", "WirelessSettings.java : "
+                + "TetherSettings.isProvisioningNeededButUnavailable(getActivity()) = "
+                + (TetherSettings.isProvisioningNeededButUnavailable(getActivity()) 
+                ? "true" : "false"));
+
         if ((!cm.isTetheringSupported() && !adminDisallowedTetherConfig) ||
                 RestrictedLockUtils.hasBaseUserRestriction(activity,
                         UserManager.DISALLOW_CONFIG_TETHERING, UserHandle.myUserId())) {

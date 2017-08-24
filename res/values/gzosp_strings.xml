@@ -27,4 +27,7 @@
     <string name="security_settings_fingerprint_sensor_location_left">left side</string>
     <string name="security_settings_fingerprint_sensor_location_right">right side</string>
 
+    <!-- GZOSP version in About phone -->
+    <string name="rom_version_title">GZOSP version</string>
+
 </resources>

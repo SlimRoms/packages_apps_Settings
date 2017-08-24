@@ -124,6 +124,15 @@
         android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
 
+    <!-- ROM Version -->
+    <Preference
+        android:key="modversion"
+        android:order="43"
+        android:title="@string/rom_version_title"
+        android:summary="@string/device_info_default"
+        android:selectable="false"
+        settings:enableCopying="true"/>
+
     <!--IP address -->
     <Preference
         android:key="wifi_ip_address"

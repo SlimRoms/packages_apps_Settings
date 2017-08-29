@@ -49,7 +49,7 @@ public class SystemUpdatePreferenceController extends AbstractPreferenceControll
 
     @Override
     public boolean isAvailable() {
-        return mUm.isAdminUser();
+        return false;
     }
 
     @Override

@@ -15,9 +15,16 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Reinicio avançado</string>
+  <string name="advanced_reboot_summary">Incluir opções no menu de reiniciar para a recuperação ou o bootloader</string>
   <string name="advanced_reboot_dialog_title">Menu de reinicialização avançado</string>
   <string name="advanced_reboot_disabled">Desativar</string>
+  <string name="advanced_reboot_hide_on_keyguard">Ocultar no ecrã de bloqueio</string>
   <string name="advanced_reboot_show_always">Mostrar sempre</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Versão Slim</string>
+  <string name="slim_version_default">Desconhecido</string>
   <!-- Reset battery stats -->
+  <string name="ok">OK</string>
+  <string name="menu_stats_reset">Repor estatísticas</string>
+  <string name="reset_stats_msg">O histórico de estatísticas da bateria vai ser reposto</string>
 </resources>

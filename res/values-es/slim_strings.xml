@@ -26,5 +26,5 @@
   <!-- Reset battery stats -->
   <string name="ok">Aceptar</string>
   <string name="menu_stats_reset">Restablecer estadísticas</string>
-  <string name="reset_stats_msg">Estadísticas de la batería van a reiniciarse</string>
+  <string name="reset_stats_msg">Las estadísticas de la batería van a restablecerse</string>
 </resources>

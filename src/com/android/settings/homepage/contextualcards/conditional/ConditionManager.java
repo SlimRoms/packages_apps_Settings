@@ -17,6 +17,7 @@
 package com.android.settings.homepage.contextualcards.conditional;
 
 import android.content.Context;
+import android.provider.Settings;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -44,12 +45,14 @@ public class ConditionManager {
 
     private final ExecutorService mExecutorService;
     private final Context mAppContext;
+    private static Context mContext;
     private final ConditionListener mListener;
 
     private boolean mIsListeningToStateChange;
 
     public ConditionManager(Context context, ConditionListener listener) {
         mAppContext = context.getApplicationContext();
+        mContext = context;
         mExecutorService = Executors.newCachedThreadPool();
         mCardControllers = new ArrayList<>();
         mListener = listener;
@@ -178,7 +181,9 @@ public class ConditionManager {
 
         @Override
         public ContextualCard call() throws Exception {
-            return mController.isDisplayable() ? mController.buildContextualCard() : null;
+            return (mController.isDisplayable()
+                    && (Settings.System.getInt(mContext.getContentResolver(),
+                       Settings.System.ENABLE_CONDITIONS, 1) == 1)) ? mController.buildContextualCard() : null;
         }
     }
 }

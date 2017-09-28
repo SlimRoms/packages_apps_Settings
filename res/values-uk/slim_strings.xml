@@ -15,10 +15,16 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Розширене перезавантаження</string>
+  <string name="advanced_reboot_summary">Включити варіанти перезавантаження (Recovery, Bootloader) в меню кнопки живлення</string>
   <string name="advanced_reboot_dialog_title">Розширене меню перезавантаження</string>
   <string name="advanced_reboot_disabled">Вимкнути</string>
   <string name="advanced_reboot_hide_on_keyguard">Приховати на екрані блокування</string>
   <string name="advanced_reboot_show_always">Завжди показувати</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Версія Slim</string>
+  <string name="slim_version_default">Невідома</string>
   <!-- Reset battery stats -->
+  <string name="ok">ОК</string>
+  <string name="menu_stats_reset">Скинути статистику</string>
+  <string name="reset_stats_msg">Історія використання батареї буде скинута</string>
 </resources>

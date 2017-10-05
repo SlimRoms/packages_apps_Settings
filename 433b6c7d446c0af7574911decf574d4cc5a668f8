@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "986f8884_15b579e3",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3038,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2017-10-05T22:00:46Z",
+      "side": 1,
+      "message": "Commented out for now until Device Settings are added",
+      "revId": "433b6c7d446c0af7574911decf574d4cc5a668f8",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

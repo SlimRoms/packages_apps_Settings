@@ -126,4 +126,9 @@
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
+    <slim.preference.SlimSwitchPreference
+        android:key="proximity_on_wake"
+        android:title="@*slim:string/proximity_wake_title"
+        android:summary="@*slim:string/proximity_wake_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>

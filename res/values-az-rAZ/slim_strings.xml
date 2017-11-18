@@ -14,6 +14,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Qabaqcıl yenidən başlatma</string>
+  <string name="advanced_reboot_dialog_title">Qabaqcıl yenidən başlatma menyusu</string>
+  <string name="advanced_reboot_disabled">Ləğv et</string>
+  <string name="advanced_reboot_hide_on_keyguard">Kilid ekranında gizlət</string>
+  <string name="advanced_reboot_show_always">Həmişə göstər</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim versiyası</string>
+  <string name="slim_version_default">Bilinmir</string>
   <!-- Reset battery stats -->
+  <string name="ok">Yaxşı</string>
+  <string name="menu_stats_reset">Statistikaları sıfırla</string>
+  <string name="reset_stats_msg">Batereya tarixçəsi statistikaları sıfırlanacaq</string>
 </resources>

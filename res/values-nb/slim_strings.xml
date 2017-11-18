@@ -14,6 +14,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
+  <string name="advanced_reboot_title">Avansert omstart</string>
+  <string name="advanced_reboot_dialog_title">Avansert omstartsmeny</string>
+  <string name="advanced_reboot_disabled">Deaktiver</string>
+  <string name="advanced_reboot_hide_on_keyguard">Skjul på låseskjermen</string>
+  <string name="advanced_reboot_show_always">Vis alltid</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim versjon</string>
+  <string name="slim_version_default">Ukjent</string>
   <!-- Reset battery stats -->
+  <string name="ok">Ok</string>
+  <string name="menu_stats_reset">Tilbakestille statistikk</string>
 </resources>

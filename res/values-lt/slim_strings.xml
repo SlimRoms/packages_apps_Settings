@@ -15,16 +15,16 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Išplėstinis perkrovimas</string>
-  <string name="advanced_reboot_summary">Prideda papildomai nustatymų išjungimo meniu, kad perkrautusi į atstatymo ir bootloader režimus</string>
+  <string name="advanced_reboot_summary">Prideda papildomai nustatymų išjungimo meniu dėl perkrovimo į aktūrimo režimą ir \"Bootloader\"</string>
   <string name="advanced_reboot_dialog_title">Išplėstinis perkrovimo meniu</string>
   <string name="advanced_reboot_disabled">Išjungti</string>
   <string name="advanced_reboot_hide_on_keyguard">Slėpti užrakto ekrane</string>
-  <string name="advanced_reboot_show_always">Rodyti visada</string>
+  <string name="advanced_reboot_show_always">Visada rodyti</string>
   <!-- About phone screen, Slim version -->
   <string name="slim_version_title">Slim versija</string>
   <string name="slim_version_default">Nežinomas</string>
   <!-- Reset battery stats -->
   <string name="ok">Gerai</string>
   <string name="menu_stats_reset">Iš naujo nustatyti statistika</string>
-  <string name="reset_stats_msg">Baterijos istorijos statistika bus iš naujo skaičiuojama</string>
+  <string name="reset_stats_msg">Baterijos istorijos statistika bus atstatyta</string>
 </resources>

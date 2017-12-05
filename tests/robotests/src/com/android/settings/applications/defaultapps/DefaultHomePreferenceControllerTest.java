@@ -17,11 +17,12 @@
 package com.android.settings.applications.defaultapps;
 
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.os.UserManager;
 import android.support.v7.preference.Preference;
 
-import com.android.settings.SettingsRobolectricTestRunner;
+import com.android.settings.testutils.SettingsRobolectricTestRunner;
 import com.android.settings.TestConfig;
 import com.android.settings.applications.PackageManagerWrapper;
 
@@ -83,5 +84,34 @@ public class DefaultHomePreferenceControllerTest {
         mController.updateState(mock(Preference.class));
 
         verify(mPackageManager).getHomeActivities(anyList());
+    }
+
+    @Test
+    public void testIsHomeDefault_noDefaultSet_shouldReturnTrue() {
+        when(mPackageManager.getHomeActivities(anyList())).thenReturn(null);
+        assertThat(DefaultHomePreferenceController.isHomeDefault("test.pkg", mPackageManager))
+                .isTrue();
+    }
+
+    @Test
+    public void testIsHomeDefault_defaultSetToPkg_shouldReturnTrue() {
+        final String pkgName = "test.pkg";
+        final ComponentName defaultHome = new ComponentName(pkgName, "class");
+
+        when(mPackageManager.getHomeActivities(anyList())).thenReturn(defaultHome);
+
+        assertThat(DefaultHomePreferenceController.isHomeDefault(pkgName, mPackageManager))
+                .isTrue();
+    }
+
+    @Test
+    public void testIsHomeDefault_defaultSetToOtherPkg_shouldReturnFalse() {
+        final String pkgName = "test.pkg";
+        final ComponentName defaultHome = new ComponentName("not" + pkgName, "class");
+
+        when(mPackageManager.getHomeActivities(anyList())).thenReturn(defaultHome);
+
+        assertThat(DefaultHomePreferenceController.isHomeDefault(pkgName, mPackageManager))
+                .isFalse();
     }
 }

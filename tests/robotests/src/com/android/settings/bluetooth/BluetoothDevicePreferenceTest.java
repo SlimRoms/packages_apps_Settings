@@ -15,13 +15,14 @@
  */
 package com.android.settings.bluetooth;
 
+import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.os.UserManager;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsRobolectricTestRunner;
+import com.android.settings.testutils.SettingsRobolectricTestRunner;
 import com.android.settings.TestConfig;
 import com.android.settings.core.instrumentation.MetricsFeatureProvider;
 import com.android.settings.testutils.FakeFeatureFactory;
@@ -135,5 +136,14 @@ public class BluetoothDevicePreferenceTest {
                 .thenReturn(false);
 
         assertThat(mPreference.shouldHideSecondTarget()).isFalse();
+    }
+
+    @Test
+    public void imagingDeviceIcon_isICSettingsPrint() {
+        when(mCachedBluetoothDevice.getBtClass()).thenReturn(
+                new BluetoothClass(BluetoothClass.Device.Major.IMAGING));
+        mPreference.onDeviceAttributesChanged();
+        assertThat(mPreference.getIcon()).isEqualTo(
+                mContext.getDrawable(R.drawable.ic_settings_print));
     }
 }

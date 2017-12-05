@@ -21,7 +21,7 @@ import android.content.Context;
 import android.provider.SearchIndexableResource;
 
 import com.android.settings.R;
-import com.android.settings.SettingsRobolectricTestRunner;
+import com.android.settings.testutils.SettingsRobolectricTestRunner;
 import com.android.settings.TestConfig;
 import com.android.settings.core.PreferenceController;
 
@@ -60,7 +60,7 @@ public class BaseSearchIndexProviderTest {
 
     @Test
     public void getNonIndexableKeys_noPreferenceController_shouldReturnEmptyList() {
-        assertThat(mIndexProvider.getNonIndexableKeys(mContext)).isEqualTo(Collections.EMPTY_LIST);
+        assertThat(mIndexProvider.getNonIndexableKeys(mContext)).isEmpty();
     }
 
     @Test

@@ -29,7 +29,7 @@ import android.provider.Settings;
 import android.text.SpannableStringBuilder;
 
 import com.android.settings.R;
-import com.android.settings.SettingsRobolectricTestRunner;
+import com.android.settings.testutils.SettingsRobolectricTestRunner;
 import com.android.settings.TestConfig;
 import com.android.settings.applications.PackageManagerWrapper;
 import com.android.settings.vpn2.ConnectivityManagerWrapper;
@@ -231,12 +231,17 @@ public final class EnterprisePrivacyFeatureProviderImplTest {
 
     @Test
     public void testGetMaximumFailedPasswordsForWipeInCurrentUser() {
+        when(mDevicePolicyManager.getDeviceOwnerComponentOnCallingUser()).thenReturn(null);
         when(mDevicePolicyManager.getProfileOwnerAsUser(MY_USER_ID)).thenReturn(null);
         when(mDevicePolicyManager.getMaximumFailedPasswordsForWipe(OWNER, MY_USER_ID))
                 .thenReturn(10);
         assertThat(mProvider.getMaximumFailedPasswordsBeforeWipeInCurrentUser()).isEqualTo(0);
 
         when(mDevicePolicyManager.getProfileOwnerAsUser(MY_USER_ID)).thenReturn(OWNER);
+        assertThat(mProvider.getMaximumFailedPasswordsBeforeWipeInCurrentUser()).isEqualTo(10);
+
+        when(mDevicePolicyManager.getDeviceOwnerComponentOnCallingUser()).thenReturn(OWNER);
+        when(mDevicePolicyManager.getProfileOwnerAsUser(MY_USER_ID)).thenReturn(null);
         assertThat(mProvider.getMaximumFailedPasswordsBeforeWipeInCurrentUser()).isEqualTo(10);
     }
 

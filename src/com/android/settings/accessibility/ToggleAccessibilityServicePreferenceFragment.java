@@ -16,8 +16,6 @@
 
 package com.android.settings.accessibility;
 
-import static com.android.settings.Utils.setOverlayAllowed;
-
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -38,13 +36,12 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.accessibility.AccessibilityManager;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.widget.LockPatternUtils;
-import com.android.settings.ConfirmDeviceCredentialActivity;
 import com.android.settings.R;
+import com.android.settings.password.ConfirmDeviceCredentialActivity;
 import com.android.settings.widget.ToggleSwitch;
 import com.android.settings.widget.ToggleSwitch.OnBeforeCheckedChangeListener;
 import com.android.settingslib.accessibility.AccessibilityUtils;
@@ -73,8 +70,6 @@ public class ToggleAccessibilityServicePreferenceFragment
 
     private int mShownDialogId;
 
-    private final IBinder mToken = new Binder();
-
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.ACCESSIBILITY_SERVICE;
@@ -85,14 +80,6 @@ public class ToggleAccessibilityServicePreferenceFragment
         // Do not call super. We don't want to see the "Help & feedback" option on this page so as
         // not to confuse users who think they might be able to send feedback about a specific
         // accessibility service from this page.
-
-        // We still want to show the "Settings" menu.
-        if (mSettingsTitle != null && mSettingsIntent != null) {
-            MenuItem menuItem = menu.add(mSettingsTitle);
-            menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-            menuItem.setIntent(mSettingsIntent);
-        }
-
     }
 
     @Override
@@ -105,18 +92,12 @@ public class ToggleAccessibilityServicePreferenceFragment
     public void onResume() {
         mSettingsContentObserver.register(getContentResolver());
         updateSwitchBarToggleSwitch();
-        if (mToken != null) {
-            setOverlayAllowed(getActivity(), mToken, false);
-        }
         super.onResume();
     }
 
     @Override
     public void onPause() {
         mSettingsContentObserver.unregister(getContentResolver());
-        if (mToken != null) {
-            setOverlayAllowed(getActivity(), mToken, true);
-        }
         super.onPause();
     }
 

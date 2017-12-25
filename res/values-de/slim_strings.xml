@@ -21,5 +21,10 @@
   <string name="advanced_reboot_hide_on_keyguard">Auf Sperrbildschirm verbergen</string>
   <string name="advanced_reboot_show_always">Immer anzeigen</string>
   <!-- About phone screen, Slim version -->
+  <string name="slim_version_title">Slim version</string>
+  <string name="slim_version_default">Unbekannt</string>
   <!-- Reset battery stats -->
+  <string name="ok">OK</string>
+  <string name="menu_stats_reset">Statistiken zurücksetzen</string>
+  <string name="reset_stats_msg">Statistik zum Akkuverbrauch wird hiermit zurückgesetzt</string>
 </resources>

@@ -15,6 +15,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Qabaqcıl yenidən başlatma</string>
+  <string name="advanced_reboot_summary">Bərpa və bootloader yenidən başlatma və qapatma menyusunda göstəriləcək</string>
   <string name="advanced_reboot_dialog_title">Qabaqcıl yenidən başlatma menyusu</string>
   <string name="advanced_reboot_disabled">Ləğv et</string>
   <string name="advanced_reboot_hide_on_keyguard">Kilid ekranında gizlət</string>

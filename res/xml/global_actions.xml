@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 CarbonROM
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/global_actions_title" >
+
+    <SwitchPreference
+        android:key="global_actions_power"
+        android:title="@string/global_actions_power"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="global_actions_restart"
+        android:title="@string/global_actions_restart"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="global_actions_lockdown"
+        android:title="@string/global_actions_lockdown"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="global_actions_screenshot"
+        android:title="@string/global_actions_screenshot"
+        android:defaultValue="true" />
+<!--
+    <SwitchPreference
+        android:key="global_actions_screenrecord"
+        android:title="@string/global_actions_screenrecord"
+        android:defaultValue="false" />
+-->
+    <SwitchPreference
+        android:key="global_actions_airplane"
+        android:title="@string/global_actions_airplane"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="global_actions_settings"
+        android:title="@string/global_actions_settings"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="global_actions_flashlight"
+        android:title="@string/global_actions_flashlight"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="global_actions_users"
+        android:title="@string/global_actions_users"
+        android:defaultValue="false" />
+
+</PreferenceScreen>

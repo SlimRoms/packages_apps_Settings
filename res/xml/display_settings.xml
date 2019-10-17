@@ -185,10 +185,11 @@
         android:summary="@string/global_actions_summary"
         android:fragment="com.android.settings.gzosp.GlobalActionsSettings"
         settings:allowDividerAbove="true" />
-
+<!--
     <com.android.settings.gzosp.SystemSettingSwitchPreference
         android:key="advanced_reboot"
         android:title="@string/global_actions_advanced_reboot_title"
         android:summary="@string/global_actions_advanced_reboot_summary"
         android:defaultValue="true" />
+-->
 </PreferenceScreen>

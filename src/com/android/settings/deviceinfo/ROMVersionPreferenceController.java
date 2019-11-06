@@ -28,8 +28,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 public class ROMVersionPreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin {
 
-    private static final String PROPERTY_GZOSP_VERSION = "ro.gzosp.version";
-    private static final String KEY_GZOSP_VERSION = "modversion";
+    private static final String PROPERTY_SLIM_VERSION = "ro.slim.version";
+    private static final String KEY_SLIM_VERSION = "modversion";
 
     public ROMVersionPreferenceController(Context context) {
         super(context);
@@ -37,20 +37,20 @@ public class ROMVersionPreferenceController extends AbstractPreferenceController
 
     @Override
     public boolean isAvailable() {
-        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_GZOSP_VERSION));
+        return !TextUtils.isEmpty(SystemProperties.get(PROPERTY_SLIM_VERSION));
     }
 
     @Override
     public String getPreferenceKey() {
-        return KEY_GZOSP_VERSION;
+        return KEY_SLIM_VERSION;
     }
 
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        final Preference pref = screen.findPreference(KEY_GZOSP_VERSION);
+        final Preference pref = screen.findPreference(KEY_SLIM_VERSION);
         if (pref == null) return;
-        String version = SystemProperties.get(PROPERTY_GZOSP_VERSION);
+        String version = SystemProperties.get(PROPERTY_SLIM_VERSION);
         pref.setSummary(version);
     }
 }

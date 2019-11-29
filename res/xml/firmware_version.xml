@@ -22,11 +22,6 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- Gzosp Logo Header -->
-    <Preference
-        android:key="gz_logo"
-        android:layout="@layout/gzosp_logo" />
-
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
